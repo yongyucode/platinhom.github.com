@@ -2,7 +2,7 @@
 layout: post
 title: 使用Github搭建博客
 date: 2015-06-02 11:06:56
-category: "Github", 
+category: "Github"
 ---
 
 我们知道在Java在所有类的父类是Object,容器自然也不例外。因此容器都有toString()方法，并且覆写了该方法，使容器生成的String结果能够表达容器自身，以及容器所有包含的对象。例如ArrayList的toString()方法，它会遍历ArrayList中包含的所有对象，调用每个对象的toString()方法。
@@ -67,4 +67,4 @@ class User {
 
 其实不用覆写User的toString()方法，也会打印出内存地址，默认使用的Object的toString()方法。
 
-原创文章转载请注明出处: [使用Github搭建博客](http://9leg.com/java/2015/05/07/string-recursive.html)
+原创文章转载请注明出处: [使用Github搭建博客](http://9leg.com/java/2015/06/02/Build-Blog-Github.html)
