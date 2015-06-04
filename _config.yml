@@ -39,9 +39,9 @@ timezone:      null
 
 
 #Site config
-title: 9leg
-description: java技术文章
-keywords: Java
+title: Hom
+description: Hom's Blog for Science and Technique 
+keywords: Hom Technique IT
 url: http://platinhom.github.io
 feed: /atom.xml
 favicon: /images/shortcut.jpg
@@ -77,15 +77,15 @@ follow:
   - class: icon-rss
     url: /atom.xml
   - class: icon-weibo
-    url: http://weibo.com/
+    url: http://weibo.com/234020806/
   - class: icon-facebook
     url: http://facebook.com/
   - class: icon-github-alt
-    url: http://github.com/
+    url: http://github.com/platinhom
   - class: icon-twitter
     url: http://twitter.com/
   - class: icon-google-plus
-    url: https://plus.google.com/116595571760191938657/about
+    url: https://plus.google.com/114637369386965423989/about
 
 #Links
 customLinks:
