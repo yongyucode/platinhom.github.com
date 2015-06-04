@@ -42,7 +42,7 @@ timezone:      null
 title: Hom
 description: java技术文章
 keywords: Java
-url: http://http://platinhom.github.io/
+url: http://http://platinhom.github.io
 feed: /atom.xml
 favicon: /images/shortcut.jpg
 
@@ -61,8 +61,8 @@ nav:
 
 #Author config
 author:
-    name: zhujiajun
-    email: leoneyes2012@gmail.com
+    name: Platinhom
+    email: zhaozxcpu(at)hotmail.com
     imageLink: /images/header.jpg
     simpleIntro: 贵在坚持 让梦想照进现实
     detailIntro:
