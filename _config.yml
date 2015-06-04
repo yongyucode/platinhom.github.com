@@ -39,10 +39,10 @@ timezone:      null
 
 
 #Site config
-title: 9leg
+title: Hom
 description: java技术文章
 keywords: Java
-url: http://9leg.com
+url: http://http://platinhom.github.io/
 feed: /atom.xml
 favicon: /images/shortcut.jpg
 
