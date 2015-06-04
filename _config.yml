@@ -42,7 +42,7 @@ timezone:      null
 title: 9leg
 description: java技术文章
 keywords: Java
-url: http://platinhom.github.io/
+url: http://platinhom.github.io
 feed: /atom.xml
 favicon: /images/shortcut.jpg
 
@@ -127,7 +127,7 @@ disqus:
 
 duoshuo:
   config: true
-  id: 9leg
+  id: 12081681
 
 #baidu share config
 baiduShare:
