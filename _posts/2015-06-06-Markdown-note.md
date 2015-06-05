@@ -51,8 +51,9 @@ Chrome: Markdown here,
 `[tag名]: 链接地址`
 
 
-cmd markdown [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown) , 
-[高级语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册] :
+cmd markdown : 网上MD的服务器
+[简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown) 
+[高级语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册)
 
 -  标签: 标签名1 标签名2    (用于归类, 也可用tags)
 -  `[TOC]`        (内容目录结构)
