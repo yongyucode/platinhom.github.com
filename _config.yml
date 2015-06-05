@@ -1,8 +1,52 @@
-markdown: maruku
-permalink: /:year/:month/:day/:title/
-url: http://platinhom.github.io
 author: Hom
 pygments: true
 safe: true
-paginate: 25
 auto: true
+
+# Where things are
+source:       .
+destination:  ./_site
+plugins:      ./_plugins
+layouts:      ./_layouts
+paginate:     25
+
+# Handling Reading
+safe:         true
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+textile_ext:  "textile"
+
+# Filtering Content
+show_drafts:  null
+limit_posts:  0
+future:       true
+unpublished:  false
+
+# Conversion
+markdown:     maruku
+highlighter:  pygments
+lsi:          false
+excerpt_separator: "\n\n"
+
+# Serving
+detach:       false
+port:         4000
+host:         127.0.0.1
+baseurl:      "" # does not include hostname
+
+# Outputting
+permalink:     /:year/:month/:day/:title/
+paginate_path: /page:num
+timezone:      null
+
+
+#Site config
+title: Hom
+description: Hom Blog for Science and Technique 
+keywords: Hom Technique IT
+url: http://platinhom.github.io
+favicon: /image/shortcut.png
+
