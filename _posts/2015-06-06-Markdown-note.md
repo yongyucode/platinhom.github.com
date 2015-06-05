@@ -2,7 +2,7 @@
 layout: post
 title: Markdown 笔记
 categories:
-- CS
+- CompSci
 tags:
 - IT技术
 ---

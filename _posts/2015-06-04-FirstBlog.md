@@ -11,12 +11,12 @@ tags: 其他
 大家一起努力!
 
 基础分类初定为:
-计算机
-数统
-计算化学
-计算生物
-化学
-生物医学
-其他
+CompSci: 计算机
+MathStat: 数学统计数据分析
+CompChem: 计算化学
+CompBiol: 计算生物
+Chem: 化学
+Biol: 生物医学
+Other: 其他
 
 模板取自于 [哲科文](http://jerkwin.github.io/)
