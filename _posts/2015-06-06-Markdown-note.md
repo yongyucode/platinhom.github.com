@@ -62,14 +62,14 @@ cmd markdown [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zyb
     `$数学公式$`     行内插入数学公式
     `$$ 数学公式 $$`        整行为一数学
 -     流程图 [http://adrai.github.io/flowchart.js/]
-`` ```flow ``
-``    内容 ``
-``    ``` ``
+```flow  
+    内容  
+    ```  
 
 -    序列图 [序列图语法参考]
-``    ```seq  ``
-``    内容  ``
-``    ```  ``
+```seq  
+内容  
+```  
 
 
 
