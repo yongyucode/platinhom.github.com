@@ -2,7 +2,7 @@
 layout: post
 title: 使用Github搭建博客
 date: 2015-06-05 13:06:56
-category: "IT"
+categories: "计算机"
 tags: GitHub
 ---
 - 简要介绍使用Github来制作静态网页作为主页

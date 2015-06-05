@@ -2,7 +2,7 @@
 layout: post
 title: 正式使用Github写blog!
 date: 2015-06-04 13:11:11
-category: "other"
+categories: "其他"
 tags: 其他
 ---
 
@@ -10,4 +10,9 @@ tags: 其他
 
 大家一起努力!
 
-
+基础分类初定为:
+计算机
+数统
+计算化学
+计算生物
+其他
