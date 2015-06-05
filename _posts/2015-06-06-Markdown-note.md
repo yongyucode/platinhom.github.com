@@ -52,18 +52,21 @@ Chrome: Markdown here,
 
 
 cmd markdown [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown), [高级语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册] :
--     标签: 标签名1 标签名2    (用于归类, 也可用tags)
--     `[TOC]`        (内容目录结构)
--     `~~内容~~`       (删除线)
--     引用
+-  标签: 标签名1 标签名2    (用于归类, 也可用tags)
+-  `[TOC]`        (内容目录结构)
+-  `~~内容~~`       (删除线)
+-  引用
     `[^cite1]`    (插入位置,根据位置编号)
-    `[^cite1]`: 内容    (对应内容,参考文献)
+    `[^cite1]`  : 内容    (对应内容,参考文献)
 	
--     数学公式, 请参考[Mathjax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
-    \$数学公式\$     行内插入数学公式
-    \$\$ 数学公式 \$\$        整行为一数学
+- 数学公式, 请参考[Mathjax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+```
+    $数学公式$     行内插入数学公式
+    $$ 数学公式 $$        整行为一数学
+```
 
 -  [流程图](http://adrai.github.io/flowchart.js/)
+
 \`\`\`flow  
 内容  
 \`\`\`  
