@@ -42,7 +42,7 @@ category: "Github"
 ### 撰写博文
 ##### 此处推荐使用Markdown格式,更多请网上参考.在Mac可使用Mou来写.
 - 在`_post`中添加相应博文文件,格式使用`YYYY-MM-DD-name.md/markdown/html`,并需要在文件开头添加一些话,如:
-- GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。
+- GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。默认GFM使用maruku,也可以用Jekyll来应用kramdown以及等.语法高亮可以用pygments.
 
 
 
