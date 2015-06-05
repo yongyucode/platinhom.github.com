@@ -44,7 +44,7 @@ Chrome: Markdown here,
 ```
 ~~~~~  
 
-**字体颜色**：需要使用html方法 例如`<font color="red"> 文字 </font>`
+**字体颜色**：需要使用html方法 例如`<font color="red"> 文字 </font>`  
 **居中对齐**: <center>内容</center>
 
 ## 比较偏的用法:
@@ -65,17 +65,17 @@ cmd markdown : 网上MD的服务器
 `[^cite1]`  : 内容    (对应内容,参考文献)
 	
 - 数学公式, 请参考[Mathjax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
-~~~~~
+~~~
 $数学公式$     行内插入数学公式
 $$ 数学公式 $$        整行为一数学
-~~~~~
+~~~
 
 - [流程图](http://adrai.github.io/flowchart.js/)
-~~~~~
-\`\`\`flow  
+~~~
+```flow  
 内容  
-\`\`\`  
-~~~~~
+```  
+~~~
 
 - 序列图 序列图语法参考. 
 ~~~~~
