@@ -1,7 +1,7 @@
-markdown: kramdown
+markdown: maruku
 permalink: /:year/:month/:day/:title/
-url: http://jerkwin.github.io
-author: Jerkwin
+url: http://platinhom.github.io
+author: Hom
 pygments: true
 safe: true
 paginate: 25
