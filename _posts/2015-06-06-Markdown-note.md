@@ -38,9 +38,9 @@ Chrome: Markdown here,
 **代码**：在标准markdown里面支持四个空格或者tab开头自动进入代码块模式，但是这里要用  `` `文字` `` 作代码块
 在为知中根据不同代码不同标记，如下
 
-```cpp
-代码内容
-```  
+> ```cpp
+> 代码内容
+> ```  
 
 **字体颜色**：需要使用html方法 例如<font color="red"> 文字 </font>
 **居中对齐**: <center>内容</center>
@@ -62,13 +62,14 @@ cmd markdown [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zyb
     `$数学公式$`     行内插入数学公式
     `$$ 数学公式 $$`        整行为一数学
 -     流程图 [http://adrai.github.io/flowchart.js/]
-    ```flow
-    内容
-    ```
+>    ```flow
+>    内容
+>    ```
+
 -    序列图 [序列图语法参考]
-    ```seq
-    内容
-    ```
+>    ```seq
+>    内容
+>    ```
 
 
 
