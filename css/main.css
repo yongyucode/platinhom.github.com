@@ -273,14 +273,6 @@ a         { color: #91736b; text-decoration: none; }
     overflow: auto;
 }
 
-.main .article code {
-    margin-bottom: 1em;
-    padding: 10px 10px;
-    color: #4d4d4d;
-    background: rgba(0, 0, 0, 0.1);
-    overflow: auto;
-}
-
 .main .highlight {
     position: relative;
 }
