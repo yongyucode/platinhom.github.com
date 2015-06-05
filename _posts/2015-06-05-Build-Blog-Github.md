@@ -68,6 +68,13 @@ category: "Github"
 
 - 待续
 
+### 更多功能
+- **评论**: 推荐使用国内的duoshuo或者disqus
+- 分类
+- 搜索栏
+- 友情链接
+- 网站统计
+
 ##### Other Reference
 1. [基础教程网-TeliuTe](http://teliute.org/mix/Tegit/lesson1/lesson1.html)
 2. [Github Page极简教程](http://yanping.me/cn/blog/2012/03/18/github-pages-step-by-step)
