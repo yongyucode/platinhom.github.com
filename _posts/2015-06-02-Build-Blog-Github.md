@@ -49,14 +49,15 @@ category: "Github"
 
 
 
-```
+~~~
 ---
 layout: post
 title: 使用Github搭建博客
 date: 2015-06-02 11:06:56
 category: "Github"
 ---
-```
+~~~
+
 - 待续
 
 ##### Reference
