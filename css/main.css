@@ -36,6 +36,15 @@ a         { color: #91736b; text-decoration: none; }
 
 .fn-clear:after             { visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0; }
 
+code {
+    padding:3px 4px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:10px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(252, 252, 110, 0.2)
+}
+
 /*****************************************************************************/
 /*
 /* Jekyll theme
@@ -735,11 +744,4 @@ a         { color: #91736b; text-decoration: none; }
     height: 80px;
     margin: 0 auto;
 }
-code {
-    padding:3px 4px;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:5px;
-    border:1px solid rgba(0, 0, 0, 0.2);
-    background: rgba(252, 252, 110, 0.2)
-}
+
