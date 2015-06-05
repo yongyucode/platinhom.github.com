@@ -19,7 +19,7 @@ Chrome: Markdown here,
 --- 
 
 
-以下是说明:
+### 以下是一般的规则:
 **特殊符号**：`#_` \` 等， 要在行头等特殊位置表达，可用转义符` \`， 一般符号后最好跟空格。
 **强制换行**:在行最后用两个空格并按下回车
 **粗体和斜体**： 斜体用`*文字*` 或`_文字_`      粗体用`**文字**`   或` __文字__`   特别强调（粗斜体）用`***文字***` 或   `___文字___`
@@ -46,17 +46,17 @@ Chrome: Markdown here,
 注意: 在kramdown中使用\~ 而不是\` 作代码块. 另外, 长代码块(例如5个\` 优先于3个,可以利用该办法来表达.
 
 
-#### 使用HTML 方法
+### 使用HTML 方法
 **字体颜色**：需要使用html方法 例如`<font color="red"> 文字 </font>`  
 **居中对齐**: `<center>内容</center>`
 
-## 比较偏的用法:
+### 比较偏的用法:
 - 内标签
 `[显示内容][tag名]`
 `[tag名]: 链接地址`
 
 
-cmd markdown : 网上MD的服务器
+### cmd markdown : 网上MD的服务器
 [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown) ;
 [高级语法](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册)
 
