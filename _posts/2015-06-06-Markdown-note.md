@@ -66,7 +66,7 @@ cmd markdown [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zyb
 内容  
 \`\`\`  
 
--    序列图 [序列图语法参考]
+-    序列图 [序列图语法参考]  
 \`\`\`seq  
 内容  
 \`\`\`  
