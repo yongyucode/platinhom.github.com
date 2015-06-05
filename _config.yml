@@ -39,6 +39,6 @@ host:         127.0.0.1
 baseurl:      "" # does not include hostname
 
 # Outputting
-timezone:      UTC-5
+timezone:      America/Detroit
 
 
