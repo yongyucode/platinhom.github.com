@@ -25,18 +25,20 @@ category: "Github"
 ### Github上创建博客
 - 在Github创建新的Repository[New Repository](https://github.com/new). 在Github主页右下角一般显示了你当前库数量.
 - 创建Project Name为`name.github.com`这里name随意,一般使用账号名.主页可不填. 项目不付费只能公开.随后`Create Repository`,页面给出提示,可忽略之.
-- 更多信息
+- Github可以提供一个`<user-id>.github.io`的主页给用户,可以将该主页和我们创建的主页用的库进行绑定.每个项目也可以使用项目主页,此时要新建一个分支`gh-pages`,此时项目的内容可以在`<user-id>.github.io/<project-name>`访问到. 更详细请参考[建立主页](http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html#user-homepage)
+- `CNAME`文件可以保存映射主页名.
 - 更多关于使用Pages创建博客信息可以参考[Github Pages](https://pages.github.com/),包括连接主页名,help等.
 
 
 ### 将项目拉到本地,并修改
-1. **克隆库**: 在Github中,打开自己的主页项目如`https://github.com/name/name.github.com`,在右下clone URL处选择`SSH`并点图标进行复制
-2. 在本地需要放置网页的库(文件夹内),克隆远程项目到本地(这里使用ssh协议,所以请确保上述ssh key已正常可用).使用命令`git clone git@github.com:name/name.github.com.git` 来克隆内容到本地(提示是否登录,yes).很长的地址直接用刚才复制的内容黏贴.
+1. **库地址**: 在Github中,打开自己的主页项目如`https://github.com/name/name.github.com`,在右下clone URL处选择`SSH`并点图标进行复制
+2. **克隆库**在本地需要放置网页的库(文件夹内),克隆远程项目到本地(这里使用ssh协议,所以请确保上述ssh key已正常可用).使用命令来克隆内容到本地(提示是否登录,yes).`git clone git@github.com:name/name.github.com.git`. 很长的地址直接用刚才复制的内容黏贴.
 3. **创别名**(非必要): `git remote add myhomepage git@github.com:name/name.github.com.git`可以创建别名为`myhomepage`来代替之前复制那段地址, 可用`git remote rm myhomepage`来删除别名
-4. `touch readme.md` 创建库的说明文件,编辑内容可在github网页中看到.
-5. 可以自行将主页内容拉到此处,使用 index.html 作主页文件,可以创建或编辑该文件. 然后进行修改后,使用`git add -A`来将所有修改递交到本地暂存库,再用`git commit -am "your comments"`提交修改到本地库,然后用`git push origin master`将本地库更新提交到远程库, 这里origin可以用之前的myhomepage名替换.OK.
-6. 此时已经成功创建主页.简要使用git命令请参考[Git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html),更详细的Git使用请参看[GotGitHub](http://www.worldhello.net/gotgithub/)
-7. 可以使用一些Jekyll的主页模板来快速设置你的主页啦! [jekyll主页模板](https://github.com/jekyll/jekyll/wiki/Sites)
+4. **说明文件**: `touch readme.md` 创建库的说明文件,编辑内容可在github网页中看到.
+5. **主页文件**: 可以自行将主页内容拉到此处,使用 index.html 作主页文件,可以创建或编辑该文件. 也可以使用github的自动生成器来生成个基础模板.
+6. **提交修改**: 修改后,使用`git add -A`来将所有修改递交到本地暂存库,再用`git commit -am "your comments"`提交修改到本地库,然后用`git push origin master`将本地库更新提交到远程库, 这里origin可以用之前的myhomepage名替换.OK.
+7. 此时已经成功创建主页.简要使用git命令请参考[Git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html),更详细的Git使用请参看[GotGitHub](http://www.worldhello.net/gotgithub/)
+8. 可以使用一些Jekyll的主页模板来快速设置你的主页啦! [jekyll主页模板](https://github.com/jekyll/jekyll/wiki/Sites)
 
 ### 可以使用Jekyll来构建
 
@@ -44,8 +46,9 @@ category: "Github"
 可以使用 `gem update --system` 来升级gem
 在命令行中 `gem install jekyll` 进行安装
 - [Github官方介绍使用](https://help.github.com/articles/using-jekyll-with-pages/); [Jekyll中文官方介绍](http://jekyllcn.com/)和[英文介绍](http://jekyllrb.com/)
-- 修改`_config.yml`: 其中source和destination是源文件目录以及生成`_site`网页目录,markdown和highlighter定义语法高亮及着色使用的方法.
-- 直接`jekyll build` 来生成本地的html文件.
+- **配置文件**: 修改`_config.yml`: 其中source和destination是源文件目录以及生成`_site`网页目录,markdown和highlighter定义语法高亮及着色使用的方法.
+- **网页模板**: `_layout`内的为网页模板,一般含有一个主界面一个博文的模板.
+- **本地生成**: 直接`jekyll build` 来生成本地的html文件. 其实只是做网页的话,可以不装jekyll.
 
 ### 撰写博文
 
@@ -63,11 +66,12 @@ category: "Github"
 ```
 - GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。默认GFM使用[maruku](http://maruku.rubyforge.org/markdown_syntax.html),也可以用Jekyll来应用[kramdown](http://kramdown.gettalong.org/syntax.html).(注意:kramdown的语法块使用`~~~`来代替`---`)以及rdiscount等.语法高亮可以用pygments.
 
-
 - 待续
 
-##### Reference
+##### Other Reference
 1. [基础教程网-TeliuTe](http://teliute.org/mix/Tegit/lesson1/lesson1.html)
+2. [Github Page极简教程](http://yanping.me/cn/blog/2012/03/18/github-pages-step-by-step)
+3. [Jekyll介绍](https://github.com/toolchainX/emacs_config/blob/master/Notes/Jekyll.org)
 
 
 
