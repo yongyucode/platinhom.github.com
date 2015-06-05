@@ -8,7 +8,7 @@ comments: yes
 - [RCSB-PDB](http://www.rcsb.org/pdb/home/home.do) ; [PubMed](http://www.ncbi.nlm.nih.gov/pubmed/) ; [Google Scholar](https://scholar.google.com/) ; 
 
 ### WebTools
-- [SmallPDF](http://smallpdf.com/cn/) ; 
+- [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
 
 ### Often Visit
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/)
