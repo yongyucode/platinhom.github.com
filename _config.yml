@@ -40,7 +40,7 @@ timezone:      null
 
 #Site config
 title: Hom
-description: Hom's Blog for Science and Technique 
+description: Hom Blog for Science and Technique 
 keywords: Hom Technique IT
 url: http://platinhom.github.io
 feed: /atom.xml
@@ -87,7 +87,11 @@ follow:
 
 #Links
 customLinks:
-  - item:
+- item:
+    - text: Eat at state
+      url: http://eatatstate.com/diningplans/faculty
+      message: Favor
+- item:
     - text: Acfun
       url: http://www.acfun.tv/
     - text: Youtube
