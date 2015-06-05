@@ -1,4 +1,6 @@
-此Git库为我的博客 [Jerkwin's Homepage](http://jerkwin.github.io).
+### This's Hom's Blog! Welcome!
+
+模板取自于 [哲科文](http://jerkwin.github.io/)
 
 此博客采用了 [卢克进](http://geeklu.com/) 的主题, 并稍加修改.
 
