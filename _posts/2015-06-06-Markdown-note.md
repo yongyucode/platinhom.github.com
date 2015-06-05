@@ -58,9 +58,10 @@ cmd markdown [简明语法](https://www.zybuluo.com/mdeditor?url=https://www.zyb
 -     引用
     `[^cite1]`    (插入位置,根据位置编号)
     `[^cite1]`: 内容    (对应内容,参考文献)
+	
 -     数学公式, 请参考[Mathjax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
-    `$数学公式$`     行内插入数学公式
-    `$$ 数学公式 $$`        整行为一数学
+    \$数学公式\$     行内插入数学公式
+    \$\$ 数学公式 \$\$        整行为一数学
 
 -  [流程图](http://adrai.github.io/flowchart.js/)
 \`\`\`flow  
