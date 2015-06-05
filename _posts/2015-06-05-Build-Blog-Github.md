@@ -53,7 +53,7 @@ tags: GitHub
 
 ### 撰写博文
 
-##### 此处推荐使用Markdown格式,更多请网上参考.在Mac可使用Mou来写.
+##### 此处推荐使用Markdown格式,更多请网上参考.在Mac可使用Mou来写. 但可惜Mou对Kramdown不咋滴.
 
 - 在`_post`中添加相应博文文件,格式使用`YYYY-MM-DD-name.md/markdown/html`,并需要在文件开头添加一些话,如:
 
@@ -66,7 +66,7 @@ category: "Github"
 ---
 ~~~~
 
-- GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。默认GFM使用[maruku](http://maruku.rubyforge.org/markdown_syntax.html),也可以用Jekyll来应用[kramdown](http://kramdown.gettalong.org/syntax.html).(注意:kramdown的语法块使用`~~~`来代替`---`)以及rdiscount等.语法高亮可以用pygments.
+- GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。默认GFM使用[maruku](http://maruku.rubyforge.org/markdown_syntax.html),也可以用Jekyll来应用[kramdown](http://kramdown.gettalong.org/syntax.html).(注意:kramdown的语法块使用`~~~`来代替`---`)以及[rdiscount](http://tedwise.com/markdown/)等.语法高亮可以用pygments.
 
 - 待续
 
