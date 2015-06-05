@@ -744,13 +744,13 @@ code,pre {
     -moz-border-radius:3px;
     border-radius:3px;
 }
-code{
+code {
     padding:3px 4px;
     color:#d14;
     background-color:#f7f7f9;
     border:1px solid #e1e1e8;
 }
-pre{display:block;
+pre {display:block;
     padding:8.5px;
     margin:0 0 9px;
     font-size:12px;
@@ -766,4 +766,6 @@ pre{display:block;
     word-break:break-all;
     word-wrap:break-word;
     }
-pre.prettyprint{margin-bottom:18px;}
+pre.prettyprint {
+    margin-bottom:18px;
+}
