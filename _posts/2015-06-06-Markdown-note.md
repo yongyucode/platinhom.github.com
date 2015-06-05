@@ -2,7 +2,7 @@
 layout: post
 title: Markdown 笔记
 categories:
-- 计算机
+- CS
 tags:
 - IT技术
 ---

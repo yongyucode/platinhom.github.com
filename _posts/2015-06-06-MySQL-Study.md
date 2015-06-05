@@ -2,7 +2,7 @@
 layout: post
 title: MySQL 学习
 date: 2015-06-06 11:00:00
-categories: "计算机"
+categories: CS
 tags: 数据库
 ---
 
