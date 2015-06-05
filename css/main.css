@@ -272,6 +272,15 @@ a         { color: #91736b; text-decoration: none; }
     background: rgba(0, 0, 0, 0.1);
     overflow: auto;
 }
+
+.main .article code {
+    margin-bottom: 1em;
+    padding: 10px 10px;
+    color: #4d4d4d;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
 .main .highlight {
     position: relative;
 }
@@ -733,4 +742,10 @@ a         { color: #91736b; text-decoration: none; }
     padding-top: 20px;
     height: 80px;
     margin: 0 auto;
+}
+
+code {
+    margin: 10;
+    padding: 10;
+    color:red;
 }
