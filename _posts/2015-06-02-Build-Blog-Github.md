@@ -18,13 +18,19 @@ category: "Github"
 
 ### Github上创建博客
 - 在Github创建新的Repository[New Repository](https://github.com/new). 在Github主页右下角一般显示了你当前库数量.
-- 啊
+- 创建Project Name为`name.github.com`这里name随意,一般使用账号名.主页可不填. 项目不付费只能公开.随后`Create Repository`,页面给出提示,可忽略之.
+- 更多信息
+- 更多关于使用Pages创建博客信息可以参考[Github Pages](https://pages.github.com/),包括连接主页名,help等.
+
 
 ### 将项目拉到本地,并修改
-1. 在Github中,打开自己的主页项目如`https://github.com/name/name.github.com`,在右下clone URL处选择`SSH`并点图标进行复制
-2. 在本地需要放置网页的库(文件夹内),克隆远程项目到本地(这里使用ssh协议,所以请确保上述ssh key已正常可用).使用命令`git clone git@github.com:name/name.github.com.git` 来克隆内容到本地(提示是否登录,yes)
-3. `touch readme.md` 创建库的说明文件,编辑内容可在github网页中看到.
-4. 可以自行将主页内容拉到此处,使用`index.html`作主页文件.
+1. **克隆库**: 在Github中,打开自己的主页项目如`https://github.com/name/name.github.com`,在右下clone URL处选择`SSH`并点图标进行复制
+2. 在本地需要放置网页的库(文件夹内),克隆远程项目到本地(这里使用ssh协议,所以请确保上述ssh key已正常可用).使用命令`git clone git@github.com:name/name.github.com.git` 来克隆内容到本地(提示是否登录,yes).很长的地址直接用刚才复制的内容黏贴.
+3. **创别名**(非必要): `git remote add myhomepage git@github.com:name/name.github.com.git`可以创建别名为`myhomepage`来代替之前复制那段地址, 可用`git remote rm myhomepage`来删除别名
+4. `touch readme.md` 创建库的说明文件,编辑内容可在github网页中看到.
+5. 可以自行将主页内容拉到此处,使用`index.html`作主页文件,可以创建或编辑该文件. 然后进行修改后,使用`git add -A`来将所有修改递交到本地暂存库,再用`git commit -am "your comments"`提交修改到本地库,然后用`git push origin master`将本地库更新提交到远程库, 这里origin可以用之前的myhomepage名替换.OK.
+6. 此时已经成功创建主页.简要使用git命令请参考[Git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html),更详细的Git使用请参看[GotGitHub](http://www.worldhello.net/gotgithub/)
+7. 可以使用一些Jekyll的主页模板来快速设置你的主页啦! [jekyll主页模板](https://github.com/jekyll/jekyll/wiki/Sites)
 
 ### 可以使用Jekyll来构建
 
@@ -33,9 +39,23 @@ category: "Github"
 可以使用 `gem update --system` 来升级gem
 在命令行中 `gem install jekyll` 进行安装
 
+### 撰写博文
+##### 此处推荐使用Markdown格式,更多请网上参考.在Mac可使用Mou来写.
+- 在`_post`中添加相应博文文件,格式使用`YYYY-MM-DD-name.md/markdown/html`,并需要在文件开头添加一些话,如:
+
+```
+---
+layout: post
+title: 使用Github搭建博客
+date: 2015-06-02 11:06:56
+category: "Github"
+---
+```
+- 待续
+
 ##### Reference
 1. [基础教程网-TeliuTe](http://teliute.org/mix/Tegit/lesson1/lesson1.html)
 
 
 
-原创文章转载请注明出处: [使用Github搭建博客](http://9leg.com/java/2015/06/02/Build-Blog-Github.html)
+原创文章转载请注明出处: [使用Github搭建博客](http://platinhom.github.io/github/2015/06/02/Build-Blog-Github.html)
