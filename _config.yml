@@ -87,11 +87,11 @@ follow:
 
 #Links
 customLinks:
-- item:
+  - item:
     - text: Eat at state
       url: http://eatatstate.com/diningplans/faculty
-      message: Favor
-- item:
+    message: Favor
+  - item:
     - text: Acfun
       url: http://www.acfun.tv/
     - text: Youtube
