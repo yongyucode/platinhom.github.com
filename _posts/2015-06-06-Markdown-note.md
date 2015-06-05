@@ -11,10 +11,10 @@ tags:
 
 [英文维基](http://en.wikipedia.org/wiki/Markdown); [中文维基](http://zh.wikipedia.org/wiki/Markdown); [中文教程](http://wowubuntu.com/markdown/)
 编辑器可参考: [知乎: 用Markdown 写作用什么文本编辑器？](http://www.zhihu.com/question/19637157)
-Window 下软件: MarkDownPad, 
-Mac 下软件: Mou, ByWord
-Online 软件: Cmd Markdown, StackEdit, Raysnote. 
-Chrome: Markdown here, 
+Window 下软件: [MarkDownPad](http://markdownpad.com/), 
+Mac 下软件: [Mou](http://25.io/mou/), ByWord
+Online 软件: [Cmd Markdown](https://www.zybuluo.com/mdeditor), [StackEdit](https://stackedit.io/), [Raysnote](https://raysnote.com/). 
+Chrome: [Markdown here](https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa), 
 
 --- 
 
