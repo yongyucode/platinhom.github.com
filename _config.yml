@@ -76,37 +76,37 @@ follow:
     url: /atom.xml
   - class: icon-weibo
     url: http://weibo.com/234020806/
-  - class: icon-facebook
-    url: http://facebook.com/
+#  - class: icon-facebook
+#    url: http://facebook.com/
   - class: icon-github-alt
     url: http://github.com/platinhom
-  - class: icon-twitter
-    url: http://twitter.com/
+#  - class: icon-twitter
+#    url: http://twitter.com/
   - class: icon-google-plus
     url: https://plus.google.com/114637369386965423989/about
 
 #Links
 customLinks:
   - item:
-    - text: 技术小黑屋
-      url: http://droidyue.com/
-    - text: Jekyll
-      url: http://jekyllrb.com
-    - text: Jekyll Theme
-      url: http://www.zhanxin.info/themes.html
-    message: Friends    
+    - text: Acfun
+      url: http://www.acfun.tv/
+    - text: Youtube
+      url: https://www.youtube.com/
+    - text: SMZDM
+      url: http://www.smzdm.com/
+    message: Often Visit    
   - item:
-    - text: Java Code Geeks
-      url: http://www.javacodegeeks.com/
-    - text: Web Developer
-      url: http://www.fromdev.com/
-    - text: BeginnersBook
-      url: http://beginnersbook.com/
-    - text: Mkyong
-      url: http://www.mkyong.com/
-    - text: Java By Nataraj
-      url: http://javabynataraj.blogspot.in/
-    message: About Java
+    - text: Google Scholar
+      url: https://scholar.google.com/
+    - text: Pubmed
+      url: http://www.ncbi.nlm.nih.gov/pubmed/
+    - text: RCSB PDB
+      url: http://www.rcsb.org/pdb/home/home.do
+    - text: Amber
+      url: http://ambermd.org/
+    - text: SmallPDF
+      url: http://smallpdf.com/cn/
+    message: Online Tools
 
 #googleAnaly, your id link UA-12345678-X
 googleAnaly:
