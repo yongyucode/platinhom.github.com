@@ -737,9 +737,10 @@ a         { color: #91736b; text-decoration: none; }
 }
 code {
     padding:3px 4px;
-    color:#333333;
+    color:# red;
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
-    border-radius:3px;
+    border-radius:5px;
     border:1px solid #e1e1e8;
+    background: rgba(252, 252, 82,0.2)
 }
