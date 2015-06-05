@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 使用Github搭建博客
-date: 2015-06-02 11:06:56
-category: "Github"
+date: 2015-06-05 05:06:56
+category: "IT"
 ---
 
 ### 安装git

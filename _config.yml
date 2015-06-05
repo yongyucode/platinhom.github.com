@@ -21,9 +21,9 @@ future:       true
 unpublished:  false
 
 # Conversion
-markdown:     kramdown
+markdown:     maruku
 highlighter:  pygments
-lsi:          true
+lsi:          false
 excerpt_separator: "\n\n"
 
 # Serving
