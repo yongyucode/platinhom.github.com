@@ -7,7 +7,7 @@ keywords: Hom blog,Jekyll
     <div class="article">
         <h3 class="title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
         <article class="rexp">
-            <p>{{ post.excerpt | markdown }}</p>
+            <p>{{ post.excerpt | markdownify }}</p>
         </article>
         <a href="{{ site.url }}{{ post.url }}" class="more"><i class="icon-link"></i></a>
         <div class="info">
