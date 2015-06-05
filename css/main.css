@@ -268,7 +268,8 @@ a         { color: #91736b; text-decoration: none; }
 }
 
 .main .article code {
-    padding:3px 4px;
+	font-size: 12px;
+    padding:2px 3px;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
@@ -277,6 +278,7 @@ a         { color: #91736b; text-decoration: none; }
 }
 
 .main .article pre code {
+	font-size: 14px;
     padding:0;
     pcolor:inherit;
     background-color:transparent;
