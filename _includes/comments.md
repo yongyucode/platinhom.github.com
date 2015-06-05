@@ -17,7 +17,7 @@
 <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ site.url }}{{ page.url | remove:'index.html' }}"></div>
 
 <script>
-var duoshuoQuery = {short_name:"jerkwin"};
+var duoshuoQuery = {short_name:"platinhom"};
 	(function() {
 		var ds = document.createElement('script');
 		ds.type = 'text/javascript';ds.async = true;
