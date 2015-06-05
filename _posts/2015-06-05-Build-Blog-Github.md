@@ -4,6 +4,12 @@ title: 使用Github搭建博客
 date: 2015-06-02 11:06:56
 category: "Github"
 ---
+- 简要介绍使用Github来制作静态网页作为主页
+- Git使用
+- Jekyll生成
+- Markdown书写
+
+---
 
 ### 安装git
 - Window推荐使用[Msysgit](http://msysgit.github.io/),安装完毕直接使用命令行界面登入.
