@@ -69,7 +69,7 @@ category: "Github"
 - 待续
 
 ### 更多功能
-- **评论**: 推荐使用国内的duoshuo或者disqus
+- **评论**: 推荐使用国内的duoshuo[介绍](http://wenva.github.io/%E6%8A%80%E5%B7%A7/2015/04/29/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html)或者disqus
 - 分类
 - 搜索栏
 - 友情链接

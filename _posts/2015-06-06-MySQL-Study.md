@@ -2,7 +2,7 @@
 layout: post
 title: MySQL 学习
 date: 2015-06-06 11:00:00
-category: "Data Analysis"
+category: "Data-Analysis"
 ---
 
 - I'm the context.
