@@ -267,10 +267,10 @@ a         { color: #91736b; text-decoration: none; }
     text-indent: 6px;
 }
 
-.main .article code {
+.main .article pre,code {
     padding:3px 4px;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
     border-radius:5px;
     border:1px solid rgba(0, 0, 0, 0.2);
     background: rgba(252, 252, 110, 0.2)
