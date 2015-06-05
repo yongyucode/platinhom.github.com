@@ -45,10 +45,10 @@ Chrome: Markdown here,
 ~~~~~  
 
 **字体颜色**：需要使用html方法 例如`<font color="red"> 文字 </font>`  
-**居中对齐**: <center>内容</center>
+**居中对齐**: `<center>内容</center>`
 
 ## 比较偏的用法:
--  内标签
+- 内标签
 `[显示内容][tag名]`
 `[tag名]: 链接地址`
 
@@ -66,11 +66,12 @@ cmd markdown : 网上MD的服务器
 	
 - 数学公式, 请参考[Mathjax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
 ~~~
-$数学公式$     行内插入数学公式
-$$ 数学公式 $$        整行为一数学
+$数学公式$  行内插入数学公式
+$$ 数学公式 $$ 整行为一数学
 ~~~
 
 - [流程图](http://adrai.github.io/flowchart.js/)
+
 ~~~
 ```flow  
 内容  
@@ -78,10 +79,11 @@ $$ 数学公式 $$        整行为一数学
 ~~~
 
 - 序列图 序列图语法参考. 
-~~~~~
+
+~~~
 ```seq  
 内容  
 ```  
-~~~~~
+~~~
 
 
