@@ -37,7 +37,7 @@ category: "Github"
 - **安装Jekyll**:首先需要使用gem,gem是ruby安装后配套产生的. [下载ruby](http://rubyinstaller.org/downloads/)
 可以使用 `gem update --system` 来升级gem
 在命令行中 `gem install jekyll` 进行安装
-- [官方介绍使用](https://help.github.com/articles/using-jekyll-with-pages/)
+- [Github官方介绍使用](https://help.github.com/articles/using-jekyll-with-pages/); [Jekyll中文官方介绍](http://jekyllcn.com/)和[英文介绍](http://jekyllrb.com/)
 - 修改`_config.yml`
 
 ### 撰写博文
