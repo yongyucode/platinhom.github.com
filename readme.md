@@ -1,7 +1,8 @@
-### Here is PlatinHom's Blog. Welcome!
+此Git库为我的博客 [Jerkwin's Homepage](http://jerkwin.github.io).
 
-##### Template is came from #[9leg.com](http://9leg.com/)
+此博客采用了 [卢克进](http://geeklu.com/) 的主题, 并稍加修改.
 
-  I'm still learning the usage of Github and Jekyll !
+此博客的代码高亮使用了[prism](http://prismjs.com/).
 
+此博客的评论功能使用了[多说](http://duoshuo.com/).
 
