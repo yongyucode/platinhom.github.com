@@ -17,7 +17,12 @@ comments: yes
 - [哲科文](http://jerkwin.github.io/) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/)
 
 ### Sciences
-- [Amber](http://ambermd.org/) ; 
+- [Amber](http://ambermd.org/) ; [DOCK](http://dock.compbio.ucsf.edu/) ; 
+
+### Expert Group
+- [R.X.Wang@SIOC](http://www.sioc-ccbg.ac.cn/) ; [Houk@UCLA](http://www.chem.ucla.edu/houk/index.html) ; [Shiochet@UCSF](http://www.bkslab.org/index.php) ; [Voth@Chicago](https://vothgroup.uchicago.edu/) ; [WahChiu@BCM](https://www.bcm.edu/research/labs/wah-chiu);
+- [McCammon@UCSD](http://mccammon.ucsd.edu/) ; [Brooks@UM](http://brooks.chem.lsa.umich.edu/) ; [DavidCase@Rutgers](http://casegroup.rutgers.edu/) ; [Merz@MSU](http://www.merzgroup.org/);
+- [Sali@UCSF](http://salilab.org/index.html) ; [DavidBaker@WU](http://www.bakerlab.org/) ; [Y.Zhang@UM](http://zhanglab.ccmb.med.umich.edu/); 
 
 ### Find Me in:
 - [Weibo](http://weibo.com/234020806/) 
