@@ -68,7 +68,7 @@ category: "Github"
 
 - GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。默认GFM使用[maruku](http://maruku.rubyforge.org/markdown_syntax.html),也可以用Jekyll来应用[kramdown](http://kramdown.gettalong.org/syntax.html).(注意:kramdown的语法块使用`~~~`来代替`---`)以及[rdiscount](http://tedwise.com/markdown/)等.语法高亮可以用pygments.
 
-- 待续
+- 避免产生bug和冲突.请阅读一些注意事项[Page构建失败](https://help.github.com/articles/troubleshooting-github-pages-build-failures/). 其中,例如避免两文章时间完全一致,避免文章中有语法错误(尤其markdown)等比较重要.
 
 ### 更多功能
 - **评论**: 推荐使用国内的duoshuo[介绍](http://wenva.github.io/%E6%8A%80%E5%B7%A7/2015/04/29/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html)或者disqus
