@@ -61,7 +61,8 @@ tags: Shell
 - 时间偏移值支持`+-`法则,支持`second minute hour day week month year`甚至支持`1 day ago`.
 - 注意: Mac系统date的`-d`和一般的不一样,设置时区等相关.用法更复杂,请`man date`查看.
 
-例子
+### 例子
+
 ~~~~
 格式化输出： date +"%Y-%m-%d" ###2009-12-07 
 输出昨天日期： date -d "1 day ago" +"%Y-%m-%d" ###2012-11-19 
@@ -76,8 +77,6 @@ apache格式转换： date -d "Dec 5, 2009 12:00:37 AM" +"%Y-%m-%d %H:%M.%S" ###
 使用`-s`选项. 时间必须是AA:BB:CC格式. 日期可以两种八数字格式. 可以只更改时间或只更改日期,也可以一起更改,例如:
 `date -s "01:01:01 2012-05-23"`
 `date -s "01:01:01 20120523"`
-
-
 
 ## 自动创建带有时间的markdown模板的脚本
 ~~~~ bash
@@ -116,8 +115,6 @@ echo "---" >>_posts/"${today}-${title}.md"
 echo "" >>_posts/"${today}-${title}.md"
 echo "" >>_posts/"${today}-${title}.md"
 echo "---" >>_posts/"${today}-${title}.md"
-
-
 ~~~~
 
 ---
