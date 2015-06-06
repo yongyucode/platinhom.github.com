@@ -15,7 +15,7 @@ MSU: 最多1周walktime(168h) 520核 2TB
 使用X11 图形化登陆服务器: [ICER介绍](https://wiki.hpcc.msu.edu/display/TEAC/iCER+Workshops%3A+Set+Up+Instructions), 简言之, mac安装[Xquartz](http://xquartz.macosforge.org/landing/  )(一般mac可预装); win装 [Moba Xterm](http://mobaxterm.mobatek.net/download-home-edition.html  ); 随后用`ssh -XY id@server`登陆, 打`xeyes`测试是否装有X11 
 
 ##### PBS 脚本示例
-~~~~
+~~~~ bash
 #PBS -l walltime=00:01:00        ##跑的时间
 #PBS -l nodes=5:ppn=1            ##使用多少节点以及每个节点多少核
 #PBS -l mem=2gb                        ##分配多少内存
