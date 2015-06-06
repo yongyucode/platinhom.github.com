@@ -4,11 +4,11 @@ layout: page
 comments: yes
 ---
 
->Love science, love your own life.
+>Love science, love your own life. Just do what you like!
 
-I got my B.S. from China Pharmaceutical University in Pharmacy and Ph.D. from Shanghai Institute of Organic Chemistry, CAS.  
-I did the organic mass spectrometric research before my change to computational study. Now I'm doing my postdoc research at maths dept. in MSU.  
-Computation related sciences need to remember lots of informations. Here I just put some notes on my blog here. Hope it help!
+I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the study for organic mass spectromety I did before.  
+
+Computation related sciences need to remember lots of informations. Here I just put some notes on my blog here. Hope it help!  
 
 * Ma-il me :zhaozx(a-t)hotmail.com      
     
