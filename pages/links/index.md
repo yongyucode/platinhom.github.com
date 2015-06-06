@@ -9,6 +9,7 @@ comments: yes
 
 ### WebTools
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
+- [Linux指令查询](http://man.linuxde.net/)
 
 ### Often Visit
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/)
