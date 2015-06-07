@@ -8,12 +8,20 @@ tags: 其他
 对于科研的人,PDF对得比word要多,而且可以各种文档转化为PDF用于交流.这里作介绍如何在Blog(MD格式)或HTML中插入PDF.注意HTML代码是会直接在MarkDown转化的.
 
 1. 直接使用`embed`方法.例如直接写这段话就OK了,相应更改pdf文档位置及大小即可. 注意,使用的其实是内置的Aodbe PDF插件. 在Mou等编辑器上不能显示pdf.
-`
-<center><embed src="/pdf/mou.pdf" width="850" height="600"></center>`
+
+~~~
+<center><embed src="/pdf/mou.pdf" width="850" height="600"></center>
+~~~
+效果如下:
 <center><embed src="/pdf/mou.pdf" width="850" height="600"></center>
 
 2.使用frame的方法,效果类似. 英文好的可以参考[这里](http://www.ehow.co.uk/video_4983082_display-pdf-file-html-web.html)的介绍.
-`<iframe src="/pdf/mou.pdf" style="width:100px; height:100px;" frameborder="0"></iframe>`
+
+~~~
+<iframe src="/pdf/mou.pdf" style="width:100px; height:100px;" frameborder="0"></iframe>
+~~~
+
+效果如下:
 <iframe src="/pdf/mou.pdf" style="width:100px; height:100px;" frameborder="0"></iframe>
 
 3. 使用Google View来看. 据说支持多种格式如PPT,DOC.就是在国内不知道效果如何..
