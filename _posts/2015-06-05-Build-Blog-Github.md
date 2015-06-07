@@ -76,7 +76,7 @@ category: "Github"
 - 分类
 - 搜索栏
 - 友情链接
-- 网站统计
+- 网站统计: 静态网页简单统计使用第三方的[不蒜子](http://ibruce.info/2015/04/04/busuanzi/),也可以用google,百度一类统计.
 
 ##### Other Reference
 1. [基础教程网-TeliuTe](http://teliute.org/mix/Tegit/lesson1/lesson1.html)
