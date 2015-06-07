@@ -5,7 +5,7 @@ date: 2015-06-07 15:40:04
 categories: CompSci
 tags: 其他
 ---
-对于科研的人,PDF对得比word要多,而且可以各种文档转化为PDF用于交流.这里作介绍如何在Blog(MD格式)或HTML中插入PDF.注意HTML代码是会直接在MarkDown转化的,不过要注意最好要代码前后留空行,保证作为一个代码段.
+对于科研的人,PDF对得比word要多,而且可以各种文档转化为PDF用于交流.这里作介绍如何在Blog(MD格式)或HTML中插入PDF.注意HTML代码是会直接在MarkDown转化的,不过要注意最好要代码前后留空行,保证作为一个代码段. 这里以一个简单的[PDF例子](http://platinhom.github.io/pdf/mou.pdf)为例
 
 1. 直接使用`embed`方法.例如直接写这段话就OK了,相应更改pdf文档位置及大小即可. 注意,使用的其实是内置的Aodbe PDF插件. 在Mou等编辑器上不能显示pdf.
 
