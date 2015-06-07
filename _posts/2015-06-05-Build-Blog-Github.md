@@ -5,7 +5,7 @@ date: 2015-06-05 13:06:56
 categories: CompSci
 tags: GitHub
 ---
-- 简要介绍使用Github来制作静态网页作为主页
+- 简要介绍使用Github Page来制作静态网页作为主页
 - Git使用
 - Jekyll生成
 - Markdown书写
@@ -17,6 +17,7 @@ tags: GitHub
 - Ubuntu可以直接`sudo apt-get install git`
 - Mac我也忘了..
 - 图形界面待补充...
+- 更多Git命令介绍将在日后介绍
 
 ### 在github注册账号
 1. **注册**: 到github注册账户[link](https://github.com/)
