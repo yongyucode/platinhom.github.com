@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shell中date命令用法
-date: 2015-06-07 01:32:12
+date: 2015-06-07 10:32:12
 categories: CompSci
 tags: Shell
 ---

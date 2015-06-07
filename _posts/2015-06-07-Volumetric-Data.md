@@ -5,7 +5,7 @@ date: 2015-06-07 11:25:15
 categories: CompBiol
 tags: 数据处理
 ---
-在美国博后2015年后,主要处理冷冻电镜数据. 在这里做个简要介绍,包括:
+美国博后的工作和之前没有什么交集,做的东西也很无聊. 2015年后,主要处理冷冻电镜数据. 在这里做个简要介绍,包括:
 
 - 文件格式介绍
 - 文件读写
@@ -33,6 +33,7 @@ tags: 数据处理
 !* map file read and write
 !* Author Platinhom
 !* 2015.6.7
+!* This is only an example code for how to read the map.
 
 program mapread
 character*80 mapname
@@ -41,6 +42,7 @@ integer*2,allocatable:: iv(:,:,:),bv(:,:,:)
 real*4,allocatable :: rv(:,:,:)
 integer*4 :: datatype,nx,ny,nz
 integer*8 :: ixyz
+mapname="emd_1234.map"
 
 !! CCP4 Map header: 56 4-byte fields and space for ten 80 character(200 4-byte)
 !! Reference: http://lsbr.niams.nih.gov/3demc/3demc_maplib.html
@@ -101,8 +103,8 @@ end program mapread
 ~~~~
 
 ### map文件可视化
-- Chimera: 推荐使用用于map的可视化及操作.
-可以用Chimera直接打开. 随后出现Volume Viewer,可以看到不同density下的分布.拉动竖线来调节不同contour level.可以在density图中按着`ctrl`再添加一个surface表示. 可以调节颜色及透明度.可以保存新的map.
+- Chimera: 推荐使用.不仅可用于map的可视化,亦能用于更复杂的操作.
+Map文件可以用Chimera直接打开. 随后出现Volume Viewer,可以看到不同density下的分布.拉动竖线来调节不同contour level.可以在density图中按着`ctrl`再添加一个surface表示. 可以调节颜色及透明度.可以保存新的map.
 
 - VMD: 注意`.map`文件不能直接打开因为有很多后缀map的文件,可以改后缀ccp4或mrc.或者打开后选择合适的map.再用`Representations`里draw metho选择`Isosurface`,draw选`solid surface`或`wireframe`. 拉动`Isovalue`的bar来调节不同isovalue获得不同等值面.
 
@@ -111,7 +113,8 @@ end program mapread
 - 直接使用Matlab读入并操作
 - 使用Chimera读入,使用`Volume Filter`进行简单操作,包括高斯光滑化,傅里叶变化,简单的数值变化(scale,可加减乘除),格点变换(bin).最后对map重新保存.
 - 使用Chimera读入,使用命令[vop](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/vop.html)进行操作,包括两个map的加减操作,插值等.
-- 更多可视化操作来选择区域数据并删减,可以用Chimera进行,包括`volume eraser`选择区域删除(快捷键es,删除外部eo);选择subregion后用快捷键eb删除,用`Segment map`区块化后选择删除等.
+- 更多可视化操作来选择区域数据并删减,可以用Chimera进行,包括`volume eraser`选择区域删除(快捷键es,删除外部eo);选择subregion后用快捷键eb删除;用`Segment map`区块化后选择删除等.
 
-
+该blog只作个初步简介.随后会进一步介绍如何可视化map数据以及如何用Chimera进行数据操作.
+To be continued....
 ---
