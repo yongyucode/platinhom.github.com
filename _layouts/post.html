@@ -11,7 +11,7 @@ layout: default
 <br/><span style="float:right;"><a {% if page.next %} href="{{ site.url }}{{ page.next.url }}" style="font-size: 21px" {% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >后一篇:　{{ page.next.title }}</a></span><br/><br/><hr>
 <span id="busuanzi_container_page_pv">已阅读(<span id="busuanzi_value_page_pv"></span>)---Author:</span>
 <span class="author"> <a href="http://platinhom.github.com">{{ site.author }}</a> </span>
-<span class="time"> /Updated: <time datetime="{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}</time> </span><br/>
+<span class="time"> / <time datetime="{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}</time> </span><br/>
 <span class="license">版权: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>&nbsp;</span>
 {% if page.categories %}<span class="categories">类别:
 {% for cat in page.categories %} <a href="/pages/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;{% endfor %}</span>
