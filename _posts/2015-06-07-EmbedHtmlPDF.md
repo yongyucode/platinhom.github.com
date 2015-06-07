@@ -22,6 +22,7 @@ tags: 其他
 ~~~
 
 效果如下:
+
 <iframe src="/pdf/mou.pdf" style="width:100px; height:100px;" frameborder="0"></iframe>
 
 3. 使用Google View来看. 据说支持多种格式如PPT,DOC.就是在国内不知道效果如何..
@@ -30,6 +31,9 @@ tags: 其他
 <iframe src="http://docs.google.com/gview?url=http://platinhom.github.io/pdf/mou.pdf&embedded=true" style="width:100px; height:100px;" frameborder="0"></iframe>
 ~~~
 
+效果如下:
+
+<iframe src="http://docs.google.com/gview?url=http://platinhom.github.io/pdf/mou.pdf&embedded=true" style="width:100px; height:100px;" frameborder="0"></iframe>
 
 4. 使用豆丁的[Docin API](http://api.docin.com/). 这是开放式“文档在线预览”接口程序,可以显示doc,pdf等文件.必须指定网络文档. 现在需要付费了,还会有人用么?
 
