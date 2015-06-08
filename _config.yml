@@ -6,6 +6,7 @@ pygments: true
 safe: true
 paginate: 25
 auto: true
+encoding: UTF-8
 
 # Outputting
 timezone:      America/Detroit
