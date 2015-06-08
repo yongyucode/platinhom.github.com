@@ -1,14 +1,10 @@
 ---
-title: "PDF"
+title: PDF
 layout: page
 comments: yes
-encoding: UTF-8
-permalink: "/pdf/index.html"
 ---
 
-
-- PDF files
-
+- PDF files  
 Contains: [mou.pdf](/pdf/mou.pdf)
 [manual/amber9.pdf](/pdf/manual/amber9.pdf)
 [manual/modeller_manual.pdf](/pdf/manual/modeller_manual.pdf)
