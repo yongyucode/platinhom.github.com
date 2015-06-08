@@ -1,5 +1,5 @@
 ---
-title: "PDFÎÄ¼þ"
+title: "PDF-files"
 layout: post
 comments: yes
 encoding: UTF-8
