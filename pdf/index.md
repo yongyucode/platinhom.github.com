@@ -2,6 +2,7 @@
 title: PDF
 layout: post
 comments: yes
+encoding: UTF-8
 ---
 
 [mou.pdf](/pdf/mou.pdf)
