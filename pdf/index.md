@@ -1,5 +1,5 @@
 ---
-layout:post
+layout:page
 ---
 [mou.pdf](/pdf/mou.pdf)
 [manual/Exploring Chemistry with Electronic Structure Method -Chinese.pdf](/pdf/manual/Exploring Chemistry with Electronic Structure Method -Chinese.pdf)
