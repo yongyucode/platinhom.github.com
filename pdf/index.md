@@ -3,6 +3,7 @@ title: PDF
 layout: post
 comments: yes
 encoding: UTF-8
+permalink: "/pdf/index.html"
 ---
 
 [mou.pdf](/pdf/mou.pdf)
