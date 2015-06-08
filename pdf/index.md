@@ -1,5 +1,7 @@
 ---
-layout:page
+layout: page
+title: PDF
+comments: yes
 ---
 [mou.pdf](/pdf/mou.pdf)
 [manual/Exploring Chemistry with Electronic Structure Method -Chinese.pdf](/pdf/manual/Exploring Chemistry with Electronic Structure Method -Chinese.pdf)
