@@ -31,7 +31,7 @@ clear all;
 clc;
 
 % part1: read data
-filename='ita-mod1-last-2Dtimesum_1.sdat';
+filename='emd_1149-2Dtimesum_0.sdat';
 [dirr,filee,extt]=fileparts(filename);
 A=load(filename);
 
@@ -64,10 +64,12 @@ colorbar
 saveas(handleN, [filee,'.png'], 'png');
 ~~~~
 
-- fileparts函数用来对文件名分析.
+- `fileparts`函数用来对文件名分析.
 - part2 计算出每列最值和interval,算出帧数
-- imagesc用来出图,这里对矩阵转置,注释掉一句用于出局部数据.
-- set一句用来反转Y轴坐标.
+- `imagesc`用来出图,这里对矩阵转置,注释掉一句用于出局部数据.
+- `strrep`为了防止标题中`_`会作为下标指示符而进行替换.
+- `set`一句用来反转Y轴坐标.
+- `colorbar`用来出色带.
 
 出图结果如下:
 ![示例](/pic/science/emd_1149-2Dtimesum_0.png)
