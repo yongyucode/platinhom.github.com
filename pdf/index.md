@@ -1,11 +1,13 @@
 ---
-title: "PDF-files"
-layout: post
+title: "PDF"
+layout: page
 comments: yes
 encoding: UTF-8
 permalink: "/pdf/index.html"
 ---
 
+
+- PDF files
 [mou.pdf](/pdf/mou.pdf)
 [manual/amber9.pdf](/pdf/manual/amber9.pdf)
 [manual/modeller_manual.pdf](/pdf/manual/modeller_manual.pdf)
