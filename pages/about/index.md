@@ -10,5 +10,5 @@ I'm doing research in computational chemistry/biology. My reseach interest inclu
 
 Computation related sciences need to remember lots of information. Here I just put some notes on my blog here. Hope it help!
 
-* Ma-il me :zhaozx(a-t)hotmail.com      
+Welcome to give your valuable comments or m_a_i_l to me :zhaozx(a-t)hotmail.com !    
     
