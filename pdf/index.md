@@ -1,12 +1,12 @@
 ---
-title: uuu
+title: PDF
 layout: page
 comments: yes
 ---
 
 >Love science, love your own life. Just do what you like!
 
-I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety  and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design. 
+I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety  and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in [drug design](/pdf/manual/高级Bash脚本编程指南.pdf). 
 
 Computation related sciences need to remember lots of information. Here I just put some notes on my blog here. Hope it help!
 
