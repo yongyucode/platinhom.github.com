@@ -1,6 +1,6 @@
 ---
 title: PDF
-layout: page
+layout: post
 comments: yes
 ---
 
