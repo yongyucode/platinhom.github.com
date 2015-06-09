@@ -8,7 +8,23 @@ echo "---">>index.md
 echo "">>index.md
 
 echo "## The files were collected from Internet. If they violate your right, please contact me by [e-mail](mailto:zhaozxcpu@hotmail.com).">>index.md
-for files in *.pdf */*.pdf
+
+echo "- Manual:    ">>index.md
+for files in manual/*.pdf
+do
+filename=${files##*/}
+echo "[${filename%.*}](/pdf/${files})" >> index.md
+done
+
+echo "- Book:    ">>index.md
+for files in book/*.pdf
+do
+filename=${files##*/}
+echo "[${filename%.*}](/pdf/${files})" >> index.md
+done
+
+echo "- Paper:    ">>index.md
+for files in reference/*.pdf
 do
 filename=${files##*/}
 echo "[${filename%.*}](/pdf/${files})" >> index.md
