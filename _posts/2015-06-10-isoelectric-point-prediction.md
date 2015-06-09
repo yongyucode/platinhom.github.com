@@ -12,10 +12,10 @@ tags: 计算生物
 一个只含有一个羧基和一个氨基的氨基酸等电点近似为:![氨基酸等电点](http://upload.wikimedia.org/math/f/f/7/ff7d10ea86b5d02228752ee25d77b112.png)
 
 对于蛋白等电点预测,一般都使用[Henderson-Hasselbach equation](http://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation)来计算某pH下蛋白电荷.   
-对于负电荷氨基酸:![](http://isoelectric.ovh.org/files/pI1.png);   
-对于正电荷氨基酸:![](http://isoelectric.ovh.org/files/pI2.png).
 
-C(Cys, -SH),D(Asp, alpha酸),E(Glu,beta酸),H(His,咪唑),K(Lys,4C-胺),R(Arg,3C-胍),Y(Tyr,酚)
+- 对于负电荷氨基酸:![](http://isoelectric.ovh.org/files/pI1.png);   
+- 对于正电荷氨基酸:![](http://isoelectric.ovh.org/files/pI2.png).
+- 酸性AA:pka小到大:D(Asp, alpha酸),E(Glu,beta酸),C(Cys, -SH),Y(Tyr,酚);碱性AA:pka小到大:H(His,咪唑),K(Lys,4C-胺),R(Arg,3C-胍).
 
 [ExPASy tool-Compute pI/Mw](http://web.expasy.org/compute_pi/)
 [Prot pi](https://www.protpi.ch/Calculator/ProteinTool)

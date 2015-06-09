@@ -15,4 +15,9 @@ comments: yes
 [高级Bash脚本编程指南](/pdf/book/高级Bash脚本编程指南.pdf)
 - Paper:    
 [NAR-2003-3982-Sali](/pdf/reference/NAR-2003-3982-Sali.pdf)
+[pI-1](/pdf/reference/pI-1.pdf)
+[pI-2](/pdf/reference/pI-2.pdf)
+[pI-3](/pdf/reference/pI-3.pdf)
+[pI-4](/pdf/reference/pI-4.pdf)
+[pI-5](/pdf/reference/pI-5.pdf)
 
