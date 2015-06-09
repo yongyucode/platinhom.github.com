@@ -2,11 +2,10 @@
   font-family: FontAwesome;
   text-align: center;
   font-size: 14px;
-  width: 14px;
-  height: 14px;
-  padding: 20px 15px;
+  width: 5px;
+  height: 5px;
+  padding: 5px 5px;
   position: absolute;
-  cursor: pointer;
 }
 
 #sub-nav {
