@@ -7,6 +7,7 @@ comments: yes
 ## The files were collected from Internet. If they violate your right, please contact me by [e-mail](mailto:zhaozxcpu@hotmail.com).
 - Manual:    
 [Gaussian 09 使用手册目录](/pdf/manual/Gaussian 09 使用手册目录.pdf)
+[VMD-UG](/pdf/manual/VMD-UG.pdf)
 [amber9](/pdf/manual/amber9.pdf)
 [modeller_manual](/pdf/manual/modeller_manual.pdf)
 - Book:    
