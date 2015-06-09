@@ -31,10 +31,52 @@ tags: Shell
 
 判断文件类型可以使用`file filename` 来判断.msys显示echo出来中文输出格式为`ISO-8859 text`
 
-好了,以下是脚本,仅供参考
+好了,以下是脚本,仅供参考.
 
 ~~~~ bash
+#! /bin/bash
+# Author: Platinhom
+# Last updated:2015.6.9
 
+# To list all the pdf file into the index.md file.
+# Notice the encoding problem. http://platinhom.github.io/2015/06/09/msys-utf8-problem/
+
+echo "---">index.md
+echo "title: PDF">>index.md
+echo "layout: page">>index.md
+echo "comments: yes">>index.md
+echo "---">>index.md
+echo "">>index.md
+
+echo "- Manual:    ">>index.md
+for files in manual/*.pdf
+do
+filename=${files##*/}
+echo "[${filename%.*}](/pdf/${files})" >> index.md
+done
+
+echo "- Book:    ">>index.md
+for files in book/*.pdf
+do
+filename=${files##*/}
+echo "[${filename%.*}](/pdf/${files})" >> index.md
+done
+
+echo "- Paper:    ">>index.md
+for files in reference/*.pdf
+do
+filename=${files##*/}
+echo "[${filename%.*}](/pdf/${files})" >> index.md
+done
+
+echo "">>index.md
+
+## replace the gbk encoding file.
+if [ ! -z "`file index.md|grep ISO-8859`" ];then
+iconv -f GBK -t UTF-8 index.md > index-2.md
+rm index.md
+mv index-2.md index.md
+fi
 
 ~~~~
 

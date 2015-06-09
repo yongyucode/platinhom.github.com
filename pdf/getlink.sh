@@ -3,7 +3,7 @@
 # Last updated:2015.6.9
 
 # To list all the pdf file into the index.md file.
-# Notice the encoding problem. http://platinhom.github.io/2015/06/09/msys-utf8-problem.html
+# Notice the encoding problem. http://platinhom.github.io/2015/06/09/msys-utf8-problem/
 
 echo "---">index.md
 echo "title: PDF">>index.md
@@ -37,7 +37,7 @@ done
 
 echo "">>index.md
 
-
+## replace the gbk encoding file.
 if [ ! -z "`file index.md|grep ISO-8859`" ];then
 iconv -f GBK -t UTF-8 index.md > index-2.md
 rm index.md
