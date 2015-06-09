@@ -9,6 +9,7 @@ tags: Shell
 # UTF-8 encoding error when using MSYS for Github
 
 今天写个脚本处理自动根据文件夹内PDF文件来编写页面的脚本.出现了以下问题:
+
 > Page Build failure. The page build failed with the following error: The file `index.md` is not properly UTF-8 encoded. For more information, see ...
 
 在开始, 以为是网页没有使用UTF8编码原因, 因为附带的链接告诉你添加在`_config.yml`中添加"encoding: UTF-8". 我按照他做了. But it fails. 追踪下来, 虽然我的config里没有加入该项,但我在网页模板中加入了`<meta http-equiv="content-type" content="text/html; charset=utf-8" />` 所以理论上是等价的.
