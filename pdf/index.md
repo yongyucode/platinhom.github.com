@@ -6,8 +6,8 @@ comments: yes
 
 [mou.pdf](/pdf/mou.pdf)
 [manual/Exploring Chemistry with Electronic Structure Method -Chinese.pdf](/pdf/manual/Exploring Chemistry with Electronic Structure Method -Chinese.pdf)
-[manual/Gaussian 09 使用手册目录.pdf](/pdf/manual/Gaussian 09 使用手册目录.pdf)
+[manual/Gaussian 09 浣跨敤鎵嬪唽鐩綍.pdf](/pdf/manual/Gaussian 09 浣跨敤鎵嬪唽鐩綍.pdf)
 [manual/amber9.pdf](/pdf/manual/amber9.pdf)
 [manual/modeller_manual.pdf](/pdf/manual/modeller_manual.pdf)
-[manual/高级Bash脚本编程指南.pdf](/pdf/manual/高级Bash脚本编程指南.pdf)
+[manual/楂樼骇Bash鑴氭湰缂栫▼鎸囧崡.pdf](/pdf/manual/楂樼骇Bash鑴氭湰缂栫▼鎸囧崡.pdf)
 [reference/NAR-2003-3982-Sali.pdf](/pdf/reference/NAR-2003-3982-Sali.pdf)
