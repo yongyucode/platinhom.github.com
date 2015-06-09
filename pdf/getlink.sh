@@ -12,5 +12,3 @@ for files in *.pdf */*.pdf
 do
 echo "[${files}](/pdf/${files})" >> index.md
 done
-
-ls */*.pdf >>index.md
