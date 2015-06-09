@@ -15,7 +15,7 @@ comments: yes
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/)
 
 ### Good Blogs
-- [哲科文](http://jerkwin.github.io/) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/)
+- [哲科文](http://jerkwin.github.io/) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/)
 
 ### Sciences
 - [Amber](http://ambermd.org/) ; [DOCK](http://dock.compbio.ucsf.edu/) ; 
