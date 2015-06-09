@@ -7,6 +7,11 @@
 <link href="/images/header.jpg" rel="shortcut icon" type="image/x-icon" />
 <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
 <link rel="stylesheet" href="/jscss/MDprism.css">
+
+
+
+
+
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -20,8 +25,22 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
-<div id="container"><div id="main" role="main">
-<header><div class="buttons">
+<div id="container">
+
+<div>
+<nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="Search"></a></nav>
+<div id="search-form-wrap"><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://platinhom.github.io"></form></div>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<script src="/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/js/jquery.fancybox.css" type="text/css">
+ <script src="/js/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+</div>
+
+
+<div id="main" role="main">
+<header>
+<div class="buttons">
 <a href="/" title="Go to homepage">Home</a>
 <a href="/pages/categories" title="Category" >Category</a>
 <a href="/pages/tags" title="Tag Cloud" >Tags</a>
@@ -29,7 +48,9 @@ var _hmt = _hmt || [];
 <a href="/pages/links" title="Links" >Link</a>
 <a href="/pages/about" title="About" >About</a>
 <a href="/pages/feed" title="Subscribe by RSS" >RSS</a>
-</div><h1>{{ page.title }}</h1></header>
+</div>
+
+<h1>{{ page.title }}</h1></header>
 <hr><article class="content">{{ content }}</article></div>
 <footer><p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - {{site.time | date:"%Y"}} by <a href="http://platinhom.github.io/pages/about/">Hom</a> | <span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
 <span id="busuanzi_container_site_pv">本站<a href="http://ibruce.info/2015/04/04/busuanzi">总访问量</a><span id="busuanzi_value_site_pv"></span>次,</span><span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人</span>
