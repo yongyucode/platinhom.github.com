@@ -14,7 +14,7 @@ tags: 网页
 1. 首先,得有Google账户.其次,到[Google Analytics](http://www.google.com/analytics/ce/mws/) 上注册(Access Google Analytics).
 2. 新建用户,跟踪内容网站,设置好主页和网站名(随便起)后即可.
 3. 随后,会处在跟踪代码中.会看到跟踪ID,和下面一段代码.将代码添加到页面代码中.最好是添加到页头模板页面中(github的_layout里的相应文件).添加后更新你的网站.
-4. 更新
+4. 随后就可以在报告中看到情况了!
 
 ### Baidu Tongji
 1. 首先去 [百度统计](http://tongji.baidu.com/web/welcome/login) 注册账号(不同于一般百度账号). 点击注册, 注册百度统计站长版.
