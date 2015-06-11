@@ -3,7 +3,7 @@ layout: post
 title: Shell中date命令用法
 date: 2015-06-07 10:32:12
 categories: CompSci
-tags: Shell
+tags: Shell Bash Github
 ---
 
 由于想自动化创建markdown模板用于写blog, 需要调用date命令来完成, 在此复习一下吧.
@@ -85,7 +85,7 @@ date -d "Dec 5, 2009 12:00:37 AM 2 year ago" +"%Y-%m-%d %H:%M.%S" ###2007-12-05 
 `date -s "01:01:01 2012-05-23"`
 `date -s "01:01:01 20120523"`
 
-## 自动创建带有时间的markdown模板的脚本
+## 自动创建带有时间的Github Pages的markdown模板的脚本
 ~~~~ bash
 #! /bin/bash
 # Author: PlatinHom

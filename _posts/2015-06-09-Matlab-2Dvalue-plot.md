@@ -3,7 +3,7 @@ layout: post
 title: Matlab的2维值图
 date: 2015-06-09 01:38:25
 categories: MathStat
-tags: Mathlab
+tags: Mathlab 数据分析
 ---
 
 很多时候, 我们需要二维的图,x y轴为不同考察对象,而值以颜色显示.
