@@ -72,7 +72,7 @@ category: "Github"
 - 避免产生bug和冲突.请阅读一些注意事项[Page构建失败](https://help.github.com/articles/troubleshooting-github-pages-build-failures/). 其中,例如避免两文章时间完全一致,避免文章中有语法错误(尤其markdown)等比较重要.
 
 ### 更多功能
-- **评论**: 推荐使用国内的duoshuo[介绍](http://wenva.github.io/%E6%8A%80%E5%B7%A7/2015/04/29/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html)或者disqus
+- **评论**: 推荐使用国内的duoshuo[介绍](http://wenva.github.io/%E6%8A%80%E5%B7%A7/2015/04/29/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html)或者[disqus](https://disqus.com/)
 - 分类
 - 搜索栏
 - 友情链接
