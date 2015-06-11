@@ -9,7 +9,8 @@ tags: Python 计算生物
 
 ### Python script
 Now only support mol2, pdb, pqr
-~~~~
+
+~~~~ python
 #! /usr/bin/env python
 # -*- coding: utf8 -*-
 # Author: Platinhom; Last Updated: 2015-06-12
