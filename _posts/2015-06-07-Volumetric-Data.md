@@ -15,7 +15,7 @@ tags: 计算生物 数据分析 Fortran
 -------
 
 ### 文件格式介绍
-- 电镜数据以volumetric data形式储存, 即3D空间网格grids形式储存.电镜数据可以通过[EMDatabank](http://emdatabank.org/)中获得. 以下以[EMD2936](http://emsearch.rutgers.edu/atlas/2936_mapparams.html)为例介绍.
+- 电镜数据以volumetric data形式储存, 即3D空间网格grids形式储存.电镜数据可以通过[EMDatabank](http://emdatabank.org/)中[搜索](http://www.emdatabank.org/search.html)获得. 以下以[EMD2936](http://emsearch.rutgers.edu/atlas/2936_mapparams.html)为例介绍.
   - 数据在网格立方体中储存,其中包含有数个等大小的正方体,边长为数据中`Voxel spacing`的值(一般是正立方体),也就是常说的网格大小`grid szie`.网格大小是真实空间的大小.
   - 网格立方体各边长X,Y,Z,共`X*Y*Z`个小正方体,也可以认为是多少个像素点,这里是`Dimensions(Voxels)`的值.所以整个电镜数据大小是`grid size^3 * (x*y*z)`
   - Origin储存数据开始于真实空间那个位置开始,例如-39表示`-39*gridsize`的空间坐标.
@@ -114,6 +114,8 @@ Map文件可以用Chimera直接打开. 随后出现Volume Viewer,可以看到不
 - 使用Chimera读入,使用`Volume Filter`进行简单操作,包括高斯光滑化,傅里叶变化,简单的数值变化(scale,可加减乘除),格点变换(bin).最后对map重新保存.
 - 使用Chimera读入,使用命令[vop](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/vop.html)进行操作,包括两个map的加减操作,插值等.
 - 更多可视化操作来选择区域数据并删减,可以用Chimera进行,包括`volume eraser`选择区域删除(快捷键es,删除外部eo);选择subregion后用快捷键eb删除;用`Segment map`区块化后选择删除等.
+
+### [电镜相关软件](http://www.emdatabank.org/emsoftware.html)
 
 该blog只作个初步简介.随后会进一步介绍如何可视化map数据以及如何用Chimera进行数据操作.
 To be continued....
