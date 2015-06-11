@@ -14,7 +14,7 @@ layout: page
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/)
 
 ### Good Blogs
-- [哲科文](http://jerkwin.github.io/) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/)
+- [哲科文](http://jerkwin.github.io/) ; [懒猪](../about/log.html) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/)
 
 ### Sciences
 - [Amber](http://ambermd.org/) ; [DOCK](http://dock.compbio.ucsf.edu/) ; 
@@ -24,5 +24,4 @@ layout: page
 - [McCammon@UCSD](http://mccammon.ucsd.edu/) ; [Brooks@UM](http://brooks.chem.lsa.umich.edu/) ; [DavidCase@Rutgers](http://casegroup.rutgers.edu/) ; [Merz@MSU](http://www.merzgroup.org/);
 - [Sali@UCSF](http://salilab.org/index.html) ; [DavidBaker@WU](http://www.bakerlab.org/) ; [Y.Zhang@UM](http://zhanglab.ccmb.med.umich.edu/); 
 
-### Find Me in:
-- [Weibo](http://weibo.com/234020806/) ; [维护日志](../about/log.html)
+

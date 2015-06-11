@@ -11,3 +11,5 @@ Computation related sciences need to remember lots of information. Here I just p
 
 Welcome to give your valuable comments or m_a_i_l to me :zhaozx(a-t)hotmail.com !    
     
+### Find Me in:
+- [Weibo](http://weibo.com/234020806/)
