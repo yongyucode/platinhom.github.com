@@ -7,8 +7,7 @@ tags: Python 计算生物
 ---
 ## Extract the coordinates from molecular files.
 
-Extracting the atomic coordinates (X,Y,Z) from molecular files is often performed before we use some program.  
-This script could be used to do so! 
+Extracting the atomic coordinates (X,Y,Z) from molecular files is often performed before we use some program. This script could be used to do so! 
 
 ### Python script
 Now only support mol2, pdb, pqr   
