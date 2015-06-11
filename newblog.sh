@@ -21,14 +21,17 @@ if [ -z $3 ];then
 tag="Other"
 fi
 
+#My blog use GMT+8:00 time zone-China
+today=`date -u -d "+8 hour" +"%Y-%m-%d"`
 
-today=`date +%Y-%m-%d`
-now=`date "+%Y-%m-%d %H:%M:%S"` 
+#In github's jekyll,you should enter GMT time (time zone UTC(+0:00))
+nowGMT=`date -u +"%Y-%m-%d %H:%M:%S"`
+ 
 touch _posts/"${today}-${title}.md"
 echo "---" >>_posts/"${today}-${title}.md"
 echo "layout: post" >>_posts/"${today}-${title}.md"
 echo "title: $title" >>_posts/"${today}-${title}.md"
-echo "date: $now" >>_posts/"${today}-${title}.md"
+echo "date: $nowGMT" >>_posts/"${today}-${title}.md"
 echo "categories: $category" >>_posts/"${today}-${title}.md"
 echo "tags: $tag" >>_posts/"${today}-${title}.md"
 echo "---" >>_posts/"${today}-${title}.md"

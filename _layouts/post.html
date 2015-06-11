@@ -13,7 +13,6 @@ comment: true
 <span class="author">Contact: <a href="http://platinhom.github.com/pages/about">{{ site.author }}</a> </span>
 <span class="time"> / <time datetime="{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}</time> </span>
 <span id="busuanzi_container_page_pv">已阅读(<span id="busuanzi_value_page_pv"></span>)</span><br/>
-<span class="license">版权: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>&nbsp;</span>
 {% if page.categories %}<span class="categories">类别:
 {% for cat in page.categories %} <a href="/pages/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;{% endfor %}</span>
 {% endif %}
