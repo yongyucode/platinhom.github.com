@@ -1,6 +1,6 @@
 ---
 title: 类别
-layout: page
+layout: page_small
 ---
 
 <div id='tag_cloud'>
