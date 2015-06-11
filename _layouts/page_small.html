@@ -1,0 +1,12 @@
+---
+layout: default
+comment: true
+---
+
+<section class="post" font-size=18px>
+{{ content }}
+</section>
+{% if page.comment %}
+{% include comments.md %}
+{% endif %}
+
