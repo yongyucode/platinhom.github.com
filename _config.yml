@@ -10,3 +10,28 @@ encoding: "utf-8"
 
 # Outputting
 timezone:      America/Detroit
+
+###User define variants
+#googleAnaly, your id link UA-12345678-X
+googleAnaly:
+  config: true
+  id: UA-63959820-1
+
+#baidu tongji
+baiduTongji:
+  config: true
+  id: 07b65937d246126401c393da419d851e
+
+#comment config
+disqus:
+  config: false
+  id: platinhom
+
+duoshuo:
+  config: true
+  id: platinhom
+  
+#baidu share config
+baiduShare:
+  config: false
+  
