@@ -3,7 +3,7 @@ layout: post
 title: 美国考驾照笔试注意点
 date: 2015-06-08 04:04:36
 categories: Other
-tags: 其他
+tags: 生活
 ---
 
 ### 基础常识

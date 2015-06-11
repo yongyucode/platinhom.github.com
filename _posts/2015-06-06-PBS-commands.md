@@ -2,10 +2,8 @@
 layout: post
 title: PBS集群相关命令
 date: 2015-06-06 21:11:11
-categories:
-- CompSci
-tags:
-- Shell
+categories: CompSci
+tags: Shell 集群
 ---
 
 
