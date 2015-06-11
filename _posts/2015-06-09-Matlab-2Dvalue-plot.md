@@ -61,7 +61,10 @@ handleN=imagesc(B');
 title(strrep(filee,'_','-'));
 xlabel('Density');
 ylabel('Time');
-set(gca,'YDir','normal')
+%reverse the Y axis
+set(gca,'YDir','normal');
+%set up the colorbar range
+%set(gca, 'CLim', [0 20]);
 colorbar
 saveas(handleN, [filee,'.png'], 'png');
 ~~~~
@@ -70,7 +73,8 @@ saveas(handleN, [filee,'.png'], 'png');
 - part2 计算出每列最值和interval,算出帧数
 - `imagesc`用来出图,这里对矩阵转置,注释掉一句用于出局部数据.
 - `strrep`为了防止标题中`_`会作为下标指示符而进行替换.
-- `set`一句用来反转Y轴坐标.
+- `set (gca,'YDir','normal')`一句用来反转Y轴坐标.
+- `set(gca, 'CLim', [0 20]);`一句用来控制colorbar的值范围.
 - `colorbar`用来出色带.
 
 出图结果如下:
