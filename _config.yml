@@ -24,7 +24,7 @@ baiduTongji:
 
 #comment config
 disqus:
-  config: true
+  config: false
   id: platinhom
 
 duoshuo:
