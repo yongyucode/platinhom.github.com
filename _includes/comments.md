@@ -16,15 +16,46 @@
 
 <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ site.url }}{{ page.url | remove:'index.html' }}"></div>
 
-<script>
-var duoshuoQuery = {short_name:"platinhom"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		//ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.src='/jscss/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
+{% if page.comment %}
+	{% if site.disqus.config %}
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		//disqus
+		var disqus_shortname = '{{ site.disqus.id }}';
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] ||
+				document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	{% else %}
+		{% if site.duoshuo.config %}
+			<script type="text/javascript">
+			var duoshuoQuery = {short_name:"{{ site.duoshuo.id }}"};
+				(function() {
+					var ds = document.createElement('script');
+					ds.type = 'text/javascript';ds.async = true;
+					//ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+					ds.src='/jscss/embed.js';
+					ds.charset = 'UTF-8';
+					(document.getElementsByTagName('head')[0]
+					 || document.getElementsByTagName('body')[0]).appendChild(ds);
+				})();
+			</script>
+		{% endif %}
+	{% endif %}
+{% endif %}
+{% if site.baiduShare.config %}
+	<script>
+		window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["weixin","douban","tsina","tqq","renren","mail"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","douban","tsina","tqq","renren","mail"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	</script>
+{% endif %}
+
+
+
+
+
+
+
+
