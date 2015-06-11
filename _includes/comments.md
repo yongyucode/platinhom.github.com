@@ -13,9 +13,6 @@
  </div>
 
 <section class="comment">
-
-<div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ site.url }}{{ page.url | remove:'index.html' }}"></div>
-
 {% if page.comment %}
 	{% if site.disqus.config %}
 	<div id="disqus_thread"></div>
@@ -31,6 +28,7 @@
 	</script>
 	{% else %}
 		{% if site.duoshuo.config %}
+		<div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ site.url }}{{ page.url | remove:'index.html' }}"></div>
 			<script type="text/javascript">
 			var duoshuoQuery = {short_name:"{{ site.duoshuo.id }}"};
 				(function() {
@@ -46,13 +44,13 @@
 		{% endif %}
 	{% endif %}
 {% endif %}
+
 {% if site.baiduShare.config %}
 	<script>
 		window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["weixin","douban","tsina","tqq","renren","mail"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","douban","tsina","tqq","renren","mail"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 	</script>
 {% endif %}
-
-
+</section>
 
 
 
