@@ -1,6 +1,6 @@
 ---
 title: 云标签
-layout: page-small
+layout: page_small
 ---
 
 <div id='tag_cloud'>
