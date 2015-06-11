@@ -8,8 +8,8 @@ paginate: 25
 auto: true
 encoding: "utf-8"
 
-# Outputting
-timezone:      America/Detroit
+# Time Zone +8 China
+timezone:      Asia/Shanghai
 
 ###User define variants
 #googleAnaly, your id link UA-12345678-X
