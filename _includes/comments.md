@@ -14,6 +14,7 @@
 
 <section class="comment">
 {% if page.comment %}
+	<div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ site.url }}{{ page.url | remove:'index.html' }}"></div>
 	{% if site.disqus.config %}
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
