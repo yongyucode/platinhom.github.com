@@ -10,7 +10,7 @@ layout: page
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
 - [Linux指令查询](http://man.linuxde.net/)
 
-### Often Visit
+### Fun
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/)
 
 ### Good Blogs
@@ -25,4 +25,4 @@ layout: page
 - [Sali@UCSF](http://salilab.org/index.html) ; [DavidBaker@WU](http://www.bakerlab.org/) ; [Y.Zhang@UM](http://zhanglab.ccmb.med.umich.edu/); 
 
 ### Find Me in:
-- [Weibo](http://weibo.com/234020806/) 
+- [Weibo](http://weibo.com/234020806/) ; [维护日志](../about/log/)
