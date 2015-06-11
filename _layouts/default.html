@@ -67,6 +67,7 @@
 
         {% if page.comment %}
             {% if site.disqus.config %}
+			<div id="disqus_thread"></div>
             <script type="text/javascript">
                 //disqus
                 var disqus_shortname = '{{ site.disqus.id }}';
