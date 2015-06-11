@@ -1,7 +1,6 @@
 ---
 title: 关于我
 layout: page
-comment: yes
 ---
 
 >Love science, love your own life. Just do what you like!
