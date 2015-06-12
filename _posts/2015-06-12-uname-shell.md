@@ -26,9 +26,10 @@ tags: Shell Bash IT技术
       --help     显示此帮助信息并离开
       --version  显示版本信息并离开
 ~~~~
-注意:在Mac中,`-s`输出是操作系统,和linux基本一致. 没有了-i,-o选项
+注意:在Mac中,`-s`输出是操作系统,和linux基本一致. 没有了`-i,-o`选项
 
 Mac版本(默认是`-s`):
+
 ~~~~
      uname -- Print operating system name
 SYNOPSIS
