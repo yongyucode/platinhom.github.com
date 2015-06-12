@@ -28,7 +28,7 @@ tags: C++ IT技术
 条件语句的宏, `#ifdef macro`等价于`#if define(macro)`
 
 ### include
--`#include <iostream>或"hi.h"`    载入头文件,头文件内容将插入到此处.<>和""区别在于前者首先搜索系统路径,后者搜索当前文件夹. C++新的标准头文件没有.h后缀.
+- `#include <iostream>或"hi.h"`    载入头文件,头文件内容将插入到此处.<>和""区别在于前者首先搜索系统路径,后者搜索当前文件夹. C++新的标准头文件没有.h后缀.
 
 ### error
 - `#error token-sequence` : 编译时输出编译错误信息token-sequence
