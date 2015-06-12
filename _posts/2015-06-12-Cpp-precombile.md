@@ -53,4 +53,6 @@ _cplusplus    编译C++程序时定义
 __STDC__    编译C时定义(C++也可能定义,编译器相关)
 ~~~~
 
+TODO: to finish all the commands and options.
+
 ---
