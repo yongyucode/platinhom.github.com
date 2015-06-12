@@ -27,7 +27,7 @@ tags: 生活
 - 收到邮件第三个状态 `Original Passport Request`,里面会叫你去[加拿大签证申请中心](https://www.csc-cvac.com/en-US/selfservice/cvac_application_processing)看看.OK,准备下一步要准备的东东.
 1. 护照原件
 2. 在新状态下下载的requesting letter（自己打印出来）
-3. VAC Consent Form (http://csc.public.s3.amazonaws.com/checklists/US/en/General/Consent_Form.pdf) VAC就是加拿大签证申请的意思.
+3. [VAC Consent Form](http://csc.public.s3.amazonaws.com/checklists/US/en/General/Consent_Form.pdf) VAC就是加拿大签证申请的意思.
 4. VAC服务费: 时间不同费用也不同. 可以使用bank draft, cashier’s cheque, certified cheque, or money order等,和其他资料一起寄过去.
 `The fee for the VAC service is US $37.72.` 我选择了money order,去银行开.在money order上填写CSCConsular Services Inc.，然后把money order寄到后面的CSCConsular Services Inc.地址.请注意，在你的money order后面要用铅笔写上你的全名。而且要有留一份money order的复印件，和前面的四样东西一起寄到纽约签证中心.
 5. USPS和一个已经付款的回邮信封.一般用priority mail 发就可以了,加快可以用priority express mail(来回40刀). 将上述几样东东一起寄到纽约或洛杉矶的签证中心.
@@ -42,6 +42,7 @@ Philadelphia, PA 19178-3352
 ~~~~
 
 纽约签证
+
 ~~~~
 Visa Application Centre
 290 Madison Ave, 2nd fl.
