@@ -43,10 +43,14 @@ DESCRIPTION
              communications network).
      -p      print the machine processor architecture name.
      -r      print the operating system release.
+	 -s      print the operating system name.
+	 -v      print the operating system version.
 ~~~~
 
 ## `arch`: print machine hardware name (same as `uname -m`)
 特殊的uname指令专用于硬件架构(32位 or 64位).一般是`x86_64`,`i386`这样. Mac中有更多选项.
+
+###  以下小脚本内容用于系统判断的示例
 
 ~~~~ bash
 sysOS=`uname -s`
