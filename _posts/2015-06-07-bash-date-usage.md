@@ -12,14 +12,16 @@ tags: Shell Bash Github
 获取当前或指定时候的时间; 或者设置时间(需要root权限). 请注意Mac中date的选项有极大差异,但依旧支持当今时间格式化直接输出.
 
 ## 选项
+
 ~~~~
 不加: 显示当前的时间.
--d<字符串>：显示字符串所指的日期与时间。字符串前后必须加上双引号； 
--s<字符串>：根据字符串来设置日期与时间。字符串前后必须加上双引号； 
+-d <字符串>：显示字符串所指的日期与时间。字符串前后必须加上双引号； 
+-s <字符串>：根据字符串来设置日期与时间。字符串前后必须加上双引号； 
 -u：显示GMT； 
 --help：在线帮助； 
 --version：显示版本信息。
 ~~~~
+在MacOS中,时间差需要用`-v 8H`这样不同于一般Linux,时间指定为`y, m, w, d, H, M, S`.参见-d下面的讨论.
 
 ## 参数 <+时间日期格式>：指定显示时使用的日期时间格式。
 就是格式化字符串处理.当需要用到空格时要使用双引号,如`"+%Y-%m-%d %H:%M:%S"`.
@@ -111,8 +113,13 @@ tag="Other"
 fi
 
 #My blog use GMT+8:00 time zone-China
-today=`date -u -d "+8 hour" +"%Y-%m-%d"`
-
+# For MacOS
+if [ `uname -s` == "Darwin" ];then
+	    today=`date -u -v "+8H" +"%Y-%m-%d"`
+# Other OS
+else
+		today=`date -u -d "+8 hour" +"%Y-%m-%d"`
+fi
 #In github's jekyll,you should enter GMT time (time zone UTC(+0:00))
 nowGMT=`date -u +"%Y-%m-%d %H:%M:%S"`
  

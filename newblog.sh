@@ -22,7 +22,13 @@ tag="Other"
 fi
 
 #My blog use GMT+8:00 time zone-China
-today=`date -u -d "+8 hour" +"%Y-%m-%d"`
+# For MacOS
+if [ `uname -s` == "Darwin" ];then
+	today=`date -u -v "+8H" +"%Y-%m-%d"`
+# Other OS
+else
+	today=`date -u -d "+8 hour" +"%Y-%m-%d"`
+fi
 
 #In github's jekyll,you should enter GMT time (time zone UTC(+0:00))
 nowGMT=`date -u +"%Y-%m-%d %H:%M:%S"`
