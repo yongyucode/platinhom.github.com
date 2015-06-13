@@ -306,7 +306,7 @@ diagonal 斜的; intoxicated喝醉的;  Slippery 打滑的;
 　　(c) Speed up to the entrance only after you have found a gap in traffic.
 　　(d) Come to a complete stop before entering the interstate.
 
-	42. If there is a short entrance to an interstate where there is no acceleration lane, you should
+	c 42. If there is a short entrance to an interstate where there is no acceleration lane, you should
 　　(a) stop and look for a gap in traffic.
 　　(b) pick up speed to match traffic.
 　　(c) speed up on the entrance only if you have found a gap in traffic.
