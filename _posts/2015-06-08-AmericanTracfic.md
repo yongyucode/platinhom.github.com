@@ -54,26 +54,31 @@ tags: 生活
 - 蓝底牌:指示设施,H是医院,电话标志,Rest Area服务区
 - 公路指示:蓝盾:interstate; 绿盾:Off-Interstate Business;白盾黑底:U.S.route; 圆形黑底:state route;黑底白菱形:城市道路
 
+### 一些英文词汇
+lane: 车道; passing lane: 超车道, Oncoming Lane:对向车道;   
+freeway/highway: 高速公路; sidewalk,pavement:人行道;  
+driveway: (私人)车道,如车库前的路.  
+fire lane:救火通道,不能停车,不能堵塞.  
+Loop Route:环回公路;Spur Route:支线公路;  
+ramp弯道匝道停车场;  
+intersection,crossroad:交叉路口;   
+barricade 障碍物;curb路缘路边; 
+vehicle 机动车;fire engine消防车; motocycle摩托车;School Bus 校车    
+Wheel Steering 方向盘; Windscreen风挡;Brake刹车; accelerator:加速器,油门;gas pedal油门;Rearview/Rear-vision/Wing Mirror:后视镜; horn:喇叭;trunk:后备箱;Engine Hood引擎盖;  
+headlights前灯大灯, high beam远光灯, low beam近光灯.  
+signal lamp信号灯;  
+Lash Light:闪灯,如警车校车救护车等.  
+Blind Spot 盲点;  
+yield: 让行;Pedestrian 行人,路人;  
+skid:打滑;lat tire or blow out 爆胎;   
+diagonal 斜的; intoxicated喝醉的;  Slippery 打滑的;  
 
-driveway: (私人)车道,如车库前的路.
-sidewalk,pavement:人行道;
-fire lane:救火通道,不能停车,不能堵塞.
-Loop Route:环回公路;
-Spur Route:支线公路;
-Oncoming Lane:对向车道;
-Lash Light:闪灯,如警车校车救护车等.
-diagonal 斜的; barricade 障碍物;curb路缘路边; 
-vehicle 机动车;fire engine消防车;
-intoxicated喝醉的;
-Wheel Steering 方向盘; Windscreen风挡;Brake刹车;ramp弯道匝道停车场;signal lamp信号灯;horn:喇叭;trunk:后备箱;Engine Hood引擎盖;skid:打滑;
-accelerator:加速器,油门;gas pedal油门;Rearview/Rear-vision/Wing Mirror:后视镜;
-Blind Spot 盲点;
-headlights前灯大灯,high beam远光灯,low beam近光灯.
-lat tire or blow out 爆胎;
 
-今天去考了笔试了, 要准备passport, DS2019/I20, SSN, 2份证明你是密西根居民的(房租租约啊,银行账单啊都可以), 25刀. 到步后先去服务台拿个申请表格, 填一些个人资料和选一些选项, 其中身高是feet inch表示(170对应67 inch),体重一般是LB. 拿小纸条排队后等轮到你后到服务台,跟他说take the writing test for driving license, 然后会收走你的资料, 问你是否要参加笔试等等简单问题.完后就会发一份试题, 到旁边自己做去. 40条选择题目, 10条路标题, 我没有看下面的中文版试题吃亏了,错了7道选择1道路标,然后就pass了.稍等随便找个服务台把题目交给他,他打分后就会写到你的申请表格内,及格就会要你交25刀 permit的费用, 然后叫你做个视力测试问你是否要带眼镜, 回答always后就去看个小机器,看两行字读出来,然后两边闪一闪跟他说一下就OK了.permit拿到后,有半年有效期,1个月后可以参加路试,1个月时间必须你去练习驾驶不能跳过.一个月后就可以到指定地方参加驾考了. That's OK. 如果缺了资料的话,没关系,他会给你一张return的纸,下次再来凭纸直接去Return牌的地方排队就可以了,不用再拿号了.
+### 需要资料及笔试步骤
+2015-6-12: 今天去考了笔试了, 要准备** passport, DS2019/I20, SSN, 2份证明你是密西根居民的(房租租约啊,银行账单啊都可以), 25刀 **. 
+到步后先去服务台拿个申请表格, 填一些个人资料和选一些选项, 其中身高是feet inch表示(170对应67 inch),体重一般是LB. 拿小纸条排队后等轮到你后到服务台,跟他说take the writing test for driving license, 然后会收走你的资料, 问你是否要参加笔试等等简单问题.完后就会发一份试题, 到旁边自己做去. 40条选择题目, 10条路标题, 我没有看下面的中文版试题吃亏了,错了7道选择1道路标,然后就pass了.稍等随便找个服务台把题目交给他,他打分后就会写到你的申请表格内,及格就会要你交25刀 permit的费用, 然后叫你做个视力测试问你是否要带眼镜, 回答always后就去看个小机器,看两行字读出来,然后两边闪一闪跟他说一下就OK了.permit拿到后,有半年有效期,1个月后可以参加路试,1个月时间必须你去练习驾驶不能跳过.一个月后就可以到指定地方参加驾考了. That's OK. 如果缺了资料的话,没关系,他会给你一张return的纸,下次再来凭纸直接去Return牌的地方排队就可以了,不用再拿号了.
 
-一些试题.中文版题目里的今天Michigan的考试里很多都出现了.
+### 一些试题.中文版题目里的今天Michigan的考试里很多都出现了.
 
 ~~~~
 为大家收集的美国考驾照笔试题目102道，都附有答案，方便大家查阅。
