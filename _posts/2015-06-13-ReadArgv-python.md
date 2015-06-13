@@ -3,7 +3,7 @@ layout: post
 title: 读取命令行选项
 date: 2015-06-13 06:08:03
 categories: CompSci
-tags: Python Shell IT技术
+tags: Python Shell IT技术 Fortran C++
 ---
 
 - 从命令行输入参数选项是我们基本的程序互动内容,是基本的功能.调用命令行参数是第一个技能,分析命令行参数是第二步.每种不同语言的程序或脚本都具有读取命令行参数的功能.
@@ -11,7 +11,7 @@ tags: Python Shell IT技术
 ### Python: sys.argv
 sys库里的argv是所有命令行选项的列表.根据空格/tab来分隔来放置.第0个是脚本名字,1开始才是参数列表.所以参数个数是len(sys.argv)-1.第一个选项就是`sys.argv[1]`
 
-#### python例子 
+##### python例子 
 
 ~~~~ python
 #!/usr/bin/python
@@ -62,7 +62,7 @@ shell更为简单,就是调用变量`$1 $2 $3`这样子.
 - `$*` 传递给脚本或函数的所有参数。
 - `$@` 传递给脚本或函数的所有参数。被双引号包含时，`"$*"`表示所有参数作为一个整体,`"$@"`会表示逐个参数列出来,在for循环时很明显.
 
-#### Shell例子: 
+##### Shell例子: 
 
 ~~~~ bash
 #! /bin/bash
@@ -79,7 +79,7 @@ fi
 ### C++
 主要利用main函数的参数`main( int argc, char* argv[] )`.前者指明参数个数,后者是参数数组.
 
-#### CPP 参数分析器(对象化).
+##### CPP 参数分析器(对象化).
 
 ~~~~~ cpp
 #ifndef OPTPARSER_H
