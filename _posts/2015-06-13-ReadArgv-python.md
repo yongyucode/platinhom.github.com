@@ -60,6 +60,7 @@ shell更为简单,就是调用变量`$1 $2 $3`这样子.
 主要利用main函数的参数`main( int argc, char* argv[] )`.前者指明参数个数,后者是参数数组.
 
 #### CPP 参数分析器(对象化).
+
 ~~~~~ cpp
 #ifndef OPTPARSER_H
 #define OPTPARSER_H
