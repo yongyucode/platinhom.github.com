@@ -56,6 +56,20 @@ else:
 ### Shell
 shell更为简单,就是调用变量`$1 $2 $3`这样子.
 
+#### Shell例子: 
+
+~~~~ bash
+#! /bin/bash
+
+filename=$1
+if [ -f ${filename} ];then
+echo ${filename}
+echo "变量文件名: ${1%.*}"
+echo "变量文件所在目录: ${1%/*}"
+echo "变量文件的后缀名: ${1##*.}"
+fi
+~~~~
+
 ### C++
 主要利用main函数的参数`main( int argc, char* argv[] )`.前者指明参数个数,后者是参数数组.
 
