@@ -7,6 +7,7 @@ tags: Shell Bash
 ---
 
 ## 变量
+
 ### 变量赋值
 - 直接赋值: `var="abc"`
 - 通过命令返回: `` var=`date` ``或`var=$(date)`
