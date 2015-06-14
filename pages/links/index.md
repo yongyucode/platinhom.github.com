@@ -28,11 +28,11 @@ layout: page_small
 ### Inquiry
 - [Amazon](http://www.amazon.com/) ; [淘宝](http://www.taobao.com/) ; [京东](http://www.jd.com/) ; [Amazon.CN](http://www.amazon.cn/) ; [西贴](http://www.xitie.com/)
 - [megabus](http://us.megabus.com/) ; [greyhound](https://greyhound.com/) ; 
+- [Wikibooks](https://en.wikibooks.org/wiki/Main_Page);
 
 ### Fun
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/) ; 
 - [Chiphell](http://www.chiphell.com/forum.php)
-
 
 ### Good Blogs
 - [哲科文](http://jerkwin.github.io/) ; [懒猪](../about/log.html) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/)
