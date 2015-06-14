@@ -7,7 +7,7 @@
 
 title=$1
 category=$2
-tag=$3
+tag="${@:3}"
 
 if [ -z $1 ];then
 title="TempTitle-`date +%H%M%S`"

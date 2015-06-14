@@ -5,6 +5,7 @@ date: 2015-06-14 06:08:20
 categories: CompSci
 tags: Shell Bash
 ---
+这里暂时讨论只针对Bash及对应变体,csh等与bash差异较大,在此不讨论.
 
 ## 控制
 Bash支持if判断和case选择语句.

@@ -98,7 +98,7 @@ date -d "Dec 5, 2009 12:00:37 AM 2 year ago" +"%Y-%m-%d %H:%M.%S" ###2007-12-05 
 
 title=$1
 category=$2
-tag=$3
+tag="${@:3}"
 
 if [ -z $1 ];then
 title="TempTitle-`date +%H%M%S`"
