@@ -33,6 +33,24 @@ esac
 
 - `if [ true ];then`更常一句写完.
 - 判断条件expression和中括号之间要留有空格
+- case可以把 `1) commands ;;`写在一行.
+
+### 比较和判断
+
+- 数值比较:  
+`-eq` 等于, `-ne` 不等于, `-gt` 大于,`-ge` 大于等于,`-lt` 小于, `-le` 小于等于.  
+如`[ 3 -eq $mynum ]`,直接用数字
+
+- 字符串比较:  
+`-z` 空字符串; `-n` 非空字符串; `=`或`==` 字符串全等; `!=`字符串不等;`>,>=,<,<=` 字符串大小比较(按字符比较).  
+如`[ -z "$myvar" ]`,`[ "$myvar" = "one two three" ]`  
+一般加入**双引号**避免空格的干扰.
+
+- 文件判断  
+  - 一元判断符: `-e`或`-a`文件或文件夹存在; `-d` 文件夹; `-f` 文件; `-L`或`-h` 链接; `-s` 非空文件; `-w` 可写; `-r` 可读; `-x`可执行; `-b`二进制文件; `-c`字符型文件; `-u` 具suid;  
+  - 二元判断符: `f1 -nt f2`:文件1比文件2新(或文件2不存在); `f1 -ot f2`:文件2比文件1新(或文件1不存在)  
+
+更多与运算,test,`[[ ]]`差别用法请后续..
 
 ## 循环
 Bash支持`while do`循环和`for do`循环
@@ -88,6 +106,30 @@ find . -type f -iname '*.'${1}'' -exec ${@:2}  {} /; ;
 }
 # 所有sh文件进行775权限操作.
 batchexec sh chmod 755
+~~~
+
+~~~ bash
+# 根据文件名后缀进行解压,case的运用.
+function extract() { 
+    if [ -f $1 ] ; then 
+      case $1 in 
+        *.tar.bz2)   tar xjf $1     ;; 
+        *.tar.gz)    tar xzf $1     ;; 
+        *.bz2)       bunzip2 $1     ;; 
+        *.rar)       unrar e $1     ;; 
+        *.gz)        gunzip $1      ;; 
+        *.tar)       tar xf $1      ;; 
+        *.tbz2)      tar xjf $1     ;; 
+        *.tgz)       tar xzf $1     ;; 
+        *.zip)       unzip $1       ;; 
+        *.Z)         uncompress $1  ;; 
+        *.7z)        7z x $1        ;; 
+        *)     echo "'$1' cannot be extracted via extract()" ;; 
+         esac 
+     else 
+         echo "'$1' is not a valid file" 
+     fi 
+}
 ~~~
 
 ---
