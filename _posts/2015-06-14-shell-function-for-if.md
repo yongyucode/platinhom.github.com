@@ -58,7 +58,6 @@ done
 使用function fname{}方法定义.功能比较弱:返回值只能是整数,没有实际形参的定义.
 
 ~~~~ bash
-
 [function] fname[()]
 {
 echo $1 $2

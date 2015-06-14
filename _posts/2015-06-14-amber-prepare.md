@@ -52,16 +52,17 @@ for line in fi:
 	if len(line.split())>=4:
 		if line.split()[3]=='WAT':
 			# 记得ATOM后面两个空格
-			line=line.replace('HETATM','ATOM  ')		if line.split()[2]=='OW':
-			count=1
-			line=line.replace('OW','O ') #是O+空格
+			line=line.replace('HETATM','ATOM  ')
+			if line.split()[2]=='OW':
+				count=1
+				line=line.replace('OW','O ') #是O+空格
 		if line.split()[2]=='HW':
 			if count==1:
-			line=line.replace('HW','H1')
-			count=count+1
+				line=line.replace('HW','H1')
+				count=count+1
 			if count==2:
- 			line=line.replace('HW','H2')
-			count==0
+ 				line=line.replace('HW','H2')
+				count==0
 	fo.write(line)
 fi.close();fo.close()
 ~~~
