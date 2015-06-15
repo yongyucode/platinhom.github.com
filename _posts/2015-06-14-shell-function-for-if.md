@@ -104,6 +104,8 @@ done
 ~~~~
 
 - 在`for do`中,argument-list可以是"a b c"的字符串(如`$*`),可以是a b c的字符串列表(如`$@`), 可以是产生字符串的命令ls, 可以是`$*`所有参数,可以是通配符`*`等产生的结果, 或`$(command)`,或`$listvar`.
+- for循环中常配合`seq start interval end`产生数字串配合.
+- `for in`的in部分甚至可以用`*.txt`来获取所有txt,但小心空格!
 - 打断循环: `break`, `continue`
 
 ## 函数
