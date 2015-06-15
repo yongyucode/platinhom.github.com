@@ -7,8 +7,10 @@ tags: 计算生物
 ---
 
 ### PB-Based
+First finite-difference PB (FDPB) solver for irregular shape was constructed by Bashford and Karplus(Bashford-1990).
 
 [egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
+
 
 ### Force-Field Based
 
