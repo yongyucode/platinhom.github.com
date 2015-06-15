@@ -87,13 +87,19 @@ command && command1 || command2
 - `&&`与`||`接在命令后,表示命令返回正常(0)时则执行后续`&&`后命令,否则执行`||`后的命令.
 
 ## 循环
-Bash支持`while do`循环和`for do`循环
+Bash支持`while/until do`循环和`for do`循环
 
 ~~~~ bash
 ## while..do..done
 while [ expression ]  #可以true/false
 do
     commands
+done
+
+## until..do..done
+until [ expression ]  #可以true/false
+do
+	commands
 done
 
 ## for..do..done
