@@ -35,7 +35,7 @@ layout: page_small
 - [Chiphell](http://www.chiphell.com/forum.php)
 
 ### Good Blogs
-- [哲科文](http://jerkwin.github.io/) ; [懒猪](../about/log.html) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/)
+- [哲科文](http://jerkwin.github.io/) ; [懒猪](../about/log.html) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/) ; [团子运维](http://kodango.com/)
 
 ### Expert Group
 - [R.X.Wang@SIOC](http://www.sioc-ccbg.ac.cn/) ; [Houk@UCLA](http://www.chem.ucla.edu/houk/index.html) ; [Shiochet@UCSF](http://www.bkslab.org/index.php) ; [Voth@Chicago](https://vothgroup.uchicago.edu/) ; [WahChiu@BCM](https://www.bcm.edu/research/labs/wah-chiu);
