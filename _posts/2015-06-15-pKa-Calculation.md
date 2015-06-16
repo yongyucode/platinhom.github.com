@@ -34,7 +34,7 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 
 
 
-### Force-Field Based
+### Empirical/Scoring function Based
 
 - [PROPKA](https://github.com/jensengroup/propka-3.1)  
 Empirical pKa predictors based on physical description of the desolvation and dielectric response for the protein. Most update 3.0 reference: (Olsson-2011, Søndergaard-2011)
