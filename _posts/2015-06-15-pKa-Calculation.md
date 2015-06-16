@@ -14,7 +14,8 @@ Neilsen et al optimize the hydrogen-bond network in protein for PB-based pKa cal
 $$\alg \Delta G^o (A,HA) &= RT\ln 10 (pH-pK_a) \ealg$$  
 根据残基在溶液中一般pKa和在蛋白中pKa可以知道`pKa Shift=pKa'(protein)-pKa(solution)`,再根据该残基在两种状态的$\Delta G$可以知道:  
 
-$$\alg pK'_a = pKa + \frac{1}{RT \ln 10}[\Delta G_p (A,HA) - \Delta G_s (A,HA)]\ealg$$ ,其中s代表溶液状态,p代表蛋白状态.  
+$$\alg pK'_a = pKa + \frac{1}{RT \ln 10}[\Delta G_p (A,HA) - \Delta G_s (A,HA)]\ealg$$ ,其中s代表溶液状态,p代表蛋白状态. 
+ 
 计算从气相到溶液相的溶剂化能,根据热力学平衡有:  
 
 $$\alg \Delta G_s(HA,A) = -\Delta G_{g/s}(HA)+\Delta G_{g}(HA,A)+\Delta G_{g/s}(A)+\Delta G_{g/s}(H)\ealg$$  
