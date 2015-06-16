@@ -100,6 +100,7 @@ kill #终止进程,使用进程id
 nohup #在命令前使用,可以使进程在用户退出后依然运行
 sleep #暂停几秒
 wait #等待所有后台任务结束
+time #统计命令任务耗时
 crontab
 at
 ~~~
@@ -190,6 +191,7 @@ seq
 args
 cal
 nautilus #RHEL下的文件夹浏览器
+clear
 ~~~
 
 Ref:
