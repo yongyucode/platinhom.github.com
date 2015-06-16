@@ -24,6 +24,7 @@ layout: page_small
 - [Source Codes in F90](http://people.sc.fsu.edu/~jburkardt/f_src/f_src.html) ; [Fortran编程入门](http://micro.ustc.edu.cn/Fortran/ZJDing/) ;
 - [Scratch](https://scratch.mit.edu/) ;
 - [Github](https://github.com); [SourceForge](http://sourceforge.net/); [SegmentFault](http://segmentfault.com/)
+- [鸟哥私房菜](http://linux.vbird.org/)
 
 ### WebTools
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
