@@ -51,7 +51,7 @@ Consider side-chain ﬂexibility and use new scoring function incorporating a Co
 
 
 ## Reference
-<style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
+<style>ol li,ol li strong{font-size:16px;padding:0;margin:2px 0 2px 36px}</style>
 
 1. Donald Bashford and Martin Karplus. pKa’s of  Ionizable Groups in Proteins:  Atomic Detail from a Continuum Electrostatic Model. Biochemistry **1990**, 29, 10219-10225. [ref](/pdf/reference/pKa-pI/pKa-PB.pdf)
 2. An-Suei Yang, M. R. Gunner, Rosemary Sampogna, Kim Sharp, and Barry Honig. On the Calculation of pKas in Proteins. PROTEINS: Structure, Function, and Genetics **1993**, 15, 252-265. [ref](/pdf/reference/pKa-pI/On_the_calculation_of_pKas_in_protein.pdf)
