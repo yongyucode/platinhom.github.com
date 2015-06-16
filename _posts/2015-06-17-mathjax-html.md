@@ -49,7 +49,7 @@ $$\alg A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA
 
 我的网页源代码插入内容:
 
-~~~ html
+~~~ markup
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({tex2jax:{processEscapes: true, inlineMath: [ ['$','$'], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}});
