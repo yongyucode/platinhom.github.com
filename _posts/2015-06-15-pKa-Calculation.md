@@ -11,7 +11,7 @@ First finite-difference PB (FDPB) solver for irregular shape was constructed by 
 Neilsen et al optimize the hydrogen-bond network in protein for PB-based pKa calculations.(Nielsen-2001)
 
 由平衡常数公式可以推得:
-$$\alg \Delta G^o (A,HA) &= \{RT}\ln 10 (\{pH}-\{pK_a}) \ealg$$  
+$$\alg \Delta G^o (A,HA) &= {RT}\ln 10 ({pH}-{pK_a}) \ealg$$  
 $$\alg \Delta \Delta G = \ealg$$
 
 - [APBS](http://www.poissonboltzmann.org/)
