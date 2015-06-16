@@ -62,7 +62,7 @@ ln
 
 ## 文件内容显示和操作相关指令
 
-~~~
+~~~ bash
 echo 
 read
 tee
@@ -105,7 +105,7 @@ at
 
 ## 用户和配置指令
 
-~~~
+~~~ bash
 chmod
 chown
 chgrp
@@ -128,7 +128,8 @@ export
 ~~~
 
 ## 系统管理指令
-~~~ 
+
+~~~ bash 
 # shutdown: 关机/重启
 # shutdown [options][time][message]
 # options -r 重启,-h等系统服务停止后再进行,-f 快速关机
@@ -165,7 +166,7 @@ fdisk
 
 ## 网络相关
 
-~~~
+~~~ bash
 ssh
 ssh-keygen
 scp
@@ -180,7 +181,7 @@ route
 
 ## 杂项
 
-~~~
+~~~ bash
 exec
 expr
 test
