@@ -12,15 +12,17 @@ Neilsen et al optimize the hydrogen-bond network in protein for PB-based pKa cal
 
 [egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
 
+- [APBS](http://www.poissonboltzmann.org/)
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
-[PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
-[DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
+
+- [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
+
+- [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
 
 ### Force-Field Based
 
 ### PROPKA  
-Empirical pKa predictors based on physical description of the desolvation and dielectric response for the protein.  
-3.0 reference:;
+Empirical pKa predictors based on physical description of the desolvation and dielectric response for the protein. Most update 3.0 reference: (Olsson-2011, Søndergaard-2011)
 
 
 ## Reference
