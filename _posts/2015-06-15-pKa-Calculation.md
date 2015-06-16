@@ -44,8 +44,7 @@ Consider side-chain ﬂexibility and use new scoring function incorporating a Co
 
 
 ## Reference
-
-<div style="font-size:16px";>
+<style>ol li{font-size:16px}</style>
 
 1. Donald Bashford and Martin Karplus. pKa’s of  Ionizable Groups in Proteins:  Atomic Detail from a Continuum Electrostatic Model. Biochemistry 1990, 29, 10219-10225. [ref](/pdf/reference/pKa-pI/pKa-PB.pdf)
 2. An-Suei Yang, M. R. Gunner, Rosemary Sampogna, Kim Sharp, and Barry Honig. On the Calculation of pKas in Proteins. PROTEINS: Structure, Function, and Genetics 1993, 15, 252-265. [ref](/pdf/reference/pKa-pI/On_the_calculation_of_pKas_in_protein.pdf)
@@ -56,6 +55,5 @@ Residues in Empirical pKa Predictions. J. Chem. Theory Comput. 2011, 7, 525–53
 6. Chresten R. Søndergaard, Mats H. M. Olsson, Michaz Rostkowski, and Jan H. Jensen. Improved Treatment of Ligands and Coupling Effects in Empirical Calculation and Rationalization of pKa Values. J. Chem. Theory Comput. 2011, 7, 2284–2295. [ref](/pdf/reference/pKa-pI/ct200133y.pdf)
 7. Krishna Praneeth Kilambi and Jeffrey J. Gray. Rapid Calculation of Protein pKa Values Using Rosetta. Biophysical Journal. 2012, 103, 587–595.[ref](/pdf/reference/pKa-pI/rosetta-pKa.pdf)
 
-</div>
 
 ---
