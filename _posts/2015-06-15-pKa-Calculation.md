@@ -30,10 +30,15 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 
 - [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
 
+
+
 ### Force-Field Based
 
-- PROPKA  
+- [PROPKA](https://github.com/jensengroup/propka-3.1)  
 Empirical pKa predictors based on physical description of the desolvation and dielectric response for the protein. Most update 3.0 reference: (Olsson-2011, Søndergaard-2011)
+
+- [Rosetta pKa](http://rosie.rosettacommons.org/pka)
+
 
 
 ## Reference
@@ -45,5 +50,6 @@ Empirical pKa predictors based on physical description of the desolvation and di
 5. Mats H. M. Olsson, Chresten R. Søndergaard, Michal Rostkowski, and Jan H. Jensen. PROPKA3: Consistent Treatment of Internal and Surface
 Residues in Empirical pKa Predictions. J. Chem. Theory Comput. 2011, 7, 525–537. [ref](/pdf/reference/pKa-pI/olsson2011.pdf)
 6. Chresten R. Søndergaard, Mats H. M. Olsson, Michaz Rostkowski, and Jan H. Jensen. Improved Treatment of Ligands and Coupling Effects in Empirical Calculation and Rationalization of pKa Values. J. Chem. Theory Comput. 2011, 7, 2284–2295. [ref](/pdf/reference/pKa-pI/ct200133y.pdf)
+7. Krishna Praneeth Kilambi and Jeffrey J. Gray. Rapid Calculation of Protein pKa Values Using Rosetta. Biophysical Journal. 2012, 103, 587–595.[ref](/pdf/reference/pKa-pI/rosetta-pKa.pdf)
 
 ---
