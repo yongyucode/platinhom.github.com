@@ -46,7 +46,7 @@ MathJax.Hub.Config({
 我这里要用`$$\alg ........\ealg$$`来插入
 测试:  
 
-$$A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA^TA).$$
+$$\alg A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA^TA)\ealg$$
 
 ## Reference:
 
