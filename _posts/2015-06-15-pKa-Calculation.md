@@ -10,10 +10,11 @@ tags: 计算生物
 First finite-difference PB (FDPB) solver for irregular shape was constructed by Bashford and Karplus(Bashford-1990).
 Neilsen et al optimize the hydrogen-bond network in protein for PB-based pKa calculations.(Nielsen-2001)
 
-[egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
+$$\alg \Delta \Delta G = \ealg$$
 
 - [APBS](http://www.poissonboltzmann.org/)
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
+[egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
 
 - [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
 
@@ -21,7 +22,7 @@ Neilsen et al optimize the hydrogen-bond network in protein for PB-based pKa cal
 
 ### Force-Field Based
 
-### PROPKA  
+- PROPKA  
 Empirical pKa predictors based on physical description of the desolvation and dielectric response for the protein. Most update 3.0 reference: (Olsson-2011, Søndergaard-2011)
 
 
