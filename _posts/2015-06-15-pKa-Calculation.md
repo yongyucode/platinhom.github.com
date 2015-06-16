@@ -19,7 +19,7 @@ $$\alg \Delta G_s(HA,A) = -\Delta G_{g/s}(HA)+\Delta G_{g}(HA,A)+\Delta G_{g/s}(
 计算从气相到蛋白相的溶剂化能,根据热力学平衡有:  
 $$\alg \Delta G_p(HA,A) = -\Delta G_{g/p}(HA)+\Delta G_{g}(HA,A)+\Delta G_{g/p}(A)+\Delta G_{g/p}(H)\ealg$$  
 由于游离质子在溶液中,不受蛋白影响,故有$ \Delta G_{g/p}(H) = \Delta G_{g/s}(H) $, 两式相减,有:  
-$$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A )= \Delta G_{g/p}(A)-\Delta G_{g/s}(A)-[\Delta G_{g/p}(HA)-\Delta G_{g/s}(HA)] \\ = RT\ln 10(pK^p_a-pK^s_a)\ealg$$
+$$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) \\ = \Delta G_{g/p}(A)-\Delta G_{g/s}(A)-[\Delta G_{g/p}(HA)-\Delta G_{g/s}(HA)] \\ = RT\ln 10(pK^p_a-pK^s_a)\ealg$$
 
 - [APBS](http://www.poissonboltzmann.org/)
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
