@@ -16,6 +16,13 @@ tags: Shell Bash
   3. `..` 上一层目录
   4. `-` 上一次所在的目录
 
+## 简单的通配符
+常用在对批量文件进行选择,例如`*.txt`表示所有txt文件.
+
+- `*`任意数量任意字符匹配
+- `?`匹配一个任意字符
+- `[123a],[1-9]`匹配指定几个字符,可用`-`表范围
+- `[!123]`匹配除指定字符外任意字符.
 
 ## 管道与重定向
 
@@ -30,6 +37,7 @@ cd dirname  #移动到指定文件夹作工作目录
 cd ~	#移动到用户目录,
 cd ..	#移动到上级目录,../..是上上级目录
 cd -	#移动到上次所在的目录
+pwd    #查看当前目录觉得路径
 
 ls file/dir #显示文件/目录内容
 ls -l    #一般也用ll,显示详细,一般配合-h(文件大小以Mb等形式形式)
@@ -48,24 +56,8 @@ rm files   #删除文件,不可逆.
 rm -rf dir #递归地删除整个目录,-f是强制进行,不提示
 
 file f1 #判断文件类型
-touch
-ln 
-~~~
-
-## 运行状况相关指令
-
-~~~ bash
-top  #交互界面查看任务
-ps  #查询进程, 更常用ps -ef查看所有进程
-bg  #背景运行
-fg  #将背景任务掉到前台
-jobs #查看用户任务
-kill #终止进程,使用进程id
-nohup #在命令前使用,可以使进程在用户退出后依然运行
-sleep #暂停几秒
-wait #等待所有后台任务结束
-crontab
-at
+touch f1 #若没有则创建,否则可以更新修改日期.还可以更新更多信息
+ln  
 ~~~
 
 ## 文件内容显示和操作相关指令
@@ -76,6 +68,7 @@ read
 tee
 wc
 cat
+nl
 head
 tail
 more
@@ -92,6 +85,22 @@ tr
 grep
 sed
 awk
+~~~
+
+## 运行状况相关指令
+
+~~~ bash
+top  #交互界面查看任务
+ps  #查询进程, 更常用ps -ef查看所有进程
+bg  #背景运行
+fg  #将背景任务掉到前台
+jobs #查看用户任务
+kill #终止进程,使用进程id
+nohup #在命令前使用,可以使进程在用户退出后依然运行
+sleep #暂停几秒
+wait #等待所有后台任务结束
+crontab
+at
 ~~~
 
 ## 用户和配置指令
@@ -137,8 +146,10 @@ df
 stat
 uname
 find
-locate
+locate  #利用文件目录数据库快速定位,updatedb可以更新文件索引
+locale 
 where
+whereis
 which
 tar
 yum
@@ -148,6 +159,8 @@ uptime
 who
 last
 finger
+updatedb
+fdisk
 ~~~
 
 ## 网络相关
@@ -161,6 +174,8 @@ wget
 ping
 ifconfig
 curl
+netconfig
+route
 ~~~
 
 ## 杂项
@@ -174,6 +189,11 @@ args
 cal
 nautilus #RHEL下的文件夹浏览器
 ~~~
+
+Ref:
+1. [Linux指令查询](http://man.linuxde.net/)
+2. [Linux基础命令教程(豪华版)](http://www.ioesse.com/hqjs/upload/20102421923835325.pdf)
+
 
 
 ---
