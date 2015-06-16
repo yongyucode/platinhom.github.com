@@ -36,6 +36,47 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
 [egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
 
+运行APBS: `apbs file.in 2>&1) | tee file.out`
+#### APBS参数文件范例:
+
+~~~
+read
+    mol pqr 2LZT-noASH66.pqr # This is the compound for which we will calculate
+                         # solvation energies
+    mol pqr 2LZT-ASP66.pqr      # This is a compound used as a reference for grid
+                         # centering
+end
+
+elec name inhom          
+    mg-auto              # Focusing calculations
+    dime 258 258 258     # This is a good grid spacing for this system
+    cglen 52.0 66.0 79.0 # These are reasonable coarse grid settings for
+                         # this system (PDB2PQR-recommended)
+    fglen 51.0 59.0 67.0 # These are reasonable fine grid settings for this
+                         # system (PDB2PQR-recommended)
+    cgcent mol 2         # Center the grid on the reference molecule
+    fgcent mol 2         # Center the grid on the reference molecule
+    mol 1
+    lpbe
+    bcfl sdh
+    pdie 20.00
+    sdie 78.54
+    srfm smol
+    sdens 40.0
+    chgm spl2
+    srad 1.40
+    swin 0.30
+    temp 298.15
+    calcenergy total
+    calcforce no
+end
+
+# Print the final energy 
+print energy inhom end
+
+quit
+~~~
+
 - [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
 
 - [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
