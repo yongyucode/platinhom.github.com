@@ -21,16 +21,13 @@ MathJax是浏览器使用的JS库用于显示和解析数学公式符号,可用�
 - 自行安装
 就是将其放置在自己的服务器上,先下载[函数库](http://www.mathjax.org/download/),一个压缩文件,解压后将文件夹放到自己的服务器上,将JS调用时地址进行相应更改为如`/MathJax/MathJax.js`即可.
 
-### 配置
-默认情况下, 加入 MathJax 的网页会载入 `config/TeX-AMS-MML_HTMLorMML.js`,这个JS会载入最常用的模组,有已经预先设定好的状态.  
-可以使用`config/default.js`预设值,也可以进行修改,详情参见[Common Configurations](http://docs.mathjax.org/en/latest/config-files.html#common-configurations) 和 [Configuration Options](http://docs.mathjax.org/en/latest/options/index.html#configuration).
-
-### 网页中加入数学式子
-
-
 - 页面查看
 可以在式子上右键点出菜单.在`Show Math As`中可以选择查看latex格式.在`Math Settings`中`Math Renderer`采用HTML-CSS格式显示.
 在输入`><`时注意前后留空格,避免判断为html标签.
+
+### 配置
+默认情况下, 加入 MathJax 的网页会载入 `config/TeX-AMS-MML_HTMLorMML.js`,这个JS会载入最常用的模组,有已经预先设定好的状态.  
+可以使用`config/default.js`预设值,也可以进行修改,详情参见[Common Configurations](http://docs.mathjax.org/en/latest/config-files.html#common-configurations) 和 [Configuration Options](http://docs.mathjax.org/en/latest/options/index.html#configuration).
 
 一般在Latex中常用的`$...$`inline方式显示在mathjax中不支持.如想支持,需要更改代码为:
 
@@ -43,9 +40,13 @@ MathJax.Hub.Config({
 <script type="text/javascript" src="path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script
 ~~~
 
+### 网页中加入数学式子
+
+
 我这里要用`$$\alg ........\ealg$$`来插入
 测试:  
-$$\alg A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA^TA) \ealg$$
+
+A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA^TA)
 
 ## Reference:
 
