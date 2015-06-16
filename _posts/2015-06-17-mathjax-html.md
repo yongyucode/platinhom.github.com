@@ -12,7 +12,7 @@ MathJax是浏览器使用的JS库用于显示和解析数学公式符号,可用�
 - 使用 MathJax Content Delivery Network服务  
 直接在head部分加入以下一段代码,就可以利用网络的JS进行解释. 优点是会跟踪伺服器上的更新,使用预设定值进行解析.一般情况足够了.
 
-~~~ html
+~~~ markup
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -31,7 +31,7 @@ MathJax是浏览器使用的JS库用于显示和解析数学公式符号,可用�
 
 一般在Latex中常用的`$...$`inline方式显示在mathjax中不支持.如想支持,需要更改代码为:
 
-~~~ html
+~~~ markup
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -42,11 +42,24 @@ MathJax.Hub.Config({
 
 ### 网页中加入数学式子
 
-
-我这里要用`$$\alg ........\ealg$$`来插入
+我这里要用`$$\alg ........\ealg$$`来插入式子,alg是对齐.换行使用`\\`
 测试:  
 
 $$\alg A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA^TA)\ealg$$
+
+我的网页源代码插入内容:
+
+~~~ html
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({tex2jax:{processEscapes: true, inlineMath: [ ['$','$'], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}});
+MathJax.Hub.Config({TeX:{extensions: ["cancel.js", "enclose.js"],
+Macros:{a:"\\alpha",b:"\\beta",c:"\\chi",d:"\\delta",e:"\\epsilon",f:"\\phi",g:"\\gamma",h:"\\eta",i:"\\iota",j:"\\varphi",k:"\\kappa",l:"\\lambda",m:"\\mu",n:"\\nu",o:"\\omicron",p:"\\pi",q:"\\theta",r:"\\rho",s:"\\sigma",t:"\\tau",u:"\\upsilon",v:"\\varpi",w:"\\omega",x:"\\xi",y:"\\psi",z:"\\zeta",D:"\\Delta",F:"\\Phi",G:"\\Gamma",J:"\\vartheta",L:"\\Lambda",P:"\\Pi",Q:"\\Theta",S:"\\Sigma",U:"\\Upsilon",V:"\\varsigma",W:"\\Omega",X:"\\Xi",Y:"\\Psi",ve:"\\varepsilon",vk:"\\varkappa",vq:"\\vartheta",vp:"\\varpi",vr:"\\varrho",vs:"\\varsigma",vf:"\\varphi",alg:"\\begin{align}", ealg:"\\end{align}",bmat:"\\begin{bmatrix}", Bmat:"\\begin{Bmatrix}", pmat:"\\begin{pmatrix}", Pmat:"\\begin{Pmatrix}", vmat:"\\begin{vmatrix}", Vmat:"\\begin{Vmatrix}",ebmat:"\\end{bmatrix}", eBmat:"\\end{Bmatrix}",  epmat:"\\end{pmatrix}",  ePmat:"\\end{Pmatrix}",  evmat:"\\end{vmatrix}",  eVmat:"\\end{Vmatrix}",AA:"\\unicode{x212B}", Sum:"\\sum\\limits", abs:['\\lvert #1\\rvert',1], rmd:['\\mathop{\\mathrm{d}#1}',1],bi:['\\boldsymbol{#1}', 1], obar:['0\\!\\!\\!\\raise{.05em}{-}'],opar:['\\frac{\\partial #1}{\\partial #2}', 2], oppar:['\\frac{\\partial^2 #1}{\\partial #2^2}', 2]}}});
+MathJax.Hub.Queue(function(){
+var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElement().parentNode.className+=' has-jax';}});
+</script>
+~~~
+
 
 ## Reference:
 
