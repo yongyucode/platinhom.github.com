@@ -22,6 +22,8 @@ $$\alg \Delta G_p(HA,A) = -\Delta G_{g/p}(HA)+\Delta G_{g}(HA,A)+\Delta G_{g/p}(
 $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK^p_a-pK^s_a)\\ = \Delta G_{g/p}(A)-\Delta G_{g/s}(A)-[\Delta G_{g/p}(HA)-\Delta G_{g/s}(HA)] \ealg$$  
 可以通过PB方程求解得出每个物质的溶剂化能,从而根据上式解得$$pK^p_a - pK^s_a$$.
 
+#### Tools or server.
+
 - [APBS](http://www.poissonboltzmann.org/)
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
 [egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
@@ -37,8 +39,8 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 - [PROPKA](https://github.com/jensengroup/propka-3.1)  
 Empirical pKa predictors based on physical description of the desolvation and dielectric response for the protein. Most update 3.0 reference: (Olsson-2011, Søndergaard-2011)
 
-- [Rosetta pKa](http://rosie.rosettacommons.org/pka)
-
+- [Rosetta pKa](http://rosie.rosettacommons.org/pka)  
+Consider side-chain ﬂexibility and use new scoring function incorporating a Coulomb electrostatic potential and optimizing the solvation reference energies for pKa calculations. (Kilambi-2012).
 
 
 ## Reference
