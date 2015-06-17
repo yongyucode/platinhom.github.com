@@ -80,6 +80,8 @@ saveas(handleN, [filee,'.png'], 'png');
 出图结果如下:
 ![示例](/pic/science/emd_1149-2Dtimesum_0.png)
 
-TODO: I don't know why the matlab syntax highlight can't work here... I may check it in future.
-
+I don't know why the matlab syntax highlight can't work here... I may check it in future.
+My prism.js in TOC.js doesn't contain the matlab.
+The matlab in prism is wrong. It will take all things as comments.The comment should be written as:  
+`comment:{pattern:/(^|[^\\])%.*?(\r?\n|$)/g,lookbehind:!0}`
 ---
