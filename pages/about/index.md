@@ -3,7 +3,8 @@ title: 关于我
 layout: page
 ---
 
->Love science, love your own life. Just do what you like!
+> Love science, love your own life. Just do what you like!
+> Use your hands, to win yourself!
 
 I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety  and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design. 
 
