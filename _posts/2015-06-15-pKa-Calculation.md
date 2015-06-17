@@ -36,7 +36,7 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
 [egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
 
-运行APBS: `apbs file.in 2>&1) | tee file.out`
+运行APBS: `apbs file.in 2>&1 | tee file.out`
 
 #### APBS参数文件范例:
 
@@ -81,8 +81,79 @@ quit
 - [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
 
 - [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
+[Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf)
 
+input parameters file example
+~~~
+!gsize=165					   ! GRID SIZE: must be an odd number. A larger grid size will give more accurate potentials;
+							   ! however, will require more cpu time. (NOTE: min = 5; max = 571) 
+scale=2.0                      ! Reciprocal of one grid spacing (grids/angstrom). 
+in(pdb,file="2LZT-ASP66.pqr")            ! reads in ala.pdb
+in(crg,file="delphi-charge.crg")         ! reads in charge file ala.crg
+in(siz,file="delphi-radius.siz")         ! reads in size file ala.siz
+indi=2                         ! interior dielectric default= 2
+exdi=80						   ! exterior dielectric constant, default 80 for water
+prbrad=1.40				       ! Probe radius. Used for the solvent accessible surface calculation. (prbrad = 1.4 for water.) 
+energy(s,c,g)                  ! outputs reaction field (solvation), coulombic and grid energies. 
+                               ! ION:Use for the direct ionic contribution
+in(frc,file="self")            ! uses pdb file entries to output potential
+salt=0						   ! The concentration of the first kind of salt (in mol/L). 
+!perfil=90                     ! sets percent box fill to 90%
+!bndcon=2                      ! An integer flag used to specify the type of boundary condition. 
+							   ! 1 – potential is zero 
+							   ! 2 – dipolar, boundary potentials are approximated by the Debye-Hückel potential. 
+							   ! 3 – focusing, (requires a potential map from a prior calculation)
+							   ! 4 – Coulombic, Approximate from the sum of the Debye-Hückel potentials of all charges qi
+!in(phi,unit=18)               ! reads in a previously created potential map for focussing calcs - not enabled
+!out(modpdb)                   ! outputs pdb file with radii and charges
+!out(frc,file="ala.frc")       ! and field values in ala.frc
+!out(phi,unit=14)              ! outputs a potential map in default file
+!out(phi,file="ala.phi")       ! outputs potential map in ala.phi
+!acenter(28.114,40.477,9.909)  ! Takes 3 coordinates (in ?) and uses those coordinates for positioning of the molecule center. 
+!salt2 					       ! Used to handle multiple valence salts 
+!ionrad = The ion exclusion layer around the molecule (in A). Default ionrad = 2.0 for sodium chloride.
+!nonit - An integer number(>0) used to designate the number of iterations with the nonlinear PB equation. 
+~~~
 
+#### A script to extract the information from pqr file to siz/crg file for delpha
+
+~~~ python
+#! /usr/bin/env python
+# -*- coding: utf8 -*-
+
+# Author: Hom, Date: 2015.6.17
+# To extract the information from pqr file to siz and crg files for delpha.
+# Usage: python pqr2sizcrg.py input.pqr
+
+import os,sys
+
+if (__name__ == '__main__'):
+	if (len(sys.argv)!=2):
+		print "Please assign the pqr file."
+		input()
+		exit()
+	fname=sys.argv[1]
+	fnamelist=os.path.splitext(fname)
+	fcrg=fnamelist[0]+".crg"
+	fsiz=fnamelist[0]+".siz"
+	fr=open(fname)
+	fs=open(fsiz,'w')
+	fc=open(fcrg,'w')
+	fs.write("!Extract info. from pqr to siz file. By Hom.")
+	fc.write("!Extract info. from pqr to crg file. By Hom.")
+	fs.write("atom__resnumbc_radius_\n")
+	fc.write("atom__resnumbc_charge_\n")
+	for line in fr:
+		items=line.split()
+		if (items[0]=="ATOM" or items[0]=="HETATM"):
+			outline="%-5.5s %-3.3s %-4.4s "%(items[2],items[3],items[4])
+			outs=outline+"%-6.6s \n"%items[9]
+			outc=outline+"%-6.6s \n"%items[8]
+			fs.write(outs)
+			fc.write(outc)
+
+#end main
+~~~
 
 ### Empirical/Scoring function Based
 
