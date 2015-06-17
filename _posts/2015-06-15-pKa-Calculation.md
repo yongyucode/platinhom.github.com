@@ -83,7 +83,8 @@ quit
 - [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
 [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf)
 
-input parameters file example
+#### input parameters file example
+
 ~~~
 !gsize=165					   ! GRID SIZE: must be an odd number. A larger grid size will give more accurate potentials;
 							   ! however, will require more cpu time. (NOTE: min = 5; max = 571) 
