@@ -142,8 +142,8 @@ if (__name__ == '__main__'):
 	fr=open(fname)
 	fs=open(fsiz,'w')
 	fc=open(fcrg,'w')
-	fs.write("!Extract info. from pqr to siz file. By Hom.")
-	fc.write("!Extract info. from pqr to crg file. By Hom.")
+	fs.write("!Extract info. from pqr to siz file. By Hom.\n")
+	fc.write("!Extract info. from pqr to crg file. By Hom.\n")
 	fs.write("atom__resnumbc_radius_\n")
 	fc.write("atom__resnumbc_charge_\n")
 	for line in fr:
