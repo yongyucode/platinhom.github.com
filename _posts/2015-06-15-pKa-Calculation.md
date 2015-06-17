@@ -158,6 +158,12 @@ if (__name__ == '__main__'):
 #end main
 ~~~
 
+- Born Formula  
+
+$$\alg \DeltaG^{sol}= -\frac{Q^2}{2*4*\pi*\varepsilon_0}*\frac{1}{r}(\frac{1}{varepsilon_{int}-\frac{1}{varepsilon_{ext}}) \ealg$$. 
+
+In the formula, $$e=1.602176565\times 10^{-19}C$$,$$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$,$$k=1.38\times 10^{-23}J/K$$
+
 ### Empirical/Scoring function Based
 
 - [PROPKA](https://github.com/jensengroup/propka-3.1)  
