@@ -6,7 +6,7 @@ categories: CompBiol
 tags: 计算生物
 ---
 
-### PB-Based
+### PB-Based methods
 First finite-difference PB (FDPB) solver for irregular shape was constructed by Bashford and Karplus(Bashford-1990).
 Neilsen et al optimize the hydrogen-bond network in protein for PB-based pKa calculations.(Nielsen-2001)
 
@@ -30,7 +30,68 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 
 可以通过PB方程求解得出每个物质的溶剂化能,从而根据上式解得$$pK^p_a - pK^s_a$$.
 
-#### Tools or server.
+- Born Formula  
+The Born Formula can calculate the a charged atom with a lower dielectric constant $$\varepsilon_{int}$$ immersed in a continuum media with a higher dielectric constant $$\varepsilon_{ext}$$. It can be used to calculate the solvation energy and check the accuracy of PB solver.
+
+$$\alg \Delta G^{sol} = - \frac{Q^2}{2 \cdot 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{r} (\frac{1}{\varepsilon_{int}}-\frac{1}{\varepsilon_{ext}}) \ealg$$    
+
+In the formula, $$e=1.602176565\times 10^{-19}C$$,$$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$,$$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022^{23}, cal=4.184 J $$ .  
+For example, Q=10e, $$\varepsilon_{int}=4.0$$, $$\varepsilon_{ext}=80.0$$, r=1 A, energy is -6673.71kT; $$\varepsilon_{int}=20.0$$, $$\varepsilon_{ext}=80.0$$, energy is -1024.255kT
+
+$$\frac{e^2}{ 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{ \AA } \cdot \frac{NA}{kcal} = 332.06364261083113511637811411787 $$
+
+- Coulombic energy
+[Electric potential energy](https://en.wikipedia.org/wiki/Electric_potential_energy)
+
+$$\alg U_E = \frac{1}{4 \cdot \pi \cdot \varepsilon_0 \cdot \varepsilon_di} \cdot \frac{1}{2} \cdot \sum_{i,j,i \neq j} (\frac{1}{Q_i Q_j}{r_{ij}}) \ealg$$ 
+
+A python script to calculate the Coulombic energy from pqr file: 
+
+~~~ python
+#! /usr/bin/env python
+# -*- coding: utf8 -*-
+
+# Author: Hom, Date: 2015.6.17
+# To calculate the coulombic energy from pqr file.
+# Usage: python pqr2col.py input.pqr [indi]
+# Default interior dielectric is set to 1.
+
+import os,sys
+from math import *
+
+if (__name__ == '__main__'):
+	if (not(len(sys.argv) == 2 or len(sys.argv) == 3)):
+		print "Please assign the pqr file."
+		input()
+		exit()
+	indi=1.0
+	if (len(sys.argv) == 3):
+		indi=float(sys.argv[2])
+	fname=sys.argv[1]
+	fnamelist=os.path.splitext(fname)
+	fr=open(fname)
+	atomlist=[];#[[x,y,z,charge],..]
+	for line in fr:
+		items=line.split()
+		if (items[0]=="ATOM" or items[0]=="HETATM"):
+			atomlist.append([items[5],items[6],items[7],items[8]])
+	totalatoms=len(atomlist);
+	sum=0.0;
+	for i in range(totalatoms):
+		for j in range(i+1,totalatoms):
+			x1=float(atomlist[i][0])
+			y1=float(atomlist[i][1])
+			z1=float(atomlist[i][2])
+			x2=float(atomlist[j][0])
+			y2=float(atomlist[j][1])
+			z2=float(atomlist[j][2])
+			r=sqrt((x1-x2)**2+(y1-y2)**2+(z1-z2)**2)
+			sum=sum+(float(atomlist[i][3])*float(atomlist[j][3])*332.06364261/(r*indi))
+	print "Total coulombic energy is "+str(sum)+" kcal/mol"
+#end main
+~~~
+
+### Tools or server.
 
 #### [APBS](http://www.poissonboltzmann.org/)
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
@@ -133,9 +194,7 @@ quit
 	
 	(apbs.exe ${prefix}.in 2>&1) | tee ${prefix}.apbs
 done
-~~~
-
-- [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
+~~~ 
 
 #### [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
 How to use: [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf), (Li-2012).  
@@ -263,16 +322,7 @@ for i in *.pqr; do
 done
 ~~~
 
-
-- Born Formula  
-The Born Formula can calculate the a charged atom with a lower dielectric constant $$\varepsilon_{int}$$ immersed in a continuum media with a higher dielectric constant $$\varepsilon_{ext}$$.
-
-$$\alg \Delta G^{sol} = - \frac{Q^2}{2 \cdot 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{r} (\frac{1}{\varepsilon_{int}}-\frac{1}{\varepsilon_{ext}}) \ealg$$    
-
-In the formula, $$e=1.602176565\times 10^{-19}C$$,$$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$,$$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022^{23}, cal=4.184 J $$ .  
-For example, Q=10e, $$\varepsilon_{int}=4.0$$, $$\varepsilon_{ext}=80.0$$, r=1 A, energy is -6673.71kT; $$\varepsilon_{int}=20.0$$, $$\varepsilon_{ext}=80.0$$, energy is -1024.255kT
-
-$$\frac{e^2}{ 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{ \AA } \cdot \frac{NA}{kcal} = 332.06364261083113511637811411787 $$
+#### [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver); 
 
 ### Empirical/Scoring function Based
 
