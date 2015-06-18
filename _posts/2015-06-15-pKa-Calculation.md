@@ -32,15 +32,14 @@ $$\alg \Delta \Delta G_{solv} = \Delta G_p(HA,A)-\Delta G_s(HA,A ) = RT\ln 10(pK
 
 #### Tools or server.
 
-- [APBS](http://www.poissonboltzmann.org/)
+#### [APBS](http://www.poissonboltzmann.org/)
 [APBS-PDB2PQR](http://www.poissonboltzmann.org/docs/downloads/); [APBS-download](http://sourceforge.net/projects/apbs/); [PDB2PQR-download](http://sourceforge.net/projects/pdb2pqr/); [APBS-PDB2PQR github](https://github.com/Electrostatics/apbs-pdb2pqr);  
 [egg Lysozyme pKa example](http://www.poissonboltzmann.org/examples/Lysozyme_pKa_example/)
 
-运行APBS: `apbs file.in 2>&1 | tee file.out`
+- 运行APBS: `apbs file.in 2>&1 | tee file.out`
+- APBS parameters input example:
 
-#### APBS参数文件范例:
-
-~~~
+~~~ python
 read
     mol pqr 2LZT-noASH66.pqr # This is the compound for which we will calculate
                          # solvation energies
@@ -78,12 +77,70 @@ print energy inhom end
 quit
 ~~~
 
+- A bash script to run for all pqr files. You can modify to add your parameters in apbs input file.
+
+~~~ bash
+#!/bin/bash
+# Author: Hom, 2015.6.18
+# Run all the pqr files by apbs. 
+# Run as : ./Run-apbs.sh
+
+for i in *.pqr; do
+	echo "Running ${i}..."
+	prefix=${i%.pqr}
+	
+	# Generate the input parameters file. You can modify parameters here.
+	echo "read                                                                         " > ${prefix}.in
+	echo "    mol pqr ${prefix}.pqr # This is the compound for which we will calculate " >> ${prefix}.in
+	echo "                         # solvation energies                                " >> ${prefix}.in
+	echo "    mol pqr ref.pqr      # This is a compound used as a reference for grid   " >> ${prefix}.in
+	echo "                         # centering                                         " >> ${prefix}.in
+	echo "end                                                                          " >> ${prefix}.in
+	echo "                                                                             " >> ${prefix}.in
+	echo "elec name inhom                                                              " >> ${prefix}.in
+	echo "    mg-auto              # Focusing calculations                             " >> ${prefix}.in
+	echo "    dime 129 129 129     # This is a good grid spacing for this system       " >> ${prefix}.in
+	echo "    cglen 52.0 66.0 79.0 # These are reasonable coarse grid settings for     " >> ${prefix}.in
+	echo "                         # this system (PDB2PQR-recommended)                 " >> ${prefix}.in
+	echo "    fglen 51.0 59.0 67.0 # These are reasonable fine grid settings for this  " >> ${prefix}.in
+	echo "                         # system (PDB2PQR-recommended)                      " >> ${prefix}.in
+	echo "    cgcent mol 2         # Center the grid on the reference molecule         " >> ${prefix}.in
+	echo "    fgcent mol 2         # Center the grid on the reference molecule         " >> ${prefix}.in
+	echo "    mol 1                                                                    " >> ${prefix}.in
+	echo "    lpbe                                                                     " >> ${prefix}.in
+	echo "    bcfl sdh                                                                 " >> ${prefix}.in
+	echo "    pdie 20.00                                                               " >> ${prefix}.in
+	echo "    sdie 80.00                                                               " >> ${prefix}.in
+	echo "    sdens 40.0                                                               " >> ${prefix}.in
+	echo "    srfm smol                                                                " >> ${prefix}.in
+	echo "    chgm spl2                                                                " >> ${prefix}.in
+	echo "    srad 1.40                                                                " >> ${prefix}.in
+	echo "    swin 0.30                                                                " >> ${prefix}.in
+	echo "    temp 298.15                                                              " >> ${prefix}.in
+	echo "    calcenergy total                                                         " >> ${prefix}.in
+	echo "    calcforce no                                                             " >> ${prefix}.in
+	echo "end                                                                          " >> ${prefix}.in
+	echo "                                                                             " >> ${prefix}.in
+	echo "# Print the final energy                                                     " >> ${prefix}.in
+	echo "print energy inhom end                                                       " >> ${prefix}.in
+	echo "                                                                             " >> ${prefix}.in
+	echo "quit                                                                         " >> ${prefix}.in
+	
+# Print the final energy 
+print energy inhom end
+
+quit
+	
+	(apbs.exe ${prefix}.in 2>&1) | tee ${prefix}.apbs
+done
+~~~
+
 - [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
 
 #### [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
 How to use: [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf), (Li-2012).  
 
-- Run delphi as `./delphicpp input.prm`  
+- Run delphi as `./delphicpp input.prm 2>&1 | tee output.out`  
 NOTE: Delphi reports energy in units of kT. (1 kT = 0.592 kcal/mol for T = 298 K and k= 0.001986577 kcal/mol•K)  
 
 - input parameters file example(`input.prm`) for delphi.  
@@ -124,7 +181,7 @@ conint=100                     ! A flag that determines at what iteration interv
  
 ~~~
 
-- A script to extract the information from pqr file to siz/crg file for delphi
+- A python script to extract the information from a pqr file to siz/crg file for delphi.
 
 ~~~ python
 #! /usr/bin/env python
@@ -164,14 +221,14 @@ if (__name__ == '__main__'):
 #end main
 ~~~
 
-- A script to run all the pqr files. You can modify to add your parameters in delphi input file. 
+- A bash script to run for all the pqr files. You can modify to add your parameters in delphi input file. 
 - You will need the `pqr2sizcrg.py` script above. 
 
 ~~~ bash
 #!/bin/bash
 # Author: Hom, 2015.6.18
 # Run all the pqr files by delphi. 
-# Run as : ./Run-delphi.sh test.pqr 20
+# Run as : ./Run-delphi.sh
 
 if [ ! -f ./pqr2sizcrg.py ];then
 	echo "Please make sure you have pqr2sizcrg.py script "
@@ -189,14 +246,14 @@ for i in *.pqr; do
 	echo "in(crg,file=\"${prefix}.crg\")    ! reads in charge file    " >> ${prefix}.prm
 	echo "in(siz,file=\"${prefix}.siz\")    ! reads in size file      " >> ${prefix}.prm
 	echo "scale=2.0    ! grid size (resolution, in grid/Angstrom)     " >> ${prefix}.prm
-	echo "indi=1.0000001      ! interior dielectric                  " >> ${prefix}.prm
+	echo "indi=1.0      ! interior dielectric                         " >> ${prefix}.prm
 	echo "exdi=80.0     ! external dielectric	                      " >> ${prefix}.prm
 	echo "perfil=80                                                   " >> ${prefix}.prm
 	echo "prbrad=1.4                                                  " >> ${prefix}.prm
 	echo "bndcon=2                                                    " >> ${prefix}.prm
 	echo "rionst=0.1                                                  " >> ${prefix}.prm
 	echo "maxc=0.0001                                                 " >> ${prefix}.prm
-	echo "linit= 800                                                  " >> ${prefix}.prm
+	echo "linit=800                                                   " >> ${prefix}.prm
 	echo "conint=100                                                  " >> ${prefix}.prm
 	echo "energy(s,c,g)                                               " >> ${prefix}.prm
 	
@@ -212,7 +269,7 @@ The Born Formula can calculate the a charged atom with a lower dielectric consta
 
 $$\alg \Delta G^{sol} = - \frac{Q^2}{2 \cdot 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{r} (\frac{1}{\varepsilon_{int}}-\frac{1}{\varepsilon_{ext}}) \ealg$$    
 
-In the formula, $$e=1.602176565\times 10^{-19}C$$,$$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$,$$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022^{23}, cal=4.184 J $$, .
+In the formula, $$e=1.602176565\times 10^{-19}C$$,$$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$,$$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022^{23}, cal=4.184 J $$ .  
 For example, Q=10e, $$\varepsilon_{int}=4.0$$, $$\varepsilon_{ext}=80.0$$, r=1 A, energy is -6673.71kT; $$\varepsilon_{int}=20.0$$, $$\varepsilon_{ext}=80.0$$, energy is -1024.255kT
 
 $$\frac{e^2}{ 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{ \AA } \cdot \frac{NA}{kcal} = 332.06364261083113511637811411787 $$
