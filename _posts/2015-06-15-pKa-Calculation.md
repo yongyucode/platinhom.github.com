@@ -81,33 +81,39 @@ quit
 - [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
 
 #### [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
-[Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf)
+How to use: [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf), (Li-2012).  
 
-NOTE: Delphi reports energy in units of kT. (1 kT = 0.592 kcal/mol for T = 298 K and k= 0.001986577 kcal/mol•K) 
+- Run delphi as `./delphicpp input.prm`  
+NOTE: Delphi reports energy in units of kT. (1 kT = 0.592 kcal/mol for T = 298 K and k= 0.001986577 kcal/mol•K)  
 
-#### input parameters file example
+- input parameters file example(`input.prm`) for delphi.  
+NOTE: You can also use `Run-delphi.sh` below to run multi-jobs via automatic generating input parameter file.
 
 ~~~ fortran
 !gsize=165					   ! GRID SIZE: must be an odd number. A larger grid size will give more accurate potentials;
-							   ! however, will require more cpu time. (NOTE: min = 5; max = 571) 
+                               ! however, will require more cpu time. (NOTE: min = 5; max = 571) 
 scale=2.0                      ! Reciprocal of one grid spacing (grids/angstrom). 
-in(pdb,file="2LZT-ASP66.pqr")            ! reads in ala.pdb
-in(crg,file="delphi-charge.crg")         ! reads in charge file ala.crg
-in(siz,file="delphi-radius.siz")         ! reads in size file ala.siz
+in(pdb,file="test.pqr")        ! reads in ala.pdb
+in(crg,file="test.crg")        ! reads in charge file ala.crg
+in(siz,file="test.siz")        ! reads in size file ala.siz
 indi=2                         ! interior dielectric default= 2
 exdi=80						   ! exterior dielectric constant, default 80 for water
-prbrad=1.40				       ! Probe radius. Used for the solvent accessible surface calculation. (prbrad = 1.4 for water.) 
+prbrad=1.40				       ! Probe radius. Used for the solvent accessible surface calculation. (prbrad = 1.4 for water.)
+salt=0                         ! The concentration of the first kind of salt (in mol/L). 
 energy(s,c,g)                  ! outputs reaction field (solvation), coulombic and grid energies. 
                                ! ION:Use for the direct ionic contribution
-in(frc,file="self")            ! uses pdb file entries to output potential
-salt=0						   ! The concentration of the first kind of salt (in mol/L). 
-!perfil=90                     ! sets percent box fill to 90%
-!bndcon=2                      ! An integer flag used to specify the type of boundary condition. 
-							   ! 1 – potential is zero 
-							   ! 2 – dipolar, boundary potentials are approximated by the Debye-Hückel potential. 
-							   ! 3 – focusing, (requires a potential map from a prior calculation)
-							   ! 4 – Coulombic, Approximate from the sum of the Debye-Hückel potentials of all charges qi
+perfil=80                      ! sets percent box fill to 80%,default=80.
+bndcon=2                       ! An integer flag used to specify the type of boundary condition. 
+                               ! 1 – potential is zero 
+                               ! 2 – dipolar, boundary potentials are approximated by the Debye-Hückel potential. 
+                               ! 3 – focusing, (requires a potential map from a prior calculation)
+                               ! 4 – Coulombic, Approximate from the sum of the Debye-Hückel potentials of all charges qi
+maxc=0.0001                    ! The convergence threshold value based on maximum change of potentia
+linit= 800                     ! An integer number (> 3) of iterations with linear equation,default automatic.
+conint=100                     ! A flag that determines at what iteration interval convergence is checked, by default itequals 10.
+!nonit=0                       ! An integer number(>0) used to designate the number of iterations with the nonlinear PB equation.
 !in(phi,unit=18)               ! reads in a previously created potential map for focussing calcs - not enabled
+!in(frc,file="self")           ! uses pdb file entries to output potential
 !out(modpdb)                   ! outputs pdb file with radii and charges
 !out(frc,file="ala.frc")       ! and field values in ala.frc
 !out(phi,unit=14)              ! outputs a potential map in default file
@@ -115,10 +121,10 @@ salt=0						   ! The concentration of the first kind of salt (in mol/L).
 !acenter(28.114,40.477,9.909)  ! Takes 3 coordinates (in ?) and uses those coordinates for positioning of the molecule center. 
 !salt2 					       ! Used to handle multiple valence salts 
 !ionrad = The ion exclusion layer around the molecule (in A). Default ionrad = 2.0 for sodium chloride.
-!nonit - An integer number(>0) used to designate the number of iterations with the nonlinear PB equation. 
+ 
 ~~~
 
-#### A script to extract the information from pqr file to siz/crg file for delphi
+- A script to extract the information from pqr file to siz/crg file for delphi
 
 ~~~ python
 #! /usr/bin/env python
@@ -158,7 +164,8 @@ if (__name__ == '__main__'):
 #end main
 ~~~
 
-- A script to run all the pqr files. You can modify to add your parameters in delphi input file.
+- A script to run all the pqr files. You can modify to add your parameters in delphi input file. 
+- You will need the `pqr2sizcrg.py` script above. 
 
 ~~~ bash
 #!/bin/bash
@@ -197,8 +204,6 @@ for i in *.pqr; do
 	./pqr2sizcrg.py ${prefix}.pqr
 	(delphicpp.exe ${prefix}.prm 2>&1) | tee ${prefix}.delphi
 done
-
-
 ~~~
 
 
@@ -232,6 +237,6 @@ Consider side-chain ﬂexibility and use new scoring function incorporating a Co
 Residues in Empirical pKa Predictions. J. Chem. Theory Comput. **2011**, 7, 525–537. [ref](/pdf/reference/pKa-pI/olsson2011.pdf)
 6. Chresten R. Søndergaard, Mats H. M. Olsson, Michaz Rostkowski, and Jan H. Jensen. Improved Treatment of Ligands and Coupling Effects in Empirical Calculation and Rationalization of pKa Values. J. Chem. Theory Comput. **2011**, 7, 2284–2295. [ref](/pdf/reference/pKa-pI/ct200133y.pdf)
 7. Krishna Praneeth Kilambi and Jeffrey J. Gray. Rapid Calculation of Protein pKa Values Using Rosetta. Biophysical Journal. **2012**, 103, 587–595.[ref](/pdf/reference/pKa-pI/rosetta-pKa.pdf)
-
+8. Lin Li, Chuan Li, Subhra Sarkar, Jie Zhang, Shawn Witham, Zhe Zhang, Lin Wang, Nicholas Smith, Marharyta Petukh and Emil Alexov. DelPhi: a comprehensive suite for DelPhi software and associated resources. BMC Biophysics **2012**, 5:9. [ref](/pdf/reference/pKa-pI/delphi-2012.pdf)
 
 ---
