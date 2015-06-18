@@ -6,3 +6,6 @@
 
 此博客的评论功能使用了[多说](http://duoshuo.com/).
 
+此博客的网站统计使用了不蒜子,GA,百度统计.
+
+此博客的数学公式处理使用[MathJax](https://www.mathjax.org/).
