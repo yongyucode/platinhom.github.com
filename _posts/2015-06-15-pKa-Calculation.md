@@ -35,7 +35,8 @@ The Born Formula can calculate the a charged atom with a lower dielectric consta
 
 $$\alg \Delta G^{sol} = - \frac{Q^2}{2 \cdot 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{r} (\frac{1}{\varepsilon_{int}}-\frac{1}{\varepsilon_{ext}}) \ealg$$    
 
-In the formula, $$e=1.602176565\times 10^{-19}C$$,$$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$,$$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022^{23}, cal=4.184 J $$ .  
+In the formula, $$e=1.602176565\times 10^{-19}C$$, $$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$, $$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022\times 10^{23}, cal=4.184 J $$ .  
+
 For example, Q=10e, $$\varepsilon_{int}=4.0$$, $$\varepsilon_{ext}=80.0$$, r=1 A, energy is -6673.71kT; $$\varepsilon_{int}=20.0$$, $$\varepsilon_{ext}=80.0$$, energy is -1024.255kT
 
 $$\frac{e^2}{ 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{ \AA } \cdot \frac{NA}{kcal} = 332.06364261083113511637811411787 $$
