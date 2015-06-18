@@ -3,7 +3,7 @@ layout: post
 title: pKa Calculation
 date: 2015-06-15 08:43:13
 categories: CompBiol
-tags: 计算生物 Bash Python
+tags: 计算生物 Python Bash
 ---
 
 ### PB-Based methods
@@ -35,7 +35,7 @@ The Born Formula can calculate the a charged atom with a lower dielectric consta
 
 $$\alg \Delta G^{sol} = - \frac{Q^2}{2 \cdot 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{r} (\frac{1}{\varepsilon_{int}}-\frac{1}{\varepsilon_{ext}}) \ealg$$    
 
-In the formula, $$e=1.602176565\times 10^{-19}C$$, $$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$, $$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022\times 10^{23}, cal=4.184 J $$ .  
+In the formula, $$e=1.602176565\times 10^{-19}C$$, $$\varepsilon_0=8.8541878176\times 10^{-12}F/m$$ (permittivity of free space), $$k=1.38\times 10^{-23}J/K, T=297.33K, NA=6.022\times 10^{23}, cal=4.184 J $$, $$\varepsilon_{int} \varepsilon_{ext}$$: interior dielectric constant and exterior dielectric constant.  
 
 For example, Q=10e, $$\varepsilon_{int}=4.0$$, $$\varepsilon_{ext}=80.0$$, r=1 A, energy is -6673.71kT; $$\varepsilon_{int}=20.0$$, $$\varepsilon_{ext}=80.0$$, energy is -1024.255kT
 
@@ -97,10 +97,11 @@ if (__name__ == '__main__'):
 #### [APBS](http://www.poissonboltzmann.org/)
 
 #### [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi)
+Ref: (Li-2012)
 
 #### Amber-PB
 
-** About APBS-Delphi-AmberPB please refer to another blog [Usage of Delphi-APBS-AmberPB](http://platinhom.github.io/2015/06/19/delphi-apbs-amberpbsa/) **
+**About APBS-Delphi-AmberPB please refer to another blog [Usage of Delphi-APBS-AmberPB](http://platinhom.github.io/2015/06/19/delphi-apbs-amberpbsa/)**
 
 #### [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver); 
 

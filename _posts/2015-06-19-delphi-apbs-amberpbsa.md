@@ -110,7 +110,7 @@ done
 ~~~ 
 
 ### [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi)     
-How to use: [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf), (Li-2012).  
+How to use: [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf), [ref](/pdf/reference/pKa-pI/delphi-2012.pdf).  
 
 - Run delphi as `./delphicpp input.prm 2>&1 | tee output.out`  
 NOTE: Delphi reports energy in units of kT. (1 kT = 0.592 kcal/mol for T = 298 K and k= 0.001986577 kcal/mol•K)  
