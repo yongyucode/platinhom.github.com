@@ -100,7 +100,7 @@ if (__name__ == '__main__'):
 
 #### Amber-PB
 
-About APBS-Delphi-AmberPB please refer to another blog [Usage of Delphi-APBS-AmberPB]()
+** About APBS-Delphi-AmberPB please refer to another blog [Usage of Delphi-APBS-AmberPB](http://platinhom.github.io/2015/06/19/delphi-apbs-amberpbsa/) **
 
 #### [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver); 
 
