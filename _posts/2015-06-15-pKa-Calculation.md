@@ -43,7 +43,7 @@ $$\frac{e^2}{ 4 \cdot \pi \cdot \varepsilon_0 } \cdot \frac{1}{ \AA } \cdot \fra
 - Coulombic energy
 [Electric potential energy](https://en.wikipedia.org/wiki/Electric_potential_energy)
 
-$$\alg U_E = \frac{1}{4 \pi \cdot \varepsilon_0 \cdot \varepsilon_{di}} \cdot \frac{1}{2} \cdot \sum_{i,j,i \neq j} (\frac{Q_i Q_j}{r_{ij}}) \ealg$$ 
+$$\alg U_E = \frac{1}{4 \pi \varepsilon_0 \cdot \varepsilon_{di}} \cdot \frac{1}{2} \cdot \sum_{i,j,i \neq j} (\frac{Q_i Q_j}{r_{ij}}) \ealg$$ 
 
 A python script to calculate the Coulombic energy from pqr file: 
 
