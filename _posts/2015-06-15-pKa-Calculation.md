@@ -80,14 +80,14 @@ quit
 
 - [PBEQ server](http://www.charmm-gui.org/?doc=input/pbeqsolver);  
 
-- [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
+#### [DelPhi](http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi);  
 [Delphi workshop](http://cinjweb.umdnj.edu/~kerrigje/pdf_files/Delphi_Workshop.pdf),[Manual](https://honiglab.c2b2.columbia.edu/software/DelPhi/doc/delphi_manual.pdf)
 
 NOTE: Delphi reports energy in units of kT. (1 kT = 0.592 kcal/mol for T = 298 K and k= 0.001986577 kcal/mol•K) 
 
 #### input parameters file example
 
-~~~
+~~~ fortran
 !gsize=165					   ! GRID SIZE: must be an odd number. A larger grid size will give more accurate potentials;
 							   ! however, will require more cpu time. (NOTE: min = 5; max = 571) 
 scale=2.0                      ! Reciprocal of one grid spacing (grids/angstrom). 
@@ -157,6 +157,50 @@ if (__name__ == '__main__'):
 
 #end main
 ~~~
+
+- A script to run all the pqr files. You can modify to add your parameters in delphi input file.
+
+~~~ bash
+#!/bin/bash
+# Author: Hom, 2015.6.18
+# Run all the pqr files by delphi. 
+# Run as : ./Run-delphi.sh test.pqr 20
+
+if [ ! -f ./pqr2sizcrg.py ];then
+	echo "Please make sure you have pqr2sizcrg.py script "
+	echo "to extract the charges and radius from pqr file!"
+	exit
+fi
+
+for i in *.pqr; do
+	echo "Running ${i}..."
+	prefix=${i%.pqr}
+	
+	# Generate parameter file. You can revise the parameters you need.
+	echo "! Delphi parameter file, created by pbrun.pl.               " > ${prefix}.prm
+	echo "in(pdb,file=\"${prefix}.pqr\")    ! reads in PQR file       " >> ${prefix}.prm
+	echo "in(crg,file=\"${prefix}.crg\")    ! reads in charge file    " >> ${prefix}.prm
+	echo "in(siz,file=\"${prefix}.siz\")    ! reads in size file      " >> ${prefix}.prm
+	echo "scale=2.0    ! grid size (resolution, in grid/Angstrom)     " >> ${prefix}.prm
+	echo "indi=1.0000001      ! interior dielectric                  " >> ${prefix}.prm
+	echo "exdi=80.0     ! external dielectric	                      " >> ${prefix}.prm
+	echo "perfil=80                                                   " >> ${prefix}.prm
+	echo "prbrad=1.4                                                  " >> ${prefix}.prm
+	echo "bndcon=2                                                    " >> ${prefix}.prm
+	echo "rionst=0.1                                                  " >> ${prefix}.prm
+	echo "maxc=0.0001                                                 " >> ${prefix}.prm
+	echo "linit= 800                                                  " >> ${prefix}.prm
+	echo "conint=100                                                  " >> ${prefix}.prm
+	echo "energy(s,c,g)                                               " >> ${prefix}.prm
+	
+	# Need pqr2sizcrg.py files.
+	./pqr2sizcrg.py ${prefix}.pqr
+	(delphicpp.exe ${prefix}.prm 2>&1) | tee ${prefix}.delphi
+done
+
+
+~~~
+
 
 - Born Formula  
 The Born Formula can calculate the a charged atom with a lower dielectric constant $$\varepsilon_{int}$$ immersed in a continuum media with a higher dielectric constant $$\varepsilon_{ext}$$.
