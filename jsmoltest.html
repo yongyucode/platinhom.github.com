@@ -6,7 +6,7 @@
 <script type="text/javascript" src="./jsmol/JSmol.min.js"></script>
 <script type="text/javascript">
 // logic is set by indicating order of USE -- default is HTML5 for this test page, though
-//var use = " HTML5" // HTML5 WEBGL IMAGE  are all otions
+var use = " HTML5" // HTML5 WEBGL IMAGE  are all otions
 var jmolApplet0;   var jmolApplet1;
 var s = document.location.search;
 Jmol.debugCode = (s.indexOf("debugcode") >= 0);
@@ -18,13 +18,13 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 
 <body>
 
-<div style="margin: auto; text-align: center; width: 200px;">
+<div style="margin: auto; text-align: center; width: 600px;">
 <script type="text/javascript">
-var  script0 = 'load pyrl4_pyr6.pdb;';
+var  script0 = 'load test.pdb;spin on;';
 
 var Info0 = {
-  width:  200,
-  height: 200,
+  width:  600,
+  height: 600,
   color: "black",
   serverURL: "https://undergrad-ed.chemistry.ohio-state./jsmol/php/jsmol.php",
   use: "HTML5",
@@ -35,7 +35,8 @@ var Info0 = {
 }
   Jmol.getApplet("jmolApplet0", Info0)
 </script>
-Jmol display of caffeine
+
+Jmol display test
 </div>
 
 
