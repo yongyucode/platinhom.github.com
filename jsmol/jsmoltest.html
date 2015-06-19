@@ -19,6 +19,7 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 <body>
 
 <div style="margin: auto; text-align: center; width: 600px;">
+Jmol display test
 <script type="text/javascript">
 var  script_run = 'load test.pdb;spin on;';
 
@@ -34,11 +35,31 @@ var Info0 = {
   disableInitialConsole: true
 }
   Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
+  Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
 </script>
-
-Jmol display test
+</div><center>
+<script type="text/javascript">
+  Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
+  Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
+  document.writeln("<br>");
+  Jmol.jmolLink(jmolApplet0,"load 1akeA.pdb","Load 1AKE");
+  Jmol.jmolBr();
+  Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
+  Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
+  Jmol.jmolBr();
+   var mradio = [
+    ["spacefill 23%; wireframe 0.15;","ball and stick",true],
+    ["spacefill off; wireframe 0.15;","sticks"],
+    ["spacefill on; wireframe off;","spheres"]
+ ];
+ Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
+ //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
+  </script>
+<div id="CartoonBottom" class="JmolButtonDiv">    
+    <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon
+    </button>
+    </center>
 </div>
-
 
 
 </body>
