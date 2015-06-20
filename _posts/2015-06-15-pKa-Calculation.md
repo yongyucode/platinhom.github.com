@@ -3,7 +3,7 @@ layout: post
 title: pKa Calculation
 date: 2015-06-15 08:43:13
 categories: CompBiol
-tags: 计算生物 Python Bash
+tags: CompBiol Python Bash
 ---
 
 ### PB-Based methods

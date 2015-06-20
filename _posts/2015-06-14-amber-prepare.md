@@ -3,7 +3,7 @@ layout: post
 title: Amber输入结构的预处理
 date: 2015-06-14 04:18:41
 categories: CompBiol
-tags: Amber Python 计算生物
+tags: Amber Python CompBiol
 ---
 
 一般地,包括以下几个步骤

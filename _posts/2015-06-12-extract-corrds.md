@@ -3,7 +3,7 @@ layout: post
 title: 多种分子文件格式提取原子坐标
 date: 2015-06-11 23:16:38
 categories: CompBiol
-tags: Python 计算生物
+tags: Python CompBiol
 ---
 ## Extract the coordinates from molecular files.
 

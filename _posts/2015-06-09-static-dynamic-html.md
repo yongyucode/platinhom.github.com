@@ -3,7 +3,7 @@ layout: post
 title: 动态网页和静态网页
 date: 2015-06-08 16:35:50
 categories: CompSci
-tags: 网页 Github
+tags: Website Github
 ---
 
 Github page提供的服务是静态网页.静态网页和动态网页有何区别呢? 静态网页有什么局限性呢? 这些都是我们用github搭blog的人需要关系的.

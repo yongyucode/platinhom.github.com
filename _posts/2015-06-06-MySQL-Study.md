@@ -3,7 +3,7 @@ layout: post
 title: MySQL 学习
 date: 2015-06-06 11:00:00
 categories: CompSci
-tags: 数据库
+tags: Database
 ---
 
 - I'm the context.

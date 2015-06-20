@@ -3,7 +3,7 @@ layout: post
 title: Usage of Delphi-APBS-AmberPB
 date: 2015-06-18 17:38:54
 categories: CompBiol
-tags: 计算生物 Python Bash 软件
+tags: CompBiol Python Bash Software
 ---
 
 ### [APBS](http://www.poissonboltzmann.org/)

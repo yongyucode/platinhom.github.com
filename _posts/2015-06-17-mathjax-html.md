@@ -3,7 +3,7 @@ layout: post
 title: 网页中使用Mathjax输入数学公式
 date: 2015-06-16 18:16:21
 categories: MathStat
-tags: 数学 网页
+tags: Math Website
 ---
 MathJax是浏览器使用的JS库用于显示和解析数学公式符号,可用于对Latex,MathML等进行解析. 现在由AMS(American Mathematical Society)维护.很多网页如arXiv, Elsevier, Wiki等均使用MathJax进行解析.
 
