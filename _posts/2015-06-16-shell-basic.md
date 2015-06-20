@@ -191,7 +191,8 @@ seq
 args
 cal
 nautilus #RHEL下的文件夹浏览器
-clear
+clear #清屏
+history  #查看命令历史
 ~~~
 
 Ref:
