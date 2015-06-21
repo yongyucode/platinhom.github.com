@@ -11,7 +11,7 @@ tags: IT Editor Software
 参考说明: [中文版](http://jaylabs.sinaapp.com/Sublime_unofficial/reference/build_systems.html ),[英文版](http://sublimetext.info/docs/en/reference/build_systems.html  )  [非官方文档](http://sublime-text.readthedocs.org/en/latest/reference/build_systems.html  )
 C++自带版本:
 
-~~~ javascript
+~~~javascript
 {
 	"cmd": ["g++", "${file}", "-o", "${file_path}/${file_base_name}"],
 	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
