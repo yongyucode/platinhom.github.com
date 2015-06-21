@@ -1,0 +1,331 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "2015-06-21-sublime-build.md",
+			"settings":
+			{
+				"buffer_size": 2177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "2015-06-21-sublime-usage.md",
+			"settings":
+			{
+				"buffer_size": 6563,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "PCI",
+		"selected_items":
+		[
+			[
+				"PCI",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"range(10)",
+			"expr",
+			"exprrange(10)",
+			"range(10)",
+			"a",
+			"a=[1,2,3,4]",
+			"ls",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com"
+	],
+	"file_history":
+	[
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/MyBlog.sublime-project",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/User/submitGit.sublime-build",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-21-sublime-usage.md",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/Terminal/Default (OSX).sublime-keymap",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Hom/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-20-JSME.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-16-shell-basic.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-20-shell-symbol.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-19-delphi-apbs-amberpbsa.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-19-JSMol.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-18-prismJS.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-17-WinYourself.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-17-mathjax-html.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-14-shell-function-for-if.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-15-shell-varient-operation.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-15-pKa-Calculation.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-14-amber-prepare.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-13-ReadArgv.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-12-uname-shell.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-12-extract-corrds.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-12-Get-PDB.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-12-Cpp-precombile.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-11-website-analysis.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-11-repeat-name-define-head.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-11-Canada-Visa.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-10-regexp-re.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-10-isoelectric-point-prediction.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-09-static-dynamic-html.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-09-msys-utf8-problem.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-09-Matlab-2Dvalue-plot.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-08-Vim-Setup.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-08-AmericanTracfic.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-07-bash-date-usage.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-07-Volumetric-Data.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-07-PBS-commands.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-07-EmbedHtmlPDF.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-07-BIOMT-sym.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-06-MySQL-Study.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-06-Markdown-note.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-05-Build-Blog-Github.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-06-04-FirstBlog.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/2015-03-15-fengdu.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/1111-11-11-11111.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/8888-08-08-important-blog.md",
+		"/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts/9999-09-09-Plans.md"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"跳转",
+			"ctrl",
+			"cmd",
+			"markdown",
+			"su'p'er",
+			"new wi",
+			"new",
+			"安装",
+			"matlab"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "2015-06-21-sublime-build.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
+							"tab_size": 5,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "2015-06-21-sublime-usage.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5260,
+								5260
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2489.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "Packages/User/submitGit.sublime-build",
+	"project": "MyBlog.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

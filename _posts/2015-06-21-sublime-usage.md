@@ -147,6 +147,12 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 利用鼠标: OSX: 左键+Opt或者直接中键;多选区或移除:Cmd和Cmd+Shift;  Win: 右键+Shift或者中键; Linux: 右键+Shift; Win/linux多个选区或移除: Ctrl和Alt;  
 利用键盘: OSX: Ctrl+shift+上下 (注意:ctrl+shift+上下可能会是慢速的显示多任务,因为ctrl+上/下被OSX占用,shift起到慢速的作用.这时解决办法两个,1:在系统设定中取消Ctrl+上/下快捷键; 2:在Key-Binding,default中搜索`select_lines`并改变快捷键,例如我改为没有用到的`Ctrl+shift+alt+上下`); Win/linux: Ctrl+Alt+上下.
 
+- Project功能:  
+	- 先使用`Add folder to project`功能,将文件夹加入到project
+	- 可以保存project`Save Project As`到sublime-project文件,里面包括文件夹信息等.
+	- 可以关闭project再打开(`Quick Switch Project`).此时之前编辑的文件又出现了.
+	- 可以利用`cmd+P`快速搜索project内文件.
+
 ### 注意事项
 
 - fortran语法高亮
