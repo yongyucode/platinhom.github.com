@@ -21,7 +21,7 @@ tags: Github Website
 
 ### 在github注册账号
 1. **注册**: 到github注册账户[link](https://github.com/)
-2. **创建密钥**: 使用`ssh-keygen ssh-keygen -t rsa -b 4096 -C "yourmail@hotmail.com` 来创建公有私有密钥,使用默认的地址,若不输入passphrase则可以跳过每次输入密码.然后复制公钥`~/.ssh/id_rsa.pub`的内容,在github账号中`Settings`,`SSH keys`中黏贴该密钥. 更多ssh key产生和处理请参考[github sshkey generation](https://help.github.com/articles/generating-ssh-keys/),[中文ssh key 介绍](https://wiki.archlinux.org/index.php/SSH_Keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87\) )
+2. **创建密钥**: 使用`ssh-keygen -t rsa -b 4096 -C "yourmail@hotmail.com"` 来创建公有私有密钥,使用默认的地址,若不输入passphrase则可以跳过每次输入密码(建议passphrase为空).然后复制公钥`~/.ssh/id_rsa.pub`的内容,在github账号中`Settings`,`SSH keys`中黏贴该密钥. 更多ssh key产生和处理请参考[github sshkey generation](https://help.github.com/articles/generating-ssh-keys/),[中文ssh key 介绍](https://wiki.archlinux.org/index.php/SSH_Keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87\) )
 3. **本地库**: 创建一个文件夹如MyGit,`mkdir MyGit`, 然后进去`git init`创建空的本地库(加入`.git`文件夹), 若之前没有设置过,还需要`git config --global user.name "yourname"`以及`git config --global user.email "yourmail@email.com"`来注册基本信息.
 
 ### Github上创建博客
