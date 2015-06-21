@@ -1,4 +1,5 @@
 #! /bin/bash
+# file: getlink.sh
 # Author: Platinhom
 # Last updated:2015.6.9
 

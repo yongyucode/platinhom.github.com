@@ -146,8 +146,6 @@ wd="/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts"
 #pwd="."
 
 if (__name__ == '__main__'):
-
-
 	# Setup template information
 	title="Template"
 	category="Other"

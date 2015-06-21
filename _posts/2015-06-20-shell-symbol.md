@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-small
 title: Bash符号用途的小结
 date: 2015-06-20 06:14:16
 categories: CompSci

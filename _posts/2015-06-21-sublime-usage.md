@@ -90,12 +90,13 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 - `cmd+A` 全选, 反选要用Selection菜单
 - `cmd`或`alt`(win): 多重选择功能,任意点选
 - `Ctrl+shift+上下` 纵向多重选择(我设多了个`alt`).也可以利用`鼠标中键`或者`左键+alt`(mac)或`右键+shift`(win/linux)
-- `cmd+L`    选中一行.
 - \* `Cmd+D`    选词, 可以反复向下选词(多选词)
 - \* `cmd+ctrl+G`    选所有该词.
+- `cmd+L`    选中一行.
 - `cmd+shift+L`   选择多行后,使用split into lines功能可以切换到多重选择各行的末末尾(最后一行不一定.)
 - `shift+ctrl+M`    选中括号内所有内容. 有说是cmd+ctrl+M的.参考括号跳转`cmd+M`
 - `cmd+shift+space` 选择一段.注意可能会和输入法冲突.一般更常用菜单.
+- `cmd+左右` 跳到行头或行末
 
 #### 编辑功能
 - \*`cmd+/`    注释该行    `cmd+alt+/`    块注释
