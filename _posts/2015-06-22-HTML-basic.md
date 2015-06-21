@@ -78,8 +78,8 @@ margin控制边缘空白，padding控制和边界的距离，border为边界宽�
 
 ## 属性：
 
-- `id` ：指明特定ID，用于CSS
-- `class`：指明属于某类型，用于CSS
+- `id` ：指明特定ID，用于CSS和JS操作.
+- `class`：指明属于某类型，用于CSS渲染.
 - `style`：放在标签内，格式为`style="name:value; name2:value2"` name例如font-size(10px 无空格，或者用1em，em表示默认字体大小倍数，和硬件无关),color(green,更多， 采用16进制6个数字，可搜hex color picker来辨认)， font-family（Times, Arial,更多 ， 注意首字母大写；css一般支持：serif, sans-serif, cursive草书； 可用,来分隔多个可能字体，因为不一定都支持，会按顺序选择字体，将serif等放最后），background-color, text-align（center，left，right），width,heigh, border（1px dashed black 三者格式，其实对应子属性border-width,border-style, border-color； 另外还有border-radius表示块的角的弯曲度）；对于超链接a还可以有text-decoration:none/underline (修饰为下划线)； margin(auto，居中保持两边一致)； font-weight(bold)
 - `display`: block 默认竖排放置block；inline-block：横排放置block；inline：以最小尺寸横放，若为空会叠放一起，适合于`<p><h1>`等；none：不显示。
 - `margin/border/padding`
@@ -89,8 +89,13 @@ margin控制边缘空白，padding控制和边界的距离，border为边界宽�
 - `position`：static(默认)/absolute/relative/fixed/inherit 子元素相对母元素的位置。static是默认的放置，不管left等的变化。absolute是相对非static的上级父元素的left时的位置，若没有则根据html的位置; relative是相对用static时的位置而言；fixed是固定位置，不受滚动条控制。
 - `z-index`：叠放时的优先序
 
+## JavaScript
+HTML网页支持的脚本语言.基于Java语言开发.用于很多复制操作和调用. 这里不进行讨论了.
+
+- `document.writeln("contex")`将内容写到html页面上.
+
 ## CSS：Cascading Style Sheets
-选择器 {属性 : 值；.....} 要是定义了id，可以用#id名来定义特点元素。.bold{}可以定义特点格式。css注释和c一致，采用`/*  */`格式。选择器若为某种标签，可根据嵌套环境作选择，例如div div p {...}这样。用`*`可以作通配所有选择器。div > p {....} 强制直接相连，否则div li p {}也会受影响。对应指定ID的可用#IDName来专指；对应使用class来指明类别的，使用 .ClassName来专指。其中，优先级ID>Class>特点环境元素>一般元素>通配`*`
+选择器 {属性 : 值；.....} 要是定义了id，可以用#id名来定义特点元素。.bold{}可以定义特点格式。css注释和c一致，采用`/*  */`格式。选择器若为某种标签，可根据嵌套环境作选择，例如div div p {...}这样。用`*`可以作通配所有选择器。div > p {....} 强制直接相连，否则div li p {}也会受影响。对应指定ID的可用#IDName来专指；对应使用class来指明类别的，使用 .ClassName来专指。其中，优先级ID>Class>特点环境元素>一般元素>通配`*`  
 准类选择器： selector: pseudo-class-selector{...} 准类选择器为一些改变和行为，如hover悬停，link未点击, visited 已点击， first-child 第一个满足的元素，nth-child(n)第N个满足的元素，类似地 last-child. 注意selector:nth-child(n)和selector :nth-child(n)有区别，没有空格的前者是body中第n个的selector，有空格的后者是selector中第n个子元素。
 
 ## Reference
