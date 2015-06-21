@@ -38,7 +38,7 @@ Color Scheme很多.
 
 - 破解:  
 **win64**: sublime 2.02 64 bit  
-复制一个sublime.exe文件, 用ultraedit打开编辑(sublime保存2进制有点问题), 查找到4333 3342 3032, 修改3342->3242 然后将该文件放回执行文件夹, 打开后 Help->Enter License输入以下内容就OK了.如经济允许,请支持正版!
+如经济允许,请支持正版! 复制一个sublime.exe文件, 用ultraedit打开编辑(sublime保存2进制有点问题), 查找到4333 3342 3032, 修改3342->3242 然后将该文件放回执行文件夹, 打开后 Help->Enter License输入以下内容就OK了.  
 Mac: [3083](http://www.douban.com/note/486407873/)
 
 ~~~
@@ -147,11 +147,12 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 利用鼠标: OSX: 左键+Opt或者直接中键;多选区或移除:Cmd和Cmd+Shift;  Win: 右键+Shift或者中键; Linux: 右键+Shift; Win/linux多个选区或移除: Ctrl和Alt;  
 利用键盘: OSX: Ctrl+shift+上下 (注意:ctrl+shift+上下可能会是慢速的显示多任务,因为ctrl+上/下被OSX占用,shift起到慢速的作用.这时解决办法两个,1:在系统设定中取消Ctrl+上/下快捷键; 2:在Key-Binding,default中搜索`select_lines`并改变快捷键,例如我改为没有用到的`Ctrl+shift+alt+上下`); Win/linux: Ctrl+Alt+上下.
 
-- Project功能:Ref7.  
+- **Project功能**:Ref7.  
 	- 先使用`Add folder to project`功能,将文件夹加入到project.可用快捷键`cmd+K,cmd+B`组合来调出左边工具栏.
-	- 可以保存project`Save Project As`到`sublime-project`文件,里面包括文件夹信息等.另外还有`sublime-workspace`文件,里面记录了更多细节信息,包括正在编辑文件信息.
+	- 可以保存project`Save Project As`到`sublime-project`文件,里面包括文件夹信息,配置等.另外还有`sublime-workspace`文件,里面记录了更多缓冲细节信息,包括正在编辑文件信息.
 	- 可以关闭project(`Close Project`,会自动保存信息)再打开(`Quick Switch Project`,`Ctrl+Cmd+P`).此时之前编辑的文件及设置又出现了.
 	- 可以利用`cmd+P`快速搜索project内文件.
+	- 可以`Edit Project`,添加配置信息.例如`"settings"`,`"build_systems"`.可以在此自行新建相应的build的信息.
 
 ### 注意事项
 
