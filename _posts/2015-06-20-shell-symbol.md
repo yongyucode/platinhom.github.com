@@ -23,12 +23,17 @@ tags: Bash Shell
 - `!(*.pdf)` 匹配内容外的其余内容,这里是非pdf文件
 - `[!123]` 表示非指定字符外的任意单字符
 - `!=` 字符串不等于.
-- bang命令,操作历史命令,不能用于脚本!只能在命令行使用.
+- bang命令,操作历史命令,不能用于脚本!只能在命令行使用. 更多请参考Ref7.
 	- `!grep` 执行最近执行的开头匹配的命令
 	- `!n` n为数字,执行历史编号(`history`)第n的命令
 	- `!-n` 执行之前第几条命令,`!-1`等于`!!`
 	- `!!`执行上一条命令
 	- `!?command?` 执行回检最近的符合的指令.完全匹配可以忽略最后的`?`.
+	- `!!:s/a/b/`将上条命令的a变为b(一次)
+	- `!!:gs/a/b/`将上条命令的a变为b(全部)
+	- `^a^b` 将上一条命令的a变为b,等价于`!!:s/a/b/`
+	- `^a`	删掉上一命令的a
+	- `!#` 重复当前命令的前面部分.如`ls ~ !#`等价于`ls ~ ls ~` (有何用?)
 
 ### `&` 背景,and
 
@@ -149,6 +154,8 @@ tags: Bash Shell
 ### `^` 正则行首符
 
 - 在正则表达式中，行首位置标志符；
+- `^a^b` 将上一条命令的a变为b,bang命令
+- `^a`	删掉上一命令的a,bang命令
 - bash4后,`${var^},${var^^}`表示首字符大写和全部大写.不建议使用
 
 ### `;` 语句终结和分隔
@@ -187,7 +194,7 @@ tags: Bash Shell
 - 总返回0的空命令,可替代true用于while循环,也可用于空语句块避免语法错误.
 - unix系统的域分界符,如PATH变量分开每个值.
 
-
+### 懒得总结快捷键了,请参考Ref7好了. ╮(╯▽╰)╭
 
 ## Reference
 
@@ -197,6 +204,8 @@ tags: Bash Shell
 4. [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/index.html)
 5. [IBM-对话 UNIX:!$#@*%](http://www.ibm.com/developerworks/cn/aix/library/au-spunix_clitricks/)
 6. [Linux下高效编写Shell——shell特殊字符汇总](http://blog.useasp.net/archive/2014/06/02/summary-of-the-special-characters-in-shell-on-linux.aspx)
+7. [感叹号提高Bash下效率——历史扩展(bang命令)](http://blog.useasp.net/archive/2014/06/03/improve-efficiency-with-bash-history-expansion.aspx)
+8. [Linux下更高效的使用Bash——快捷键](http://blog.useasp.net/archive/2014/06/03/use-bash-more-efficient-with-shortcuts-for-terminal-or-xtream-window-on-linux.aspx)
 
 
 ---
