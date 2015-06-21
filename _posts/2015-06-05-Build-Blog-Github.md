@@ -13,7 +13,7 @@ tags: Github Website
 ---
 
 ### 安装git
-- Window推荐使用[Msysgit](http://msysgit.github.io/),安装完毕直接使用命令行界面登入.
+- Window推荐使用[Msysgit](http://msysgit.github.io/),安装完毕直接使用命令行(bash)界面登入.
 - Ubuntu可以直接`sudo apt-get install git`
 - Mac我也忘了..
 - 图形界面待补充...
@@ -56,16 +56,26 @@ tags: Github Website
 
 ##### 此处推荐使用Markdown格式,更多请网上参考.在Mac可使用Mou来写. 但可惜Mou对Kramdown不咋滴.
 
-- 在`_post`中添加相应博文文件,格式使用`YYYY-MM-DD-name.md/markdown/html`,并需要在文件开头添加一些话,如:
+- 在`_post`中添加相应博文文件,格式使用`YYYY-MM-DD-name.md/markdown/html`,并需要在文件开头添加一些话,如下:
 
 ~~~~
 ---
 layout: post
 title: 使用Github搭建博客
 date: 2015-06-02 11:06:56
-category: "Github"
+category: Github
+tags: Github
 ---
 ~~~~
+
+PS: 每项如layout和内容间要留空格!
+
+- `layout`:是使用的模板,在`_layout`文件夹内定义,这里用的是`post.html`
+- `title`:是文章显示的一级标题.但是网页地址显示的是文件的名不是这里.
+- `date`:是文章的发表日期时间,遵照我显示的格式,一般是`"%Y-%m-%d %H:%M:%S"`.注意Jekyll计算时间是按GMT标准时间来计算的,否则博文显示时间会和博客设置的时区不同.
+- `category`或`categories`:文章分类,随意.
+- `tags`: 文章标签,可以用多个标签.
+- `comment`: true/false,可以相应开启/关闭评论.
 
 - GitHub 使用一种被称为“GitHub 风格的 Markdown 语法”（ [GFM](https://help.github.com/articles/github-flavored-markdown/) ）来书写版本注释、Issue 和评论。它和标准 Markdown 语法（SM）相比，存在一些值得注意的差异，并且增加了一些额外功能。默认GFM使用[maruku](http://maruku.rubyforge.org/markdown_syntax.html),也可以用Jekyll来应用[kramdown](http://kramdown.gettalong.org/syntax.html).(注意:kramdown的语法块使用`~~~`来代替`---`)以及[rdiscount](http://tedwise.com/markdown/)等.语法高亮可以用pygments.
 
@@ -75,7 +85,7 @@ category: "Github"
 - **评论**: 推荐使用国内的duoshuo[介绍](http://wenva.github.io/%E6%8A%80%E5%B7%A7/2015/04/29/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html)或者[disqus](https://disqus.com/)
 - 分类
 - 搜索栏
-- 友情链接
+- 友情链接: 就是新建个页面或者新建个div放链接罢了
 - 网站统计: 静态网页简单统计使用第三方的[不蒜子](http://ibruce.info/2015/04/04/busuanzi/),也可以用google,百度一类统计.
 
 ##### Other Reference
