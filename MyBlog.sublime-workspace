@@ -14,6 +14,22 @@
 				"buffer_size": 853,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "_posts/2015-06-21-sublime-build.md",
+			"settings":
+			{
+				"buffer_size": 2177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2015-06-21-sublime-usage.md",
+			"settings":
+			{
+				"buffer_size": 6563,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -168,7 +184,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -184,8 +200,66 @@
 						"selection":
 						[
 							[
-								88,
-								88
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 500.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_posts/2015-06-21-sublime-build.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								582,
+								582
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
+							"tab_size": 5,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 124.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_posts/2015-06-21-sublime-usage.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
 							]
 						],
 						"settings":
@@ -196,7 +270,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -258,6 +332,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"_posts/2015-06-21-sublime-build.md"
+			],
+			[
+				"sublim",
+				"_posts/2015-06-21-sublime-usage.md"
+			],
+			[
+				"sublime",
+				"_posts/2015-06-21-sublime-build.md"
+			],
 			[
 				"999",
 				"_posts/9999-09-09-Plans.md"

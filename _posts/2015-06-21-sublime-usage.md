@@ -150,7 +150,7 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 - Project功能:  
 	- 先使用`Add folder to project`功能,将文件夹加入到project
 	- 可以保存project`Save Project As`到sublime-project文件,里面包括文件夹信息等.
-	- 可以关闭project再打开(`Quick Switch Project`).此时之前编辑的文件又出现了.
+	- 可以关闭project再打开(`Quick Switch Project`).此时之前编辑的文件及设置又出现了.
 	- 可以利用`cmd+P`快速搜索project内文件.
 
 ### 注意事项
