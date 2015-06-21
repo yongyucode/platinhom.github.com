@@ -152,7 +152,7 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 	- 可以保存project`Save Project As`到`sublime-project`文件,里面包括文件夹信息,配置等.另外还有`sublime-workspace`文件,里面记录了更多缓冲细节信息,包括正在编辑文件信息.
 	- 可以关闭project(`Close Project`,会自动保存信息)再打开(`Quick Switch Project`,`Ctrl+Cmd+P`).此时之前编辑的文件及设置又出现了.
 	- 可以利用`cmd+P`快速搜索project内文件.
-	- 可以`Edit Project`,添加配置信息.例如`"settings"`,`"build_systems"`.可以在此自行新建相应的build的信息.
+	- 可以`Edit Project`,添加配置信息.例如`"settings"`,`"build_systems"`.可以在此自行新建相应的build的信息(会出现在build里).
 
 ### 注意事项
 
