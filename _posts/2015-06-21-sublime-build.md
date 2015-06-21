@@ -49,6 +49,7 @@ gfortran version
 ~~~
 
 ifort in window64 version
+
 ~~~ javascript
 {
 	"cmd": ["cmd", "/E:on", "/V:on", "/K", "ipsxe-comp-vars.bat intel64 vs2010 && ifort ${file} -o ${file_path}/${file_base_name}"],

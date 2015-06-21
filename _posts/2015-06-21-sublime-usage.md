@@ -6,15 +6,17 @@ categories: CompSci
 tags: Editor Software IT
 ---
 
-Sublime是程序猿很爱用的编辑器,支持语法高亮,跨平台,插件多. 可免费使用,代价是经常保存后就提示购买...可参见主页介绍Ref1.现在分发版本主要有成熟的Sublime2(最新还是2.0.2)和beta版本的Sublime3,后者具有更高级的功能, 例如跳转到函数定义处等. 如果没有部分插件非使用sublime2不可,一般建议使用sublime3.
+Sublime是程序猿很爱用的编辑器,支持语法高亮,跨平台,插件多. 可免费使用,代价是经常保存后就提示购买...可参见主页介绍Ref1.现在分发版本主要有成熟的Sublime2(最新还是2.0.2)和beta版本的Sublime3,后者具有更高级的功能, 例如跳转到函数定义处等. 如果没有部分插件非使用sublime2不可,一般建议使用sublime3. 注意Mac版和Win版菜单稍有区别.这里主要以Mac版.
 
 ### 安装
 
 - 软件安装
 到官网下载即可.[sublime3](http://www.sublimetext.com/3); [Sublime2](http://www.sublimetext.com/2). 装完后,右键文件会有编辑选项,在OSX中普通的sublime text是3版. 要在shell中调用,可以`ln -s /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl ~/bin/sl` 类似地创建快键方式执行(我这里`~/bin`加入到`$PATH`中).
 
-- 破解: **win64**: sublime 2.02 64 bit 
+- 破解:  
+**win64**: sublime 2.02 64 bit  
 复制一个sublime.exe文件, 用ultraedit打开编辑(sublime保存2进制有点问题), 查找到4333 3342 3032, 修改3342->3242 然后将该文件放回执行文件夹, 打开后 Help->Enter License输入以下内容就OK了.如经济允许,请支持正版!
+Mac: [3083](http://www.douban.com/note/486407873/)
 
 ~~~
 —–BEGIN LICENSE—–
@@ -34,43 +36,65 @@ EA7E-26838
 
 - [Package Control](https://packagecontrol.io/)
 Package Control是ST最基本的插件,用来安装别的插件用.
-到主页页面的[安装](https://packagecontrol.io/installation)去选择sublime2/3的安装代码,复制.   
-`` ctrl+` ``调出命令行,将代码黏贴,回车.然后重启sublime即可.  
-测试: `cmd+shift+p`调出命令面板,输入`PCI`缩写定位,然后选择后,随便输入个东东,选择后即会自动安装.  
-卸载插件时使用`PCRP`来定位选择即可.
+到主页页面的[安装](https://packagecontrol.io/installation)去选择sublime2/3的安装代码,复制.`` ctrl+` ``调出命令行,将代码黏贴,回车.然后重启sublime即可.  
+测试: `cmd+shift+p`调出命令面板,输入`PCI`缩写定位,然后选择后,随便输入个东东,选择后即会自动安装. 卸载插件时使用`PCRP`来定位选择即可.
 
-### 使用技巧
+### 功能介绍
 
-- **竖向选择**:  
-利用鼠标: OSX: 左键+Opt或者直接中键;多选区或移除:Cmd和Cmd+Shift;  Win: 右键+Shift或者中键; Linux: 右键+Shift; Win/linux多个选区或移除: Ctrl和Alt;  
-利用键盘: OSX: Ctrl+shift+上下 (注意:ctrl+shift+上下可能会是慢速的显示多任务,因为ctrl+上/下被OSX占用,shift起到慢速的作用.这时解决办法两个,1:在系统设定中取消Ctrl+上/下快捷键; 2:在Key-Binding,default中搜索`select_lines`并改变快捷键,例如我改为没有用到的Ctrl+shift+alt+上下); Win/linux: Ctrl+Alt+上下.
-
+- 庞大的扩展包库:  
+提供了各种丰富的功能,对各种应用进行适应.得益于其可编程特点.一般使用Package Control.
+- 语法解释和高亮:  
+View-Syntax有各种语法解释可用,另还可以装载插件使用.可以使用`open all with current extension as`指定文件解释方法.
+- 控制台命令控制:  
+实际是Python控制台.提供API可以进行高级开发和功能.一般注册参数文件使用JsoN编写.
+- 可作为IDE进行程序编译:  
+在Tools提供编译功能,能够自定义编译条件. [Sublime编译build设置](/2015/06/21/sublime-build/)
+- 预览全文窗口:  
+在右上角有个
 
 ### 基本快捷键:
 快捷方式的设置可以在`ST-Preference-Key Binding-Default`中设置基本快捷键.
 
-- \* `` ctl+` ``   开启控制命令行;   
+#### ST功能
+
+- \* `` Ctrl+` ``   开启控制命令行;   
 - \*`cmd+shift+P`    命令面板,支持缩写名称. 例如PCI就是安装软件. 
-- `cmd+S`    保存文件
+- `cmd+P` Goto Anything, 跳到指定地方. 高级跳转查找.
+- `Ctrl+K+B `    开关侧栏
 - `cmd+B`    使用预设编译设置来编译   
 - `cmd+shift+B`    编译运行
-- \* `cmd+D`    选词, 可以反复向下选词(多选词)
-- \* `cmd+ctrl+G`    选所有该词.
-- `cmd+L`    选中一行.
-- `cmd+G`    跳到某行
-- `ctrl+M`    括号前后跳转
-- `shift+ctrl+M`    选中括号内所有内容. 有说是cmd+ctrl+M的
-- \*`cmd+/`    注释该行    `cmd+alt+/`    块注释
-- `Ctrl+K+B `    开关侧栏
-- `F11`    全屏
 - `F6`    检查语法错误(再按取消)
+- `cmd+ +`和`cmd+ -` 字体放大/缩小
+
+#### 一般通用
+- `cmd+S`  保存文件, `cmd+shift+s` 另存为.
+- `cmd+O`  打开文件, `cmd+N` 新建文件
+- `cmd+w` 关闭文件.
+- `cmd+z` 撤销, `cmd+y` 重做
+- `cmd+C/V/X` 复制黏贴剪切
+- `F11`    全屏
+
+#### 选择功能
+- `cmd+A` 全选, 反选要用Selection菜单
+- `cmd+L`    选中一行.
+- \* `Cmd+D`    选词, 可以反复向下选词(多选词)
+- \* `cmd+ctrl+G`    选所有该词.
+- `shift+ctrl+M`    选中括号内所有内容. 有说是cmd+ctrl+M的.参考括号跳转`cmd+M`
+
+#### 编辑功能
+- \*`cmd+/`    注释该行    `cmd+alt+/`    块注释
 - `cmd+shift+enter`    直接在该行前插入行(不断行)     `cmd+enter`    直接在该行后插入行(不断行) 
 - `cmd+shift+[或]`    折叠/展开代码
 - `cmd+shift+ 上或下`    移动该行代码, 上下行互换
 - `cmd+shift+ T`    重新打开刚关闭的标签页
 - `cmd+F2` 和 `F2` 设置以及跳到下一个标签
-- `cmd+F` 查找
+- `ctrl+空白` 补全功能, 注意Mac默认的spotlight会与此冲突.
+
+#### 查找定位
+- `cmd+F` 查找, 出现下方的查找栏.可以用`cmd+G`和`cmd+shift+G`或按钮进行查找下一个,上一个.
+- `shift+G` 跳到某行,也可以在跳转命令框(`cmd+p`)中用`:100`指定行数.
 - \*`cmd+E` 将选中内容作为查找内容(自动复制)
+- `ctrl+M`    括号前后跳转
 
 
 
@@ -78,6 +102,7 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 ### 插件
 安装插件两种方式,最方便是使用Package Control进行(`cmd+shift+P,PCI`); 另外也可以网上的相应插件放到插件库中(`Preference-Browse Packages`).  
 插件可以利用PCI搜索,但是不方便看介绍.可以去PC的[搜索页](https://packagecontrol.io/search)搜索.  
+插件的设置使用和更新: 在Preference中, Package Setting可以设置插件; Browse Package可以跳转到插件文件夹; Package Control可以来用命令控制更新卸载; Package使用一般在Tools里底部.  
 
 - bracket highlighter: 括号高亮
  preferences->package settings->brackethighlighter->bracket settings default, 打开文件后编辑bracket_styles{} 将default的改underline为highlight, color更改为entity.name.class 即可. 更多设置[参考](http://blog.sserhuangdong.com/2014/04/22/my-sublime-setting/#BracketHighlighter配置  )
@@ -89,7 +114,7 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 
 - Emmet(Zen Coding): 高效编写html和css
 
-- Terminal: 可以方便地在文件出掉出命令行并在该文件夹. 可以右键文件来调用, 也可以cmd+shift+T
+- [Terminal](https://packagecontrol.io/packages/Terminal): 可以方便地在文件中调出命令行. 可以右键文件来调用, 也可以`cmd+shift+T`. 可配置iTerm.
 
 #### Markdown 相关
 - [Markdown Extended](https://packagecontrol.io/packages/Markdown%20Extended): 扩展的markdown着色,支持GFM的代码块,可以在代码块中根据标示来着色.
@@ -98,6 +123,13 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 - [Mou MD App](https://packagecontrol.io/packages/Mou%20Markdown%20App%20\(OSX\)): 在Tools中增加选项使用Mou编辑.
 - [Markmon real-time](https://packagecontrol.io/packages/Markmon%20real-time%20markdown%20preview): 实时浏览,比较复杂需要插件.
 - [MakrdownEditing](https://packagecontrol.io/packages/MarkdownEditing): 貌似很强大的插件,但装了后取代了原来的markdown语法,monokai不能用.只能把ST3配置全删了重新设置.折腾.
+
+
+### 使用技巧
+
+- **竖向选择**:  
+利用鼠标: OSX: 左键+Opt或者直接中键;多选区或移除:Cmd和Cmd+Shift;  Win: 右键+Shift或者中键; Linux: 右键+Shift; Win/linux多个选区或移除: Ctrl和Alt;  
+利用键盘: OSX: Ctrl+shift+上下 (注意:ctrl+shift+上下可能会是慢速的显示多任务,因为ctrl+上/下被OSX占用,shift起到慢速的作用.这时解决办法两个,1:在系统设定中取消Ctrl+上/下快捷键; 2:在Key-Binding,default中搜索`select_lines`并改变快捷键,例如我改为没有用到的Ctrl+shift+alt+上下); Win/linux: Ctrl+Alt+上下.
 
 ### 注意事项
 
@@ -112,9 +144,10 @@ Perference->Setting Default->搜索New_Window, 打开文件在新窗口设为fal
 ## Reference
 
 1. [主页](http://www.sublimetext.com/)
-2. [知乎:sublime有哪些实用技巧?](http://www.zhihu.com/question/19976788 )
-3. [sublime非官方文档](http://sublime-text.readthedocs.org/en/latest/intro.html)
-4. [善用佳软视频介绍](http://xbeta.info/sublime-text2.htm)
+2. [手册](http://docs.sublimetext.info/en/latest/)
+3. [知乎:sublime有哪些实用技巧?](http://www.zhihu.com/question/19976788 )
+4. [sublime非官方文档](http://sublime-text.readthedocs.org/en/latest/intro.html)
+5. [善用佳软视频介绍](http://xbeta.info/sublime-text2.htm)
 
 
 ---
