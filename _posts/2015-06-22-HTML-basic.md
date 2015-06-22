@@ -80,7 +80,7 @@ head元素一般包括title，style，script,meta等
 - `<bdo>`: 文字从右到左。。。
 - `<q>`和`<blockquote>`: 小块引用（只加引号）和大块引用（新行，起始空几格）
 
-<center> ![characters style](http://csis.pace.edu/~marchese/HTML/L1/logchrsty.jpg)</center>
+![characters style](http://csis.pace.edu/~marchese/HTML/L1/logchrsty.jpg)
  
 ## 属性：
 
@@ -109,11 +109,11 @@ head元素一般包括title，style，script,meta等
 
 PS: margin控制边缘空白，padding控制和边界的距离，border为边界宽度。margin：auto为左右相等，即居中处理。1 2 3 4表示上右下左顺时针的距离，若只指明一个表示四面一样。也可以专用margin-top/right/bottom/left来指明。同理border和padding。注意padding会使用bgcolor。注意这些px值可以为负值，因为相对位置。
 
-<center>![boxdim](http://www.w3.org/TR/REC-CSS2/images/boxdim.gif)</center>  
+![boxdim](http://www.w3.org/TR/REC-CSS2/images/boxdim.gif) 
 
 一些常用的字体. 名字大小写敏感. CSS最基础三种: serif, sans-serif, cursive.
 
-<center>![font-family](https://dhhmzgirqh63s.cloudfront.net/127.gif)</center>
+![font-family](https://dhhmzgirqh63s.cloudfront.net/127.gif)
 
 ## JavaScript
 HTML网页支持的脚本语言.基于Java语言开发.用于很多复制操作和调用. 这里不进行讨论了.
