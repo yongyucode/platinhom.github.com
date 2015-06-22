@@ -107,10 +107,12 @@ head元素一般包括title，style，script,meta等
 	- `position`：`static`(默认)/`absolute`/`relative`/`fixed`/`inherit` 子元素相对母元素的位置。static是默认的放置，不管left等的变化。absolute是相对非static的上级父元素的left时的位置，若没有则根据html的位置; relative是相对用static时的位置而言；fixed是固定位置，不受滚动条控制。
 	- `z-index`：叠放时的优先序
 
-PS: margin控制边缘空白，padding控制和边界的距离，border为边界宽度。margin：auto为左右相等，即居中处理。1 2 3 4表示上右下左顺时针的距离，若只指明一个表示四面一样。也可以专用margin-top/right/bottom/left来指明。同理border和padding。注意padding会使用bgcolor。注意这些px值可以为负值，因为相对位置。  
-<center> ![boxdim](http://www.w3.org/TR/REC-CSS2/images/boxdim.gif) </center>  
+PS: margin控制边缘空白，padding控制和边界的距离，border为边界宽度。margin：auto为左右相等，即居中处理。1 2 3 4表示上右下左顺时针的距离，若只指明一个表示四面一样。也可以专用margin-top/right/bottom/left来指明。同理border和padding。注意padding会使用bgcolor。注意这些px值可以为负值，因为相对位置。
+
+<center>![boxdim](http://www.w3.org/TR/REC-CSS2/images/boxdim.gif)</center>  
 
 一些常用的字体. 名字大小写敏感. CSS最基础三种: serif, sans-serif, cursive.
+
 <center>![font-family](https://dhhmzgirqh63s.cloudfront.net/127.gif)</center>
 
 ## JavaScript
