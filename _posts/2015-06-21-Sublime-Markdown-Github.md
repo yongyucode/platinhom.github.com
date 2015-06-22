@@ -64,7 +64,7 @@ git push origin master
 
 - 对于Window系统,就不太友善了..我们使用MSYSGit的bash来实验. 此时, Project 设置文件为:
 
-~~~ JavaScript
+~~~ javascript
 {
 	"folders":
 	[
