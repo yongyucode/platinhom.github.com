@@ -62,6 +62,28 @@ git commit -am "regular"
 git push origin master
 ~~~
 
+- 对于Window系统,就不太友善了..我们使用MSYSGit的bash来实验. 此时, Project 设置文件为:
+
+~~~ JavaScript
+{
+	"folders":
+	[
+		{
+			"path": "platinhom.github.com"
+		}
+	],
+		"build_systems":
+    [
+        {
+            "name": "submitGIT",
+            "cmd": ["C:\\Program Files (x86)\\Git\\bin\\sh.exe", "--login", "-i","C:\\Users\\Hom\\Desktop\\MyGit\\platinhom\\platinhom.github.com\\submit.sh"]
+        }
+    ]
+}
+~~~
+其中, --login 和 -i分别两个选项用来登入, 后面是submit脚本的绝对路径.搞掂~
+
+
 ### 撰写博文
 - `cmd+shift+t` 调出命令行,或者在左侧side bar右键一个文件,`open terminal here`.
 - `./newblog.sh myblog category tag1 tag2` 的命令快速创建新日志文件.
