@@ -4,13 +4,13 @@
 - default.html: A basic template for all.
 
 - page.html: A template when create a main page for blog
-- page.html: Similar to page.html, `p,ol,ul,li` with small font.
+- page_small.html: Similar to page.html, `p,ol,ul,li` with small font.
+- page_prism/html: From page.html, add prism code highlight
 
 - post.html: A template for posting blogs, with basic loading.
 - post_mathjax.html: Posting blogs with mathjax loading.
 - post_small.html: Posting blogs with mathjax loading and small font for `p,ol,ul,li`.
 - posttoc.html: add TOC to post. I keep it as origin.
-- post_full.html: A template contains full things.
 
 - slide.html: I don't know..
 
@@ -62,4 +62,18 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 <script src="/js/script.js" type="text/javascript"></script>
 </div>
 ~~~~
+
+- Cancel prism highlight relative css/js in default. 
+- Abandon TOC.js, to use origin prism.js
+- Add the `prism.js/HomGH_prism.css` to post and page prism.
+
+~~~ markup
+<!--Origin: -->
+<link rel="stylesheet" href="/jscss/MDprism.css">
+<script src="/jscss/TOC.js"></script>
+
+<!--To these: -->
+<link rel="stylesheet" href="/css/HomPrism.css">
+<script src="/js/prism.js"></script>
+~~~
 
