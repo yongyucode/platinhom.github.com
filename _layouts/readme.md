@@ -1,18 +1,18 @@
 
 ## The file here means:
 
-### default.html: A basic template for all.
+- default.html: A basic template for all.
 
-### page.html: A template when create a main page for blog
-### page.html: Similar to page.html, `p,ol,ul,li` with small font.
+- page.html: A template when create a main page for blog
+- page.html: Similar to page.html, `p,ol,ul,li` with small font.
 
-### post.html: A template for posting blogs, with basic loading.
-### post_mathjax.html: Posting blogs with mathjax loading.
-### post_small.html: Posting blogs with mathjax loading and small font for `p,ol,ul,li`.
-### posttoc.html: 
-### post_full.html: A template contains full things.
+- post.html: A template for posting blogs, with basic loading.
+- post_mathjax.html: Posting blogs with mathjax loading.
+- post_small.html: Posting blogs with mathjax loading and small font for `p,ol,ul,li`.
+- posttoc.html: 
+- post_full.html: A template contains full things.
 
-### slide.html: I don't know..
+- slide.html: I don't know..
 
 
 ## Note:
@@ -35,3 +35,4 @@ MathJax.Hub.Queue(function(){
 var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElement().parentNode.className+=' has-jax';}});
 </script>
 ~~~~
+
