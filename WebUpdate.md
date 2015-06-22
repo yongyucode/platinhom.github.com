@@ -34,9 +34,10 @@ layout: page_prism
 - jscss fold: old css and js by the website template 
 
 ## Update:
+
 ### Notice: Some code may be converted by Jekyll. Please check the original [WebUpdate.md file](https://github.com/platinhom/platinhom.github.com/blob/master/WebUpdate.md).
 
-- Add busuanzi to default.html
+### Add busuanzi to default.html
 
 ~~~ markup
 <!--in head-->
@@ -47,7 +48,8 @@ layout: page_prism
 <span id="busuanzi_container_site_pv">本站<a href="http://ibruce.info/2015/04/04/busuanzi">总访问量</a><span id="busuanzi_value_site_pv"></span>次,</span><span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人</span>
 ~~~
 
-- Add Google Analysis and Baidu Tongji to default.
+### Add Google Analysis and Baidu Tongji to default.
+
 - Control them based on `_config.yml`
 
 ~~~ markup
@@ -103,7 +105,7 @@ baiduShare:
   config: false
 ~~~
 
-- Revise the time zone for website
+### Revise the time zone for website
 
 ~~~ markup
 <!--modify the footer as -->
@@ -114,13 +116,13 @@ baiduShare:
 timezone:      Asia/Shanghai
 ~~~
 
-- Cancel ChemDoodleWeb in post.html and so on, only in posttoc.html.
+### Cancel ChemDoodleWeb in post.html and so on, only in posttoc.html.
 
 ~~~~ markup
 <script src="/jscss/ChemDoodleWeb.js"></script>
 ~~~~
 
-- Cancel Mathjax in many templates.
+### Cancel Mathjax in many templates.
 
 ~~~~ markup
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -133,7 +135,8 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 </script>
 ~~~~
 
-- Cancel the search Nav in Default.html, which was put between container and main.
+### Cancel the search Nav in Default.html, which was put between container and main.
+
 - Move the nav search into page.
 
 ~~~~ markup
@@ -148,7 +151,7 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 </div>
 ~~~~
 
-- Cancel prism highlight relative css/js in default. 
+### Cancel prism highlight relative css/js in default.   
 - Abandon TOC.js, to use origin prism.js
 - Add the `prism.js/HomGH_prism.css` to post and page prism.
 
