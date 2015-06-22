@@ -157,6 +157,10 @@ p,span {
 div ol > li {
 	font-size: 10px;
 }
+
+p:nth-child(3){
+	font-weight:bold;
+}
 ~~~
 
 ## Reference
