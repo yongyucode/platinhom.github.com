@@ -35,8 +35,8 @@ head元素一般包括title，style，script,meta等
 ### 页面元素：
 
 - `<hr>`: 一条大横分隔线，无结束符。
-- `<div> </div>`：分块，
-- `<span> </span>`：将整体内容分块处理.
+- `<div> </div>`：分块,容器一种.块级元素.
+- `<span> </span>`：将整体内容分各部分处理,不同span只占在一个块内,例如只占一行.一般用来控制不同样式.普通元素.
 - `<p> </p>` : 段落元素, 其实就是上下空一行隔开内容.常用文字元素. 
 - `<h1>`到`<h6>`: 标题元素，从1到6减小字体大小，加粗，上下留空。属性：align="center"
 - `<img src=url/>`: 图片，无结束符。使用src属性指定图片，可以是本地或者超链接。
@@ -44,7 +44,7 @@ head元素一般包括title，style，script,meta等
 - `<li></li>`: 在有序和无序列表中的每一项内容.
 - `<ol> </ol>`: 有序列表; 
 - `<ul></ul>`: 无序列表，默认起始一个大点。每个项为一行，用`<li></li>`表示该项。li的前符号可用list-style-type定义
-- `<table> </table>`:`<tr></tr>`行`<tc></tc>`列，`<td> </td>`数据格，`<thead> </thead>`和`<tbody> </tbody>`像一般的头和body一样，thead内用tr创建行后用`<th></th>`加首行的格内容；注意tbody用align可以全部整体align；`colspan="3"`属性进行单元格合并（适于th，td）；style很多，如padding; border-left/right/bottom/top:1px solid/dashed/dotted black/#123456; table有border-collapse:collapse.
+- `<table> </table>`:`<tr></tr>`行`<tc></tc>`列，`<td> </td>`数据格，`<thead> </thead>`和`<tbody> </tbody>`像一般的头和body一样，thead内用tr创建行后用`<th></th>`加首行的格内容；注意tbody用`align`属性可以全部整体align；`colspan="3"`属性进行单元格合并（适于th，td）；style很多，如`padding`; `border`(一个框),`border-left/right/bottom/top`:1px solid/dashed/dotted black/#123456; table有`border-collapse:collapse`. 范例:`<table border="1px"><thead><tr><th>name</th><th>age</th></tr></thead><tbody style="align:center"><tr><td>hom</td><td>30</td></tr></tbody></table>`
 
 
 ## 格式控制：
@@ -83,7 +83,17 @@ margin控制边缘空白，padding控制和边界的距离，border为边界宽�
 
 - `id` ：指明特定ID，用于CSS和JS操作.
 - `class`：指明属于某类型，用于CSS渲染.
-- `style`：放在标签内，格式为`style="name:value; name2:value2"` name例如font-size(10px 无空格，或者用1em，em表示默认字体大小倍数，和硬件无关),color(green,更多， 采用16进制6个数字，可搜hex color picker来辨认)， font-family（Times, Arial,更多 ， 注意首字母大写；css一般支持：serif, sans-serif, cursive草书； 可用,来分隔多个可能字体，因为不一定都支持，会按顺序选择字体，将serif等放最后），background-color, text-align（center，left，right），width,heigh, border（1px dashed black 三者格式，其实对应子属性border-width,border-style, border-color； 另外还有border-radius表示块的角的弯曲度）；对于超链接a还可以有text-decoration:none/underline (修饰为下划线)； margin(auto，居中保持两边一致)； font-weight(bold)
+- `style`：放在标签内，格式为`style="name:value; name2:value2"` name例如:
+	- `font-size`(10px 无空格，或者用1em，em表示默认字体大小倍数，和硬件无关)
+	- `color`(green,[更多](http://www.w3.org/TR/css3-color/#svg-color)， 采用16进制6个数字，可搜hex color picker来辨认)， 
+	- `font-family`（Times,Arial,[更多](http://www.w3.org/TR/CSS21/fonts.html#generic-font-families),注意首字母大写；css一般支持：serif, sans-serif, cursive草书； 可用`,`来分隔多个可能字体，因为不一定都支持，会按顺序选择字体，将serif等放最后），
+	- `background-color`, white/black.., 底色.
+	- `text-align`（center，left，right），文字对齐方法
+	- `width`,`heigh`, 
+	- `border`（1px dashed black 三者格式，其实对应子属性border-width,border-style, border-color；border-radius表示块的角的弯曲度）；
+	- `margin`(auto，居中保持两边一致)；
+	- `font-weight`(bold)
+	对于超链接a还可以有text-decoration:none/underline (修饰为下划线)；  
 - `display`: block 默认竖排放置block；inline-block：横排放置block；inline：以最小尺寸横放，若为空会叠放一起，适合于`<p><h1>`等；none：不显示。
 - `margin/border/padding`
 - `float`：放置位置，left/right，会一个挨一个放置，注意这个left/right是相对剩余空间而言。
