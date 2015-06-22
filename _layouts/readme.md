@@ -36,3 +36,17 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 </script>
 ~~~~
 
+- Cancel the search Nav in Default.html, which was put between container and main.
+
+~~~~ markup
+<div>
+<nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="Search"></a></nav>
+<div id="search-form-wrap"><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://platinhom.github.io"></form></div>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<script src="/js/jquery.min.js"></script>
+ <link rel="stylesheet" href="/js/jquery.fancybox.css" type="text/css">
+ <script src="/js/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+</div>
+~~~~
+
