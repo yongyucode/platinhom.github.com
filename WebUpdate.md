@@ -1,3 +1,7 @@
+---
+title: WebUpdate
+layout: page_prism
+---
 
 ## The _layout files means:
 
@@ -27,7 +31,87 @@
 
 - jscss fold: old css and js by the website template 
 
-## Note:
+## Update:
+
+- Add busuanzi to default.html
+
+~~~ markup
+<!--in head-->
+<!--busuanzi for statistics of static web-->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--in body-->
+<span id="busuanzi_container_site_pv">本站<a href="http://ibruce.info/2015/04/04/busuanzi">总访问量</a><span id="busuanzi_value_site_pv"></span>次,</span><span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人</span>
+~~~
+
+- Add Google Analysis and Baidu Tongji to default.
+- Control them based on `_config.yml`
+
+~~~ markup
+<!--add these in head-->
+<!--For web statistics by GA/Baidu, config in _config.yml-->
+{% if site.googleAnaly.config %}
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', '{{ site.googleAnaly.id }}', 'auto');
+	ga('send', 'pageview');
+</script>
+{% endif %}
+
+{% if site.baiduTongji.config %}
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?{{ site.baiduTongji.id }}";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+{% endif %}
+
+<!--add this into _config.yml for control-->
+###User define variants
+#googleAnaly, your id link UA-12345678-X
+googleAnaly:
+  config: true
+  id: UA-63959820-1
+
+#baidu tongji
+baiduTongji:
+  config: true
+  id: 07b65937d246126401c393da419d851e
+
+#comment config
+disqus:
+  config: false
+  id: platinhom
+
+duoshuo:
+  config: true
+  id: platinhom
+  
+#baidu share config
+baiduShare:
+  config: false
+  
+~~~
+
+- Revise the time zone for website
+
+~~~ markup
+
+<!--modify the footer as -->
+<span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
+
+<!--add this into _config.yml for control-->
+# Time Zone +8 China
+timezone:      Asia/Shanghai
+~~~
 
 - Cancel ChemDoodleWeb in post.html and so on, only in posttoc.html.
 
