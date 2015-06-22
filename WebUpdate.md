@@ -2,6 +2,7 @@
 title: WebUpdate
 layout: page_prism
 ---
+<link rel="stylesheet" href="/jscss/HomGH_small.css" type="text/css">
 
 ## The _layout files means:
 
@@ -99,13 +100,11 @@ duoshuo:
 #baidu share config
 baiduShare:
   config: false
-  
 ~~~
 
 - Revise the time zone for website
 
 ~~~ markup
-
 <!--modify the footer as -->
 <span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
 
