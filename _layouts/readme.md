@@ -1,5 +1,5 @@
 
-## The file here means:
+## The _layout files means:
 
 - default.html: A basic template for all.
 
@@ -14,6 +14,11 @@
 
 - slide.html: I don't know..
 
+## The CSS/JS files:
+
+- HomGH.css: CSS for webpage, including TOC.
+- HomGH_small: CSS to control `p,ol,ul,li` to small font.
+- HomGH_prism.css: CSS style for prism code.
 
 ## Note:
 
