@@ -63,8 +63,6 @@ head元素一般包括title，style，script,meta等
 - `<sup>`/`<sub>`:上下标
 - `<code>/<kbd>/<tt>/<samp>/<var>`: 一般用来显示计算机输出结果。。见右下图
 - `<address>`: 地址的格式，一般为斜体。
-
-
 - `<abbr title="United Nations">UN</abbr>`: 缩写，鼠标移到UN上时显示缩写
 - `<acronym title="World Wide Web">WWW</acronym>`: 首字母缩写, 和abbr差不多。
 - `<bdo>`: 文字从右到左。。。
@@ -72,13 +70,6 @@ head元素一般包括title，style，script,meta等
 
 
  
-margin控制边缘空白，padding控制和边界的距离，border为边界宽度。margin：auto为左右相等，即居中处理。1 2 3 4表示上右下左顺时针的距离，若只指明一个表示四面一样。也可以专用margin-top/right/bottom/left来指明。同理border和padding。注意padding会使用bgcolor。注意这些px值可以为负值，因为相对位置。
-
-
-
-
-
-
 ## 属性：
 
 - `id` ：指明特定ID，用于CSS和JS操作.
@@ -101,6 +92,9 @@ margin控制边缘空白，padding控制和边界的距离，border为边界宽�
 - `right/left/top/bottom`相对位置偏移，针对核心部分，受position控制。
 - `position`：static(默认)/absolute/relative/fixed/inherit 子元素相对母元素的位置。static是默认的放置，不管left等的变化。absolute是相对非static的上级父元素的left时的位置，若没有则根据html的位置; relative是相对用static时的位置而言；fixed是固定位置，不受滚动条控制。
 - `z-index`：叠放时的优先序
+
+PS: margin控制边缘空白，padding控制和边界的距离，border为边界宽度。margin：auto为左右相等，即居中处理。1 2 3 4表示上右下左顺时针的距离，若只指明一个表示四面一样。也可以专用margin-top/right/bottom/left来指明。同理border和padding。注意padding会使用bgcolor。注意这些px值可以为负值，因为相对位置。
+![boxdim](http://www.w3.org/TR/REC-CSS2/images/boxdim.gif)
 
 ## JavaScript
 HTML网页支持的脚本语言.基于Java语言开发.用于很多复制操作和调用. 这里不进行讨论了.
