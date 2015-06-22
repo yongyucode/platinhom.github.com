@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_mathjax
 title: Usage of Delphi-APBS-AmberPB
 date: 2015-06-18 17:38:54
 categories: CompBiol
