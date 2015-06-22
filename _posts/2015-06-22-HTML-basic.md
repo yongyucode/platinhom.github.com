@@ -8,6 +8,7 @@ tags: Website IT
 
 新手可到[CodeCademy](http://www.codecademy.com/)进行简单的学习, [中文版地址](http://www.codecademy.com/zh).
 
+HTML使用markup语言进行编写.
 
 ## 基础要素
 
@@ -18,14 +19,15 @@ tags: Website IT
 
 ### 主要要素：
 
-- `<!DOCTYPE html>` 标记为html语言，一般在第一行.
+- `<!DOCTYPE html>` : 标记为html语言，一般在第一行.
+- `<html> </html>` : 主体部分,包含了head,body等. 一般如`<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"> ... </html>`
 - `<head> </head>` : 头信息，不被显示，可以放一些参数样式和js脚本等。主要是方便搜索引擎。
-- `<title> </title>` : 网页标题。一般写在head内。
 - `<body> </body>` : 主体, 显示的内容.
 - `<footer> </footer>`: 页脚,底注.
 
 head元素一般包括title，style，script,meta等
 
+- `<title> </title>` : 网页标题。一般写在head内。基本要素之一.
 - `<style> </style>`: 定义样式，和css文件一样写法。参看css文件。
 - `<link />`: 定义载入连接文件，例如css：`<link type="text/css" rel="stylesheet" href="stylesheet.css" />`
 - `<script> </script>`: 定义脚本,可外链或写在页面上.
@@ -33,13 +35,16 @@ head元素一般包括title，style，script,meta等
 ### 页面元素：
 
 - `<hr>`: 一条大横分隔线，无结束符。
-- `<img url... />`: 图片，无结束符。使用src属性指定图片，可以是本地或者超链接。src的值请用".."
-- `<a> </a>`：锚标签，用来连接到别的文件。href属性指定超链接，邮件可用`"mailto:abc@163.com?subject=Hello%20again"`这样子指定，注意?分隔内容。`<a>显示内容（可以是图片）</a>`； 属性target="_blank" 以新链接打开，target定义从什么地方打开连接地址。name属性用来定义定义锚的名字，用`"#name"`进行业内跳转，也可以`url#name`来去某节跳转。
 - `<div> </div>`：分块，
-- `<span> </span>`：将整体内容分块处理
-- `<ol> </ol>`：有序列表；`<ul></ul>`：无序列表，默认起始一个大点。每个项为一行，用`<li></li>`表示该项。li的前符号可用list-style-type定义
-- `<table> </table>`：`<tr></tr>`行`<tc></tc>`列，`<td> </td>`数据格，`<thead> </thead>`和`<tbody> </tbody>`像一般的头和body一样，thead内用tr创建行后用`<th></th>`加首行的格内容；注意tbody用align可以全部整体align；colspan="3"属性进行单元格合并（适于th，td）；style很多，如padding; border-left/right/bottom/top:1px solid/dashed/dotted black/#123456; table有border-collapse:collapse
-
+- `<span> </span>`：将整体内容分块处理.
+- `<p> </p>` : 段落元素, 其实就是上下空一行隔开内容.常用文字元素. 
+- `<h1>`到`<h6>`: 标题元素，从1到6减小字体大小，加粗，上下留空。属性：align="center"
+- `<img src=url/>`: 图片，无结束符。使用src属性指定图片，可以是本地或者超链接。
+- `<a> </a>`: 锚标签，用来连接到别的地方。href属性指定超链接，邮件可用`"mailto:abc@163.com?subject=Hello%20again"`这样子指定，注意?分隔内容。`<a>显示内容（可以是图片）</a>`； 属性`target="_blank" `将以新链接打开，target定义从什么地方打开连接地址。`name`属性用来定义定义锚的名字，用`"#name"`进行业内跳转，也可以`url#name`来去某节跳转。
+- `<li></li>`: 在有序和无序列表中的每一项内容.
+- `<ol> </ol>`: 有序列表; 
+- `<ul></ul>`: 无序列表，默认起始一个大点。每个项为一行，用`<li></li>`表示该项。li的前符号可用list-style-type定义
+- `<table> </table>`:`<tr></tr>`行`<tc></tc>`列，`<td> </td>`数据格，`<thead> </thead>`和`<tbody> </tbody>`像一般的头和body一样，thead内用tr创建行后用`<th></th>`加首行的格内容；注意tbody用align可以全部整体align；`colspan="3"`属性进行单元格合并（适于th，td）；style很多，如padding; border-left/right/bottom/top:1px solid/dashed/dotted black/#123456; table有border-collapse:collapse.
 
 
 ## 格式控制：
@@ -47,8 +52,6 @@ head元素一般包括title，style，script,meta等
 ### 简单HTML控制
 
 - `<br>`: 换行
-- `<h1>`到`<h6>`: 标题元素，从1到6减小字体大小，加粗，上下留空。属性：align="center"
-- `<p>` : 段落元素, 其实就是上下空一行隔开内容 
 - `<pre>`: 预格式化，就是按输入的内容显示，包括输入的多个空格、换行这些元素。一般在css中`pre code`这样去专门定义,更优先.
 - `<b>` : 内容被加粗
 - `<strong>`: 内容被强调，显示起来和bold一样，可以修改强调的格式。
