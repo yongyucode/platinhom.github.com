@@ -41,6 +41,7 @@ pre.line-numbers>code{position:relative}
 .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:2.5em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .line-numbers-rows>span{display:block;pointer-events:none;counter-increment:linenumber}
 .line-numbers-rows>span:before{display:block;content:counter(linenumber);color:#132d4b;background:#2f6fab;padding-right:.5em;text-align:right}
+
 .token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:hsl(24,20%,85%)}
 .token a{color:inherit}
 .token.cr:before{content:'?'}

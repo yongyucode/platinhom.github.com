@@ -9,7 +9,7 @@
 - post.html: A template for posting blogs, with basic loading.
 - post_mathjax.html: Posting blogs with mathjax loading.
 - post_small.html: Posting blogs with mathjax loading and small font for `p,ol,ul,li`.
-- posttoc.html: 
+- posttoc.html: add TOC to post. I keep it as origin.
 - post_full.html: A template contains full things.
 
 - slide.html: I don't know..
@@ -19,6 +19,13 @@
 - HomGH.css: CSS for webpage, including TOC.
 - HomGH_small: CSS to control `p,ol,ul,li` to small font.
 - HomGH_prism.css: CSS style for prism code.
+- prism.css: The origin prism style.
+- TOC.js: Old prism and box()?  I will use prism.js instead.
+- addTOC.js: To generate TOC for the page. Used in posttoc.html.
+
+- /js/script.js; /js/jquery.fancybox.pack.js; /js/jquery.fancybox.css; /js/jquery.min.js; /css/style.css is used for search box.
+
+- jscss fold: old css and js by the website template 
 
 ## Note:
 
@@ -50,7 +57,7 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 <div id="search-form-wrap"><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://platinhom.github.io"></form></div>
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <script src="/js/jquery.min.js"></script>
- <link rel="stylesheet" href="/js/jquery.fancybox.css" type="text/css">
+ <link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css">
  <script src="/js/jquery.fancybox.pack.js" type="text/javascript"></script>
 <script src="/js/script.js" type="text/javascript"></script>
 </div>

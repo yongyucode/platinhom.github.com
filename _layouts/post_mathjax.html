@@ -3,6 +3,8 @@ layout: default
 comment: true
 ---
 
+<script src="/js/prism.js"></script>
+
 <section class="post"> {{ content }} </section>
 
 <section class="meta">
@@ -20,7 +22,6 @@ comment: true
 {% endif %}
 </section>
 
-<script src="/js/TOC.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({tex2jax:{processEscapes: true, inlineMath: [ ['$','$'], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}});
