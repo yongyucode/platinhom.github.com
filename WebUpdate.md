@@ -50,7 +50,7 @@ layout: page_prism
 ~~~ markup
 <!--add these in head-->
 <!--For web statistics by GA/Baidu, config in _config.yml-->
-{% if site.googleAnaly.config %}
+\{% if site.googleAnaly.config %\}
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -62,7 +62,7 @@ layout: page_prism
 </script>
 {% endif %}
 
-{% if site.baiduTongji.config %}
+\{% if site.baiduTongji.config %\}
 <script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -72,7 +72,7 @@ layout: page_prism
 		s.parentNode.insertBefore(hm, s);
 	})();
 </script>
-{% endif %}
+\{% endif %\}
 
 <!--add this into _config.yml for control-->
 ###User define variants
@@ -106,7 +106,7 @@ baiduShare:
 ~~~ markup
 
 <!--modify the footer as -->
-<span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
+<span class="label label-info">Last updated: \{{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}\}</span></br>
 
 <!--add this into _config.yml for control-->
 # Time Zone +8 China
