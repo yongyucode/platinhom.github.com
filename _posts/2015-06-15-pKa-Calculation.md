@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_mathjax
 title: pKa Calculation
 date: 2015-06-15 08:43:13
 categories: CompBiol

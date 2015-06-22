@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_mathjax
 title: 网页中使用Mathjax输入数学公式
 date: 2015-06-16 18:16:21
 categories: MathStat
@@ -47,7 +47,7 @@ MathJax.Hub.Config({
 
 $$\alg A &=(l_1^2, l_2^2, l_3^3, l_2l_3, l_1l_3, l_1l_2) \\ {1\over E} &=\sum(SA^TA)\ealg$$
 
-我的网页源代码插入内容:
+我的网页源代码插入内容(为了减轻加载,一般文章不加载mathjax,使用`post_mathjax.html`另存来加载.):
 
 ~~~ markup
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
