@@ -3,6 +3,8 @@ layout: default
 comment: true
 ---
 
+<script src="/js/TOC.js"></script>
+
 <section class="post"> {{ content }} </section>
 
 <section class="meta">
@@ -19,8 +21,6 @@ comment: true
 {% for tag in page.tags %} <a href="/pages/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;{% endfor %}</span>
 {% endif %}
 </section>
-
-<script src="/jscss/TOC.js"></script>
 
 <script>
 $(function(){$(document).keydown(function(e){
