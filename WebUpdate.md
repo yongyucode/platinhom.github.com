@@ -34,8 +34,7 @@ layout: page_prism
 - jscss fold: old css and js by the website template 
 
 ## Update:
-
-### Notice: Some code may be converted by Jekyll. Please check the original [WebUpdate.md file](https://github.com/platinhom/platinhom.github.com/blob/master/WebUpdate.md).
+Notice: Some code may be converted by Jekyll. Please check the original [WebUpdate.md file](https://github.com/platinhom/platinhom.github.com/blob/master/WebUpdate.md).
 
 ### Add busuanzi to default.html
 
