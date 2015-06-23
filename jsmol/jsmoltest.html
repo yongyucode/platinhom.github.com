@@ -175,6 +175,8 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       disableInitialConsole: true
     }
       Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
+      Jmol.script(jmolApplet0,'set antialiasDisplay false');
+      Jmol.script(jmolApplet0,'set platformSpeed 5');
       Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
     </script>
 
@@ -199,8 +201,24 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
           <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
       </div>
+      platformSpeed:
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 8')" title='all features'>8</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 7')" title='no antialiasing'>7</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 6')" title='no translucency'>6</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 5')" title='surfaces dotted'>5</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 4')" title='cartoons as trace'>4</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 3')" title='geosurfaces as dots'>3</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 2')" title='ellipsoids as dots'>2</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 1')" title='wireframe only'>1</a>
+      <br>
+      <a href="javascript:Jmol.script(jmolApplet0,'select *;isosurface vdw')">isosurface vdw</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'isosurface delete')">off</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep')">mep</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'isosurface translucent')">translucent</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'isosurface opaque')">opaque</a>
+
     </div>
-    <p style="clear: both; font-size: 20px; text-align:left;"><br /><br />Webmaster: <a href="mailto:zhaozxcpu@hotmail.com">zhaozxcpu@hotmail.com</a></p>
+    <p style="clear: both; font-size: 20px; text-align:left;"><br /><br />Webmaster: Zhixiong Zhao, <a href="mailto:zhaozxcpu@hotmail.com">zhaozxcpu@hotmail.com</a></p>
   </div>
 </div>
 
