@@ -109,9 +109,16 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
           </tr>
 
           <tr>
-            <td width="190" rowspan="3" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">Surface Options<br><input type="checkbox" name="APPLY_HMSCORE" value="yes" checked>Yes</td>
-            <td bgcolor="#CECEFF" style="border:1px solid #999999"><label><span class="STYLE2">
-              <input type="text" size="6" name="HMSCORE_CVDW" value="1.4">Probe Radius </span></label></td>
+            <td width="190" rowspan="4" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">Surface Options<br><input type="checkbox" name="APPLY_HMSCORE" value="yes" checked>Yes</td>
+            <td bgcolor="#CECEFF" style="border:1px solid #999999">Surface Method: <label><span class="STYLE2">
+              <input type="radio" size="6" name="SURFACE_METHOD" value="SES">SES </span></label>
+              <label><span class="STYLE2">
+              <input type="radio" size="6" name="SURFACE_METHOD" value="MSMS">MSMS </span></label>
+              </td>
+          </tr>
+          <tr>
+            <td bgcolor="#CECEFF" style="border:1px solid #999999"><span class="STYLE2">
+              <input type="text" size="6" name="PROBE_RADIUS" value="1.4"> Probe Radius</span></td>
           </tr>
           <tr>
             <td bgcolor="#CECEFF" style="border:1px solid #999999"><span class="STYLE2">
@@ -130,9 +137,9 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
           </tr-->
 
           <tr>
-            <td width="190" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE3" style="border:1px solid #999999">  Showing Surface:&nbsp;&nbsp;</td>
+            <td width="190" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE3" style="border:1px solid #999999">  Showing Electrostatic Surface:&nbsp;&nbsp;</td>
             <td width="333" bgcolor="#B0B0FF" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="checkbox" name="SHOW_ATOM_BIND_SCORE" value="yes" >Yes</span></td>
+              <input type="checkbox" checked name="SHOWING_ELEC_SURFACE" value="yes" >Yes</span></td>
           </tr>
 
 
