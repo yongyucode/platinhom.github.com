@@ -108,7 +108,8 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ## Reference
 1. [w3school-cn-javascript教程](http://www.w3school.com.cn/js/index.asp)
-2. [JavaScript面向对象精要(一)](http://segmentfault.com/a/1190000002890067), [JavaScript面向对象精要(二)](http://segmentfault.com/a/1190000002896562)
+2. [Codecademy-JS教程练习](http://www.codecademy.com/zh/tracks/javascript)
+3. [JavaScript面向对象精要(一)](http://segmentfault.com/a/1190000002890067), [JavaScript面向对象精要(二)](http://segmentfault.com/a/1190000002896562)
 
 
 ---
