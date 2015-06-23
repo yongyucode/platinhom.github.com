@@ -32,10 +32,10 @@ head元素一般包括title，style，script,meta等
 - `<title> </title>` : 网页标题。一般写在head内。基本要素之一.
 - `<style> </style>`: 定义样式，和css文件一样写法。参看css文件。
 - `<link />`: 定义载入连接文件，例如css：`<link type="text/css" rel="stylesheet" href="stylesheet.css" />`
-- `<script> </script>`: 定义脚本,可外链或写在页面上.
+- `<script> </script>`: 定义脚本,可外链或写在页面上. 加载外链如`<script type="text/javascript" src="/jsmol/JSmol.min.js"></script>`, type指明类型,当为JS时可以忽略.
 - `<meta />`,用来储存一些不显示但可以被分析利用的数据.如`<meta http-equiv="content-type" content="text/html; charset=utf-8" /> <meta name="author" content="Hom" />`
 
-### 页面元素：
+### 页面基础元素：
 
 - `<hr>`: 一条大横分隔线，无结束符。
 - `<div> </div>`：分块,容器一种.块级元素.
@@ -58,6 +58,13 @@ head元素一般包括title，style，script,meta等
 	- `<th></th>`thead内用tr创建行后用来加首行的格内容；
 	- 注意tbody用`align`属性可以全部整体align；`colspan="3"`属性进行单元格合并（适于th，td）；style很多，如`padding`; `border`(一个框),`border-left/right/bottom/top`:1px solid/dashed/dotted black/#123456; table有`border-collapse:collapse`. 范例:`<table border="1px"><thead><tr><th>name</th><th>age</th></tr></thead><tbody style="align:center"><tr><td>hom</td><td>30</td></tr></tbody></table>`
 
+### 高级元素:
+
+- `<button type="button" onclick="alert('Welcome!')">Text shown</button>`: 按钮;  
+- `<input type="text" name="fname" />` : 输入框; 
+- `<form> </form>` : 输入空键; 
+- `<label for="male">Male</label> <input type="radio" name="sex" id="male" />`: 
+- `<video src="/i/movie.ogg" controls="controls">Hi</video>` 视频元素
 
 ## 格式控制：
 
@@ -118,7 +125,7 @@ PS: margin控制边缘空白，padding控制和边界的距离，border为边界
 ## JavaScript
 HTML网页支持的脚本语言.基于Java语言开发.用于很多复制操作和调用. 这里不进行讨论了.
 
-- `document.writeln("contex")`将内容写到html页面上.
+- `document.writeln("context")`将内容写到html页面上.
 
 ## CSS：Cascading Style Sheets
 
