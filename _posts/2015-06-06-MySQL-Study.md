@@ -11,6 +11,7 @@ tags: Database
 - 2
 - 3
 
+TODO: Study it.
 
 ---
 
