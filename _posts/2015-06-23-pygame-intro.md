@@ -1,12 +1,12 @@
 ---
 layout: post
-title: pygame-intro
+title: Pygame介绍(ZZ)
 date: 2015-06-23 07:47:42
 categories: CompSci
 tags: Python
 ---
 
-### [转载: Pygame极少](http://www.cnblogs.com/kex1n/archive/2010/03/19/2286509.html)
+### [转载: Pygame介绍](http://www.cnblogs.com/kex1n/archive/2010/03/19/2286509.html)
 
 ***
 
