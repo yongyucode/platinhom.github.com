@@ -56,7 +56,7 @@ head元素一般包括title，style，script,meta等
 	- `<tr></tr>`行`<tc></tc>`列
 	- `<td> </td>`一般数据格，
 	- `<th></th>`thead内用tr创建行后用来加首行的格内容；
-	- 注意tbody用`align`属性可以全部整体align；`colspan="3"`属性进行单元格合并（适于th，td）；style很多，如`padding`; `border`(一个框),`border-left/right/bottom/top`:1px solid/dashed/dotted black/#123456; table有`border-collapse:collapse`. 范例:`<table border="1px"><thead><tr><th>name</th><th>age</th></tr></thead><tbody style="align:center"><tr><td>hom</td><td>30</td></tr></tbody></table>`
+	- 注意tbody用`align`属性可以全部整体align；`colspan="3", rowspan=3`属性进行单元格合并（适于th，td）；style很多，如`padding`; `border`(一个框),`border-left/right/bottom/top`:1px solid/dashed/dotted black/#123456; table有`border-collapse:collapse`. 范例:`<table border="1px"><thead><tr><th>name</th><th>age</th></tr></thead><tbody style="align:center"><tr><td>hom</td><td>30</td></tr></tbody></table>`
 
 ### 高级元素:
 
@@ -71,6 +71,7 @@ head元素一般包括title，style，script,meta等
 ### 简单HTML控制
 
 - `<br>`: 换行
+- `&nbsp`: 强制空格
 - `<pre>`: 预格式化，就是按输入的内容显示，包括输入的多个空格、换行这些元素。一般在css中`pre code`这样去专门定义,更优先.
 - `<b>` : 内容被加粗
 - `<strong>`: 内容被强调，显示起来和bold一样，可以修改强调的格式。
@@ -100,9 +101,9 @@ head元素一般包括title，style，script,meta等
 	- `font-weight`(bold)
 	- `font-family`（Times,Arial,[更多](http://www.w3.org/TR/CSS21/fonts.html#generic-font-families),注意大小写敏感. css一般支持：serif, sans-serif, cursive草书； 可用`,`来分隔多个可能字体，因为不一定都支持，会按顺序选择字体，将serif等放最后.
 	- `background-color`, white/black.., 底色.
-	- `text-align`（center，left，right），文字对齐方法
+	- `text-align`（center，left，right），文字对齐方法. justify分散对齐
 	- `text-decoration`:none/underline. 针对超链接a(修饰为下划线)；
-	- `width`,`heigh`: 宽和长.
+	- `width`,`height`: 宽和长.
 	- `display`: `block` 默认竖排放置block；`inline-block`：横排放置block；`inline`：以最小尺寸横放，若为空会叠放一起，适合于`<p><h1>`等；`none`：不显示。
 	- `margin/border/padding`:见下方图说明.margin控制内容边界和block边界的间距(也可理解为不同元素的间距),padding控制内容到边界间距.
 	- `border`: `1px dashed black`同时设三者格式，其实对应子属性`border-width`,`border-style`, `border-color`；
