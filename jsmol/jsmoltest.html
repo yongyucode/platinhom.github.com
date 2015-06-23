@@ -157,56 +157,56 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
 
 
 <!--molecule view-->
-<div style="width:620px;height:800px;float:left;">
-  <div style="margin: auto; text-align: center; width: 600px; float:left; position:fixed;">
-  <span style="text-align:center;font-size:20px;"><b>Molecule Visualization</b></span>
-  <script type="text/javascript">
-  var  script_run = 'load test.pdb;spin on;cartoon only;color cartoons structure;';
-
-  var Info0 = {
-    width:  600,
-    height: 600,
-    color: "black",
-    serverURL: "https://undergrad-ed.chemistry.ohio-state./jsmol/php/jsmol.php",
-    use: "HTML5",
-    jarPath: "java",
-    j2sPath: "j2s",
-    script: script_run,//The command defined before.
-    disableInitialConsole: true
-  }
-    Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
-    Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
-  </script>
-
-  <div>
+<div style="width:620px;height:900px;float:left;">
+  <div style="margin: auto; text-align: center; width: 600px; height:900px; float:left; position:fixed;">
+    <span style="text-align:center;font-size:20px;"><b>Molecule Visualization</b></span>
     <script type="text/javascript">
-      Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
-      Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
-      document.writeln("<br>");
-      Jmol.jmolLink(jmolApplet0,"load 1akeA.pdb","Load 1AKE");
-      Jmol.jmolBr();
-      Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
-      Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
-      Jmol.jmolBr();
-       var mradio = [
-        ["spacefill 23%; wireframe 0.15;","ball and stick",true],
-        ["spacefill off; wireframe 0.15;","sticks"],
-        ["spacefill on; wireframe off;","spheres"]
-     ];
-     Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
-     //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
+    var  script_run = 'load test.pdb;spin on;cartoon only;color cartoons structure;';
+
+    var Info0 = {
+      width:  600,
+      height: 600,
+      color: "black",
+      serverURL: "https://undergrad-ed.chemistry.ohio-state./jsmol/php/jsmol.php",
+      use: "HTML5",
+      jarPath: "java",
+      j2sPath: "j2s",
+      script: script_run,//The command defined before.
+      disableInitialConsole: true
+    }
+      Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
+      Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
     </script>
-    <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
-        <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
+
+    <div style="float:left;">
+      <script type="text/javascript">
+        Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
+        Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
+        document.writeln("<br>");
+        Jmol.jmolLink(jmolApplet0,"load 1akeA.pdb","Load 1AKE");
+        Jmol.jmolBr();
+        Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
+        Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
+        Jmol.jmolBr();
+         var mradio = [
+          ["spacefill 23%; wireframe 0.15;","ball and stick",true],
+          ["spacefill off; wireframe 0.15;","sticks"],
+          ["spacefill on; wireframe off;","spheres"]
+       ];
+       Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
+       //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
+      </script>
+      <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
+          <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
+      </div>
     </div>
-  </div>
-  <img >
+    <p style="clear: both; font-size: 20px; text-align:left;"><br /><br />Webmaster: <a href="mailto:zhaozxcpu@hotmail.com">zhaozxcpu@hotmail.com</a></p>
   </div>
 </div>
 
 
 
-
+<img width=138px height=115px style="position:fixed; margin-right:0px; right:20px; bottom:10px;" src="../wei/msulogo.gif">
 </div>
 </body>
 </html>

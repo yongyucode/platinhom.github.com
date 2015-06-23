@@ -68,23 +68,6 @@ head元素一般包括title，style，script,meta等
 - `<video src="/i/movie.ogg" controls="controls">Hi</video>` : 视频元素
 - `<select><option value ="volvo">Volvo</option><option value ="saab">Saab</option></select>`: 下拉菜单
 
-<form action="" method="get"> 
-您喜欢的水果？<br /><br /> 
-<label><input name="Fruit" type="checkbox" value="" />苹果 </label> 
-<label><input name="Fruit" type="checkbox" value="" />桃子 </label> 
-<label><input name="Fruit" type="checkbox" value="" />香蕉 </label> 
-<label><input name="Fruit" type="checkbox" value="" />梨 </label> 
-</form> 
-
-<form action="" method="get"> 
-您最喜欢水果？<br /><br /> 
-<label><input name="Fruit" type="radio" value="" />苹果 </label> 
-<label><input name="Fruit" type="radio" value="" />桃子 </label> 
-<label><input name="Fruit" type="radio" value="" />香蕉 </label> 
-<label><input name="Fruit" type="radio" value="" />梨 </label> 
-<label><input name="Fruit" type="radio" value="" />其它 </label> 
-</form> 
-
 ## 格式控制：
 
 ### 简单HTML控制
