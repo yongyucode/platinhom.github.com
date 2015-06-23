@@ -9,6 +9,8 @@ tags: JS
 JavaScript 是属于网络的轻量级脚本语言,可以直接插入HTML页面中使用, 因此被数百万计的网页用来改进设计、验证表单、检测浏览器、创建cookies以及更多的应用,是因特网上最流行的脚本语言。
 Javasciprt使用浏览器即可运行和查看结果,不需另装任何解析器! JavaScript和Java语法类似,但是完全是两种不同的语言.  
 
+JavaScript 是面向对象的语言，但JS不使用类。在JS中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。JavaScript 基于 prototype，而不是基于类的.
+
 在HTML中使用外链(`src="/*.js"`)或者内嵌的方法引入JS.例如下面的例子. 其中. HTML type默认是JS, 所以可以不写.
 
 ~~~ html
@@ -46,10 +48,12 @@ JS的内容会在页面加载时加载. 事件发生时动作可以利用函数�
 ## 基础知识
 
 - 分割语句`;`,注释`//`和`/* comment */`, 大小写敏感, 字符串`' '`和`" "`相等. null空值清空变量; undefined是没赋值.
-- 基础类型: `String`字符串型; 数字只有一种浮点类型`Number`,可以用科学计数法`y=123e-5;`;`Boolean`布尔型`true/false`;
+- 基础对象: `String`[字符串型](http://www.w3school.com.cn/jsref/jsref_obj_string.asp); [数字类型](http://www.w3school.com.cn/jsref/jsref_obj_number.asp)只有一种浮点类型`Number`,可以用科学计数法`y=123e-5`,支持8/16进制`0577,0x1f`;`Boolean`[布尔型](http://www.w3school.com.cn/jsref/jsref_obj_Boolean.asp)`true/false`;
+- 内置对象: `Date`[日期型](http://www.w3school.com.cn/jsref/jsref_obj_date.asp); `Array`[数组型](http://www.w3school.com.cn/jsref/jsref_obj_array.asp); `Math` [数学型](http://www.w3school.com.cn/jsref/jsref_obj_math.asp); `Regexp`[正则表达式类型](http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp); `Event`[事件类型](http://www.w3school.com.cn/jsref/jsref_events.asp) (其实就是各种相应罢了,不怎么算对象); `Object` 对象型; `Function`[函数型](http://www.w3school.com.cn/jsref/jsref_obj_global.asp).
+- 浏览器对象: `Window` [窗口对象](http://www.w3school.com.cn/jsref/dom_obj_window.asp); `Navigator`[浏览器对象](http://www.w3school.com.cn/jsref/dom_obj_navigator.asp); `Screen` [显示屏对象](http://www.w3school.com.cn/jsref/dom_obj_screen.asp); `History` [浏览历史记录对象](http://www.w3school.com.cn/jsref/dom_obj_history.asp); `Location` [网站地址对象](http://www.w3school.com.cn/jsref/dom_obj_location.asp)
 - 变量 `var v1=1,v2="age";` var万能的动态类型. 全局变量(在函数外声明的)生存期是页面; 局部变量是函数结束. 函数内使用 `vname=value` 不声明就赋值的会被作为全局变量.
 - 数组,`var=new Array();var[0]=1;var[1]=2;`也可以`=new Array(1,2)`或`=[1,2]`.数组下标`0`开始.
-- 对象(`Object`), `var person={name:"Bill", id:5566};`,调用属性`person.name;person["name"];`,方法类似. 对象当然还有方法了. Java的想法: 一切皆对象.
+- 对象(`Object`), `var person={name:"Bill", id:5566};`,调用属性`person.name;person["name"];`,方法类似. 对象当然还有方法了. Java的想法: 一切皆对象. 利用函数构造`function person(name,age){this.name=name;this.age=age;}`(对象构造器,this是自身);`this.changeName=changeName;function changeName(name){this.lastname=name;}` 对象内创建方法.
 - 函数 `function fname([var1,var2]){..}`, 可以`return var1;`返回值.
 - 运算: 和C类似,支持`%`求余,`++`累加,`+=`自运算.
 - 字符串: 连接也是用加号. 数字和字符串相加,数字会转为字符串再处理.
@@ -68,7 +72,12 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - `document.getElementById("p1").innerHTML="New_Val"`: 改变其HTML内容.
 - `document.getElementById(id).attribute=new_value`: 改变属性值
 - `document.getElementById("p2").style.color="blue"` 改变样式.
-- `document.getElementById("myBtn").onclick=function(){displayDate()};` 对事件做响应,这里通过调用元素事件完成.
+- `document.getElementById("myBtn").onclick=function(){displayDate()};` 对事件做响应,这里通过调用元素事件完成. 
+- `document.createElement("p");` 创建元素(节点)
+- `document.createTextNode("这是新段落。");`创建元素内容
+- `para.appendChild(node);div1.appendChild(para)` 向元素添加内容,再把元素放到父元素里
+- `child.parentNode.removeChild(child);` 删除子元素.这里通过调用父元素属性再实现移除.
+
 
 - `<h1 onclick="changetext(this)">请点击该文本</h1>` 对事件作出响应,这里调用函数完成,函数中参数是id,这里this就是该元素.
 - `<body onload="checkCookies()">` onload事件就是页面加载时做的东东,`onunload`是离开页面做的.经常用于cookie处理,检查浏览器等.
@@ -81,6 +90,11 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 ### 字符串
 
 - `str.length` 返回长度
+- `str.substring(x,y)` 返回子串,和python的语法类似,0开始[x,y)返回x+1到y的子串.
+- `str.toUpperCase()/toLowerCase` 全部大/小写化
+- `str.indexOf(str2[,start])` 从start位开始(默认0)搜索str2,找到后返回首个匹配字母的索引,没找到返回-1.
+- `str.replace(regexp/substr,replacement)` 使用正则/子串搜索并替换.
+- `str.split(separator,max)` 必须指明分隔符. max是最大分的次数,默认无穷.
 
 ## JS常用方法
 
