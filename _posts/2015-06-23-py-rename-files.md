@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Python-批量文件重命名(zz)
+title: Python-批量文件重命名(ZZ)
 date: 2015-06-23 07:34:18
 categories: CompSci
-tags: Python
+tags: Python ZZ
 ---
 
 ### 转载: [Python - 批量文件重命名](http://www.cnblogs.com/tracydj/archive/2011/01/27/1945861.html)
