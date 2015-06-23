@@ -18,6 +18,7 @@ tags: 其他
 ### Python
 
 - [读取命令行参数](http://platinhom.github.io/2015/06/13/ReadArgv/); [正则表达式](http://platinhom.github.io/2015/06/10/regexp-re/)
+- [python字符串相关](http://platinhom.github.io/2015/06/23/python-string/)
 
 ### C++
 

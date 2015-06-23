@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python-string
+title: python字符串相关
 date: 2015-06-23 06:20:48
 categories: CompSci
 tags: Python
@@ -131,5 +131,10 @@ a="123"+"456"
 - `string.replace(string,old,new[,maxsplit])`     字符串中替换,max为最多替换个数
 - `string.join(list[,sep])`  使用分界符(sep,默认空格)将字符串列表连接起来.
 - `string.split(string,sep=None,maxsplit=-1)` 以sep为分界符将string分开成一个列表
+
+(不断更新哈...)
+
+- TODO: 字符串格式化; string的方法; print时的输出差异. 
+
 
 ---
