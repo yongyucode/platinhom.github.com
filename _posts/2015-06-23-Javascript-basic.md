@@ -11,7 +11,7 @@ Javasciprt使用浏览器即可运行和查看结果,不需另装任何解析器
 
 在HTML中使用外链(`src="/*.js"`)或者内嵌的方法引入JS.例如下面的例子. 其中. HTML type默认是JS, 所以可以不写.
 
-~~~ markup
+~~~ html
 <!--外链-->
 <script type="text/javascript" src="/jsmol/JSmol.min.js"></script>
 <!--内嵌-->
@@ -22,7 +22,7 @@ var hello;
 
 测试和练习十分容易, 新建一个txt文件,改名为test.html, 文本编辑器打开后, 写入以下基本信息.在中间填入指令, 并用浏览器打开刷新即可.
 
-~~~~ markup
+~~~ html
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -38,15 +38,16 @@ var hello;
 <button type="button" onclick="alert('Welcome!')">点击这里测试</button>
 </body>
 </html>
-~~~~
+~~~
 
 JS的内容会在页面加载时加载. 事件发生时动作可以利用函数来调用. 通过事件来操作页面元素是JS重要的作用.
 
 
 ## 基础知识
 
-- 分割语句`;`,注释`//`和`/* comment */`, 大小写敏感, 字符串`' '`和`" "`相等. null空值清空变量; Undefined是没赋值.
-- 变量 `var v1=1,v2="age";` var万能的动态类型. `String`字符串型; 数字只有一种类型`Number`,可以用科学计数法`y=123e-5;`,`Boolean`布尔型`true/false`; 全局变量(在函数外声明的)生存期是页面; 局部变量是函数结束. 函数内使用 `vname=value` 不声明就赋值的会被作为全局变量.
+- 分割语句`;`,注释`//`和`/* comment */`, 大小写敏感, 字符串`' '`和`" "`相等. null空值清空变量; undefined是没赋值.
+- 基础类型: `String`字符串型; 数字只有一种浮点类型`Number`,可以用科学计数法`y=123e-5;`;`Boolean`布尔型`true/false`;
+- 变量 `var v1=1,v2="age";` var万能的动态类型. 全局变量(在函数外声明的)生存期是页面; 局部变量是函数结束. 函数内使用 `vname=value` 不声明就赋值的会被作为全局变量.
 - 数组,`var=new Array();var[0]=1;var[1]=2;`也可以`=new Array(1,2)`或`=[1,2]`.数组下标`0`开始.
 - 对象(`Object`), `var person={name:"Bill", id:5566};`,调用属性`person.name;person["name"];`,方法类似. 对象当然还有方法了. Java的想法: 一切皆对象.
 - 函数 `function fname([var1,var2]){..}`, 可以`return var1;`返回值.
@@ -58,10 +59,26 @@ JS的内容会在页面加载时加载. 事件发生时动作可以利用函数�
 - 标签: `labelname: {..;break labelname;..}` 可用于跳出指定代码块.
 - 错误: `try{;} catch(err){;}` 测试并捕获. `throw exception` 抛出错误,一般是字符串.
 
-## JS常用
+## 常用属性和方法
+
+### 字符串
+
+- `str.length` 返回长度
+
+## JS常用方法
 
 - `alert('Welcome!')` : 弹出提示框
 - `document.write("");` : 写入内容到网页,加载完网页后执行,会覆盖网页...
 - `x=document.getElementById("demo")` : 获取元素
+- `confirm(str);`:弹出对话框,提示字符串str,返回true/false(确定/取消)
+- `prompt(str1, str2);`: 提问对话框,可输入值.str1是提示信息,str2是预设内容.按确定返回输入字符串,取消null.
+- `window.open(<URL>, <窗口名称>, <参数字符串>)` 打开新窗口.
+- `window.close()` 窗口关闭.这里window也可以是window.open打开后的返回值窗口变量.
+
+
+## Reference
+1. [w3school-cn-javascript教程](http://www.w3school.com.cn/js/index.asp)
+2. [JavaScript面向对象精要(一)](http://segmentfault.com/a/1190000002890067), [JavaScript面向对象精要(二)](http://segmentfault.com/a/1190000002896562)
+
 
 ---
