@@ -58,6 +58,8 @@ JS的内容会在页面加载时加载. 事件发生时动作可以利用函数�
 - 标签: `labelname: {..;break labelname;..}` 可用于跳出指定代码块.
 - 错误: `try{;} catch(err){;}` 测试并捕获. `throw exception` 抛出错误,一般是字符串.
 
+## JS常用
+
 - `alert('Welcome!')` : 弹出提示框
 - `document.write("");` : 写入内容到网页,加载完网页后执行,会覆盖网页...
 - `x=document.getElementById("demo")` : 获取元素
