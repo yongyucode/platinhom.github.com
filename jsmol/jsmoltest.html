@@ -21,7 +21,7 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 
 
 <body>
-<div style="background-color:white;margin:0px;padding:0px;">
+<div style="background-color:white;margin:10px;padding:0px;" >
 
 <!--Right Panel-->
 <div style="margin:auto;margin-right:20px;float:left;">
@@ -31,7 +31,7 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
       <!--Title informations-->
       <table width="640" border="0" align="center" cellpadding="0" cellspacing="2">
             <tr>
-              <td align="center" valign="bottom" class="title"><a href="?p=42&software=mibpb"><img src="../wei/MIBPB-Title2.png" width="450" border="0" align="absbottom"></a></td>
+              <td valign="bottom" class="title"><a href="?p=42&software=mibpb"><img align=left src="../wei/MIBPB-Title2.png" width="450" border="0" align="absbottom"></a><a href="http://users.math.msu.edu/users/wei/"><img align=right width=159px height=133px style="margin-right:0px;"src="../wei/msuwei-logo.gif"></a></td>
             </tr>
             <tr>
               <td class="arial_black" style="text-align:justify;"><hr style="color:#CCCCCC"><b>MIBPB</b>  is a software package for evaluating electrostatic properties of biomolecules via the solution of the Poisson-Boltzmann equation (PBE), an established two-scale model in biomolecular simulations. The PBE is one of the most popular implicit solvent models that explicitly describe atoms in biomolecules while represent interactions between molecules and solvent by a mean-field approximation. In this model, solvent is treated as a dielectric continuum, while ions within the solvent are assumed to have the Boltzmann distribution with respect to the electrostatic energy.  &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://users.math.msu.edu/users/wei/MIBPB/index.html" target="_blank"><font color="blue"><b>[User Manual]</b></font></a></td>
@@ -46,27 +46,37 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 
 
           <tr>
-            <td width="190" rowspan="4" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE4" style="border:1px solid #999999">MIBPB Options &nbsp;<input type="checkbox" name="SURFACE_OPTION" value="yes" checked>Yes</td>
+            <td width="190" rowspan="6" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE4" style="border:1px solid #999999">MIBPB Options</td>
             <td bgcolor="#B0B0FF" style="border:1px solid #999999"><label><span class="STYLE2">
-              <input type="text" size="6" name="HPSCORE_CVDW" value="1.0"> Interior Dielectric</span></label></td>
+              <input type="text" size="6" name="IN_DIELEC" value="1.0"> Interior Dielectric</span></label></td>
           </tr>
           <tr>
             <td bgcolor="#B0B0FF" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="HPSCORE_CHB" value="80.0"> Outerior Dielectric</span></td>
+              <input type="text" size="6" name="OUT_DIELEC" value="80.0"> Outerior Dielectric</span></td>
           </tr>
           <tr>
             <td bgcolor="#B0B0FF" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="HPSCORE_CHP" value="1.0"> Grid Resolution</span></td>
+              <input type="text" size="6" name="GRID_RESOLUTION" value="1.0"> Grid Resolution</span></td>
           </tr>
           <tr>
             <td bgcolor="#B0B0FF" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="HPSCORE_CRT" value="0.0"> Salt Concentration</span></td>
+              <input type="text" size="6" name="ION_STRENGTH" value="0.0"> Ion Strength</span></td>
+          </tr>
+          <tr> 
+              <td bgcolor="#B0B0FF" style="border:1px solid #999999">Linearized PB: <label><span class="STYLE2">
+              <input type="checkbox" name="LINEARIZED" value="yes">Yes </span></label>
+              </td>
+          </tr>
+          <tr> 
+              <td bgcolor="#B0B0FF" style="border:1px solid #999999">Simplified Solver: <label><span class="STYLE2">
+              <input type="checkbox" name="SIMPLIFIED" value="yes">Yes </span></label>
+              </td>
           </tr>
 
           <tr>
             <td width="190" rowspan="4" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">Surface Options &nbsp;<input type="checkbox" name="SURFACE_OPTION" value="yes" checked>Yes</td>
             <td bgcolor="#CECEFF" style="border:1px solid #999999">Surface Method: <label><span class="STYLE2">
-              <input type="radio" size="6" name="SURFACE_METHOD" value="ESES">ESES </span></label>
+              <input type="radio" size="6" name="SURFACE_METHOD" value="ESES" checked>ESES </span></label>
               <label><span class="STYLE2">
               <input type="radio" size="6" name="SURFACE_METHOD" value="MSMS">MSMS </span></label>
               </td>
@@ -115,7 +125,7 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
           </tr>
           <tr>
             <td width="190" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">User Email: </td>
-            <td bgcolor="#B0B0FF" style="border:1px solid #999999"><label ><span class="STYLE2">
+            <td bgcolor="#CECEFF" style="border:1px solid #999999"><label ><span class="STYLE2">
               <input type="text" size="40" name="USER_EMAIL" value=""></span></label></td>
           </tr>
 
@@ -159,7 +169,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
 <!--molecule view-->
 <div style="width:620px;height:900px;float:left;">
   <div style="margin: auto; text-align: center; width: 600px; height:900px; float:left; position:fixed;">
-    <span style="text-align:center;font-size:20px;"><b>Molecule Visualization</b></span>
+    <span style="text-align:center;font-size:20px;"><b>Molecular Visualization</b></span>
     <script type="text/javascript">
     var  script_run = 'load test.pdb;cartoon only;color cartoons structure; spin on;';//load data/caffeine.mol;
 
@@ -218,13 +228,11 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       <a href="javascript:Jmol.script(jmolApplet0,'isosurface opaque')">opaque</a>
 
     </div>
-    <p style="clear: both; font-size: 20px; text-align:left;"><br /><br />Webmaster: Zhixiong Zhao, <a href="mailto:zhaozxcpu@hotmail.com">zhaozxcpu@hotmail.com</a></p>
+    <p style="clear: both; font-size: 20px; text-align:center;"><br /><br /><a href="mailto:zhaozxcpu@hotmail.com"><b>Webmaster: Zhixiong Zhao</b></a></p>
   </div>
 </div>
 
-
-
-<img width=138px height=115px style="position:fixed; margin-right:0px; right:20px; bottom:10px;" src="../wei/msulogo.gif">
+<!--img width=138px height=115px style="position:fixed; margin-right:0px; right:20px; bottom:10px;" src="../wei/msulogo.gif"-->
 </div>
 </body>
 </html>
