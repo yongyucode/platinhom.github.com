@@ -8,11 +8,12 @@ tags: Python
 
 ### [转载: Pygame介绍](http://www.cnblogs.com/kex1n/archive/2010/03/19/2286509.html)
 
-***
+------
 
- Pygame是一套用来写游戏的Python模块。它是基于SDL库的，它使你可以用Python语言创建完全界面化的游戏和多媒体程序。Pygame可以运行在几乎所有的平台和操作系统上。
-     Pygame是免费的，它是在LGPL许可证下发布的，你可以用它来创建免费软件、共享软件和商业游戏。
-***
+ Pygame是一套用来写游戏的Python模块。它是基于SDL库的，它使你可以用Python语言创建完全界面化的游戏和多媒体程序。Pygame可以运行在几乎所有的平台和操作系统上。  
+ Pygame是免费的，它是在LGPL许可证下发布的，你可以用它来创建免费软件、共享软件和商业游戏。  
+
+-----
 
 下面，我们用一个例子来了解一下用Pygame来写游戏：
 
@@ -58,7 +59,7 @@ pygame.init()：初始化所有引入的模块。在你需要用pygame做任何�
 第24行：重画图象。screen.blit(ball, ballrect)将变量ball中的图象数据画到变量ballrect指定的区域。到目前为止，图象还不可见。  
 pygame.display.flip()：使你所画的在窗口中可见。  
 
-***
+------
 
 另一个例子：
 
@@ -191,4 +192,4 @@ if __name__ == "__main__":
 
 ~~~
 
----
+------
