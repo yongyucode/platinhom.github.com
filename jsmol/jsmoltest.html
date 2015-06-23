@@ -23,60 +23,15 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 <body>
 <div style="background-color:white;margin:0px;padding:0px;">
 
-<!--molecule view-->
-<div style="width:620px;height:800px;float:right;">
-  <div style="margin: auto; text-align: center; width: 600px; float:left; position:fixed;">
-  <span style="text-align:center;font-size:20px;"><b>Molecule Visualization</b></span>
-  <script type="text/javascript">
-  var  script_run = 'load test.pdb;spin on;cartoon only;color cartoons structure;';
-
-  var Info0 = {
-    width:  600,
-    height: 600,
-    color: "black",
-    serverURL: "https://undergrad-ed.chemistry.ohio-state./jsmol/php/jsmol.php",
-    use: "HTML5",
-    jarPath: "java",
-    j2sPath: "j2s",
-    script: script_run,//The command defined before.
-    disableInitialConsole: true
-  }
-    Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
-    Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
-  </script>
-
-  <script type="text/javascript">
-    Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
-    Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
-    document.writeln("<br>");
-    Jmol.jmolLink(jmolApplet0,"load 1akeA.pdb","Load 1AKE");
-    Jmol.jmolBr();
-    Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
-    Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
-    Jmol.jmolBr();
-     var mradio = [
-      ["spacefill 23%; wireframe 0.15;","ball and stick",true],
-      ["spacefill off; wireframe 0.15;","sticks"],
-      ["spacefill on; wireframe off;","spheres"]
-   ];
-   Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
-   //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
-  </script>
-  <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
-      <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
-  </div>
-  </div>
-</div>
-
 <!--Right Panel-->
-<div style="margin:auto;margin-right:20px;float:right;">
+<div style="margin:auto;margin-right:20px;float:left;">
     <form enctype="multipart/form-data" action="?p=42&software=xscore&action=calculate" method="POST" >
       <input type="hidden" name="MAX_FILE_SIZE" value="8000000">
 
       <!--Title informations-->
       <table width="640" border="0" align="center" cellpadding="0" cellspacing="2">
             <tr>
-              <td align="center" valign="bottom" class="title"><a href="?p=42&software=mibpb"><img src="../wei/MIBPB-title.png" width="450" border="0" align="absbottom"></a></td>
+              <td align="center" valign="bottom" class="title"><a href="?p=42&software=mibpb"><img src="../wei/MIBPB-Title2.png" width="450" border="0" align="absbottom"></a></td>
             </tr>
             <tr>
               <td class="arial_black" style="text-align:justify;"><hr style="color:#CCCCCC"><b>MIBPB</b>  is a software package for evaluating electrostatic properties of biomolecules via the solution of the Poisson-Boltzmann equation (PBE), an established two-scale model in biomolecular simulations. The PBE is one of the most popular implicit solvent models that explicitly describe atoms in biomolecules while represent interactions between molecules and solvent by a mean-field approximation. In this model, solvent is treated as a dielectric continuum, while ions within the solvent are assumed to have the Boltzmann distribution with respect to the electrostatic energy.  &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://users.math.msu.edu/users/wei/MIBPB/index.html" target="_blank"><font color="blue"><b>[User Manual]</b></font></a></td>
@@ -85,13 +40,13 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 
        <table width="640" border="1" align="center" cellpadding="2" cellspacing="1" background="">
           <tr>
-            <td width="190" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE3" style="border:1px solid #999999">  Input_File:&nbsp;&nbsp;</td>
-            <td width="333" bgcolor="#B0B0FF" style="border:1px solid #999999"><input type="file" name="pdbfile"> <font color="red">*</font></td>
+            <td width="190" align="right" bgcolor="#CECEFF" class="navagation_white STYLE3" style="border:1px solid #999999">  Input_File:&nbsp;&nbsp;</td>
+            <td width="333" bgcolor="#CECEFF" style="border:1px solid #999999"><input type="file" name="pdbfile"> <font color="red">*</font></td>
           </tr>
 
 
           <tr>
-            <td width="190" rowspan="4" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE4" style="border:1px solid #999999">MIBPB Options<br><input type="checkbox" name="APPLY_HPSCORE" value="yes" checked>Yes</td>
+            <td width="190" rowspan="4" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE4" style="border:1px solid #999999">MIBPB Options &nbsp;<input type="checkbox" name="SURFACE_OPTION" value="yes" checked>Yes</td>
             <td bgcolor="#B0B0FF" style="border:1px solid #999999"><label><span class="STYLE2">
               <input type="text" size="6" name="HPSCORE_CVDW" value="1.0"> Interior Dielectric</span></label></td>
           </tr>
@@ -109,9 +64,9 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
           </tr>
 
           <tr>
-            <td width="190" rowspan="4" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">Surface Options<br><input type="checkbox" name="APPLY_HMSCORE" value="yes" checked>Yes</td>
+            <td width="190" rowspan="4" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">Surface Options &nbsp;<input type="checkbox" name="SURFACE_OPTION" value="yes" checked>Yes</td>
             <td bgcolor="#CECEFF" style="border:1px solid #999999">Surface Method: <label><span class="STYLE2">
-              <input type="radio" size="6" name="SURFACE_METHOD" value="SES">SES </span></label>
+              <input type="radio" size="6" name="SURFACE_METHOD" value="ESES">ESES </span></label>
               <label><span class="STYLE2">
               <input type="radio" size="6" name="SURFACE_METHOD" value="MSMS">MSMS </span></label>
               </td>
@@ -129,6 +84,16 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
               <input type="text" size="6" name="HMSCORE_CRT" value="1.0"> Grid Extension</span></td>
           </tr>
 
+          <tr>
+            <td width="190" rowspan="2" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE4" style="border:1px solid #999999">pKa Calculation &nbsp;<input type="checkbox" name="PKA_CALU" value="yes">Yes</td>
+            <td bgcolor="#B0B0FF" style="border:1px solid #999999">Residue Type: 
+              <select size="1" name="SELE_RESTYPE"><option value ="ARG">ARG</option><option value ="LYS">LYS</option><option value ="LYS">LYS</option><option value ="HIS">HIS</option><option value ="ASP">ASP</option><option value ="GLU">GLU</option><option value ="CYS">CYS</option><option value ="TYR">TYR</option></select>
+              </td>
+          </tr>
+          <tr>
+            <td bgcolor="#B0B0FF" style="border:1px solid #999999">Residue ID: 
+              <select size="1" name="SELE_RESTYPE"></select></td>
+          </tr>
 
           <!--tr>
             <td width="190" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE3" style="border:1px solid #999999">  NUMBER_OF_HITS:&nbsp;&nbsp;</td>
@@ -137,11 +102,22 @@ Jmol.debugCode = (s.indexOf("debugcode") >= 0);
           </tr-->
 
           <tr>
-            <td width="190" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE3" style="border:1px solid #999999">  Showing Electrostatic Surface:&nbsp;&nbsp;</td>
-            <td width="333" bgcolor="#B0B0FF" style="border:1px solid #999999"><span class="STYLE2">
+            <td width="190" align="right" bgcolor="#CECEFF" class="navagation_white STYLE3" style="border:1px solid #999999">  Showing Electrostatic Surface:&nbsp;&nbsp;</td>
+            <td width="333" bgcolor="#CECEFF" style="border:1px solid #999999"><span class="STYLE2">
               <input type="checkbox" checked name="SHOWING_ELEC_SURFACE" value="yes" >Yes</span></td>
           </tr>
 
+          <tr>
+            <td width="190" align="right" bgcolor="#B0B0FF" class="navagation_white STYLE4" style="border:1px solid #999999">Job Title: </td>
+            <td bgcolor="#B0B0FF" style="border:1px solid #999999"><label><span class="STYLE2">
+              <input type="text" size="40" name="JOB_TITLE" value=""></span></label>
+              </td>
+          </tr>
+          <tr>
+            <td width="190" align="right" bgcolor="#CECEFF" class="navagation_white STYLE4" style="border:1px solid #999999">User Email: </td>
+            <td bgcolor="#B0B0FF" style="border:1px solid #999999"><label ><span class="STYLE2">
+              <input type="text" size="40" name="USER_EMAIL" value=""></span></label></td>
+          </tr>
 
           <!--<tr>
            <td width="161" align="right" bgcolor="#B0B0FF" class="navagation_white" style="border:1px solid #999999">Your DB:</td>
@@ -178,6 +154,57 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         </table>
   </form> 
 </div>
+
+
+<!--molecule view-->
+<div style="width:620px;height:800px;float:left;">
+  <div style="margin: auto; text-align: center; width: 600px; float:left; position:fixed;">
+  <span style="text-align:center;font-size:20px;"><b>Molecule Visualization</b></span>
+  <script type="text/javascript">
+  var  script_run = 'load test.pdb;spin on;cartoon only;color cartoons structure;';
+
+  var Info0 = {
+    width:  600,
+    height: 600,
+    color: "black",
+    serverURL: "https://undergrad-ed.chemistry.ohio-state./jsmol/php/jsmol.php",
+    use: "HTML5",
+    jarPath: "java",
+    j2sPath: "j2s",
+    script: script_run,//The command defined before.
+    disableInitialConsole: true
+  }
+    Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
+    Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
+  </script>
+
+  <div>
+    <script type="text/javascript">
+      Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
+      Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
+      document.writeln("<br>");
+      Jmol.jmolLink(jmolApplet0,"load 1akeA.pdb","Load 1AKE");
+      Jmol.jmolBr();
+      Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
+      Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
+      Jmol.jmolBr();
+       var mradio = [
+        ["spacefill 23%; wireframe 0.15;","ball and stick",true],
+        ["spacefill off; wireframe 0.15;","sticks"],
+        ["spacefill on; wireframe off;","spheres"]
+     ];
+     Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
+     //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
+    </script>
+    <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
+        <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
+    </div>
+  </div>
+  <img >
+  </div>
+</div>
+
+
 
 
 </div>
