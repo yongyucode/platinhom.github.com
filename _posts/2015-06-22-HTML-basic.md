@@ -123,7 +123,7 @@ PS: margin控制边缘空白，padding控制和边界的距离，border为边界
 ![font-family](https://dhhmzgirqh63s.cloudfront.net/127.gif)
 
 ## JavaScript
-HTML网页支持的脚本语言.基于Java语言开发.用于很多复制操作和调用. 这里不进行讨论了.
+HTML网页支持的脚本语言.基于Java语言开发.用于很多复制操作和调用. 这里不进行讨论了, 可以参加另外的Ref4教程.
 
 - `document.writeln("context")`将内容写到html页面上.
 
@@ -174,5 +174,6 @@ p:nth-child(3){
 1. [html术语表](http://www.codecademy.com/zh/glossary/html)
 2. [css术语表](http://www.codecademy.com/zh/glossary/css)
 3. [w3school](http://www.w3schools.com/)
+4. [Javascript基础篇](http://platinhom.github.io/2015/06/23/Javascript-basic/)
 
 ---
