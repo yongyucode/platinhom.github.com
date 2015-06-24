@@ -220,7 +220,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
     <span style="text-align:center;font-size:20px;"><b>Molecular Visualization</b></span>
     <script type="text/javascript">
     //var  script_run = 'load ../jsmol/test.pdb;cartoon only;color cartoons structure; spin on;';//load data/caffeine.mol;
-    var  script_run = 'load 1ajj2.pqr; cartoon only; set platformSpeed 5; isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 sasurface map \'1ajj3.dx\';';
+    var  script_run = 'load 1ajj2.pqr; cartoon only; color cartoons structure;';
 
     var Info0 = {
       width:  512,
@@ -263,7 +263,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       <script type="text/javascript">
       Jmol.jmolButton(jmolApplet0, "load 1ajj2.pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
       Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 sasurface map '1ajj3.dx'", "Load DX", "LoadDX", "Load DX file");
-      Jmol.jmolButton(jmolApplet0, "", "Load surface", "LoadMap", "Load Map file");
+      Jmol.jmolButton(jmolApplet0, "isosurface MSMS '1ajj2.vert'", "Load surface", "LoadMap", "Load Map file");
       </script>
     </div>
   </div>
