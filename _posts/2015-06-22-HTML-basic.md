@@ -73,7 +73,7 @@ head元素一般包括title，style，script,meta等
 ### 简单HTML控制
 
 - `<br>`: 换行
-- `&nbsp`: 强制空格
+- `&nbsp`: 强制空格; `&amp` 相当于`&`; `&quot`双引号. 更多[特殊字符](https://www.utexas.edu/learn/html/spchar.html)参见.
 - `<pre>`: 预格式化，就是按输入的内容显示，包括输入的多个空格、换行这些元素。一般在css中`pre code`这样去专门定义,更优先.
 - `<b>` : 内容被加粗
 - `<strong>`: 内容被强调，显示起来和bold一样，可以修改强调的格式。

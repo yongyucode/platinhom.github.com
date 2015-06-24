@@ -35,27 +35,50 @@ Here I just summary some commands I meet.
 `show/clear/hide`: 显示控制台命令及结果/清除/隐藏.
 `image` 马上截图.弹出一个新页面,可以保存.
 `set antialiasDisplay true/false`: 设置是否开抗锯齿, 不开会快点.
-`set platformSpeed n`: 设置响应方式,数值越大越慢. all features:8; no antialiasing:7; no translucency:6; surfaces dotted:5; cartoons as trace:4; geosurfaces as dots:3; ellipsoids as dots:2; wireframe only: 1. 一般设5比较好,可以看表面cartoon. 设5时可显示表面,转动时变dot,但注意要关闭spin.
+`set platformSpeed n`: 设置响应速度,数值越大越慢. all features:8; no antialiasing:7; no translucency:6; surfaces dotted:5; cartoons as trace:4; geosurfaces as dots:3; ellipsoids as dots:2; wireframe only: 1. 一般设5比较好,可以看表面cartoon. 设5时可显示表面,转动时变dot,但注意要关闭spin.
 
 
 
 
 ## 描绘方式
 
+- `spacefill only`: spacefill 球状显示
+- `wireframe -0.1`: wireframe 棍状
+- `spacefill 23%;wireframe 0.15`: ball&stick 球棍显示.
+- `select protein or nucleic;cartoons only`: cartoons方式. only会关闭其余显示.除了only还可以`on/off`.
+- `set cartoonFancy true/false`: fancy控制, 开启后条带更有厚度.受控于响应速度.
+- `set cartoonFancy false;set hermitelevel 0`: flat
 
-## 颜色
+## Label
+
+- `if (_fileType == "Pdb";){select *.CA;label %n%R}else{select *;label %a};`:选择原子后开启标签, 关闭`labels off`. 格式化字符串`%a%c%n%R`.分别是原子名,链名,残基名,残基号.
+- :off
+- `font echo 20 serif;fsize=20;set echo top center;echo echo test`:echo
+- `if (!fsize){fsize=20};fsize += 4;font echo @fsize serif;`:larger
+- `if (!fsize){fsize=20};fsize -= 4;if (fsize < 10){fsize = 10};font echo @fsize serif`:smaller
+
+
+## [颜色](http://chemapps.stolaf.edu/jmol/docs/?ver=14.2#color)
 
 
 color cartoons structure
 color rockets chain
 color backbone blue
 
+
+- `color property atomno`: color atomno (氮端到碳端渐变)
+- `color cpk`: color cpk(CPK着色法,氧红氮蓝)
+- `color structure`: 根据二级结构着色
+
+
 ## 表面
 
-`select *;isosurface vdw;` 先选中原子, 再生产vdw表面 
-`isosurface delete` 删除表面
-`isosurface translucent 6` 设置透明度. 0-8的整数.
-`isosurface opaque` 设置为不透明
+- `select *;isosurface vdw;` 先选中原子, 再生产vdw表面 
+- `isosurface delete` 删除表面
+- `isosurface translucent 6` 设置透明度. 0-8的整数.
+- `isosurface opaque` 设置为不透明
+- `if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep`: mep
+
 
 ## Reference
 1. [JSMol使用](http://platinhom.github.io/2015/06/19/JSMol/).
