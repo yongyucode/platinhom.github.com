@@ -88,11 +88,12 @@ color backbone blue
 - `isosurface opaque` 设置为不透明
 - `if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep`: mep
 - `isosurface "=XXXX"` 读入2fo-fc maps, `"==XXXX"`则读入fo-fc map.使用[Uppsala EDS](http://eds.bmc.uu.se/eds/).
+- `mo homo/lumo` 打开例如GAMESS文件,可以可视化HOMO和LUMO轨道. `mo mesh nofill`和`mo fill nomess`分别是表面和mesh显示轨道.
 
 ## 模拟
 - `minimize`: 优化结构
 - `set modelkitmode;set picking dragMinimize`: 可以选择拖动原子并优化. 取消`!quit;set modelkitmode false;set picking ident;`
-- `mo homo/lumo` 打开例如GAMESS文件,可以可视化HOMO和LUMO轨道. `mo mesh nofill`和`mo fill nomess`分别是表面和mesh显示轨道.
+
 
 
 ## Reference

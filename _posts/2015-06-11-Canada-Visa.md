@@ -51,6 +51,8 @@ New York, New York 10017
 U.S.A.
 ~~~~
 
-2015-6-13-Sat:今天跑去USPS把东西寄了,USPS周六下午三点就关了,周日还不开.幸亏有自助服务.寄Priority Mail是5刀多6刀的样子.拿了一个纸的大信封和一个硬皮的大信封,硬皮大信封作为回邮信封,去自助服务机付款买好邮票,信封相应地方贴好邮票.OK了!然后就等待吧.
+2015-6-13-Sat:今天跑去USPS把东西寄了,USPS周六下午三点就关了,周日还不开.幸亏有自助服务.寄Priority Mail是5刀多6刀的样子.拿了一个纸的大信封和一个硬皮的大信封,硬皮大信封作为回邮信封,去自助服务机付款买好邮票,信封相应地方贴好邮票.我把money order 一起寄过去纽约了. OK了!然后就等待吧.
+
+2015-6-23: 收到邮件状态更新, 查看状态, Details: Approved. 点进去看, Original Passport Request 还是最新的状态, 但上面profile details的Application status已经是closed, Final decision 已经是has been approved了. 应该等寄回来就可以了~~
 
 ---
