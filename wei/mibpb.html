@@ -206,10 +206,9 @@ For academic/governmental users, you may download and use MIBPB for free under a
 For industrial/commercial users, a moderate license fee may apply. Please contact us directly at <a href="mailto:wei@math.msu.edu"><font color="#006600">wei@math.msu.edu</font></a>.
 <br><br>
 </td>
-
-        </tr>
-
-
+  </tr>
+  <tr><td colspan="2" style="font-size: 20px; text-align:center;"><a href="mailto:zhaozxcpu@hotmail.com"><b>Webmaster: Zhixiong Zhao</a></td>
+  </tr>
         </table>
   </form> 
 </div>
@@ -236,27 +235,10 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
       Jmol.script(jmolApplet0,'set antialiasDisplay false');
       Jmol.script(jmolApplet0,'set platformSpeed 5');
-      Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
+      Jmol.jmolCommandInput(jmolApplet0, "Commands");
     </script>
 
     <div style="float:left;">
-      <script type="text/javascript">
-        Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
-        Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
-        document.writeln("<br>");
-        Jmol.jmolLink(jmolApplet0,"load ../jsmol/1akeA.pdb","Load 1AKE");
-        Jmol.jmolBr();
-        Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
-        Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
-        Jmol.jmolBr();
-         var mradio = [
-          ["spacefill 23%; wireframe 0.15;","ball and stick",true],
-          ["spacefill off; wireframe 0.15;","sticks"],
-          ["spacefill on; wireframe off;","spheres"]
-       ];
-       Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
-       //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
-      </script>
       <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
           <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
       </div>
@@ -277,7 +259,6 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       <a href="javascript:Jmol.script(jmolApplet0,'isosurface opaque')">opaque</a>
 
     </div>
-    <p style="clear: both; font-size: 20px; text-align:center;"><br /><br /><a href="mailto:zhaozxcpu@hotmail.com"><b>Webmaster: Zhixiong Zhao</b></a></p>
   </div>
 </div>
 
