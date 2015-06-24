@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JSMol-command
+title: JSMol指令
 date: 2015-06-23 22:01:59
 categories: CompBiol
 tags: CompBiol CompChem
