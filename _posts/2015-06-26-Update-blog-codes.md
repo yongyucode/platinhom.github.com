@@ -22,13 +22,19 @@ codes...
 codes......
 ~~~
 
+You can even add the link as 
+
+###### FILE: [update.sh](filelink)
+
 ~~~~
+
+可知可以将该文件名注释作为链接也是可以的~~这里用的是Markdown的示例.
 
 主要执行一个Bash脚本, 主运行函数在Python脚本内(python脚本要放置在scripts目录内,其实可以改进到bash里面指明吧). 使用直接运行Bash脚本即可, 可以在任意位置运行, 但需要先更改`scripts`目录以及`_posts`目录的地址.   
 细节看脚本注释吧.
 
 
-###### FILE: UPDateFromScript.sh
+###### FILE: [UPDateFromScript.sh](/scripts/UPDateFromScript.sh)
 
 ~~~ bash
 #! /bin/bash
@@ -68,7 +74,7 @@ cd $sd
 ### linkfile save the relation between source code file and blog files.
 : > linkfile #clear the file
 ### Update the working time
-date >> UpDateFromScript.log
+date >> UPDateFromScript.log
 
 ### File the relationship between source code files and blog files.
 ### Only process the file with extension start at [bspcfrjv] here.
@@ -102,10 +108,17 @@ do
 			echo "$sourcefile and $blogfile with the same codes"!
 		else
 			# Notice the string return...
-			newfile=${newfile:17};
+			sysOS=`uname -s`
+			if [ $sysOS == "Darwin" -o $sysOS == "Linux" ];then
+				newfile=${newfile:17};
+			else
+			# file string is different when python return in Window.
+				newfile="${blogfile}-tmp.md"
+			fi
+			
 			# Log the result difference
-			echo $newfile $blogfile | tee -a UpDateFromScript.log;
-			diff $newfile $blogfile | tee -a UpDateFromScript.log;
+			echo $newfile $blogfile | tee -a UPDateFromScript.log;
+			diff $newfile $blogfile | tee -a UPDateFromScript.log;
 			# Replace the old file
 			echo "Compare done! Stop 5s. If you need, Ctrl+C to cancel replacement!"
 			sleep 5
@@ -121,7 +134,7 @@ IFS=$OLDIFS
 cd - > /dev/null
 ~~~
 
-###### FILE: UPDateFromScript.py
+###### FILE: [UPDateFromScript.py](/scripts/UPDateFromScript.py)
 
 ~~~~ python
 #! /usr/bin/env python
