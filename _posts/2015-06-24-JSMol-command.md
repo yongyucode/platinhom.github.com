@@ -61,7 +61,7 @@ Here I just summary some commands I meet.
 - `select protein or nucleic;cartoons only`: cartoons方式. only会关闭其余显示.除了only还可以`on/off`.
 - `set cartoonFancy true/false`: fancy控制, 开启后条带更有厚度.受控于响应速度.
 - `set cartoonFancy false;set hermitelevel 0`: flat
-
+- `backbone 0.5; color relativeTemperature;`: 
 ## Label
 
 - `if (_fileType == "Pdb";){select *.CA;label %n%R}else{select *;label %a};`:选择原子后开启标签, 关闭`labels off`. 格式化字符串`%a%c%n%R`.分别是原子名,链名,残基名,残基号.
