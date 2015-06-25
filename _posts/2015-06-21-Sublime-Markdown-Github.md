@@ -152,6 +152,9 @@ fi
 
 这里也提供一个python脚本用于实现上述功能,可以用于Window系统(PS:先要环境里能自动运行python). 这里需要先设置好你`_post`文件夹的路径. 该脚本还提供相应函数,可以加载后使用函数调用.
 
+
+###### FILE: pynewblog.py
+
 ~~~ python
 #! /usr/bin/env python
 # -*- coding: utf8 -*-
