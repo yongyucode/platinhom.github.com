@@ -51,6 +51,8 @@ You can even add the link as
 # ~~~ bash
 # codes
 # ~~~
+# Also support the filename as link in markdown:
+# ###### FILE: [UPDateFromScript.sh](link)
 
 # You may change the two directories, saving the source code files and blog files.
 sd="/Users/Hom/MyGit/Homepage/platinhom.github.com/scripts"
@@ -84,7 +86,7 @@ do
 	###  !!!!!! sourcecode_file
 	echo "!!!!!! $fii">>linkfile
 	### Blog with md/html extension.
-	grep "$fii" ${pd}/*.[mh]*[dl] | grep "###### FILE:" | awk -F \: '{print $1}' >>linkfile
+	grep "^###### FILE:" ${pd}/*.[mh]*[dl] | grep "$fii" | awk -F \: '{print $1}' >>linkfile
 done
 
 # IFS is seperate symbol.
@@ -165,7 +167,8 @@ def RefreshFile(fi,fu):
 		# Find the head: "###### FILE: scriptname"
 		if (line[:6]=="######"):
 			tmp=line.split()
-			if (tmp[1].upper()[:4]=="FILE" and tmp[2]==fi):
+			# revise to fi in tmp[2]. To support link as [filename](link)
+			if (tmp[1].upper()[:4]=="FILE" and (fi in tmp[2])):
 				#print fi,fu
 				findplace=True;
 				bloglines=bloglines+line;

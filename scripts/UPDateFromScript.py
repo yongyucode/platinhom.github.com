@@ -26,7 +26,8 @@ def RefreshFile(fi,fu):
 		# Find the head: "###### FILE: scriptname"
 		if (line[:6]=="######"):
 			tmp=line.split()
-			if (tmp[1].upper()[:4]=="FILE" and tmp[2]==fi):
+			# revise to fi in tmp[2]. To support link as [filename](link)
+			if (tmp[1].upper()[:4]=="FILE" and (fi in tmp[2])):
 				#print fi,fu
 				findplace=True;
 				bloglines=bloglines+line;
