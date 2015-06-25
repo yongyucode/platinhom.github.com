@@ -1,13 +1,3 @@
-Fri Jun 26 01:29:59 CST 2015
-/c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
-/c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
-Fri Jun 26 01:30:42 CST 2015
-/c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
-/c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
-Fri Jun 26 01:33:26 CST 2015
-/c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
-/c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
-Fri Jun 26 01:38:44 CST 2015
 Fri Jun 26 01:39:01 CST 2015
 /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md-tmp.md /c/Users/Hom/Desktop/MyGit/platinhom/platinhom.github.com/_posts/2015-06-26-Update-blog-codes.md
 168,169c168
@@ -23,4 +13,4 @@ Fri Jun 26 01:39:01 CST 2015
 < 	grep "^###### FILE:" ${pd}/*.[mh]*[dl] | grep "$fii" | awk -F \: '{print $1}' >>linkfile
 ---
 > 	grep "$fii" ${pd}/*.[mh]*[dl] | grep "###### FILE:" | awk -F \: '{print $1}' >>linkfile
-Fri Jun 26 01:39:35 CST 2015
+
