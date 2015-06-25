@@ -40,13 +40,20 @@ else
 	blogfile=$line;
 	# Run the program by UPDateFromScript.py !
 	newfile=`python UPDateFromScript.py "$sourcefile" "$blogfile" | grep "!!! New file"`;
-	# Notice the string return...
-	newfile=${newfile:17};
-	# Log the result difference
-	echo $newfile $blogfile | tee -a UpDateFromScript.log;
-	diff $newfile $blogfile | tee -a UpDateFromScript.log;
-	# Replace the old file
-	mv $newfile $blogfile
+
+	if [ -z "${newfile}" ];then
+		echo "$sourcefile and $blogfile with the same codes"!
+	else
+		# Notice the string return...
+		newfile=${newfile:17};
+		# Log the result difference
+		echo $newfile $blogfile | tee -a UpDateFromScript.log;
+		diff $newfile $blogfile | tee -a UpDateFromScript.log;
+		# Replace the old file
+		echo "Compare done! Stop 5s. If you need, Ctrl+C to cancel replacement!"
+		sleep 5
+		mv $newfile $blogfile
+	fi
 fi
 done
 

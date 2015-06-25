@@ -10,10 +10,15 @@ import os,sys
 
 # The main function to refresh the code block in blog.
 # Input 1:source code file; 2:blog file containing code block.
+# Return whether the codes are the same. 
 def RefreshFile(fi,fu):
 	fin=open(fi,'r');
 	fui=open(fu,'r');
-	fuo=open(fu+'-tmp.md','w')
+	scriptlines=fin.read();
+	fin.close();fin=open(fi,'r');
+
+	bloglines=""
+	blogscript=""
 	findplace=False;
 	findcode=False;
 	codepre=""
@@ -22,18 +27,16 @@ def RefreshFile(fi,fu):
 		if (line[:6]=="######"):
 			tmp=line.split()
 			if (tmp[1].upper()[:4]=="FILE" and tmp[2]==fi):
-				print fi,fu
+				#print fi,fu
 				findplace=True;
-				fuo.write(line);
+				bloglines=bloglines+line;
 				continue;
 		# Find the code block beginning with ~~~ 
 		if (findplace and (not findcode)):
 			if (line[:3]=="~~~"):
 				codepre=line.split()[0];
 				findcode=True;
-				fuo.write(line);
-				for line2 in fin:
-					fuo.write(line2);
+				bloglines=bloglines+line;
 				continue;
 		#Find the end of code block
 		if (findplace and findcode):
@@ -41,15 +44,29 @@ def RefreshFile(fi,fu):
 					if (line.strip()==codepre):
 						findcode=False;
 						findplace=False;
-						fuo.write('\n');
-						fuo.write(line);
+						#Have read all the codes in blog
+						#Compare the codes
+						#Maybe a \n will add to blog codes.
+						if (blogscript==scriptlines or blogscript==scriptlines+'\n'):
+							fin.close();
+							fui.close();
+							return True;
+						else:
+							bloglines=bloglines+scriptlines;
+							if (scriptlines[-1] !='\n'):
+								bloglines=bloglines+'\n'+line;
+							else:
+								bloglines=bloglines+line;
 						continue;
+			blogscript=blogscript+line;
 			continue;
-		fuo.write(line);	
+		bloglines=bloglines+line;	
 	fin.close();
 	fui.close();
+	fuo=open(fu+'-tmp.md','w');
+	fuo.write(bloglines);
 	fuo.close();
-	return fu+'-tmp.md';
+	return False;
 
 if (__name__ == '__main__'):
 	if (len(sys.argv)!=3):
@@ -58,8 +75,11 @@ if (__name__ == '__main__'):
 	# read the input, avoid last \n
 	fi=sys.argv[1].strip();
 	fu=sys.argv[2].strip();
-	# Warning : This return string is important for UPDateFromScript.sh!
-	print "!!! New file as: "+RefreshFile(fi,fu);
+	if (RefreshFile(fi,fu)):
+		print "!!! The codes are the same!"
+	else:
+		# Warning : This return string is important for UPDateFromScript.sh!
+		print "!!! New file as: "+fu+'-tmp.md';
 #end main
 
 

@@ -195,7 +195,7 @@ def newblog(title="Template",category="Other",*args):
 	f.close()
 
 	os.chdir(nowwd)
-
+	
 if (__name__ == '__main__'):
 	# Setup template information
 	title="Template"
