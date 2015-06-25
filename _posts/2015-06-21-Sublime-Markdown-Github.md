@@ -175,7 +175,7 @@ def newblog(title="Template",category="Other",*args):
 	category=str(category);
 	tags="Other"
 	if (len(args)>0):
-			tags=" ".join(str(args).strip("(')").split(", '"));
+			tags=" ".join(str(args).strip("(',)").split(", '"));
 			tags=tags.replace("'","");
 	
 	# Change to work directory
