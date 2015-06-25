@@ -15,7 +15,7 @@ def RefreshFile(fi,fu):
 	fin=open(fi,'r');
 	fui=open(fu,'r');
 	scriptlines=fin.read();
-	fin.close();fin=open(fi,'r');
+	fin.close();
 
 	bloglines=""
 	blogscript=""
@@ -48,7 +48,6 @@ def RefreshFile(fi,fu):
 						#Compare the codes
 						#Maybe a \n will add to blog codes.
 						if (blogscript==scriptlines or blogscript==scriptlines+'\n'):
-							fin.close();
 							fui.close();
 							return True;
 						else:
@@ -62,7 +61,6 @@ def RefreshFile(fi,fu):
 			blogscript=blogscript+line;
 			continue;
 		bloglines=bloglines+line;	
-	fin.close();
 	fui.close();
 	fuo=open(fu+'-tmp.md','w');
 	fuo.write(bloglines);
