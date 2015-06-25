@@ -89,6 +89,8 @@ git push origin master
 - `./newblog.sh myblog category tag1 tag2` 的命令快速创建新日志文件.
 - 可以用sublime打开新日志文件.脚本中直接使用`sl`来打开. 可以根据自己喜好
 
+###### FILE: newblog.sh
+
 ~~~ bash
 #! /bin/bash
 # file: newblog.sh

@@ -52,12 +52,13 @@ def RefreshFile(fi,fu):
 							fui.close();
 							return True;
 						else:
+						# Different codes! Update the blog code by script code!
 							bloglines=bloglines+scriptlines;
 							if (scriptlines[-1] !='\n'):
 								bloglines=bloglines+'\n'+line;
 							else:
 								bloglines=bloglines+line;
-						continue;
+							continue;
 			blogscript=blogscript+line;
 			continue;
 		bloglines=bloglines+line;	
@@ -81,5 +82,3 @@ if (__name__ == '__main__'):
 		# Warning : This return string is important for UPDateFromScript.sh!
 		print "!!! New file as: "+fu+'-tmp.md';
 #end main
-
-

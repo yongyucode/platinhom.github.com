@@ -155,6 +155,8 @@ conint=100                     ! A flag that determines at what iteration interv
 
 - A python script to extract the information from a pqr file to siz/crg file for delphi.
 
+###### FILE: pqr2sizcrg.py
+
 ~~~ python
 #! /usr/bin/env python
 # -*- coding: utf8 -*-

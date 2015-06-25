@@ -48,6 +48,8 @@ $$\alg U_E = \frac{1}{4 \pi \varepsilon_0 \cdot \varepsilon_{di}} \cdot \frac{1}
 
 A python script to calculate the Coulombic energy from pqr file: 
 
+###### FILE: pqr2col.py
+
 ~~~ python
 #! /usr/bin/env python
 # -*- coding: utf8 -*-
