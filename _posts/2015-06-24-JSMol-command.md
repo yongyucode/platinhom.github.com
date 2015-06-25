@@ -45,7 +45,12 @@ Here I just summary some commands I meet.
 `pause/resume` 暂停和恢复脚本运行
 `quit/exit` 类似, 可以退出脚本,进行下个脚本或者后续命令.
 
+`moveto  timeSeconds AXIS [a,b,c,x,y,z]` 光滑地视觉调整,做movie时常用.第一个是耗时,后三个是坐标,也可以是TOP/FRONT/BACK/LEFT等词.
 
+## 选择
+`select */all`
+`select within(5.0, LIGNAME)`
+`select resno <= 25` 选择残基号<=25.
 
 ## 描绘方式
 
@@ -89,6 +94,8 @@ color backbone blue
 - `if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep`: mep
 - `isosurface "=XXXX"` 读入2fo-fc maps, `"==XXXX"`则读入fo-fc map.使用[Uppsala EDS](http://eds.bmc.uu.se/eds/).
 - `isosurface s1 colorscheme "rwb" color absolute -6 -0.5 sasurface map '1ajj3.dx'` 根据dx文件数值映射(map)到sasurface上.
+- `isosurface name ignore(solvent or LIGNAME) cavity molecular colorscheme sets translucent 0.3`
+
 - `mo homo/lumo` 打开例如GAMESS文件,可以可视化HOMO和LUMO轨道. `mo mesh nofill`和`mo fill nomess`分别是表面和mesh显示轨道.
 
 
