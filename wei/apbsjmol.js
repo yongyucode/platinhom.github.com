@@ -256,7 +256,6 @@ function doRemap(doDelay) {
 // to set a scroller value from code, use resetScroller()
 Scrollers={}
 isScrollerInitialized=false
-
 function checkScroll(name){
 	var pos=0
 	var value=0

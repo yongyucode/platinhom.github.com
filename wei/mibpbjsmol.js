@@ -77,12 +77,15 @@ function SelSurfaceColor(){
 	}
 }
 
-function SetESPRange(){
-	var espmin=document.getElementById("espmin").value
-	var espmax=document.getElementById("espmax").value
+function SetESPRange(Relay){
+	//Relay when change by scroller
+	if (Relay){
+		setTimeout("SetESPRange()", 100)
+		return
+	}
 	var showas=document.getElementById("selSurfaceColor").value
 	if (showas=='rwb' || showas=='bwr' || showas=='rgb' || showas=='roygb' || showas=='low' || showas=='high'){
-		Jmol.script(jmolApplet0,'color $s1 "'+showas+'" range '+espmin+" "+espmax);
+		Jmol.script(jmolApplet0,'color $s1 "'+showas+'" range '+document.getElementById("espmin").value+" "+document.getElementById("espmax").value);
 	}
 }
 
@@ -122,13 +125,13 @@ function LoadResultSurface(){
 
 Scrollers={}
 isScrollerInitialized=false
-thisMin = "-5";
-thisMax = "5";
+
+var thisMin = "-5";
+var thisMax = "5";
+
 function doScroll(name, value) {
 	// callback from the scroller
-	alert("value:"+value)
 	var v = parseInt(value)
-	alert("v:"+v)
 	if (name == "min") {
 		if (v == thisMin)return
 		thisMin = v
@@ -136,10 +139,9 @@ function doScroll(name, value) {
 		if (v == thisMax)return
 		thisMax = v
 	}
-	alert("thisMin:"+thisMin)
-	document.getElementById("epsmin").value = thisMin
-	document.getElementById("epsmax").value = thisMax
-	//doRemap()
+	document.getElementById("espmin").value = thisMin
+	document.getElementById("espmax").value = thisMax
+	SetESPRange();
 }
 
 function checkScroll(name){
@@ -197,8 +199,6 @@ function newScroller(name,caption,fCallback,width,x,y,isvertical,minvalue,maxval
 	S.div=sout
 	return sout
 }
-
-
 
 function resetScroller(which,value){
 	for(var name in Scrollers){if(!which||name==which){
