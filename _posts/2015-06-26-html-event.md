@@ -65,7 +65,7 @@ tags: Website
 - `onmousewheel`	当鼠标滚轮正在被滚动时运行的脚本。
 - `onscroll`		当元素滚动条被滚动时运行的脚本。
 
-## Media 事件(常见于<audio>、<embed>、<img>、<object> 以及 <video>）)
+## Media 事件(常见于`<audio>`、`<embed>`、`<img>`、`<object>` 以及 `<video>`）
 
 - `onabort`					在退出时运行的脚本。
 - `oncanplay`					当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。
