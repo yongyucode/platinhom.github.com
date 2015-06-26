@@ -73,6 +73,7 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - `document.getElementById(id).attribute=new_value`: 改变属性值
 - `document.getElementById("p2").style.color="blue"` 改变样式.
 - `document.getElementById("myBtn").onclick=function(){displayDate()};` 对事件做响应,这里通过调用元素事件完成. 
+- `document.getElementsByName("name")` 通过元素名来获取元素,可能是个多对象的数组.
 - `document.createElement("p");` 创建元素(节点)
 - `document.createTextNode("这是新段落。");`创建元素内容
 - `para.appendChild(node);div1.appendChild(para)` 向元素添加内容,再把元素放到父元素里

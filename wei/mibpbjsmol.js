@@ -24,7 +24,8 @@ function initJmol(inmol,winsize){
       Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
       Jmol.script(jmolApplet0,'set antialiasDisplay false');
       Jmol.script(jmolApplet0,'set platformSpeed 5');
-      Jmol.script(jmolApplet0,'font echo 20 serif;fsize=20;set echo top center;echo MBIPB - ESES');
+      Jmol.script(jmolApplet0,'font echo 20 serif;fsize=20;set echo top center;echo MBIPB');
+      Jmol.script(jmolApplet0,'set echo bottom left;font echo 16 bolditalic;color echo green;echo Powered by Jmol-14.2');
       Jmol.jmolCommandInput(jmolApplet0, "Commands");
 }
 

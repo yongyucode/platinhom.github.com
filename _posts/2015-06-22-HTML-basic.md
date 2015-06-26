@@ -68,6 +68,16 @@ head元素一般包括title，style，script,meta等
 - `<video src="/i/movie.ogg" controls="controls">Hi</video>` : 视频元素
 - `<select><option value ="volvo">Volvo</option><option value ="saab">Saab</option></select>`: 下拉菜单
 
+~~~ javascript
+	var chkObjs = document.getElementsByName("SURFACE_METHOD");
+    for(var i=0;i<chkObjs.length;i++){
+        if(chkObjs[i].checked){
+            stype=chkObjs[i].value;
+            break;
+        }
+    }
+~~~
+
 ## 格式控制：
 
 ### 简单HTML控制
