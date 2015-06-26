@@ -62,6 +62,7 @@ Here I just summary some commands I meet.
 - `set cartoonFancy true/false`: fancy控制, 开启后条带更有厚度.受控于响应速度.
 - `set cartoonFancy false;set hermitelevel 0`: flat
 - `backbone 0.5; color relativeTemperature;`: 
+
 ## Label
 
 - `if (_fileType == "Pdb";){select *.CA;label %n%R}else{select *;label %a};`:选择原子后开启标签, 关闭`labels off`. 格式化字符串`%a%c%n%R`.分别是原子名,链名,残基名,残基号.
@@ -86,14 +87,20 @@ color backbone blue
 
 ## [表面](http://chemapps.stolaf.edu/jmol/docs/?ver=14.2#isosurface)
 
+- `isosurface ID [object id] [construction/mapping parameters] [surface object] [additional mapping-only parameters] MAP [color mapping dataset] [display options]` isosurface命令格式.
+1. ID [object id]: map ID,或者on/off/delete.用来进一步操作或显示
+2. construction/mapping parameters: (ignore sel/solvent) 忽略某些原子; (within r,sel) 选择内容半径r以内的, (select sel) 选择; (cutoff val)用于grid数据.还有很多.另外color和colorscheme应该在这.
+
+常见命令:
+
 - `isosurface "filename";` : 打开surface文件,可以在文件名前面指明文件类型,例如`MSMS`.
 - `select *;isosurface vdw;` 先选中原子, 再生产vdw表面.除了vdw还有`sasurface`, `molecular`, `solvent`等.
-- `isosurface delete` 删除表面
+- `isosurface on/off/delete` 显示/隐藏/删除表面.前面可以加入surface的ID.
 - `isosurface translucent 5` 设置透明度. 0-8的整数.
 - `isosurface opaque` 设置为不透明
 - `if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep`: mep
 - `isosurface "=XXXX"` 读入2fo-fc maps, `"==XXXX"`则读入fo-fc map.使用[Uppsala EDS](http://eds.bmc.uu.se/eds/).
-- `isosurface s1 colorscheme "rwb" color absolute -6 -0.5 sasurface map '1ajj3.dx'` 根据dx文件数值映射(map)到sasurface上.
+- `isosurface s1 colorscheme "rwb" color absolute -6 -0.5 sasurface map '1ajj3.dx'` 根据dx文件数值映射(map)到sasurface上.color absolute或者color range指明mapping时数值.
 - `isosurface name ignore(solvent or LIGNAME) cavity molecular colorscheme sets translucent 0.3`
 
 - `mo homo/lumo` 打开例如GAMESS文件,可以可视化HOMO和LUMO轨道. `mo mesh nofill`和`mo fill nomess`分别是表面和mesh显示轨道.
