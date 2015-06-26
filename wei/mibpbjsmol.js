@@ -51,15 +51,16 @@ function showMolAsColor(){
   Jmol.script(jmolApplet0,'color '+showas);
 }
 
-function SurfaceTranslucent(){
-  var showas=document.getElementById("selTranslucent").value
-  Jmol.script(jmolApplet0,'isosurface translucent '+showas);
-}
-
 function SelJmolsurface(){
 	var showas=document.getElementById("selJmolSurface").value
 	Jmol.script(jmolApplet0,'isosurface s1 '+showas);
 	SurfaceTranslucent();
+	SelSurfaceColor();
+}
+
+function SurfaceTranslucent(){
+  var showas=document.getElementById("selTranslucent").value
+  Jmol.script(jmolApplet0,'isosurface translucent '+showas);
 }
 
 function SelSurfaceColor(){
