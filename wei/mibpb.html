@@ -211,6 +211,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
 <div style="width:532px;height:900px;float:left;">
   <div id="jsmolmainwindow" style="margin: auto; text-align: center; width: 512px; height:900px; float:left; position:fixed;">
 
+    <!--This input can be modified-->
     <script type="text/javascript">initJmol('1ajj2.pqr',512)</script>
 
     <div style="float:left;">
@@ -278,11 +279,26 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
 
       <br/>
       <table>
-      <tr><td valign=bottom>ESP min:</td><td valign=bottom><input id="espmin" value='-5' style='width:15pt;text-align:right' onkeypress='SetESPRange()' onchange='SetESPRange()'> 
+      <tr>
+      <td valign=bottom>ESP min:</td><td valign=bottom><input id="espmin" value='-5' style='width:15pt;text-align:right' onkeypress='SetESPRange()' onchange='SetESPRange()'> 
+      <img src="transp.gif" height=25 width=1></td>
+      <td  valign="top">
+      <script type="text/javascript">document.write(newScroller("min","","doScroll",100,-1,-1,false,-50,50,-5,1, "mouseup"));</script>
+      <!--div id="sr_min" onscroll="checkScroll('sr_min')"style="position:absolute; font-size: 2pt; height:30px; width:300px; overflow:auto"><img src="transp.gif" height=1 width=1000></div-->
       </td>
-      <td valign=bottom>max:</td><td valign=bottom><input id="espmax" value='5' style='width:15pt;text-align:right' onkeypress='SetESPRange()' onchange='SetESPRange()'> 
-      </td></tr>
+      </tr>
+
+      <tr>
+      <td>ESP max:</td><td valign=bottom><input id="espmax" value='5' style='width:15pt;text-align:right' onkeypress='SetESPRange()' onchange='SetESPRange()'> 
+      <img src="transp.gif" height=25 width=1></td>
+      <td valign="top">
+      <script type="text/javascript">document.write(newScroller("max","","doScroll",100,-1,-1,false,-50,50,-5,1, "mouseup"));</script>
+        <!--div id="sr_max"  onscroll="checkScroll('sr_max')" style="position:absolute; font-size: 2pt; height:30px; width:300px; overflow:auto"><img src="transp.gif" height=1 width=1000></div-->
+      </td>
+      </tr>
     </table>
+    <script type="text/javascript">initScrollers();</script>
+    
       <script type="text/javascript">
       Jmol.jmolButton(jmolApplet0, "load 1ajj2.pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
       Jmol.jmolButton(jmolApplet0, "javascript LoadResultSurface()", "Load surface", "LoadMap", "Load Map file");
