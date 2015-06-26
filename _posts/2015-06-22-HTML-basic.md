@@ -97,6 +97,8 @@ head元素一般包括title，style，script,meta等
 - `id`: 指明特定ID，用于CSS和JS操作.
 - `class`: 指明属于某类型，用于CSS渲染.
 - `title`: 效果像提示信息解释,如`<abbr>`.
+- `align`: 水平对齐,top,bottom,center
+- `valign`: 垂直对齐,top,bottom,center
 - `style`: 放在标签内，格式为`style="name:value; name2:value2"` name例如:
 	- `color`(green,[更多](http://www.w3.org/TR/css3-color/#svg-color)， 采用16进制6个数字，可搜[hex color picker](http://www.w3schools.com/tags/ref_colorpicker.asp)来辨认.
 	- `font-size`(10px 无空格，或者用1em，em表示默认字体大小倍数，和硬件无关)

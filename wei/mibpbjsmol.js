@@ -67,3 +67,40 @@ function SelSurfaceColor(){
 	var showas=document.getElementById("selSurfaceColor").value
 	Jmol.script(jmolApplet0,'isosurface s1 colorscheme '+showas);
 }
+
+
+function newScroller(name,caption,fCallback,width,x,y,isvertical,minvalue,maxvalue,initialvalue,factor,fmouseup){
+	if(!name)name="scroll-test"
+	//if(!caption)caption="testing: pos=_p value=_v"
+	if(!fCallback)fCallback="testScroll"
+	if(!width)width=300
+	if(isNaN(x))x=100
+	if(isNaN(y))y=100
+	if(!isvertical)isvertical=0
+	if(!minvalue)minvalue=0
+	if(!maxvalue)maxvalue=100
+	if(isNaN(initialvalue))initialvalue=(maxvalue + minvalue)/2
+	if(!factor)factor=4
+	var s=""
+	var sout=""
+	var S=Scrollers[name]={}
+	S.name=name
+	S.caption=caption
+	S.width=width
+	S.x=x
+	S.y=y
+	S.isvertical=isvertical
+	S.maxvalue=maxvalue
+	S.minvalue=minvalue
+	S.callback=fCallback
+	S.value=initialvalue
+	S.factor=factor
+	S.initialvalue=initialvalue
+	// slimmed down version for the APBS application
+	var pos = (x < 0 ? "" : "position:absolute:left:" +  (isvertical ? (x-20) + ";top:" + y : x+";top:"+(y-40)))
+	sout="\n<div id='scr_"+name+"'  onscroll=\"checkScroll('"+name+"')\" style='font-size:2pt;height:25;width:"+width+";overflow:auto'>"
+		+"<img src='transp.gjf' height=1 width="+(width*(factor+1))+">"
+		+"</div>"
+	S.div=sout
+	return sout
+}
