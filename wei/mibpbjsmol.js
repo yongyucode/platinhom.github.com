@@ -60,14 +60,53 @@ function SelJmolsurface(){
 
 function SurfaceTranslucent(){
   var showas=document.getElementById("selTranslucent").value
-  Jmol.script(jmolApplet0,'isosurface translucent '+showas);
+  Jmol.script(jmolApplet0,'isosurface s1 translucent '+showas);
 }
 
 function SelSurfaceColor(){
 	var showas=document.getElementById("selSurfaceColor").value
-	Jmol.script(jmolApplet0,'isosurface s1 colorscheme '+showas);
+	if (showas=='rwb' || showas=='bwr' || showas=='rgb'){
+		Jmol.script(jmolApplet0,'isosurface s1 colorscheme '+showas);
+	}
+	else if (showas=='roygb' || showas=='low' || showas=='high'){
+		Jmol.script(jmolApplet0,'isosurface s1 colorscheme '+showas);
+	}
+	else {
+		Jmol.script(jmolApplet0,'color $s1 '+showas);
+	}
 }
 
+function SetESPRange(){
+	var espmin=document.getElementById("espmin").value
+	var espmax=document.getElementById("espmax").value
+	var showas=document.getElementById("selSurfaceColor").value
+	if (showas=='rwb' || showas=='bwr' || showas=='rgb' || showas=='roygb' || showas=='low' || showas=='high'){
+		Jmol.script(jmolApplet0,'color $s1 "'+showas+'" range '+espmin+" "+espmax);
+	}
+}
+
+
+function LoadResultSurface(){
+	//var stype=document.getElementByName["SURFACE_METHOD"].value
+
+	var chkObjs = document.getElementsByName("SURFACE_METHOD");
+    for(var i=0;i<chkObjs.length;i++){
+        if(chkObjs[i].checked){
+            stype=chkObjs[i].value;
+            break;
+        }
+    }
+    /* //jquery
+		if($("input[name='SURFACE_METHOD']:checked").val()=="zzx"){
+		  alert("got it");
+		}
+    */
+	if (stype=="ESES"){
+		Jmol.script(jmolApplet0,"isosurface s1 OBJ 'MC_result.obj'")
+	}else{
+		Jmol.script(jmolApplet0,"isosurface s1 MSMS '1ajj2.vert'")
+	}
+}
 
 function newScroller(name,caption,fCallback,width,x,y,isvertical,minvalue,maxvalue,initialvalue,factor,fmouseup){
 	if(!name)name="scroll-test"

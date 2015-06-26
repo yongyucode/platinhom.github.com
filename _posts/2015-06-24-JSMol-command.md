@@ -83,7 +83,7 @@ color backbone blue
 - `color property atomno`: color atomno (氮端到碳端渐变)
 - `color cpk`: color cpk(CPK着色法,氧红氮蓝)
 - `color structure`: 根据二级结构着色
-
+color shape PROPERTY x "colorSchemeName" RANGE [min] [max]
 
 ## [表面](http://chemapps.stolaf.edu/jmol/docs/?ver=14.2#isosurface)
 

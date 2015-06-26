@@ -142,6 +142,7 @@ function createIsosurfaceOptions() {
 
 }
 
+
 // div2 is also created by a callback from the applet when file loading is complete.
 
 function createDisplayOptions() {

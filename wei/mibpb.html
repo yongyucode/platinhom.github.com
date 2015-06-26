@@ -217,7 +217,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       <span>Show molecule as: </span>
       <select id="selMolShow" onkeypress='showMolAs()' onchange='showMolAs()' style='width:70pt'>
         <option value='cartoon'>Cartoon</option>
+        <option value='rocket'>Rocket</option>
         <option value='ribbon'>Ribbon</option>
+        <option value='meshribbon'>MeshRibbon</option>
         <option value='trace'>Trace</option>
         <option value='backbone'>Backbone</option>
         <option value='ballstick'>Ball&Stick</option>
@@ -238,11 +240,14 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       <br/>
       JMol Surface: 
         <select id="selJmolSurface" onkeypress='SelJmolsurface()' onchange='SelJmolsurface()' style='width:100pt'>
-        <option value="delete">off</option>
+        <option value="off">off</option>
         <option value='vdw'>van der Waals</option>
-        <option value="sasurface">solvent-accessible</option>
-        <option value="solvent">solvent-excluded</option>
-        <option value="molecular">molecular</option>
+        <option value="sasurface">Solvent-Accessible</option>
+        <option value="solvent">Solvent-Excluded</option>
+        <option value="molecular">Molecular</option>
+        <option value="mesh nofill nodots">Mesh</option>
+        <option value="dots nofill nomesh">Dots</option>
+        <option value="delete">Delete</option>
         </select>
 
       Translucent:
@@ -262,20 +267,27 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value='bwr'>BWR</option>
         <option value="rwb">RWB</option>
         <option value="rgb">RGB</option>
+        <option value="high">High</option>
+        <option value="low">Low</option>
+        <option value="roygb">Rainbow</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="white">White</option>
+        <option value="blue">Blue</option>
       </select>
 
       <br/>
       <table>
-      <tr><td valign=bottom>minimum:</td><td valign=bottom><input id=txtmin value='5' style='width:20pt;text-align:right' onkeypress=''> kT/e\<img src="transp.gjf" height=30 width=1>
+      <tr><td valign=bottom>ESP min:</td><td valign=bottom><input id="espmin" value='-5' style='width:15pt;text-align:right' onkeypress='SetESPRange()' onchange='SetESPRange()'> 
       </td>
-      <td> 
-      <script type="text/javascript">newScroller("min","","doScroll",100,-1,-1,false,-50,50,-5.0,1, "mouseup")</script>
+      <td valign=bottom>max:</td><td valign=bottom><input id="espmax" value='5' style='width:15pt;text-align:right' onkeypress='SetESPRange()' onchange='SetESPRange()'> 
       </td></tr>
     </table>
       <script type="text/javascript">
       Jmol.jmolButton(jmolApplet0, "load 1ajj2.pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
-      Jmol.jmolButton(jmolApplet0, "isosurface MSMS '1ajj2.vert'", "Load surface", "LoadMap", "Load Map file");
-      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 OBJ 'MC_result.obj' map '1ajj3.dx'", "Load DX", "LoadDX", "Load DX file");
+      Jmol.jmolButton(jmolApplet0, "javascript LoadResultSurface()", "Load surface", "LoadMap", "Load Map file");
+      Jmol.jmolButton(jmolApplet0, "javascript SelSurfaceColor(); isosurface s1 color absolute -6 -0.5 OBJ 'MC_result.obj' map '1ajj3.dx'", "Load DX", "LoadDX", "Load DX file");
+      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 OBJ 'MC_result.obj' map '1ajj3.dx'", "Load All", "Load All", "Load All result");
       </script>
     </div>
   </div>
