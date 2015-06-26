@@ -235,12 +235,36 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value="white">White</option>
         <option value="red">Red</option>
         <option value="blue">Blue</option></select>
+      <br/>
+      JMol Surface: 
+        <select id="selJmolSurface" onkeypress='SelJmolsurface()' onchange='SelJmolsurface()' style='width:100pt'>
+        <option value="delete">off</option>
+        <option value='vdw'>van der Waals</option>
+        <option value="sasurface">solvent-accessible</option>
+        <option value="solvent">solvent-excluded</option>
+        <option value="molecular">molecular</option>
+        </select>
 
-      <a href="javascript:Jmol.script(jmolApplet0,'select *;isosurface vdw; spin off')">isosurface vdw</a>
-      <a href="javascript:Jmol.script(jmolApplet0,'isosurface delete')">off</a>
+      Translucent:
+      <select id="selTranslucent" onkeypress='SurfaceTranslucent()' onchange='SurfaceTranslucent()' style='width:30pt'>
+        <option value='0'>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option></select>
+
+      Color:
+      <select id="selSurfaceColor" onkeypress='SelSurfaceColor()' onchange='SelSurfaceColor()' style='width:50pt'>
+        <option value='bwr'>BWR</option>
+        <option value="rwb">RWB</option>
+        <option value="rgb">RGB</option>
+      </select>
+
       <a href="javascript:Jmol.script(jmolApplet0,'if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep')">mep</a>
-      <a href="javascript:Jmol.script(jmolApplet0,'isosurface translucent 3')">translucent</a>
-      <a href="javascript:Jmol.script(jmolApplet0,'isosurface opaque')">opaque</a>
       <br/>
       <script type="text/javascript">
       Jmol.jmolButton(jmolApplet0, "load 1ajj2.pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
