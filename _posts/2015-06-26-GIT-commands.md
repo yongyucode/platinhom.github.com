@@ -1,23 +1,13 @@
 ---
 layout: post
-title: GIT-commands
+title: GIT命令总结
 date: 2015-06-25 17:49:47
 categories: CompSci
 tags: Github IT
 ---
 
 
-[Git简明介绍](http://rogerdudler.github.io/git-guide/index.zh.html ) [Git Cheat Sheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf  ) PS: 注意简明介绍的checkout -- file 说明有误.
 
-[Git Reference](http://gitref.org/index.html ) 以及 [Pro Git](http://git-scm.com/book/zh/v1  )
-
-[蒋鑫的GotGitHub](http://www.worldhello.net/gotgithub/  )
-
-[Git详解之一 Git起步](http://www.open-open.com/lib/view/open1328069609436.html ); [Git基础](http://www.open-open.com/lib/view/open1328069733264.html  ); [Git分支](http://www.open-open.com/lib/view/open1328069889514.html ); [分布式Git](http://www.open-open.com/lib/view/open1328070090108.html  ); 等一个系列
-
-[MSYSGit项目](http://msysgit.github.io/  )
-
-[Git笔记](http://blogread.cn/it/article/7296?f=wb  )
 
 
 
@@ -297,10 +287,7 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 
 若要忽略本地库某些文件而非针对整个项目, 修改`.git/info/exclude`, 语法同.gitignore
 
-```
-
-
-
+~~~ 
 # 此为注释 – 将被 Git 忽略
 
 # 忽略所有 .a 或*.o 结尾的文件, 忽略所有~结尾文件(vim临时)
@@ -328,12 +315,21 @@ doc/*.txt
 # ignore all .txt files in the doc/ directory
 
 doc/**/*.txt
+~~~
 
+## Reference
 
-
-```
-
-
+1. [Git简明介绍](http://rogerdudler.github.io/git-guide/index.zh.html ) 
+2. [Git Cheat Sheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf  ) PS: 注意简明介绍的checkout -- file 说明有误.
+3. [Git Reference](http://gitref.org/index.html )
+4. [Pro Git](http://git-scm.com/book/zh/v1  )
+5. [蒋鑫的GotGitHub](http://www.worldhello.net/gotgithub/  )
+6. [Git详解之一 Git起步](http://www.open-open.com/lib/view/open1328069609436.html )
+7. [Git基础](http://www.open-open.com/lib/view/open1328069733264.html  )
+8. [Git分支](http://www.open-open.com/lib/view/open1328069889514.html )
+9. [分布式Git](http://www.open-open.com/lib/view/open1328070090108.html  )等一个系列
+10. [MSYSGit项目](http://msysgit.github.io/  )
+11. [Git笔记](http://blogread.cn/it/article/7296?f=wb  )
 
 
 

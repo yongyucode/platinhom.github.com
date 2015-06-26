@@ -197,7 +197,7 @@
 
                   <li><b> Surface Options</b>: You can visualize the surface based on the JMol method or the surface calculated by ESES/MSMS during the computation. The JMol surface can be generated or deleted by the <b>"JMol Surface"</b> option. You can generate vdw surface (very fast), solvent accessible surface, solvent excluded surface and molecular surface by JMol. You can also control the surface showing as dots or mesh in this options after you generate a surface. The calculated surface in your job can be loaded by <b>"Load Surface"</b> button. The loaded surface depends on the options in "Surface Options" panel. The transparency and color for surface can also be controlled by the <b>"Translucent"</b> and <b>"Color"</b> panel, respectively. The larger value the translucent is, the more transparent the surface is. </li>
 
-                  <li><b> Electrostatic Potential (ESP) Visualization</b>: The electrostatic potential result will be saved in ABPS format (*.dx). The ESP result can be mapped onto current surface by clicking the <b>"Load DX"</b>button. You can also load all your results including the calculated surface and ESP by clicking the <b>"Load All"</b>button. The color scheme for the surface based on ESP mapping can be control by the <b>"Color"</b> option in the surface option. The BWR, RWB, RGB, High, Low and Rainbow scheme can be used for ESP coloring. The range of the ESP values for coloring can be easily control by the ESP min/max options by either entering the exact value or using the scroll bar. </li>
+                  <li><b> Electrostatic Potential (ESP) Visualization</b>: The electrostatic potential result will be saved in ABPS format (*.dx). The ESP result can be mapped onto current surface by clicking the <b>"Load ESP"</b>button. You can also load all your results including the calculated surface and ESP by clicking the <b>"Load All"</b>button. The color scheme for the surface based on ESP mapping can be control by the <b>"Color"</b> option in the surface option. The BWR, RWB, RGB, High, Low and Rainbow scheme can be used for ESP coloring. The range of the ESP values for coloring can be easily control by the ESP min/max options by either entering the exact value or using the scroll bar. </li>
 
                   <li><b> Download Results</b>: You can download all your result files in compacted zip file by clicking the <b>"Download Result"</b> button. You can also download the Jmol format file or PNG format file to re-visualize your result in JMol. A .jmol file is simply a ZIP file that can be dragged back into this applet or the Jmol app to recreate the exact state when it was created.</li>
 
@@ -243,8 +243,12 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
     <script type="text/javascript">initJmol('1ajj2.pqr',512)</script>
 
     <div style="float:left;">
+
+      <table valign="center" style="text-align:left">
+      <tr>
+      <td colspan="3">
       <span>Show molecule as: </span>
-      <select id="selMolShow" onkeypress='showMolAs()' onchange='showMolAs()' style='width:70pt'>
+      <select id="selMolShow" onkeypress='showMolAs()' onchange='showMolAs()' style='width:97pt'>
         <option value='cartoon'>Cartoon</option>
         <option value='rocket'>Rocket</option>
         <option value='ribbon'>Ribbon</option>
@@ -254,9 +258,11 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value='ballstick'>Ball&Stick</option>
         <option value='wireframe'>Wireframe</option>
         <option value='spacefill'>Space Fill</option></select>
+      </td>
 
-      <span>&nbsp;Color as:</span>
-      <select id="selColorSel" onkeypress='showMolAsColor()' onchange='showMolAsColor()' style='width:140pt'>
+      <td colspan="3">
+      <span>Color as:</span>
+      <select id="selColorSel" onkeypress='showMolAsColor()' onchange='showMolAsColor()' style='width:133pt'>
         <option value='structure'>Secondary Structure</option>
         <option value="cpk">CPK</option>
         <option value="group">Terminal</option>
@@ -266,9 +272,13 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value="white">White</option>
         <option value="red">Red</option>
         <option value="blue">Blue</option></select>
-      <br/>
-      JMol Surface: 
-        <select id="selJmolSurface" onkeypress='SelJmolsurface()' onchange='SelJmolsurface()' style='width:100pt'>
+      </td>
+      </tr>
+
+      <tr>
+      <td colspan="3">
+        JMol Surface: 
+        <select id="selJmolSurface" onkeypress='SelJmolsurface()' onchange='SelJmolsurface()' style='width:120pt'>
         <option value="off">off</option>
         <option value='vdw'>van der Waals</option>
         <option value="sasurface">Solvent-Accessible</option>
@@ -278,7 +288,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value="dots nofill nomesh">Dots</option>
         <option value="delete">Delete</option>
         </select>
+      </td>
 
+      <td colspan="3">
       Translucent:
       <select id="selTranslucent" onkeypress='SurfaceTranslucent()' onchange='SurfaceTranslucent()' style='width:30pt'>
         <option value='0'>0</option>
@@ -304,9 +316,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value="white">White</option>
         <option value="blue">Blue</option>
       </select>
+      </td>
+      </tr>
 
-      <br/>
-      <table valign="center">
       <tr>
       <td >ESP min:</td><td valign="top"><input id="espmin" value='-5' style='width:20pt;text-align:right' onkeypress='SetESPRange()'> 
       <img src="transp.gif" height=20px width=1px></td>
@@ -321,20 +333,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <!--div id="sr_max"  onscroll="checkScroll('sr_max')" style="position:absolute; font-size: 2pt; height:30px; width:300px; overflow:auto"><img src="transp.gif" height=1 width=1000></div-->
       </td>
       </tr>
-    </table>
-    <script type="text/javascript">initScrollers();</script>
 
-      <script type="text/javascript">
-      Jmol.jmolButton(jmolApplet0, "load 1ajj2.pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
-      Jmol.jmolButton(jmolApplet0, "javascript LoadResultSurface()", "Load surface", "LoadMap", "Load Map file");
-      Jmol.jmolButton(jmolApplet0, "javascript SelSurfaceColor(); isosurface s1 color absolute -6 -0.5 OBJ 'MC_result.obj' map '1ajj3.dx'", "Load DX", "LoadDX", "Load DX file");
-      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 OBJ 'MC_result.obj' map '1ajj3.dx'", "Load All", "Load All", "Load All result");
-      document.write("<br \\>");
-      Jmol.jmolButton(jmolApplet0,"write IMAGE ?.png","Save image");
-      Jmol.jmolButton(jmolApplet0,"zap;load ?.png","Load image");
-      Jmol.jmolButton(jmolApplet0,"write ?.jmol","Save Jmol");
-      Jmol.jmolButton(jmolApplet0,"zap;load ?.jmol","Load Jmol");
-      </script>
+    </table>
+    <script type="text/javascript">initScrollers();initJmolButton();</script>
     </div>
   </div>
 </div>
