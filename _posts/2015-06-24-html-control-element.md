@@ -160,6 +160,14 @@ if (submitOK=="false")
 
 <form><input type="hidden" name="country" value="Norway" /></form>
 
+## 显示细节 Details 对象
+[Details](http://www.w3school.com.cn/jsref/dom_obj_details.asp) 主代码:`<details>....</details>`   
+创建一个可显示详细细节的对象.
+
+`<details id="myDetails">Some additional details...</details>`
+
+<details id="myDetails">Some additional details...</details>
+
 
 ----------------
 一些常用处理代码
