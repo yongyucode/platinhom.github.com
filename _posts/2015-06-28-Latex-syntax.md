@@ -8,7 +8,7 @@ tags: Math Software
 
 ## 特殊符号
 
-- `` \AA `` $$\AA $$ ; 
+- `` \AA \dot A`` $$\AA $$ ; 
 - `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\alpha \beta \gamma \delta \epsilon \varepsilon `$$\alpha \beta \gamma \delta \epsilon \varepsilon$$ ;  
 `\zeta \eta \theta \vartheta \iota \kappa` $$\zeta \eta \theta \vartheta \iota \kappa$$ ;  
@@ -22,7 +22,7 @@ tags: Math Software
 - `\sim \simeq \approx \cong \lesssim \gtrsim` $$\sim \simeq \approx \cong \lesssim \gtrsim $$  
 `> < = \geq \leq \neq \equiv` $$> < = \geq \leq \neq \equiv $$
 - `+ - \pm \mp \times\div \cdot \ast \star \circ \bullet` $$ + - \pm \mp \times \div \cdot \ast \star \circ \bullet$$
-- `\cdot \dot A \cdots \vdots \ddots` $$\cdot \dot A \cdots \vdots \ddots$$
+- `\cdot \cdots \vdots \ddots` $$\cdot \cdots \vdots \ddots$$
 - `\rightarrow \to \leftarrow` $$\rightarrow \to \leftarrow$$
 - `\subset \supset \subseteq \supseteq \in \ni` $$\subset \supset \subseteq \supseteq \in \ni$$
 - `\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot` $$\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot$$  
