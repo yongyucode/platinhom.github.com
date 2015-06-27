@@ -161,6 +161,9 @@ if (submitOK=="false")
 <form><input type="hidden" name="country" value="Norway" /></form>
 
 
+----------------
+一些常用处理代码
+
 ### 可以用以下JS代码创建和访问对象
 
 ~~~ javascript
@@ -186,6 +189,6 @@ function GetValueFromNames(name){
 ~~~
 
 ## Reference
-1. [HTML <input> 标签](http://www.w3school.com.cn/tags/tag_input.asp)以及[HTML <input> 标签的 type 属性](http://www.w3school.com.cn/tags/att_input_type.asp)
+1. [HTML \<input\> 标签](http://www.w3school.com.cn/tags/tag_input.asp)以及[HTML \<input\> 标签的 type 属性](http://www.w3school.com.cn/tags/att_input_type.asp)
 
 ---
