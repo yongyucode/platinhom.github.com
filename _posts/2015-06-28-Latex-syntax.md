@@ -10,7 +10,7 @@ tags: Math Software
 
 - `\Delta` $\Delta$ ; `\delta` $\delta$ ;
 - `\partial` $\partial$ ;
-- `\infty` $\infty$ ; 
+- `\infty` $\infty$ ; `\AA` $\AAb$
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
 
 ## 格式
@@ -21,6 +21,7 @@ tags: Math Software
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ;  
 - `\int_a^b f(x)dx\` $$\int_a^b f(x)dx$$ ; `\iint_a^b f(x)dx` $$\iint_a^b f(x)dx\ $$ ; `\iiint_a^b f(x)dx` $$\iiint_a^b f(x)dx$$
+
 
 ## 数学串
 
