@@ -6,6 +6,16 @@ categories: MathStat
 tags: Math Software
 ---
 
-`\partial` $\partial$
+## 特殊符号
+
+`\partial` $\partial$ ; `\infty` $\infty$ ;
+
+## 格式
+
+`\frac{1}{T}` $$\frac{1}{T}$$ ; 
+
+## 数学串
+
+`\ln` $\ln$ ; 
 
 ---
