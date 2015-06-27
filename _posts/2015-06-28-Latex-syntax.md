@@ -12,7 +12,7 @@ tags: Math Software
 
 ## 格式
 
-`\frac{1}{T}` $$\frac{1}{T}$$ ; `_` $A_a$ ; `^` $A^2$ ; 
+`\frac{1}{T}` $$\frac{1}{T}$$ ; `_` $A_a$ ; `^` $A^2$ ; `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ;
 
 ## 数学串
 
