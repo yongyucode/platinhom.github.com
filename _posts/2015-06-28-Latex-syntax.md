@@ -12,7 +12,7 @@ tags: Math Software
 
 ## 格式
 
-- `\big \{ \bigg \{ \Big \{ \Bigg \{` $$ \big \{ \bigg \{ \Big \{ \Bigg \{ $$
+- `\big \{ \Big \{ \bigg \{ \Bigg \{` $$ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ;
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
