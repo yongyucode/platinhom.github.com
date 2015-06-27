@@ -3,7 +3,7 @@ layout: post
 title: HTML事件属性
 date: 2015-06-26 15:15:28
 categories: CompSci
-tags: Website
+tags: Website HTML
 ---
 
 ## Window 事件属性(应用到body标签)

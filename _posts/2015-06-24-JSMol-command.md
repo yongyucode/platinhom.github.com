@@ -3,7 +3,7 @@ layout: post
 title: JSMol指令
 date: 2015-06-23 22:01:59
 categories: CompBiol
-tags: CompBiol CompChem
+tags: CompBiol CompChem JMol
 ---
 
 To learn something about JSmol and install JSMol, please refer to my blog before: [JSMol使用](http://platinhom.github.io/2015/06/19/JSMol/).  

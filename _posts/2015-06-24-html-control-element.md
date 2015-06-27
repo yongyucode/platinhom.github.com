@@ -3,7 +3,7 @@ layout: post
 title: HTML控件元素的用法
 date: 2015-06-23 21:11:05
 categories: CompSci
-tags: Website
+tags: Website HTML
 ---
 
 <form action="" method="get"> 

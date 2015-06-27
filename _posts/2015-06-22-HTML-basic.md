@@ -3,7 +3,7 @@ layout: post
 title: HTML基础篇
 date: 2015-06-21 20:37:29
 categories: CompSci
-tags: Website IT
+tags: Website IT HTML
 ---
 
 新手可到[CodeCademy](http://www.codecademy.com/)进行简单的学习, [中文版地址](http://www.codecademy.com/zh).  
