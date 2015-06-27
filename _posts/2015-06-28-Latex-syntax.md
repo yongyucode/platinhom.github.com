@@ -1,6 +1,6 @@
 ---
 layout: post_mathjax
-title: Latex语法
+title: Latex符号和格式
 date: 2015-06-27 20:49:55
 categories: MathStat
 tags: Math Software
@@ -21,7 +21,7 @@ tags: Math Software
 - `\sim \simeq \approx \cong \lesssim \gtrsim` $$\sim \simeq \approx \cong \lesssim \gtrsim $$  
 `> < = \geq \leq \neq \equiv` $$> < = \geq \leq \neq \equiv $$
 - `+ - \pm \mp \times\div \cdot \ast \star \circ \bullet` $$ + - \pm \mp \times \div \cdot \ast \star \circ \bullet$$
-- `\cdot \cdots \vdots \ddots` $$\cdot \cdots \vdots \ddots$$
+- `\cdot \dots \cdots \vdots \ddots` $$\cdot \dots \cdots \vdots \ddots$$
 - `\rightarrow \to \leftarrow` $$\rightarrow \to \leftarrow$$
 - `\subset \supset \subseteq \supseteq \in \ni` $$\subset \supset \subseteq \supseteq \in \ni$$
 - `\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot` $$\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot$$  
@@ -34,6 +34,7 @@ tags: Math Software
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `\big \left[ \right]` $$\big \left[\right ]$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
+- `\bf{OK} \textbf{OK} \emph{OK} \underline{OK}` $$\bf{OK} \textbf{OK} \emph{OK} \underline{OK}$$
 - `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
 ``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
 - `\vec{abc} \overrightarrow{abc} \overleftarrow{abc} ` $$\vec{abc} \overrightarrow{abc} \overleftarrow{abc} $$
