@@ -33,6 +33,7 @@ tags: Math Software
 
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `\left[ \frac{1}{T} \right]` $$\left[ \frac{1}{T} \right]$$ (自动根据内容调整)
+- `\left \lVert \left \langle \left \lvert \frac{1}{T} \right \rvert \right \rangle \right \rVert` $$\left \lVert \left \langle \left \lvert \frac{1}{T} \right \rvert \right \rangle \right \rVert$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
 - `\bf{OK} \textbf{OK} \texttt{OK} \underline{OK} \overline{OK}` $$\bf{OK} \textbf{OK} \texttt{OK} \underline{OK} \overline{OK}$$
 - `A \! B C \, D \: E \; F \enspace G \quad H \qquad I \hspace{3em} J` $$A \! B C \, D \: E \; F \enspace G \quad H \qquad I \hspace{3em} J $$ 间隙控制
