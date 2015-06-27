@@ -16,7 +16,7 @@ tags: Math Software
 `\phi \varphi \chi \psi \omega` $$\phi \varphi \chi \psi \omega$$
 - `\Gamma \Delta \Theta \Lambda \Xi \Pi` $$\Gamma \Delta \Theta \Lambda \Xi \Pi$$ ;  
 `\Sigma \Upsilon \Phi \Psi \Omega` $$\Sigma \Upsilon \Phi \Psi \Omega$$
-- `\partial` $\partial$ ;`\infty` $\infty$ ; `\forall` $\forall$ ; 
+- `\partial` $\partial$ ;`\infty` $\infty$ ; `\forall` $\forall$ `\propto` $\propto$; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\sim \simeq \approx \cong \lesssim \gtrsim` $$\sim \simeq \approx \cong \lesssim \gtrsim $$  
 `> < = \geq \leq \neq \equiv` $$> < = \geq \leq \neq \equiv $$
