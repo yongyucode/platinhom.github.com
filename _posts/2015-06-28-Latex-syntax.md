@@ -8,11 +8,11 @@ tags: Math Software
 
 ## 特殊符号
 
-`\partial` $\partial$ ; `\infty` $\infty$ ;
+`\partial` $\partial$ ; `\infty` $\infty$ ; `\Delta` $\Delta$ ; `\delta` $\delta$ ;
 
 ## 格式
 
-`\frac{1}{T}` $$\frac{1}{T}$$ ; 
+`\frac{1}{T}` $$\frac{1}{T}$$ ; `_` $A_a$ ; `^` $A^2$ ; 
 
 ## 数学串
 
