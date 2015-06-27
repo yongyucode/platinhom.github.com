@@ -12,7 +12,7 @@ tags: Math Software
 - `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
-- `\checkmark \surd \dag \ddag` $$\checkmark \surd \dag \ddag $$
+- `\checkmark \surd` $$\checkmark \surd $$
 - `\spadesuit \heartsuit \diamondsuit \clubsuit` $$ \spadesuit \heartsuit \diamondsuit \clubsuit $$
 
 ## 格式
@@ -32,5 +32,8 @@ tags: Math Software
 ## 数学串
 
 `\ln` $\ln$ ; `\log` $\log$
+
+## Mathjax不行..
+- `\dag \ddag`
 
 ---
