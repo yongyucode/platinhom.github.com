@@ -10,7 +10,7 @@ tags: Math Software
 
 - `` \AA `` $$\AA $$ ; 
 - `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
-- `\alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu\ xio \pi \varpi \rho \varrho \sigma \varsigma  \tau \upsilon \phi \varphi \chi \psi \omega` $$\alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu\ xio \pi \varpi \rho \varrho \sigma \varsigma  \tau \upsilon \phi \varphi \chi \psi \omega$$
+- `\alpha \beta \gamma \delta \epsilon \varepsilon `$$\alpha \beta \gamma \delta \epsilon \varepsilon$$ ; `\zeta \eta \theta \vartheta \iota \kappa` $$\zeta \eta \theta \vartheta \iota \kappa$$ ; `\lambda \mu \nu\ xio \pi \varpi` $$\lambda \mu \nu\ xio \pi \varpi$$ ; `\rho \varrho \sigma \varsigma  \tau \upsilon` $$\rho \varrho \sigma \varsigma  \tau \upsilon$$ ; `\phi \varphi \chi \psi \omega` $$\phi \varphi \chi \psi \omega$$
 - `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
