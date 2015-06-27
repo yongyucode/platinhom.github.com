@@ -11,6 +11,28 @@ tags: Website HTML
 后篇: HTML5新控件  
 
 ## 表单 Form 对象
+[Form](http://www.w3school.com.cn/tags/tag_form.asp) 主代码 `<form>contents</form>`  
+表单是HTML块级对象, 能够包含各种对象如input类等, 用于向服务器提交数据.
+
+## 标签 Label 对象
+[Label](http://www.w3school.com.cn/tags/tag_label.asp) 主代码`<label>...</label>`  
+简单的HTML表单,一般用for属性指明绑定控件,可以在用户点击标签时触发控件将焦点移动到表单.
+
+属性事件:
+
+- for: 指明绑定控件的id.
+- formid: 指明所属的一个或多个表单.
+
+~~~ html
+<form>
+<label for="email">Email</label>
+<input type="text" id="email">
+<label for="name">Name</label>
+<input type="text" id="name">
+</form>
+~~~
+
+<form><label for="email">Email</label><input type="text" id="email"><label for="name">Name</label><input type="text" id="name"></form>
 
 ## 输入框 Text 对象
 [Text](http://www.w3school.com.cn/jsref/dom_obj_text.asp)主代码: `<input type="text"/>`   
@@ -109,7 +131,7 @@ tags: Website HTML
 <form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form><img src="http://platinhom.github.io/images/shortcut.png"/>
 
 
-## fieldset 
+## Fieldset 
 [fieldset](http://www.w3school.com.cn/jsref/dom_obj_fieldset.asp) 主代码`<fieldset></fieldset>`  
 相当于一个容器,可以统一操作管理内部功能.
 
@@ -136,6 +158,20 @@ x.disabled = true;
 <fieldset id="myFieldset" name="personalia">Name: <input type="text" name="username"><br>Email: <input type="text" name="usermail"><br></fieldset>点击按钮来禁用 fieldset。<button onclick="myFunctionfieldset()">试一下</button>
 
 <script>function myFunctionfieldset(){var x = document.getElementById("myFieldset");x.disabled = true;}</script>
+
+## Fieldset标题 Legend 对象
+[Legend](http://www.w3school.com.cn/tags/tag_legend.asp) 主代码:`<legend>Caption</legend>`
+
+~~~ html
+<fieldset>
+<legend>健康信息</legend>
+    身高：<input type="text" />
+    体重：<input type="text" />
+</fieldset>
+~~~
+
+<fieldset><legend>健康信息</legend>身高：<input type="text" />体重：<input type="text" /></fieldset>
+
 
 ## 提交表单 Submit 对象
 [submit](http://www.w3school.com.cn/jsref/dom_obj_submit.asp)主代码:`<input type="submit">`   主要使用form的`onsubmit`属性来调用检查函数.形式其实只是个普通按钮.
@@ -234,5 +270,6 @@ function GetValueFromNames(name){
 
 ## Reference
 1. [HTML \<input\> 标签](http://www.w3school.com.cn/tags/tag_input.asp)以及[HTML \<input\> 标签的 type 属性](http://www.w3school.com.cn/tags/att_input_type.asp)
+2. [HTML 标签参考手册](http://www.w3school.com.cn/tags/)
 
 ---
