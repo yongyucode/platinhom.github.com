@@ -8,7 +8,9 @@ tags: Math Software
 
 ## 特殊符号
 
-`\partial` $\partial$ ; `\infty` $\infty$ ; `\Delta` $\Delta$ ; `\delta` $\delta$ ;
+- 
+- `\partial` $\partial$ ;
+- `\infty` $\infty$ ; 
 
 ## 格式
 
