@@ -8,9 +8,9 @@ tags: Math Software
 
 ## 特殊符号
 
-- `\Delta` $\Delta$ ; `\delta` $\delta$ ;
+- `\AA` $\AAb$ ; `\Delta` $\Delta$ ; `\delta` $\delta$ ; `\Omege \omege` $\Omege \omege$;
 - `\partial` $\partial$ ;
-- `\infty` $\infty$ ; `\AA` $\AAb$
+- `\infty` $\infty$ ; 
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
 
 ## 格式
