@@ -1,10 +1,14 @@
 ---
 layout: post
-title: HTML控件元素的用法
+title: HTML常用控件元素的用法
 date: 2015-06-23 21:11:05
 categories: CompSci
 tags: Website HTML
 ---
+
+这篇东东的工作量真TM大啊....慢慢写吧...分几篇吧...  
+前篇: 经典HTML控件  
+后篇: HTML5新控件  
 
 ## 输入框 Text 对象
 [Text](http://www.w3school.com.cn/jsref/dom_obj_text.asp)主代码: `<input type="text"/>`   
@@ -57,127 +61,11 @@ tags: Website HTML
 <label><input name="Fruit" type="checkbox" value="" />梨 </label> 
 </form> 
 
-## [选择器 Select对象](http://www.w3school.com.cn/jsref/dom_obj_select.asp)
-主代码 `<select><option value="v1">option1</option></select>`
-
-## 滑块控件 Range 对象
-[Range](http://www.w3school.com.cn/jsref/dom_obj_range.asp)主代码`<input type="range">`. HTML5新元素.
-
-~~~ html
-<input type="range" id="myRange">
-
-<p>点击按钮来获得滑块控件的值。</p>
-
-<button onclick="myFunctionRange()">试一下</button>
-
-<p id="demoRange"></p>
-
-<script>
-function myFunctionRange() {
-    var x = document.getElementById("myRange").value;
-    document.getElementById("demoRange").innerHTML = x;
-}
-</script>
-~~~
-
-<input type="range" id="myRange">
-
-<p>点击按钮来获得滑块控件的值。</p>
-
-<button onclick="myFunctionRange()">试一下</button>
-
-<p id="demoRange"></p>
-
-<script>function myFunctionRange() {var x = document.getElementById("myRange").value;document.getElementById("demoRange").innerHTML = x;}</script>
-
-## 数值选择 Number 控件
-[Number](http://www.w3school.com.cn/jsref/dom_obj_number.asp)主代码:`<input type="number">`. HTML5新元素.
-
-~~~ html
-<input type="number" id="myNumber" value="2" max="10" min="-2">
-
-<p>点击按钮来获得 number 字段的数字。</p>
-
-<button onclick="myFunctionNumber()">试一下</button>
-
-<p id="demoNumber"></p>
-
-<script>
-function myFunctionNumber() {
-    var x = document.getElementById("myNumber").value;
-    document.getElementById("demoNumber").innerHTML = x;
-}
-</script>
-~~~
-
-<input type="number" id="myNumber" value="2" max="10" min="-2">
-
-<p>点击按钮来获得 number 字段的数字。</p>
-
-<button onclick="myFunctionNumber()">试一下</button>
-
-<p id="demoNumber"></p>
-
-<script>function myFunctionNumber() {    var x = document.getElementById("myNumber").value;    document.getElementById("demoNumber").innerHTML = x;}</script>
-
-## 日期选择 Date 对象
-[Date](http://www.w3school.com.cn/jsref/dom_obj_date.asp)主代码`<input type="date">` (HTML5才支持)
-
-~~~ html
-<input type="date" id="myDate" value="2014-06-01">
-
-<p>点击按钮来获得 date 字段的日期。</p>
-
-<button onclick="myFunctionDate()">试一下</button>
-
-<p id="demoDate"></p>
-
-<script>
-function myFunctionDate() {
-    var x = document.getElementById("myDate").value;
-    document.getElementById("demoDate").innerHTML = x;
-}
-</script>
-~~~
-
-<input type="date" id="myDate" value="2014-06-01">
-
-<p>点击按钮来获得 date 字段的日期。</p>
-
-<button onclick="myFunctionDate()">试一下</button>
-
-<p id="demoDate"></p>
-
-<script>function myFunctionDate() {var x = document.getElementById("myDate").value;document.getElementById("demoDate").innerHTML = x;}</script>
+## 选择器 Select对象
+[Select](http://www.w3school.com.cn/jsref/dom_obj_select.asp)主代码: `<select><option value="v1">option1</option></select>`
 
 
-## 拾色器 color 对象
-[Color](http://www.w3school.com.cn/jsref/dom_obj_color.asp) 主代码: `<input type="color">`. HTML5新元素.
 
-~~~ html
-选择您喜爱的颜色：<input type="color" id="myColor">
-
-<p>请点击按钮来获得颜色选择器的颜色。</p>
-
-<p id="demoColor"></p>
-
-<button onclick="myFunctionColor()">试一下</button>
-
-<script>
-function myFunctionColor() {
-    var x = document.getElementById("myColor").value;
-    document.getElementById("demoColor").innerHTML = x;
-}
-</script>
-~~~
-
-选择您喜爱的颜色：
-<input type="color" id="myColor">
-<p>请点击按钮来获得颜色选择器的颜色。</p>
-<p id="demoColor"></p>
-<button onclick="myFunctionColor()">试一下</button>
-
-<script>function myFunctionColor(){var x = document.getElementById("myColor").value;document.getElementById("demoColor").innerHTML = x;}</script>
 
 ## 提交表单 Submit 对象
 [submit](http://www.w3school.com.cn/jsref/dom_obj_submit.asp)主代码:`<input type="submit">`   主要使用form的`onsubmit`属性来调用检查函数.形式其实只是个普通按钮.
@@ -223,6 +111,7 @@ if (submitOK=="false")
 <input type="submit" value="提交"> 
 </form>
 ~~~
+
 
 
 可以用以下JS代码创建和访问对象
