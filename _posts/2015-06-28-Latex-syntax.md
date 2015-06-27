@@ -9,10 +9,11 @@ tags: Math Software
 ## 特殊符号
 
 - `\AA` $\AA$ ; `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
-- `\partial` $\partial$ ; `\angle` $\angle$ ; `\triangle \nabla` $\triangle \nabla$ ;
-- `\infty` $\infty$ ; 
+- `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
+-  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
-- `\checkmark \surd \dag \dagg` $$\checkmark \surd \dag \dagg$$
+- `\checkmark \surd \dag \ddag` $$\checkmark \surd \dag \ddag $$
+- `\spadesuit \heartsuit \diamondsuit \clubsuit` $$ \spadesuit \heartsuit \diamondsuit \clubsuit $$
 
 ## 格式
 
@@ -21,7 +22,8 @@ tags: Math Software
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
 - `\rightarrow \to` $$\rightarrow \to$$ ; `\leftarrow` $\leftarrow$
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
-- `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ;
+- `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ; 
+- `\prod_1^10` $$\prod_1^10$$
 - `\lim_{x\rightarrow x_0} f(x)=A` $$\lim_{x\rightarrow x_0} f(x)=A$$  
 - `\int_a^b f(x)dx\` $$\int_a^b f(x)dx$$ ; `\iint_a^b f(x)dx` $$\iint_a^b f(x)dx\ $$ ; `\iiint_a^b f(x)dx` $$\iiint_a^b f(x)dx$$
 - `\Gamma_{ij}^{k}` $$\Gamma_{ij}^{k}$$
