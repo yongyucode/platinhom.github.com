@@ -19,8 +19,11 @@ tags: Math Software
 `\Sigma \Upsilon \Phi \Psi \Omega` $$\Sigma \Upsilon \Phi \Psi \Omega$$
 - `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
-- `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
+- `\sim \simeq \approx \cong \lesssim \gtrsim` $$\sim \simeq \approx \cong \lesssim \gtrsim $$  
+`\geq \leq \neq = \equiv` $$\geq \leq \neq = \equiv $$
+- `\pm \times  \div \cdot \cap \cup` $$ \pm \times \div \cdot \cap \cup $$
 - `\cdots \vdots \ddots` $$\cdots \vdots \ddots$$
+- `\rightarrow \to` $$\rightarrow \to$$ ; `\leftarrow` $\leftarrow$
 - `\checkmark \surd` $$\checkmark \surd $$
 - `\spadesuit \heartsuit \diamondsuit \clubsuit` $$ \spadesuit \heartsuit \diamondsuit \clubsuit $$
 
@@ -29,7 +32,6 @@ tags: Math Software
 - `\big \{ \Big \{ \bigg \{ \Bigg \{` $$ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
-- `\rightarrow \to` $$\rightarrow \to$$ ; `\leftarrow` $\leftarrow$
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ; 
 - `\prod_1^{10}` $$\prod_1^{10}$$
