@@ -8,11 +8,11 @@ tags: Math Software
 
 ## 特殊符号
 
-- `` \AA `` $$\AA $$ ; `` \'o \`o \^o \"o \~o `` $$ \'o \`o \^o \"o \~o $$
+- `` \AA `` $$\AA $$ ; 
 - `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\alpha \beta \gamma \delta \epsilon \varepsilon `$$\alpha \beta \gamma \delta \epsilon \varepsilon$$ ;  
 `\zeta \eta \theta \vartheta \iota \kappa` $$\zeta \eta \theta \vartheta \iota \kappa$$ ;  
-`\lambda \mu \nu \xio \pi \varpi` $$\lambda \mu \nu \xio \pi \varpi$$ ;  
+`\lambda \mu \nu \xi o \pi \varpi` $$\lambda \mu \nu \xi o \pi \varpi$$ ;  
 `\rho \varrho \sigma \varsigma  \tau \upsilon` $$\rho \varrho \sigma \varsigma  \tau \upsilon$$ ;  
 `\phi \varphi \chi \psi \omega` $$\phi \varphi \chi \psi \omega$$
 - `\Gamma \Delta \Theta \Lambda \Xi \Pi` $$\Gamma \Delta \Theta \Lambda \Xi \Pi$$ ;  
@@ -46,5 +46,6 @@ tags: Math Software
 ## Mathjax不行..
 - `\dag \ddag`
 - ``\aa \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}``
+- `` \'o \`o \^o \"o \~o ``
 
 ---
