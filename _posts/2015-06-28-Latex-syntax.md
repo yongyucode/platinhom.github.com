@@ -22,7 +22,7 @@ tags: Math Software
 `> < = \geq \leq \neq \equiv` $$> < = \geq \leq \neq \equiv $$
 - `+ - \pm \mp \times\div \cdot \ast \star \circ \bullet` $$ + - \pm \mp \times \div \cdot \ast \star \circ \bullet$$
 - `\cdot \dots \cdots \vdots \ddots` $$\cdot \dots \cdots \vdots \ddots$$
-- `\rightarrow \to \leftarrow` $$\rightarrow \to \leftarrow$$
+- `\rightarrow \to \leftarrow \leftrightarrow \leftrightarrows \Rightarrow` $$\rightarrow \to \leftarrow \leftrightarrow \leftrightarrows \Rightarrow$$
 - `\subset \supset \subseteq \supseteq \in \ni` $$\subset \supset \subseteq \supseteq \in \ni$$
 - `\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot` $$\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot$$  
 `\cap \cup \uplus \oplus \otimes \odot` $$\cap \cup \uplus \oplus \otimes \odot$$
@@ -34,7 +34,7 @@ tags: Math Software
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `\left \big [ \right]` $$\left \big [ \right ]$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
-- `\bf{OK} \textbf{OK} \em{OK} \underline{OK} \overline{OK}` $$\bf{OK} \textbf{OK} \em{OK} \underline{OK} \overline{OK}$$
+- `\bf{OK} \textbf{OK} \underline{OK} \overline{OK}` $$\bf{OK} \textbf{OK} \underline{OK} \overline{OK}$$
 - `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
 ``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
 - `\vec{abc} \overrightarrow{abc} \overleftarrow{abc} ` $$\vec{abc} \overrightarrow{abc} \overleftarrow{abc} $$
@@ -56,6 +56,7 @@ tags: Math Software
 
 ## Mathjax不行..
 - `\dag \ddag`
+- ` \emph{OK} `
 - ``\aa \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}``
 - `` \'o \`o \^o \"o \~o ``
 - `\mathds{R} `
