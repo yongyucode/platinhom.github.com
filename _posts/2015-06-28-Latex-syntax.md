@@ -36,7 +36,7 @@ tags: Math Software
 
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \left \Big \{ \bigg \{ \Bigg \{ \right \}$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
-- `\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathds{R} \mathfrak{R}` $$\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathds{R} \mathfrak{R}$$
+- `\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathfrak{R}` $$\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathfrak{R}$$
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ; 
@@ -56,5 +56,6 @@ tags: Math Software
 - `\dag \ddag`
 - ``\aa \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}``
 - `` \'o \`o \^o \"o \~o ``
+- `\mathds{R} `
 
 ---
