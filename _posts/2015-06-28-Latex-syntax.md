@@ -8,7 +8,7 @@ tags: Math Software
 
 ## 特殊符号
 
-- `` \aa \AA \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}`` $$\aa \AA \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}$$ ; 
+- `` \AA `` $$\AA $$ ; 
 - `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
@@ -38,5 +38,6 @@ tags: Math Software
 
 ## Mathjax不行..
 - `\dag \ddag`
+- ``\aa \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}``
 
 ---
