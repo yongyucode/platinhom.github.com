@@ -8,7 +8,8 @@ tags: Math Software
 
 ## 特殊符号
 
-- `\AA` $\AA$ ; `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
+- `` \aa \AA \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}`` $$\aa \AA \"{e} \"{E} \={e} \'{e} \v{e} \`{e} \^{e} \~{e} \u{e} \H{e} \d{e} \b{e} \c{e}$$ ; 
+- `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
@@ -32,7 +33,7 @@ tags: Math Software
 ## 数学串
 
 - `\ln \log \lg \exp` $$\ln \log \lg \exp$$
-- `\max \; \min` $$\max \min$$
+- `\max \min` $$\max \min$$
 - `\sin \cos \tan \cot ` $$\sin \cos \tan \cot$$
 
 ## Mathjax不行..
