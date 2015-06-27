@@ -52,7 +52,9 @@ tags: Website HTML
 ## 按钮 Button 对象
 [Input Button](http://www.w3school.com.cn/jsref/dom_obj_button.asp)主代码: `<input type="button"/>`  
 [Button](http://www.w3school.com.cn/jsref/dom_obj_pushbutton.asp)主代码:`<button>text</button>`  
-最一般普通的按钮. 常用属性和事件:
+最一般普通的按钮. 
+
+常用属性和事件:
 
 - value :
 - onclick :
@@ -68,6 +70,10 @@ tags: Website HTML
 
 ## 单选 Radio 对象
 [Radio](http://www.w3school.com.cn/jsref/dom_obj_radio.asp)主代码:`<input type="radio"/>`
+
+常用属性事件: 
+
+- checked: 被选中. 也用来最终获取值.
 
 ~~~ html
 <form action="" method="get"> 
@@ -86,6 +92,10 @@ tags: Website HTML
 
 ## 多选 checkbox 对象
 [Checkbox](http://www.w3school.com.cn/jsref/dom_obj_checkbox.asp) 主代码: `<input type="checkbox"/>`
+
+常用属性事件: 
+
+- checked: 被选中. 也用来最终获取值.
 
 ~~~ html
 <form action="" method="get"> 
