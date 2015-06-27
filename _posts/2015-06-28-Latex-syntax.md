@@ -37,7 +37,7 @@ tags: Math Software
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ; 
 - `\prod_1^{10}` $$\prod_1^{10}$$
 - `\lim_{x\rightarrow x_0} f(x)=A` $$\lim_{x\rightarrow x_0} f(x)=A$$  
-- `\int_a^b f(x)dx\` $$\int_a^b f(x)dx$$ ; `\iint_a^b f(x)dx` $$\iint_a^b f(x)dx\ $$ ; `\iiint_a^b f(x)dx` $$\iiint_a^b f(x)dx$$ `\oint f \oiint f \oiiint f` $$\oint f \oiint f \oiiint f$$
+- `\int_a^b f(x)dx\` $$\int_a^b f(x)dx$$ ; `\iint_a^b f(x)dx` $$\iint_a^b f(x)dx\ $$ ; `\iiint_a^b f(x)dx` $$\iiint_a^b f(x)dx$$ `\oint f(x)` $$\oint f(x)$$
 - `\Gamma_{ij}^{k}` $$\Gamma_{ij}^{k}$$
 
 
