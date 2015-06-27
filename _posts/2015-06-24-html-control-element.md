@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_small
 title: HTML常用控件元素的用法
 date: 2015-06-23 21:11:05
 categories: CompSci
@@ -28,7 +28,8 @@ tags: Website HTML
 <form><input type="password" name="pwd" /></form>
 
 ## 按钮 Button 对象
-[Button](http://www.w3school.com.cn/jsref/dom_obj_button.asp)主代码: `<input type="button"/>`
+[Input Button](http://www.w3school.com.cn/jsref/dom_obj_button.asp)主代码: `<input type="button"/>`
+[Button](http://www.w3school.com.cn/jsref/dom_obj_pushbutton.asp)主代码:`<button>text</button>`
 最一般普通的按钮. 常用属性和事件:
 - value :
 - onclick :
@@ -36,6 +37,11 @@ tags: Website HTML
 `<form><input type="button" value="Click me" onclick="alert('Hello World')" /></form>`
 
 <form><input type="button" value="Click me" onclick="alert('Hello World')" /></form>
+
+`<button onclick="alert('Hello World')"> Click me</button>`
+
+<button onclick="alert('Hello World')"> Click me</button>
+
 
 ## 单选 Radio 对象
 [Radio](http://www.w3school.com.cn/jsref/dom_obj_radio.asp)主代码:`<input type="radio"/>`
@@ -96,10 +102,40 @@ tags: Website HTML
 
 ## Image 对象
 [Input Image](http://www.w3school.com.cn/jsref/dom_obj_input_image.asp) 主代码`<input type="image" />`
-
+[img](http://www.w3school.com.cn/jsref/dom_obj_image.asp) 主代码`<img src="" />`
 `<form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form>`
+`<img src="http://platinhom.github.io/images/shortcut.png"/>`
 
-<form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form>
+<form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form><img src="http://platinhom.github.io/images/shortcut.png"/>
+
+
+## fieldset 
+[fieldset](http://www.w3school.com.cn/jsref/dom_obj_fieldset.asp) 主代码`<fieldset></fieldset>`  
+相当于一个容器,可以统一操作管理内部功能.
+
+常用属性事件:  
+
+- disabled: 禁用,内部控件也被禁用.
+
+~~~html
+<fieldset id="myFieldset" name="personalia">
+  Name: <input type="text" name="username"><br>
+  Email: <input type="text" name="usermail"><br>
+</fieldset>
+<p>点击按钮来禁用 fieldset。</p>
+<button onclick="myFunctionfieldset()">试一下</button>
+<script>
+function myFunctionfieldset()
+{
+var x = document.getElementById("myFieldset");
+x.disabled = true;
+}
+</script>
+~~~
+
+<fieldset id="myFieldset" name="personalia">Name: <input type="text" name="username"><br>Email: <input type="text" name="usermail"><br></fieldset>点击按钮来禁用 fieldset。<button onclick="myFunctionfieldset()">试一下</button>
+
+<script>function myFunctionfieldset(){var x = document.getElementById("myFieldset");x.disabled = true;}</script>
 
 ## 提交表单 Submit 对象
 [submit](http://www.w3school.com.cn/jsref/dom_obj_submit.asp)主代码:`<input type="submit">`   主要使用form的`onsubmit`属性来调用检查函数.形式其实只是个普通按钮.

@@ -39,9 +39,7 @@ Color Scheme很多.
 - 破解:  
 **win64**: sublime 2.02 64 bit  
 如经济允许,请支持正版! 复制一个sublime.exe文件, 用ultraedit打开编辑(sublime保存2进制有点问题), 查找到4333 3342 3032, 修改3342->3242 然后将该文件放回执行文件夹, 打开后 Help->Enter License输入以下内容就OK了.  
-Mac: [3083](http://www.douban.com/note/486407873/)
-
-~~~
+<details>
 —–BEGIN LICENSE—–
 hiwanz
 Unlimited User License
@@ -55,7 +53,8 @@ EA7E-26838
 85E053D2B5E16502F4B009DE413591DE
 0840D6E2CBF0A3049E2FAD940A53FF67
 —–END LICENSE—–
-~~~
+</details>
+**Mac**: [3083](http://www.douban.com/note/486407873/)
 
 - [Package Control](https://packagecontrol.io/)
 Package Control是ST最基本的插件,用来安装别的插件用.
