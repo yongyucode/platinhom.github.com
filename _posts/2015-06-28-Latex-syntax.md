@@ -34,7 +34,7 @@ tags: Math Software
 
 ## 格式
 
-- `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
+- `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \left \Big \{ \bigg \{ \Bigg \{ \right \}$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
 - `\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathds{R} \mathfrak{R}` $$\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathds{R} \mathfrak{R}$$
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
