@@ -8,9 +8,6 @@ tags: Math Software
 
 ## 特殊符号
 
-- `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
-``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
-- `\vec{abc} \overrightarrow{abc} \overleftarrow{abc} ` $$\vec{abc} \overrightarrow{abc} \overleftarrow{abc} $$
 - `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\alpha \beta \gamma \delta \epsilon \varepsilon `$$\alpha \beta \gamma \delta \epsilon \varepsilon$$ ;  
 `\zeta \eta \theta \vartheta \iota \kappa` $$\zeta \eta \theta \vartheta \iota \kappa$$ ;  
@@ -37,6 +34,9 @@ tags: Math Software
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `\big \left [ \right ]` $$\big \left [ \right ]$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
+- `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
+``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
+- `\vec{abc} \overrightarrow{abc} \overleftarrow{abc} ` $$\vec{abc} \overrightarrow{abc} \overleftarrow{abc} $$
 - `\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathfrak{R}` $$\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathfrak{R}$$
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
