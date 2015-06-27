@@ -32,7 +32,7 @@ tags: Math Software
 ## 格式
 
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
-- `\big \left [ \right ]` $$\big \left [ \right ]$$
+- `\left [ \right ]` $$\left [ \right ]$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
 - `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
 ``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
