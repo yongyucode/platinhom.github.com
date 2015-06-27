@@ -1,19 +1,20 @@
 ---
-layout: posttoc
+layout: post
 title: HTML控件元素的用法
 date: 2015-06-23 21:11:05
 categories: CompSci
 tags: Website HTML
 ---
 
-## [输入框 Text 对象](http://www.w3school.com.cn/jsref/dom_obj_text.asp)
-主代码: `<input type="text">`   
-类似地有[密码输入框](http://www.w3school.com.cn/jsref/dom_obj_password.asp),主代码: `<input type="password">`
+## 输入框 Text 对象
+[Text](http://www.w3school.com.cn/jsref/dom_obj_text.asp)主代码: `<input type="text"/>`   
+类似地有[密码输入框](http://www.w3school.com.cn/jsref/dom_obj_password.asp),主代码: `<input type="password"/>`
 
-## [按钮 Button 对象](http://www.w3school.com.cn/jsref/dom_obj_button.asp)
-主代码: `<input type="button">`
+## 按钮 Button 对象
+[Button](http://www.w3school.com.cn/jsref/dom_obj_button.asp)主代码: `<input type="button"/>`
 
-## [单选 Radio 对象](http://www.w3school.com.cn/jsref/dom_obj_radio.asp)
+## 单选 Radio 对象
+[Radio](http://www.w3school.com.cn/jsref/dom_obj_radio.asp)主代码:`<input type="radio"/>`
 
 ~~~ html
 <form action="" method="get"> 
@@ -36,6 +37,7 @@ tags: Website HTML
 </form> 
 
 ## [多选 checkbox 对象]()
+[Checkbox]() 主代码: `<input type="checkbox"/>`
 
 ~~~ html
 <form action="" method="get"> 
