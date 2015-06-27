@@ -20,6 +20,7 @@ tags: Math Software
 - `\partial` $\partial$ ;`\infty` $\infty$ ; `` $$ ; 
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
+- `\cdots \vdots \ddots` $$\cdots \vdots \ddots$$
 - `\checkmark \surd` $$\checkmark \surd $$
 - `\spadesuit \heartsuit \diamondsuit \clubsuit` $$ \spadesuit \heartsuit \diamondsuit \clubsuit $$
 
