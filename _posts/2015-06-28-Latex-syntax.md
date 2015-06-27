@@ -23,7 +23,7 @@ tags: Math Software
 - `\rightarrow \to` $$\rightarrow \to$$ ; `\leftarrow` $\leftarrow$
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ; 
-- `\prod_1^10` $$\prod_1^10$$
+- `\prod_1^{10}` $$\prod_1^{10}$$
 - `\lim_{x\rightarrow x_0} f(x)=A` $$\lim_{x\rightarrow x_0} f(x)=A$$  
 - `\int_a^b f(x)dx\` $$\int_a^b f(x)dx$$ ; `\iint_a^b f(x)dx` $$\iint_a^b f(x)dx\ $$ ; `\iiint_a^b f(x)dx` $$\iiint_a^b f(x)dx$$
 - `\Gamma_{ij}^{k}` $$\Gamma_{ij}^{k}$$
@@ -31,7 +31,9 @@ tags: Math Software
 
 ## 数学串
 
-`\ln` $\ln$ ; `\log` $\log$
+- `\ln \log \lg \exp` $$\ln \log \lg \exp$$
+- `\max \; \min` $$\max \min$$
+- `\sin \cos \tan \cot `
 
 ## Mathjax不行..
 - `\dag \ddag`
