@@ -8,7 +8,7 @@ tags: Math Software
 
 ## 特殊符号
 
-- `\AA` $\AA$ ; `\Delta \delta` $\Delta \delta$ ; `\Omege \omege` $\Omege \omege$;
+- `\AA` $\AA$ ; `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\partial` $\partial$ ;
 - `\infty` $\infty$ ; 
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
