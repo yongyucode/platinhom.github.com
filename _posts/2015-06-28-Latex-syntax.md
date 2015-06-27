@@ -21,6 +21,6 @@ tags: Math Software
 
 ## 数学串
 
-`\ln` $\ln$ ; 
+`\ln` $\ln$ ; `\log` $\log$
 
 ---
