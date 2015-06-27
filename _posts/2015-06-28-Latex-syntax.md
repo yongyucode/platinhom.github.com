@@ -36,7 +36,7 @@ tags: Math Software
 
 - `\big \{ \Big \{ \bigg \{ \Bigg \{` $$ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
-- `\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R}` $$\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R}$$
+- `\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathds{R} \mathfrak{R}` $$\mathbf{R} \mathcal{R} \mathbb{R} \mathrm{R} \mathds{R} \mathfrak{R}$$
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ; 
