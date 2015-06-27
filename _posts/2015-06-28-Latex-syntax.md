@@ -21,9 +21,10 @@ tags: Math Software
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\sim \simeq \approx \cong \lesssim \gtrsim` $$\sim \simeq \approx \cong \lesssim \gtrsim $$  
 `> < = \geq \leq \neq \equiv` $$> < = \geq \leq \neq \equiv $$
-- `\pm \times  \div \cdot` $$ \pm \times \div \cdot \cap \cup $$
+- `\pm \times  \div \cdot` $$ \pm \times \div \cdot $$
 - `\cdots \vdots \ddots` $$\cdots \vdots \ddots$$
-- `\rightarrow \to` $$\rightarrow \to$$ ; `\leftarrow` $\leftarrow$
+- `\rightarrow \to \leftarrow` $$\rightarrow \to \leftarrow$$
+- `\subset \supset \subseteq \supseteq \in \ni` $$\subset \supset \subseteq \supseteq \in \ni$$
 - `\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot` $$\bigcap \bigcup \biguplus \bigoplus \bigotimes \bigodot$$  
 `\cap \cup \uplus \oplus \otimes \odot` $$\cap \cup \uplus \oplus \otimes \odot$$
 - `\checkmark \surd` $$\checkmark \surd $$
