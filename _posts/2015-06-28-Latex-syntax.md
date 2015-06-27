@@ -33,7 +33,7 @@ tags: Math Software
 
 - `\ln \log \lg \exp` $$\ln \log \lg \exp$$
 - `\max \; \min` $$\max \min$$
-- `\sin \cos \tan \cot `
+- `\sin \cos \tan \cot ` $$\sin \cos \tan \cot$$
 
 ## Mathjax不行..
 - `\dag \ddag`
