@@ -9,9 +9,10 @@ tags: Math Software
 ## 特殊符号
 
 - `\AA` $\AA$ ; `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
-- `\partial` $\partial$ ; `\angel` $\angel$ ; `\triangle \nabla` $\triangle \nabla$ ;
+- `\partial` $\partial$ ; `\angle` $\angle$ ; `\triangle \nabla` $\triangle \nabla$ ;
 - `\infty` $\infty$ ; 
 - `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
+- `\checkmark \surd \dag \dagg` $$\checkmark \surd \dag \dagg$$
 
 ## 格式
 
