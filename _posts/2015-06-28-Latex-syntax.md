@@ -11,11 +11,12 @@ tags: Math Software
 - `\Delta` $\Delta$ ; `\delta` $\delta$ ;
 - `\partial` $\partial$ ;
 - `\infty` $\infty$ ; 
+- `\pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv` $$ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;\geq\; \leq\; \neq\; \approx \; \equiv $$
 
 ## 格式
 
 - `\big \{ \Big \{ \bigg \{ \Bigg \{` $$ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
-- `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ;
+- `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
 - `\frac{1}{T}` $$\frac{1}{T}$$ ;  
 - `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; 
 - `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ;  
