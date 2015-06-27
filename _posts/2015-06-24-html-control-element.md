@@ -128,6 +128,7 @@ tags: Website HTML
 [img](http://www.w3school.com.cn/jsref/dom_obj_image.asp) 主代码`<img src="" />`  
 
 `<form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form>`
+
 `<img src="http://platinhom.github.io/images/shortcut.png"/>`
 
 <form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form><img src="http://platinhom.github.io/images/shortcut.png"/>
