@@ -32,9 +32,10 @@ tags: Math Software
 ## 格式
 
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
-- `\left[ \frac{1}{T} \right]` $$\left[ \frac{1}{T} \right]$$
+- `\left[ \frac{1}{T} \right]` $$\left[ \frac{1}{T} \right]$$ (自动根据内容调整)
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
 - `\bf{OK} \textbf{OK} \texttt{OK} \underline{OK} \overline{OK}` $$\bf{OK} \textbf{OK} \texttt{OK} \underline{OK} \overline{OK}$$
+- `A \! A A \, A \: A \; A \enspace A \quad A \qquard A \hspace{3em} A \hfill A`
 - `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
 ``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
 - `\vec{abc} \overrightarrow{abc} \overleftarrow{abc} ` $$\vec{abc} \overrightarrow{abc} \overleftarrow{abc} $$
