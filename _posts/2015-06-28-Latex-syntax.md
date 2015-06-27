@@ -21,7 +21,7 @@ tags: Math Software
 -  `\angle \triangle \nabla` $\angle \triangle \nabla$ ;
 - `\sim \simeq \approx \cong \lesssim \gtrsim` $$\sim \simeq \approx \cong \lesssim \gtrsim $$  
 `> < = \geq \leq \neq \equiv` $$> < = \geq \leq \neq \equiv $$
-- `\pm \times  \div \cdot \ast \star \circ \bullet` $$ \pm \times \div \cdot \dot \ast \star \circ \bullet$$
+- `+ - \pm \mp \times\div \cdot \ast \star \circ \bullet` $$ + - \pm \mp \times \div \cdot \ast \star \circ \bullet$$
 - `\cdot \dot A \cdots \vdots \ddots` $$\cdot \dot A \cdots \vdots \ddots$$
 - `\rightarrow \to \leftarrow` $$\rightarrow \to \leftarrow$$
 - `\subset \supset \subseteq \supseteq \in \ni` $$\subset \supset \subseteq \supseteq \in \ni$$
