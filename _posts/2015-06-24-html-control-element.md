@@ -286,4 +286,6 @@ function GetValueFromNames(name){
 1. [HTML \<input\> 标签](http://www.w3school.com.cn/tags/tag_input.asp)以及[HTML \<input\> 标签的 type 属性](http://www.w3school.com.cn/tags/att_input_type.asp)
 2. [HTML 标签参考手册](http://www.w3school.com.cn/tags/)
 
+TODO: Update the property and events. More tags.
+
 ---
