@@ -34,7 +34,13 @@ tags: CompBiol JMol Website
 - 调整颜色策略: `isosurface s1 colorscheme "rwb"`,策略需要用双引号.策略包括roygb(彩虹,默认),bwr(蓝白红),rwb(红白蓝),rgb(红绿蓝),high(黄蓝),low(红绿),wb,bw(白黑和黑白),friendly(色盲用?)几种. 还可以自定义..
 - 调整对应颜色范围的静电势范围: `isosurface color range -5 5`,也有用`color absolute`写法的.
 
-下面网页代码为几个关键
+## Reference:
+
+1. [Jmol/JSmol interactive scripting documentation](http://chemapps.stolaf.edu/jmol/docs/#isosurface)
+2. [JSMol指令](http://platinhom.github.io/2015/06/24/JSMol-command/)
+3. [MIBPB-server](http://platinhom.github.io/wei/mibpb)
+
+下面网页代码为几个关键代码:
 
 ~~~ html
 
