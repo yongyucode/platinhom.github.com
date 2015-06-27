@@ -50,9 +50,10 @@ tags: Website HTML
 <form><input type="password" name="pwd" /></form>
 
 ## 按钮 Button 对象
-[Input Button](http://www.w3school.com.cn/jsref/dom_obj_button.asp)主代码: `<input type="button"/>`
-[Button](http://www.w3school.com.cn/jsref/dom_obj_pushbutton.asp)主代码:`<button>text</button>`
+[Input Button](http://www.w3school.com.cn/jsref/dom_obj_button.asp)主代码: `<input type="button"/>`  
+[Button](http://www.w3school.com.cn/jsref/dom_obj_pushbutton.asp)主代码:`<button>text</button>`  
 最一般普通的按钮. 常用属性和事件:
+
 - value :
 - onclick :
 
@@ -123,8 +124,9 @@ tags: Website HTML
 <form><input type="file" /></form>
 
 ## Image 对象
-[Input Image](http://www.w3school.com.cn/jsref/dom_obj_input_image.asp) 主代码`<input type="image" />`
-[img](http://www.w3school.com.cn/jsref/dom_obj_image.asp) 主代码`<img src="" />`
+[Input Image](http://www.w3school.com.cn/jsref/dom_obj_input_image.asp) 主代码`<input type="image" />`  
+[img](http://www.w3school.com.cn/jsref/dom_obj_image.asp) 主代码`<img src="" />`  
+
 `<form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form>`
 `<img src="http://platinhom.github.io/images/shortcut.png"/>`
 
@@ -174,7 +176,8 @@ x.disabled = true;
 
 
 ## 提交表单 Submit 对象
-[submit](http://www.w3school.com.cn/jsref/dom_obj_submit.asp)主代码:`<input type="submit">`   主要使用form的`onsubmit`属性来调用检查函数.形式其实只是个普通按钮.
+[submit](http://www.w3school.com.cn/jsref/dom_obj_submit.asp)主代码:`<input type="submit">`   
+主要使用form的`onsubmit`属性来调用检查函数.形式其实只是个普通按钮.
 
 ~~~ html
 <script type="text/javascript">
