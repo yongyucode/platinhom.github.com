@@ -12,7 +12,8 @@ tags: Math Software
 
 ## 格式
 
-`\frac{1}{T}` $$\frac{1}{T}$$ ; `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ;
+`\frac{1}{T}` $$\frac{1}{T}$$ ; `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `\sqrt[3]{x^4-3x+1}` $$ \sqrt[3]{x^4-3x+1} $$ ; `\sum_{i,j,k=1}^{\infty}` $$\sum_{i,j,k=1}^{\infty}$$ ;  
+`\int_a^b f(x)dx\` $$\int_a^b f(x)dx$$ ; `\iint_a^b f(x)dx` $$\iint_a^b f(x)dx\ $$ ; `\iiint_a^b f(x)dx` $$$\iiint_a^b f(x)dx$$$
 
 ## 数学串
 
