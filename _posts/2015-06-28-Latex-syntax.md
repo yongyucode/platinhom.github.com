@@ -34,7 +34,7 @@ tags: Math Software
 - `\{ \big \{ \Big \{ \bigg \{ \Bigg \{` $$ \{ \big \{ \Big \{ \bigg \{ \Bigg \{ $$
 - `\left[ \right]` $$\left[ \right]$$
 - `A_a` $A_a$ ; `A^{2n}` $A^{2n}$ ; `A_a^2` $A_a^2$
-- `\bf{OK} \textbf{OK} \underline{OK} \overline{OK}` $$\bf{OK} \textbf{OK} \underline{OK} \overline{OK}$$
+- `\bf{OK} \textbf{OK} \texttt{OK} \underline{OK} \overline{OK}` $$\bf{OK} \textbf{OK} \texttt{OK} \underline{OK} \overline{OK}$$
 - `` \AA \dot a \ddot a \tilde{a} \vec{a} `` $$\AA \dot a \ddot a \tilde{a} \vec{a}$$    
 ``\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ 
 - `\vec{abc} \overrightarrow{abc} \overleftarrow{abc} ` $$\vec{abc} \overrightarrow{abc} \overleftarrow{abc} $$
