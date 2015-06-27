@@ -8,7 +8,7 @@ tags: Math Software
 
 ## 特殊符号
 
-- `` \AA \dot A`` $$\AA \dot A$$ ; 
+- `` \AA \dot A \vec{a} \bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}`` $$\AA \dot A \vec{a} \bar{a} \acute{a} \check{a} \grave{a} \breve{a} \hat{a}$$ ; 
 - `\Delta \delta` $\Delta \delta$ ; `\Omega \omega` $$\Omega \omega$$;
 - `\alpha \beta \gamma \delta \epsilon \varepsilon `$$\alpha \beta \gamma \delta \epsilon \varepsilon$$ ;  
 `\zeta \eta \theta \vartheta \iota \kappa` $$\zeta \eta \theta \vartheta \iota \kappa$$ ;  
