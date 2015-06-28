@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head>
+<title>MIBPB from Wei Group</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Wei Group in Michigan State University" />
+<meta name="description" content="MIBPB. Surface. Binding Energy. pKa" />
+<link rel="shortcut icon" href="../wei/shortcut.png" />
+
+<script type="text/javascript" src="JSmol.min.js"></script>
+<script type="text/javascript">
+// logic is set by indicating order of USE -- default is HTML5 for this test page, though
+//var use = " HTML5" // HTML5 WEBGL IMAGE  are all otions
+var jmolApplet0; //define the applet var.
+var s = document.location.search;
+Jmol.debugCode = (s.indexOf("debugcode") >= 0);
+</script>
+
+<!--style>*{border:1px dashed black;}</style-->
+</head>
+
+
+<body>
+<center>
+<div style="background-color:white;margin:10px;padding:0px;" >
+<!--molecule view-->
+<div style="width:620px;height:900px;">
+  <div style="margin: auto; text-align: center; width: 600px; height:900px;">
+    <span style="text-align:center;font-size:20px;"><b>Molecular Visualization</b></span>
+    <script type="text/javascript">
+    var  script_run = 'load test.pdb;cartoon only;color cartoons structure; spin on;';//load data/caffeine.mol;
+
+    var Info0 = {
+      width:  600,
+      height: 600,
+      color: "black",
+      serverURL: "https://undergrad-ed.chemistry.ohio-state./jsmol/php/jsmol.php",
+      use: "HTML5",
+      jarPath: "java",
+      j2sPath: "j2s",
+      script: script_run,//The command defined before.
+      disableInitialConsole: true
+    }
+      Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
+      Jmol.script(jmolApplet0,'set antialiasDisplay false');
+      Jmol.script(jmolApplet0,'set platformSpeed 5');
+      Jmol.jmolCommandInput(jmolApplet0, "Enter Commands");
+    </script>
+
+    <div style="">
+      <script type="text/javascript">
+        Jmol.jmolButton(jmolApplet0,"spacefill on", "display as vdW spheres");
+        Jmol.jmolCheckbox(jmolApplet0,"spacefill on","spacefill off","toggle display as spheres");
+        document.writeln("<br>");
+        Jmol.jmolLink(jmolApplet0,"load 1akeA.pdb","Load 1AKE");
+        Jmol.jmolBr();
+        Jmol.jmolRadio(jmolApplet0,"spacefill 23%; wireframe 0.15;","ball and stick 1",true,"<br>","group1");
+        Jmol.jmolRadio(jmolApplet0,"spacefill 50%; wireframe 0.3;","ball and stick 2",false,"<br>","group1");
+        Jmol.jmolBr();
+         var mradio = [
+          ["spacefill 23%; wireframe 0.15;","ball and stick",true],
+          ["spacefill off; wireframe 0.15;","sticks"],
+          ["spacefill on; wireframe off;","spheres"]
+       ];
+       Jmol.jmolRadioGroup(jmolApplet0, mradio, "<br>", "atomstyle");
+       //alert(Jmol.scriptEcho(jmolApplet0, "show file"))
+      </script>
+      <div id="CartoonBottom" class="JmolButtonDiv",style="width:800px;heigh:200px;background-color:red;">    
+          <button onclick="Jmol.script(jmolApplet0,'cartoon only;color cartoons structure;')">Show Cartoon</button>
+      </div>
+      platformSpeed:
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 8')" title='all features'>8</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 7')" title='no antialiasing'>7</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 6')" title='no translucency'>6</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 5')" title='surfaces dotted'>5</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 4')" title='cartoons as trace'>4</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 3')" title='geosurfaces as dots'>3</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 2')" title='ellipsoids as dots'>2</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'set platformSpeed 1')" title='wireframe only'>1</a>
+      <br>
+      <a href="javascript:Jmol.script(jmolApplet0,'select *;isosurface vdw; spin off')">isosurface vdw</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'isosurface delete')">off</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'if ({atomno < 10}.partialcharge == 0){calculate partialcharge};isosurface vdw map mep')">mep</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'isosurface translucent 6')">translucent</a>
+      <a href="javascript:Jmol.script(jmolApplet0,'isosurface opaque')">opaque</a>
+
+    </div>
+    <p style="clear: both; font-size: 20px; text-align:center;"><br /><br /><a href="mailto:zhaozxcpu@hotmail.com"><b>Webmaster: Zhixiong Zhao</b></a></p>
+  </div>
+</div>
+
+<!--img width=138px height=115px style="position:fixed; margin-right:0px; right:20px; bottom:10px;" src="../wei/msulogo.gif"-->
+</div>
+</center>
+</body>
+</html>
