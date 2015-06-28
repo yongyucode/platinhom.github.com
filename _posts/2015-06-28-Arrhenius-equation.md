@@ -3,7 +3,7 @@ layout: post_mathjax
 title: Arrhenius阿伦尼乌斯方程与反应速率
 date: 2015-06-27 20:33:11
 categories: CompChem
-tags: CompChem PhysChem
+tags: CompChem PhysChem HTML OnlineTool JS
 ---
 
 阿伦尼乌斯方程（或公式）是化学反应的速率常数与温度之间的关系式，适用于基元反应和非基元反应，甚至某些非均相反应. 其一般数学式(不定积分)为:  
