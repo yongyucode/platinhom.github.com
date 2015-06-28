@@ -18,7 +18,7 @@ $$\alg E_a \equiv -R \left [ \frac{\partial \ln k}{\partial (1/T)} \right ]_P \e
 
 $$\alg \frac{d \ln k}{d T} = \frac{-E_a}{RT^2} \quad and \quad \ln \frac{k_2}{k_1} = - \frac{E_a}{R} \left ( \frac{1}{T_1} - \frac{1}{T_2}\right ) \ealg$$
 
-实验中, 测得不同温度 T 下的速率常数 k 值，其lnk--1/T图应为一直线，直线的斜率和截距分别为 $$-frac{E_a}{R}$$ 和 ln A，从此可以分别求得活化能 $E_a$ 和指前因子A。
+实验中, 测得不同温度 T 下的速率常数 k 值，其lnk--1/T图应为一直线，直线的斜率和截距分别为 $$-\frac{E_a}{R}$$ 和 ln A，从此可以分别求得活化能 $E_a$ 和指前因子A。
 
 其中,k 为反应的速率常数；A 称为指前因子/阿伦尼乌斯常数，单位与 k 相同；$E_a$ 为反应的活化能，单位为焦（J）或千焦（kJ），在温度变化范围不大时被视为常数；R 为气体常数；T 为绝对温标下的温度，单位为开尔文（K）。
 
