@@ -276,7 +276,7 @@ function GetValueFromNames(name){
     for(var i=0;i<chkObjs.length;i++){
         if(chkObjs[i].checked){
             stype=chkObjs[i].value;
-            break;
+            return stype;
         }
     }
 }
