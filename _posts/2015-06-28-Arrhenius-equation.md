@@ -30,7 +30,7 @@ $$\alg \ln \frac{k_2}{k_1} = - \frac{\Delta E_a}{RT} \ealg$$
 
 若通过过渡态计算后, 算得不同过渡态和反应物的能垒的差为$\Delta E_a$, 就可以推算得速度比:
 
-$$\alg \frac{k_2}{k_1}= e^{-\Delta E_a/RT} $$\ealg
+$$\alg \frac{k_2}{k_1}= e^{-\Delta E_a/RT} \ealg$$
 
 
 ## 这里应该有个插件来进行计算.
