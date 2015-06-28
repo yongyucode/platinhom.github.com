@@ -15,6 +15,7 @@ tags: IT System
 
 ## Mac
 `pbcopy`和`pbpaste`
+
 - `cat file | pbcopy` 复制内容到剪贴板
 - `pbcopy < readme.txt` 将文件内容输入到剪贴板
 - `echo 'Hello World!' | tee >(pbcopy) tmp.txt` 同时将输出到文件, 剪贴板, 屏幕
