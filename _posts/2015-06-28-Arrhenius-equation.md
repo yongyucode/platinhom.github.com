@@ -34,7 +34,8 @@ $$\alg \frac{k_2}{k_1}= e^{-\Delta E_a/RT} \ealg$$
 
 从下面的在线计算我们可以知道, 1 kcal/mol的能垒差异, 速度比为5.4倍. 
 
-## 简易的在线计算插件.
+## 简易的在线计算. 
+Online Calculation for activation energy Ea and reaction rate.
 
 <form>Enter Ea for: <label for="EA2">Reaction 2: </label><input type="text" id="EA2" value="1.0">; <label for="EA1">Reaction 1:</label><input type="text" id="EA1" value="2.0"> <br/>Energy unit: <input type="radio" name="Eunit" value="4.184"> cal/mol; <input type="radio" name="Eunit" value="4184" checked> kcal/mol;<input type="radio" name="Eunit" value="1"> J/mol; <input type="radio" name="Eunit" value="1000"> kJ/mol;<input type="radio" name="Eunit" value="26255000"> hartree <br/><label for="TT">Temperature:</label><input type="text" id="TT" value="298"> K<br/><input type="button" onclick="calck()" value="Calculate"><br/>k2/k1=<p id="Result"></p></form>
 
