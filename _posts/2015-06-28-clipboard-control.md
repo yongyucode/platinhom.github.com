@@ -23,4 +23,20 @@ tags: IT System
 ## Linux
 需要安装`xsel`或者`xclip` 可能需要另装.
 
+## Python
+
+### import win32clipboard 剪贴板操作
+
+- `win32clipboard.OpenClipboard()` 打开剪贴板
+- `win32clipboard.EmptyClipboard()` 清空剪贴板内存
+- `win32clipboard.SetClipboardData(win32con.CF_TEXT, "Hello World!")` 复制文本内容到剪贴板，系统后台会返回内存地址
+- `wincb.GetClipboardData(win32con.CF_TEXT) ` 
+- `win32clipboard.CloseClipboard()` 关闭剪贴板
+
+### [Pyperclip](http://coffeeghost.net/2010/10/09/pyperclip-a-cross-platform-clipboard-module-for-python/)
+需下载放到Lib内
+
+- `pyperclip.getcb()`  获取clipboard值
+- `pyperclip.setcb(text)`  设置clipboard值
+
 ---
