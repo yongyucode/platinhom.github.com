@@ -3,7 +3,7 @@ layout: post
 title: 在写blog/Html时嵌入Pdf显示
 date: 2015-06-07 15:40:04
 categories: CompSci
-tags: Website
+tags: Website HTML
 ---
 对于科研的人,PDF对得比word要多,而且可以各种文档转化为PDF用于交流.这里作介绍如何在Blog(MD格式)或HTML中插入PDF.注意HTML代码是会直接在MarkDown转化的,不过要注意最好要代码前后留空行,保证作为一个代码段. 这里以一个简单的[PDF例子](http://platinhom.github.io/pdf/mou.pdf)为例
 
