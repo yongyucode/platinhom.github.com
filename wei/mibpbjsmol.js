@@ -214,7 +214,7 @@ function newScroller(name,caption,fCallback,width,x,y,isvertical,minvalue,maxval
 	// slimmed down version for the APBS application
 	var pos = (x < 0 ? "" : "position:absolute:left:" +  (isvertical ? (x-20) + ";top:" + y : x+";top:"+(y-40)))
 	sout="\n<div id='scr_"+name+"'  onscroll=\"checkScroll('"+name+"')\" style='font-size:2pt;height:25px;width:"+width+"px;overflow:auto'>"
-		+"<img src='transp.gif' height=1 width="+(width*(factor+1))+">"
+		+"<img src='transp.gif' height=1px width="+(width*(factor+1))+"px>"
 		+"</div>"
 	S.div=sout
 	return sout
