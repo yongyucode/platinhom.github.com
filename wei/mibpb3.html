@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="shortcut.png" />
 
 <script type="text/javascript" src="../jsmol/JSmol.min.js"></script>
-<script type="text/javascript" src="mibpbjsmol2.js"></script>
+<script type="text/javascript" src="mibpbjsmol3.js"></script>
 <!--style>*{border:1px dashed black;}</style-->
 </head>
 
@@ -146,7 +146,7 @@
           <!--Parameter Instruction-->
           <tr>
             <td colspan="2" class="arial_black" ><br/>
-                <div align="center" style="font-size:28px;"><strong>User Guide </strong></div>
+                <div align="center" style="font-size:28px;"><strong>Parameter Instruction</strong></div>
                 &nbsp;&nbsp;<strong>MIBPB Options:</strong>
                 <ul>
                   <li><b> Interior Dielectric</b>: The dielectric constant in solute, the default value is <em>1.0</em> in the MIBPB package. </li>
@@ -171,12 +171,6 @@
 
                   <li><b> Grid Extension</b>: ????? </li>
                 </ul>
-                &nbsp;&nbsp;<strong>PDB2PQR Options:</strong>
-                <ul>
-                  <li><b> Force Field</b>: The force field to be used for process the PDB file. </li>
-
-                  <li><b> Protonation</b>: The method for protonation at given pH. </li>
-                </ul>
                 &nbsp;&nbsp;<strong>pKa Options:</strong>
                 <ul>
                   <li><b> Residue Type</b>: The type of residue to be calculated. You can only choose the Residue ID after you select a residue type. </li>
@@ -185,22 +179,11 @@
                 </ul>
                 &nbsp;&nbsp;<strong>Other Options:</strong>
                 <ul>
-                  <!--li><b> Showing Electrostatic Surface</b>: Whether  </li-->
+                  <li><b> Showing Electrostatic Surface</b>: Whether  </li>
 
                   <li><b> Job Title</b>: The job title for the MIBPB calculation. </li>
 
                   <li><b> User Email</b>: The result will be sent to the user email. We recommend you to use the email function when the job may take a long time.</li>
-                </ul>
-                &nbsp;&nbsp;<strong>View Results Online:</strong>
-                <ul>
-                  <li><b> Molecular Visualization</b>: You can change the mode and color for visualization of your molecule. The molecule can be shown as: Cartoon, Rocket, Ribbon, MeshRibbon, Trace, Backbone, Ball&Stick, Wireframe and Space Fill by selecting the <b>"Show molecule as"</b> option under the visualization window. The color for the molecule can also be chosen by <b>"Color As"</b> option. </li>
-
-                  <li><b> Surface Options</b>: You can visualize the surface based on the JMol method or the surface calculated by ESES/MSMS during the computation. The JMol surface can be generated or deleted by the <b>"JMol Surface"</b> option. You can generate vdw surface (very fast), solvent accessible surface, solvent excluded surface and molecular surface by JMol. You can also control the surface showing as dots or mesh in this options after you generate a surface. The calculated surface in your job can be loaded by <b>"Load Surface"</b> button. The loaded surface depends on the options in "Surface Options" panel. The transparency and color for surface can also be controlled by the <b>"Translucent"</b> and <b>"Color"</b> panel, respectively. The larger value the translucent is, the more transparent the surface is. </li>
-
-                  <li><b> Electrostatic Potential (ESP) Visualization</b>: The electrostatic potential result will be saved in ABPS format (*.dx). The ESP result can be mapped onto current surface by clicking the <b>"Load DX"</b>button. You can also load all your results including the calculated surface and ESP by clicking the <b>"Load All"</b>button. The color scheme for the surface based on ESP mapping can be control by the <b>"Color"</b> option in the surface option. The BWR, RWB, RGB, High, Low and Rainbow scheme can be used for ESP coloring. The range of the ESP values for coloring can be easily control by the ESP min/max options by either entering the exact value or using the scroll bar. </li>
-
-                  <li><b> Download Results</b>: You can download all your result files in compacted zip file by clicking the <b>"Download Result"</b> button. You can also download the Jmol format file or PNG format file to re-visualize your result in JMol. A .jmol file is simply a ZIP file that can be dragged back into this applet or the Jmol app to recreate the exact state when it was created.</li>
-
                 </ul>
             </td>
           </tr>
