@@ -32,6 +32,7 @@ $$\alg \ln \frac{k_2}{k_1} = - \frac{\Delta E_a}{RT} \ealg$$
 
 $$\alg \frac{k_2}{k_1}= e^{-\Delta E_a/RT} \ealg$$
 
+从下面的在线计算我们可以知道, 1 kcal/mol的能垒差异, 速度差为5倍.
 
 ## 简易的在线计算插件.
 
