@@ -20,7 +20,7 @@ tags: IT Website Github Editor
 
 - [Markdown Extended](https://packagecontrol.io/packages/Markdown%20Extended): 扩展的markdown着色,支持GFM的代码块,可以在代码块中根据标示来着色,甚至可以对行末空格着色.
 - [Monokai Extender](https://packagecontrol.io/packages/Monokai%20Extended): 使用md时必须的着色工具,在`Color Scheme`中设置即可,推荐使用 `Monokai Extended Bright` 策略.
-- [Markdown Preview](https://packagecontrol.io/packages/MarkdownEditing): 支持将md文件编译,并用浏览器浏览,使用参看[ref](http://www.jianshu.com/p/378338f10263),我设了快捷键`super+ctrl+m`.
+- [Markdown Preview](https://packagecontrol.io/packages/MarkdownEditing): 支持将md文件编译,并用浏览器浏览,使用参看[ref](http://www.jianshu.com/p/378338f10263),主要是需要加入`{ "keys": ["ctrl+alt+m"], "command": "markdown_preview", "args": { "target": "browser"} }`这么一段代码到Key-binding-user(不是markdown preview里面的setting!).我设了快捷键`super+ctrl+m`.
 - [Terminal](https://packagecontrol.io/packages/Terminal): 可以方便地在文件中调出命令行. 可以右键文件来调用, 也可以`cmd+shift+T`. 可配置iTerm.
 
 ### 利用Project:
