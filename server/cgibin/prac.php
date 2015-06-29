@@ -76,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       chdir("./MIBPBRun/$JobID/");
 
 	  exec("$CWDir/MS_Intersection {$_FILES['files']['name']} $probe $gride $buffersize",$RunResult);
+	  exec("$CWDir/MarchingCubes",$RunResult);
 	  foreach ($RunResult as $resultline){
 	  	echo $resultline."<br/>";
 	  }
