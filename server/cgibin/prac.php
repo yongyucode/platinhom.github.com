@@ -46,8 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $filenameErr = "Please upload an input file";
   }
   	echo "Probe radius: ".$probe."; Grid size is: ".$gride."; Buffer size is: ".$buffersize,"<br/>";
-	//echo $_FILES["files"]["name"],"<br/>";
-
+	$filename=$_FILES["files"]["name"];
   // $_FILES["file"]["error"] - 由文件上传导致的错误代码
   if ($_FILES["files"]["error"] > 0)
     {
@@ -75,8 +74,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  }
       chdir("./MIBPBRun/$JobID/");
 
-	  exec("$CWDir/MS_Intersection {$_FILES['files']['name']} $probe $gride $buffersize",$RunResult);
+	  $nowfilename=realpath("./{$filename}");
+	  $filearray=pathinfo($nowfilename);
+	  $prefixfile=$filearray['filename'];
+	  
+	  copy("$CWDir/MS_Intersection","./MS_Intersection");
+	  copy("$CWDir/mibpb5","./mibpb5");
+	  chmod("./mibpb5",0777);
+	  chmod("./MS_Intersection",0777);
+	  rename("$filename","1234.pqr");
+	 
+	  array_push($RunResult,"MIBPB output: ");
+	  exec("echo 'MIBPB output: '>{$JobID}.log");
+	  exec("./mibpb5 1234 | tee -a {$JobID}.log",$RunResult);
+	  rename("1234.pqr","$filename");
+	  rename("1234.dx","$prefixfile".".dx");
+	  rename("1234.xyzr","$prefixfile".".xyzr");
+	  rename("1234.eng","$prefixfile".".eng");
+	 
+	  array_push($RunResult,"Surface output: ");
+	  exec("echo '\n\nSurface output: ' >> {$JobID}.log");
+	  exec("./MS_Intersection {$prefixfile}.xyzr $probe $gride $buffersize | tee -a {$JobID}.log",$RunResult);
 	  exec("$CWDir/MarchingCubes",$RunResult);
+	  unlink("./mibpb5");
+	  unlink("./MS_Intersection");
+	  exec("zip -r Result_{$JobID}.zip ./* > /dev/null");
 	  foreach ($RunResult as $resultline){
 	  	echo $resultline."<br/>";
 	  }
