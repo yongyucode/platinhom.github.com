@@ -30,7 +30,7 @@ layout: page_small
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
 - [Linux指令查询](http://man.linuxde.net/) ; [ITeBook](http://it-ebooks.info/)
 - [OfficeOnLine](https://office.live.com/start/default.aspx)
-- [ESLpod](https://www.eslpod.com/website/index_new.html)
+- [ESLpod](https://www.eslpod.com/website/index_new.html); [NCE2 listion](http://www.hjenglish.com/nce/xingainian2/); 
 
 ### Inquiry
 - [Amazon](http://www.amazon.com/) ; [淘宝](http://www.taobao.com/) ; [京东](http://www.jd.com/) ; [Amazon.CN](http://www.amazon.cn/) ; [西贴](http://www.xitie.com/)
