@@ -42,9 +42,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["files"])) {
     $filenameErr = "Please upload an input file";
   }
-	echo $_FILES["files"]["name"];
+  	echo "Probe radius: ".$probe."; Grid size is: ".$gride."; Buffer size is: ".$buffersize,"<br/>";
+	echo $_FILES["files"]["name"],"<br/>";
 
  }
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 
 ?>
 </body>
