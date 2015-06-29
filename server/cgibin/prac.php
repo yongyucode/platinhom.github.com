@@ -73,9 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Stored in: " . "./MIBPBRun/$JobID/" . $_FILES["files"]["name"];
       }
       chdir("./MIBPBRun/$JobID/");
-      echo $CWDir,$_FILES['files']['name'],$probe,$gride,$buffersize;
-      //echo "$CWDir/MS_Intersection $_FILES['files']['name'] $probe $gride $buffersize";
-	  //exec("$CWDir/MS_Intersection $_FILES['files']['name'] $probe $gride $buffersize",$RunResult);
+      //echo $CWDir,$_FILES['files']['name'],$probe,$gride,$buffersize;
+      //echo "$CWDir/MS_Intersection {$_FILES['files']['name']}".$probe.$gride.$buffersize;
+	  exec("$CWDir/MS_Intersection {$_FILES['files']['name']} $probe $gride $buffersize",$RunResult);
 	  foreach ($RunResult as $resultline){
 	  	echo $resultline."<br/>";
 	  }
