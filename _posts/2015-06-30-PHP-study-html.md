@@ -91,6 +91,7 @@ if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 
 ?>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<!--first php recover the enter value; second is for hints for required item-->
 Name: <input type="text" name="name" value="<?php echo $name;?>"><span class="error">* <?php echo $nameErr;?></span><br><br>
 E-mail: <input type="text" name="email" value="<?php echo $email;?>"><span class="error">* <?php echo $emailErr;?></span><br><br>
 Website: <input type="text" name="website" value="<?php echo $website;?>"><span class="error"><?php echo $websiteErr;?></span><br><br>
