@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Stored in: " . "./MIBPBRun/$JobID/" . $_FILES["files"]["name"];
       }
       chdir("./MIBPBRun/$JobID/");
-	  //exec("%CWDir/MS_Intersection $_FILES['files']['name'] $probeErr $grideErr $buffersizeErr",$RunResult);
+	  exec("%CWDir/MS_Intersection $_FILES['files']['name'] $probe $gride $buffersize",$RunResult);
 	  foreach ($RunResult as $resultline){
 	  	echo $resultline."<br/>";
 	  }
