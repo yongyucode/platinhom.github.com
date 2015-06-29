@@ -42,6 +42,26 @@ tags: Website HTML
 
 <form>Email: <input type="text" name="email" /></form>
 
+## 多行文本输入控件 Textarea 对象
+[Textarea](http://www.w3school.com.cn/tags/tag_textarea.asp)主代码: `<textarea rows="3" cols="20">预设文字<\textarea>`   
+多行的输入框,例如写评论.
+
+属性和方法
+
+- rows: 显示行数. 输入超过了就下拉
+- cols: 宽度.
+- height/width: 也可以控制大小.
+- readonly: 只读的.
+- disabled: 不可用
+- name: 名称,用于表单调用.
+- required: 必填的.HTML5.
+- maxlength: 最大字符数
+- form: 所属的一个或多个表单.
+
+`<textarea rows="3" cols="20">预设文字<\textarea>`  
+
+<textarea rows="3" cols="20">预设文字<\textarea>
+
 ## 密码输入框 Password 对象
 [Password](http://www.w3school.com.cn/jsref/dom_obj_password.asp)主代码: `<input type="password"/>`
 
