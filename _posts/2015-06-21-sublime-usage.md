@@ -37,8 +37,7 @@ Color Scheme很多.
 到官网下载即可.[sublime3](http://www.sublimetext.com/3); [Sublime2](http://www.sublimetext.com/2). 装完后,右键文件会有编辑选项,在OSX中普通的sublime text是3版. 要在shell中调用,可以`ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/sl` 类似地创建快键方式执行(我这里`~/bin`加入到`$PATH`中).
 
 - 破解:  
-**win64**: sublime 2.02 64 bit  
-如经济允许,请支持正版! 
+**win64**: sublime 2.02 64 bit, 如经济允许,请支持正版!(见详细信息)   
 **Mac**: [3083](http://www.douban.com/note/486407873/) 
 <details>
 复制一个sublime.exe文件, 用ultraedit打开编辑(sublime保存2进制有点问题), 查找到4333 3342 3032, 修改3342->3242 然后将该文件放回执行文件夹, 打开后 Help->Enter License输入以下内容就OK了.   
