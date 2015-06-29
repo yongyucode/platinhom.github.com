@@ -3,6 +3,9 @@
 <body>
 
 <?php
+$JobID=uniqid("mibpb");
+$RunResult=array();
+$CWDir=getcwd();
 
 $probe = $gride = $buffersize = $filename = "";
 //处理必须输入的项. 因为下面的需要调用,所以要把php内容放前面.
@@ -46,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	echo $_FILES["files"]["name"],"<br/>";
 
   // $_FILES["file"]["error"] - 由文件上传导致的错误代码
-  if ($_FILES["file"]["error"] > 0)
+  if ($_FILES["files"]["error"] > 0)
     {
     echo "Return Code: " . $_FILES["files"]["error"] . "<br />";
     }
@@ -56,6 +59,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Size: " . ($_FILES["files"]["size"] / 1024) . " Kb<br />";
     echo "Temp file: " . $_FILES["files"]["tmp_name"] . "<br />";
 	}
+
+	if (!file_exists("./MIBPBRun")){mkdir("./MIBPBRun");}
+	if (!file_exists("./MIBPBRun/$JobID")){mkdir("./MIBPBRun/$JobID");}
+    if (file_exists("./MIBPBRun/$JobID/" . $_FILES["files"]["name"]))
+      {
+      echo $_FILES["files"]["name"] . " already exists. ";
+      }
+    else
+      {//将上传文件移动到指定目录和文件名
+      move_uploaded_file($_FILES["files"]["tmp_name"],
+      "./MIBPBRun/$JobID/" . $_FILES["files"]["name"]);
+      echo "Stored in: " . "./MIBPBRun/$JobID/" . $_FILES["files"]["name"];
+      }
+      chdir("./MIBPBRun/$JobID/");
+	  exec("%CWDir/MS_Intersection $_FILES["files"]["name"] $probeErr $grideErr $buffersizeErr",$RunResult);
+	  foreach ($RunResult as $resultline){
+	  	echo $resultline."<br/>";
+	  }
 
  }
 
