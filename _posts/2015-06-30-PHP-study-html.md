@@ -26,23 +26,11 @@ tags: PHP HTML website
 
 ~~~ php
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-Name: <input type="text" name="name"><span class="error">* <?php echo $nameErr;?></span><br><br>
-E-mail: <input type="text" name="email"><span class="error">* <?php echo $emailErr;?></span><br><br>
-Website: <input type="text" name="website"><span class="error"><?php echo $websiteErr;?></span><br><br>
-Comment: <textarea name="comment" rows="5" cols="40"></textarea>
-Gender:
-<input type="radio" name="gender" value="female">Female
-<input type="radio" name="gender" value="male">Male
-<span class="error">* <?php echo $genderErr;?></span>
-<input type="submit" name="submit" value="Submit"> 
-</form>
-
 <?php
 //预处理提交信息
 // 定义变量并设置为空值
 $name = $email = $gender = $comment = $website = "";
-//处理必须输入的项.
+//处理必须输入的项. 因为下面的需要调用,所以要把php内容放前面.
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -80,6 +68,18 @@ function test_input($data) {
   return $data;
 }
 ?>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+Name: <input type="text" name="name"><span class="error">* <?php echo $nameErr;?></span><br><br>
+E-mail: <input type="text" name="email"><span class="error">* <?php echo $emailErr;?></span><br><br>
+Website: <input type="text" name="website"><span class="error"><?php echo $websiteErr;?></span><br><br>
+Comment: <textarea name="comment" rows="5" cols="40"></textarea><br><br>
+Gender:
+<input type="radio" name="gender" value="female">Female
+<input type="radio" name="gender" value="male">Male
+<span class="error">* <?php echo $genderErr;?></span><br><br>
+<input type="submit" name="submit" value="Submit"> 
+</form>
+
 ~~~
 
 
