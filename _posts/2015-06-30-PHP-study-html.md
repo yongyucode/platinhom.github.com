@@ -14,17 +14,19 @@ tags: PHP HTML website
 - `$_REQUEST`: 收集HTML表单提交的数据.很重要,例如`$_REQUEST['hi']`可以获得表单提交后name为hi的标签的数据.通过在`<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">`指明脚本文件(这里是脚本自身),然后就可以调用`$_REQUEST`来收集值.
 - `$_POST`: 收集提交`method="post"`的HTML表单收据,也常用于变量传递.见上例,不过用的是`$_POST['hi']`来收集.
 - `$_GET`: 收集提交`method="get"`的表单数据,也可收集URL发送的数据. `<a href="test_get.php?subject=PHP&web=W3school.com.cn">测试 $GET</a>`, 在test_get.php中用`$_GET['subject']`就可以获取相应`?`后的数据.
-- `_FILES`:
+- `$_FILES`:
 - `$_ENV`: 
-- `$_COOKIE`: 
-- `$_SESSION`: 
+- `$_COOKIE`: 用于识别用户.[参见](http://www.w3school.com.cn/php/php_cookies.asp)
+- `$_SESSION`: 存储有关用户会话的信息，或更改用户会话的设置.Session 的工作机制是：为每个访问者创建一个唯一的 id (UID)，并基于这个 UID 来存储变量。UID 存储在 cookie 中，亦或通过 URL 进行传导。[参见](http://www.w3school.com.cn/php/php_sessions.asp)
 
-`$_GET` 是通过 URL 参数传递到当前脚本的变量数组,这时变量名和值都在网址上,可以添加到标签,可用于发送非敏感数据(例如密码就不要这么干)。`$_POST` 是通过 HTTP POST 传递到当前脚本的变量数组。用的method也不同.
+`$_GET` 是通过 URL 参数传递到当前脚本的变量数组,这时变量名和值都在网址上,可以添加到标签,可用于发送非敏感数据(例如密码就不要这么干)。`$_POST` 是通过 HTTP POST 传递到当前脚本的变量数组。用的method也不同.  
+`htmlspecialchars(str)` 函数能够避免 `$_SERVER["PHP_SELF"]` 被利用,可以将特殊字符转为HTML实体,避免`<>`被利用.  
 
-- `htmlspecialchars(str)` 函数能够避免 `$_SERVER["PHP_SELF"]` 被利用,可以将特殊字符转为HTML实体,避免`<>`被利用.
-
-
+##### 验证表单输入的示例.
 ~~~ php
+<!DOCTYPE html>
+<html>
+<body>
 
 <?php
 //预处理提交信息
@@ -103,6 +105,8 @@ Gender:
 <input type="submit" name="submit" value="Submit"> 
 </form>
 
+</body>
+</html>
 ~~~
 
 
