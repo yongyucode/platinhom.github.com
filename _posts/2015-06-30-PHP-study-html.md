@@ -14,8 +14,8 @@ tags: PHP HTML website
 - `$_REQUEST`: 收集HTML表单提交的数据.很重要,例如`$_REQUEST['hi']`可以获得表单提交后name为hi的标签的数据.通过在`<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">`指明脚本文件(这里是脚本自身),然后就可以调用`$_REQUEST`来收集值.
 - `$_POST`: 收集提交`method="post"`的HTML表单收据,也常用于变量传递.见上例,不过用的是`$_POST['hi']`来收集.
 - `$_GET`: 收集提交`method="get"`的表单数据,也可收集URL发送的数据. `<a href="test_get.php?subject=PHP&web=W3school.com.cn">测试 $GET</a>`, 在test_get.php中用`$_GET['subject']`就可以获取相应`?`后的数据.
-- `$_FILES`:
-- `$_ENV`: 
+- `$_FILES`:收集上传的文件信息,索引是`<input type="file" name="abc"\>`的name.还有二级数组储存文件基础信息.
+- `$_ENV`: 环境变量.从系统传递到脚本中环境变量信息.
 - `$_COOKIE`: 用于识别用户.[参见](http://www.w3school.com.cn/php/php_cookies.asp)
 - `$_SESSION`: 存储有关用户会话的信息，或更改用户会话的设置.Session 的工作机制是：为每个访问者创建一个唯一的 id (UID)，并基于这个 UID 来存储变量。UID 存储在 cookie 中，亦或通过 URL 进行传导。[参见](http://www.w3school.com.cn/php/php_sessions.asp)
 
