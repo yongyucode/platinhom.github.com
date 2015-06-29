@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $filenameErr = "Please upload an input file";
   }
   	echo "Probe radius: ".$probe."; Grid size is: ".$gride."; Buffer size is: ".$buffersize,"<br/>";
-	echo $_FILES["files"]["name"],"<br/>";
+	//echo $_FILES["files"]["name"],"<br/>";
 
   // $_FILES["file"]["error"] - 由文件上传导致的错误代码
   if ($_FILES["files"]["error"] > 0)
@@ -55,9 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   else    {
     echo "Upload: " . $_FILES["files"]["name"] . "<br />";
-    echo "Type: " . $_FILES["files"]["type"] . "<br />";
-    echo "Size: " . ($_FILES["files"]["size"] / 1024) . " Kb<br />";
-    echo "Temp file: " . $_FILES["files"]["tmp_name"] . "<br />";
+    //echo "Type: " . $_FILES["files"]["type"] . "<br />";
+    //echo "Size: " . ($_FILES["files"]["size"] / 1024) . " Kb<br />";
+    //echo "Temp file: " . $_FILES["files"]["tmp_name"] . "<br />";
 	}
 
 	if (!file_exists("./MIBPBRun")){mkdir("./MIBPBRun");}
@@ -70,16 +70,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       {//将上传文件移动到指定目录和文件名
       move_uploaded_file($_FILES["files"]["tmp_name"],
       "./MIBPBRun/$JobID/" . $_FILES["files"]["name"]);
-      echo "Stored in: " . "./MIBPBRun/$JobID/" . $_FILES["files"]["name"];
-      }
+      //echo "Stored in: " . "./MIBPBRun/$JobID/" . $_FILES["files"]["name"];
+      echo "Job ID is: ".$JobID."<br/><br/>";
+	  }
       chdir("./MIBPBRun/$JobID/");
-      //echo $CWDir,$_FILES['files']['name'],$probe,$gride,$buffersize;
-      //echo "$CWDir/MS_Intersection {$_FILES['files']['name']}".$probe.$gride.$buffersize;
+
 	  exec("$CWDir/MS_Intersection {$_FILES['files']['name']} $probe $gride $buffersize",$RunResult);
 	  foreach ($RunResult as $resultline){
 	  	echo $resultline."<br/>";
 	  }
-
+	  echo "<br/><br/>Your Results: <br/>";
+	  $nowpath=str_replace($_SERVER['DOCUMENT_ROOT'],"",getcwd());
+	  $resultfiles=glob("*.*");
+	  foreach ($resultfiles as $eachfile){
+	  echo "<a href='{$nowpath}/{$eachfile}'>{$eachfile}</a><br/>";
+	  }
  }
 
 function test_input($data) {
