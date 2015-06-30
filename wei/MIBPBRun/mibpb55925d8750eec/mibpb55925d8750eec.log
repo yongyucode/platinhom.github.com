@@ -1,3 +1,4 @@
+1ajj.pqr
 MIBPB output: 
  eps0,eps1,h:   1.0000000000000000        80.000000000000000        1.0000000000000000     
  The total number of atoms is:         493
@@ -14,7 +15,7 @@ surface area: 2067.56
 surface volume: 4730.5
 output info into the files...
 clean the memory...
-running time: 3.15546 seconds...
+running time: 3.15079 seconds...
 Solvent exclusion surface generated OK.
 
  The total number of grids in the Cartesian mesh is:
@@ -32,7 +33,7 @@ Solvent exclusion surface generated OK.
  The sum of bphi0 is:   28427.717092535178     
  The max for bphi0 on the boundary is:   0.0000000000000000     
  The DSLUGM solver is employed
- Boundary value problem solver cost:   8.8252999999999998E-002
+ Boundary value problem solver cost:   8.8741000000000014E-002
  The maximum of phi0 is:  0.96080532534719665     
  Temporary sum of phi0 is:   2644.5559331204645     
  The temporary sum of phi0e is:   4506.2100276064193     
@@ -49,7 +50,7 @@ Solvent exclusion surface generated OK.
  Set equation is OK now!
  The sum of sa is:   29312517.517228425     
  The sum of u is:   194.50126876518738     
- The total for the PBE computation is:   1.5933440000000001     
+ The total for the PBE computation is:   1.6146360000000000     
  The number of neighbor 2 fic val need to find is        1096
  The number of neighbor 2 fic val can be replaced us       54296
  Need three points extrapolation for neighbor 3 points!
@@ -72,4 +73,4 @@ surface area: 2067.56
 surface volume: 4730.5
 output info into the files...
 clean the memory...
-running time: 3.04781 seconds...
+running time: 3.03735 seconds...

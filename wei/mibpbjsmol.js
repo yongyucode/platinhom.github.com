@@ -29,12 +29,12 @@ function initJmol(inmol,winsize){
       //Jmol.jmolCommandInput(jmolApplet0, "Enter");
 }
 
-function initJmolButton(){
-	  Jmol.jmolButton(jmolApplet0, "javascript ", "Download Result", "DownloadResult", "Download your results in ZIP format");
-      Jmol.jmolButton(jmolApplet0, "load 1ajj2.pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
-      Jmol.jmolButton(jmolApplet0, "javascript LoadResultSurface()", "Load surface", "LoadMap", "Load calculated surface file");
-      Jmol.jmolButton(jmolApplet0, "javascript LoadESPfile('1ajj3.dx');", "Load ESP", "LoadDX", "Mapping the electrostatic potential to the surface");
-      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 OBJ 'MC_result.obj' map '1ajj3.dx'", "Load All", "Load All", "Load All result");
+function initJmolButton(path,fileprefix){
+	  //Jmol.jmolButton(jmolApplet0, "javascript window.open('"+path+"/Result_"+JobID+".zip', '_self');", "Download Result", "DownloadResult", "Download your results in ZIP format");
+      Jmol.jmolButton(jmolApplet0, "load "+path+"/"+fileprefix+".pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
+      Jmol.jmolButton(jmolApplet0, "javascript LoadResultSurface('"+path+"','"+fileprefix+"')", "Load surface", "LoadMap", "Load calculated surface file");
+      Jmol.jmolButton(jmolApplet0, "javascript LoadESPfile('"+path+"/"+fileprefix+".dx');", "Load ESP", "LoadDX", "Mapping the electrostatic potential to the surface");
+      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 OBJ 'MC_result.obj' map '"+path+"/"+fileprefix+".dx'", "Load All", "Load All", "Load All result");
       document.write("<br \\>");
       Jmol.jmolButton(jmolApplet0,"write IMAGE ?.png","Save image");
       Jmol.jmolButton(jmolApplet0,"zap;load ?.png","Load image");

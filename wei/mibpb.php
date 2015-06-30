@@ -27,8 +27,10 @@
   $indi = "1.0"; $outdi = "80"; 
   $grid = "1.0"; $ionstrength ="0.0";
   $probe = "1.4";$girdSurf = "1.0"; $buffersize = "1.0";
-  $JobID=""; $filename="";$RunResult=array();
+  $JobID=""; $filename="./1ajj.pqr";$RunResult=array();
   $netnowpath=".";//web relative path
+  $filearray=pathinfo($filename);
+  $prefixfile=$filearray['filename'];
 
   $indiErr = $outdiErr = $gridErr =$ionstrengthErr="";
   $probeErr = $girdSurfErr = $buffersizeErr = $filenameErr = "";
@@ -106,6 +108,8 @@
       //echo "For MIBPB: Inerior Dielectric: ".$indi."; Outerior Dielectric is: ".$outdi."; Grid size is: ".$grid."; Ion strength is: ".$ionstrength,"<br/>";
       //echo "For surface: Probe radius: ".$probe."; Grid size is: ".$girdSurf."; Buffer size is: ".$buffersize,"<br/>";
     $filename=$_FILES["files"]["name"];
+    $filearray=pathinfo($filename);
+    $prefixfile=$filearray['filename'];
 
     if ($_FILES["files"]["error"] > 0){
       echo "Return Code: " . $_FILES["files"]["error"] . "<br />";
@@ -124,7 +128,7 @@
     if (!file_exists("./MIBPBRun/$JobID")){mkdir("./MIBPBRun/$JobID");}
     if (file_exists("./MIBPBRun/$JobID/" . $_FILES["files"]["name"]))
       {
-        echo $_FILES["files"]["name"] . " already exists. ";
+        ;//echo $_FILES["files"]["name"] . " already exists. ";
       }
     else
       {//将上传文件移动到指定目录和文件名
@@ -135,9 +139,7 @@
       chdir("./MIBPBRun/$JobID/");
 
       $nowfilename=realpath("./{$filename}");
-      $filearray=pathinfo($nowfilename);
-      $prefixfile=$filearray['filename'];
-      
+
       copy("$CWDir/MS_Intersection","./MS_Intersection");
       copy("$CWDir/mibpb5","./mibpb5");
       chmod("./mibpb5",0777);
@@ -145,7 +147,8 @@
       rename("$filename","1234.pqr");
      
       array_push($RunResult,"MIBPB output: ");
-      exec("echo 'MIBPB output: '>{$JobID}.log");
+      exec("echo '{$filename}' > {$JobID}.log");
+      exec("echo 'MIBPB output: '>>{$JobID}.log");
       exec("./mibpb5 1234 eps0={$indi} eps1={$outdi} h={$grid} | tee -a {$JobID}.log",$RunResult);
       rename("1234.pqr","$filename");
       rename("1234.dx","$prefixfile".".dx");
@@ -164,8 +167,32 @@
       }*/
       //echo "<br/><br/>Your Results: <br/>";
     }
-    
-  }else{
+    //Convert to url path
+    $netnowpath=str_replace($_SERVER['DOCUMENT_ROOT'],"",getcwd());
+    //A method based on our script
+    if ($netnowpath === getcwd()){
+      $netnowpath = dirname($_SERVER['SCRIPT_NAME']);
+      $netnowpath.="/MIBPBRun/{$JobID}";
+    };
+    /*$resultfiles=glob("*.*");
+    foreach ($resultfiles as $eachfile){
+      echo "<a href='{$netnowpath}/{$eachfile}'>{$eachfile}</a><br/>";
+    }*/
+  }
+  elseif ($_SERVER["REQUEST_METHOD"] == "GET" && array_key_exists("JobID",$_GET)){
+        $JobID=$_GET["JobID"];
+        $netnowpath=dirname($_SERVER['SCRIPT_NAME']);
+        $netnowpath.="/MIBPBRun/$JobID";
+
+        if (file_exists("$CWDir/MIBPBRun/$JobID/$JobID.log")){
+          $fhandle=fopen("$CWDir/MIBPBRun/$JobID/$JobID.log", "r");
+          $filename=trim(fgets($fhandle));
+          fclose($fhandle);
+          $filearray=pathinfo($filename);
+          $prefixfile=$filearray['filename'];
+        }
+  }
+  else{
     //initial JobID
     $JobID=uniqid("mibpb");
   }
@@ -176,7 +203,7 @@
 <tr><td>
 <!--Right Panel-->
 <div style="margin:auto;margin-right:30px;float:left;">
-    <form enctype="multipart/form-data" action=<?php echo "{$_SERVER['PHP_SELF']}?p=42&software=mibpb&JobID=$JobID"; ?> method="POST" >
+    <form enctype="multipart/form-data" action=<?php echo "{$_SERVER['PHP_SELF']}?software=mibpb&JobID={$JobID}"; ?> method="POST" >
       <input type="hidden" name="JOBID" value=<?php echo "$JobID" ?> >
 
       <!--Title informations-->
@@ -199,11 +226,11 @@
           <tr>
             <td width="190" rowspan="6" align="right" bgcolor="#59BC7B" class="navagation_white STYLE4" style="border:1px solid #999999">MIBPB Options</td>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><label><span class="STYLE2">
-              <input type="text" size="6" name="IN_DIELEC" value=<?php echo "$indi" ?> Interior Dielectric</span></label></td>
+              <input type="text" size="6" name="IN_DIELEC" value=<?php echo "$indi" ?> > Interior Dielectric</span></label></td>
           </tr>
           <tr>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="OUT_DIELEC" value=<?php echo "$outdi" ?>> Outerior Dielectric</span></td>
+              <input type="text" size="6" name="OUT_DIELEC" value=<?php echo "$outdi" ?> > Outerior Dielectric</span></td>
           </tr>
           <tr>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><span class="STYLE2">
@@ -397,7 +424,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
   <div id="jsmolmainwindow" style="margin: auto; text-align: center; width: 512px; height:900px; float:left; position:fixed;">
 
     <!--This input can be modified-->
-    <script type="text/javascript">initJmol(<?php echo "'{$netnowpath}/{$filename}'" ?>,512)</script>
+    <script type="text/javascript">initJmol(<?php echo "'{$netnowpath}/".basename($filename)."'" ?>,512)</script>
 
     <div style="float:left;width:552px;margin:0px;padding:0px;">
       <table valign="center" style="text-align:left; font-family:Arial; margin:0px;padding:0px;">
@@ -489,7 +516,20 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       </td>
       </tr>
     </table>
-    <script type="text/javascript">initScrollers();initJmolButton();</script>
+    <script type="text/javascript">initScrollers();initJmolButton(<?php echo "'{$netnowpath}','{$prefixfile}'" ?>);</script>
+    
+    <?php
+    //download bottom
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && 
+      file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
+      echo "<a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
+    }
+    elseif ($_SERVER["REQUEST_METHOD"] == "GET"){      
+      if (file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
+        echo "<a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
+      }
+    }
+    ?>
     </div>
   </div>
 </div>
