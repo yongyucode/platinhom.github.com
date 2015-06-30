@@ -15,7 +15,7 @@
 
 <body>
 <?php 
-  function test_input($data) {
+  function format_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -32,6 +32,7 @@
   $filearray=pathinfo($filename);
   $prefixfile=$filearray['filename'];
 
+  //saving error information
   $indiErr = $outdiErr = $gridErr =$ionstrengthErr="";
   $probeErr = $girdSurfErr = $buffersizeErr = $filenameErr = "";
  
@@ -39,72 +40,99 @@
     if (empty($_POST["IN_DIELEC"])) {
       $indiErr = "Interior Dielectric is required";
     } else {
-      $indi = test_input($_POST["IN_DIELEC"]);
-      if (!is_nan($indi)) {
+      $indi = format_input($_POST["IN_DIELEC"]);
+      if (!is_finite($indi)) {
         $indiErr = "Enter valid Interior Dielectric."; 
       }
+    }
+    if ($indiErr!=""){
+      echo "<script>alert('{$indiErr}');history.back();</script>";
     }
 
     if (empty($_POST["OUT_DIELEC"])) {
       $outdiErr = "Outerior Dielectric is required";
     } else {
-      $outdi = test_input($_POST["OUT_DIELEC"]);
-      if (!is_nan($outdi)) {
+      $outdi = format_input($_POST["OUT_DIELEC"]);
+      if (!is_finite($outdi)) {
         $outdiErr = "Enter valid Outerior Dielectric."; 
       }
+    }
+    if ($outdiErr!=""){
+      echo "<script>alert('{$outdiErr}');history.back();</script>";
     }
 
     if (empty($_POST["GRID_RESOLUTION"])) {
       $gridErr = "grid resolution is required";
     } else {
-      $grid = test_input($_POST["GRID_RESOLUTION"]);
-      if (!is_nan($grid)) {
+      $grid = format_input($_POST["GRID_RESOLUTION"]);
+      if (!is_finite($grid)) {
         $gridErr = "Enter valid grid resolution."; 
       }
+    }
+    if ($gridErr!=""){
+      echo "<script>alert('{$gridErr}');history.back();</script>";
     }
 
     if (empty($_POST["ION_STRENGTH"])) {
       $ionstrengthErr = "Ion strength is required";
     } else {
-      $ionstrength = test_input($_POST["ION_STRENGTH"]);
-      if (!is_nan($ionstrength)) {
+      $ionstrength = format_input($_POST["ION_STRENGTH"]);
+      if (!is_finite($ionstrength)) {
         $ionstrengthErr = "Enter valid ion strength."; 
       }
+    }
+    if ($ionstrengthErr!=""){
+      echo "<script>alert('{$ionstrengthErr}');history.back();</script>";
     }
 
     if (empty($_POST["PROBE_RADIUS"])) {
       $probeErr = "Probe is required";
     } else {
-      $probe = test_input($_POST["PROBE_RADIUS"]);
+      $probe = format_input($_POST["PROBE_RADIUS"]);
       // 检查名字是否包含字母和空格
-      if (!is_nan($probe)) {
+      if (!is_finite($probe)) {
         $probeErr = "Enter valid probe radius."; 
       }
+    }
+    if ($probeErr!=""){
+      echo "<script>alert('{$probeErr}');history.back();</script>";
     }
 
     if (empty($_POST["SURFACE_GRID"])) {
       $girdSurfErr = "Email is required";
     } else {
-      $girdSurf = test_input($_POST["SURFACE_GRID"]);
+      $girdSurf = format_input($_POST["SURFACE_GRID"]);
       // 检查电邮地址语法是否有效
-      if (!is_nan($girdSurf)) {
+      if (!is_finite($girdSurf)) {
         $girdSurfErr = "Enter valid grid size."; 
       }
+    }
+    if ($girdSurfErr!=""){
+      echo "<script>alert('{$girdSurfErr}');history.back();</script>";
     }
 
     if (empty($_POST["GRID_EXTEND"])) {
       $buffersizeErr = "buffersize is required";
     } else {
-      $buffersize = test_input($_POST["GRID_EXTEND"]);
+      $buffersize = format_input($_POST["GRID_EXTEND"]);
       // 检查电邮地址语法是否有效
-      if (!is_nan($buffersize)) {
+      if (!is_finite($buffersize)) {
         $buffersizeErr = "Enter valid buffersize."; 
       }
     }
+    if ($buffersizeErr!=""){
+      echo "<script>alert('{$buffersizeErr}');history.back();</script>";
+    }
 
-    if (empty($_POST["files"])) {
+    if (empty($_FILES["files"])) {
       $filenameErr = "Please upload an input file";
-    } 
+    } elseif($_FILES["files"]["size"]>5242880){ //size < 5M
+      $filenameErr = "The input file is too large, please download our program to calculate in your machine!";
+    }
+    if ($filenameErr!=""){
+      echo "<script>alert('{$buffersizeErr}');history.back();</script>";
+    }
+
       //echo "For MIBPB: Inerior Dielectric: ".$indi."; Outerior Dielectric is: ".$outdi."; Grid size is: ".$grid."; Ion strength is: ".$ionstrength,"<br/>";
       //echo "For surface: Probe radius: ".$probe."; Grid size is: ".$girdSurf."; Buffer size is: ".$buffersize,"<br/>";
     $filename=$_FILES["files"]["name"];
@@ -121,7 +149,7 @@
     }
 
     if (! empty($_POST["JOBID"])){
-      $JobID = test_input($_POST["JOBID"]);
+      $JobID = format_input($_POST["JOBID"]);
     }
 
     if (!file_exists("./MIBPBRun")){mkdir("./MIBPBRun");}

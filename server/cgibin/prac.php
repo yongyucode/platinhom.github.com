@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $probeErr = "Probe is required! ";
   } else {
     $probe = format_input($_POST["probe"]);
-    if (is_nan($probe)) {
+    if (!is_finite($probe)) {
       $probeErr = "Enter valid probe radius! "; 
     }
   }
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $grideErr = "Grid is required!";
   } else {
     $gride = format_input($_POST["gride"]);
-    if (is_nan($gride)) {
+    if (!is_finite($gride)) {
       $grideErr = "Enter valid grid size!"; 
     }
   }
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $buffersizeErr = "Buffer size is required!";
   } else {
     $buffersize = format_input($_POST["buffersize"]);
-    if (is_nan($buffersize)) {
+    if (!is_finite($buffersize)) {
       $buffersizeErr = "Enter valid buffer size!"; 
     }
   }
