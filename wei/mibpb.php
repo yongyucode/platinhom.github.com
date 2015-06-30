@@ -14,18 +14,175 @@
 
 
 <body>
+<?php 
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+
+  $CWDir=getcwd();
+
+  $indi = "1.0"; $outdi = "80"; 
+  $grid = "1.0"; $ionstrength ="0.0";
+  $probe = "1.4";$girdSurf = "1.0"; $buffersize = "1.0";
+  $JobID=""; $filename="";$RunResult=array();
+  $netnowpath=".";//web relative path
+
+  $indiErr = $outdiErr = $gridErr =$ionstrengthErr="";
+  $probeErr = $girdSurfErr = $buffersizeErr = $filenameErr = "";
+ 
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["IN_DIELEC"])) {
+      $indiErr = "Interior Dielectric is required";
+    } else {
+      $indi = test_input($_POST["IN_DIELEC"]);
+      if (!is_nan($indi)) {
+        $indiErr = "Enter valid Interior Dielectric."; 
+      }
+    }
+
+    if (empty($_POST["OUT_DIELEC"])) {
+      $outdiErr = "Outerior Dielectric is required";
+    } else {
+      $outdi = test_input($_POST["OUT_DIELEC"]);
+      if (!is_nan($outdi)) {
+        $outdiErr = "Enter valid Outerior Dielectric."; 
+      }
+    }
+
+    if (empty($_POST["GRID_RESOLUTION"])) {
+      $gridErr = "grid resolution is required";
+    } else {
+      $grid = test_input($_POST["GRID_RESOLUTION"]);
+      if (!is_nan($grid)) {
+        $gridErr = "Enter valid grid resolution."; 
+      }
+    }
+
+    if (empty($_POST["ION_STRENGTH"])) {
+      $ionstrengthErr = "Ion strength is required";
+    } else {
+      $ionstrength = test_input($_POST["ION_STRENGTH"]);
+      if (!is_nan($ionstrength)) {
+        $ionstrengthErr = "Enter valid ion strength."; 
+      }
+    }
+
+    if (empty($_POST["PROBE_RADIUS"])) {
+      $probeErr = "Probe is required";
+    } else {
+      $probe = test_input($_POST["PROBE_RADIUS"]);
+      // 检查名字是否包含字母和空格
+      if (!is_nan($probe)) {
+        $probeErr = "Enter valid probe radius."; 
+      }
+    }
+
+    if (empty($_POST["SURFACE_GRID"])) {
+      $girdSurfErr = "Email is required";
+    } else {
+      $girdSurf = test_input($_POST["SURFACE_GRID"]);
+      // 检查电邮地址语法是否有效
+      if (!is_nan($girdSurf)) {
+        $girdSurfErr = "Enter valid grid size."; 
+      }
+    }
+
+    if (empty($_POST["GRID_EXTEND"])) {
+      $buffersizeErr = "buffersize is required";
+    } else {
+      $buffersize = test_input($_POST["GRID_EXTEND"]);
+      // 检查电邮地址语法是否有效
+      if (!is_nan($buffersize)) {
+        $buffersizeErr = "Enter valid buffersize."; 
+      }
+    }
+
+    if (empty($_POST["files"])) {
+      $filenameErr = "Please upload an input file";
+    } 
+      //echo "For MIBPB: Inerior Dielectric: ".$indi."; Outerior Dielectric is: ".$outdi."; Grid size is: ".$grid."; Ion strength is: ".$ionstrength,"<br/>";
+      //echo "For surface: Probe radius: ".$probe."; Grid size is: ".$girdSurf."; Buffer size is: ".$buffersize,"<br/>";
+    $filename=$_FILES["files"]["name"];
+
+    if ($_FILES["files"]["error"] > 0){
+      echo "Return Code: " . $_FILES["files"]["error"] . "<br />";
+      } else {
+      //echo "Upload: " . $_FILES["files"]["name"] . "<br />";
+      //echo "Type: " . $_FILES["files"]["type"] . "<br />";
+      //echo "Size: " . ($_FILES["files"]["size"] / 1024) . " Kb<br />";
+      //echo "Temp file: " . $_FILES["files"]["tmp_name"] . "<br />";
+    }
+
+    if (! empty($_POST["JOBID"])){
+      $JobID = test_input($_POST["JOBID"]);
+    }
+
+    if (!file_exists("./MIBPBRun")){mkdir("./MIBPBRun");}
+    if (!file_exists("./MIBPBRun/$JobID")){mkdir("./MIBPBRun/$JobID");}
+    if (file_exists("./MIBPBRun/$JobID/" . $_FILES["files"]["name"]))
+      {
+        echo $_FILES["files"]["name"] . " already exists. ";
+      }
+    else
+      {//将上传文件移动到指定目录和文件名
+      move_uploaded_file($_FILES["files"]["tmp_name"],
+      "./MIBPBRun/$JobID/" . $_FILES["files"]["name"]);
+      //echo "Stored in: " . "./MIBPBRun/$JobID/" . $_FILES["files"]["name"];
+      //echo "Job ID is: ".$JobID."<br/><br/>";
+      chdir("./MIBPBRun/$JobID/");
+
+      $nowfilename=realpath("./{$filename}");
+      $filearray=pathinfo($nowfilename);
+      $prefixfile=$filearray['filename'];
+      
+      copy("$CWDir/MS_Intersection","./MS_Intersection");
+      copy("$CWDir/mibpb5","./mibpb5");
+      chmod("./mibpb5",0777);
+      chmod("./MS_Intersection",0777);
+      rename("$filename","1234.pqr");
+     
+      array_push($RunResult,"MIBPB output: ");
+      exec("echo 'MIBPB output: '>{$JobID}.log");
+      exec("./mibpb5 1234 eps0={$indi} eps1={$outdi} h={$grid} | tee -a {$JobID}.log",$RunResult);
+      rename("1234.pqr","$filename");
+      rename("1234.dx","$prefixfile".".dx");
+      rename("1234.xyzr","$prefixfile".".xyzr");
+      rename("1234.eng","$prefixfile".".eng");
+     
+      array_push($RunResult,"Surface output: ");
+      exec("echo '\n\nSurface output: ' >> {$JobID}.log");
+      exec("./MS_Intersection {$prefixfile}.xyzr $probe $girdSurf $buffersize | tee -a {$JobID}.log",$RunResult);
+      exec("$CWDir/MarchingCubes",$RunResult);
+      unlink("./mibpb5");
+      unlink("./MS_Intersection");
+      exec("zip -r Result_{$JobID}.zip ./* > /dev/null");
+      /*foreach ($RunResult as $resultline){
+        echo $resultline."<br/>";
+      }*/
+      //echo "<br/><br/>Your Results: <br/>";
+    }
+    
+  }else{
+    //initial JobID
+    $JobID=uniqid("mibpb");
+  }
+   
+?>
 <!--div style="background-color:white; margin:0 auto; display: block;padding:0px; width:1180px;"-->
 <table align="center">
 <tr><td>
 <!--Right Panel-->
 <div style="margin:auto;margin-right:30px;float:left;">
-    <form enctype="multipart/form-data" action="?p=42&software=mibpb&action=calculate" method="POST" >
-      <input type="hidden" name="MAX_FILE_SIZE" value="8000000">
+    <form enctype="multipart/form-data" action=<?php echo "{$_SERVER['PHP_SELF']}?p=42&software=mibpb&JobID=$JobID"; ?> method="POST" >
+      <input type="hidden" name="JOBID" value=<?php echo "$JobID" ?> >
 
       <!--Title informations-->
       <table width="630" border="0" align="center" cellpadding="0" cellspacing="2">
             <tr>
-              <td valign="bottom" class="title"><a href="?p=42&software=mibpb"><img align=left src="../wei/MIBPB-Title2.png" width="450" border="0" align="absbottom"></a><a href="http://users.math.msu.edu/users/wei/"><img align=right width=163px height=136px style="margin-right:0px;"src="../wei/msuwei-logo2.png"></a></td>
+              <td valign="bottom" class="title"><a href="."><img align=left src="../wei/MIBPB-Title2.png" width="450" border="0" align="absbottom"></a><a href="http://users.math.msu.edu/users/wei/"><img align=right width=163px height=136px style="margin-right:0px;"src="../wei/msuwei-logo2.png"></a></td>
             </tr>
             <tr>
               <td class="arial_black" style="text-align:justify;"><hr style="color:#CCCCCC"><b>MIBPB</b>  is a software package for evaluating electrostatic properties of biomolecules via the solution of the Poisson-Boltzmann equation (PBE), an established two-scale model in biomolecular simulations. The PBE is one of the most popular implicit solvent models that explicitly describe atoms in biomolecules while represent interactions between molecules and solvent by a mean-field approximation. In this model, solvent is treated as a dielectric continuum, while ions within the solvent are assumed to have the Boltzmann distribution with respect to the electrostatic energy.  &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://users.math.msu.edu/users/wei/MIBPB/index.html" target="_blank"><font color="blue"><b>[User Manual]</b></font></a></td>
@@ -35,26 +192,26 @@
        <table width="630" border="1" align="center" cellpadding="2" cellspacing="1" background="">
           <tr>
             <td width="190" align="right" bgcolor="#CCFFCC" class="navagation_white STYLE3" style="border:1px solid #999999">  Input_File:&nbsp;&nbsp;</td>
-            <td width="333" bgcolor="#CCFFCC" style="border:1px solid #999999"><input type="file" name="pdbfile"> <font color="red">*</font></td>
+            <td width="333" bgcolor="#CCFFCC" style="border:1px solid #999999"><input type="file" name="files"> <font color="red">*</font></td>
           </tr>
 
 
           <tr>
             <td width="190" rowspan="6" align="right" bgcolor="#59BC7B" class="navagation_white STYLE4" style="border:1px solid #999999">MIBPB Options</td>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><label><span class="STYLE2">
-              <input type="text" size="6" name="IN_DIELEC" value="1.0"> Interior Dielectric</span></label></td>
+              <input type="text" size="6" name="IN_DIELEC" value=<?php echo "$indi" ?> Interior Dielectric</span></label></td>
           </tr>
           <tr>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="OUT_DIELEC" value="80.0"> Outerior Dielectric</span></td>
+              <input type="text" size="6" name="OUT_DIELEC" value=<?php echo "$outdi" ?>> Outerior Dielectric</span></td>
           </tr>
           <tr>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="GRID_RESOLUTION" value="1.0"> Grid Resolution</span></td>
+              <input type="text" size="6" name="GRID_RESOLUTION" value=<?php echo "$grid" ?> > Grid Resolution</span></td>
           </tr>
           <tr>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="ION_STRENGTH" value="0.0"> Ion Strength</span></td>
+              <input type="text" size="6" name="ION_STRENGTH" value=<?php echo "$ionstrength" ?> > Ion Strength</span></td>
           </tr>
           <tr> 
               <td bgcolor="#59BC7B" style="border:1px solid #999999">Linearized PB: <label><span class="STYLE2">
@@ -77,15 +234,15 @@
           </tr>
           <tr>
             <td bgcolor="#CCFFCC" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="PROBE_RADIUS" value="1.4"> Probe Radius</span></td>
+              <input type="text" size="6" name="PROBE_RADIUS" value=<?php echo "$probe" ?> > Probe Radius</span></td>
           </tr>
           <tr>
             <td bgcolor="#CCFFCC" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="HMSCORE_CHP" value="1.0"> Grid Resolution</span></td>
+              <input type="text" size="6" name="SURFACE_GRID" value=<?php echo "$girdSurf" ?> > Grid Resolution</span></td>
           </tr>
           <tr>
             <td bgcolor="#CCFFCC" style="border:1px solid #999999"><span class="STYLE2">
-              <input type="text" size="6" name="HMSCORE_CRT" value="1.0"> Grid Extension</span></td>
+              <input type="text" size="6" name="GRID_EXTEND" value=<?php echo "$buffersize" ?> > Grid Extension</span></td>
           </tr>
 
           <tr>
@@ -240,7 +397,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
   <div id="jsmolmainwindow" style="margin: auto; text-align: center; width: 512px; height:900px; float:left; position:fixed;">
 
     <!--This input can be modified-->
-    <script type="text/javascript">initJmol('1ajj2.pqr',512)</script>
+    <script type="text/javascript">initJmol(<?php echo "'{$netnowpath}/{$filename}'" ?>,512)</script>
 
     <div style="float:left;width:552px;margin:0px;padding:0px;">
       <table valign="center" style="text-align:left; font-family:Arial; margin:0px;padding:0px;">
