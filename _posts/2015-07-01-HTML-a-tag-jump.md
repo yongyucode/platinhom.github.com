@@ -8,16 +8,21 @@ tags: HTML
 
 `<a href=""></a>`标签以及页面跳转功能是个是造网页时十分重要的标签, 对于写入各种子链接十分重要. 这里总结一下.
 
-## 锚(Anchor)和超链接 `<a>`
+## 锚([Anchor](http://www.w3school.com.cn/tags/tag_a.asp))和超链接 `<a>`
 
 ### 属性和方法
 
 - `href`: 定义超链接指向的页面的 URL。也可以页内跳转(利用锚`"#name"`),可以发送邮件. 注意若为文件夹网址,最好在最后加上`/`
-- `target`: 规定何处打开超链接文档, _blank,新窗口; _parent, _self, 本窗口; _top; framename;
+- `target`: 规定何处打开超链接文档, `_self`, 本窗口,默认值; `_blank`,新窗口; _parent,  _top; framename;
 - `rel`: 规定当前文档与被链接文档之间的关系。
 - `hreflang`: 规定被链接文档的语言。
 - `name`: 定义锚名称, HTML5不支持
-- ``
+- `rev`: 和rel一样,HTML5不支持
+- `shape`: 规定链接的形状(default,rect,circle,poly)。HTML5不支持
+- `charset`: 规定被链接文档的字符集。HTML5不支持
+- `coords`: 规定链接的坐标。HTML5不支持
+- `download`: 规定被下载的超链接目标(其实就是下载后的名字,对于图片等可以自动后缀.真实连接还是在href). HTML5新属性
+
 - 支持全局属性
 
 ### [DOM对象](http://www.w3school.com.cn/jsref/dom_obj_anchor.asp)
