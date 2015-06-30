@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script>alert('{$probeErr}');history.back();</script>";
   }
 
-
   if (empty($_POST["gride"])) {
     $grideErr = "Grid is required!";
   } else {
@@ -51,11 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script>alert('{$buffersizeErr}');history.back();</script>";
   }
 
-
-  if (empty($_POST["files"])) {
+  //这里用$_POST["files"]会出错!!
+  if (empty($_FILES["files"])) {
     $filenameErr = "Please upload an input file!";
   }
-    if ($filenameErr!=""){
+  if ($filenameErr!=""){
     echo "<script>alert('{$filenameErr}');history.back();</script>";
   } 
 
@@ -90,18 +89,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
     chdir("./MIBPBRun/$JobID/");
 
+   //获取文件名主部如1234而非1234.xyzr.第一句是多余的
   $nowfilename=realpath("./{$filename}");
   $filearray=pathinfo($nowfilename);
   $prefixfile=$filearray['filename'];
   
   copy("$CWDir/MS_Intersection","./MS_Intersection");
   copy("$CWDir/mibpb5","./mibpb5");
+  //Window下不可行
   chmod("./mibpb5",0777);
   chmod("./MS_Intersection",0777);
   rename("$filename","1234.pqr");
  
   array_push($RunResult,"MIBPB output: ");
   exec("echo 'MIBPB output: '>{$JobID}.log");
+  //执行程序,结果放到RunResult数组并输出到文件
   exec("./mibpb5 1234 | tee -a {$JobID}.log",$RunResult);
   rename("1234.pqr","$filename");
   rename("1234.dx","$prefixfile".".dx");
