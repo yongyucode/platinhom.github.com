@@ -1,3 +1,92 @@
+---
+layout: post
+title: PHP搭建简单的服务器-ESES
+date: 2015-06-30 17:46:37
+categories: CompSci
+tags: Website PHP
+---
+
+昨晚干到很晚,连续两天通顶,最近生活还真充实. 自从有了这个博客,就有事可做了, 争取每天都学点什么, 上来灌灌水. 昨天把William的界面拿来, 利用本地服务器自己写了底层的PHP处理. 成功了, 还接上了MIBPB. 不错~~这里就放放源码和分析吧.
+
+## 网页主界面部分:
+主要是一些输入框, 还有submit后调用的php脚本. 这里用的是POST方法提交表单.
+
+~~~ html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0033)http://23.239.23.221/Surface.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
+<link href="./Surface_files/defaultgreen.css" rel="stylesheet" type="text/css" media="all">
+<link href="./Surface_files/fonts.css" rel="stylesheet" type="text/css" media="all">
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="http://23.239.23.221/index.html">The Wei Lab @ MSU</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="http://23.239.23.221/index.html" accesskey="1" title="">Homepage</a></li>
+				<li class="current_page_item"><a href="http://23.239.23.221/research.html" accesskey="3" title="">Research Projects</a></li>
+				<li><a href="http://23.239.23.221/publications.html" accesskey="5" title="">Publications</a></li>
+				<li><a href="http://versasphere.net/labsite/wiki/index.php/Main_Page" accesskey="6" target="_blank">Wiki</a></li>
+				<li><a href="http://23.239.23.221/MTL.html" accesskey="7" title="">Meet the lab</a></li>
+				<li><a href="http://23.239.23.221/about.html" accesskey="7" title="">About the lab</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+
+<center>
+		<div id="extra" class="container">
+			<div class="title">
+				<h2>Surface Model</h2>
+			</div>
+</div>
+
+<div>
+<!--表单部分,注意action和method部分. 在本地服务器,不知道为啥原来的cgi-bin的文件夹就不行.奇怪.-->
+<form action="./cgibin/prac.php" method="post" enctype="multipart/form-data">
+<table style="width:500px" border="1">
+		<!--$_POST通过name来调用值-->
+		<tbody><tr><td><p>Upload input type file: <input type="file" name="files"></p></td></tr>
+		<tr><td><p>Enter Buffer Size <input type="number" step="any" name="buffersize" value="2.0"></p></td></tr>
+		<tr><td><p>Enter the probe radius <input type="number" step="any" name="probe" value="1.4"></p></td></tr>
+		<tr><td><p>Enter the gride size <input type="number" step="any" name="gride" value="1.0"></p></td></tr>
+		<tr><td><p>Submit to show the result <input type="submit" name="Submit" value="Submit Form"></p></td></tr>
+	
+</tbody></table>
+</form>
+
+<table style="500px" border="1">
+		<tbody><tr>
+			<td>Linux Download</td>
+			<td width="10%" align="center"><a href="http://23.239.23.221/MS_Intersection" download=""> 
+			<img border="1" src="./Surface_files/linux.png" alt="Linux" width="50px" height="50px"> </a></td>
+		</tr>
+</tbody></table>
+</div></center>
+</div>
+
+<div id="copyright" class="container">
+	<p>© Michigan State University. All rights reserved.</p>
+</div>
+</body></html>
+~~~
+
+## 服务器处理页面部分:
+这里不是用原页面输出,而是转到另一个页面.具体细节看注释吧.
+
+~~~ php
 <!DOCTYPE html>
 <html>
 <body>
@@ -149,3 +238,6 @@ function format_input($data) {
 ?>
 </body>
 </html>
+~~~
+
+---
