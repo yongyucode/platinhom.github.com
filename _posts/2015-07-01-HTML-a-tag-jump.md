@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTML的\<a\>标签和跳转
+title: HTML的锚标签和跳转
 date: 2015-06-30 21:12:35
 categories: CompSci
 tags: HTML
@@ -13,16 +13,23 @@ tags: HTML
 ### 属性和方法
 
 - `href`: 定义超链接指向的页面的 URL。也可以页内跳转(利用锚`"#name"`),可以发送邮件. 注意若为文件夹网址,最好在最后加上`/`
-- `target`: 规定何处打开超链接文档, `_self`, 本窗口,默认值; `_blank`,新窗口; _parent,  _top; framename;
-- `rel`: 规定当前文档与被链接文档之间的关系。
+- `target`: 规定何处打开超链接文档 
+	- `_self`: 本窗口,默认值; 
+	- `_blank`: 新窗口; 
+	- `framename`: 这里是具体某个frame的"name", 将在这个frame打开这个超链接.当前frame/页面不变.
+	- `_parent`: 在父框架集中打开被链接文档;  
+	- `_top`: 用来清除frame的限制,使得在frame内点超链接会变回整个窗口化.
+	- 不存在的名称: 如果这个指定名称或id的框架或者窗口不存在,浏览器将打开一个新的窗口,给这个窗口一个指定的标记,然后将新的文档载入那个窗口.从此以后,超链接文档就可以指向这个新的窗口。以后点击指向这个target的超链接都会在这个新窗口中打开并跳转过去.
+- `rel`: 规定当前文档与被链接文档之间的关系,一般给搜索引擎使用.
 - `hreflang`: 规定被链接文档的语言。
 - `name`: 定义锚名称, HTML5不支持
 - `rev`: 和rel一样,HTML5不支持
-- `shape`: 规定链接的形状(default,rect,circle,poly)。HTML5不支持
+- `shape`: 规定链接的形状(default,rect,circle,poly)。HTML5不支持.很多浏览器不支持.
 - `charset`: 规定被链接文档的字符集。HTML5不支持
 - `coords`: 规定链接的坐标。HTML5不支持
+- `type`: 指明链接目标的MINE类型,如text/html.
 - `download`: 规定被下载的超链接目标(其实就是下载后的名字,对于图片等可以自动后缀.真实连接还是在href). HTML5新属性
-
+- `media`: 规定被链接文档是为何种媒介/设备优化的,如打印机,手机等会进行一些跳转后的设置. HTML5新属性
 - 支持全局属性
 
 ### [DOM对象](http://www.w3school.com.cn/jsref/dom_obj_anchor.asp)
@@ -31,6 +38,15 @@ tags: HTML
 - `anchors[]`数组访问锚
 - `blur()`, a对象方法把焦点从链接上移开
 - `focus()`,给连接应用焦点.
+
+
+### CSS pseudo-class属性
+
+- `a:link {color: #FF0000}`		/* 未访问的链接 */
+- `a:visited {color: #00FF00}`	/* 已访问的链接 */
+- `a:hover {color: #FF00FF}`	/* 鼠标移动到链接上 */
+- `a:active {color: #0000FF}`	/* 选定的链接 */
+- a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。a:active 必须被置于 a:hover 之后，才是有效的。
 
 ## 应用
 
@@ -41,7 +57,7 @@ tags: HTML
 
 ### 页内跳转
 
-- `<a name="tips">基本的注意事项 - 有用的提示</a>` 命名锚. 不仅仅是`<a>`可以,别的标签也可以.
+- `<a name="tips">基本的注意事项 - 有用的提示</a>` 命名锚. 不仅仅是`<a>`可以,别的标签也可以.id是name的升级版,也可使用.
 - `<a href="#tips">有用的提示</a>` 跳转到锚.
 - `<a href="http://www.w3school.com.cn/html/html_links.asp#tips">有用的提示</a>` 直接在链接中新页面中跳转到媌
 - `<a href="#top">Top</a>` 跳转到顶部(不需定义锚). 找不到已定义的命名锚也会跳转到top.
@@ -55,8 +71,6 @@ tags: HTML
 `<a href="http://platinhom.github.io/" target="_blank">My Blog!</a>`
 
 <a href="http://platinhom.github.io/" target="_blank">My Blog!</a>
-
-
 
 ### PHP实现弹出消息框并自动返回
 因为PHP无法操作客户端, 只能echo出HTML代码,利用JS来操控DOM.
