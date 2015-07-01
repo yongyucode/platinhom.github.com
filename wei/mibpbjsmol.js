@@ -4,6 +4,11 @@ var jmolApplet0; //define the applet var.
 var s = document.location.search;
 Jmol.debugCode = (s.indexOf("debugcode") >= 0);
 
+function JmolTitleLogin(title){
+	  Jmol.script(jmolApplet0,'font echo 20 serif; set echo top center;echo '+title+';');
+      Jmol.script(jmolApplet0,'set echo bottom left;font echo 16 bolditalic;color echo green;echo Powered by Jmol-14.2');
+}
+
 // Initial the Jmol and Jmol buttons.
 function initJmol(inmol,winsize){
 	    //var  script_run = 'load ../jsmol/test.pdb;cartoon only;color cartoons structure; spin on;';//load data/caffeine.mol;
@@ -24,8 +29,7 @@ function initJmol(inmol,winsize){
       Jmol.getApplet("jmolApplet0", Info0)//use applet name and info.
       Jmol.script(jmolApplet0,'set antialiasDisplay false');
       Jmol.script(jmolApplet0,'set platformSpeed 5');
-      Jmol.script(jmolApplet0,'font echo 20 serif; set echo top center;echo MIBPB;');
-      Jmol.script(jmolApplet0,'set echo bottom left;font echo 16 bolditalic;color echo green;echo Powered by Jmol-14.2');
+      JmolTitleLogin("MIBPB online");
       //Jmol.jmolCommandInput(jmolApplet0, "Enter");
 }
 
@@ -34,7 +38,7 @@ function initJmolButton(path,fileprefix){
       Jmol.jmolButton(jmolApplet0, "load "+path+"/"+fileprefix+".pqr;cartoon only;", "Load Mol", "LoadMol", "Load Mol file");
       Jmol.jmolButton(jmolApplet0, "javascript LoadResultSurface('"+path+"','"+fileprefix+"')", "Load surface", "LoadMap", "Load calculated surface file");
       Jmol.jmolButton(jmolApplet0, "javascript LoadESPfile('"+path+"/"+fileprefix+".dx');", "Load ESP", "LoadDX", "Mapping the electrostatic potential to the surface");
-      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" color absolute -6 -0.5 OBJ 'MC_result.obj' map '"+path+"/"+fileprefix+".dx'", "Load All", "Load All", "Load All result");
+      Jmol.jmolButton(jmolApplet0, "isosurface s1 colorscheme \"rwb\" OBJ '"+path+"/MC_result.obj' map '"+path+"/"+fileprefix+".dx';SetESPRange()", "Load All", "Load All", "Load All result");
       document.write("<br \\>");
       Jmol.jmolButton(jmolApplet0,"write IMAGE ?.png","Save image");
       Jmol.jmolButton(jmolApplet0,"zap;load ?.png","Load image");
@@ -105,7 +109,7 @@ function SetESPRange(Relay){
 }
 
 
-function LoadResultSurface(){
+function LoadResultSurface(path,prefix){
 	//var stype=document.getElementByName["SURFACE_METHOD"].value
 
 	var chkObjs = document.getElementsByName("SURFACE_METHOD");
@@ -121,9 +125,9 @@ function LoadResultSurface(){
 		}
     */
 	if (stype=="ESES"){
-		Jmol.script(jmolApplet0,"isosurface s1 OBJ 'MC_result.obj'")
+		Jmol.script(jmolApplet0,"isosurface s1 OBJ '"+path+"/MC_result.obj'")
 	}else{
-		Jmol.script(jmolApplet0,"isosurface s1 MSMS '1ajj2.vert'")
+		Jmol.script(jmolApplet0,"isosurface s1 MSMS '"+path+"/"+prefix+".vert'")
 	}
 }
 
