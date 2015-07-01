@@ -412,7 +412,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
 <br><br>
 </td>
   </tr>
-  <tr><td colspan="2" style="font-size: 20px; text-align:center;"><a href="mailto:zhaozxcpu@hotmail.com"><b>Webmaster: Zhixiong Zhao</a></td>
+  <tr><td colspan="2">If you have any questions or bugs to report, please feel free to contact me: zhaozxcpu@hotmail.com<br/>
+  <span style="font-size: 20px; align:center;"><a href="mailto:zhaozxcpu@hotmail.com"><b>Webmaster: Zhixiong Zhao</b>
+  </span></a></td>
   </tr>
         </table>
   </form> 
@@ -519,15 +521,10 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
     <script type="text/javascript">initScrollers();initJmolButton(<?php echo "'{$netnowpath}','{$prefixfile}'" ?>);</script>
     
     <?php
-    //download bottom
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && 
-      file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
+    //download bottom   
+    if (file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
       echo "<a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
-    }
-    elseif ($_SERVER["REQUEST_METHOD"] == "GET"){      
-      if (file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
-        echo "<a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
-      }
+      echo "<script>Jmol.script(jmolApplet0,'font echo 20 serif; set echo top center;echo MIBPB"."  "."Done;');</script>";
     }
     ?>
     </div>
