@@ -146,8 +146,8 @@ function LoadESPfile(infile){
 Scrollers={}
 isScrollerInitialized=false
 
-var thisMin = "-5";
-var thisMax = "5";
+var thisMin = "-100";
+var thisMax = "100";
 
 function doScroll(name, value) {
 	// callback from the scroller
@@ -159,9 +159,9 @@ function doScroll(name, value) {
 		if (v == thisMax)return
 		thisMax = v
 	}
-	document.getElementById("espmin").value = thisMin
-	document.getElementById("espmax").value = thisMax
-	SetESPRange();
+	document.getElementById("espmin").value = thisMin*0.01
+	document.getElementById("espmax").value = thisMax*0.01
+	//SetESPRange();
 }
 
 function checkScroll(name){
@@ -213,11 +213,16 @@ function newScroller(name,caption,fCallback,width,x,y,isvertical,minvalue,maxval
 	S.initialvalue=initialvalue
 	// slimmed down version for the APBS application
 	var pos = (x < 0 ? "" : "position:absolute:left:" +  (isvertical ? (x-20) + ";top:" + y : x+";top:"+(y-40)))
-	sout="\n<div id='scr_"+name+"'  onscroll=\"checkScroll('"+name+"')\" style='font-size:2pt;height:25px;width:"+width+"px;overflow:auto'>"
-		+"<img src='transp.gif' height=1px width="+(width*(factor+1))+"px>"
+	sout="\n<div id='scr_"+name+"'  onscroll=\"checkScroll('"+name+"')\" style='font-size:2pt;height:20px;width:"+width+"px;overflow:auto' onmouseup='SetESPRange();'>"
+		+"<div style='height:1px;width:"+(width*(factor+1))+"px'></div>"
 		+"</div>"
 	S.div=sout
 	return sout
+}
+function resetScrollerMaxMin(name,min,max){
+	var S=Scrollers[name];
+	S.maxvalue=max;
+	S.minvalue=min;
 }
 
 function resetScroller(which,value){

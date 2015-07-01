@@ -22,15 +22,17 @@ layout: page_small
 ### Coding
 - [Hyperpolyglot](http://hyperpolyglot.org/) : Difference between languages ; 
 - [Source Codes in F90](http://people.sc.fsu.edu/~jburkardt/f_src/f_src.html) ; [Fortran编程入门](http://micro.ustc.edu.cn/Fortran/ZJDing/) ;
-- [Scratch](https://scratch.mit.edu/) ;
+- [Scratch](https://scratch.mit.edu/) ; [Codecedemy](http://www.codecademy.com/);
 - [Github](https://github.com); [SourceForge](http://sourceforge.net/); [SegmentFault](http://segmentfault.com/)
-- [鸟哥私房菜](http://linux.vbird.org/)
+- [鸟哥私房菜](http://linux.vbird.org/); [w3school](http://www.w3school.com.cn/);
+- [PHP官网](http://php.net/) ; [Python](https://www.python.org/)
 
 ### WebTools
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
 - [Linux指令查询](http://man.linuxde.net/) ; [ITeBook](http://it-ebooks.info/)
 - [OfficeOnLine](https://office.live.com/start/default.aspx)
 - [ESLpod](https://www.eslpod.com/website/index_new.html); [NCE2 listion](http://www.hjenglish.com/nce/xingainian2/); 
+- [SciHub](http://sci-hub.org/); 
 
 ### Inquiry
 - [Amazon](http://www.amazon.com/) ; [淘宝](http://www.taobao.com/) ; [京东](http://www.jd.com/) ; [Amazon.CN](http://www.amazon.cn/) ; [西贴](http://www.xitie.com/)

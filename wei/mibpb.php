@@ -457,10 +457,10 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
     <script type="text/javascript">initJmol(<?php echo "'{$netnowpath}/".basename($filename)."'" ?>,512)</script>
 
     <div style="float:left;width:552px;margin:0px;padding:0px;">
-      <table valign="center" style="text-align:left; font-family:Arial; margin:0px;padding:0px;">
+      <table valign="center" style="text-align:left; font-size: 6pt; font-family:Arial; margin:0px;padding:0px;width:552px;">
       <tr>
-      <td colspan="3">
-      <span>Show molecule as: </span>
+      <td colspan="3"  style='width:200px;'>
+      <span >Show molecule as: </span>
       <select id="selMolShow" onkeypress='showMolAs()' onchange='showMolAs()' style='width:92pt'>
         <option value='cartoon'>Cartoon</option>
         <option value='rocket'>Rocket</option>
@@ -473,9 +473,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         <option value='spacefill'>Space Fill</option></select>
       </td>
 
-      <td colspan="3">
+      <td colspan="4"  style='width:320px;'>
       <span>Color as:</span>
-      <select id="selColorSel" onkeypress='showMolAsColor()' onchange='showMolAsColor()' style='width:136pt'>
+      <select id="selColorSel" onkeypress='showMolAsColor()' onchange='showMolAsColor()' style='width:121pt'>
         <option value='structure'>Secondary Structure</option>
         <option value="cpk">CPK</option>
         <option value="group">Terminal</option>
@@ -489,9 +489,9 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       </tr>
 
       <tr>
-      <td colspan="3">
+      <td colspan="3" style='width:200px;'>
         JMol Surface: 
-        <select id="selJmolSurface" onkeypress='SelJmolsurface()' onchange='SelJmolsurface()' style='width:120pt'>
+        <select id="selJmolSurface" onkeypress='SelJmolsurface()' onchange='SelJmolsurface()' style='width:112pt'>
         <option value="off">off</option>
         <option value='vdw'>van der Waals</option>
         <option value="sasurface">Solvent-Accessible</option>
@@ -503,7 +503,7 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
         </select>
       </td>
 
-      <td colspan="3">
+      <td colspan="4">
       Translucent:
       <select id="selTranslucent" onkeypress='SurfaceTranslucent()' onchange='SurfaceTranslucent()' style='width:30pt'>
         <option value='0'>0</option>
@@ -532,17 +532,21 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
       </td>
       </tr>
       <tr>
-      <td >ESP min:</td><td valign="top"><input id="espmin" value='-5' style='width:20pt;text-align:right' onkeypress='SetESPRange()'> 
-      <img src="transp.gif" height=20px width=1px></td>
+      <td >ESP min:</td><td><input id="espmin" value='-1' style='width:20pt;text-align:right' onkeypress='SetESPRange();setScrollValue("min",document.getElementById("espmin").value*100);'> 
+      </td>
       <td  valign="top">
-      <script type="text/javascript">document.write(newScroller("min","","doScroll",150,-1,-1,false,-50,50,-5,4, "mouseup"));</script>
+      <script type="text/javascript">document.write(newScroller("min","","doScroll",140,-1,-1,false,-500,500,-100,4, "mouseup"));</script>
       <!--div id="src_min" onscroll="checkScroll('min')" style="position:absolute; font-size: 2pt; height:30px; width:100px; overflow:auto"><img src="transp.gif" height=1px width=1000px></div-->
       </td>
-      <td>max:</td><td valign="top"><input id="espmax" value='5' style='width:20pt;text-align:right' onkeypress='SetESPRange()'> 
-      <img src="transp.gif" height=20px width=1px></td>
+      <td>max:</td><td><input id="espmax" value='1' style='width:20pt;text-align:right' onkeypress='SetESPRange();setScrollValue("max",document.getElementById("espmax").value*100);'> 
+      </td>
       <td valign="top">
-      <script type="text/javascript">document.write(newScroller("max","","doScroll",150,-1,-1,false,-50,50,-5,4, "mouseup"));</script>
+      <script type="text/javascript">document.write(newScroller("max","","doScroll",140,-1,-1,false,-500,500,100,4, "mouseup"));</script>
       <!--div id="src_max" onscroll="checkScroll('max')" style="position:absolute; font-size: 2pt; height:30px; width:100px; overflow:auto"><img src="transp.gif" height=1px width=1000px></div-->
+      </td>
+      <!--script type="text/javascript">resetScrollerMaxMin("min",2*(-100),2*100)</script-->
+      <td style='width:73pt;'>Scale
+      <input id="espscale" value='5' style='width:20pt;text-align:right' onkeypress='var scale=document.getElementById("espscale").value;resetScrollerMaxMin("min",scale*(-100),scale*100);resetScrollerMaxMin("max",scale*(-100),scale*100);'> 
       </td>
       </tr>
     </table>
