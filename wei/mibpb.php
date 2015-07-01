@@ -202,7 +202,8 @@
       rename("1234.pqr","$filename");
       rename("1234.dx","$prefixfile".".dx");
       rename("1234.xyzr","$prefixfile".".xyzr");
-      rename("1234.eng","$prefixfile".".eng");
+      //rename("1234.eng","$prefixfile".".eng");
+      unlink("1234.eng");
      
       array_push($RunResult,"Surface output: ");
       exec("echo '\n\nSurface output: ' >> {$JobID}.log");
@@ -211,6 +212,10 @@
       unlink("./mibpb5");
       unlink("./MS_Intersection");
       exec("zip -r Result_{$JobID}.zip ./* > /dev/null");
+      unlink("grid_info.txt");
+      unlink("bounding_box.txt");
+      unlink("intersection_info.txt");
+      unlink("$prefixfile".".xyzr");
       /*foreach ($RunResult as $resultline){
         echo $resultline."<br/>";
       }*/
