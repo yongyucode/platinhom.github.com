@@ -12,12 +12,12 @@ function sendmail($to,$subject = "",$body = ""){
                                            // 1 = errors and messages
                                            // 2 = messages only
     $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
-    //$mail->SMTPSecure = "ssl";                 // 安全协议
-    $mail->Host       = "smtp.tom.com";      // SMTP 服务器
-    $mail->Port       = 25;//465;                   // SMTP服务器的端口号
-    $mail->Username   = "msuweigroup@tom.com";  // SMTP服务器用户名
-    $mail->Password   = "msuweilab";            // SMTP服务器密码
-    $mail->SetFrom('msuweigroup@tom.com', 'WeiGroup@MSU');
+    $mail->SMTPSecure = "tls";//"ssl";                 // 安全协议
+    $mail->Host       = "smtp.live.com";      // SMTP 服务器
+    $mail->Port       = 587;//25,465;                   // SMTP服务器的端口号
+    $mail->Username   = "msuweigroup@hotmail.com";  // SMTP服务器用户名
+    $mail->Password   = "weilab48824";            // SMTP服务器密码
+    $mail->SetFrom('msuweigroup@hotmail.com', 'WeiGroup@MSU');
     $mail->AddReplyTo("zhaozxcpu@hotmail.com","Guowei Wei");
     $mail->Subject    = $subject;
     $mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
