@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PHP学习笔记-网站信息交互篇
+title: PHP学习笔记-超全局变量
 date: 2015-06-30 08:35:36
 categories: CompSci
 tags: PHP HTML Website

@@ -25,16 +25,7 @@ function myFunctionRange() {
 }
 </script>
 ~~~
-
-<input type="range" id="myRange">
-
-<p>点击按钮来获得滑块控件的值。</p>
-
-<button onclick="myFunctionRange()">试一下</button>
-
-<p id="demoRange"></p>
-
-<script>function myFunctionRange() {var x = document.getElementById("myRange").value;document.getElementById("demoRange").innerHTML = x;}</script>
+<input type="range" id="myRange"><p>点击按钮来获得滑块控件的值。</p><button onclick="myFunctionRange()">试一下</button><p id="demoRange"></p><script>function myFunctionRange() {var x = document.getElementById("myRange").value;document.getElementById("demoRange").innerHTML = x;}</script>
 
 ## 数值选择 Number 控件
 [Number](http://www.w3school.com.cn/jsref/dom_obj_number.asp)主代码:`<input type="number">`. HTML5新元素.
@@ -56,15 +47,7 @@ function myFunctionNumber() {
 </script>
 ~~~
 
-<input type="number" id="myNumber" value="2" max="10" min="-2">
-
-<p>点击按钮来获得 number 字段的数字。</p>
-
-<button onclick="myFunctionNumber()">试一下</button>
-
-<p id="demoNumber"></p>
-
-<script>function myFunctionNumber() {    var x = document.getElementById("myNumber").value;    document.getElementById("demoNumber").innerHTML = x;}</script>
+<input type="number" id="myNumber" value="2" max="10" min="-2"><p>点击按钮来获得 number 字段的数字。</p><button onclick="myFunctionNumber()">试一下</button><p id="demoNumber"></p><script>function myFunctionNumber() { var x = document.getElementById("myNumber").value; document.getElementById("demoNumber").innerHTML = x;}</script>
 
 ## 日期选择 Date 对象
 [Date](http://www.w3school.com.cn/jsref/dom_obj_date.asp)主代码`<input type="date">` (HTML5才支持)

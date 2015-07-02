@@ -120,14 +120,14 @@ tags: Website HTML
 ~~~ html
 <form action="" method="get"> 
 您喜欢的水果？<br /><br /> 
-<label><input name="Fruit" type="checkbox" value="" checked/>苹果 </label> 
-<label><input name="Fruit" type="checkbox" value="" />桃子 </label> 
-<label><input name="Fruit" type="checkbox" value="" />香蕉 </label> 
-<label><input name="Fruit" type="checkbox" value="" />梨 </label> 
+<label><input name="Fruit1" type="checkbox" value="" checked/>苹果 </label> 
+<label><input name="Fruit2" type="checkbox" value="" />桃子 </label> 
+<label><input name="Fruit3" type="checkbox" value="" />香蕉 </label> 
+<label><input name="Fruit4" type="checkbox" value="" />梨 </label> 
 </form> 
 ~~~
 
-<form action="" method="get"> 您喜欢的水果？<br /><br /> <label><input name="Fruit" type="checkbox" value="" checked/>苹果 </label> <label><input name="Fruit" type="checkbox" value="" />桃子 </label> <label><input name="Fruit" type="checkbox" value="" />香蕉 </label> <label><input name="Fruit" type="checkbox" value="" />梨 </label> </form> 
+<form action="" method="get"> 您喜欢的水果？<br /><br /> <label><input name="Fruit1" type="checkbox" value="" checked/>苹果 </label> <label><input name="Fruit2" type="checkbox" value="" />桃子 </label> <label><input name="Fruit3" type="checkbox" value="" />香蕉 </label> <label><input name="Fruit4" type="checkbox" value="" />梨 </label> </form> 
 
 
 ## 选择器 Select对象
@@ -164,7 +164,7 @@ tags: Website HTML
 <form><input type="image" src="http://platinhom.github.io/images/shortcut.png" alt="Submit" /></form><img src="http://platinhom.github.io/images/shortcut.png"/>
 
 
-## Fieldset 
+## 控件块 Fieldset 对象
 [fieldset](http://www.w3school.com.cn/jsref/dom_obj_fieldset.asp) 主代码`<fieldset></fieldset>`  
 相当于一个容器,可以统一操作管理内部功能.
 
