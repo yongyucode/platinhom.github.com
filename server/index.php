@@ -15,9 +15,7 @@
     </h1></div>
     <p><strong>Generate a list:</strong>
       <?php
-	  	require_once("examplefunction.php");
-	sendmail("6466730@qq.com","MIBPB Results for JobID mibpb55944fc64cb47!","Your job has been done successfully! Please check your result at: <br/> <a href='http://23.239.23.221/MIBPBweb/index.php?software=mibpb&JobID=mibpb55949b9fd0e2c' target='_blank'>http://23.239.23.221/MIBPBweb/index.php?software=mibpb&JobID=mibpb55949b9fd0e2c</a>");
-	
+	  	
       for ($number = 1; $number <= 10; $number++) {
         if ($number <= 9) {
             echo $number . ", ";

@@ -21,8 +21,10 @@
     $data = htmlspecialchars($data);
     return $data;
   }
+  require_once('examplefunction.php');
 
   $CWDir=getcwd();
+  $ScriptDir=dirname($_SERVER['SCRIPT_FILENAME']);
 
   $indi = "1.0"; $outdi = "80"; 
   $grid = "1.0"; $ionstrength ="0.0";
@@ -33,6 +35,7 @@
   $filearray=pathinfo($filename);
   $prefixfile=$filearray['filename'];
   $Eelec="";
+  $userEmail=$userEmailErr=$userJobtitle="";
 
   //saving error information
   $indiErr = $outdiErr = $gridErr =$ionstrengthErr="";
@@ -73,7 +76,7 @@
       if (!is_finite($grid)) {
         $gridErr = "Enter valid grid resolution."; 
       }
-      elseif ($grid <= 0.3) {
+      elseif ($grid < 0.3) {
         $gridErr = "Grid size is too small! Please download the program and run on suitable machine."; 
       }
     }
@@ -99,7 +102,6 @@
       $probeErr = "Probe is required";
     } else {
       $probe = format_input($_POST["PROBE_RADIUS"]);
-      // 检查名字是否包含字母和空格
       if (!is_finite($probe)) {
         $probeErr = "Enter valid probe radius."; 
       }
@@ -113,7 +115,6 @@
       $girdSurfErr = "Email is required";
     } else {
       $girdSurf = format_input($_POST["SURFACE_GRID"]);
-      // 检查电邮地址语法是否有效
       if (!is_finite($girdSurf)) {
         $girdSurfErr = "Enter valid grid size."; 
       }
@@ -127,7 +128,6 @@
       $buffersizeErr = "buffersize is required";
     } else {
       $buffersize = format_input($_POST["GRID_EXTEND"]);
-      // 检查电邮地址语法是否有效
       if (!is_finite($buffersize)) {
         $buffersizeErr = "Enter valid buffersize."; 
       }
@@ -157,7 +157,7 @@
       $forcefieldErr = "Force filed is required";
     } else {
       $forcefield = format_input($_POST["SELE_FORCEFIELD"]);
-      if (is_nan($forcefield)) {
+      if (empty($forcefield)) {
         $forcefieldErr = "Select a valid force filed."; 
       }
     }
@@ -166,11 +166,28 @@
       exit(1);
     }
 
+    if (empty($_POST["USER_EMAIL"])) {
+      ;//$emailErr = "Email is required";
+    } else {
+      $userEmail = format_input($_POST["USER_EMAIL"]);
+      //Check the email is valid
+      if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$userEmail)) {
+        $userEmailErr = "Invalid email format"; 
+      }
+    }
+    if ($userEmailErr!=""){
+      echo "<script>alert('{$userEmailErr}');history.back();</script>";
+      exit(1);
+    }
+
+    if (!empty($_POST["JOB_TITLE"])) {
+      $userJobtitle = format_input($_POST["JOB_TITLE"]);
+    }
+
     if (empty($_FILES["files"]["name"])) {
       $filenameErr = "Please upload an input file";
     } elseif($_FILES["files"]["size"]>5242880){ //size < 5M
       $filenameErr = "The input file is too large, please download our program to calculate in your machine!";
-      exit(1);
     }
     if ($filenameErr!=""){
       echo "<script>alert('{$filenameErr}');history.back();</script>";
@@ -242,9 +259,6 @@
       rename("1234.xyzr","$prefixfile".".xyzr");
       //rename("1234.eng","$prefixfile".".eng");
       unlink("1234.eng");
-      $tmparray=array();
-      exec("grep Electrostatics '$JobID.log' | awk '{print \$4}'",$tmparray);
-      $Eelec="Electrostatics enegy: ".$tmparray[0]." kcal/mol";
      
       array_push($RunResult,"Surface output: ");
       exec("echo '\n\nSurface output: ' >> {$JobID}.log");
@@ -257,18 +271,26 @@
       unlink("bounding_box.txt");
       unlink("intersection_info.txt");
       unlink("$prefixfile".".xyzr");
+
+      $emailjobtitle="JobID: ".$JobID;
+      if(!empty($userJobtitle)){$emailjobtitle="Job Title: ".$userJobtitle;}
+      sendmail("$userEmail","Your MIBPB Results for {$emailjobtitle}","<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'> <HTML><HEAD><META content='text/html'; charset='us-ascii' http-equiv=Content-Type></HEAD> <BODY style='MARGIN: 10px; FONT-FAMILY: verdana; FONT-SIZE: 12pt'>Your job has been done successfully! Please check your result:<br/> <a href='http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."' target='_blank'>http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."</a><br><br><br>Any questions please contact to:<br>--------------------------------------------<br>Prof. Dr. Guowei Wei<br>Department of Mathematics<br>Michigan State University<br>wei@math.msu.edu<br><br><a href='http://23.239.23.221/' target='_blank'><img width 82px height 68px src='http://23.239.23.221/MIBPBweb/msuwei-logo2.png'></a></BODY></HTML>");
+
       /*foreach ($RunResult as $resultline){
         echo $resultline."<br/>";
       }*/
       //echo "<br/><br/>Your Results: <br/>";
     }
     //Convert to url path
-    $netnowpath=str_replace($_SERVER['DOCUMENT_ROOT'],"",getcwd());
+    $netnowpath=getcwd();//str_replace($_SERVER['DOCUMENT_ROOT'],"",getcwd());
     //A method based on our script
     if ($netnowpath === getcwd()){
       $netnowpath = dirname($_SERVER['SCRIPT_NAME']);
       $netnowpath.="/MIBPBRun/{$JobID}";
     };
+    $tmparray=array();
+    exec("grep Electrostatics '$ScriptDir/MIBPBRun/{$JobID}/$JobID.log' | awk '{print \$4}'",$tmparray);
+    $Eelec="Electrostatics enegy: ".round($tmparray[0],5)." kcal/mol";
     /*$resultfiles=glob("*.*");
     foreach ($resultfiles as $eachfile){
       echo "<a href='{$netnowpath}/{$eachfile}'>{$eachfile}</a><br/>";
@@ -291,7 +313,7 @@
           $prefixfile=$filearray['filename'];
           $tmparray=array();
           exec("grep Electrostatics '$CWDir/MIBPBRun/$JobID/$JobID.log' | awk '{print \$4}'",$tmparray);
-          $Eelec="Electrostatics enegy: ".$tmparray[0]." kcal/mol";
+          $Eelec="Electrostatics enegy: ".round($tmparray[0],5)." kcal/mol";
         }
   }
   else{
@@ -411,13 +433,13 @@
           <tr>
             <td width="190" align="right" bgcolor="#59BC7B" class="navagation_white STYLE4" style="border:1px solid #999999">Job Title: </td>
             <td bgcolor="#59BC7B" style="border:1px solid #999999"><label><span class="STYLE2">
-              <input type="text" size="40" name="JOB_TITLE" value=""></span></label>
+              <input type="text" size="40" name="JOB_TITLE" value=<?php echo "'$userJobtitle'"; ?> ></span></label>
               </td>
           </tr>
           <tr>
             <td width="190" align="right" bgcolor="#CCFFCC" class="navagation_white STYLE4" style="border:1px solid #999999">User Email: </td>
             <td bgcolor="#CCFFCC" style="border:1px solid #999999"><label ><span class="STYLE2">
-              <input type="text" size="40" name="USER_EMAIL" value=""></span></label></td>
+              <input type="text" size="40" name="USER_EMAIL" value=<?php echo "'$userEmail'"; ?> ></span></label></td>
           </tr>
 
           <!--<tr>
@@ -508,7 +530,7 @@
           </tr>
 
           <tr>
-        <td colspan="2" align="left" class="arial_black"><img src="../wei/download.gif" border=0><b><font color="#006600">DOWNLOAD</font></b><br>
+        <td colspan="2" align="left" class="arial_black"><img src="download.gif" border=0><b><font color="#006600">DOWNLOAD</font></b><br>
 For academic/governmental users, you may download and use MIBPB for free under a license agreement. Please follow the instructions below to <a href="?p=42&software=xscore&action=download"><font color="#006600">register with us and download MIBPB.</font></a><br>
 For industrial/commercial users, a moderate license fee may apply. Please contact us directly at <a href="mailto:wei@math.msu.edu"><font color="#006600">wei@math.msu.edu</font></a>.
 <br><br>
@@ -628,9 +650,11 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
     
     <?php
     //download bottom   
+    $jmolshowtitle=$JobID;
+    if (!empty($_POST['JOB_TITLE'])){$jmolshowtitle=$_POST['JOB_TITLE'];}
     if (file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
       echo "<br/>$Eelec | <a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
-      echo "<script>JmolTitleLogin('MIBPB Done: $JobID');</script>";
+      echo "<script>JmolTitleLogin('MIBPB Done: $jmolshowtitle');</script>";
     }
     ?>
     </div>
