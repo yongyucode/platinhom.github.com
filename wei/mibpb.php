@@ -28,13 +28,16 @@
   $grid = "1.0"; $ionstrength ="0.0";
   $probe = "1.4";$girdSurf = "1.0"; $buffersize = "1.0";
   $JobID=""; $filename="./1ajj.pqr";$RunResult=array();
+  $assignPH="7.0";$forcefield="amber";
   $netnowpath=".";//web relative path
   $filearray=pathinfo($filename);
   $prefixfile=$filearray['filename'];
+  $Eelec="";
 
   //saving error information
   $indiErr = $outdiErr = $gridErr =$ionstrengthErr="";
   $probeErr = $girdSurfErr = $buffersizeErr = $filenameErr = "";
+  $assignPHErr = $forcefieldErr=""; 
  
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["IN_DIELEC"])) {
@@ -134,6 +137,35 @@
       exit(1);
     }
 
+    if (empty($_POST["PH_ASSIGN"])) {
+      $assignPHErr = "pH value is required";
+    } else {
+      $assignPH = format_input($_POST["PH_ASSIGN"]);
+      if ($assignPH > 14 || $assignPH <0 ){
+        $assignPHErr = "pH value is too high or too low. We just support 0~14 here.";
+      }
+      if (!is_finite($assignPH)) {
+        $assignPHErr = "Enter valid pH value."; 
+      }
+    }
+    if ($assignPHErr!=""){
+      echo "<script>alert('{$assignPHErr}');history.back();</script>";
+      exit(1);
+    }
+
+    if (empty($_POST["SELE_FORCEFIELD"])) {
+      $forcefieldErr = "Force filed is required";
+    } else {
+      $forcefield = format_input($_POST["SELE_FORCEFIELD"]);
+      if (is_nan($forcefield)) {
+        $forcefieldErr = "Select a valid force filed."; 
+      }
+    }
+    if ($forcefieldErr!=""){
+      echo "<script>alert('{$forcefieldErr}');history.back();</script>";
+      exit(1);
+    }
+
     if (empty($_FILES["files"]["name"])) {
       $filenameErr = "Please upload an input file";
     } elseif($_FILES["files"]["size"]>5242880){ //size < 5M
@@ -189,6 +221,12 @@
 
       $nowfilename=realpath("./{$filename}");
 
+      if ($filearray["extension"]=="pdb"){
+          exec("echo '{$filename}' >> {$JobID}.log");
+          exec("python ../../pdb2pqr/pdb2pqr.py --ff=".$forcefield." --ph-calc-method=propka --with-ph=".$assignPH." $filename {$prefixfile}.pqr | tee -a {$JobID}.log",$RunResult);
+          $filename=$prefixfile.".pqr";
+      }
+
       copy("$CWDir/MS_Intersection","./MS_Intersection");
       copy("$CWDir/mibpb5","./mibpb5");
       chmod("./mibpb5",0777);
@@ -204,6 +242,9 @@
       rename("1234.xyzr","$prefixfile".".xyzr");
       //rename("1234.eng","$prefixfile".".eng");
       unlink("1234.eng");
+      $tmparray=array();
+      exec("grep Electrostatics '$JobID.log' | awk '{print \$4}'",$tmparray);
+      $Eelec="Electrostatics enegy: ".$tmparray[0]." kcal/mol";
      
       array_push($RunResult,"Surface output: ");
       exec("echo '\n\nSurface output: ' >> {$JobID}.log");
@@ -248,6 +289,9 @@
           fclose($fhandle);
           $filearray=pathinfo($filename);
           $prefixfile=$filearray['filename'];
+          $tmparray=array();
+          exec("grep Electrostatics '$CWDir/MIBPBRun/$JobID/$JobID.log' | awk '{print \$4}'",$tmparray);
+          $Eelec="Electrostatics enegy: ".$tmparray[0]." kcal/mol";
         }
   }
   else{
@@ -267,7 +311,7 @@
       <!--Title informations-->
       <table width="630" border="0" align="center" cellpadding="0" cellspacing="2">
             <tr>
-              <td valign="bottom" class="title"><a href="."><img align=left src="../wei/MIBPB-Title2.png" width="450" border="0" align="absbottom"></a><a href="http://users.math.msu.edu/users/wei/"><img align=right width=163px height=136px style="margin-right:0px;"src="../wei/msuwei-logo2.png"></a></td>
+              <td valign="bottom" class="title"><a href="."><img align=left src="MIBPB-Title2.png" width="450" border="0" align="absbottom"></a><a href="http://users.math.msu.edu/users/wei/"><img align=right width=163px height=136px style="margin-right:0px;"src="msuwei-logo2.png"></a></td>
             </tr>
             <tr>
               <td class="arial_black" style="text-align:justify;"><hr style="color:#CCCCCC"><b>MIBPB</b>  is a software package for evaluating electrostatic properties of biomolecules via the solution of the Poisson-Boltzmann equation (PBE), an established two-scale model in biomolecular simulations. The PBE is one of the most popular implicit solvent models that explicitly describe atoms in biomolecules while represent interactions between molecules and solvent by a mean-field approximation. In this model, solvent is treated as a dielectric continuum, while ions within the solvent are assumed to have the Boltzmann distribution with respect to the electrostatic energy.  &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://users.math.msu.edu/users/wei/MIBPB/index.html" target="_blank"><font color="blue"><b>[User Manual]</b></font></a></td>
@@ -333,11 +377,11 @@
           <tr>
             <td width="190" rowspan="2" align="right" bgcolor="#59BC7B" class="navagation_white STYLE4" style="border:1px solid #999999">PDB2PQR Options &nbsp;<input type="checkbox" name="PDB2PQR_OPTION" value="yes" checked>Yes</td>
             <td bgcolor="#59BC7B" style="border:1px solid #999999">Force Field: 
-              <select size="1" name="SELE_FORCEFIELD"><option value ="AMBER">AMBER</option><option value ="CHARMM">CHARMM</option><option value ="PARSE">PARSE</option><option value ="PEOEPB">PEOEPB</option><option value ="SWANSON">SWANSON</option><option value ="TYL06">TYL06</option></select>
+              <select size="1" name="SELE_FORCEFIELD"><option value ="amber">AMBER</option><option value ="charmm">CHARMM</option><option value ="parse">PARSE</option><option value ="peoepb">PEOEPB</option><option value ="swanson">SWANSON</option><option value ="tyl06">TYL06</option></select>
               </td>
           </tr>
           <tr>
-            <td bgcolor="#59BC7B" style="border:1px solid #999999">Protonation: at pH: <input type="text" size="4" name="PH_ASSIGN" value="7.0"> by: 
+            <td bgcolor="#59BC7B" style="border:1px solid #999999">Protonation: at pH: <input type="text" size="4" name="PH_ASSIGN" value=<?php echo "'$assignPH'" ?> > by: 
               <select size="1" name="SELE_PROTONATION"><option value ="PROPKA">PROPKA</option><option value ="DONT">Don't use</option></select></td>
           </tr>
 
@@ -585,8 +629,8 @@ For industrial/commercial users, a moderate license fee may apply. Please contac
     <?php
     //download bottom   
     if (file_exists("$CWDir/MIBPBRun/$JobID/Result_{$JobID}.zip")) {
-      echo "<a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
-      echo "<script>Jmol.script(jmolApplet0,'font echo 20 serif; set echo top center;echo MIBPB"."  "."Done;');</script>";
+      echo "<br/>$Eelec | <a target='_blank' href='{$netnowpath}/Result_{$JobID}.zip'>Download Results</a>";
+      echo "<script>JmolTitleLogin('MIBPB Done: $JobID');</script>";
     }
     ?>
     </div>
