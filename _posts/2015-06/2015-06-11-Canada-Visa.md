@@ -55,4 +55,6 @@ U.S.A.
 
 2015-6-23: 收到邮件状态更新, 查看状态, Details: Approved. 点进去看, Original Passport Request 还是最新的状态, 但上面profile details的Application status已经是closed, Final decision 已经是has been approved了. 应该等寄回来就可以了~~
 
+2015-7-2: 收到VISA了. 显示issue时间6.10.Application Submitted时间是6.18. 前后3周吧.
+
 ---
