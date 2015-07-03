@@ -14,7 +14,7 @@ tags: PHP
 
 然后`servive apache2 reload` 重新加载apache2配置来生效.
 
-如果运行底层的是httpd而不是apache2来监控,那么可能是 servive httpd reload
+如果运行底层的是httpd而不是apache2来监控,那么可能是 `servive httpd reload`
 
 网上还有种说法是是和php-fpm相关, 使用 /etc/init.d/php-fpm reload重新加载(或者直接php-fpm运行默认的), 也可能是php5-fpm. 但我这里根本没有安装这个服务..
 
