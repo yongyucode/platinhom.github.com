@@ -6,10 +6,7 @@ categories: CompSci
 tags: Database
 ---
 
-- I'm the context.
-- 1
-- 2
-- 3
+下载: [官网下载](http://dev.mysql.com/downloads/mysql/) ![](http://dev.mysql.com/common/logos/logo-mysql-110x57.png)
 
 TODO: Study it.
 
