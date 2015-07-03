@@ -8,7 +8,7 @@ tags: PHP Website
 
 ## php 通过fsocket模块 post 提交请求
 
-~~~Php
+~~~php
 <?php
 function sock_post($url,$query){
 	$info=parse_url($url);
