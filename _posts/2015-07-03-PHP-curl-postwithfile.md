@@ -27,6 +27,9 @@ tags: PHP Website
 ##### A case for asynchronous computation using php-curl
 
 ~~~php
+<!-- Author: Platinhom; 2015-07-03 
+A practical case for asynchronous computation using php-curl
+-->
 <?php
 	function httpRequest($url,$method,$params=array()){
 		$method=strtolower($method);
