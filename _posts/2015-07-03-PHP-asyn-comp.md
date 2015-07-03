@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PHP-POST-异步计算
+title: PHP-POST-异步调用
 date: 2015-07-03 11:42:24
 categories: CompSci
 tags: PHP Website
@@ -53,5 +53,11 @@ echo $result;
 curl_close($ch);
 ?>
 ~~~
+
+## Reference
+
+1. [php 不等待返回的实现方法（异步调用）](http://blog.csdn.net/openn/article/details/8212847)
+2. [使用fscok实现异步调用PHP](http://www.laruence.com/2008/04/16/98.html)
+3. [使用PHP进行异步HTTP请求](http://86er.sinaapp.com/?p=147)
 
 ---
