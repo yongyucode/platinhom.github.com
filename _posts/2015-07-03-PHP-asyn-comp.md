@@ -26,6 +26,7 @@ function sock_post($url,$query){
 		echo $line."<br>";
 	}
 }
+?>
 ~~~
 
 ## php 通过 curl 模拟 post 提交请求
@@ -50,6 +51,7 @@ $result=ob_get_contents();
 ob_end_clean();
 echo $result;
 curl_close($ch);
+?>
 ~~~
 
 ---
