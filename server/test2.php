@@ -3,7 +3,7 @@
 <body>
 
 <?php
-phpinfo();
+//phpinfo();
 print_r(parse_url('http://23.239.23.221/MIBPBweb/'));
 $hi = array('OK' => 1, );
 $hi["fuck"]=2;
