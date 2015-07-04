@@ -38,8 +38,8 @@ netstat 显示协议统计信息和当前 TCP/IP 网络连接。
 
 ## Linux和Mac
 
-- 利用lsof命令,建议快速. `lsof -i :PIDnum` 
-- Linux使用 netstat -anp | grep PDI
-- MacOSs使用
+- 利用lsof命令,通用. `lsof -i :PIDnum` 
+- Linux使用 	`netstat -anp | grep PIDnum`
+- MacOSs使用 `netstat -anp tcp | grep PIDNum` 虽然可以列出端口占用情况,但是不显示那个程序占用.
 
 ---
