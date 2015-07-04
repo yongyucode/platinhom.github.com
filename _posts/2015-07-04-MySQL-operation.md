@@ -19,7 +19,7 @@ tags: Database
 - `CREATE`
 - `ALTER`
 - `INDEX`
-- `DROP`
+- `DROP`: 删除数据库或报表
 - `CREATE TEMPORARY TABLES`
 - `SHOW VIEW`
 - `CREATE ROUTINE`
@@ -31,7 +31,8 @@ tags: Database
 
 ## 管理
 
-- `GRANT`
+- `GRANT` 授权
+- `REVOKE` 取消授权
 - `SUPER`
 - `PROCESS`
 - `RELOAD`
