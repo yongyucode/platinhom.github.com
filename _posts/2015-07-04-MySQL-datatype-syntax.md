@@ -6,8 +6,7 @@ categories: MathStat
 tags: Database SQL
 ---
 
-
-
+SQL 对大小写不敏感！
 
 ## 三大数据类型
 
@@ -20,6 +19,9 @@ tags: Database SQL
 	- 文本: tinytext、text、mediumtext、longtext
 	- 二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob
 
+
+
+## 
 
 ## Reference
 

@@ -71,6 +71,19 @@ tags: Database SQL
 	- `alter table 表名 rename 新表名;` 重命名数据库表
 - `drop table 表名;` 删除库表.
 
+### 索引
+
+1. 建立索引:
+	- `CREATE INDEX [索引列名] ON [表名] ([字段名]);` 
+create index ind_id on table1 (id);   
+create unique index ind_id on table1 (id);//建立唯一性索引 
+	- `alter table table_name add unique (column_list);`
+`alter table table1 add index ind_id (id);` 
+`alter table table_name add unique (column_list);`
+2. 删除索引   
+`drop index idx_id on table1; `  
+`alter table table1 drop index ind_id;`
+
 ### Alter的修改数据库表和insert/select/Update/delete区别?
 数据报表是以表头header为基础组织数据的,就像三维空间有XYZ三个坐标一样.而数据则是以每行每行每行的形式储存的,如每个原子的数据.  
 修改原子的数据,就是操作数据, 选用insert/select/Update/delete, 而where定位条件是`列=条件`去操作,相当于操作某些指定原子.  
