@@ -3,7 +3,7 @@ layout: post
 title: MySQL学习2-数据库和报表
 date: 2015-07-04 10:30:52
 categories: MathStat
-tags: Database
+tags: Database SQL
 ---
 
 ## 数据库
@@ -18,7 +18,7 @@ tags: Database
 
 - 可以使用 `show databases`; 命令查看已经创建了哪些数据库。注意复数..
 - 登录时, 使用-D选项指明 `mysql -D 所选择的数据库名 -h 主机名 -u 用户名 -p`.
-- 登录后,使用use. ` use 数据库名;`.
+- 登录后,使用use. `use 数据库名;`.
 - 只能选择操作一个数据库.使用use后会改变操作的数据库对象.
 
 ### 删除数据库
@@ -27,6 +27,14 @@ tags: Database
 - `drop database if exists name;` 如果存在则删除
 
 ## 数据库表
+数据库就如同一个excel文件, 而数据库表则相当于excel里面的每个sheet. 一个数据库可以包含多个数据库表.数据库表和sheet还是有区别的, 其有更严格的格式需求,虽然看上去差不多.  
+![](http://images.cnitblog.com/blog/453818/201305/09030127-13657abaf11945d1916297e6d23f2ec9.png) 
+
+- 表头(header): 每一列的名称;必须
+- 列(row): 具有相同数据类型的数据的集合;
+- 行(col): 每一行用来描述某个人/物的具体信息;
+- 值(value): 行的具体信息, 每个值必须与该列的数据类型相同;
+- 键(key): 表中用来识别某个特定的人\物的方法, 键的值在当前列中具有唯一性,又叫索引列.
 
 ### 创建数据库表
 
@@ -53,7 +61,7 @@ tags: Database
 
 ## Reference
 
-1.[w3school-sql](http://www.w3school.com.cn/sql/index.asp)
-2.[21分钟 MySQL 入门教程](http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html#d17)
+1. [w3school-sql](http://www.w3school.com.cn/sql/index.asp)  
+2. [21分钟 MySQL 入门教程](http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html#d17) 
 
 ---

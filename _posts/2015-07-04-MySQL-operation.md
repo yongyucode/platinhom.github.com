@@ -3,7 +3,7 @@ layout: post
 title: MySQL学习4-操作命令
 date: 2015-07-04 10:37:58
 categories: MathStat
-tags: Database
+tags: Database SQL
 ---
 
 ## 数据
