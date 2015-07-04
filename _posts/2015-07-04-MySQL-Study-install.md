@@ -33,14 +33,24 @@ However. 按上述方法安装后服务启动不了,一直报错: 服务无法�
 	5. `use mysql`打开mysql数据库.`update user set password=PASSWORD('新密码') where user='root'`, 一定要一模一样去写,新密码自己改自己的就可以了.`flush privileges`刷新保存.搞掂.
 	6. 刚才那个`mysqld --skip-grant-tables`会一直运行,在另外这个root窗口, `ps -ef |grep mysqld --skip-grant-tables`把他找出来,一般有两个结果,注意有一个是grep命令的..找到这个进程的pid,然后`kill pidnumber`.否则mysqld服务无法启动.
 	7. 这步是xampp用户登录phpadmin的,不是必要的.修改xamppfiles/phpmyadmin/config.inc.php.其中`$cfg['Servers'][$i]['auth_type'] = 'http';$cfg['Servers'][$i]['user'] = 'root';$cfg['Servers'][$i]['password'] = 'abcd';`这里,auth_type由config改为http,密码改为刚才改的.这时就可以使用xampp的phpmyadmin了.这时最好运行一下`xamppfiles/xampp security`更改一下xampp密码,mysql,ftp密码等.
-- 添加用户(root): 和上类似,`use mysql`调用mysql数据库,然后`insert into user(Host,User,Password) values('localhost','Hom',password('hi'));`.这样就在mysql数据库中插入了用户Hom和密码.`flush privileges`刷新权限.
-
+- 添加用户和授权(使用root): 
+	- 和上类似,`use mysql`调用mysql数据库,然后`insert into user(Host,User,Password) values('localhost','Hom',password('hi'));`.这样就在mysql数据库中插入了用户Hom和密码.`flush privileges`刷新权限. 这种方法直观,就是直接插入用户.但是并没有进行授权..
+	- `grant all privileges on *.* to Hom_2@'localhost' identified by 'pwd';` 该方法直接对用户授权所有操作权,在所有数据库上.localhost可以换成相应ip什么的.pwd部分是密码.该方法一样可以新建用户,还不用use flush等操作.更好用.
+	- grant是授权的意思,一般是`grant 操作 on 数据库 tp 用户 identified by '密码'`这样格式,密码部分可以忽略. 例如`GRANT SELECT,UPDATE,INSERT,DELETE on *.* to Hom@'localhost';`就是对几种操作授权. all privileges就是所有操作都授权.
+	- revoke是取消授权,和上一样用法, 不能加后面得identified部分.
+	- delete可以删除用户,需要root加载mysql数据表,删除后需要刷新权限,`delete from user where user='yongfu_a' and host='localhost';`.
+	- 更方便的是用phpmyadmin一类图形工具直接管理啦,一个一个权限勾选不用手打输入..
+- 修改用户密码: 
+	1. 参见更改root密码的使用mysql数据库的方法,把用户名改成相应的就好了.同样需要use, update, flush三步.
+	2. 用grant方法,把后面的pwd改成新密码就好了.可以自动更新用户属性.
+	3. 命令行`mysqladmin -u root -p "my_password" password "my_new_password"`,要是无密码就不需要-p部分.该方法方便,但是不好,因为密码记录会留在命令行历史里. 而且用户自己更改自己的还需要root先授权SUPER`GRANT SUPER on *.* to hom@'localhost';`
 
 ### 创建数据库
 
 - `create database test_db character set gbk;`  
-创建数据库,并设定字符编码.数据库名为test_db.注意最后分号语句结束的存在!不加分号会在下一行输入. 成功后 Query OK, 1 row affected(0.02 sec). 失败的话,可能没有权限如`ERROR 1044 (42000): Access denied for user ''@'localhost' to database 'hom_db'`.
-- 可以使用 show databases; 命令查看已经创建了哪些数据库。
+创建数据库,并设定字符编码.数据库名为test_db.注意最后分号语句结束的存在!不加分号会在下一行输入. 成功后 Query OK, 1 row affected(0.02 sec). 失败的话,可能没有权限如`ERROR 1044 (42000): Access denied for user 'Hom'@'localhost' to database 'hom_db'`.
+- 可以使用 `show databases`; 命令查看已经创建了哪些数据库。
+- 数据库保存位置参看配置文件(my.ini/my.cnf)中`data_home_dir`相关信息,window一般在安装目录下data文件夹或者programdata/mysql下的data文件夹,linux系统一般在某个文件夹下var/mysql下.例如在xamppfiles目录下. 数据库名对应的是文件夹,里面报表文件等.
 
 `quit`/`exit` 或者 `\q`都是退出
 
