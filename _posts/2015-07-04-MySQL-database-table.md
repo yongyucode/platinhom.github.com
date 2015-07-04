@@ -95,9 +95,10 @@ create unique index ind_id on table1 (id);//建立唯一性索引
 `alter table table1 drop index ind_id;`
 
 ### Alter的修改数据库表和insert/select/Update/delete区别?
-数据报表是以表头header为基础组织数据的,就像三维空间有XYZ三个坐标一样.而数据则是以每行每行每行的形式储存的,如每个原子的数据.  
-修改原子的数据,就是操作数据, 选用insert/select/Update/delete, 而where定位条件是`列=条件`去操作,相当于操作某些指定原子.  
-而Alter进行操作则是改变数据结构了, 例如新增原子半径, 原子电荷, 变为2维坐标. 均是整列整列操作, 没有行的筛选条件(因为对所有对象都起效). 要对行的某些数据进行操作, 又回到之前的insert/select/Update/delete+where去了.
+
+- 数据报表是以表头header为基础组织数据的,就像三维空间有XYZ三个坐标一样.而数据则是以每行每行每行的形式储存的,如每个原子的数据.  
+- 修改原子的数据,就是操作数据, 选用insert/select/Update/delete, 而where定位条件是`列=条件`去操作,相当于操作某些指定原子.  
+- 而Alter进行操作则是改变数据结构了, 例如新增原子半径, 原子电荷, 变为2维坐标. 均是整列整列操作, 没有行的筛选条件(因为对所有对象都起效). 要对行的某些数据进行操作, 又回到之前的insert/select/Update/delete+where去了.
 
 ## Reference
 
