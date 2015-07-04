@@ -14,6 +14,8 @@ tags: Database SQL
 RDBMS也是一种数据库管理系统，其数据库是根据数据间的关系来组织和访问数据的。20世纪70年代初，IBM公司发明了 RDBMS。RDBMS 是 SQL 的基础，也是所有现代数据库系统诸如 Oracle、SQL Server、IBM DB2、Sybase、MySQL 以及 Microsoft Access 的基础。  
 RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表是相关的数据项的集合，它由列和行组成。
 
+可以把SQL分为两个部分：数据操作语言 (DML) 和 数据定义语言 (DDL),前者操作和改变数据,如select,update等;后者操作和改变表格数据库,如create和alter等.
+
 ----------
 
 ## 数据库
