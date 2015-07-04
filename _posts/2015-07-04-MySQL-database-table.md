@@ -49,6 +49,18 @@ tags: Database SQL
 
 ### 简单的输入和操作数据
 
+- 插入一行数据: 插入一行数据:`insert [into] 表名 [(列名1, 列名2, 列名3, ...)] values (值1, 值2, 值3, ...);`.可以不值列名按顺序代入;也可以指明列名和对应的值,排好队就好了;有缺省值或自增的可以不指明.
+	- `insert into students values(NULL, "王刚", "男", 20, "13811371377");`
+	- `insert into students (name, sex, age) values("孙丽华", "女", 21);`
+- 读取一列数据: `select 列名称 from 表名称 [查询条件];`
+	- `select name, age from students;`
+	- `select * from students where sex="女";`
+- 修改数据: `update 表名称 set 列名称=新值 [where 更新条件];`
+	- `update students set age=age+1;` 无条件全部操作
+	- `update students set tel=default,age=19 where id=5;`通过某些条件定位到行.可以同时修改两项,逗号分隔.
+- 删除数据: `delete from 表名称 where 删除条件;`
+	- `delete from students where id=2;`删除一行
+	- `delete from students;`删除所有
 
 ### 修改数据库表
 
@@ -58,6 +70,11 @@ tags: Database SQL
 	- `alter table 表名 drop 列名称;` 删除一列
 	- `alter table 表名 rename 新表名;` 重命名数据库表
 - `drop table 表名;` 删除库表.
+
+### Alter的修改数据库表和insert/select/Update/delete区别?
+数据报表是以表头header为基础组织数据的,就像三维空间有XYZ三个坐标一样.而数据则是以每行每行每行的形式储存的,如每个原子的数据.  
+修改原子的数据,就是操作数据, 选用insert/select/Update/delete, 而where定位条件是`列=条件`去操作,相当于操作某些指定原子.  
+而Alter进行操作则是改变数据结构了, 例如新增原子半径, 原子电荷, 变为2维坐标. 均是整列整列操作, 没有行的筛选条件(因为对所有对象都起效). 要对行的某些数据进行操作, 又回到之前的insert/select/Update/delete+where去了.
 
 ## Reference
 

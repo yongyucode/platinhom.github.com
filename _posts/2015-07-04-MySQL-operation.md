@@ -9,7 +9,7 @@ tags: Database SQL
 ## 数据
 
 - `SELECT`: 选择和显示数据
-	- `select 列名称 from 表名称 [查询条件];` 一般通式. 可以选择1或多列数据
+	- `select 列名称 from 表名称 [查询条件];` 一般通式. 可以选择1或多列数据(多列名要`,`分隔)
 	- `select 列名称 from 表名称 where 条件;` where相当于条件筛选呗.
 - `INSERT`: 插入一行数据:`insert [into] 表名 [(列名1, 列名2, 列名3, ...)] values (值1, 值2, 值3, ...);`
 - `UPDATE`
