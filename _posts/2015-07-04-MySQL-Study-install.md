@@ -44,6 +44,18 @@ However. 按上述方法安装后服务启动不了,一直报错: 服务无法�
 
 `quit`/`exit` 或者 `\q`都是退出
 
+### 快速练习
+
+~~~sql
+create database test_db character set gbk;
+use test_db;
+create table students (id int unsigned not null auto_increment primary key, name char(8) not null, sex char(4) not null, age tinyint unsigned not null, tel char(13) null default "-" );
+insert into students values(NULL, "王刚", "男", 20, "13811371377");
+insert into students (name, sex, age) values("孙丽华", "女", 21);
+~~~
+
+我这里用xampp, 在xampp主页面左下角登录phpmyadmin,输入root和密码进去后就可以管理数据库系统了.从上面最左的数据库中可以看到刚才新建的数据库和其内容. ╮(╯▽╰)╭ 成功了.
+
 ## Reference
 
 1. [21分钟 MySQL 入门教程](http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html#d17)
