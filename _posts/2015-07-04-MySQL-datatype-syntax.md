@@ -1,10 +1,13 @@
 ---
 layout: post
-title: MySQL学习2-数据和数据操作
+title: MySQL学习3-数据和数据操作
 date: 2015-07-04 06:59:48
 categories: MathStat
 tags: Database
 ---
+
+
+
 
 ## 三大数据类型
 
@@ -18,5 +21,8 @@ tags: Database
 	- 二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob
 
 
+## Reference
+
+1. [mysql数据类型](http://www.cnblogs.com/zbseoag/archive/2013/03/19/2970004.html)
 
 ---
