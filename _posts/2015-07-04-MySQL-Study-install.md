@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MySQL学习1-安装登录和创建数据库
+title: MySQL学习1-安装登录和用户管理
 date: 2015-07-04 11:00:00
 categories: MathStat
 tags: Database
@@ -17,7 +17,7 @@ tags: Database
 However. 按上述方法安装后服务启动不了,一直报错: 服务无法启动 3523. 研究了半天, 看来现在自解压版本的配置文件不能这么直接修改就用..好吧. 最后还是去下了个直接安装版本.....上面的内容就忽略掉吧.....直接去找installer 版本来安装, 直接下一步下一步就搞掂了....按照上述第二条将环境变量设置后,就可以直接使用了. 再去看看他的配置文件(在C盘ProgramData里面那个版本),复杂多了...好吧..
 
 ##使用
-安装时会提示你输入root密码.另外还可以注册新用户.好了,之后终于可以登录和操作了!使用安装后的命令行工具或者别的命令行工具配合环境变量的存在,就可以直接登录了.
+安装时会提示你输入root密码.另外还可以注册新用户.好了,之后终于可以登录和操作了!使用安装后的命令行工具或者别的命令行工具配合环境变量的存在,就可以直接登录了.登录后退出使用`\q`或常用的quit/exit
 
 ### 登录到SQL:
 
@@ -45,14 +45,7 @@ However. 按上述方法安装后服务启动不了,一直报错: 服务无法�
 	2. 用grant方法,把后面的pwd改成新密码就好了.可以自动更新用户属性.
 	3. 命令行`mysqladmin -u root -p "my_password" password "my_new_password"`,要是无密码就不需要-p部分.该方法方便,但是不好,因为密码记录会留在命令行历史里. 而且用户自己更改自己的还需要root先授权SUPER`GRANT SUPER on *.* to hom@'localhost';`
 
-### 创建数据库
-
-- `create database test_db character set gbk;`  
-创建数据库,并设定字符编码.数据库名为test_db.注意最后分号语句结束的存在!不加分号会在下一行输入. 成功后 Query OK, 1 row affected(0.02 sec). 失败的话,可能没有权限如`ERROR 1044 (42000): Access denied for user 'Hom'@'localhost' to database 'hom_db'`.
-- 可以使用 `show databases`; 命令查看已经创建了哪些数据库。
-- 数据库保存位置参看配置文件(my.ini/my.cnf)中`data_home_dir`相关信息,window一般在安装目录下data文件夹或者programdata/mysql下的data文件夹,linux系统一般在某个文件夹下var/mysql下.例如在xamppfiles目录下. 数据库名对应的是文件夹,里面报表文件等.
-
-`quit`/`exit` 或者 `\q`都是退出
+### 退出数据库: `quit`/`exit` 或者 `\q`都是退出
 
 ### 快速练习
 
@@ -62,6 +55,7 @@ use test_db;
 create table students (id int unsigned not null auto_increment primary key, name char(8) not null, sex char(4) not null, age tinyint unsigned not null, tel char(13) null default "-" );
 insert into students values(NULL, "王刚", "男", 20, "13811371377");
 insert into students (name, sex, age) values("孙丽华", "女", 21);
+\q
 ~~~
 
 我这里用xampp, 在xampp主页面左下角登录phpmyadmin,输入root和密码进去后就可以管理数据库系统了.从上面最左的数据库中可以看到刚才新建的数据库和其内容. ╮(╯▽╰)╭ 成功了.
