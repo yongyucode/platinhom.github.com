@@ -47,6 +47,10 @@ However. 按上述方法安装后服务启动不了,一直报错: 服务无法�
 
 ### 退出数据库: `quit`/`exit` 或者 `\q`都是退出
 
+## SQL脚本 name.sql
+和一般脚本一样,随便新建个txt将命令写进去,然后后缀sql就好了.  
+使用脚本就是 ` mysql -D test_db -u root -p < createtable.sql` 这样用输入重定向. 如果没有在脚本指明数据库,就要用`-D`指明数据库. 
+
 ### 快速练习
 
 ~~~sql
@@ -59,6 +63,7 @@ insert into students (name, sex, age) values("孙丽华", "女", 21);
 ~~~
 
 我这里用xampp, 在xampp主页面左下角登录phpmyadmin,输入root和密码进去后就可以管理数据库系统了.从上面最左的数据库中可以看到刚才新建的数据库和其内容. ╮(╯▽╰)╭ 成功了.
+
 
 ## Reference
 
