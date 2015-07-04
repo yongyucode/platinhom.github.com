@@ -1,8 +1,8 @@
 ---
 layout: post
-title: MySQL 学习
+title: MySQL学习1-安装登录和创建数据库
 date: 2015-07-04 11:00:00
-categories: CompSci
+categories: MathStat
 tags: Database
 ---
 ![](http://dev.mysql.com/common/logos/logo-mysql-110x57.png)
@@ -16,8 +16,10 @@ tags: Database
 
 However. 按上述方法安装后服务启动不了,一直报错: 服务无法启动 3523. 研究了半天, 看来现在自解压版本的配置文件不能这么直接修改就用..好吧. 最后还是去下了个直接安装版本.....上面的内容就忽略掉吧.....直接去找installer 版本来安装, 直接下一步下一步就搞掂了....按照上述第二条将环境变量设置后,就可以直接使用了. 再去看看他的配置文件(在C盘ProgramData里面那个版本),复杂多了...好吧..
 
-### 使用
+##使用
 安装时会提示你输入root密码.另外还可以注册新用户.好了.
+
+### 登录到SQL:
 
 - `mysql -h 主机名 -u 用户名 -p`
 	- -h : 该命令用于指定客户端所要登录的MySQL主机名, 登录当前机器该参数可以省略;
