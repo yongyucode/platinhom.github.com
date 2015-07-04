@@ -22,6 +22,7 @@ tags: System IT
 
 在命令行中输入netstat /? 可以查看netstat的相关信息。
 netstat 显示协议统计信息和当前 TCP/IP 网络连接。
+
 `NETSTAT [-a] [-b] [-e] [-n] [-o] [-p proto] [-r] [-s] [-t] [-v] [interval]`
 
 -  -a            显示所有连接和监听端口。
