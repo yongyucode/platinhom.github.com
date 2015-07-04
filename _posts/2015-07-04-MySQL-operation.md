@@ -6,6 +6,8 @@ categories: MathStat
 tags: Database SQL
 ---
 
+# 主句
+
 ## 数据
 
 - `SELECT`: 选择和显示数据
@@ -53,5 +55,9 @@ tags: Database SQL
 - `REPLICATION CLIENT`
 - `REPLICATION SLAVE`
 - `CREATE USER`
+
+# 子句
+
+`TOP number/ n PERCENT`: 头几行: 不是所有都支持. MySQL使用查询条件 `LIMIT n`, Oracle使用查询条件 `WHERE ROWNUM <= n` 
 
 ---

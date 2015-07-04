@@ -26,5 +26,6 @@ SQL 对大小写不敏感！
 ## Reference
 
 1. [mysql数据类型](http://www.cnblogs.com/zbseoag/archive/2013/03/19/2970004.html)
+2. [W3S-SQL 数据类型](http://www.w3school.com.cn/sql/sql_datatypes.asp)
 
 ---

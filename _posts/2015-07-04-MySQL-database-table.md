@@ -6,6 +6,16 @@ categories: MathStat
 tags: Database SQL
 ---
 
+现代的 SQL 服务器构建在 RDBMS 之上。
+
+1. DBMS - 数据库管理系统（Database Management System）  
+数据库管理系统是一种可以访问数据库中数据的计算机程序。DBMS 使我们有能力在数据库中提取、修改或者存贮信息。不同的 DBMS 提供不同的函数供查询、提交以及修改数据。
+2. RDBMS - 关系数据库管理系统（Relational Database Management System）
+RDBMS也是一种数据库管理系统，其数据库是根据数据间的关系来组织和访问数据的。20世纪70年代初，IBM公司发明了 RDBMS。RDBMS 是 SQL 的基础，也是所有现代数据库系统诸如 Oracle、SQL Server、IBM DB2、Sybase、MySQL 以及 Microsoft Access 的基础。  
+RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表是相关的数据项的集合，它由列和行组成。
+
+----------
+
 ## 数据库
 
 ### 创建数据库
@@ -41,7 +51,7 @@ tags: Database SQL
 - 格式: `create table 表名称{列声明};` 列声明是表头.
 - 列声明结构块: `{条目1,条目2...条目N}`,逗号分隔,一般为了好看分行.
 - 条目的格式:`名字 类型 可否为空 其余限定`.前三者是必须的: 名字随便取.类型参看另一篇的说明,可否为空为`null/not null`,默认可为空. 全部用空格分隔. 
-	- 这么多条目中需有一个主键. 这个主键是唯一的,用`primary key`声明. `id int unsigned not null auto_increment primary key,`就是一个主键例子.
+	- 这么多条目中需有一个主键. 这个主键是唯一的,用`primary key`声明. `id int unsigned not null auto_increment primary key,`就是一个主键例子.主键同时也是unique的,但表可以有多个unique键,只能有一个主键.
 	- 主键一般伴随`auto_increment`(需在整数列中使用, 其作用是在插入数据时若该列为 NULL, MySQL将自动产生一个比现存值更大的唯一标识符值。在每张表中仅能有一个这样的值且所在列必须为索引列。)
 	- `default '-'` 缺省值是'-'.
 - 使用 `show tables;`命令可查看已创建了表的名称.注意复数..
