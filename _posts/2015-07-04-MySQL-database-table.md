@@ -82,12 +82,12 @@ RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表�
 - `drop table 表名;` 删除库表.
 
 ### 索引
-在不读取整个表的情况下，索引使数据库应用程序可以更快地查找数据。您可以在表中创建索引，以便更加快速高效地查询数据。用户无法看到索引，它们只能被用来加速搜索/查询.可以认为,创建索引就是把所有可能的值预先提取出来并事先排序,有序化数据有利于更快速搜索(我猜测).  
+在不读取整个表的情况下，索引使数据库应用程序可以更快地查找数据。您可以在表中创建索引，以便更加快速高效地查询数据。用户无法看到索引，它们只能被用来加速搜索/查询.可以认为,创建索引就是把所有可能的值预先提取出来并事先排序,有序化数据有利于更快速搜索,而且不用在一大块数据中进行移动(抽离出来了).  
 **注释**：更新一个包含索引的表需要比更新一个没有索引的表更多的时间，这是由于索引本身也需要更新。因此，理想的做法是仅仅在常常被搜索的列（以及表）上面创建索引。
 **unique唯一索引**: 唯一的索引意味着两个行不能拥有相同的索引值。主键也是唯一索引.  
 索引的创建可以在CREATE TABLE语句中进行，也可以单独用CREATE INDEX或ALTER TABLE来给表增加索引。删除索引可以利用ALTER TABLE或DROP INDEX语句来实现。
 
-1. 建立索引: (create和alter均可多列操作,中间用`,`.create不能造出主键)
+1. 建立索引: (create和alter均可多列操作,中间用`,`.create不能造出主键).一般都需要把所有都指明.
 	- 一般索引格式: `create index [index_name] on [table_name] ([column_name]);` 
 	- 唯一索引格式: `create unique index [index_name] on [table_name] ([column_name]);`
 		- create index ind_id on table1 (id);   
@@ -95,8 +95,8 @@ RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表�
 	- 唯一索引: `alter table table_name add unique ([column_list]);`
 	- 主键: `alter table table_name add primary key ([column_list]);`
 2. 删除索引: 语法和建立索引类似,不用指明列而已.   
-	`drop index idx_id on table1;`   
-	`alter table table1 drop index idx_id;`
+	- `drop index idx_id on table1;`   
+	- `alter table table1 drop index idx_id;`
 
 **注释**: 索引名缺省是索引列第一列名称定出来的;
 
@@ -110,5 +110,6 @@ RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表�
 
 1. [w3school-sql](http://www.w3school.com.cn/sql/index.asp)  
 2. [21分钟 MySQL 入门教程](http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html#d17) 
+3. [漫谈数据库索引](http://kakajw.iteye.com/blog/1656532)
 
 ---
