@@ -75,11 +75,12 @@ tags: Database SQL
 	- `where 列1 = 值1 and/or 列2 <> 值2` 比较运算符和逻辑运算符匹配
 	- `where 列 like 匹配串;` Like操作符使用字符串匹配来查询
 	- `where 列 in (value1,value2);` 满足其中一个值
-	- `where 列 between val1 and val2` 在两个值之间,不同SQL语言定义不同,有的是[],有的是[), 有的是().
+	- `where 列 between val1 and val2` 在两个值之间,mySQL是包括两头(不同SQL语言定义不同,有的是[],有的是[), 有的是().)
 	- `where 列 not 上面条件` 不符合条件的
 - `order by colA [asc], colB [desc]`: 按升序/降序排列结果, 先按colA来排,相同的根据colB来排.asc升序默认,desc降序
 - `group by`
-- SQL`TOP number/ n PERCENT`: 头几行: 不是所有都支持. MySQL使用查询条件 `LIMIT n`, Oracle使用查询条件 `WHERE ROWNUM <= n` 
+- `Limit n`头几行;`limit n,m` 就是n+1到n+m行(即默认n=0). SQL`TOP number/ n PERCENT`: 头几行:不是所有都支持. Oracle使用查询条件 `WHERE ROWNUM <= n` 
+- `group by remark order by regdate limit 6` 先分组 再排序 再显示前6行.LIMIT放最后 这是语法不能颠倒。
 
 
 ---

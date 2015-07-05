@@ -12,5 +12,10 @@ MAX(字段名) 取得一个表格栏最大的值
 MIN(字段名) 取得一个表格栏最小的值   
 SUM(字段名) 把数据栏的值相加   
 
+select count(id) from test.text count()表示查询有多少条信息 这样根据表显示出10条   
+select max(regdate) from test.text max() 查询最大值 只能针对数字 包括日期 根据表显示出2008-10-22 14:41:30   
+select min(regdate)from test.text min() 查询最小值 只能针对数字 包括日期 根据表显示出2008-10-07 13:21:32   
+select avg(id) from test.text   avg() 查询平均值 也只针对数字 包括日期 显示出5.5 如算平均分数   
+select sum(id) from test.text   sum() 查询累计值 数字包括日期 显示出55 1+2+3+。。10=55 如算总分数   
 
 ---

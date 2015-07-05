@@ -106,7 +106,7 @@ RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表�
 一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。FOREIGN KEY 约束用于预防破坏表之间连接的动作。FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。
 
 - `CREATE TABLE Orders(Id_O int NOT NULL,Id_P int,PRIMARY KEY (Id_O),FOREIGN KEY (Id_P) REFERENCES Persons(Id_P))`创表时声明
-- `ALTER TABLE Orders ADD FOREIGN KEY (Id_P) REFERENCES Persons(Id_P)` 使用alter方法添加. foreign key..references table(indexname)...
+- `ALTER TABLE Orders ADD [constraint FK名] FOREIGN KEY (Id_P) REFERENCES Persons(Id_P)` 使用alter方法添加. foreign key..references table(indexname)...
 - `ALTER TABLE Orders DROP FOREIGN KEY fk_PerOrders` 撤销
 
 ## Alter的修改数据库表和insert/select/Update/delete区别?
