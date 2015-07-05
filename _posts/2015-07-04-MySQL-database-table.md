@@ -70,7 +70,7 @@ RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表�
 - 修改数据: `update 表名称 set 列名称=新值 [where 更新条件];`
 	- `update students set age=age+1;` 无条件全部操作
 	- `update students set tel=default,age=19 where id=5;`通过某些条件定位到行.可以同时修改两项,逗号分隔.
-- 删除数据: `delete from 表名称 where 删除条件;`
+- 删除一行数据: `delete from 表名称 where 删除条件;`
 	- `delete from students where id=2;`删除一行
 	- `delete from students;`删除所有
 
