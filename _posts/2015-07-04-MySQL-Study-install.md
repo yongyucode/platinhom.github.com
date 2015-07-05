@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL学习1-安装登录和用户管理
-date: 2015-07-04 11:00:00
+date: 2015-07-04 1:00:00
 categories: MathStat
 tags: Database SQL
 ---

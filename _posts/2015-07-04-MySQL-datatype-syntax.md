@@ -19,6 +19,7 @@ SQL 对大小写不敏感！
 	- 文本: tinytext、text、mediumtext、longtext
 	- 二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob
 
+SQL 通配符
 
 
 ## 数据选择
