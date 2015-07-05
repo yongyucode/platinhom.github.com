@@ -49,7 +49,7 @@ However. 按上述方法安装后服务启动不了,一直报错: 服务无法�
 
 ## SQL脚本 name.sql
 和一般脚本一样,随便新建个txt将命令写进去,然后后缀sql就好了.  
-使用脚本就是 ` mysql -D test_db -u root -p < createtable.sql` 这样用输入重定向. 如果没有在脚本指明数据库,就要用`-D`指明数据库. 
+使用脚本就是 `mysql -D test_db -u root -p < createtable.sql` 这样用输入重定向. 如果没有在脚本指明数据库,就要用`-D`指明数据库. 
 
 ### 快速练习
 
