@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL学习3-数据和数据操作
-date: 2015-07-04 06:59:48
+date: 2015-07-05 06:59:48
 categories: MathStat
 tags: Database SQL
 ---
