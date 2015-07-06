@@ -67,4 +67,36 @@ id int auto_increment primary key,( auto_increment为自动增长)
 name varchar(20) primary key   
 )ENGINE=InnoDB DEFAULT CHARSET=gbk//支持事务和设置表的编码  
 
+`mysql_connect(servername,username,password);`,servername一般是localhost:3306, 也可以忽略端口.
+
+~~~php
+
+
+$con = mysql_connect("localhost","peter","abc123");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+// some code
+
+if (mysql_query("CREATE DATABASE my_db",$con))
+  {
+  echo "Database created";
+  }
+else
+  {
+  echo "Error creating database: " . mysql_error();
+  }
+
+
+mysql_close($con);
+~~~
+
+~~~sql
+create table users(id int unsigned not null auto_increment primary key, firstname char(40) not null, lastname char(40) not null, institute char(80) not null, email char(40) not null, department char(80) null default '-', title char(40) null default '-');
+insert into users values(null,"Zhixiong", "Zhao", "Michigan State University", "zhaozx@msu.edu", "Math", "Postdoc");
+
+~~~
+
 ---
