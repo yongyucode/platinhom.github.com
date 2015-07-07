@@ -58,7 +58,7 @@ tags: Database SQL
 - `ALTER ROUTINE`
 - `EXECUTE`
 - `CREATE VIEW`: 创建给用户看的表格,视图在每次用户需要时打开,读取数据库的结果展示.和excel差不多.
-	-`CREATE VIEW view_name AS select句`: 将选择结果作为视图,并有命名.viewname一般用中括号?所谓视图其实和excel表格很像.视图也可以像table一样被select被操作.
+	- `CREATE VIEW view_name AS select句`: 将选择结果作为视图,并有命名.viewname一般用中括号?所谓视图其实和excel表格很像.视图也可以像table一样被select被操作.
 	- `DROP VIEW view_name`:删除视图
 - `EVENT`
 - `TRIGGER`
