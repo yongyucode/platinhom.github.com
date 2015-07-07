@@ -14,7 +14,7 @@ GitCafe是国内的服务,国内用户用GitCafe肯定比GitHub要快多了.如�
 去主页[注册](https://gitcafe.com/signup)一个账号,就是用户名密码邮箱什么的.注册后绿绿的,比较简陋哇.右上角的图标就是用户信息设置等.
 
 ## 同步Github到GitCafe
-这部分是针对已有Github Pages进行迁移的童鞋. 没有的看下面..
+这部分是针对已有Github Pages进行迁移的童鞋. 没有的看[下面:新用户使用GitCafe Pages](#新用户使用GitCafe Pages)..
 
 ### 连接Github
 右上角,点上去后,账户设置,然后左边栏里有连接账号,点进去后可以见到Github了.点连接Github,输入github用户名密码,连接后要稍等.连接中是没成功,红色断开是连接上了.  
@@ -25,7 +25,7 @@ Github和GitCafe都是基于Git的,所以可以认为,GitCafe是中国版的仓�
 导入项目需要一定的时间,取决于你的项目的占用空间了,右上角图标,我的主页,可以跳进去自己主页,像GH一样,可以看到项目.这时点你导入的项目,要是能正常打开查看文件了,就完成了.
 另外,下一步之前,你需要将你本地的ssh-key密钥像GH一样填到GitCafe里.(右上,设置,导入密钥).
 
-## 使用GitCafe Page
+### 使用GitCafe Page
 
 导入项目以后,就是使用GitCafe Page---Github Pages的代替品.也是基于Jekyll的.所以一个主页完全不用改就可以使用..  
 Gitcafe page的帮助隐藏得很深([戳这里](https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9#wiki))...简单说和GitHub类似,就是要把项目名称改为自己的用户名,并且将项目推送到gitcafe-pages分支(并不需要checkout分支的,直接push -u推送). 注意GH里面新建项目是自己"用户名.github.com"才识别为个人主页项目(项目名+GH网址),而且并不需要你推到gh-pages分支,这里不推送到分支就没有起效...  
