@@ -6,7 +6,8 @@ categories: CompSci
 tags: Database SQL
 ---
 
-SQL 拥有很多可用于计数和计算的内建函数。内建 SQL 函数的语法是：`SELECT function(列) FROM 表`  
+SQL 拥有很多可用于计数和计算的内建函数。  
+内建 SQL 函数的语法是：`SELECT function(列) FROM 表`  
 在 SQL 中，基本的函数类型和种类有若干种。函数的基本类型是：   
 
 - Aggregate 函数  

@@ -6,6 +6,8 @@ categories: CompSci
 tags: Database SQL
 ---
 
+## 导出数据
+
 导入外部数据文本:   
 1.执行外部的sql脚本   
 当前数据库上执行:mysql < input.sql  
@@ -23,7 +25,7 @@ mysqldump -u root -p test mytable>c:/test.txt
 mysql -u root -p test   
 
  
- 
+## 导入数据
  
 
 导入数据库备份文件：   
@@ -40,6 +42,7 @@ mysql -u root -p test
 查询数据库版本：select version();   
 查询当前使用的数据库：select database();
 
+## PHP控制简介
 
 `mysql_connect(servername,username,password);`,servername一般是localhost:3306, 也可以忽略端口.
 
@@ -60,7 +63,7 @@ else
   {
   echo "Error creating database: " . mysql_error();
   }
-  
+
 mysql_close($con);
 ~~~
 
