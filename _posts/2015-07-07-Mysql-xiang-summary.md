@@ -53,9 +53,9 @@ tags: Database SQL
 ### 修改表：
 
 1. 删除字段：alter table 表名 drop 字段名
-2. 加字段：alter table 表名 add 新字段名 新数据类型
+2. 加字段：alter table 表名 add 新字段名 新数据类型  
       【新约束条件】【first|after 旧字段名】
-3. 修改字段名：alter table 表名 change 旧字段名 新字段名 新数据类型
+3. 修改字段名：alter table 表名 change 旧字段名 新字段名 新数据类型  
                       rename table 旧表名 to 新表名
 4. 修改字段类型：alter table 表名 modify 字段名 新数据类型
 5. 约束条件：alter table 表名 add constraint 约束名 约束类型（字段名）
@@ -126,43 +126,43 @@ end；
 ~~~
 
 
-## 条件语句：
+## 条件语句：  
 
-1. if.
-if xx then xx;
-elseif xx then xx;
-end if;
-2. case.
-case 表达式
-when value1 then 语句块1；
-when value2 then 语句块2；
-else 语句块；
-end case；
+1. if.  
+if xx then xx;  
+elseif xx then xx;  
+end if;  
+2. case.  
+case 表达式  
+when value1 then 语句块1；  
+when value2 then 语句块2；  
+else 语句块；  
+end case；  
 
-## 循环：
+## 循环：  
 
-1. while
-while 条件表达式 do
-循环体；
-end while；
-2. leave语句
-跳出循环用
-leave 循环标签；
-3. iterate语句
-跳出这次循环，执行下次循环
-iterate 循环标签；
-4. repeat：条件为假时反复执行，直至为真结束
-repeat
-循环体；
-until 条件表达式
-end repeat [循环标签];
-5. loop
-loop
-循环体；
-if 条件表达式 then
-leave [循环标签]；
-end if；
-end loop；
+1. while  
+while 条件表达式 do  
+循环体；  
+end while；  
+2. leave语句  
+跳出循环用  
+leave 循环标签；  
+3. iterate语句  
+跳出这次循环，执行下次循环  
+iterate 循环标签；  
+4. repeat：条件为假时反复执行，直至为真结束  
+repeat  
+循环体；  
+until 条件表达式  
+end repeat [循环标签];  
+5. loop  
+loop  
+循环体；  
+if 条件表达式 then  
+leave [循环标签]；  
+end if；  
+end loop；  
 
 
 ## 未知但感觉有用的函数
@@ -198,12 +198,14 @@ year() month() dayofmonth() hour() minute() second()
 ~~~
 
 ### 视图：
-create view 视图名 as select 。。。
-show tables；列出所有基表，也会列出视图
+
+create view 视图名 as select 。。。  
+show tables；列出所有基表，也会列出视图    
 
 ### 建立临时表：
-create temporary table
-drop temporary table
+
+create temporary table   
+drop temporary table  
 
 
 
