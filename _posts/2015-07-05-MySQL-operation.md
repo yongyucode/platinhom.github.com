@@ -84,20 +84,20 @@ tags: Database SQL
 	- `where 列 between val1 and val2` 在两个值之间,MySQL是包括两头(不同SQL语言定义不同)
 	- `where 列 not 上面条件` 不符合条件的
 - `order by colA [asc], colB [desc]`: 按升序/降序排列结果, 先按colA来排,相同的根据colB来排.asc升序默认,desc降序
-- `group by colA`: 根据colA来分组,将相同的作为一组,一般都作为下一个函数或处理时使用.如`SELECT Customer,SUM(OrderPrice) FROM Orders GROUP BY Customer`根据用户名先分组然后将用户名和对应用户分组的总和显示出来
+- `group by colA`: 根据colA来分组,将相同的作为一组,一般都作为下一个函数或处理时使用.如"SELECT Customer,SUM(OrderPrice) FROM Orders GROUP BY Customer"根据用户名先分组然后将用户名和对应用户分组的总和显示出来
 - `Limit n`头几行;`limit n,m` 就是n+1到n+m行(即默认n=0).
 	- `limit m offset n`等价于`limit n,m`offset偏移量就是第一个值,从0开始.为了另一种数据库兼容引入的.
 	- `where condition group by remark order by regdate limit 6` 先过滤,分组 再排序,显示前6行.LIMIT放最后 这是语法不能颠倒。
 - `having function(col) 操作符 值` 和where类似,进行条件筛选,区别在于having用函数,where直接用列值. 位置跟在group by后.
 - `join`
 - `As alias` 别名,
-	- 表别名尤其在多表格时常用,如`select p1.A,p2.A from peopleA as p1,peopleB as p2`.
-	- 别名也可以对列名进行别名化,此时输出结果将按别名来.可以暂命名结果. `SELECT LastName AS Family, FirstName AS Name FROM Persons`
-- `if exists`和`if not exists` 一般用于是否存在数据库/表格时的判断,如`create table if not exists 表名{}`.
-- `default value` 一般是在声明表头时用来指明其缺失值,算属性吧.去default属性:`ALTER TABLE 表名 ALTER 列名 DROP DEFAULT`
+	- 表别名尤其在多表格时常用,如"select p1.A,p2.A from peopleA as p1,peopleB as p2"
+	- 别名也可以对列名进行别名化,此时输出结果将按别名来.可以暂命名结果. "SELECT LastName AS Family, FirstName AS Name FROM Persons"
+- `if exists`和`if not exists` 一般用于是否存在数据库/表格时的判断,如"create table if not exists 表名{}".
+- `default value` 一般是在声明表头时用来指明其缺失值,算属性吧.去default属性:"ALTER TABLE 表名 ALTER 列名 DROP DEFAULT"
 - `auto_increment` 自增属性,可以'AUTO_INCREMENT=10'来设定起始值.一个表只有一个该字段,一般是主键. 'ALTER TABLE 表名 AUTO_INCREMENT=100'可以改变自增起始值(但受限于该列最大值)
-- `primary key (column_list)`:建立主键.更常用是在create表头时追加属性.`alter table table_name add primary key ([column_list]);`
-- `FOREIGN KEY (Id_P) REFERENCES 表1(Id_P)`:建立指向表1的外键,例如`ALTER TABLE 表2 ADD [constraint FK名] FOREIGN KEY (Id_P) REFERENCES 表1(Id_P)`
+- `primary key (column_list)`:建立主键.更常用是在create表头时追加属性.'alter table table_name add primary key ([column-list]);
+- `FOREIGN KEY (Id_P) REFERENCES 表1(Id_P)`:建立指向表1的外键,例如'ALTER TABLE 表2 ADD [constraint FK名] FOREIGN KEY (IdP) REFERENCES 表1(IdP)''
 
 TODO: 补全
 
