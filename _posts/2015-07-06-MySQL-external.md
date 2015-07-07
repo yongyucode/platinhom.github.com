@@ -24,14 +24,7 @@ mysql -u root -p test
 
  
  
-
-联合字符或者多个列(将列id与":"和列name和"="连接)   
-select concat(id,'':'',name,''='') from students;   
-  
-
-3、显示数据表的结构：   
-  
-describe 表名;  
+ 
 
 导入数据库备份文件：   
 (1).在mysql命令窗口   
@@ -40,7 +33,7 @@ describe 表名;
 (4).source 备份的文件的保存路径和文件名(此命令不能加分号结尾)  
 
 分页查询：select *from 表名 limit 每页数量 offset 偏移量;
-3.查看表的结构：desc 表名   
+ 
 
 查询时间：select now();   
 查询当前用户：select user();   
