@@ -52,7 +52,7 @@ tags: Database SQL
 	- `SHOW INDEX FROM table_name`
 - `SHOW VIEW`
 - `DESC`或`DESCRIBE`: 显示表的结构
-	-`desc tablename` 显示表的结构:列名,类型,null,key,缺省,额外属性
+	- `desc tablename` 显示表的结构:列名,类型,null,key,缺省,额外属性
 - `CREATE ROUTINE`
 - `ALTER ROUTINE`
 - `EXECUTE`
