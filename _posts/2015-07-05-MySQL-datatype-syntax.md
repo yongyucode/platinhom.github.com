@@ -12,7 +12,7 @@ SQL 对大小写不敏感！
 
 1. 数字类型
 	- 整数: tinyint、smallint、mediumint、int、bigint
-	- 浮点数: float、double、real、decimal
+	- 浮点数: float、double、decimal
 2. 日期和时间: date、time、datetime、timestamp、year
 3. 字符串类型
 	- 字符串: char、varchar
@@ -43,14 +43,15 @@ year | 1字节 | 年份 2008(1901-2155)
 time | 3字节 | 时间 '12:25:36'
 datetime | 8字节 | 日期时间 '2008-12-2 22:06:44'
 timestamp | 8字节 | 自动存储记录修改时间
-ENUM(x,y,z..) | | 允许你输入可能值的列表.最多列出65535个值。
+ENUM(x,y,z..) | | 可能值的列表.最多列出65535个值,没匹配则为空.
 SET	| | 与ENUM类似,SET最多只能含64个项,不过可存储一个以上值。
 NULL| | 特殊类型,无,不等价于0或''.
 
 - 数值型括号的m规定最大位数
 - char(n) 固定长度,总将占用n个字节;varchar是存入的实际字符数+1个字节（n<=255）或+2个字节(n>255),所以varchar(4),存入3个字符将占用4个字节。varchar会根据长度调整大小.char比varchar要快.
+- varchar超过255字节会转为text类似,留两个空字节作为结束符标记.所以varchar是tinytext+text的综合.
 - 若定义一个字段为timestamp,这个字段里的时间数据会随其他字段修改的时候自动刷新,所以这个数据类型的字段可以存放这条记录最后被修改的时间。
-- 如果ENUM列表中不存在插入的值，则插入空值。注释：这些值是按照你输入的顺序存储的。可以按照此格式输入可能的值：ENUM('X','Y','Z')
+- 如果ENUM列表中不存在插入的值，则插入空值。注释：这些值是按照你输入的顺序存储的。可以按照此格式输入可能的值：ENUM('X','Y','Z').
 - NULL 值.如果表中的某个列是可选的，那么我们可以在不向该列添加值的情况下插入新记录或更新已有的记录。这意味着该字段将以 NULL 值保存。
 NULL 值的处理方式与其他值不同。NULL 用作未知的或不适用的值的占位符。注释：无法比较 NULL 和 0；它们是不等价的。 is null/ is not null操作符用于判断空值
 
@@ -87,7 +88,7 @@ NULL 值的处理方式与其他值不同。NULL 用作未知的或不适用的�
 
 ## Reference
 
-1. [mysql数据类型](http://www.cnblogs.com/zbseoag/archive/2013/03/19/2970004.html)
+1. [英文W3-Sql数据类型](http://www.w3schools.com/sql/sql_datatypes_general.asp)
 2. [W3S-SQL 数据类型](http://www.w3school.com.cn/sql/sql_datatypes.asp)
 3. [RUNOOB-MySQL教程](http://www.runoob.com/mysql/mysql-tutorial.html)
 4. [MySQL-正则表达式](http://www.runoob.com/mysql/mysql-regexp.html)
