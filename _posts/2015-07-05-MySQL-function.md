@@ -24,4 +24,14 @@ select concat(id,'':'',name,''='') from students;
 
 IFNULL(列名,0) 或 COALESCE(列名,0): 要是该列是null则按0处理.尤其将两列求和时重要.
 
+NOW()	返回当前的日期和时间
+CURDATE()	返回当前的日期
+CURTIME()	返回当前的时间
+DATE()	提取日期或日期/时间表达式的日期部分
+EXTRACT()	返回日期/时间按的单独部分
+DATE_ADD()	给日期添加指定的时间间隔
+DATE_SUB()	从日期减去指定的时间间隔
+DATEDIFF()	返回两个日期之间的天数
+DATE_FORMAT()	用不同的格式显示日期/时间
+
 ---

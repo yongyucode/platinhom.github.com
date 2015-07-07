@@ -44,8 +44,6 @@ mysql -u root -p test
 `mysql_connect(servername,username,password);`,servername一般是localhost:3306, 也可以忽略端口.
 
 ~~~php
-
-
 $con = mysql_connect("localhost","peter","abc123");
 if (!$con)
   {
@@ -62,8 +60,7 @@ else
   {
   echo "Error creating database: " . mysql_error();
   }
-
-
+  
 mysql_close($con);
 ~~~
 
