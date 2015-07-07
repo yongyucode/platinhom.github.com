@@ -14,7 +14,7 @@ GitCafe是国内的服务,国内用户用GitCafe肯定比GitHub要快多了.如�
 去主页[注册](https://gitcafe.com/signup)一个账号,就是用户名密码邮箱什么的.注册后绿绿的,比较简陋哇.右上角的图标就是用户信息设置等.
 
 ## 同步Github到GitCafe
-这部分是针对已有Github Pages进行迁移的童鞋. 没有的看[下面:新用户使用GitCafe Pages](#新用户使用GitCafe Pages)..
+这部分是针对已有Github Pages进行迁移的童鞋. 没有的看下面:新用户使用GitCafe Pages..
 
 ### 连接Github
 右上角,点上去后,账户设置,然后左边栏里有连接账号,点进去后可以见到Github了.点连接Github,输入github用户名密码,连接后要稍等.连接中是没成功,红色断开是连接上了.  
@@ -30,7 +30,7 @@ Github和GitCafe都是基于Git的,所以可以认为,GitCafe是中国版的仓�
 导入项目以后,就是使用GitCafe Page---Github Pages的代替品.也是基于Jekyll的.所以一个主页完全不用改就可以使用..  
 Gitcafe page的帮助隐藏得很深([戳这里](https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9#wiki))...简单说和GitHub类似,就是要把项目名称改为自己的用户名,并且将项目推送到gitcafe-pages分支(并不需要checkout分支的,直接push -u推送). 注意GH里面新建项目是自己"用户名.github.com"才识别为个人主页项目(项目名+GH网址),而且并不需要你推到gh-pages分支,这里不推送到分支就没有起效...  
 熟悉Git的直接在本地仓库(不要告诉我没有本地仓库..)敲下面两个命令就好了(把我用户名platinhom改掉).第一个是创建一个远程仓库gitcafe.第二个是将master推送到远程仓库的gitcafe-pages分支.第二个命令后又是一个漫长等待(包括项目的比较和更新)...  
-然后好了以后稍等,就可以在`用户名.gitcafe.io`看到自己的主页了,呵呵.而且你可以将第二句话加入到自己的推送脚本当中,以后就可以两边同时更新了.
+然后好了以后稍等,就可以在`用户名.gitcafe.io`看到自己的主页了,呵呵.而且你可以将第二句话(不加-u)加入到自己的推送脚本当中,以后就可以两边同时更新了.
 
 ~~~
 git remote add gitcafe git@gitcafe.com:platinhom/platinhom.git
