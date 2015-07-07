@@ -95,7 +95,7 @@ tags: Database SQL
 	- 别名也可以对列名进行别名化,此时输出结果将按别名来.可以暂命名结果. "SELECT LastName AS Family, FirstName AS Name FROM Persons"
 - `if exists`和`if not exists` 一般用于是否存在数据库/表格时的判断,如"create table if not exists 表名{}".
 - `default value` 一般是在声明表头时用来指明其缺失值,算属性吧.去default属性:"ALTER TABLE 表名 ALTER 列名 DROP DEFAULT"
-- `auto_increment` 自增属性,可以'AUTO_INCREMENT=10'来设定起始值.一个表只有一个该字段,一般是主键. 'ALTER TABLE 表名 AUTO_INCREMENT=100'可以改变自增起始值(但受限于该列最大值)
+- `auto_increment` 自增属性,可以'AUTO\_INCREMENT=10'来设定起始值.一个表只有一个该字段,一般是主键. 'ALTER TABLE 表名 AUTO\_INCREMENT=100'可以改变自增起始值(但受限于该列最大值)
 - `primary key (column_list)`:建立主键.更常用是在create表头时追加属性.'alter table table_name add primary key ([column-list]);
 - `FOREIGN KEY (Id_P) REFERENCES 表1(Id_P)`:建立指向表1的外键,例如'ALTER TABLE 表2 ADD [constraint FK名] FOREIGN KEY (IdP) REFERENCES 表1(IdP)''
 
