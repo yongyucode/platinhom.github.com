@@ -81,7 +81,7 @@ tags: Database SQL
 	- `where 列1 = 值1 and/or 列2 <> 值2` 比较运算符和逻辑运算符匹配
 	- `where 列 like 匹配串;` Like操作符使用字符串匹配来查询
 	- `where 列 in (value1,value2);` 满足其中一个值
-	- `where 列 between val1 and val2` 在两个值之间,mySQL是包括两头(不同SQL语言定义不同,有的是[],有的是[), 有的是().)
+	- `where 列 between val1 and val2` 在两个值之间,MySQL是包括两头(不同SQL语言定义不同)
 	- `where 列 not 上面条件` 不符合条件的
 - `order by colA [asc], colB [desc]`: 按升序/降序排列结果, 先按colA来排,相同的根据colB来排.asc升序默认,desc降序
 - `group by colA`: 根据colA来分组,将相同的作为一组,一般都作为下一个函数或处理时使用.如`SELECT Customer,SUM(OrderPrice) FROM Orders GROUP BY Customer`根据用户名先分组然后将用户名和对应用户分组的总和显示出来
