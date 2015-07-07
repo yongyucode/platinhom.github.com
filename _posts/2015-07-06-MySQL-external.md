@@ -26,6 +26,8 @@ mysql -u root -p test
 
  
 ## 导入数据
+
+source d:\datafilename.sql 
  
 
 导入数据库备份文件：   

@@ -67,18 +67,20 @@ tags: Database SQL
 
 ## 管理
 
-- `GRANT` 授权
-- `REVOKE` 取消授权
+- `GRANT` 授权:
+	- `grant 操作 on 数据库 to 用户 identified by '密码'`,常见`all privileges on *.*`.可改密码,可创建用户
+- `REVOKE` 取消授权:
+	- `revoke 操作 on 数据库 to 用户` 
 - `SUPER`
 - `PROCESS`
 - `RELOAD`
 - `SHUTDOWN`
-- `SHOW DATABASES`
 - `LOCK TABLES`
 - `REFERENCES`
 - `REPLICATION CLIENT`
 - `REPLICATION SLAVE`
 - `CREATE USER`
+- `flush privileges` 刷新权限
 
 # 子句/辅助修饰
 

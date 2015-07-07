@@ -36,7 +36,7 @@ However. 按上述方法安装后服务启动不了,一直报错: 服务无法�
 - 添加用户和授权(使用root): 
 	- 和上类似,`use mysql`调用mysql数据库,然后`insert into user(Host,User,Password) values('localhost','Hom',password('hi'));`.这样就在mysql数据库中插入了用户Hom和密码.`flush privileges`刷新权限. 这种方法直观,就是直接插入用户.但是并没有进行授权..
 	- `grant all privileges on *.* to Hom_2@'localhost' identified by 'pwd';` 该方法直接对用户授权所有操作权,在所有数据库上.localhost可以换成相应ip什么的.pwd部分是密码.该方法一样可以新建用户,还不用use flush等操作.更好用.
-	- grant是授权的意思,一般是`grant 操作 on 数据库 tp 用户 identified by '密码'`这样格式,密码部分可以忽略. 例如`GRANT SELECT,UPDATE,INSERT,DELETE on *.* to Hom@'localhost';`就是对几种操作授权. all privileges就是所有操作都授权.
+	- grant是授权的意思,一般是`grant 操作 on 数据库 to 用户 identified by '密码'`这样格式,密码部分可以忽略. 例如`GRANT SELECT,UPDATE,INSERT,DELETE on *.* to Hom@'localhost';`就是对几种操作授权. all privileges就是所有操作都授权.
 	- revoke是取消授权,和上一样用法, 不能加后面得identified部分.
 	- delete可以删除用户,需要root加载mysql数据表,删除后需要刷新权限,`delete from user where user='yongfu_a' and host='localhost';`.
 	- 更方便的是用phpmyadmin一类图形工具直接管理啦,一个一个权限勾选不用手打输入..
