@@ -85,8 +85,8 @@ tags: Database SQL
 	- `where 列 not 上面条件` 不符合条件的
 - `order by colA [asc], colB [desc]`: 按升序/降序排列结果, 先按colA来排,相同的根据colB来排.asc升序默认,desc降序
 - `group by colA`: 根据colA来分组,将相同的作为一组,一般都作为下一个函数或处理时使用.如`SELECT Customer,SUM(OrderPrice) FROM Orders GROUP BY Customer`根据用户名先分组然后将用户名和对应用户分组的总和显示出来
-- `Limit n`头几行;`limit n,m` 就是n+1到n+m行(即默认n=0). SQL`TOP number/ n PERCENT`: 头几行:不是所有都支持. Oracle使用查询条件 `WHERE ROWNUM <= n` 
-	-`limit m offset n`等价于`limit n,m`offset偏移量就是第一个值,从0开始.为了另一种数据库兼容引入的.
+- `Limit n`头几行;`limit n,m` 就是n+1到n+m行(即默认n=0).
+	- `limit m offset n`等价于`limit n,m`offset偏移量就是第一个值,从0开始.为了另一种数据库兼容引入的.
 	- `where condition group by remark order by regdate limit 6` 先过滤,分组 再排序,显示前6行.LIMIT放最后 这是语法不能颠倒。
 - `having function(col) 操作符 值` 和where类似,进行条件筛选,区别在于having用函数,where直接用列值. 位置跟在group by后.
 - `join`
