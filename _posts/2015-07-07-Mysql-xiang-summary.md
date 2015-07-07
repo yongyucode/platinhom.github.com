@@ -1,6 +1,6 @@
 ---
 layout: post_small
-title: Mysql总结-Xiang
+title: MySQL总结-Xiang
 date: 2015-07-07 07:22:22
 categories: CompSci
 tags: Database SQL
@@ -74,8 +74,8 @@ tags: Database SQL
 
 ### 创建索引：
 
-1. create [unique|fulltext] index 索引名 on 表名(字段名[(长度)] [asc|desc])
-2. alter table 表名 add [unique|fulltext] index 索引名
+1. `create [unique|fulltext] index 索引名 on 表名(字段名[(长度)] [asc|desc])`
+2. `alter table 表名 add [unique|fulltext] index 索引名`
 删除索引：drop index xx on 表名
 
 
