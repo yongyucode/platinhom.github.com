@@ -2,7 +2,7 @@
 layout: post
 title: MySQL学习5-函数部分
 date: 2015-07-05 11:48:41
-categories: MathStat
+categories: CompSci
 tags: Database SQL
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: MySQL学习6-外部数据交流
 date: 2015-07-06 4:24:32
-categories: MathStat
+categories: CompSci
 tags: Database SQL
 ---
 
