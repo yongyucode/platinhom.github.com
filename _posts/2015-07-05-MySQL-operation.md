@@ -31,11 +31,15 @@ tags: Database SQL
 - `CREATE`: 创建数据库,报表等
 	- `create database 数据库名 选项;` 
 	- `create table 表名称{列声明};` 
+	- `create temporary table 表名(列声明);`建立临时表格
+	- `create table table2 select * from table1;`复制并创建新表格. 后面还可以跟where来过滤.
 - `ALTER`: 修改报表信息
 	- `alter table 表名 add 列名 列数据类型 [after 插入位置];` 插入新列. after可以指明在哪列(列头名)之后插入,否则就追加.
-	- `alter table 表名 change 列名称 列新名称 新数据类型;` 更改数据类型.就是把定一个列条目时的东东写一遍.
-	- `alter table 表名 drop 列名称;` 删除一列
+	- `alter table 表名 change 列名 列新名称 新数据类型;` 更改数据类型同时改名
+	- `alter table 表名 modify 列名 新类型;`修改该列的类型,不改列名.  
+	- `alter table 表名 drop 列名;` 删除一列
 	- `alter table 表名 rename 新表名;` 重命名数据库表
+	- `ALTER table 表名 AUTO_INCREMENT=1;` 使得自增从1开始(还是受最高值控制)
 - `INDEX`
 - `DROP`: 删除数据库或报表
 	- `drop database [if exist] 数据库名 `
@@ -78,9 +82,14 @@ tags: Database SQL
 	- `where 列 between val1 and val2` 在两个值之间,mySQL是包括两头(不同SQL语言定义不同,有的是[],有的是[), 有的是().)
 	- `where 列 not 上面条件` 不符合条件的
 - `order by colA [asc], colB [desc]`: 按升序/降序排列结果, 先按colA来排,相同的根据colB来排.asc升序默认,desc降序
-- `group by`
+- `group by colA`: 根据colA来分组,将相同的作为一组,一般都作为下一个函数或处理时使用.如`SELECT Customer,SUM(OrderPrice) FROM Orders GROUP BY Customer`根据用户名先分组然后将用户名和对应用户分组的总和显示出来
 - `Limit n`头几行;`limit n,m` 就是n+1到n+m行(即默认n=0). SQL`TOP number/ n PERCENT`: 头几行:不是所有都支持. Oracle使用查询条件 `WHERE ROWNUM <= n` 
-- `group by remark order by regdate limit 6` 先分组 再排序 再显示前6行.LIMIT放最后 这是语法不能颠倒。
+	- `where condition group by remark order by regdate limit 6` 先过滤,分组 再排序,显示前6行.LIMIT放最后 这是语法不能颠倒。
+- `having function(col) 操作符 值` 和where类似,进行条件筛选,区别在于having用函数,where直接用列值. 位置跟在group by后.
+- `As alias` 别名,
+	- 表别名尤其在多表格时常用,如`select p1.A,p2.A from peopleA as p1,peopleB as p2`.
+	- 别名也可以对列名进行别名化,此时输出结果将按别名来.可以暂命名结果. `SELECT LastName AS Family, FirstName AS Name FROM Persons`
+- `if exists`和`if not exists` 一般用于是否存在数据库/表格时的判断,如`create table if not exists 表名{}`.
 
 
 ---

@@ -99,7 +99,7 @@ RDBMS 中的数据存储在被称为表（tables）的数据库对象中。表�
 2. 删除索引: 语法和建立索引类似,不用指明列而已.   
 	- `drop index idx_id on table1;`   
 	- `alter table table1 drop index idx_id;`
-3. 更新自增索引起始值: `ALTER TABLE tablename AUTO_INCREMENT=1 ` 注意, 要是有比该值大的,会从最大值开始
+3. 更新自增索引起始值: `ALTER TABLE tablename AUTO_INCREMENT=1` 注意, 要是有比该值大的,会从最大值开始
 
 **注释**: 索引名缺省是索引列第一列名称定出来的;
 
