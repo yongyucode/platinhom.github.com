@@ -47,7 +47,7 @@ tags: Database SQL
 4. 存储引擎类型设置：engine=innodb；
 5. default charset=字符集类型
 6. 复制表结构：create table 新表名 like 源表
-7. 复制表：create table 新表名 select * from 源表】
+7. 复制表：create table 新表名 select * from 源表
 
 
 ### 修改表：
