@@ -69,7 +69,7 @@ mysql_close($con);
 
 ~~~sql
 create table users(id int unsigned not null auto_increment primary key, firstname char(40) not null, lastname char(40) not null, institute char(80) not null, email char(40) not null, department char(80) null default '-', title char(40) null default '-');
-insert into users values(null,"Zhixiong", "Zhao", "Michigan State University", "zhaozx@msu.edu", "Math", "Postdoc");
+insert into users values(null,"Firstname", "Lastname", "Michigan State University", "hello@msu.edu", "Math", "Postdoc");
 
 ~~~
 
