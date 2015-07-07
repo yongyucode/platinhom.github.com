@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_small
 title: MySQL学习4-操作命令
 date: 2015-07-05 10:37:58
 categories: MathStat

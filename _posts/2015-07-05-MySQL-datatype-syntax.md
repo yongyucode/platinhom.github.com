@@ -19,7 +19,6 @@ SQL 对大小写不敏感！
 	- 文本: tinytext、text、mediumtext、longtext
 	- 二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob
 
-unsigned | |跟在整型后,从0开始,可以使正整数范围翻倍.
 tinyint(m) |1字节 | 范围(-128~127)
 smallint(m) | 2字节 | 范围(-32768~32767)
 mediumint(m) | 3字节 | 范围(-8388608~8388607)
@@ -48,6 +47,7 @@ SET	| | 与ENUM类似,SET最多只能含64个项,不过可存储一个以上值�
 NULL| | 特殊类型,无,不等价于0或''.
 
 - 数值型括号的m规定最大位数
+- unsigned 跟在整型后,范围从0开始,可以使正整数范围翻倍.(表示非负数的意思)
 - char(n) 固定长度,总将占用n个字节;varchar是存入的实际字符数+1个字节（n<=255）或+2个字节(n>255),所以varchar(4),存入3个字符将占用4个字节。varchar会根据长度调整大小.char比varchar要快.
 - varchar超过255字节会转为text类似,留两个空字节作为结束符标记.所以varchar是tinytext+text的综合.
 - 若定义一个字段为timestamp,这个字段里的时间数据会随其他字段修改的时候自动刷新,所以这个数据类型的字段可以存放这条记录最后被修改的时间。
