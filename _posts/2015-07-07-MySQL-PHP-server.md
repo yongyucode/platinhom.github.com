@@ -3,7 +3,7 @@ layout: post
 title: MySQL-PHP服务器构建用户系统
 date: 2015-07-06 16:40:13
 categories: CompSci
-tags: PHP Database SQL
+tags: PHP Database SQL Website
 ---
 
 由于服务器需要,我们需要一个用户注册系统储存使用用户信息.这里记录一下需要的步骤.
@@ -55,8 +55,8 @@ exit
 - 使用POST形式抓取数据,将数据预处理
 - 使用`$con = mysql_connect("localhost","user","password");`获取一个MySQL对话对象
 - 使用`mysql_select_db("test_db", $con); `来进行数据库选择
-- 将SQL命令写到字符串$sql内,然后`$result=mysql_query($sql);`来进行处理和返回
-- 分析结果,提取关联数组,然后就可以分析了: `$row=mysql_fetch_array($result);`
+- 将SQL命令写到字符串$sql内,然后`$result=mysql_query($sql);`来进行处理和返回.SQL输入数据库的数据部分用相应变量代替即可.
+- 分析结果,提取关联数组,然后就可以分析了,例如本例中利用Email地址来获取信息分析,要是相同信息用户就不输入数据库: `$row=mysql_fetch_array($result);`
 - 关闭MYSQL对话`mysql_close($con);`
 
 ~~~php
@@ -135,13 +135,12 @@ exit
 </table>
 </div>
 </body>
-
-
 ~~~
 
 ## Reference
 
 1. [MySQL学习1-安装登录和用户管理](http://platinhom.github.io/2015/07/04/MySQL-Study-install/)
 2. [phpMyAdmin](https://www.phpmyadmin.net/)
+3. [W3S-PHP mysql](http://www.w3school.com.cn/php/php_mysql_intro.asp)
 
 ---
