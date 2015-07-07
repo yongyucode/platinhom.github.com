@@ -1,5 +1,5 @@
 ---  
-layout: post  
+layout: post_small
 title: Mysql优化基本-Xiang  
 date: 2015-07-07 07:15:38  
 categories: CompSci  
