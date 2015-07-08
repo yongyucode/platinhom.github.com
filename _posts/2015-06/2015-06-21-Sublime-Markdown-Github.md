@@ -3,7 +3,7 @@ layout: post
 title: Sublime-Markdown-Github联合使用
 date: 2015-06-21 05:54:45
 categories: CompSci
-tags: IT Website Github Editor
+tags: IT Website Git Editor
 ---
 
 今天测试了使用Sublime来代替Mou进行Markdown的编写,并接合Github使用.很爽! 
