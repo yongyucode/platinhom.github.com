@@ -13,4 +13,4 @@ Computation related sciences need to remember lots of information. Here I just p
 Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com !    
     
 ### Find Me in:
-- [Weibo](http://weibo.com/234020806/), [CV](/pdf/Hom-CV.pdf)
+- [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
