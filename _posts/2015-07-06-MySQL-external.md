@@ -77,4 +77,9 @@ insert into users values(null,"Firstname", "Lastname", "Michigan State Universit
 
 TODO: 这篇迟点再补全了..
 
+## Reference
+
+1. [w3s-php-mysql](http://www.w3school.com.cn/php/php_ref_mysql.asp)
+2. [w3s-php-mysqli](http://www.w3school.com.cn/php/php_ref_mysqli.asp)
+
 ---
