@@ -164,3 +164,7 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 <script src="/js/prism.js"></script>
 ~~~
 
+### Change file/directory
+Use jcss directory to contain js/css/images
+Use other directory to contain pic/jscss and other files
+New reposit to save pdf and molecular website
