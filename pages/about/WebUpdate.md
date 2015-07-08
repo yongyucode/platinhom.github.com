@@ -28,6 +28,7 @@ layout: page_prism
 - prism.css: The origin prism style.
 - TOC.js: Old prism and box()?  I will use prism.js instead.
 - addTOC.js: To generate TOC for the page. Used in posttoc.html.
+- embed.js: duoshuo js.
 
 - /js/script.js; /js/jquery.fancybox.pack.js; /js/jquery.fancybox.css; /js/jquery.min.js; /css/style.css is used for search box.
 
