@@ -13,24 +13,26 @@
 ### 简要文件介绍
 
 - newblog.sh: 自动创建新博客. 用法`./newblog.sh blogname catagory tag1 tag2..`
-- submit.sh: 提交更新到github. 用法`./submit.sh`
+- gitsubmit.sh: 提交更新到github. 用法`./gitsubmit.sh`.同时提交到gitcafe,后面随便跟个选项如`./gitsubmit.sh a`
 - gitcafe.sh: 提交更新到gitcafe, 用法同上.
+- 404.md: 404 page when error occurs.
 - CNAME: 指明指向域名.
-- .gitignore: 
+- .gitignore: files/directories not to be submitted to github.
 
 ### 简要目录介绍
 
 - _posts: 博文目录.博文格式`YYYY-MM-DD-name.md/html`.可以不管子目录.
-- _layouts: 博客模板格式.博文前面layout会声明模板.
-- _includes: jekyll引入外部内容时使用
+- _layouts: layout used in blog for jekyll. The blog states the layout at start.
+- _includes: jekyll to include other source file.
 - pages: 首页以外各个页面的储存.
-- jcss: 页面所需图片,css,js
+- jcss: image,css,js used in pages.
 	- jcss/images: 一些必要的网页页面需要用到的图片素材
 	- jcss/css: 一些页面用到的css
 	- jcs/js: 一些页面用到的js脚本.
 - other: 其余一些较杂的资料
-	- other/jscss: 一些前人留下的js/css素材.暂没遗弃.
-	- other/pic: 图片
-- server: 用来作为本地服务器使用的目录,方便调用素材和测试动态网页.
+	- other/jscss: js/css files from old template.
+	- other/pic: some picture to show.
+	- other/scripts: some scripts described in blog.
+- server: directory for localhost server, just for testing dynamic pages.
 
 
