@@ -3,6 +3,9 @@
 
 git add -A
 git commit -am "regular"
-git push origin master
-#git remote add gitcafe git@gitcafe.com:platinhom/platinhom.git 
-#git push gitcafe master:gitcafe-pages
+if [ -z $1 ];then
+	git push origin master
+else
+	#git remote add gitcafe git@gitcafe.com:platinhom/platinhom.git 
+	git push gitcafe master:gitcafe-pages
+fi
