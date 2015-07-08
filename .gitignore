@@ -24,3 +24,5 @@ _site
 sea-modules
 .cache
 _old
+*.sublime-project
+*.sublime-workspace
