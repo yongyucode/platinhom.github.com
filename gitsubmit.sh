@@ -1,5 +1,5 @@
 #! /bin/bash
-# file: submit.sh
+# file: gitsubmit.sh
 
 git add -A
 git commit -am "regular"
