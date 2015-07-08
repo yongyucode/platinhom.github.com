@@ -16,7 +16,7 @@
 # ###### FILE: [UPDateFromScript.sh](link)
 
 # You may change the two directories, saving the source code files and blog files.
-sd="/Users/Hom/MyGit/Homepage/platinhom.github.com/scripts"
+sd="/Users/Hom/MyGit/Homepage/platinhom.github.com/other/scripts"
 pd="/Users/Hom/MyGit/Homepage/platinhom.github.com/_posts"
 
 # Check the existence of UPDateFromScript.py
