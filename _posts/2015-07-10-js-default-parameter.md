@@ -44,7 +44,8 @@ function example(name,age){
 	alert('Hi, I'm '+name+'，at age'+age+'.');
 }
 ~~~
-3. `||` expression  
+
+- 3. `||` expression  
 When false give the latter values.  
 
 ~~~javascript
@@ -53,7 +54,7 @@ When false give the latter values.
 	alert('Hi, I'm '+name+'，at age'+age+'.');
 }
 ~~~
-4. Use JQuery  
+- 4. Use JQuery  
 It's suitable when many argument need to set default values. Use the `$.extend` function.  
 
 ~~~javascript
