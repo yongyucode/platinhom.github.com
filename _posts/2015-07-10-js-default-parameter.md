@@ -16,10 +16,8 @@ Today, I add some new functions to control the radios in the webpage. I want to 
 
 It shows that the default argument is not supported in many browser, including Chrome, IE, Opera, Safari. To solve this problem, we can check whether the argument has been defined. If it is undefined, we give it a value in the function.
 
-1. Ternary Operator
-
-To judge undefined value will give false! To use the array `argument` to get the given arguments.
-
+1. Ternary Operator  
+To judge undefined value will give false! To use the array `argument` to get the given arguments.  
 ~~~javascript
 function example(a,b){
 	var a = arguments[0] ? arguments[0] : 1;//set default as 1
@@ -27,16 +25,14 @@ function example(a,b){
 	return a+b;
 }
 ~~~
-or
-
+or  
 ~~~javascript
 function _IsDate(a,f){ 
     var a = (typeof(arguments[0])=="undefined")?null:arguments[0]; 
     var f = (typeof(arguments[1])=="undefined")?true:arguments[1];
 } 
 ~~~
-2. If statement
-
+2. If statement  
 ~~~javascript
 function example(name,age){
 	if(!name){name='James';}
@@ -44,20 +40,16 @@ function example(name,age){
 	alert('Hi, I'm '+name+'，at age'+age+'.');
 }
 ~~~
-3. `||` expression
-
-When false give the latter values.
-
+3. `||` expression  
+When false give the latter values.  
 ~~~javascript
 	name=name || 'James';
 	age=age || 30;
 	alert('Hi, I'm '+name+'，at age'+age+'.');
 }
 ~~~
-4. Use JQuery
-
-It's suitable when many argument need to set default values. Use the `$.extend` function.
-
+4. Use JQuery  
+It's suitable when many argument need to set default values. Use the `$.extend` function.  
 ~~~javascript
 function example(setting){
 	var defaultSetting={
