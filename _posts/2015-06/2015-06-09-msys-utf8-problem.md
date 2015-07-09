@@ -3,7 +3,7 @@ layout: post
 title: MSYS输出中文到文件后无法提交到Github:UTF-8 error
 date: 2015-06-09 09:29:52
 categories: CompSci
-tags: Shell IT Bash Github
+tags: Shell IT Bash Git
 ---
 
 # UTF-8 encoding error when using MSYS for Github

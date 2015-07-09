@@ -3,7 +3,7 @@ layout: post
 title: 更新博客代码块脚本
 date: 2015-06-25 16:29:09
 categories: CompSci
-tags: Bash Github Python
+tags: Bash Git Python
 ---
 
 

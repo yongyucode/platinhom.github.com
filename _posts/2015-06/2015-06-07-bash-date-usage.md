@@ -3,7 +3,7 @@ layout: post
 title: Shell中date命令用法
 date: 2015-06-07 10:32:12
 categories: CompSci
-tags: Shell Bash Github
+tags: Shell Bash Git
 ---
 
 由于想自动化创建markdown模板用于写blog, 需要调用date命令来完成, 在此复习一下吧.
