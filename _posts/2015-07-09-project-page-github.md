@@ -28,4 +28,8 @@ It's very to create the web page for your new repository under your mainpage. He
 - CSS/JS files don't need to be copied. Because the page can use them as its mainpage.
 - Now you can visit `http://username.github.io/projectname` to visit the project page!
 
+## Reference
+1. [Creating Project Pages manually](https://help.github.com/articles/creating-project-pages-manually/)
+2. [GitCafe-Project Page](https://help.gitcafe.com/manuals/help/pages-services#为项目创建-pages-服务)
+
 ---
