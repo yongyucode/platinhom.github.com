@@ -27,6 +27,7 @@ function example(a,b){
 }
 ~~~
 or  
+^
 ~~~javascript
 function _IsDate(a,f){ 
     var a = (typeof(arguments[0])=="undefined")?null:arguments[0]; 
