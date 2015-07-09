@@ -26,7 +26,7 @@ function example(a,b){
 	return a+b;
 }
 ~~~
-    or  
+   or  
 
 ~~~javascript
 function _IsDate(a,f){ 
