@@ -36,7 +36,7 @@ tags: Website HTML
 
 ## 输入框 Text 对象
 [Text](http://www.w3school.com.cn/jsref/dom_obj_text.asp)主代码: `<input type="text"/>`   
-一般的文件输入框. 很基础. 
+一般的文件输入框. 很基础. 注意一旦`disabled=true`, POST后就没有值,对于别的空间也是.
 
 `<form>Email: <input type="text" name="email" /></form>`
 
@@ -52,9 +52,9 @@ tags: Website HTML
 - cols: 宽度.
 - height/width: 也可以控制大小.
 - readonly: 只读的.
-- disabled: 不可用
+- disabled: 不可用,true/false.
 - name: 名称,用于表单调用.
-- required: 必填的.HTML5.
+- required: 必须填的.HTML5.
 - maxlength: 最大字符数
 - form: 所属的一个或多个表单.
 

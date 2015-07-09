@@ -54,7 +54,7 @@ JS的内容会在页面加载时加载. 事件发生时动作可以利用函数�
 - 变量 `var v1=1,v2="age";` var万能的动态类型. 全局变量(在函数外声明的)生存期是页面; 局部变量是函数结束. 函数内使用 `vname=value` 不声明就赋值的会被作为全局变量.
 - 数组,`var=new Array();var[0]=1;var[1]=2;`也可以`=new Array(1,2)`或`=[1,2]`.数组下标`0`开始.
 - 对象(`Object`), `var person={name:"Bill", id:5566};`,调用属性`person.name;person["name"];`,方法类似. 对象当然还有方法了. Java的想法: 一切皆对象. 利用函数构造`function person(name,age){this.name=name;this.age=age;}`(对象构造器,this是自身);`this.changeName=changeName;function changeName(name){this.lastname=name;}` 对象内创建方法.
-- 函数 `function fname([var1,var2]){..}`, 可以`return var1;`返回值.
+- 函数 `function fname([var1,var2]){..}`, 可以`return var1;`返回值.JS居然不支持参数默认值方法..
 - 运算: 和C类似,支持`%`求余,`++`累加,`+=`自运算.
 - 字符串: 连接也是用加号. 数字和字符串相加,数字会转为字符串再处理.
 - 比较: `==`等于(5=="5"是对),`===`全等于(值和类型),`!=`不等于, `>,>=`, `&&`与,`||`或,`!`非. 
