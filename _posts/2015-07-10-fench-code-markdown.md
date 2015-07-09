@@ -59,4 +59,14 @@ echo I'm coding..
 ~~~~
 ~~~~~
 
+另外, kramdown还支持在下面用`{: .language-markdown}`这样去标识代码种类用于着色.
+
+~~~~
+~~~
+## I'm title
+~~~
+{: .language-markdown}
+~~~~
+{: .language-markdown}
+
 ------
