@@ -33,6 +33,7 @@ function _IsDate(a,f){
     var f = (typeof(arguments[1])=="undefined")?true:arguments[1];
 } 
 ~~~
+^
 2. If statement  
 ^
 ~~~javascript
