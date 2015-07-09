@@ -225,19 +225,13 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 
 4. #### [git remote](http://git-scm.com/docs/git-remote )  管理远程主机名.(其实信息储存在本地并不与远程同步)
 
-
-
  - `git remote`列出所有主机名, 需要在git相应项目内才能用. 默认clone的主机是origin
-
  - `git remote -v` 参看主机网址.
-
  - `git remote show <主机名>` 查看主机详细信息,包括master与branch等.
-
  - `git remote add <主机名> <网址>`    添加远程主机, 尤其是在本地新建项目**没有克隆时**需要,新建时主机名一般为origin!
-
  - `git remote rm <主机名>` 删除远程主机
-
  - `git remote rename <原主机名> <新主机名>`   主机改名
+ - `git remote prune 主机名` 可以将本地显示的不存在的远程主机删掉
 
 
 
@@ -258,16 +252,14 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 4. #### [git pull](http://git-scm.com/docs/git-pull )  取回主机某分支更新并与本地指定分支合并.相当于fetch+merge
 
  - `git pull <远程主机名> <远程分支名>:<本地分支名>` 取回分支内容并与本地分支合并. 
-
  - `git pull <远程主机名> <远程分支名>` 取回分支内容并与**当前分支**合并. 
 
 5. #### [git push](http://git-scm.com/docs/git-push )  推送本地更新到远程主机
 
  - `git push <远程主机名> <本地分支名>:<远程分支名>` 将本地分支推送到远程分支.gitconfig里注册默认远程主机后可以省掉后面的.
-
  - `git push <远程主机名> <本地分支名>` 将本地分支推送到远程同名分支.
-
  - `git push <远程主机名> ::<远程分支名>`  将空白推送到远程分支, 即删除远程分支. 慎用.
+ - `git push 远程主机名 --delete 远程分支名`: 删除远程分支,对于首选分支会报错
 
 
 
