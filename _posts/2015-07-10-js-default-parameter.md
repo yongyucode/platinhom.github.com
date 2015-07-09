@@ -34,6 +34,7 @@ function _IsDate(a,f){
 } 
 ~~~
 2. If statement  
+^
 ~~~javascript
 function example(name,age){
 	if(!name){name='James';}
