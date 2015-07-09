@@ -18,6 +18,7 @@ It shows that the default argument is not supported in many browser, including C
 
 1. Ternary Operator  
 To judge undefined value will give false! To use the array `argument` to get the given arguments.  
+^
 ~~~javascript
 function example(a,b){
 	var a = arguments[0] ? arguments[0] : 1;//set default as 1
