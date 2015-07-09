@@ -16,6 +16,7 @@ Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` 
 这里是行内代码`print "hello world"`.  
 也可以使用HTML代码`<code></code>`
 这也是行内代码块<code>print "```...```"</code>.  
+这也是行内代码块<code>print "`...`"</code>.  
 
 ~~~
 这里是行内代码`print "hello world"`.
