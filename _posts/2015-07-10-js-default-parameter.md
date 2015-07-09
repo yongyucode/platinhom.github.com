@@ -27,16 +27,16 @@ function example(a,b){
 }
 ~~~
 or  
-^
+
 ~~~javascript
 function _IsDate(a,f){ 
     var a = (typeof(arguments[0])=="undefined")?null:arguments[0]; 
     var f = (typeof(arguments[1])=="undefined")?true:arguments[1];
 } 
 ~~~
-^
-2. If statement  
-^
+
+2. If statement
+
 ~~~javascript
 function example(name,age){
 	if(!name){name='James';}
@@ -46,6 +46,7 @@ function example(name,age){
 ~~~
 3. `||` expression  
 When false give the latter values.  
+
 ~~~javascript
 	name=name || 'James';
 	age=age || 30;
@@ -54,6 +55,7 @@ When false give the latter values.
 ~~~
 4. Use JQuery  
 It's suitable when many argument need to set default values. Use the `$.extend` function.  
+
 ~~~javascript
 function example(setting){
 	var defaultSetting={
