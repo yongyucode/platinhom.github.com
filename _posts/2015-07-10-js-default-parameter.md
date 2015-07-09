@@ -16,7 +16,7 @@ Today, I add some new functions to control the radios in the webpage. I want to 
 
 It shows that the default argument is not supported in many browser, including Chrome, IE, Opera, Safari. To solve this problem, we can check whether the argument has been defined. If it is undefined, we give it a value in the function.
 
-- 1\. Ternary Operator `? :` 
+- 1\. Ternary Operator `? :`  
 To judge undefined value will give false! To use the array `argument` to get the given arguments.
 
 ~~~javascript
@@ -45,7 +45,7 @@ function example(name,age){
 }
 ~~~
 
-- 3\. `||` expression  
+- 3\. `||` expression   
 When false give the latter values.  
 
 ~~~javascript
