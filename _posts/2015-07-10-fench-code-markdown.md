@@ -59,7 +59,7 @@ echo I'm coding..
 ~~~~
 ~~~~~
 
-另外, kramdown还支持在下面用`{: .language-markdown}`这样去标识代码种类用于着色.下面这段话github和很多markdown解析器会解析不了.
+另外, kramdown还支持在下面用`{: .language-markdown}`这样去标识代码种类用于着色.下面这段话github和很多markdown解析器会解析不了.Github默认会解析为一个title和一段引用..
 
 ~~~~
 ~~~
@@ -70,5 +70,6 @@ echo I'm coding..
 {: .language-markdown}
 ~~~~
 {: .language-markdown}
+
 
 ------
