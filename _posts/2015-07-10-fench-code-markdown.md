@@ -32,8 +32,19 @@ Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` 
 	Here are some code with tab at start.  
 
     Here are some code with 4 blank.
+
+~~~
+~~~
+
+~~~~markdown
+~~~
+~~~
+	Here are some code with tab at start.  
+
+    Here are some code with 4 blank.
     
 ~~~
 ~~~
+~~~~
 
 ------
