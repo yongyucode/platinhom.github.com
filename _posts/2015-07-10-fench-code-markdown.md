@@ -52,14 +52,14 @@ Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` 
 kramdown支持超过三个的`~`优先于三个的,因此可以在语句块内防止误解.一下是kramdown效果(5,4,3个`~`).而github虽然支持`~`,但是会分成三个语句块..kramdown不支持\`\`\`来做fenced代码块.
 
 ~~~~~bash
-~~~~
+~~~~bash
 ~~~
 echo I'm coding..
 ~~~
 ~~~~
 ~~~~~
 
-另外, kramdown还支持在下面用`{: .language-markdown}`这样去标识代码种类用于着色.下面这段话github和很多markdown解析器会解析不了.Github默认会解析为一个title和一段引用..
+另外, kramdown还支持在下面用`{: .language-markdown}`这样去标识代码种类用于着色.下面这段话github和很多markdown解析器会解析不了.Github默认会解析为一个title和一段引用..引用中还带一段代码 ╮(╯▽╰)╭.
 
 ~~~~
 ~~~
