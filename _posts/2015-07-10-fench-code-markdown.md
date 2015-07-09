@@ -71,5 +71,10 @@ echo I'm coding..
 ~~~~
 {: .language-markdown}
 
+## Reference
+
+1. [这篇博文的Github显示](https://github.com/platinhom/platinhom.github.com/blob/master/_posts/2015-07-10-fench-code-markdown.md)
+2. [这篇博文的Kramdown博文显示](http://platinhom.github.io/2015/07/10/fench-code-markdown/)
+3. [官方kramdown语法](http://kramdown.gettalong.org/syntax.html#code-blocks)
 
 ------
