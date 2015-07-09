@@ -24,6 +24,10 @@ Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` 
 这是行内代码块中的代码块<code>print "`...`"</code>. 
 ~~~
 
+- 2\. 标准代码块  
+标准代码块表示使用空格/tab来开头的块状代码块,而不是```` ``` ~~~ ````.
 
+	Here are some code with tab at start.
+    Here are some code with 4 blank.
 
 ------
