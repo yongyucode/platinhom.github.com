@@ -263,8 +263,8 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 
 
 
-
-
+错误master:
+在.git/config里查看master指向另一个远程主机的master.此时checkout -b mmm origin/master 创建新分支,切换过去,然后 -D master删除旧的master分支,再 -b master origin/master, -D mmm 就好了.
 
 
 
