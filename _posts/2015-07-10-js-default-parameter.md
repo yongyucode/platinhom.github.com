@@ -17,9 +17,9 @@ Today, I add some new functions to control the radios in the webpage. I want to 
 It shows that the default argument is not supported in many browser, including Chrome, IE, Opera, Safari. To solve this problem, we can check whether the argument has been defined. If it is undefined, we give it a value in the function.
 
 1. Ternary Operator  
-To judge undefined value will give false! To use the array `argument` to get the given arguments.  
-
-^~~~javascript
+To judge undefined value will give false! To use the array `argument` to get the given arguments.
+^
+~~~javascript
 function example(a,b){
 	var a = arguments[0] ? arguments[0] : 1;//set default as 1
 	var b = arguments[1] ? arguments[1] : 2;//set default as 2
