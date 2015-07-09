@@ -6,7 +6,7 @@ categories: CompSci
 tags: Editor Git
 ---
 
-Fenced code block in markdown
+Code block in markdown
 -----
 
 Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` ````嘛...其实我也很希望就那么简单...
@@ -26,6 +26,11 @@ Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` 
 
 - 2\. 标准代码块  
 标准代码块表示使用空格/tab来开头的块状代码块,而不是```` ``` ~~~ ````.
+
+    Here comes some code
+
+    This text belongs to the same code block.
+
 
 ~~~
 ~~~
