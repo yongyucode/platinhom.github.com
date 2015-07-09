@@ -14,11 +14,13 @@ Markdown应该不陌生了,代码块不就是简单的`~~~ ~~~`或```` ```  ``` 
 - 1\. 行内代码块`` `..` ``  
 这个应该比较简单就是很简单的在行内用两个斜点.例如:  
 这里是行内代码`print "hello world"`.  
+这也是行内代码块<code>print "hello world"</code>.  
 
 ~~~
 这里是行内代码`print "hello world"`.
+这也是行内代码块<code>print "hello world"</code>.
 ~~~
 
-这也是行内代码块<code>print "hello world"</code>.
+
 
 ------
