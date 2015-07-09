@@ -37,13 +37,11 @@ function _IsDate(a,f){
 
 2. `If` statement
 
-~~~javascript
     function example(name,age){
     	if(!name){name='James';}
     	if(!age){age=30;}
     	alert('Hi, I'm '+name+'，at age'+age+'.');
     }
-~~~
 
 3. `||` expression  
 When false give the latter values.  
