@@ -47,7 +47,7 @@ echo "tags: $tag" >>_posts/"${today}-${title}.md"
 echo "---" >>_posts/"${today}-${title}.md"
 echo "" >>_posts/"${today}-${title}.md"
 echo "" >>_posts/"${today}-${title}.md"
-echo "---" >>_posts/"${today}-${title}.md"
+echo "------" >>_posts/"${today}-${title}.md"
 
 # Open the new blog by sublime.
 # You can modify the program as you like.
