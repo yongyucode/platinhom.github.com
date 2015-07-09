@@ -16,7 +16,7 @@ Today, I add some new functions to control the radios in the webpage. I want to 
 
 It shows that the default argument is not supported in many browser, including Chrome, IE, Opera, Safari. To solve this problem, we can check whether the argument has been defined. If it is undefined, we give it a value in the function.
 
-- 1. Ternary Operator `? :` 
+- 1\. Ternary Operator `? :` 
 To judge undefined value will give false! To use the array `argument` to get the given arguments.
 
 ~~~javascript
@@ -35,7 +35,7 @@ function _IsDate(a,f){
 } 
 ~~~
 
-- 2. `If` statement
+- 2\. `If` statement
 
 ~~~javascript
 function example(name,age){
@@ -45,7 +45,7 @@ function example(name,age){
 }
 ~~~
 
-- 3. `||` expression  
+- 3\. `||` expression  
 When false give the latter values.  
 
 ~~~javascript
@@ -54,7 +54,7 @@ When false give the latter values.
 	alert('Hi, I'm '+name+'，at age'+age+'.');
 }
 ~~~
-- 4. Use JQuery  
+- 4\. Use JQuery  
 It's suitable when many argument need to set default values. Use the `$.extend` function.  
 
 ~~~javascript
