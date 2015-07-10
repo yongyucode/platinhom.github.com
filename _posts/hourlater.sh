@@ -44,7 +44,7 @@ fi
 
  
 touch ./"${today}-${title}.md"
-echo "---" >>_posts/"${today}-${title}.md"
+echo "---" >>./"${today}-${title}.md"
 echo "layout: post" >>./"${today}-${title}.md"
 echo "title: $title" >>./"${today}-${title}.md"
 echo "date: $nowGMT" >>./"${today}-${title}.md"
