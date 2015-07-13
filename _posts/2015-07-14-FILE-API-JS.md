@@ -12,15 +12,15 @@ tags: Html JS
 
 ## About File API
 
-HTML5为我们提供了一种与本地文件系统交互的标准方式：File Api。该规范主要定义了以下数据结构：
+HTML5为我们提供了一种与本地文件系统交互的标准方式：**File API**。该规范主要定义了以下数据结构：
 
-- File: 文件对象,包含有文件名,文件大小,类型等.
+- File: 文件对象,包含有文件名,文件大小,mimetype类型和对文件句柄引用等.
 - FileList: 一个文件对象的数组.
 - Blob: 操作分割文件到字节
 
 #### To check your browser whether support HTML5 File-API
 
-~~~js
+~~~javascript
 // Check for the various File API support.
 function isSupportFileApi() {
     if(window.File && window.FileList && window.FileReader && window.Blob) {
@@ -37,7 +37,10 @@ function isSupportFileApi() {
 
 ### Use Form: input type=file
 
-~~~js
+- 可以使用新multiple属性来进行多选, 此时files需要用数组.
+- output标签也是新对象,用来定义不同类型的输出,例如脚本的输出.
+
+~~~javascript
 <input type="file" id="files" name="files[]" multiple />
 <output id="list"></output>
 
@@ -69,12 +72,12 @@ function isSupportFileApi() {
 
 ### Use drag method
 
-~~~js
+~~~javascript
 <div id="drop_zone">Drop files here</div>
-<output id="list"></output>
+<output id="list2"></output>
 
 <script>
-  function handleFileSelect(evt) {
+  function handleFileSelect2(evt) {
     evt.stopPropagation();
     evt.preventDefault();
 
@@ -88,7 +91,7 @@ function isSupportFileApi() {
                   f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
                   '</li>');
     }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    document.getElementById('list2').innerHTML = '<ul>' + output.join('') + '</ul>';
   }
 
   function handleDragOver(evt) {
@@ -100,15 +103,15 @@ function isSupportFileApi() {
   // Setup the dnd listeners.
   var dropZone = document.getElementById('drop_zone');
   dropZone.addEventListener('dragover', handleDragOver, false);
-  dropZone.addEventListener('drop', handleFileSelect, false);
+  dropZone.addEventListener('drop', handleFileSelect2, false);
 </script>
 ~~~
 
 <div id="drop_zone">Drop files here</div>
 
-<output id="list"></output>
+<output id="list2"></output>
 
-<script>  function handleFileSelect(evt) {evt.stopPropagation(); evt.preventDefault();var files = evt.dataTransfer.files;var output = [];for (var i = 0, f; f = files[i]; i++) {output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ',f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',  '</li>');}document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';  }  function handleDragOver(evt) { evt.stopPropagation(); evt.preventDefault(); evt.dataTransfer.dropEffect = 'copy'; } var dropZone = document.getElementById('drop_zone');  dropZone.addEventListener('dragover', handleDragOver, false);  dropZone.addEventListener('drop', handleFileSelect, false);</script>
+<script>  function handleFileSelect2(evt) {evt.stopPropagation(); evt.preventDefault();var files = evt.dataTransfer.files;var output = [];for (var i = 0, f; f = files[i]; i++) {output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ',f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',  '</li>');}document.getElementById('list2').innerHTML = '<ul>' + output.join('') + '</ul>';  }  function handleDragOver(evt) { evt.stopPropagation(); evt.preventDefault(); evt.dataTransfer.dropEffect = 'copy'; } var dropZone = document.getElementById('drop_zone');  dropZone.addEventListener('dragover', handleDragOver, false);  dropZone.addEventListener('drop', handleFileSelect2, false);</script>
 
 
 ## Reference
