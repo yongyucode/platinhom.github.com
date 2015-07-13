@@ -107,7 +107,7 @@ function isSupportFileApi() {
 </script>
 ~~~
 
-<div id="drop_zone">Drop files here</div>
+<div id="drop_zone" style="width:10em;height:2em;margin:auto;color:red;background:yellow;text-align:center;padding:auto;font-size:20pt">Drop files here</div>
 
 <output id="list2"></output>
 
