@@ -72,6 +72,8 @@ function isSupportFileApi() {
 
 ### Use drag method
 
+拖拽通过一个叫`dataTransfer`的接口来获得拖拽的文件列表，更多关于[dataTransfer](http://www.w3.org/TR/2011/WD-html5-20110113/dnd.html#the-datatransfer-interface)。拖拽同样支持多选，用户可以拖拽多个文件。
+
 ~~~javascript
 <div id="drop_zone">Drop files here</div>
 <output id="list2"></output>
@@ -219,6 +221,8 @@ document.getElementById('files4').addEventListener('change', handleFileTextSelec
 
 ### 分割文件
 
+该示例使用 onloadend 并检查 evt.target.readyState，而不是使用 onload 事件。
+
 ~~~javascript
 <style>
   #byte_content {
@@ -297,6 +301,8 @@ document.getElementById('files4').addEventListener('change', handleFileTextSelec
 <script>  function readBlob(opt_startByte, opt_stopByte) {    var files = document.getElementById('files5').files; if (!files.length) { alert('Please select a file!'); return;    }    var file = files[0];    var start = parseInt(opt_startByte) || 0;    var stop = parseInt(opt_stopByte) || file.size - 1;    var reader = new FileReader();    reader.onloadend = function(evt) { if (evt.target.readyState == FileReader.DONE) { document.getElementById('byte_content').textContent = evt.target.result; document.getElementById('byte_range').textContent = ['Read bytes: ', start + 1, ' - ', stop + 1, ' of ', file.size, ' byte file'].join(''); } }; var blob = file.slice(start, stop + 1);if (file.webkitSlice) {var blob = file.webkitSlice(start, stop + 1); } else if (file.mozSlice) { var blob = file.mozSlice(start, stop + 1); } reader.readAsBinaryString(blob);  }  document.querySelector('.readBytesButtons').addEventListener('click', function(evt) { if (evt.target.tagName.toLowerCase() == 'button') { var startByte = evt.target.getAttribute('data-startbyte'); var endByte = evt.target.getAttribute('data-endbyte'); readBlob(startByte, endByte); }  }, false);</script>
 
 ### 监控读取进度
+
+在使用异步事件处理时还能顺便获得一项优势，那就是能够监控文件的读取进度；这对于读取大文件、查找错误和预测读取完成时间非常实用。`onloadstart` 和 `onprogress` 事件可用于监控读取进度。以下示例演示了如何通过显示进度条来监控读取状态。要查看进度指示器的实际效果，请尝试读取大文件或远程驱动器中的文件。
 
 ~~~javascript
 <style>
@@ -424,5 +430,6 @@ document.getElementById('files6').addEventListener('change', handleFileSelect, f
 
 1. [Reading files in JavaScript using the File APIs](http://www.html5rocks.com/en/tutorials/file/dndfiles/)
 2. [W3-File API](http://www.w3.org/TR/file-upload/)
+3. [HTML5读取本地文件](http://hushicai.com/2014/03/29/html5-du-qu-ben-di-wen-jian.html)
 
 ------
