@@ -96,6 +96,7 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - `str.indexOf(str2[,start])` 从start位开始(默认0)搜索str2,找到后返回首个匹配字母的索引,没找到返回-1.
 - `str.replace(regexp/substr,replacement)` 使用正则/子串搜索并替换.
 - `str.split(separator,max)` 必须指明分隔符. max是最大分的次数,默认无穷.
+- `escape(str)` 将字符串转为网址那种编码.被废弃,应该用encodeURI()和encodeURIComponent()来代替.
 
 ## JS常用方法
 
