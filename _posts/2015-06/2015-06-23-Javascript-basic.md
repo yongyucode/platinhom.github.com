@@ -79,7 +79,6 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - `para.appendChild(node);div1.appendChild(para)` 向元素添加内容,再把元素放到父元素里
 - `child.parentNode.removeChild(child);` 删除子元素.这里通过调用父元素属性再实现移除.
 
-
 - `<h1 onclick="changetext(this)">请点击该文本</h1>` 对事件作出响应,这里调用函数完成,函数中参数是id,这里this就是该元素.
 - `<body onload="checkCookies()">` onload事件就是页面加载时做的东东,`onunload`是离开页面做的.经常用于cookie处理,检查浏览器等.
 - `<input type="text" id="fname" onchange="upperCase()">` onchange事件是离开输入框/按下确定时的[事件](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_event_onchange).
@@ -92,11 +91,21 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 - `str.length` 返回长度
 - `str.substring(x,y)` 返回子串,和python的语法类似,0开始[x,y)返回x+1到y的子串.
+- `str.substr(start,len)` 返回子串,从start开始长度为len. 注意序号0开始,支持-1负数表示从后倒数起.len省略则返回到结尾.
 - `str.toUpperCase()/toLowerCase` 全部大/小写化
 - `str.indexOf(str2[,start])` 从start位开始(默认0)搜索str2,找到后返回首个匹配字母的索引,没找到返回-1.
 - `str.replace(regexp/substr,replacement)` 使用正则/子串搜索并替换.
 - `str.split(separator,max)` 必须指明分隔符. max是最大分的次数,默认无穷.
 - `escape(str)` 将字符串转为网址那种编码.被废弃,应该用encodeURI()和encodeURIComponent()来代替.
+
+## 数组
+
+- `ary.pop()` 删除并返回最后一个元素
+- `ary.shift()` 删除并返回第一个元素
+- `ary.push(ele....)` 追加元素,可以数个,返回新长度
+- `ary.unshift(ele....)` 向数组开头追加元素,可以数个,返回新长度
+- `ary.splice(index,N,ele....)` 从数组中index开始(可以负数)删除N个元素,N=0则不删除只增加.ele是要添加的元素. 改变原来数组,返回删除的项目.`ary.splice(0,ary.length);`清空数组,和`ary=[]`;一样
+
 
 ## JS常用方法
 

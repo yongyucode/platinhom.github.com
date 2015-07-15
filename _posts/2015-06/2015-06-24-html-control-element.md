@@ -133,6 +133,20 @@ tags: Website HTML
 ## 选择器 Select对象
 [Select](http://www.w3school.com.cn/jsref/dom_obj_select.asp)主代码: `<select><option value="v1">option1</option></select>`
 
+常用属性事件: 
+
+- add(option,before): 增加option对象,before某元素前.默认before是null,即追加最后.一般需要先`document.createElement('option')`.
+- options[]: 所有的选项,使用options.length=0 可以清空,如果length<当前数目会删除最后的.
+
+[Option](http://www.w3school.com.cn/jsref/dom_obj_option.asp) 选项对象.
+
+常用属性事件: 
+
+- text: 显示内容
+- value: 具体值
+- index: 返回索引值(下拉时位置)
+- selected: 是否被选中,可以用于默认值.
+
 ~~~ html
 <form>
 <select id="sel">
