@@ -14,6 +14,7 @@ tags: CompBiol JS
 
 - 在监听事件时引入document.write会莫名其妙挂掉.
 - 监听事件执行顺序在onchange事件之后
+- 监听事件一句应该在HTML中调用!
 
 ~~~javascript
 //File API analysis for pKa
