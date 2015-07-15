@@ -6,7 +6,9 @@ categories: CompBiol
 tags: CompBiol
 ---
 
-资料源于Jocobson网站(Ref1).
+资料主要源于Jocobson网站(Ref1),作了修改添加.  
+The main source from Jocobson's lab. I added some more informations here.
+
 
 ## Standard amino acids:
  
@@ -23,8 +25,12 @@ Note that specific protonation states for residues with titratable side chains c
 - HIP:  positively charge HIS (protonated at both positions)
 - TYM:  negatively charged TYR
 - CYM:  negatively charged CYS
- 
-The disulfide-bonded version of CYS is CYX.
+- CYX:	SS-bonded CYS
+- NALA or ALAB: N-terminal residue
+- CALA or ALAE: C-terminal residue
+- DA5: 5-terminal DA
+- DA3: 3-terminal DA
+
  
 By default, the terminal residues are charged (positively charged amino group on N-terminus; negatively charged carboxylate on C-terminus).  These residues have an appended letter to distinguish them, "B" for the N-terminus ("beginning"), and "E" for C-terminus ("ending"), e.g., ALAB and ALAE for terminal alanines.
  
@@ -77,7 +83,7 @@ Note that the common capping groups ACE, NH2, and NMA create an additional pepti
  
 ## Common ligands:
  
-Many ligands are now supported, in fact most ligands found in the PDB have been atomtyped.  Some common ones include HEM (heme) and COA (acetyl CoA).  There are about 3000 others.  Naming conventions are intended to match those approved by the PDB, i.e., 3-letter codes, which can be found in databases such as HIC-UP.
+Many ligands are now supported, in fact most ligands found in the PDB have been atomtyped.  Some common ones include HEM (heme) and COA (acetyl CoA).  There are about 3000 others.  Naming conventions are intended to match those approved by the PDB, i.e., 3-letter codes, which can be found in databases such as HIC-UP. H2O/WAT for water.
 
 ## Reference:
 
