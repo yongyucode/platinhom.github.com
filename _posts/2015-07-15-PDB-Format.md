@@ -21,7 +21,9 @@ tags: CompBiol
 - 61 - 66        Real(6.2)       Temperature factor (Default = 0.0).                   
 - 73 - 76        LString(4)      Segment identifier, left-justified.   
 - 77 - 78        LString(2)      Element symbol, right-justified.      
-- 79 - 80        LString(2)      Charge on the atom. 
+- 79 - 80        LπString(2)      Charge on the atom. 
+
+PQR file use 55 - 62 column for charges and 63 - 69 column for radii.
 
 Example
 
