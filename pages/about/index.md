@@ -38,7 +38,7 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 
 <style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
-## Paper I published/joined
+## Papers published/joined
 
 ### First author
 1. Probing the Key Interactions between Human Atg5 and Atg16 Proteins: A Prospective Application of
@@ -58,6 +58,9 @@ Molecular Modeling. ChemMedChem 2013, 8, 1270-1275. (Back Cover) [Connect]()
 12. Self-Resistance to an Antitumor Antibiotic: A DNA Glycosylase Triggers the Base-Excision Repair System in Yatakemycin Biosynthesis. Angew. Chem. Int. Ed. 2012, 51, 10532-10536. [Connect]()
 13. Analysis of Low Molecular Weight Compounds by MALDI-FTICR-MS. J. Chromatogr. B 2011, 879, 1166–1179. [Connect]()
 14. Studies of the Interesting Gas-Phase Rearrangement Reactions of 2-Pyrimidinyloxy-N-arylbenzylurea Promoted by Urea-Carbaminidic Acid Tautomerism by ESI-MS/MS and Theoretical Computation. Chin. J. Chem. 2010, 28, 1765-1772. [Connect]()
+
+### May publish
+
 
 ## Places I have been to
 - Foshan (My lovely hometown)
