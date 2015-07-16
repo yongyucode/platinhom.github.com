@@ -31,6 +31,7 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 - Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)
 - IDE: Sublime, Eclipse, VS, Notepad++
 - Writting: Markdown, Latex, Endnote
+- Other: Git, 
 
 ### Chemist
 - Organic Mass Spectrometry focusing on ESI-MS/MS (2yr)
