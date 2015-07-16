@@ -3,7 +3,7 @@ title: 关于我
 layout: page
 ---
 
-> Act as you like.
+> Act as your thought.
 
 I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety  and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design. 
 
@@ -13,6 +13,8 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 
 ## Some Tools I developed:
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/)
+- AutoT&T2 and PG-AutoT&T (AutoT&T improvement and new pharmacophore guided optimization)
+- AutoPhD (Pharmacophore percerption)
  
 ## Skills
 
@@ -22,8 +24,8 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 - QM and QM/MM with Gaussian for optimization/TS/IRC.
 
 ### Programmer
-- Daily tasks and System Administration: Bash(4yr), Python(3yr)
-- Program develop: C++(2yr)
+- Daily tasks and system administration: Bash(4yr), Python(3yr)
+- Program development: C++(2yr)
 - Numerical Computation: Fortran(1yr), Matlab(1yr) 
 - Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)
 
