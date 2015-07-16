@@ -71,7 +71,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Connect]
 - Nanjing (My undergraduated student life)
 - Shanghai (Best place in China, graduated student life)
 - East Lansing (Quite town for my postdoc study)
-- Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi
+- Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao
 - Detroit, Chicago, Toronto, New York
 
 ## Find Me in:
