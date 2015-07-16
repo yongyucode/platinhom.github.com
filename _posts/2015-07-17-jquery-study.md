@@ -11,7 +11,7 @@ Jquery是JS的一个函数库,更为方便地进行HTML元素选取, HTML元素,
 ## 安装
 1. 直接使用google CDN上提供的库([Link](https://developers.google.com/speed/libraries/#jquery))  
 `*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>`  
-微软也提供: `<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>`
+微软也提供: `<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>`  
 可以省略掉1.11.3后面的,例如1.11表示最新的1.11.x  
 在线版的优势是用户之前可能加载过,所以打开网页就不用再加载了.
 2. 直接下载下来放到服务器上  
@@ -20,7 +20,7 @@ Jquery是JS的一个函数库,更为方便地进行HTML元素选取, HTML元素,
 ## 基本语法
 
 - 选取元素 `$(selector).action()`  
-selector就是某种元素,CSS(前6种)和XPath(后几种)选择器的组合.action就是操作元素的函数.常用选择器:
+selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.action就是操作元素的函数.常用选择器:
 	1. **this** 自身
 	2. **"tagname"** 选取所有某种标签
 	3. **".classname"** 选取所有类名的元素
@@ -31,8 +31,7 @@ selector就是某种元素,CSS(前6种)和XPath(后几种)选择器的组合.act
 	7. **"[href]"** 所有带有href属性的元素
 	8. **"[href='#']"** 选取所有带有 href 值等于 "#" 的元素。
 	9. **"[href!='#']"** 选取所有带有 href 值不等于 "#" 的元素。
-	10. **"[href$='.jpg']"** 选取所有 href 值以 ".jpg" 结尾的元素。
-
+	10. **"[href$='.jpg']"** 选取所有 href 值以 ".jpg" 结尾的元素。 
 
 ## Jquery常用函数
 所有JQ的函数都放在 *$(document).ready(function(){...});* 内,防止提前加载函数.
