@@ -41,7 +41,7 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 <style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
 ## Papers published/joined
-Ya, indeed, I don't like to write papers... I just like to work..
+Indeed, I don't like to write papers... I just like to work ╮(╯▽╰)╭ ..
 
 ### First author
 1. Probing the Key Interactions between Human Atg5 and Atg16 Proteins: A Prospective Application of
