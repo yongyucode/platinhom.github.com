@@ -28,8 +28,8 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 - Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)
 
 ### Chemist
-- Mass Spectrometry (ESI-MS/MS) for 2 year research on Organic Mass Spectrometry
-- Organic Synthesis (2yr)
+- Organic Mass Spectrometry focusing on ESI-MS/MS (2yr)
+- Organic Synthesis (3yr)
 
 ## Find Me in:
 - [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
