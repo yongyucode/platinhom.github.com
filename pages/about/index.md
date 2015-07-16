@@ -19,7 +19,7 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 ## Skills
 
 ### Computational Biology/Chemistry:
-- Molecular Modeling (Docking, Virtual Screening, Pharmacophore, Structure Modeling, CADD, QSAR) with MOE, Schrodinger, SYBYL, Discovery Studio, Gold, Autodock et al. 
+- Molecular Modeling (Docking, Virtual Screening, Pharmacophore, Structure Modeling, CADD, QSAR) with MOE, Schrodinger, SYBYL, Discovery Studio, Gold, Autodock, Modeller et al. 
 - MD simulation with Amber, NAMD2, Desmond.
 - QM and QM/MM with Gaussian for optimization/TS/IRC.
 - Visualization with Pymol, Chimera, VMD, JSmol
