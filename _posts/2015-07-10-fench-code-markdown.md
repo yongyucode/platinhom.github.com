@@ -3,7 +3,7 @@ layout: post
 title: Markdown中的代码块
 date: 2015-07-09 18:27:52
 categories: IT
-tags: Editor Git
+tags: IDE Git
 ---
 
 Code block in markdown
