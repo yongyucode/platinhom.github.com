@@ -3,7 +3,7 @@ layout: post
 title: JS利用FILE-API读取操作文件
 date: 2015-07-13 21:15:06
 categories: CompSci
-tags: Html JS
+tags: HTML JS
 ---
 
 今天要写个脚本能够对上传文件进行分析, 需要HTML客户端使用JS分析文件.
