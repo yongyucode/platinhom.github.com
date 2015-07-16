@@ -33,9 +33,8 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 ### Chemist
 - Organic Mass Spectrometry focusing on ESI-MS/MS (2yr)
 - Organic Synthesis (3yr)
-
-## Find Me in:
-- [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
+- NMR analysis (1yr)
+- Fluorescence Polarization (FP) for peptide/protein binding(0.5yr).
 
 ## Places I have been to
 - Foshan (My lovely hometown)
@@ -44,3 +43,6 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 - East Lansing (Quite town for my postdoc study)
 - Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi
 - Detroit, Chicago, Toronto, New York
+
+## Find Me in:
+- [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
