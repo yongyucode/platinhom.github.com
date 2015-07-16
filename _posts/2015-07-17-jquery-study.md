@@ -49,14 +49,22 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 - `$(selector).focus(function)` 触发或将函数绑定到被选元素的获得焦点事件
 - `$(selector).mouseover(function)` 触发或将函数绑定到被选元素的鼠标悬停事件
 
+## 获取返回和设置DOM
+
+- `html([content])` 返回或设置标签innerHTML的内容(包括html标记)
+- `text([content])` 返回或设置标签文本内容, 其实是innerHTML的实际显示
+- `val([value])` 返回或设置标签的value值
+- `attr(attrname[,value])` 返回或设置指定属性attrname的值. 支持`attr({a1:v1,a2,v2..})`来同时设置多个属性
+
+## 回调函数Callback
+例如*$(selector).hide(speed,callback)* 中,如果把回调函数内容放在hide的后面单独进行,
 
 ## Jquery常用函数
 所有JQ的函数都放在 *$(document).ready(function(){...});* 内,防止提前加载函数.
 
 - `hide()` 隐藏元素
 - `css("property","value")` 设置css属性
-- `html([content])` 返回或设置标签innerHTML的内容
-- `val([value])` 返回或设置标签的value值
+
 
 ##### A case to get pdb information online and show
 
