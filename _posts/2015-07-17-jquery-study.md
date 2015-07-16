@@ -40,8 +40,8 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 
 1. 把所有 jQuery 代码置于事件处理函数中
 1. 把所有事件处理函数置于文档就绪事件(*$(document).ready*)处理器中
-1. 把 jQuery 代码置于单独的 *.js* 文件中
-1. 如果存在名称冲突(**jQuery.noConflict()** 判断)，则重命名 jQuery 库
+1. 把 jQuery 代码置于单独的 **.js** 文件中
+1. 如果存在名称冲突(`jQuery.noConflict()` 判断)，则重命名 jQuery 库
 
 - `$(document).ready(function)` 将函数绑定到文档的就绪事件（当文档完成加载时）
 - `$(selector).click(function)` 触发或将函数绑定到被选元素的点击事件
@@ -58,6 +58,23 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 - `html([content])` 返回或设置标签innerHTML的内容
 - `val([value])` 返回或设置标签的value值
 
+##### A case to get pdb information online and show
+
+~~~html
+<input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
+<p id="showpdb"></p>
+<script>
+$(document).ready(function(){
+	$("#getpdb").click(function(){
+		var pdbnum=$("#pdbnum").val();
+		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
+			//alert("Data: " + data + "\nStatus: " + status);
+			$("#showpdb").html(data);
+		});
+	});
+});</script>
+~~~
+
 <input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
 
 <p id="showpdb"></p>
@@ -66,7 +83,6 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 $(document).ready(function(){
 	$("#getpdb").click(function(){
 		var pdbnum=$("#pdbnum").val();
-		//alert(pdbnum);
 		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
 			//alert("Data: " + data + "\nStatus: " + status);
 			$("#showpdb").html(data);
