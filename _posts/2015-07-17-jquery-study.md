@@ -68,7 +68,7 @@ $(document).ready(function(){
 		var pdbnum=$("#pdbnum").val();
 		//alert(pdbnum);
 		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
-			alert("Data: " + data + "\nStatus: " + status);
+			//alert("Data: " + data + "\nStatus: " + status);
 			$("#showpdb").html(data);
 		});
 	});
