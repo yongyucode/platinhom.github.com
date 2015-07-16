@@ -2,7 +2,7 @@
 layout: post
 title: MySQL-PHP服务器构建用户系统
 date: 2015-07-06 16:40:13
-categories: CompSci
+categories: IT
 tags: PHP Database SQL Website
 ---
 

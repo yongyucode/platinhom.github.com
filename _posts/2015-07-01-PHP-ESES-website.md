@@ -2,7 +2,7 @@
 layout: post
 title: PHP搭建简单的服务器-ESES
 date: 2015-06-30 17:46:37
-categories: CompSci
+categories: IT
 tags: Website PHP
 ---
 

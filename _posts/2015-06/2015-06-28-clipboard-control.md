@@ -2,8 +2,8 @@
 layout: post
 title: 剪贴板的命令行/代码操作
 date: 2015-06-28 05:38:27
-categories: CompSci
-tags: IT System
+categories: IT
+tags: System
 ---
 
 ## Window

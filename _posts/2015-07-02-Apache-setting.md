@@ -2,8 +2,8 @@
 layout: post
 title: Apache设置解释
 date: 2015-07-01 19:55:02
-categories: CompSci
-tags: IT Website
+categories: IT
+tags: Website
 ---
 
 一般地Apache或Apache2 的设置放置在/etc/apache2 里面, apache模块路径：/usr/sbin/apachectl

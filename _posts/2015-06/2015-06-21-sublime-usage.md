@@ -2,8 +2,8 @@
 layout: post
 title: Sublime2&3 基础使用
 date: 2015-06-20 20:07:37
-categories: CompSci
-tags: Editor Software IT
+categories: IT
+tags: IDE Software
 ---
 
 Sublime是程序猿很爱用的编辑器,支持语法高亮,跨平台,插件多. 可免费使用,代价是经常保存后就提示购买...可参见主页介绍Ref1.现在分发版本主要有成熟的Sublime2(最新还是2.0.2)和beta版本的Sublime3,后者具有更高级的功能, 例如跳转到函数定义处等. 如果没有部分插件非使用sublime2不可,一般建议使用sublime3. 注意Mac版和Win版菜单稍有区别.这里主要以Mac版.

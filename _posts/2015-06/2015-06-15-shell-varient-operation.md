@@ -2,7 +2,7 @@
 layout: post
 title: Shell变量,数组,运算及操作
 date: 2015-06-14 20:14:10
-categories: CompSci
+categories: IT
 tags: Shell Bash
 ---
 

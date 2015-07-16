@@ -2,8 +2,8 @@
 layout: post
 title: JMol加载显示静电势表面
 date: 2015-06-27 03:32:39
-categories: CompBiol
-tags: CompBiol JMol Website
+categories: CompSci
+tags: CompBiol Visualize Website
 ---
 
 这周折腾了很久的Jmol加载静电势表面, 这里大致总结一下流程和关键代码.这里表面都使用对象名s1储存.

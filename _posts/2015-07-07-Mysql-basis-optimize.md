@@ -2,7 +2,7 @@
 layout: post_small
 title: MySQL优化基本-Xiang  
 date: 2015-07-07 07:15:38  
-categories: CompSci  
+categories: IT  
 tags: Database SQL  
 ---  
 

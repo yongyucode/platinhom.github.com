@@ -2,8 +2,8 @@
 layout: post
 title: 搜索引擎命令
 date: 2015-07-12 03:07:56
-categories: CompSci
-tags: IT
+categories: IT
+tags: Internet
 ---
 
 1. 双引号: 完全匹配 

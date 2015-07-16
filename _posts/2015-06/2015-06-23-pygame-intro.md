@@ -2,7 +2,7 @@
 layout: post
 title: Pygame介绍(ZZ)
 date: 2015-06-23 07:47:42
-categories: CompSci
+categories: IT
 tags: Python ZZ
 ---
 

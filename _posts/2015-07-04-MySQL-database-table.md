@@ -2,7 +2,7 @@
 layout: post
 title: MySQL学习2-数据库和报表
 date: 2015-07-04 3:30:52
-categories: CompSci
+categories: IT
 tags: Database SQL
 ---
 

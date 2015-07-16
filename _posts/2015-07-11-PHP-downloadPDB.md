@@ -2,7 +2,7 @@
 layout: post
 title: 用PHP下载PDB并指定链ID
 date: 2015-07-10 17:18:42
-categories: CompBiol
+categories: CompSci
 tags: PHP CompBiol
 ---
 

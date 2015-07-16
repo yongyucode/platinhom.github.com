@@ -2,7 +2,7 @@
 layout: post
 title: 将Github Page迁移到GitCafe Page
 date: 2015-07-07 19:26:18
-categories: CompSci
+categories: IT
 tags: Git
 ---
 

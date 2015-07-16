@@ -2,7 +2,7 @@
 layout: post
 title: HTML事件属性
 date: 2015-06-26 15:15:28
-categories: CompSci
+categories: IT
 tags: Website HTML
 ---
 

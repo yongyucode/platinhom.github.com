@@ -2,7 +2,7 @@
 layout: post_small
 title: HTML常用控件元素的用法
 date: 2015-06-23 21:11:05
-categories: CompSci
+categories: IT
 tags: Website HTML
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: MySQL学习1-安装登录和用户管理
 date: 2015-07-04 1:50:00
-categories: CompSci
+categories: IT
 tags: Database SQL
 ---
 ![](http://dev.mysql.com/common/logos/logo-mysql-110x57.png)

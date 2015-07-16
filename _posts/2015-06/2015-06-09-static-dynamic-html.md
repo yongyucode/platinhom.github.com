@@ -2,7 +2,7 @@
 layout: post
 title: 动态网页和静态网页
 date: 2015-06-08 16:35:50
-categories: CompSci
+categories: IT
 tags: Website Git
 ---
 

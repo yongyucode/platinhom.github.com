@@ -2,7 +2,7 @@
 layout: post
 title: 电镜数据 Volumetric Data
 date: 2015-06-07 11:25:15
-categories: CompBiol
+categories: CompSci
 tags: CompBiol DataAnal Fortran
 ---
 美国博后的工作和之前没有什么交集,做的东西也很无聊. 2015年后,主要处理冷冻电镜数据. 在这里做个简要介绍,包括:

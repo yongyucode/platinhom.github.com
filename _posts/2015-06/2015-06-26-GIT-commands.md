@@ -2,8 +2,8 @@
 layout: post
 title: GIT命令总结
 date: 2015-06-25 17:49:47
-categories: CompSci
-tags: Git IT
+categories: IT
+tags: Git
 ---
 
 

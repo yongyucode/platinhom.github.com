@@ -2,7 +2,7 @@
 layout: post
 title: PHP服务器端不显示错误报告的重启解决办法
 date: 2015-07-03 21:27:27
-categories: CompSci
+categories: IT
 tags: PHP
 ---
 

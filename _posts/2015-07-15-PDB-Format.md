@@ -2,7 +2,7 @@
 layout: post
 title: PDB格式-原子部分
 date: 2015-07-15 00:21:39
-categories: CompBiol
+categories: CompSci
 tags: CompBiol
 ---
 

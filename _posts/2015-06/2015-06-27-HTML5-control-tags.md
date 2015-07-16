@@ -2,8 +2,8 @@
 layout: post
 title: HTML5新控件元素的介绍
 date: 2015-06-27 06:53:02
-categories: CompSci
-tags: IT HTML Website
+categories: IT
+tags: HTML Website
 ---
 
 ## 滑块控件 Range 对象

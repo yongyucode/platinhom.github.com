@@ -2,8 +2,8 @@
 layout: post
 title: 检查端口状态:netstat和lsof
 date: 2015-07-04 01:44:04
-categories: CompSci
-tags: System IT
+categories: IT
+tags: System Internet
 ---
 
 因为最近经常碰网络, 应用经常会占用网络端口, 有时就导致程序启动不了.这里介绍怎么检查端口,知道端口占用,被何占用.

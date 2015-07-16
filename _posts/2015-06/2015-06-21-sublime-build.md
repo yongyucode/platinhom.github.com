@@ -2,8 +2,8 @@
 layout: post
 title: Sublime编译build设置
 date: 2015-06-20 23:29:25
-categories: CompSci
-tags: IT Editor Software
+categories: IT
+tags: IDE Software
 ---
 
 ### 配置文件 : 使用 JsoN [百度百科](http://baike.baidu.com/view/136475.htm) 编写

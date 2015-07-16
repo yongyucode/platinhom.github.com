@@ -2,7 +2,7 @@
 layout: post
 title: Python-批量文件重命名(ZZ)
 date: 2015-06-23 07:34:18
-categories: CompSci
+categories: IT
 tags: Python ZZ
 ---
 

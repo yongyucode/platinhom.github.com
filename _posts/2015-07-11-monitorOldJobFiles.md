@@ -2,8 +2,8 @@
 layout: post
 title: 后台监控删除老结果
 date: 2015-07-10 16:30:28
-categories: CompSci
-tags: IT Bash
+categories: IT
+tags: Bash
 ---
 
 - 这个脚本是删除旧任务的.当任务已经完成超过7天, 就自动被删除. 每小时运行一次检测.  

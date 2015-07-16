@@ -2,7 +2,7 @@
 layout: post_small
 title: MySQL总结-Xiang
 date: 2015-07-07 07:22:22
-categories: CompSci
+categories: IT
 tags: Database SQL
 ---
 

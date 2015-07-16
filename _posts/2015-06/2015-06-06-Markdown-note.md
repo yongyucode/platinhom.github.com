@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Markdown 笔记
-categories: CompSci
-tags: IT Editor
+categories: IT
+tags: IDE
 ---
 
 ﻿扩展名使用md/markdown，在为知当中使用md后缀命名笔记即可识别为markdown.

@@ -2,7 +2,7 @@
 layout: post
 title: PDB文件上载前本地JS分析
 date: 2015-07-15 16:41:20
-categories: CompBiol
+categories: CompSci
 tags: CompBiol JS
 ---
 

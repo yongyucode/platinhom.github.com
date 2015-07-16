@@ -2,8 +2,8 @@
 layout: post
 title: 操作系统判断的指令:uname
 date: 2015-06-12 04:58:18
-categories: CompSci
-tags: Shell Bash IT
+categories: IT
+tags: Shell Bash System
 ---
 ## uname for system OS judgement
 

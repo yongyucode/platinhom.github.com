@@ -2,7 +2,7 @@
 layout: post_small
 title: Javascript基础篇
 date: 2015-06-22 22:47:49
-categories: CompSci
+categories: IT
 tags: JS
 ---
 

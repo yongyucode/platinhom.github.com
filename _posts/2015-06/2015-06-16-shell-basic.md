@@ -2,7 +2,7 @@
 layout: post
 title: Shell基础与指令简介
 date: 2015-06-16 00:02:31
-categories: CompSci
+categories: IT
 tags: Shell Bash
 ---
 这是篇大篇幅的入门教程啊...分几篇来写吧.

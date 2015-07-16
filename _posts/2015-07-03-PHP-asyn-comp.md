@@ -2,7 +2,7 @@
 layout: post
 title: PHP-POST-异步调用
 date: 2015-07-03 11:42:24
-categories: CompSci
+categories: IT
 tags: PHP Website
 ---
 

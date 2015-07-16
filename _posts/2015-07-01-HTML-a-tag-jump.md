@@ -2,7 +2,7 @@
 layout: post
 title: HTML的锚标签和跳转
 date: 2015-06-30 21:12:35
-categories: CompSci
+categories: IT
 tags: HTML
 ---
 
