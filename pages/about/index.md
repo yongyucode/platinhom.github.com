@@ -12,9 +12,9 @@ Computation related sciences need to remember lots of information. Here I just p
 Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com !    
 
 ## Some Tools I developed:
-- [MIBPB webserver](http://23.239.23.221/MIBPBweb/)
-- AutoT&T2 and PG-AutoT&T (AutoT&T improvement and new pharmacophore guided optimization)
-- AutoPhD (Pharmacophore percerption)
+- [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation, 
+- AutoT&T2 and PG-AutoT&T: Fragment-based lead optimization tool. AutoT&T speeding up and new pharmacophore guided optimization/de novo design.
+- AutoPhD (Pharmacophore percerption): Pharmacophore perception for ligand/protein or protein/protein complex.
  
 ## Skills
 
@@ -22,11 +22,12 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 - Molecular Modeling (Docking, Virtual Screening, Pharmacophore, Structure Modeling, CADD, QSAR) with MOE, Schrodinger, SYBYL, Discovery Studio, Gold, Autodock et al. 
 - MD simulation with Amber, NAMD2, Desmond.
 - QM and QM/MM with Gaussian for optimization/TS/IRC.
+- Visualization with Pymol, Chimera, VMD, JSmol
 
 ### Programmer
 - Daily tasks and system administration: Bash(4yr), Python(3yr)
 - Program development: C++(2yr)
-- Numerical Computation: Fortran(1yr), Matlab(1yr) 
+- Numerical Computation: Fortran(1yr), Matlab(1yr), R(1m)
 - Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)
 
 ### Chemist
