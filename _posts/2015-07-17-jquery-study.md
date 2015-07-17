@@ -55,6 +55,7 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 - `text([content])` 返回或设置标签文本内容, 其实是innerHTML的实际显示
 - `val([value])` 返回或设置标签的value值
 - `attr(attrname[,value])` 返回或设置指定属性attrname的值. 支持`attr({a1:v1,a2,v2..})`来同时设置多个属性
+- `` 动画.[介绍]()
 
 ## 回调函数Callback
 例如*$(selector).hide(speed,callback)* 中,如果把回调函数内容放在hide的后面单独进行,
@@ -62,7 +63,10 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 ## Jquery常用函数
 所有JQ的函数都放在 *$(document).ready(function(){...});* 内,防止提前加载函数.
 
-- `hide()` 隐藏元素
+- `hide/show/toggle([speed,callback])` 隐藏/显示/切换显示隐藏元素,speed可以设置隐藏需要的时间(ms),可以`"slow"`,`"fast"`.
+- `fadeIn/fadeOut/fadeToggle(speed,callback)` 淡入/淡出/切换淡入淡出,速度ms.
+- `fadeTo(speed,opacity,callback)` 渐变为一定不透明度(0~1),越大越不透明
+- `slideDown/slideUp/slideToggle(speed,callback)` 向下滑动/收回/切换滑动元素
 - `css("property","value")` 设置css属性
 
 
@@ -102,5 +106,6 @@ $(document).ready(function(){
 1. [Jquery选择器参考手册](http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp)
 2. [JQuery事件参考手册](http://www.w3school.com.cn/jquery/jquery_ref_events.asp)
 3. [JQuery文档操作参考手册](http://www.w3school.com.cn/jquery/jquery_ref_manipulation.asp)
+4. [JQuery效果参考手册](http://www.w3school.com.cn/jquery/jquery_ref_effects.asp)
 
 ------
