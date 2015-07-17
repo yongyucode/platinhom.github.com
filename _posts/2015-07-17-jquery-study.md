@@ -55,22 +55,48 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 - `text([content])` 返回或设置标签文本内容, 其实是innerHTML的实际显示
 - `val([value])` 返回或设置标签的value值
 - `attr(attrname[,value])` 返回或设置指定属性attrname的值. 支持`attr({a1:v1,a2,v2..})`来同时设置多个属性
-- `` 动画.[介绍]()
+- `append("...")` 在元素内容的最后追加内容
+- `prepend("...")` 在元素内容前追加内容
+- `after("..")` 在元素后追加内容, 内容一般是html代码
+- `before("..")` 在元素前追加内容, 内容一般是html代码
+- `remove([selector])` 删除整个元素及子元素, 也可以只删除selector符合的某些元素及子元素
+- `empty()` 清空子元素
 
-## 回调函数Callback
-例如*$(selector).hide(speed,callback)* 中,如果把回调函数内容放在hide的后面单独进行,
+## 回调函数Callback和串联Chaining
+- 回调如 *$(selector).hide(10000,callback)* 中,如果把回调函数内容放在hide的后面单独进行,则没等hide完成就会执行,有时下一个动作依赖于上一个的结果,此时需要等待上一个结果才能再进行. 要是连续进行时处理.
+- 串联如 *$("#p1").css("color","red").slideUp(2000).slideDown(2000);* 一个动作一个动作执行
+
+## 遍历
+- `parent()` 返回上级父对象
+- `parents([selector])` 返回所有父对象或者满足selector的父对象
+- `parentsUntil(selector)` 返回对象到指定另一父对象之间的对象
+- `children([selector])` 返回所有直接的子对象,也可以进行过滤
+- `find(selector)` 返回所有子级元素满足selector的.所有返回用"*".
+- `siblings([selector])` 返回所有同胞(同级)元素或进行过滤
+- `next()` 下一个同胞元素
+- `nextAll()` 后面的所有同胞元素
+- `nextUntil(sel)` 两个同胞元素间的所有同胞元素
+- `prev()` 上一个同胞元素
+- `prevAll()` 前面的所有同胞元素
+- `prevUntil(sel)` 两个同胞元素间的所有同胞元素
+- `first(), last() 和 eq(n)` 返回在选取器多个满足结果或上次结果中的第一个/最后一个/第N个元素
+- `filter(sel) 和 not(sel)`返回满足/不满足sel条件的结果
 
 ## Jquery常用函数
 所有JQ的函数都放在 *$(document).ready(function(){...});* 内,防止提前加载函数.
 
+- `css("property","value")` 设置css属性,不写值可以返回属性.多个css可以用`{p1:v1,p2:v2...}`
+- `addClass/removeClass/toggleClass(classname)` 添加/删除/切换添加删除类属性.类属性可以在css控制
+- `width()/height()` 返回宽和高.还有`innerWidth`,`outerWidth`等
 - `hide/show/toggle([speed,callback])` 隐藏/显示/切换显示隐藏元素,speed可以设置隐藏需要的时间(ms),可以`"slow"`,`"fast"`.
 - `fadeIn/fadeOut/fadeToggle(speed,callback)` 淡入/淡出/切换淡入淡出,速度ms.
 - `fadeTo(speed,opacity,callback)` 渐变为一定不透明度(0~1),越大越不透明
 - `slideDown/slideUp/slideToggle(speed,callback)` 向下滑动/收回/切换滑动元素
-- `css("property","value")` 设置css属性
+- `animate({params},speed,callback)` 根据给定CSS进行动画变化,params是Camel 标记法的CSS. [介绍](http://www.w3school.com.cn/jquery/jquery_animate.asp)
+- `stop(stopAll,goToEnd)` 停止动画.第一参数是是否全部停止还是挺过该步而已;第二参数是是否直接跳到结尾.均为false.
 
 
-##### A case to get pdb information online and show
+##### An example to get pdb information online and show it
 
 ~~~html
 <input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
@@ -107,5 +133,8 @@ $(document).ready(function(){
 2. [JQuery事件参考手册](http://www.w3school.com.cn/jquery/jquery_ref_events.asp)
 3. [JQuery文档操作参考手册](http://www.w3school.com.cn/jquery/jquery_ref_manipulation.asp)
 4. [JQuery效果参考手册](http://www.w3school.com.cn/jquery/jquery_ref_effects.asp)
+5. [JQuery属性操作参考手册](http://www.w3school.com.cn/jquery/jquery_ref_attributes.asp)
+6. [JQuery CSS操作参考手册](http://www.w3school.com.cn/jquery/jquery_ref_css.asp)
+7. [JQuery遍历参考手册](http://www.w3school.com.cn/jquery/jquery_ref_traversing.asp)
 
 ------
