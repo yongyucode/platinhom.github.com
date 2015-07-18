@@ -20,7 +20,7 @@ AJAX就是**异步 JavaScript 和 XML（Asynchronous JavaScript and XML）**. �
 		2. status - 包含请求的状态（"success", "notmodified", "error", "timeout" 或 "parsererror"）
 		2. xhr - 包含 XMLHttpRequest 对象
 - **$(selector).get(url,data,success(response,status,xhr),dataType)** [Ajax html get方法](http://www.w3school.com.cn/jquery/ajax_get.asp)  
-类似于HTML GET, 请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。可以不加selector直接`.get()`
+类似于HTML GET, 请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。可以不加selector直接`$.get()`
 	1. url	必需。规定将请求发送的哪个 URL。
 	1. data	可选。规定连同请求发送到服务器的数据。如{name:"hom",age:"30"}这样,懂html-get就懂了.
 	1. dataType - 可选。规定预计的服务器响应的数据类型。默认地，jQuery 将智能判断。可能的类型："xml", "html", "text", "script", "json", "jsonp"  
