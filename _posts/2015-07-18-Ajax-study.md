@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AJAX学校
+title: AJAX学习
 date: 2015-07-18 06:42:38
 categories: IT
 tags: JS
@@ -9,9 +9,22 @@ tags: JS
 AJAX就是**异步 JavaScript 和 XML（Asynchronous JavaScript and XML）**. 简短地说，在不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示。使用XML进行数据交流, 使得数据可以按需要进行加载.
 
 ## 加载数据  
-** $(selector).load(URL,data,callback); **
+- **$(selector).load(URL,data,callback);** [.load()加载页面或元素](http://www.w3school.com.cn/jquery/ajax_load.asp)  
+	1. url	规定要将请求发送到哪个 URL。
+	1. data	可选。规定连同请求发送到服务器的数据,一般是键名或者jquery的selector.
+	1. function(response,status,xhr) 可选。规定当请求完成时运行的函数。额外的参数：
+		2. response - 包含来自请求的结果数据
+		2. status - 包含请求的状态（"success", "notmodified", "error", "timeout" 或 "parsererror"）
+		2. xhr - 包含 XMLHttpRequest 对象
+- **$(selector).get(url,data,success(response,status,xhr),dataType)** [Ajax html get方法](http://www.w3school.com.cn/jquery/ajax_get.asp)  
 
-
+1. url	必需。规定将请求发送的哪个 URL。
+1. data	可选。规定连同请求发送到服务器的数据。如{name:"hom",age:"30"}这样,懂html-get就懂了.
+1. success(response,status,xhr)	可选。规定当请求成功时运行的函数。额外的参数：
+		2. response - 包含来自请求的结果数据
+		2. status - 包含请求的状态
+		2. xhr - 包含 XMLHttpRequest 对象
+1. dataType - 可选。规定预计的服务器响应的数据类型。默认地，jQuery 将智能判断。可能的类型："xml", "html", "text", "script", "json", "jsonp"
 
 jQuery.ajax()	|  执行异步 HTTP (Ajax) 请求。
 .ajaxComplete()	|  当 Ajax 请求完成时注册要调用的处理程序。这是一个 Ajax 事件。
