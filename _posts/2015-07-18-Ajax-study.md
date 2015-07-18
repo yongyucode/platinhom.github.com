@@ -22,10 +22,10 @@ AJAX就是**异步 JavaScript 和 XML（Asynchronous JavaScript and XML）**. �
 	1. url	必需。规定将请求发送的哪个 URL。
 	1. data	可选。规定连同请求发送到服务器的数据。如{name:"hom",age:"30"}这样,懂html-get就懂了.
 	1. dataType - 可选。规定预计的服务器响应的数据类型。默认地，jQuery 将智能判断。可能的类型："xml", "html", "text", "script", "json", "jsonp"  
-	1. success(response,status,xhr)	可选。规定当请求成功时运行的函数。额外的参数： 
-			2. response - 包含来自请求的结果数据
-			2. status - 包含请求的状态
-			2. xhr - 包含 XMLHttpRequest 对象
+	1. success(response,status,xhr)	可选。规定当请求成功时运行的函数。额外的参数：  
+		2. response - 包含来自请求的结果数据
+		2. status - 包含请求的状态
+		2. xhr - 包含 XMLHttpRequest 对象  
 例如: `$.get("test.cgi", { name: "John", time: "2pm" },function(data){alert("Data Loaded: " + data);});`
 - **jQuery.post(url,data,success(data, textStatus, jqXHR),dataType)** [Ajax html post方法](http://www.w3school.com.cn/jquery/ajax_post.asp)
 和.get类似,使用post方法提交请求.
