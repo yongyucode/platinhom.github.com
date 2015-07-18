@@ -11,7 +11,7 @@ AJAX就是**异步 JavaScript 和 XML（Asynchronous JavaScript and XML）**. �
 ## 加载数据  
 - **$(selector).load(URL,data,callback);** [.load()加载页面或元素](http://www.w3school.com.cn/jquery/ajax_load.asp)  
 几乎与 *$.get(url, data, success)* 等价，不同的是它不是全局函数，并且它拥有隐式的回调函数。当侦测到成功的响应时（比如，当 textStatus 为 "success" 或 "notmodified" 时），*.load()* 将匹配元素的 HTML 内容设置为返回的数据。如果提供的数据是对象，则使用 POST 方法；否则使用 GET 方法。
-	1. url	规定要将请求发送到哪个 URL。后面可以跟空格
+	1. url	规定要将请求发送到哪个 URL。后面可以跟空格加jquery的selector.如:*"ajax/test.html #container"*
 	1. data	可选。规定连同请求发送到服务器的数据
 	1. function(response,status,xhr) 可选。规定当请求完成时运行的函数。额外的参数：
 		2. response - 包含来自请求的结果数据
