@@ -21,11 +21,11 @@ AJAX就是**异步 JavaScript 和 XML（Asynchronous JavaScript and XML）**. �
 类似于HTML GET, 请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。可以不加selector直接`.get()`
 	1. url	必需。规定将请求发送的哪个 URL。
 	1. data	可选。规定连同请求发送到服务器的数据。如{name:"hom",age:"30"}这样,懂html-get就懂了.
-	1. success(response,status,xhr)	可选。规定当请求成功时运行的函数。额外的参数：
+	1. dataType - 可选。规定预计的服务器响应的数据类型。默认地，jQuery 将智能判断。可能的类型："xml", "html", "text", "script", "json", "jsonp"  
+	1. success(response,status,xhr)	可选。规定当请求成功时运行的函数。额外的参数： 
 			2. response - 包含来自请求的结果数据
 			2. status - 包含请求的状态
 			2. xhr - 包含 XMLHttpRequest 对象
-	1. dataType - 可选。规定预计的服务器响应的数据类型。默认地，jQuery 将智能判断。可能的类型："xml", "html", "text", "script", "json", "jsonp"  
 例如: `$.get("test.cgi", { name: "John", time: "2pm" },function(data){alert("Data Loaded: " + data);});`
 - **jQuery.post(url,data,success(data, textStatus, jqXHR),dataType)** [Ajax html post方法](http://www.w3school.com.cn/jquery/ajax_post.asp)
 和.get类似,使用post方法提交请求.
@@ -57,6 +57,39 @@ jQuery.param()	|  创建数组或对象的序列化表示，适合在 URL 查询
 jQuery.post()	|  使用 HTTP POST 请求从服务器加载数据。
 .serialize()	|  将表单内容序列化为字符串。
 .serializeArray()	|  序列化表单元素，返回 JSON 数据结构数据。
+
+
+##### An example to get pdb information online and show it
+
+~~~html
+<input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
+<p id="showpdb"></p>
+<script>
+$(document).ready(function(){
+	$("#getpdb").click(function(){
+		var pdbnum=$("#pdbnum").val();
+		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
+			//alert("Data: " + data + "\nStatus: " + status);
+			$("#showpdb").html(data);
+		});
+	});
+});</script>
+~~~
+
+<input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
+
+<p id="showpdb"></p>
+
+<script>
+$(document).ready(function(){
+	$("#getpdb").click(function(){
+		var pdbnum=$("#pdbnum").val();
+		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
+			//alert("Data: " + data + "\nStatus: " + status);
+			$("#showpdb").html(data);
+		});
+	});
+});</script>
 
 ## Reference
 1. [Jquery-Ajax参考](http://www.w3school.com.cn/jquery/jquery_ref_ajax.asp)

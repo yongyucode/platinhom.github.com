@@ -34,6 +34,7 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 	8. **"[href='#']"** 选取所有带有 href 值等于 "#" 的元素。
 	9. **"[href!='#']"** 选取所有带有 href 值不等于 "#" 的元素。
 	10. **"[href$='.jpg']"** 选取所有 href 值以 ".jpg" 结尾的元素。 
+- 
 
 ## 事件
 **$("button").action(function() {..some code... } )**
@@ -96,37 +97,6 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 - `stop(stopAll,goToEnd)` 停止动画.第一参数是是否全部停止还是挺过该步而已;第二参数是是否直接跳到结尾.均为false.
 
 
-##### An example to get pdb information online and show it
-
-~~~html
-<input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
-<p id="showpdb"></p>
-<script>
-$(document).ready(function(){
-	$("#getpdb").click(function(){
-		var pdbnum=$("#pdbnum").val();
-		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
-			//alert("Data: " + data + "\nStatus: " + status);
-			$("#showpdb").html(data);
-		});
-	});
-});</script>
-~~~
-
-<input type="button" value="1: Get PDB" id="getpdb"> <input type="text" value="1AJJ" id="pdbnum">
-
-<p id="showpdb"></p>
-
-<script>
-$(document).ready(function(){
-	$("#getpdb").click(function(){
-		var pdbnum=$("#pdbnum").val();
-		$.get("http://www.rcsb.org/pdb/files/"+pdbnum+".pdb",function(data,status){
-			//alert("Data: " + data + "\nStatus: " + status);
-			$("#showpdb").html(data);
-		});
-	});
-});</script>
 
 ## Reference
 1. [Jquery选择器参考手册](http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp)
