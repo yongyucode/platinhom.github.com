@@ -36,7 +36,7 @@ selector就是某种元素,CSS(前7种)和XPath(后几种)选择器的组合.act
 	10. **"[href$='.jpg']"** 选取所有 href 值以 ".jpg" 结尾的元素。 
 - $和jQuery:  
 实际`$`就是jQuery对象的简写.有时别的JS框架也使用`$`,此时要使用noConflict来处理.  
-	1.`$.noConflict()`会释放`$`的控制, 使得别的框架可以使用.此时仍然可以使用`jQuery`进行调用.
+	1. `$.noConflict()`会释放`$`的控制, 使得别的框架可以使用.此时仍然可以使用`jQuery`进行调用.
 	2. `var jq = $.noConflict();`可以将其存到一个变量内供使用.
 	3. `$.noConflict();jQuery(document).ready(function($){$("button").click(function(){$("p").text("jQuery 仍在运行！");});});` 可以将`$`传给ready方法,这样jQuery代码块就可以继续使用`$`简写
 
