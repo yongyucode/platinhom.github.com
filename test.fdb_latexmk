@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1437506343 "test.tex" "test.pdf" "test" 1437506344
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls" 1399675188 20496 66dd832c447553f6776fbeac03bb0580 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo" 1399675188 8967 546f1b177fd18efd7ad74d77a7bdac64 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/xelatex/xunicode/xunicode.sty" 1315783907 205722 8027ed7ab2230086d647802c25f3ee42 ""
+  "test.aux" 1437506344 82 ed5122d6f00924963fe12916f7fb978f ""
+  "test.tex" 1437506341 264 95cd49275f3b020492588e298d587887 ""
+  (generated)
+  "test.log"
+  "test.pdf"
+  "test.aux"
