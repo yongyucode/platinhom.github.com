@@ -46,6 +46,7 @@ tags: IDE Software
 1. [Sublime2&3 基础使用](http://platinhom.github.io/2015/06/21/sublime-usage/)
 2. [LaTexTools](https://github.com/SublimeText/LaTeXTools)
 3. [Making your first PDF with LaTeX and Sublime Text 2 for Mac](http://economistry.com/2013/01/installing-and-using-latex-for-mac/)
+4. [部署MAC上的Sublime Text+LaTex中文环境](http://www.readern.com/sublime-text-latex-chinese-under-mac.html)
 
 
 ------
