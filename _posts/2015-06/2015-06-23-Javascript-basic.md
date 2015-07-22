@@ -53,6 +53,7 @@ JS的内容会在页面加载时加载. 事件发生时动作可以利用函数�
 - 浏览器对象: `Window` [窗口对象](http://www.w3school.com.cn/jsref/dom_obj_window.asp); `Navigator`[浏览器对象](http://www.w3school.com.cn/jsref/dom_obj_navigator.asp); `Screen` [显示屏对象](http://www.w3school.com.cn/jsref/dom_obj_screen.asp); `History` [浏览历史记录对象](http://www.w3school.com.cn/jsref/dom_obj_history.asp); `Location` [网站地址对象](http://www.w3school.com.cn/jsref/dom_obj_location.asp)
 - 变量 `var v1=1,v2="age";` var万能的动态类型. 全局变量(在函数外声明的)生存期是页面; 局部变量是函数结束. 函数内使用 `vname=value` 不声明就赋值的会被作为全局变量.
 - 数组,`var=new Array();var[0]=1;var[1]=2;`也可以`=new Array(1,2)`或`=[1,2]`.数组下标`0`开始.
+- 字典, 本质是数组,也是对象. `var a = new Array(); a['hi']=1;a['hh']=2;`也可以用`var a={"hi":1,"hh":2};`. 可以用`for (var key in ary)`作循环. 字典的key既可以作为key,也可以作为对象的属性 *a.hi*. 字典的length属性不起效..
 - 对象(`Object`), `var person={name:"Bill", id:5566};`,调用属性`person.name;person["name"];`,方法类似. 对象当然还有方法了. Java的想法: 一切皆对象. 利用函数构造`function person(name,age){this.name=name;this.age=age;}`(对象构造器,this是自身);`this.changeName=changeName;function changeName(name){this.lastname=name;}` 对象内创建方法.
 - 函数 `function fname([var1,var2]){..}`, 可以`return var1;`返回值.JS居然不支持参数默认值方法..
 - 运算: 和C类似,支持`%`求余,`++`累加,`+=`自运算.
@@ -100,11 +101,14 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ## 数组
 
+- `ary.length` 返回数组的长度
 - `ary.pop()` 删除并返回最后一个元素
 - `ary.shift()` 删除并返回第一个元素
 - `ary.push(ele....)` 追加元素,可以数个,返回新长度
 - `ary.unshift(ele....)` 向数组开头追加元素,可以数个,返回新长度
 - `ary.splice(index,N,ele....)` 从数组中index开始(可以负数)删除N个元素,N=0则不删除只增加.ele是要添加的元素. 改变原来数组,返回删除的项目.`ary.splice(0,ary.length);`清空数组,和`ary=[]`;一样
+- `ary.hasOwnProperty(key);` 字典判断是否有键值.返回true/false
+- `$.inArray("value", ary);` 检查数组是否有值,返回所在位置(0起),没有则返回-1.
 
 
 ## JS常用方法

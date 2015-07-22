@@ -43,7 +43,6 @@ unset key ##取消图例,恢复使用set key default
 set xtics pi ##设置x主轴的主间距是pi
 set mxtics 2 ##设置每个主间距分为2小份(就是中间有个刻度)
 replot ##重新执行上次的plot
-
 ~~~
 
 ## Reference
@@ -52,5 +51,6 @@ replot ##重新执行上次的plot
 3. [Linux 上的数据可视化工具](https://www.ibm.com/developerworks/cn/linux/l-datavistools/)
 4. [gnuplot调教记](http://www.codelast.com/?p=8348)
 5. [使用GNUplot科学作图](http://www.phy.fju.edu.tw/~ph116j/gnuplot_tutorial.pdf)
+6. [gnuplot 让您的数据可视化](http://www.ibm.com/developerworks/cn/linux/l-gnuplot/)
 
 ------

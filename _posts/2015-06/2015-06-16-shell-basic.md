@@ -173,7 +173,7 @@ ssh
 ssh-keygen
 scp
 sftp
-wget
+wget url -O output -o out.log #-O 指定下载文件,-o指明输出记录.
 ping
 ifconfig
 curl
