@@ -39,7 +39,7 @@ set xrange [−2*pi:2*pi] ##设置范围
 set xlabel "月份" ##设置x轴的注解.同理ylabel
 set title "好好学习天天向上"  ##设置plot后的主标题.
 set xtics pi ##设置x主轴的主间距是pi
-
+set mxtics 2 ##设置每个主间距分为2小份(就是中间有个刻度)
 replot ##重新执行上次的plot
 
 ~~~
