@@ -31,13 +31,15 @@ splot [-12:12.01] [-12:12.01] sin(sqrt(x**2+y**2))/sqrt(x**2+y**2)
 ![来自Ref3](https://www.ibm.com/developerworks/cn/linux/l-datavistools/figure1.jpg)
 
 ~~~bash
-set terminal png ##设置输出格式.
+set terminal png ##设置输出格式. set terminal 可以查看所有能用的terminal
 set output "output.png" ##设置输出到文件,不设置输出文件名则输出到stdout. show output也是输出到stdout
+plot "data.dat" with linespoints  ##将数据文件plot出来,以点线连线的方式
 set grid  ##设置网格
 set datafile separator "\t" ##设置文件中的分隔符是tab
 set xrange [−2*pi:2*pi] ##设置范围
 set xlabel "月份" ##设置x轴的注解.同理ylabel
 set title "好好学习天天向上"  ##设置plot后的主标题.
+unset key ##取消图例,恢复使用set key default
 set xtics pi ##设置x主轴的主间距是pi
 set mxtics 2 ##设置每个主间距分为2小份(就是中间有个刻度)
 replot ##重新执行上次的plot
