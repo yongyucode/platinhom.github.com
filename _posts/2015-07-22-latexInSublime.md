@@ -12,7 +12,7 @@ tags: IDE Software
 
 ## 安装
 
-- 安装[MacTex](https://tug.org/mactex/),这是Mac里面的MacTex解释版. 装最简单的,使用[简化基础班即可](https://tug.org/mactex/morepackages.html).
+- 安装[MacTex](https://tug.org/mactex/),这是Mac里面的MacTex解释版. 装最简单的,使用[简化基础版即可](https://tug.org/mactex/morepackages.html).
 
 - 安装[Skim](http://sourceforge.net/projects/skim-app/?source=directory), 一个PDF阅读器. 安装后打开，进入选项设置——同步，在PDF-Tex同步支持那里选择自定义，选择sublime相应版本。这样，当你在Sublime Text里修改tex文件时，Skim预览也会相应变更.如果装了sidebar增强,可以右键open with-Edit Application来编辑参数文件.加入下面这段子项到children{}里面,然后就可以打开了.
 

@@ -2,8 +2,8 @@
 layout: post
 title: 搭建本地服务器
 date: 2015-06-29 07:26:39
-categories: CompSci
-tags: IT Website
+categories: IT
+tags: Website Internet
 ---
 
 ## 概念

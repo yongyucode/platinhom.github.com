@@ -3,7 +3,7 @@ layout: post
 title: 数据专家必知必会的7款Python工具(ZZ)
 date: 2015-07-22 14:11:35
 categories: MathStat
-tags: Python DataAnal
+tags: Python DataAnal ZZ
 ---
 
 如果你有志于做一个数据专家，你就应该保持一颗好奇心，总是不断探索，学习，问各种问题。在线入门教程和视频教程能帮你走出第一步，但是最好的方式就是通过熟悉各种已经在生产环境中使用的工具而为成为一个真正的数据专家做好充分准备。
