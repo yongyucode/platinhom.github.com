@@ -11,18 +11,17 @@ tags: CompBiol CADD Python src
 <pre><code class="language-python" id="src"></code></pre>
 
 <script>
-
 $.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,status){
 	//alert("Data: " + data + "\nStatus: " + status);
-	
 	$("#src").html(data);
-	Prism.highlightElement($('#src')[0]);
-
+	Prism.highlightAll();
+	//Prism.highlightElement($('#src')[0]);
 });
-//Prism.highlightAll();
 </script>
 
 
-
-
+## Reference
+1. [Crystal Dock](http://nbcr.ucsd.edu/data/sw/hosted/crystaldock/)
+2. [SF-download](http://sourceforge.net/projects/crystaldock/files/)
+3. [CrystalDock: A Novel Approach to Fragment-Based Drug Design](http://pubs.acs.org/doi/abs/10.1021/ci200357y)
 ------
