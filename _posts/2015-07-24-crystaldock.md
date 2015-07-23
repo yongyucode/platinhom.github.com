@@ -16,9 +16,10 @@ $.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,s
 	//alert("Data: " + data + "\nStatus: " + status);
 	
 	$("#src").html(data);
+	Prism.highlightElement($('#src')[0]);
+
 });
 //Prism.highlightAll();
-Prism.highlightElement($('#src')[0]);
 </script>
 
 
