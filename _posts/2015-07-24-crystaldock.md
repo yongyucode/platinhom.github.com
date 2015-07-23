@@ -12,16 +12,13 @@ tags: CompBiol CADD Python src
 
 $.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,status){
 	//alert("Data: " + data + "\nStatus: " + status);
+	
 	$("#src").html(data);
 });
-
+Prism.highlightAll();
 </script>
 
-
 <pre><code class="language-python" id="src"></code></pre>
-
-<input type="button" value="1: Get PDB" id="getpdb">
-
 
 
 ------
