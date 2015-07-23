@@ -151,7 +151,7 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 </div>
 ~~~~
 
-### Cancel prism highlight relative css/js in default.   
+### Cancel old prism highlight relative css/js in default.   
 - Abandon TOC.js, to use origin prism.js
 - Add the `prism.js/HomGH_prism.css` to post and page prism.
 
@@ -169,3 +169,5 @@ var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElemen
 Use jcss directory to contain js/css/images
 Use other directory to contain pic/jscss and other files
 New reposit to save pdf and molecular website
+
+### Add post_jq.html layout to load jquery.

@@ -21,7 +21,8 @@ $.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,s
 
 
 ## Reference
-1. [Crystal Dock](http://nbcr.ucsd.edu/data/sw/hosted/crystaldock/)
+1. [Crystal Dock](http://nbcr.ucsd.edu/data/sw/hosted/crystaldock/), [l](http://pubs.acs.org.sci-hub.org/doi/abs/10.1021/ci200357y)
 2. [SF-download](http://sourceforge.net/projects/crystaldock/files/)
 3. [CrystalDock: A Novel Approach to Fragment-Based Drug Design](http://pubs.acs.org/doi/abs/10.1021/ci200357y)
+
 ------
