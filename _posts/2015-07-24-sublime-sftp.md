@@ -25,5 +25,6 @@ tags: IDE Internet
 
 ## Reference
 1. [官网](http://wbond.net/sublime_packages/sftp)
+2. [SFTP/FTP图文介绍](http://nonfu.me/p/1257.html)
 
 ------
