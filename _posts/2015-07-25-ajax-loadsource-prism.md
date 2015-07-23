@@ -6,7 +6,7 @@ categories: IT
 tags: JS Git Website
 ---
 
-在学完JQ和AJAX后知道怎么不借助PHP等调用和分析文件, 因此以前用来将代码复制过来再检查是否一致然后再更新内容的做法可以废弃了 ╮(╯▽╰)╭. 成功完成, 记录一下. 添加了`post_jq` 的layout, 以后直接复制复制pre code 块以及script语句块就OK了.
+在学完JQ和AJAX后知道怎么不借助PHP等调用和分析文件, 因此以前用来将代码复制过来再检查是否一致然后再更新内容的做法可以废弃了 ╮(╯▽╰)╭. 成功完成, 记录一下. 添加了`post_jq` 的layout, 以后直接复制pre code 块以及script语句块就OK了.
 
 1. 加载JQuery
 2. 设置一个空白的pre code 标签块,注意language后面设置语言,id随便设置一个,后面ajax需要
