@@ -20,8 +20,8 @@ tags: CompBiol CADD Python src
 $(document).ready(function(){
 	$("#getpdb").click(function(){
 		$.get("/other/scripts/crystal_dock.py",function(data,status){
-			alert("Data: " + data + "\nStatus: " + status);
-			$("#showpdb").html(data);
+			//alert("Data: " + data + "\nStatus: " + status);
+			$("#src").html(data);
 		});
 	});
 });
