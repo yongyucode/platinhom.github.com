@@ -7,6 +7,9 @@ tags: CompBiol CADD Python src
 ---
 
 
+
+
+
 ~~~python
 # CrystalDock is released under the GNU General Public License (see http://www.gnu.org/licenses/gpl.html).
 # If you have any questions, comments, or suggestions, please don't hesitate to contact me,
@@ -1413,5 +1416,14 @@ format_output()
 # Tell the user how long it took to execute the script
 print "Execution time:", time.time() - starttime, "Seconds"
 ~~~
+
+<script>
+$.get("/other/scripts/crystal_dock.py",function(data,status){
+	//alert("Data: " + data + "\nStatus: " + status);
+	$("#src").html(data);
+}
+</script>
+
+<pre><code class="language-python" id="src"></code></pre>
 
 ------
