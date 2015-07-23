@@ -16,8 +16,10 @@ tags: IDE Internet
 - 安装后,在**File->SFTP/FTP** 中可以编辑和打开服务器.
 - 新建一个文件(可能有bug会在当前文件插入内容), 在*File->SFTP/FTP->Setup server* 中配置sftp,例如使用sftp服务,host,user name, password(免密码登陆,需要取消注释//),port(sftp:22,ftp:21). remote_path是远程登陆的目录,配置位置不对的话会登陆失败.
 - 将配置文件保存到 *Packages/User/sftp_servers* 内(*Preference-Browse Packages*).名字根据自己需要,默认后缀json.
-- *File->SFTP/FTP->Browse server* (快捷键cmd+ctrl+R,B)可以列出现在的服务器列表(注意上一步配置文件保存位置对不对).出现了文件列表(转图)![](http://wpjam.qiniudn.com/qiniu/3736/image/310422cb212eca74ed9a844573801461.png?watermark/1/image/aHR0cDovL3dwamFtLnFpbml1ZG4uY29tL3dwamFtL3dhdGVybWFyay5wbmc=/dissolve/100/gravity/SouthEast/dx/10/dy/10|imageView2/2/w/442/h/420)
-- 点击文件,出现菜单,点edit就可以编辑了! ![](http://wpjam.qiniudn.com/qiniu/3736/image/a2059b28f29ad7b8298f5ad3eeb0f3f2.png?watermark/1/image/aHR0cDovL3dwamFtLnFpbml1ZG4uY29tL3dwamFtL3dhdGVybWFyay5wbmc=/dissolve/100/gravity/SouthEast/dx/10/dy/10|imageView2/2/w/465/h/218)
+- *File->SFTP/FTP->Browse server* (快捷键cmd+ctrl+R,B)可以列出现在的服务器列表(注意上一步配置文件保存位置对不对).出现了文件列表(转图)  
+![](http://wpjam.qiniudn.com/qiniu/3736/image/310422cb212eca74ed9a844573801461.png?watermark/1/image/aHR0cDovL3dwamFtLnFpbml1ZG4uY29tL3dwamFtL3dhdGVybWFyay5wbmc=/dissolve/100/gravity/SouthEast/dx/10/dy/10|imageView2/2/w/442/h/420)
+- 点击文件,出现菜单,点edit就可以编辑了!   
+![](http://wpjam.qiniudn.com/qiniu/3736/image/a2059b28f29ad7b8298f5ad3eeb0f3f2.png?watermark/1/image/aHR0cDovL3dwamFtLnFpbml1ZG4uY29tL3dwamFtL3dhdGVybWFyay5wbmc=/dissolve/100/gravity/SouthEast/dx/10/dy/10|imageView2/2/w/465/h/218)
 
 ## 使用
 [官方使用介绍](http://wbond.net/sublime_packages/sftp/usage).
