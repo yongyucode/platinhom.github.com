@@ -8,6 +8,8 @@ tags: CompBiol CADD Python src
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+<pre><code class="language-python" id="src"></code></pre>
+
 <script>
 
 $.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,status){
@@ -15,10 +17,11 @@ $.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,s
 	
 	$("#src").html(data);
 });
-Prism.highlightAll();
+//Prism.highlightAll();
+Prism.highlightElement($('#src')[0]);
 </script>
 
-<pre><code class="language-python" id="src"></code></pre>
+
 
 
 ------
