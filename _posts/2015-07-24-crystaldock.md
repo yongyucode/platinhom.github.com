@@ -14,17 +14,13 @@ tags: CompBiol CADD Python src
 
 <input type="button" value="1: Get PDB" id="getpdb">
 
-<p id="showpdb"></p>
-
 <script>
-$(document).ready(function(){
-	$("#getpdb").click(function(){
-		$.get("/other/scripts/crystal_dock.py",function(data,status){
+
+		$.get("http://platinhom.github.io/other/scripts/crystal_dock.py",function(data,status){
 			//alert("Data: " + data + "\nStatus: " + status);
 			$("#src").html(data);
 		});
-	});
-});
+
 </script>
 
 ------
