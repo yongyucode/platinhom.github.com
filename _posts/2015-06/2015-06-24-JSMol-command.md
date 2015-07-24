@@ -49,8 +49,15 @@ Here I just summary some commands I meet.
 
 ## 选择
 `select */all`
+`select not (:A && [ARG])` 支持and or not, && || !, ==.
 `select within(5.0, LIGNAME)`
 `select resno <= 25` 选择残基号<=25.
+`select [ARG]100:A.CA` 选择某种残基,残基编号,链,原子名
+`select #100` 原子编号100的原子
+`select *.CA/2.1` /1一般是指文件中第一个分子,/2.1在多个文件时指明第二个文件第一个分子
+`%1 %A %?` alternative location的指定
+`^A` insertionCode
+`set picking ..` 设置左键选择后的响应
 
 ## 描绘方式
 
@@ -62,6 +69,7 @@ Here I just summary some commands I meet.
 - `set cartoonFancy true/false`: fancy控制, 开启后条带更有厚度.受控于响应速度.
 - `set cartoonFancy false;set hermitelevel 0`: flat
 - `backbone 0.5; color relativeTemperature;`: 
+- `center atomexpress`: 以某些原子为旋转中心.
 
 ## Label
 
