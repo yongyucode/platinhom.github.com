@@ -31,6 +31,7 @@ Here I just summary some commands I meet.
 
 `load abc/def.pdb` [load](http://chemapps.stolaf.edu/jmol/docs/?ver=14.2#load)载入分子, `load $caffeine`在NIH Cactus搜索结构,可以使用SMILES,CAS,化学名等; `load :name`从pubmed搜索,支持CAS,CID,NAME,INCHI,SMILES等; `=XXXX`从RCSB载入PDB,`==XXX`从RCSB载入配体分子; 
 `load ?` 弹出选框来选择分子,并打开
+`load append "filename"` 打开文件并追加到当前窗口.默认追加新建model,`set appendNew false` 可以关闭新建,从而追加到当前model.
 `write FILE ?` 写出文件,FILE文件, 弹出框指明保存文件名, 会进行下载.
 `write PNGJ filename` 保存图片
 `spin on/off;` 开关自旋转.(会影响surface等的表现,不需要时请关掉)
@@ -39,7 +40,6 @@ Here I just summary some commands I meet.
 `image` 马上截图.弹出一个新页面,可以保存.
 `set antialiasDisplay true/false`: 设置是否开抗锯齿, 不开会快点.
 `set platformSpeed n`: 设置响应速度,数值越大越慢. all features:8; no antialiasing:7; no translucency:6; surfaces dotted:5; cartoons as trace:4; geosurfaces as dots:3; ellipsoids as dots:2; wireframe only: 1. 一般设5比较好,可以看表面cartoon. 设5时可显示表面,转动时变dot,但注意要关闭spin.
-
 `refresh` 刷新,一般在脚本中使用.
 `delay n` 暂停几秒.会刷新.
 `pause/resume` 暂停和恢复脚本运行
@@ -47,17 +47,18 @@ Here I just summary some commands I meet.
 
 `moveto  timeSeconds AXIS [a,b,c,x,y,z]` 光滑地视觉调整,做movie时常用.第一个是耗时,后三个是坐标,也可以是TOP/FRONT/BACK/LEFT等词.
 
-## 选择
-`select */all`
-`select not (:A && [ARG])` 支持and or not, && || !, ==.
-`select within(5.0, LIGNAME)`
-`select resno <= 25` 选择残基号<=25.
-`select [ARG]100:A.CA` 选择某种残基,残基编号,链,原子名
-`select #100` 原子编号100的原子
-`select *.CA/2.1` /1一般是指文件中第一个分子,/2.1在多个文件时指明第二个文件第一个分子
-`%1 %A %?` alternative location的指定
-`^A` insertionCode
-`set picking ..` 设置左键选择后的响应
+## 选择. [atom expression](http://chemapps.stolaf.edu/jmol/docs/?ver=14.2#atomexpressions)
+- `select */all`
+- `select not (:A && [ARG])` 支持and or not, && || !, ==.
+- `select within(5.0, LIGNAME)`
+- `select resno <= 25` 选择残基号<=25.
+- `select [ARG]100:A.CA` 选择某种残基,残基编号,链,原子名
+- `select #100` 原子编号100的原子
+- `select *.CA/2.1` /1一般是指文件中第一个分子,/2.1在多个文件时指明第二个文件第一个分子
+- `%1 %A %?` alternative location的指定
+- `^A` insertionCode
+- `set picking ..` 设置左键选择后的响应
+- `dna` 特殊表达式: dna, ligand, water, carbohydrate, hetero, ions, protein, nucleic, purine, pyrimidine, rna, sidechain
 
 ## 描绘方式
 
@@ -70,6 +71,11 @@ Here I just summary some commands I meet.
 - `set cartoonFancy false;set hermitelevel 0`: flat
 - `backbone 0.5; color relativeTemperature;`: 
 - `center atomexpress`: 以某些原子为旋转中心.
+- `zoomto 0 {ligand} 0` : 自动放大到配体分子,这里因为zoomto要几个参数, 所以要用{}包括原子表达式.第一个0是进行的时间,最后一个是放大的控制,100是100%看到分子时(默认).0是放大很大
+- `select {ligand};wireframe 0.25;`先选择配体分子,然后对其显示方式进行操作.显示方式仅针对select的.
+
+## 操作
+- `delete ..`可以删除对象,原子表达式,保存的id
 
 ## Label
 
