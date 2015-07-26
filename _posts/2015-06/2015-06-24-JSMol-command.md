@@ -55,14 +55,17 @@ Here I just summary some commands I meet.
 - `select [ARG]100:A.CA` 选择某种残基,残基编号,链,原子名
 - `select #100` 原子编号100的原子
 - `select *.CA/2.1` /1一般是指文件中第一个分子,/2.1在多个文件时指明第二个文件第一个分子
+- `select add/remove atomexpression` 添加/删除选择
 - `%1 %A %?` alternative location的指定
 - `^A` insertionCode
 - `set picking ..` 设置左键选择后的响应
 - `dna` 特殊表达式: dna, ligand, water, carbohydrate, hetero, ions, protein, nucleic, purine, pyrimidine, rna, sidechain
+- `within(10,true,*/2.1)` within一定距离内,10是距离,true一项对应是否在全部model中操作,第三项是原子表达式就是距离计算的参考.
 
 ## 描绘方式
 
 - `display not water`: 隐藏水分子
+- `display/hide add selection`: 显示或隐藏增加某些元素
 - `spacefill only`: spacefill 球状显示
 - `wireframe -0.1`: wireframe 棍状
 - `spacefill 23%;wireframe 0.15`: ball&stick 球棍显示.
@@ -88,7 +91,7 @@ Here I just summary some commands I meet.
 
 ## [颜色](http://chemapps.stolaf.edu/jmol/docs/?ver=14.2#color)
 
-
+select atomexpress; color atoms purple;
 color cartoons structure
 color rockets chain
 color backbone blue
