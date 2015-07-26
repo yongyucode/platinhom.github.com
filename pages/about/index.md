@@ -14,7 +14,7 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 ## Some Tools I developed:
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation and residue pKa calculation. 
 - AutoT&T2 and PG-AutoT&T: Fragment-based lead optimization tool. AutoT&T speeding up and new pharmacophore guided optimization/de novo design.
-- AutoPhD (Pharmacophore percerption): Pharmacophore perception for ligand/protein or protein/protein complex.
+- AutoPhD (Pharmacophore Deduction): Pharmacophore perception for ligand/protein or protein/protein complex.
  
 ## Skills
 
@@ -72,7 +72,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 - Shanghai (Best place in China, graduated student life)
 - East Lansing (Quite town for my postdoc study)
 - Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao
-- Detroit, Chicago, Toronto, New York
+- Detroit, Minneapolis, Chicago, Toronto, New York
 
 ## Find Me in:
 - [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)

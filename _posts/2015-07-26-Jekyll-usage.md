@@ -23,14 +23,14 @@ Usage:
 
 Options:
 
--        -s, --source [DIR]  Source directory (defaults to **./**)
--        -d, --destination [DIR]  Destination directory (defaults to **./_site**)
--            --safe         Safe mode (defaults to false)
--        -p, --plugins PLUGINS\_DIR1[,PLUGINS\_DIR2[,...]]  Plugins directory (defaults to **./_plugins**)
--            --layouts DIR  Layouts directory (defaults to **./_layouts**)
--        -h, --help         Show this message
--        -v, --version      Print the name and version
--        -t, --trace        Show the full backtrace when an error occurs
+- -s, --source [DIR]  Source directory (defaults to **./**)
+- -d, --destination [DIR]  Destination directory (defaults to **./_site**)
+-     --safe         Safe mode (defaults to false)
+- -p, --plugins PLUGINS\_DIR1[,PLUGINS\_DIR2[,...]]  Plugins directory (defaults to **./_plugins**)
+-     --layouts DIR  Layouts directory (defaults to **./_layouts**)
+- -h, --help         Show this message
+- -v, --version      Print the name and version
+- -t, --trace        Show the full backtrace when an error occurs
 
 Subcommands:
 
@@ -80,6 +80,9 @@ Server running... press ctrl-c to stop.
 只需要在_post文件夹内生成 **年-月-日-标题.md** 的文件就可以了(当然可以还支持textile,html等),文件一般包括一个YAML头信息(见下)定义使用的模板,标题等. 后面就是一般的征文内容, 然后正文内容会以 \{\{ content \}\} 来插入到模板中,生成相应子页面.更多请参考ref3. 还不了解参看[jekyll自己介绍](http://jekyllcn.com/docs/posts/)吧..
 
 如何组织网站的页面结构参考[这个](http://jekyllcn.com/docs/pages/).我喜欢把各个子页面放到pages文件夹里,每个子页面都一个文件夹和对应的index.html(减少主文件夹显示的数量,sublime方便点).随各人喜好罢了.其实没有硬性规定,在主页面的index.html相应链接改一下就OK了.
+
+### [插件](http://jekyllcn.com/docs/plugins/)
+Jekyll支持使用插件来进行加载和处理,例如生成sitemap,rss等.但是github并不支持(自动safe=ture). 可以使用本地处理后再上传也行. 
 
 ## 语法
 Jekyll语法比较混杂. 配置文件和头信息中信息储存使用[YAML](https://zh.wikipedia.org/wiki/YAML)标记语言(后缀名.yml)记录, 网页内容处理使用基于ruby的[Liquid模板工具](https://docs.shopify.com/themes/liquid-documentation/basics)来进行. 
