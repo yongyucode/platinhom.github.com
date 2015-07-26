@@ -1,9 +1,9 @@
 ---
 layout: post_small
 title: Jekyll使用
-date: 2015-07-25 21:20:19
+date: 2015-07-26 21:20:19
 categories: IT
-tags: website Git Software
+tags: Website Git Software
 ---
 
 Jekyll是Github Page的静态页面自动生成器. 一般只要知道一些基础用法就可以了, 并不需要安装.在linux/mac上可以装来自己玩玩. 尤其在断网时想查看自己博客时.更新十分快, 很方便本地预览. 但是对于github的项目子页面功能相关的链接会失效(因为交叉了).  

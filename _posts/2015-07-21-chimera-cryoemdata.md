@@ -7,7 +7,7 @@ tags: Visualize CompBiol
 ---
 
 
-- ### [Slicing surfaces]
+### [Slicing surfaces]
 Tools-Depictions-Per-Model-Clipping 打开对话框. 
 Enable clipping 开始切片
 Use slab mode with thickness  切成一厚度的饼, 而不是砍一刀
@@ -17,36 +17,41 @@ Align plane 当有不同对象的切面时,将其对齐
 Adjust clipping with mouse as below  点选后可以手动调整切面, 中间平移, 右键旋转切面.
 Suface capping 里面可以控制切面处是显示表面, mesh还是不显示. 还有颜色等.
 
-- ### [Volume Viewer](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/volumeviewer/framevolumeviewer.html  )
+### [Volume Viewer](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/volumeviewer/framevolumeviewer.html  )
+
 #### Command: [Volume](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/volume.html  )
 在view中ctrl键下点击isovalue可以多造一个surface。
 
 #### Command: [vop](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/vop.html )
-`vop operation arguments options`
-编辑volumetric data 并存作另一新map.
+`vop operation arguments options` 编辑volumetric data 并存作另一新map.
+
 ##### operation:
 `vop add  volume-spec  [ scaleFactors f1,f2,... ] [ onGrid gridmap ] [ boundingGrid true|false ] [ gridStep N | Nx,Ny,Nz ] [ gridSubregion name | i1,j1,k1,i2,j2,k2 | all ]  general-options`:  两个map相加,可以通过scalefactor来调控map的权重,默认是1.0. onGrid是最后会生成的格点,默认是第一个map.boundingGrid是否调整grid来适应新的map, gridstep是对grid才子集, 可以每轴指定N个合并,也可以单独设置三轴. gridSubregion,是否使用某个子区域,可以采用已定义的子域(name指明)也可以指明xyz的范围,默认全部.
 `vop subtract  map othermap  [ scaleFactors f1,f2 ] [ minRMS true|false ] [ onGrid gridmap ] [ boundingGrid true|false ] [ gridStep N | Nx,Ny,Nz ] [ gridSubregion name | i1,j1,k1,i2,j2,k2 | all ]  general-options`: 从map中扣除othermap的值.scaleFactors指明两个map的缩放比例,必须都指明;更常用minRMS可以自动调整othermap的比例,默认flase.onGrid可以指明格点使用某个map的格点打发,默认采用map的.
 `vop resample  volume-spec  onGrid gridmap [ boundingGrid true|false ] [ gridStep N | Nx,Ny,Nz ] [ gridSubregion name | i1,j1,k1,i2,j2,k2 | all ]  general-options`: 重新采样,采用gridmap的格点打法来对指定map重新打格点,采用三线性插值的方法.
 `vop minimum|maximum    volume-spec  [ scaleFactors f1,f2,... ] [ onGrid gridmap ] [ boundingGrid true|false ] [ gridStep N | Nx,Ny,Nz ] [ gridSubregion name | i1,j1,k1,i2,j2,k2 | all ]  general-options`: 对多个map中取最小/最大的值. 参见add的处理.
+
 ##### options:
-`vop scale  volume-spec  [ shift constant ] [ factor f ] [ rms new-rms | sd new-std-dev ] [ valueType value-type ]  general-options`: 对map进行一个常数的加减和变化.
-`modelId  N`
-`step  N | Nx,Ny,Nz`
-`subregion  name | i1,j1,k1,i2,j2,k2 | all`
-`nPlace true|false`
+- `vop scale  volume-spec  [ shift constant ] [ factor f ] [ rms new-rms | sd new-std-dev ] [ valueType value-type ]  general-options`: 对map进行一个常数的加减和变化.
+- `modelId  N`
+- `step  N | Nx,Ny,Nz`
+- `subregion  name | i1,j1,k1,i2,j2,k2 | all`
+- `nPlace true|false`
+
 - ### [Segment Map](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/segger/segment.html)
 #### Command: [Segment](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/segment.html  )
 
 
 
 
-- ### Fitting 
- - ### [Fit in Map](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/fitmaps/fitmaps.html ): 
+### Fitting 
+#### [Fit in Map](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/fitmaps/fitmaps.html ): 
  fit atoms into a map (volume data) or one map into another
- - #### Command: [fitmap](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/fitmap.html ) 也可用`fit`
+#### Command: [fitmap](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/fitmap.html ) 也可用`fit`
+
 `fitmap  fit-structure  ref-map  options   global-search-options` 
 ##### options:
+
 `metric  overlap | correlation | cam`: map-in-map fitting使用的策略,默认overlap.cam是correlation about the mean
 `resolution r`: 指明原子产生模拟volume的分辨率, 采用map-in-map策略, 不指明则用atom-in-map策略
 `shift  true | false ` 或 `rotate  true | false `: 在局部优化时是否平移和旋转(默认true)
@@ -59,19 +64,22 @@ Suface capping 里面可以控制切面处是显示表面, mesh还是不显示. 
 `maxSteps  N `:局部优化中最大步数.
 `eachModel  true | false`: 在指定了多个fit结构时用multifit时是否不考虑别的结构. 就是独立地fitting.默认false.
 `sequence M `:用于multifit, 需要map-in-map方式, fit结构为多个#1,2,3. M为需要fit的次数,一般为fit结构个数, 若大于该数目则会循环fit. 理论是, 将其与结构现在的位置的密度临时扣除后进行fit,再进行下一个子结构fit,最好会收敛. 不能与eachModel共存. 暂不能用于对称fit以及global search. [Sequential Fitting例子](http://www.cgl.ucsf.edu/chimera/videodoc/FitSeq/  ).
+
 ##### Global Search Options:
 `search  N `: 在map全局上产生N个起始位置并进行局部优化,最后结果在Fit List. 默认为0.
 `placement s | r | sr `: 初始化起始位置时对model进行:s 平移 r 旋转 sr平移和旋转(默认)
 `radius  maxdist`: 限制全局搜索时初始化放置位置在起始位置一定距离内.
 `clusterAngle  angle `和`clusterShift  shift `: 在fit list中显示的unqiue的差异旋转度(默认6度)和平移度(默认3A)
 `asymmetricUnit  true | false `: 是否将位置上对称等价的不对称单元作为同一结果处理.默认true.
-`inside  fraction `: 达到最少保持在ref map中原子/grid point的比例才能作为结果.
- - ### [Fit in Segment](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/segger/fitsegments.html ):
+`inside  fraction`: 达到最少保持在ref map中原子/grid point的比例才能作为结果.
+ 
+ ### [Fit in Segment](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/segger/fitsegments.html ):
  fit structures into map segmentation regions
- - ### [MultiFit](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/multifit/multifit.html ):
+ 
+ ### [MultiFit](http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/multifit/multifit.html ):
  fit multiple structures into density using a web service hosted by the UCSF RBVI
 
-- ### Symmetry
+### Symmetry
  - #### Command: [measure symmetry](http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/midas/measure.html#symmetry ): 
 `measure symmetry  map-model(s)  [ minimumCorrelation mincorr ] [ nMax n ] [ points maxpts ] [ set true|false ] [ helix rise,angle[,n][,opt] ]`
 ! 测量对称性, 获得的对称性可用于`sym`和`fitmap`指令, 也可用于map文件生成. 要直接指定对称性使用volume symmetry.

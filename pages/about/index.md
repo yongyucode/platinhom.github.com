@@ -70,7 +70,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 - Foshan (My lovely hometown)
 - Nanjing (My undergraduated student life)
 - Shanghai (Best place in China, graduated student life)
-- East Lansing (Quite town for my postdoc study)
+- East Lansing (Quiet town for my postdoc study)
 - Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao
 - Detroit, Minneapolis, Chicago, Toronto, New York
 
