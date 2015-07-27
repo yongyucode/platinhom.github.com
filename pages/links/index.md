@@ -47,7 +47,7 @@ layout: page_small
 - [哲科文](http://jerkwin.github.io/) ; [懒猪](../about/log.html) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/) ; [团子运维](http://kodango.com/) ; [UseASP](http://blog.useasp.net/default.aspx); [GitCafe版](http://platinhom.gitcafe.io/); [HomPDF](http://platinhom.github.io/HomPDF);[ShowMol](http://platinhom.github.io/ShowMol)
 
 ### Expert Group
-- [R.X.Wang@SIOC](http://www.sioc-ccbg.ac.cn/) ; [Houk@UCLA](http://www.chem.ucla.edu/houk/index.html) ; [Shiochet@UCSF](http://www.bkslab.org/index.php) ; [Voth@Chicago](https://vothgroup.uchicago.edu/) ; [WahChiu@BCM](https://www.bcm.edu/research/labs/wah-chiu);
+- [R.X.Wang@SIOC](http://www.sioc-ccbg.ac.cn/) ; [Houk@UCLA](http://www.chem.ucla.edu/houk/index.html) ; [Shiochet@UCSF](http://www.bkslab.org/index.php)[wiki](http://wiki.bkslab.org/index.php/Main_Page) ; [Voth@Chicago](https://vothgroup.uchicago.edu/) ; [WahChiu@BCM](https://www.bcm.edu/research/labs/wah-chiu);
 - [McCammon@UCSD](http://mccammon.ucsd.edu/) ; [Brooks@UM](http://brooks.chem.lsa.umich.edu/) ; [DavidCase@Rutgers](http://casegroup.rutgers.edu/) ; [Merz@MSU](http://www.merzgroup.org/); [Truhlar@UMN](http://comp.chem.umn.edu/truhlar/index.htm)
 - [Sali@UCSF](http://salilab.org/index.html) ; [DavidBaker@WU](http://www.bakerlab.org/) ; [Y.Zhang@UM](http://zhanglab.ccmb.med.umich.edu/); 
 
