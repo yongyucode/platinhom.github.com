@@ -14,7 +14,7 @@ Crystaldock是一个基于片段的药物设计方法.以前组会讲过.该方�
 
 PDF版:
 
-<iframe src="http://platinhom.github.io/HomPDF/Report/CrystalDock.pdf" style="width:1000px; height:800px;" frameborder="0"></iframe>
+<iframe src="/HomPDF/Report/CrystalDock.pdf" style="width:1000px; height:800px;" frameborder="0"></iframe>
 
 
 主程序源码如下:
