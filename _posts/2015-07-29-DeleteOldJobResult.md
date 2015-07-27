@@ -1,6 +1,6 @@
 ---
 layout: post_jq
-title: DeleteOldJobResult
+title: 自动删除过时结果
 date: 2015-07-28 21:01:52
 categories: IT
 tags: Bash
