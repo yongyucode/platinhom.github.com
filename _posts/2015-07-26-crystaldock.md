@@ -8,6 +8,10 @@ tags: CompBiol CADD Python src
 
 Crystaldock是一个基于片段的药物设计方法.以前组会讲过.该方法中,首先打碎小分子配体成多个片段,然后识别出每个片段的微环境(周围几个残基),根据微环境情况对新的复合物进行分析,并引入相应片段,组合成新的分子.
 
+当时组会报告PPT:
+
+<iframe src="http://platinhom.github.io/HomPDF/Report/CrystalDock.pptx" style="width:300px; height:100px;" frameborder="0"></iframe>
+
 主程序源码如下:
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
