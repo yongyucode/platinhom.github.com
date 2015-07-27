@@ -2,7 +2,7 @@
 layout: post
 title: JSMol指令
 date: 2015-06-23 22:01:59
-categories: CompSci
+categories: CompCB
 tags: CompBiol CompChem Visualize
 ---
 

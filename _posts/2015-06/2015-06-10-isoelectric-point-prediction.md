@@ -2,7 +2,7 @@
 layout: post
 title: 蛋白等电点预测
 date: 2015-06-10 05:05:10
-categories: CompSci
+categories: CompCB
 tags: CompBiol
 ---
 # Prediction of pI(isoelectric point) of protein

@@ -2,7 +2,7 @@
 layout: post
 title: Amber输入结构的预处理
 date: 2015-06-14 04:18:41
-categories: CompSci
+categories: CompCB
 tags: Amber Python CompBiol
 ---
 

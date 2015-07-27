@@ -2,7 +2,7 @@
 layout: post_mathjax
 title: Arrhenius阿伦尼乌斯方程与反应速率
 date: 2015-06-27 20:33:11
-categories: CompSci
+categories: CompCB
 tags: CompChem PhysChem HTML OnlineTool JS
 ---
 

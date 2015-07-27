@@ -2,7 +2,7 @@
 layout: post
 title: 20种氨基酸以外常见残基名字
 date: 2015-07-15 04:17:23
-categories: CompSci
+categories: CompCB
 tags: CompBiol
 ---
 

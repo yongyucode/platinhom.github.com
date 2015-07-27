@@ -2,7 +2,7 @@
 layout: post
 title: 利用Amber将Mol2转为PQR
 date: 2015-07-11 19:06:39
-categories: CompSci
+categories: CompCB
 tags: CompBiol Amber Bash
 ---
 

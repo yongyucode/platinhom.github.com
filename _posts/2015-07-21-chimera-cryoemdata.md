@@ -2,7 +2,7 @@
 layout: post
 title: Chimera用于CryoEM数据处理
 date: 2015-07-21 04:38:26
-categories: CompSci
+categories: CompCB
 tags: Visualize CompBiol
 ---
 

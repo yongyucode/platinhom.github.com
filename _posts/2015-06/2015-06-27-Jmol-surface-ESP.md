@@ -2,7 +2,7 @@
 layout: post
 title: JMol加载显示静电势表面
 date: 2015-06-27 03:32:39
-categories: CompSci
+categories: CompCB
 tags: CompBiol Visualize Website
 ---
 
