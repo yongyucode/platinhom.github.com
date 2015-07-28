@@ -7,7 +7,7 @@ tags: Website Git Software
 ---
 
 Jekyll是Github Page的静态页面自动生成器. 一般只要知道一些基础用法就可以了, 并不需要安装.在linux/mac上可以装来自己玩玩. 尤其在断网时想查看自己博客时.更新十分快, 很方便本地预览. 但是对于github的项目子页面功能相关的链接会失效(因为交叉了).  
-Jekyll预设了[Pygment](http://pygments.org/)语法着色.
+Jekyll预设了[Pygment](http://pygments.org/)语法着色. 
 
 ## 安装
 Jekyll是基于ruby的.先要安装ruby和ruby gem.  
@@ -52,7 +52,7 @@ Server running... press ctrl-c to stop.
 *jekyll build --source <source> --destination <destination>* 指定相应源文件夹以及生成文件夹,也可在_config.yml中指定.
 
 ### 目录结构
-在根目录下一般有以下文件夹和文件:
+在根目录下一般有以下文件夹和文件: (要是github想禁用jekyll,建一个 *.nojekyll* )
 
 - `_config.yml` 配置文件,配置jekyll的一切以及变量 
 - `index.md/html` 主页文件,必须的

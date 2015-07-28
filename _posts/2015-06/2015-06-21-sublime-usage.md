@@ -174,6 +174,7 @@ Perference->Setting Default->搜索New_Window, 打开文件在新窗口设为fal
 5. [善用佳软视频介绍](http://xbeta.info/sublime-text2.htm)
 6. [Sublime编译build设置](/2015/06/21/sublime-build/)
 7. [Understanding projects in sublime text saving switching etc](http://www.joshuawinn.com/understanding-projects-in-sublime-text-saving-switching-etc/)
+8. [带动图教程](http://lucida.me/blog/sublime-text-complete-guide/?comefrom=http://blogread.cn/news/)
 
 
 ---
