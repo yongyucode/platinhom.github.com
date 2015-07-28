@@ -176,3 +176,6 @@ New reposit to save pdf and molecular website
 Add pygments.css. Support pygments highlight.
 Add new pygments_*.css style for pygments highlight
 Note that, it should control the *div.highlight pre* and *div.highlight pre code* style to over the origin prism style.  
+
+### Delete old template ending script
+Last ending script means nothing. I delete it in post layout. Only save in posttoc.html layout.

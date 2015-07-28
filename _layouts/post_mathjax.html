@@ -33,14 +33,5 @@ MathJax.Hub.Queue(function(){
 var all=MathJax.Hub.getAllJax(),i;for(i=0;i<all.length;i+=1){all[i].SourceElement().parentNode.className+=' has-jax';}});
 </script>
 
-<script>
-$(function(){$(document).keydown(function(e){
-var url = false;
-if(e.which==37||e.which==74){ {% if page.previous %} url='{{ site.url }}{{ page.previous.url }}';{% endif %} }
-else if(e.which==39||e.which==75){ {% if page.next %}  url='{{ site.url }}{{ page.next.url }}';{% endif %} }
-if(url){window.location=url;} });})
-pageURL.innerHTML=decodeURI('{{ site.url }}{{ page.url }}');
-</script>
-
 {% include comments.md %}
 
