@@ -231,15 +231,112 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
  | onselect | 文本被选定 | onsubmit | 提交按钮被点击 | 
  | onunload | 用户退出页面 | . | . |
 
-## JS常用非编程方法
+## JS常用浏览器对象方法
 
 - `alert('Welcome!')` : 弹出提示框
 - `confirm(str);`:弹出对话框,提示字符串str,返回true/false(确定/取消)
 - `prompt(str1, str2);`: 提问对话框,可输入值.str1是提示信息,str2是预设内容.按确定返回输入字符串,取消null.
-- `window.open(<URL>, <窗口名称>, <参数字符串>)` 打开新窗口.
-- `window.close()` 窗口关闭.这里window也可以是window.open打开后的返回值窗口变量.
 - `console.log(command)` 执行命令后将结果返回到控制台.控制台要另外在浏览器调用.
 
+### Screen对象
+
+- `screen.availHeight` : 返回显示屏幕的高度 (除 Windows 任务栏之外)。
+- `screen.availWidth` : 返回显示屏幕的宽度 (除 Windows 任务栏之外)。
+- `screen.bufferDepth` : 设置或返回调色板的比特深度。
+- `screen.colorDepth` : 返回目标设备或缓冲器上的调色板的比特深度。
+- `screen.deviceXDPI` : 返回显示屏幕的每英寸水平点数。
+- `screen.deviceYDPI` : 返回显示屏幕的每英寸垂直点数。
+- `screen.fontSmoothingEnabled` : 返回用户是否在显示控制面板中启用了字体平滑。
+- `screen.height` : 返回显示屏幕的高度。
+- `screen.logicalXDPI` : 返回显示屏幕每英寸的水平方向的常规点数。
+- `screen.logicalYDPI` : 返回显示屏幕每英寸的垂直方向的常规点数。
+- `screen.pixelDepth` : 返回显示屏幕的颜色分辨率（比特每像素）。
+- `screen.updateInterval` : 设置或返回屏幕的刷新率。
+- `screen.width` : 返回显示器屏幕的宽度。
+
+### Location对象(Window对象的属性)
+
+- `location.hash` : 设置或返回从井号 (#) 开始的 URL（锚）。
+- `location.host` : 设置或返回主机名和当前 URL 的端口号。
+- `location.hostname` : 设置或返回当前 URL 的主机名。
+- `location.href` : 设置或返回完整的 URL。
+- `location.pathname` : 设置或返回当前 URL 的路径部分。
+- `location.port` : 设置或返回当前 URL 的端口号。
+- `location.protocol` : 设置或返回当前 URL 的协议。
+- `location.search` : 设置或返回从问号 (?) 开始的 URL（查询部分）。
+- `location.assign(URL)` : 加载新的文档。
+- `location.reload([force])` : 重新加载当前文档,相当于刷新。force为true/false,是否强制刷新,默认false时若服务器网页没修改则从缓存加载
+- `location.replace(newURL)` : 用新的文档替换当前文档。不会产生新历史记录而是直接覆盖当前历史记录.
+
+### Window对象
+
+- `window.frames[]` : 返回窗口中所有命名的框架。该集合是 Window 对象的数组，每个 Window 对象在窗口中含有一个框架或 <iframe>。
+- `window.closed` : 返回窗口是否已被关闭。
+- `window.defaultStatus` : 设置或返回窗口状态栏中的默认文本。
+- `window.document` : 对 Document 对象的只读引用。请参阅 Document 对象。
+- `window.history` : 对 History 对象的只读引用。请参数 History 对象。
+- `window.innerheight` : 返回窗口的文档显示区的高度。
+- `window.innerwidth` : 返回窗口的文档显示区的宽度。
+- `window.length` : 设置或返回窗口中的框架数量。
+- `window.location` : 用于窗口或框架的 Location 对象。请参阅 Location 对象。
+- `window.name` : 设置或返回窗口的名称。
+- `window.Navigator` : 对 Navigator 对象的只读引用。请参数 Navigator 对象。
+- `window.opener` : 返回对创建此窗口的窗口的引用。
+- `window.outerheight` : 返回窗口的外部高度。
+- `window.outerwidth` : 返回窗口的外部宽度。
+- `window.pageXOffset` : 设置或返回当前页面相对于窗口显示区左上角的 X 位置。
+- `window.pageYOffset` : 设置或返回当前页面相对于窗口显示区左上角的 Y 位置。
+- `window.parent` : 返回父窗口。
+- `window.Screen` : 对 Screen 对象的只读引用。请参数 Screen 对象。
+- `window.self` : 返回对当前窗口的引用。等价于 Window 属性。
+- `window.status` : 设置窗口状态栏的文本。
+- `window.top` : 返回最顶层的先辈窗口。
+- `window.window` : window 属性等价于 self 属性，它包含了对窗口自身的引用。
+- `window.screenLeft`,`window.screenTop`,`window.screenX`,`window.screenY` : 只读整数。声明了窗口的左上角在屏幕上的的 x 坐标和 y 坐标。IE、Safari 和 Opera 支持 screenLeft 和 screenTop，而 Firefox 和 Safari 支持 screenX 和 screenY。
+- [window.alert()](http://www.w3school.com.cn/jsref/met_win_alert.asp) : 显示带有一段消息和一个确认按钮的警告框。
+- [window.blur()](http://www.w3school.com.cn/jsref/met_win_blur.asp) : 把键盘焦点从顶层窗口移开。
+- [window.clearInterval()](http://www.w3school.com.cn/jsref/met_win_clearinterval.asp) : 取消由 setInterval() 设置的 timeout。
+- [window.clearTimeout()](http://www.w3school.com.cn/jsref/met_win_cleartimeout.asp) : 取消由 setTimeout() 方法设置的 timeout。
+- [window.close()](http://www.w3school.com.cn/jsref/met_win_close.asp) : 关闭浏览器窗口。这里window也可以是window.open打开后的返回值窗口变量.
+- [window.confirm()](http://www.w3school.com.cn/jsref/met_win_confirm.asp) : 显示带有一段消息以及确认按钮和取消按钮的对话框。
+- [window.createPopup()](http://www.w3school.com.cn/jsref/met_win_createpopup.asp) : 创建一个 pop-up 窗口。
+- [window.focus()](http://www.w3school.com.cn/jsref/met_win_focus.asp) : 把键盘焦点给予一个窗口。
+- [window.moveBy()](http://www.w3school.com.cn/jsref/met_win_moveby.asp) : 可相对窗口的当前坐标把它移动指定的像素。
+- [window.moveTo()](http://www.w3school.com.cn/jsref/met_win_moveto.asp) : 把窗口的左上角移动到一个指定的坐标。
+- [window.open(<URL>, <窗口名称>, <参数字符串>)](http://www.w3school.com.cn/jsref/met_win_open.asp) : 打开一个新的浏览器窗口或查找一个已命名的窗口。
+- [window.print()](http://www.w3school.com.cn/jsref/met_win_print.asp) : 打印当前窗口的内容。
+- [window.prompt()](http://www.w3school.com.cn/jsref/met_win_prompt.asp) : 显示可提示用户输入的对话框。
+- [window.resizeBy()](http://www.w3school.com.cn/jsref/met_win_resizeby.asp) : 按照指定的像素调整窗口的大小。
+- [window.resizeTo()](http://www.w3school.com.cn/jsref/met_win_resizeto.asp) : 把窗口的大小调整到指定的宽度和高度。
+- [window.scrollBy()](http://www.w3school.com.cn/jsref/met_win_scrollby.asp) : 按照指定的像素值来滚动内容。
+- [window.scrollTo()](http://www.w3school.com.cn/jsref/met_win_scrollto.asp) : 把内容滚动到指定的坐标。
+- [window.setInterval()](http://www.w3school.com.cn/jsref/met_win_setinterval.asp) : 按照指定的周期（以毫秒计）来调用函数或计算表达式。
+- [window.setTimeout()](http://www.w3school.com.cn/jsref/met_win_settimeout.asp) : 在指定的毫秒数后调用函数或计算表达式。
+
+### Navigator对象
+
+- `navigator.plugins[]` : 返回对文档中所有嵌入式对象的引用。该集合是一个 Plugin 对象的数组，其中的元素代表浏览器已经安装的插件。
+- `navigator.appCodeName` : 返回浏览器的代码名。
+- `navigator.appMinorVersion` : 返回浏览器的次级版本。
+- `navigator.appName` : 返回浏览器的名称。
+- `navigator.appVersion` : 返回浏览器的平台和版本信息。
+- `navigator.browserLanguage` : 返回当前浏览器的语言。
+- `navigator.cookieEnabled` : 返回指明浏览器中是否启用 cookie 的布尔值。
+- `navigator.cpuClass` : 返回浏览器系统的 CPU 等级。
+- `navigator.onLine` : 返回指明系统是否处于脱机模式的布尔值。
+- `navigator.platform` : 返回运行浏览器的操作系统平台。
+- `navigator.systemLanguage` : 返回 OS 使用的默认语言。
+- `navigator.userAgent` : 返回由客户机发送服务器的 user-agent 头部的值。
+- `navigator.userLanguage` : 返回 OS 的自然语言设置。
+- `navigator.javaEnabled()`	: 规定浏览器是否启用 Java。
+- `navigator.taintEnabled()` :	规定浏览器是否启用数据污点 (data tainting)。
+
+### History对象
+
+- `history.length`	返回浏览器历史列表中的 URL 数量。
+- `history.back()`	加载 history 列表中的前一个 URL。后退.
+- `history.forward()`	加载 history 列表中的下一个 URL。前进.
+- `history.go(number|URL)`	加载 history 列表中的某个具体页面。-1等于back.
 
 ## Reference
 1. [w3school-cn-javascript教程](http://www.w3school.com.cn/js/index.asp)
