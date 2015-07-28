@@ -11,9 +11,7 @@ tags: VB Excel
 - 方法一: 使用指定range逐一迭代  
 Offset(y,x) 返回的是该cell相应行和列的偏移后的对象.
 
-{% highlight vb %}
-for i in range(5):
-	continue;
+{% highlight vb.net linenos %}
 Sub test()
 For Each cell In Range("A2:A6")
 cell.Offset(0, 1) = cell.Hyperlinks(1).Address
@@ -25,8 +23,6 @@ End Sub
 这里包括了直接编辑成markdown的格式.
 
 ~~~python
-for i in range(5):
-	continue;
 Sub ExtractHL()
     Dim HL As Hyperlink
     For Each HL In ActiveSheet.Hyperlinks

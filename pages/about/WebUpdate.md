@@ -171,3 +171,7 @@ Use other directory to contain pic/jscss and other files
 New reposit to save pdf and molecular website
 
 ### Add post_jq.html layout to load jquery.
+
+### post_py.html
+Cancel Prism css/js. Add pygments.css. Support pygments highlight.
+Add new pygments_*.css style for pygments highlight
