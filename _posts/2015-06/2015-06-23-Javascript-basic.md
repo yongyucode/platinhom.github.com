@@ -219,6 +219,7 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueof_math.asp) : 返回 Math 对象的原始值。
 
 ### 事件参考
+
 onabort | 图像加载被中断 | onblur | 元素失去焦点 
 onchange | 用户改变域的内容 | onclick | 鼠标点击某个对象 
 ondblclick | 鼠标双击某个对象 | onerror | 当加载文档或图像时发生某个错误 
