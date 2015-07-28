@@ -90,11 +90,12 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ### 全局对象(属性和方法)
 
-Infinity|代表正的无穷大的数值。
-java|代表 java.* 包层级的一个 JavaPackage。
-NaN|指示某个值是不是数字值。
-Packages|根 JavaPackage 对象。
-undefined|指示未定义的值。
+ | Infinity | 代表正的无穷大的数值。 | 
+ | java | 代表 java.* 包层级的一个 JavaPackage。 | 
+ | NaN | 指示某个值是不是数字值。 | 
+ | Packages | 根 JavaPackage 对象。 | 
+ | undefined | 指示未定义的值。 | 
+
 
 
 - [decodeURI()](http://www.w3school.com.cn/jsref/jsref_decodeURI.asp) : 解码某个编码的 URI。
