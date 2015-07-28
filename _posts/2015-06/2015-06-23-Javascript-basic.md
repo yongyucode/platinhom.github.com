@@ -88,30 +88,91 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ## 常用属性和方法
 
-### 字符串
+### 全局对象(属性和方法)
+
+### Number对象
+
+- MAX_VALUE	可表示的最大的数。
+- MIN_VALUE	可表示的最小的数。
+- NaN	非数字值。
+- NEGATIVE_INFINITY	负无穷大，溢出时返回该值。
+- POSITIVE_INFINITY	正无穷大，溢出时返回该值。
+- prototype	使您有能力向对象添加属性和方法
+- [toString(radix)](http://www.w3school.com.cn/jsref/jsref_tostring_number.asp) : 把数字转换为字符串，使用指定的基数(默认10,10进制)。
+- [toLocaleString()](http://www.w3school.com.cn/jsref/jsref_tolocalestring_number.asp) : 把数字转换为字符串，使用本地数字格式顺序。
+- [toFixed(num)](http://www.w3school.com.cn/jsref/jsref_tofixed.asp) : 把数字转换为字符串，结果的小数点后有指定位数的数字。num是小数位数,0~20. 会四舍五入.
+- [toExponential(num)](http://www.w3school.com.cn/jsref/jsref_toexponential.asp) : 把对象的值转换为指数计数法。num是小数位数,0~20.
+- [toPrecision(num)](http://www.w3school.com.cn/jsref/jsref_toprecision.asp) : 把数字格式化为指定的长度指数计数法。num是小数位数,1~21. 一般用于大整数.
+- [valueOf](http://www.w3school.com.cn/jsref/jsref_valueof_number.asp) : 返回一个 Number 对象的基本数字值。
+
+### 字符串对象
 
 - `str.length` 返回长度
-- `str.substring(x,y)` 返回子串,和python的语法类似,0开始[x,y)返回x+1到y的子串.
-- `str.substr(start,len)` 返回子串,从start开始长度为len. 注意序号0开始,支持-1负数表示从后倒数起.len省略则返回到结尾.
-- `str.toUpperCase()/toLowerCase` 全部大/小写化
-- `str.indexOf(str2[,start])` 从start位开始(默认0)搜索str2,找到后返回首个匹配字母的索引,没找到返回-1.
-- `str.replace(regexp/substr,replacement)` 使用正则/子串搜索并替换.
-- `str.split(separator,max)` 必须指明分隔符. max是最大分的次数,默认无穷.
-- `escape(str)` 将字符串转为网址那种编码.被废弃,应该用encodeURI()和encodeURIComponent()来代替.
+- [anchor()](http://www.w3school.com.cn/jsref/jsref_anchor.asp) : 创建 HTML 锚。
+- [big()](http://www.w3school.com.cn/jsref/jsref_big.asp) : 用大号字体显示字符串。
+- [blink()](http://www.w3school.com.cn/jsref/jsref_blink.asp) : 显示闪动字符串。
+- [bold()](http://www.w3school.com.cn/jsref/jsref_bold.asp) : 使用粗体显示字符串。
+- [charAt()](http://www.w3school.com.cn/jsref/jsref_charAt.asp) : 返回在指定位置的字符。
+- [charCodeAt()](http://www.w3school.com.cn/jsref/jsref_charCodeAt.asp) : 返回在指定的位置的字符的 Unicode 编码。
+- [concat()](http://www.w3school.com.cn/jsref/jsref_concat_string.asp) : 连接字符串。
+- [fixed()](http://www.w3school.com.cn/jsref/jsref_fixed.asp) : 以打字机文本显示字符串。
+- [fontcolor()](http://www.w3school.com.cn/jsref/jsref_fontcolor.asp) : 使用指定的颜色来显示字符串。
+- [fontsize()](http://www.w3school.com.cn/jsref/jsref_fontsize.asp) : 使用指定的尺寸来显示字符串。
+- [fromCharCode()](http://www.w3school.com.cn/jsref/jsref_fromCharCode.asp) : 从字符编码创建一个字符串。
+- [indexOf(str2[,start])](http://www.w3school.com.cn/jsref/jsref_indexOf.asp) : 检索字符串。从start位开始(默认0)搜索str2,找到后返回首个匹配字母的索引,没找到返回-1.
+- [italics()](http://www.w3school.com.cn/jsref/jsref_italics.asp) : 使用斜体显示字符串。
+- [lastIndexOf()](http://www.w3school.com.cn/jsref/jsref_lastIndexOf.asp) : 从后向前搜索字符串。
+- [link()](http://www.w3school.com.cn/jsref/jsref_link.asp) : 将字符串显示为链接。
+- [localeCompare()](http://www.w3school.com.cn/jsref/jsref_localeCompare.asp) : 用本地特定的顺序来比较两个字符串。
+- [match()](http://www.w3school.com.cn/jsref/jsref_match.asp) : 找到一个或多个正则表达式/子串的匹配。
+- [replace(regexp/substr,replacement)](http://www.w3school.com.cn/jsref/jsref_replace.asp) : 替换与正则表达式匹配的子串。
+- [search()](http://www.w3school.com.cn/jsref/jsref_search.asp) : 检索与正则表达式相匹配的值。
+- [slice()](http://www.w3school.com.cn/jsref/jsref_slice_string.asp) : 提取字符串的片断，并在新的字符串中返回被提取的部分。
+- [small()](http://www.w3school.com.cn/jsref/jsref_small.asp) : 使用小字号来显示字符串。
+- [split(separator,max)](http://www.w3school.com.cn/jsref/jsref_split.asp) : 把字符串分割为字符串数组。必须指明分隔符. max是最大分的次数,默认无穷.
+- [strike()](http://www.w3school.com.cn/jsref/jsref_strike.asp) : 使用删除线来显示字符串。
+- [sub()](http://www.w3school.com.cn/jsref/jsref_sub.asp) : 把字符串显示为下标。
+- [substr(start[,len])](http://www.w3school.com.cn/jsref/jsref_substr.asp) : 从起始索引号提取字符串中指定数目的字符。从start开始长度为len. 注意序号0开始,支持-1负数表示从后倒数起.len省略则返回到结尾.
+- [substring(x,y)](http://www.w3school.com.cn/jsref/jsref_substring.asp) : 提取字符串中两个指定的索引号之间的字符。和python的语法类似,0开始[x,y)返回x+1到y的子串.
+- [sup()](http://www.w3school.com.cn/jsref/jsref_sup.asp) : 把字符串显示为上标。
+- [toLocaleLowerCase()](http://www.w3school.com.cn/jsref/jsref_toLocaleLowerCase.asp) : 把字符串转换为小写。
+- [toLocaleUpperCase()](http://www.w3school.com.cn/jsref/jsref_toLocaleUpperCase.asp) : 把字符串转换为大写。
+- [toLowerCase()](http://www.w3school.com.cn/jsref/jsref_toLowerCase.asp) : 把字符串转换为小写。
+- [toUpperCase()](http://www.w3school.com.cn/jsref/jsref_toUpperCase.asp) : 把字符串转换为大写。
+- [toString()](http://www.w3school.com.cn/jsref/jsref_toString_string.asp) : 返回字符串。
+- [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueOf_string.asp) : 返回某个字符串对象的原始值。
+- toSource()	代表对象的源代码。
 
 ## 数组
 
 - `ary.length` 返回数组的长度
-- `ary.pop()` 删除并返回最后一个元素
-- `ary.shift()` 删除并返回第一个元素
-- `ary.push(ele....)` 追加元素,可以数个,返回新长度
-- `ary.unshift(ele....)` 向数组开头追加元素,可以数个,返回新长度
-- `ary.splice(index,N,ele....)` 从数组中index开始(可以负数)删除N个元素,N=0则不删除只增加.ele是要添加的元素. 改变原来数组,返回删除的项目.`ary.splice(0,ary.length);`清空数组,和`ary=[]`;一样
+- [concat(arrayX,arrayY,......)](http://www.w3school.com.cn/jsref/jsref_concat_array.asp) : 连接两个或更多的数组，并返回结果。
+- [join([separator])](http://www.w3school.com.cn/jsref/jsref_join.asp) : 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。默认分隔符`,`
+- [pop()](http://www.w3school.com.cn/jsref/jsref_pop.asp) : 删除并返回数组的最后一个元素
+- [push(ele....)](http://www.w3school.com.cn/jsref/jsref_push.asp) : 向数组的末尾添加一个或更多元素，并返回新的长度。
+- [reverse()](http://www.w3school.com.cn/jsref/jsref_reverse.asp) : 颠倒数组中元素的顺序。改变数组而非返回新数组
+- [shift(ele....)](http://www.w3school.com.cn/jsref/jsref_shift.asp) : 删除并返回数组的第一个元素
+- [slice(start,end)](http://www.w3school.com.cn/jsref/jsref_slice_array.asp) : 从某个已有的数组返回选定的元素, 分片.支持负数
+- [sort()](http://www.w3school.com.cn/jsref/jsref_sort.asp) : 对数组的元素进行排序
+- [splice(index,N,ele....)](http://www.w3school.com.cn/jsref/jsref_splice.asp) : 从数组中index开始(可以负数)删除N个元素,N=0则不删除只增加.ele是要添加的元素. 改变原来数组,返回删除的项目.`ary.splice(0,ary.length);`清空数组,和`ary=[]`;一样
+- [toSource()](http://www.w3school.com.cn/jsref/jsref_tosource_array.asp) : 返回该对象的源代码。很多浏览器不支持.
+- [toString()](http://www.w3school.com.cn/jsref/jsref_toString_array.asp) : 把数组转换为字符串，并返回结果。自动用`,`连接
+- [toLocaleString()](http://www.w3school.com.cn/jsref/jsref_toLocaleString_array.asp) : 把数组转换为本地数组，并返回结果。
+- [unshift(ele....)](http://www.w3school.com.cn/jsref/jsref_unshift.asp) : 向数组的开头添加一个或更多元素，并返回新的长度。
+- [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueof_array.asp) : 返回数组对象的原始值
 - `ary.hasOwnProperty(key);` 字典判断是否有键值.返回true/false
 - `$.inArray("value", ary);` 检查数组是否有值,返回所在位置(0起),没有则返回-1.
 
 ### Math对象方法
 
+- E	返回算术常量 e，即自然对数的底数（约等于2.718）。
+- LN2	返回 2 的自然对数（约等于0.693）。
+- LN10	返回 10 的自然对数（约等于2.302）。
+- LOG2E	返回以 2 为底的 e 的对数（约等于 1.414）。
+- LOG10E	返回以 10 为底的 e 的对数（约等于0.434）。
+- PI	返回圆周率（约等于3.14159）。
+- SQRT1_2	返回返回 2 的平方根的倒数（约等于 0.707）。
+- SQRT2	返回 2 的平方根（约等于 1.414）。
 - [abs(x)](http://www.w3school.com.cn/jsref/jsref_abs.asp) : 返回数的绝对值。
 - [acos(x)](http://www.w3school.com.cn/jsref/jsref_acos.asp) : 返回数的反余弦值。
 - [asin(x)](http://www.w3school.com.cn/jsref/jsref_asin.asp) : 返回数的反正弦值。
@@ -133,6 +194,28 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - [toSource()](http://www.w3school.com.cn/jsref/jsref_tosource_math.asp) : 返回该对象的源代码。
 - [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueof_math.asp) : 返回 Math 对象的原始值。
 
+### 事件参考
+- onabort	图像加载被中断
+- onblur	元素失去焦点
+- onchange	用户改变域的内容
+- onclick	鼠标点击某个对象
+- ondblclick	鼠标双击某个对象
+- onerror	当加载文档或图像时发生某个错误
+- onfocus	元素获得焦点
+- onkeydown	某个键盘的键被按下
+- onkeypress	某个键盘的键被按下或按住
+- onkeyup	某个键盘的键被松开
+- onload	某个页面或图像被完成加载
+- onmousedown	某个鼠标按键被按下
+- onmousemove	鼠标被移动
+- onmouseout	鼠标从某元素移开
+- onmouseover	鼠标被移到某元素之上
+- onmouseup	某个鼠标按键被松开
+- onreset	重置按钮被点击
+- onresize	窗口或框架被调整尺寸
+- onselect	文本被选定
+- onsubmit	提交按钮被点击
+- onunload	用户退出页面
 
 
 ## JS常用方法
