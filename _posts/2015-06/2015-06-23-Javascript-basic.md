@@ -90,6 +90,28 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ### 全局对象(属性和方法)
 
+Infinity|代表正的无穷大的数值。
+java|代表 java.* 包层级的一个 JavaPackage。
+NaN|指示某个值是不是数字值。
+Packages|根 JavaPackage 对象。
+undefined|指示未定义的值。
+
+
+- [decodeURI()](http://www.w3school.com.cn/jsref/jsref_decodeURI.asp) : 解码某个编码的 URI。
+- [decodeURIComponent()](http://www.w3school.com.cn/jsref/jsref_decodeURIComponent.asp) : 解码一个编码的 URI 组件。
+- [encodeURI()](http://www.w3school.com.cn/jsref/jsref_encodeuri.asp) : 把字符串编码为 URI。
+- [encodeURIComponent()](http://www.w3school.com.cn/jsref/jsref_encodeURIComponent.asp) : 把字符串编码为 URI 组件。
+- [escape(str)](http://www.w3school.com.cn/jsref/jsref_escape.asp) : 将字符串转为网址那种编码.被废弃,应该用encodeURI()和encodeURIComponent()来代替.
+- [eval()](http://www.w3school.com.cn/jsref/jsref_eval.asp) : 计算 JavaScript 字符串，并把它作为脚本代码来执行。
+- [getClass()](http://www.w3school.com.cn/jsref/jsref_getClass.asp) : 返回一个 JavaObject 的 JavaClass。
+- [isFinite()](http://www.w3school.com.cn/jsref/jsref_isFinite.asp) : 检查某个值是否为有穷大的数。
+- [isNaN()](http://www.w3school.com.cn/jsref/jsref_isNaN.asp) : 检查某个值是否是数字。
+- [Number()](http://www.w3school.com.cn/jsref/jsref_number.asp) : 把对象的值转换为数字。
+- [parseFloat()](http://www.w3school.com.cn/jsref/jsref_parseFloat.asp) : 解析一个字符串并返回一个浮点数。
+- [parseInt()](http://www.w3school.com.cn/jsref/jsref_parseInt.asp) : 解析一个字符串并返回一个整数。
+- [String()](http://www.w3school.com.cn/jsref/jsref_string.asp) : 把对象的值转换为字符串。
+- [unescape()](http://www.w3school.com.cn/jsref/jsref_unescape.asp) : 对由 escape() 编码的字符串进行解码。
+
 ### Number对象
 
 - MAX_VALUE	可表示的最大的数。
@@ -218,7 +240,7 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - onunload	用户退出页面
 
 
-## JS常用方法
+## JS常用非编程方法
 
 - `alert('Welcome!')` : 弹出提示框
 - `confirm(str);`:弹出对话框,提示字符串str,返回true/false(确定/取消)
