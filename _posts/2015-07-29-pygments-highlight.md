@@ -52,7 +52,7 @@ PS:
 使用上述方法构造出来的代码是`<div class="highlight"><pre><code class="language-vb.net" data-lang="vb.net">` 样式的,关键字部分是用**\<span class="p"\>**这样标记的. 和普通的fenced代码块相比,多了div部分.因此可以使用该方法区分css. pre 控制整个代码块的显示效果,而code[class=]部分控制了代码行的效果.所以添加以下两端可以将底色强行设为黑色,因此加入到相应pygments-css中即可(因为代码颜色由span控制,因此可以忽略其余影响,但字体和大小依然受原css控制).  
 另外,linenos加入的行号可能没有样式,此时可以自己加入`.lineno`的样式.我将相应的以下代码加入pygments.css中后,就可以将prism的样式同时使用了!
 
-~~~js
+~~~css
 <style>
 div[class="highlight"] > pre > code[class*="language-"] {
 	background:black;
