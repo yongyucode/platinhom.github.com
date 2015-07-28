@@ -10,7 +10,7 @@ tags: Bash
 
 该脚本可用于监测文件,结合nohup使用可作为后台监控.缺点是每次重启都需要执行,可以加入到service或者启动脚本当中.
 
-<pre><code class="language-python" id="src"></code></pre>
+<pre><code class="language-bash" id="src"></code></pre>
 
 <script>
 $.get("/other/scripts/deleteOldJob.sh",function(data,status){
