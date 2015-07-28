@@ -48,11 +48,30 @@ End Sub
 {% endhighlight %}
 
 
+PS:
+使用上述方法构造出来的代码是`<div class="highlight"><pre><code class="language-vb.net" data-lang="vb.net">` 样式的,关键字部分是用**\<span class="p"\>**这样标记的. 和普通的fenced代码块相比,多了div部分.因此可以使用该方法区分css. pre 控制整个代码块的显示效果,而code[class=]部分控制了代码行的效果.所以添加以下两端可以将底色强行设为黑色,因此加入到相应pygments-css中即可(因为代码颜色由span控制,因此可以忽略其余影响,但字体和大小依然受原css控制).  
+另外,linenos加入的行号可能没有样式,此时可以自己加入`.lineno`的样式.我将相应的以下代码加入pygments.css中后,就可以将prism的样式同时使用了!
+
+~~~js
+<style>
+div[class="highlight"] > pre > code[class*="language-"] {
+	background:black;
+}
+div[class="highlight"] > pre {
+	background:black;
+}
+.lineno {color: #f8f8f2 } /*Number of line*/
+</style>
+~~~
+
+附[拾色器](http://www.runoob.com/tags/html-colorpicker.html)(可以利用mac的自带拾色器在demo中确认颜色(10进制),然后[转换一下](http://tool.httpcn.com/Tool/JinZhiZhuanHuan.html?t1_10=238&t1_16=&t2_16=&t2_10=&t3_10=&t3_2=&t4_2=&t4_10=&t5_10=&t5_64=&t6_64=&t6_10=&s7nx=2&t7_x=&s7ny=2&t7_y=&page_url=http%3A%2F%2Ftool.httpcn.com%2FTool%2FJinZhiZhuanHuan.html&word=)).
+
 ## Reference
 1. [Pygments官网](http://pygments.org/)
 2. [pypi-pygments](https://pypi.python.org/pypi/Pygments)
 3. [ZDAN博客:搭建GP](http://zdan.me/post/2015/04/20/use-github-pages-as-blog.html)
-4. [Jekyll模板](http://jekyllcn.com/docs/templates/)
+4. [Jekyll-模板](http://jekyllcn.com/docs/templates/)
+5. [Jekyll-配置](http://jekyllcn.com/docs/configuration/)
 
 
 ------

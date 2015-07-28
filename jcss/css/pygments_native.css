@@ -69,3 +69,10 @@
 .vg { color: #40ffff } /* Name.Variable.Global */
 .vi { color: #40ffff } /* Name.Variable.Instance */
 .il { color: #3677a9 } /* Literal.Number.Integer.Long */
+div[class="highlight"] > pre > code[class*="language-"] {
+	background:black;
+}
+div[class="highlight"] > pre {
+	background:black;
+}
+.lineno {color: #f8f8f2 } /*Number of line*/

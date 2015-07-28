@@ -11,7 +11,7 @@ tags: VB Excel
 - 方法一: 使用指定range逐一迭代  
 Offset(y,x) 返回的是该cell相应行和列的偏移后的对象.
 
-{% highlight vb.net linenos %}
+{% highlight vb.net %}
 Sub test()
 For Each cell In Range("A2:A6")
 cell.Offset(0, 1) = cell.Hyperlinks(1).Address
@@ -22,7 +22,7 @@ End Sub
 - 方法二: 使用所有Hyperlinks的集合来迭代.  
 这里包括了直接编辑成markdown的格式.
 
-~~~python
+{% highlight vb.net %}
 Sub ExtractHL()
     Dim HL As Hyperlink
     For Each HL In ActiveSheet.Hyperlinks
@@ -30,16 +30,16 @@ Sub ExtractHL()
         HL.Range.Offset(0, 3).Value = "[" + HL.Range.Offset(0, 0).Value + "](" + HL.Address + ") : " + HL.Range.Offset(0, 1).Value
     Next
 End Sub
-~~~
+{% endhighlight %}
 
 - 方法三: 使用自定义函数  
 例如以下在标准模块中定义出一个自定义函数GetURL, 在相应的excel格内输入 *=GetURL(A1)* 即可
 
-~~~VB
+{% highlight vb.net %}
 Function GetURL(rng As Range) As String
     On Error Resume Next
     GetURL = rng.Hyperlinks(1).Address
 End Function
-~~~
+{% endhighlight %}
 
 ------
