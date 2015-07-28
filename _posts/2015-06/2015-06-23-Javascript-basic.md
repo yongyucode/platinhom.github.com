@@ -229,7 +229,7 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
  | onmouseover | 鼠标被移到某元素之上 |  onmouseup | 某个鼠标按键被松开 | 
  | onreset | 重置按钮被点击 | onresize | 窗口或框架被调整尺寸 
  | onselect | 文本被选定 | onsubmit | 提交按钮被点击 | 
- | onunload | 用户退出页面 | |
+ | onunload | 用户退出页面 | . |
 
 ## JS常用非编程方法
 
