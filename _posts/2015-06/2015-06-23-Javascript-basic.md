@@ -96,8 +96,6 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
  | Packages | 根 JavaPackage 对象。 | 
  | undefined | 指示未定义的值。 | 
 
-
-
 - [decodeURI()](http://www.w3school.com.cn/jsref/jsref_decodeURI.asp) : 解码某个编码的 URI。
 - [decodeURIComponent()](http://www.w3school.com.cn/jsref/jsref_decodeURIComponent.asp) : 解码一个编码的 URI 组件。
 - [encodeURI()](http://www.w3school.com.cn/jsref/jsref_encodeuri.asp) : 把字符串编码为 URI。
@@ -115,12 +113,14 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ### Number对象
 
-- MAX_VALUE	可表示的最大的数。
-- MIN_VALUE	可表示的最小的数。
-- NaN	非数字值。
-- NEGATIVE_INFINITY	负无穷大，溢出时返回该值。
-- POSITIVE_INFINITY	正无穷大，溢出时返回该值。
-- prototype	使您有能力向对象添加属性和方法
+ | constructor | 返回对创建此对象的 Number 函数的引用。 | 
+ | MAX_VALUE | 可表示的最大的数。 | 
+ | MIN_VALUE | 可表示的最小的数。 | 
+ | NaN | 非数字值。 | 
+ | NEGATIVE_INFINITY | 负无穷大，溢出时返回该值。 | 
+ | POSITIVE_INFINITY | 正无穷大，溢出时返回该值。 | 
+ | prototype | 使您有能力向对象添加属性和方法。 | 
+
 - [toString(radix)](http://www.w3school.com.cn/jsref/jsref_tostring_number.asp) : 把数字转换为字符串，使用指定的基数(默认10,10进制)。
 - [toLocaleString()](http://www.w3school.com.cn/jsref/jsref_tolocalestring_number.asp) : 把数字转换为字符串，使用本地数字格式顺序。
 - [toFixed(num)](http://www.w3school.com.cn/jsref/jsref_tofixed.asp) : 把数字转换为字符串，结果的小数点后有指定位数的数字。num是小数位数,0~20. 会四舍五入.
@@ -188,14 +188,15 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 
 ### Math对象方法
 
-- E	返回算术常量 e，即自然对数的底数（约等于2.718）。
-- LN2	返回 2 的自然对数（约等于0.693）。
-- LN10	返回 10 的自然对数（约等于2.302）。
-- LOG2E	返回以 2 为底的 e 的对数（约等于 1.414）。
-- LOG10E	返回以 10 为底的 e 的对数（约等于0.434）。
-- PI	返回圆周率（约等于3.14159）。
-- SQRT1_2	返回返回 2 的平方根的倒数（约等于 0.707）。
-- SQRT2	返回 2 的平方根（约等于 1.414）。
+ | E | 返回算术常量 e，即自然对数的底数（约等于2.718）。 | 
+ | LN2 | 返回 2 的自然对数（约等于0.693）。 | 
+ | LN10 | 返回 10 的自然对数（约等于2.302）。 | 
+ | LOG2E | 返回以 2 为底的 e 的对数（约等于 1.414）。 | 
+ | LOG10E | 返回以 10 为底的 e 的对数（约等于0.434）。 | 
+ | PI | 返回圆周率（约等于3.14159）。 | 
+ | SQRT1_2 | 返回返回 2 的平方根的倒数（约等于 0.707）。 | 
+ | SQRT2 | 返回 2 的平方根（约等于 1.414）。 | 
+
 - [abs(x)](http://www.w3school.com.cn/jsref/jsref_abs.asp) : 返回数的绝对值。
 - [acos(x)](http://www.w3school.com.cn/jsref/jsref_acos.asp) : 返回数的反余弦值。
 - [asin(x)](http://www.w3school.com.cn/jsref/jsref_asin.asp) : 返回数的反正弦值。
@@ -218,28 +219,17 @@ DOM就是document objective model.就是HTML各个元素对象. JS可以操控�
 - [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueof_math.asp) : 返回 Math 对象的原始值。
 
 ### 事件参考
-- onabort	图像加载被中断
-- onblur	元素失去焦点
-- onchange	用户改变域的内容
-- onclick	鼠标点击某个对象
-- ondblclick	鼠标双击某个对象
-- onerror	当加载文档或图像时发生某个错误
-- onfocus	元素获得焦点
-- onkeydown	某个键盘的键被按下
-- onkeypress	某个键盘的键被按下或按住
-- onkeyup	某个键盘的键被松开
-- onload	某个页面或图像被完成加载
-- onmousedown	某个鼠标按键被按下
-- onmousemove	鼠标被移动
-- onmouseout	鼠标从某元素移开
-- onmouseover	鼠标被移到某元素之上
-- onmouseup	某个鼠标按键被松开
-- onreset	重置按钮被点击
-- onresize	窗口或框架被调整尺寸
-- onselect	文本被选定
-- onsubmit	提交按钮被点击
-- onunload	用户退出页面
-
+ | onabort | 图像加载被中断 |  onblur | 元素失去焦点 | 
+ | onchange | 用户改变域的内容 |  onclick | 鼠标点击某个对象 | 
+ | ondblclick | 鼠标双击某个对象 |  onerror | 当加载文档或图像时发生某个错误 | 
+ | onfocus | 元素获得焦点 |  onkeydown | 某个键盘的键被按下 | 
+ | onkeypress | 某个键盘的键被按下或按住 |  onkeyup | 某个键盘的键被松开 | 
+ | onload | 某个页面或图像被完成加载 |  onmousedown | 某个鼠标按键被按下 | 
+ | onmousemove | 鼠标被移动 |  onmouseout | 鼠标从某元素移开 | 
+ | onmouseover | 鼠标被移到某元素之上 |  onmouseup | 某个鼠标按键被松开 | 
+ | onreset | 重置按钮被点击 | onresize | 窗口或框架被调整尺寸 
+ | onselect | 文本被选定 | onsubmit | 提交按钮被点击 | 
+ | onunload | 用户退出页面 | 
 
 ## JS常用非编程方法
 
