@@ -32,7 +32,9 @@ tags: Website Git
 
 原因是jekyll在新版里废弃了一些关键词,例如pygments,auto. 我_config.yml文件里面就有这两个设为true.开头加`#`注释掉,添加`highligher: pygments`.  最后一句是因为window要额外装一个东东来watch你修改的变化(其实改了也是马上更新的..),不过为了防止报bug,`gem install wdm` 安装一个程序就好了. 他最后一句的意思是,如果你使用Gemfile,就把那句话加入.
 
-浏览器看[http://127.0.0.1:4000/](http://127.0.0.1:4000/)吧!貌似响应比Mac慢多了...
+浏览器看[http://127.0.0.1:4000/](http://127.0.0.1:4000/)吧!
+
+貌似响应比Mac慢多了...而且,时区居然失效了...显示a/S..推测是mingw功能太弱? 毕竟功能还是和linux比差..可能对timezone时区识别不好..凑合着用吧..对时间敏感的博客地址可能会失效.
 
 ## Reference
 1. [jekyll-windows](http://jekyll-windows.juthilo.com/)
