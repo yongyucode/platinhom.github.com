@@ -185,6 +185,6 @@ tags: tag1 tag2
 3. [使用Github搭建博客](http://platinhom.github.io/2015/06/05/Build-Blog-Github/)
 4. [Liquid模板工具](https://docs.shopify.com/themes/liquid-documentation/basics)
 5. [Shopify-liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
-
+6. [Jekyll-window安装]()
 
 ------

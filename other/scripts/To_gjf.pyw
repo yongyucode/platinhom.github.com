@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 #file pdb_mol2_to_gjf.py
+#Author: Platinhom, Last: 2012.5.2
 '''
 ############################################################################
 This script could turn the mol2 and pdb files to gif file as Gaussian input.
