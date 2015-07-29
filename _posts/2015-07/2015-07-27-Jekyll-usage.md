@@ -12,7 +12,7 @@ Jekyll预设了[Pygment](http://pygments.org/)语法着色.
 ## 安装
 Jekyll是基于ruby的.先要安装ruby和ruby gem.  
 `gem install jekyll` 命令行安装.然后就可以使用jekyll命令了.  
-window版安装[参见官方](http://jekyllcn.com/docs/windows/#installation) (不推荐.)
+window版安装[参见官方](http://jekyllcn.com/docs/windows/#installation) (不推荐.)或者我博客的[Ref6](/2015/07/30/jekyll-window/).
 
 ## 基本使用
 jekyll 2.5.3 -- Jekyll is a blog-aware, static site generator in Ruby
@@ -185,6 +185,6 @@ tags: tag1 tag2
 3. [使用Github搭建博客](http://platinhom.github.io/2015/06/05/Build-Blog-Github/)
 4. [Liquid模板工具](https://docs.shopify.com/themes/liquid-documentation/basics)
 5. [Shopify-liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
-6. [Jekyll-window安装]()
+6. [Jekyll-window安装](/2015/07/30/jekyll-window/)
 
 ------
