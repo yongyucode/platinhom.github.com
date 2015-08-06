@@ -47,6 +47,12 @@ JAVA虚拟机,能够运行java字节码的虚拟机.Java虚拟机有自己完善
 - @可以指定一个文件名,该文件包含要编译的源文件名.  
 - -d 选项指定class文件存放位置.默认存放在当前目录  
 - -classpath 搜索编译所需的class文件，指出编译所用到的class文件的位置
+- -sourcepath用于搜索编译所需的源文件（即java文件），指定要搜索的源文件的位置，如jar、zip或其他包含java文件的目录  
+2. `java [options] classfile`  
+- classfile这里*com.csdn.javacode.EncryptClasses* 前面相当于javac时的路径`com/csdn/javacode/EncryptClasses.java`生成的相应的class.直接运行它.
+-  -classpath 指定要执行的文件所在的位置以及需要用到的类路径，包括jar、zip和class文件目录  
+3. `jar cvf hello.jar hello.class world.class`  
+将class文件打包为jar. 和tar差不多..jar可以作为库,也可以直接运行.  
 
 ## ANT
 ANT是基于java的,可以认为是java版本的make,用于对 *build.xml* 内容进行相应编译操作.
@@ -55,6 +61,9 @@ ANT是基于java的,可以认为是java版本的make,用于对 *build.xml* 内�
 
 - 首先需要安装JDK, 指明JAVA_HOME环境变量为安装后JDK所在的目录; 还有说要加入jdk的bin到PATH,并设置CLASS\_PATH.
 - 其次要下载安装[Apache Ant](http://ant.apache.org/bindownload.cgi), 下载一个zip包解压后,环境变量**ANT_HOME**指明ANT文件夹地址,并将子文件夹bin加到环境变量path.(如: `ANT_HOME:D:\apache-ant-1.8.2,PATH:%ANT_HOME%\bin`)
+- 最后使用需要一个build.xml 文件,相当于make的makefile. [ANT build.xml文件详解](http://my.oschina.net/willSoft/blog/29314), [ANT-build.xml文件详解2](http://www.blogjava.net/zhengtengfeng/archive/2007/04/20/zhtfeng.html), [Java Ant build.xml详解(带例子)](http://www.cnblogs.com/wufengxyz/archive/2011/11/24/2261797.html)
+- 然后在有build.xml的文件夹内,敲`ant` 就可以了(环境变量存在前提下)~
+
 
 *ant [options] [target [target2 [target3] ...]]*  
 Options:
