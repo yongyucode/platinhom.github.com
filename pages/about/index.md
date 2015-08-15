@@ -9,7 +9,11 @@ I'm doing research in computational chemistry/biology. My reseach interest inclu
 
 Computation related sciences need to remember lots of information. Here I just put some notes on my blog here. Hope it help!
 
-Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com !    
+Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com !   
+
+2015.8 Me in Niagara Falls, Canada ╮(╯▽╰)╭
+
+![Niagara Falls](/other/pic/me-niagarafall.jpg)
 
 ## Some Tools I developed:
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation and residue pKa calculation. 
