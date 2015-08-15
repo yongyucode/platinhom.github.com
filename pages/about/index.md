@@ -73,6 +73,10 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 
 ### May publish
 
+1. Multiresolution topological simplification, Journal of Computational Biology, in press (2015).
+2. MIBPB based solvation models (2015)
+3. MIBPB based protein-ligand binding models (2015)
+4. Evidence of a Nepenthes-Like exo Diels-Alderase in the Biosynthesis of Pyrroindomycins (2015)
 
 ## Places I have been to
 - Foshan (My lovely hometown)
