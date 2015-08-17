@@ -9,7 +9,15 @@ I'm doing research in computational chemistry/biology. My reseach interest inclu
 
 Computation related sciences need to remember lots of information. Here I just put some notes on my blog here. Hope it help!
 
-Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com !    
+Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com !   
+
+-----
+
+2015.8 Me in Niagara Falls, Canada ╮(╯▽╰)╭
+
+![Niagara Falls](/other/pic/me-niagarafall.jpg)
+
+-----
 
 ## Some Tools I developed:
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation and residue pKa calculation. 
@@ -65,6 +73,10 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 
 ### May publish
 
+1. Multiresolution topological simplification, Journal of Computational Biology, in press (2015).
+2. MIBPB based solvation models (2015)
+3. MIBPB based protein-ligand binding models (2015)
+4. Evidence of a Nepenthes-Like exo Diels-Alderase in the Biosynthesis of Pyrroindomycins (2015)
 
 ## Places I have been to
 - Foshan (My lovely hometown)

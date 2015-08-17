@@ -36,11 +36,11 @@ layout: page_small
 
 ### Inquiry
 - [Amazon](http://www.amazon.com/) ; [淘宝](http://www.taobao.com/) ; [京东](http://www.jd.com/) ; [Amazon.CN](http://www.amazon.cn/) ; [西贴](http://www.xitie.com/)
-- [megabus](http://us.megabus.com/) ; [greyhound](https://greyhound.com/) ; 
+- [megabus](http://us.megabus.com/) ; [greyhound](https://greyhound.com/) ; [Spirit](http://www.spirit.com/Default.aspx) ; [Expedia](http://www.expedia.com/); [Priceline](http://www.priceline.com/);  
 - [Wikibooks](https://en.wikibooks.org/wiki/Main_Page); [LearnOpenGL](http://learnopengl.com/); 
 
 ### Fun
-- [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/) ; 
+- [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/) ;
 - [Chiphell](http://www.chiphell.com/forum.php)
 
 ### Good Blogs
