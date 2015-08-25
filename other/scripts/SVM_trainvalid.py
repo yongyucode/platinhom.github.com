@@ -23,7 +23,6 @@ newline=False;
 # 1. Output many sets with shuffle list (Origin and All data)
 # 2. Output many sets with random lines in a class(Possible repeated lines)
 # 3. Output many sets with random lines in all classes (probability depends on origin data)
-# 3. Output many sets with random lines in all classes (probability depends on origin data)
 # 4. Output many sets with random lines in all classes (probability of each class is equal)
 method=4;
 
