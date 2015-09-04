@@ -23,10 +23,13 @@ strong{font-size:16px;}
 
 ----
 ## 函数:
+
 ###excel相关(单元格,文件薄)
+
 - #### [Column](https://support.office.microsoft.com/zh-cn/article/COLUMN-%E5%87%BD%E6%95%B0-44e8c754-711c-4df3-9da4-47a55042554b?ui=zh-CN&rs=zh-CN&ad=CN  ) #返回单元格列号信息
  - COLUMN([reference])
  [实例](http://jingyan.baidu.com/article/fec7a1e519f6411190b4e7a6.html )
+
 - #### [Raw](https://support.office.microsoft.com/zh-cn/article/ROW-%E5%87%BD%E6%95%B0-3A63B74A-C4D0-4093-B49A-E76EB49A6D8D?ui=zh-CN&rs=zh-CN&ad=CN   )  #返回单元格行号信息
  - ROW([reference])
 
@@ -34,6 +37,7 @@ strong{font-size:16px;}
 
 ###字符串相关:
 [待总结](http://www.360doc.com/content/13/0107/15/83610_258773240.shtml  )
+
 - #### [Concatenate](https://support.office.microsoft.com/zh-cn/article/CONCATENATE-%E5%87%BD%E6%95%B0-8F8AE884-2CA8-4F7A-B093-75D702BEA31D?ui=zh-CN&rs=zh-CN&ad=CN  ) #字符串合并
  - CONCATENATE(text1, [text2], ...)
 效果和 & 基本相同
