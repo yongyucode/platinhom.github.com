@@ -13,12 +13,6 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 
 -----
 
-2015.8 Me in Niagara Falls, Canada ╮(╯▽╰)╭
-
-![Niagara Falls](/other/pic/me-niagarafall.jpg)
-
------
-
 ## Some Tools I developed:
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation and residue pKa calculation. 
 - AutoT&T2 and PG-AutoT&T: Fragment-based lead optimization tool. AutoT&T speeding up and new pharmacophore guided optimization/de novo design.
@@ -84,7 +78,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 - Shanghai (Best place in China, graduated student life)
 - East Lansing (Quiet town for my postdoc study)
 - Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao
-- Detroit, Minneapolis, Chicago, Toronto, New York
+- Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Columbus
 
 ## Find Me in:
 - [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
