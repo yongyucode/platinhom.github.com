@@ -2,7 +2,7 @@
 layout: post
 title: 分子及子结构指纹
 date: 2015-09-02 13:43:52
-categories: CompSci
+categories: CompCB
 tags: ChemInfo
 ---
 
