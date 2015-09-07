@@ -78,7 +78,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 - Shanghai (Best place in China, graduated student life)
 - East Lansing (Quiet town for my postdoc study)
 - Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao
-- Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Columbus
+- Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Lancaster, Columbus
 
 ## Find Me in:
 - [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
