@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SplitMol2toEach
+title: Py脚本:分割Mol2文件到每一个小分子
 date: 2015-09-08 21:15:29
 categories: CompCB
 tags: CompBiol Python
