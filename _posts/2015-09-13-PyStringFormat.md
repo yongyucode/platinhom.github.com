@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python字符串格式化
-date: 2015-09-12 07:40:06
+date: 2015-09-13 07:40:06
 categories: Coding
 tags: Python
 ---
