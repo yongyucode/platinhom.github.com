@@ -16,6 +16,7 @@ c (speed of light) | 2.99792458*10<sup>10</sup> cm s<sup>-1</sup>
 a<sub>o</sub> (Bohr radius) | 5.29177249*10<sup>-11</sup> m
 e (charge of electron) | 1.60217733*10<sup>-19</sup> Coul
 
+## Unit Conversion
 
 unit | conversion factor
 1 Debye | 3.336*10<sup>-30</sup> Coul m
@@ -28,6 +29,8 @@ unit | conversion factor
 1 Bohr | 0.529177249 Angstroms
 ZPVE (Hartree) | 2.27817*10<sup>-6</sup> * vib. wavenumber (cm<sup>-1</sup>)
 vibrational temperatur T<sub>v</sub> (K) | 1.43877 * vib. wavenumber (cm<sup>-1</sup>)
+
+## Energy conversion
 
 1 unit = | hartree | kJ mol<sup>-1</sup> | kcal mol<sup>-1</sup> | eV | cm<sup>-1</sup>
 hartree | 1 | 2625.50 | 627.51 | 27.212 | 2.1947x10<sup>5</sup>
