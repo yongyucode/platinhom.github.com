@@ -2,7 +2,7 @@
 layout: post
 title: Python字符串相关
 date: 2015-06-23 06:20:48
-categories: IT
+categories: Coding
 tags: Python
 ---
 

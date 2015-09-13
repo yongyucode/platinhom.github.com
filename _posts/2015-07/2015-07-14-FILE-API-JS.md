@@ -2,7 +2,7 @@
 layout: post
 title: JS利用FILE-API读取操作文件
 date: 2015-07-13 21:15:06
-categories: IT
+categories: Coding
 tags: HTML JS
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: PHP学习笔记-超全局变量
 date: 2015-06-30 08:35:36
-categories: IT
+categories: Coding
 tags: PHP HTML Website
 ---
 

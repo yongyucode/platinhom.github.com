@@ -2,7 +2,7 @@
 layout: post
 title: Python常用科学计算相关外部库
 date: 2015-08-09 19:00:11
-categories: IT
+categories: Coding
 tags: Python
 ---
 

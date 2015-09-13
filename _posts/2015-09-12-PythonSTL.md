@@ -2,7 +2,7 @@
 layout: post_small
 title: Python标准库小结
 date: 2015-09-11 19:23:42
-categories: IT
+categories: Coding
 tags: Python
 ---
 

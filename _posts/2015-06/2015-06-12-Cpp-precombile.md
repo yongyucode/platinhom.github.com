@@ -2,7 +2,7 @@
 layout: post
 title: C++ 预处理(预编译)命令
 date: 2015-06-12 04:51:37
-categories: IT
+categories: Coding
 tags: C++
 ---
 

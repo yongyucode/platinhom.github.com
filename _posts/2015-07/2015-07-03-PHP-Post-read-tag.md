@@ -2,7 +2,7 @@
 layout: post
 title: PHP读取POST表单数据值
 date: 2015-07-02 21:10:41
-categories: IT
+categories: Coding
 tags: PHP HTML Website
 ---
 

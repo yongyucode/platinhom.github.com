@@ -2,7 +2,7 @@
 layout: post
 title: 检查端口状态:netstat和lsof
 date: 2015-07-04 01:44:04
-categories: IT
+categories: Coding
 tags: System Internet
 ---
 

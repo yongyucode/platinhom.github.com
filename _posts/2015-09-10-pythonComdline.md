@@ -2,7 +2,7 @@
 layout: post
 title: Python外部调用命令
 date: 2015-09-09 21:02:06
-categories: IT
+categories: Coding
 tags: Python
 ---
 

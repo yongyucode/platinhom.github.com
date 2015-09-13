@@ -2,7 +2,7 @@
 layout: post
 title: JAVA编译
 date: 2015-08-05 14:12:27
-categories: IT
+categories: Coding
 tags: Java
 ---
 

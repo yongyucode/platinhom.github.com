@@ -2,7 +2,7 @@
 layout: post
 title: JQuery学习笔记
 date: 2015-07-16 17:20:07
-categories: IT
+categories: Coding
 tags: JS
 ---
 

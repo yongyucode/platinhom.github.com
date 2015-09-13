@@ -2,7 +2,7 @@
 layout: post
 title: Shell中比较判断,控制,循环和函数
 date: 2015-06-14 06:08:20
-categories: IT
+categories: Coding
 tags: Shell Bash
 ---
 这里暂时讨论只针对Bash及对应变体,csh等与bash差异较大,在此不讨论.

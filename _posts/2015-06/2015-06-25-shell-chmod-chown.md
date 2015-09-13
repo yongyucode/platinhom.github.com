@@ -2,7 +2,7 @@
 layout: post
 title: Linux权限:chmod和chown小结
 date: 2015-06-25 00:30:15
-categories: IT
+categories: Coding
 tags: Bash Shell System
 ---
 

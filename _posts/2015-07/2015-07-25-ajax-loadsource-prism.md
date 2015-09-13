@@ -2,7 +2,7 @@
 layout: post
 title: Github使用ajax插入源码并prism着色
 date: 2015-07-24 16:39:28
-categories: IT
+categories: Coding
 tags: JS Git Website
 ---
 

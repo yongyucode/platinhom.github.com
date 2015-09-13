@@ -2,7 +2,7 @@
 layout: post
 title: PHP利用curl来Post表单和上传文件
 date: 2015-07-03 09:58:03
-categories: IT
+categories: Coding
 tags: PHP Website
 ---
 

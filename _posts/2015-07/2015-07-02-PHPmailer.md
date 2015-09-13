@@ -2,7 +2,7 @@
 layout: post
 title: 服务器利用PHPMailer发送邮件
 date: 2015-07-02 05:07:49
-categories: IT
+categories: Coding
 tags: PHP Website
 ---
 

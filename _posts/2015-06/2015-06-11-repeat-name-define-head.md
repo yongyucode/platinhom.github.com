@@ -2,7 +2,7 @@
 layout: post
 title: 预编译变量与基础库有重复引发的血案
 date: 2015-06-11 07:25:14
-categories: IT
+categories: Coding
 tags: C++
 ---
 

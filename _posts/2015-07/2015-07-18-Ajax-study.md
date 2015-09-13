@@ -2,7 +2,7 @@
 layout: post
 title: AJAX学习
 date: 2015-07-18 06:42:38
-categories: IT
+categories: Coding
 tags: JS
 ---
 

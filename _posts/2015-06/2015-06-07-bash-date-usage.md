@@ -2,7 +2,7 @@
 layout: post
 title: Shell中date命令用法
 date: 2015-06-07 10:32:12
-categories: IT
+categories: Coding
 tags: Shell Bash Git
 ---
 
