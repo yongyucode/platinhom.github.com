@@ -48,6 +48,7 @@ rm -rf ~/Library/Caches/Homebrew
 - brew doctor		:检测是否有冲突，同时它会提示一些已失效的库链接.
 
 其他命令
+
 - brew home * 		:用浏览器打开
 - brew info * 		:显示软件内容信息
 - brew deps * 		:显示包依赖
@@ -57,7 +58,7 @@ rm -rf ~/Library/Caches/Homebrew
 
 ## MacPorts
 
-MacPorts是一款老款的Mac软件包管理软件,介绍可以参考[wiki](https://en.wikipedia.org/wiki/MacPorts)
+MacPorts是一款老款的Mac软件包管理软件,具有更多的库,安装也较独立,缺点是不依赖于系统,很多依赖库需要重装.介绍可以参考[wiki](https://en.wikipedia.org/wiki/MacPorts)
 
 ### 安装
 
@@ -84,5 +85,8 @@ MacPorts常用命令：
 
 ## pip
 
+PIP
+
+安装[参见](https://pip.pypa.io/en/stable/installing/),如果python带有easy_install可以`easy_install pip`.
 
 ------
