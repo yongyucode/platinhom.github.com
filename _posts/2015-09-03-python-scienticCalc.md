@@ -25,6 +25,9 @@ pip install sympy
 pip install nose
 ~~~
 
+## ipython
+
+运行[notebook](http://ipython.org/notebook.html)使用命令行命令: `ipython notebook`.
 
 ~~~
 pip install jupyter
@@ -33,7 +36,6 @@ pip install "ipython[notebook]"
 
 要是`No module named notebook.notebookapp`就要`pip install jupyter`安装一个附加工具[jupyter](http://jupyter.org/).
 
-运行[notebook](http://ipython.org/notebook.html)使用命令行命令: `ipython notebook`
 
 要使用qtconsole,就需要装上jupyter, qt, sip, pyqt几个东西.否则报错说No module或者Qt library找不到.
 
@@ -44,6 +46,8 @@ brew install sip
 brew install pyqt
 ~~~
 运行[qtconsole](http://ipython.org/ipython-doc/stable/interactive/qtconsole.html?highlight=qtconsole)使用命令行命令: `ipython qtconsole`
+
+
 
 scipy官网推荐使用懒人用macports安装办法.需要先安装macports,使用port命令:
 
