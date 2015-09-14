@@ -26,6 +26,20 @@ pip install sympy
 pip install nose
 ~~~
 
+要是`No module named notebook.notebookapp`就要`pip install jupyter`安装一个附加工具.
+
+运行notebook使用命令行命令: `ipython notebook`
+
+要使用qtconsole,就需要装上jupyter, qt, sip, pyqt几个东西.否则报错说No module或者Qt library找不到.
+
+~~~
+pip install jupyter
+pip install qt
+pip install sip
+pip install pyqt
+~~~
+运行qtconsole使用命令行命令: `ipython qtconsole`
+
 scipy官网推荐使用懒人用macports安装办法.需要先安装macports,使用port命令:
 
 `sudo port install py27-numpy py27-scipy py27-matplotlib py27-ipython +notebook py27-pandas py27-sympy py27-nose`
