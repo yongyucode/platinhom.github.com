@@ -30,7 +30,7 @@ END SUBROUTINE pow
 ~~~
 必须要有！
 
-接着终端： 
+接着终端利用`f2py`编译,生成*pow.so*库.
 
 ~~~bash
 f2py -m pow -c pow.f90
