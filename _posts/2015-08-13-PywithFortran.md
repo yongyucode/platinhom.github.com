@@ -36,16 +36,21 @@ END SUBROUTINE pow
 f2py -m pow -c pow.f90
 ~~~
 
-然后test.py内容：
+然后testf90.py内容：
 
 ~~~python
 #!/usr/bin/env python
 
-import pow as pw
+import pow as p
 
 x = 3.
-n = 3.5
-p = pw.pow(x,n)
+n = 4.0
+out = p.pow(x,n)
+print out
 ~~~
 
+## Reference
+
+1. [f2py官网](https://sysbio.ioc.ee/projects/f2py2e/)
+2. [NumPy的f2py说明](http://docs.scipy.org/doc/numpy-dev/f2py/)
 ------
