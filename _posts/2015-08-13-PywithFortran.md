@@ -3,7 +3,7 @@ layout: post
 title: Python调用Fortran
 date: 2015-08-13 11:53:56
 categories: Coding
-tags: Python
+tags: Python Fortran
 ---
 
 fortran90程序pow.f90：
