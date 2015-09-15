@@ -23,14 +23,18 @@ END SUBROUTINE pow
 
 这三个 
 
-~~~
+~~~fortran
   !f2py intent(in) x
   !f2py intent(in) n
   !f2py intent(out) p
 ~~~
 必须要有！
 
-接着终端： `f2py -m pow -c pow.f90`
+接着终端： 
+
+~~~bash
+f2py -m pow -c pow.f90
+~~~
 
 然后test.py内容：
 
