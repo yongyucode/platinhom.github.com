@@ -51,7 +51,7 @@ Indeed, I don't like to write papers... I just like to work ╮(╯▽╰)╭ ..
 1. Probing the Key Interactions between Human Atg5 and Atg16 Proteins: A Prospective Application of
 Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](http://onlinelibrary.wiley.com/doi/10.1002/cmdc.201300256/abstract)
 2. Study on Transient Intermediates in Fast Cyclopropenium-Activated Chlorination Reaction of Alcohols by ESI-MS. *J. Mass Spectrom.* **2011**, 46, 856-858. [Link](http://onlinelibrary.wiley.com/doi/10.1002/jms.1960/abstract)
-3. Studies on CH3CN-Assisted Decomposition of 1st Grubbs Catalyst by Electrospray Tandem Mass Spectrometry. *Rapid Commun. Mass Spectrom.* **2011**, 25, 3401-3410. [Link](http://onlinelibrary.wiley.com/doi/10.1002/rcm.5240/abstract)
+3. Studies on CH<sub>3</sub>CN-Assisted Decomposition of 1st Grubbs Catalyst by Electrospray Tandem Mass Spectrometry. *Rapid Commun. Mass Spectrom.* **2011**, 25, 3401-3410. [Link](http://onlinelibrary.wiley.com/doi/10.1002/rcm.5240/abstract)
 4. Studies of Heterogeneous/Homogeneous Ion-Molecule Reactions by Ambient Ionization Mass Spectrometry. *Curr. Org. Chem.* **2011**,15, 3734-3749. [Link](http://www.benthamdirect.com/74591/article/studies-heterogeneoushomogeneous-ion-molecule-reactions-ambient-ionization-mass)
 5. Gas-phase Synthesis of Hydrodiphenylcyclopropenylium via Nonclassical Favorskii Rearrangement from Alkali-cationized α,α′-dibromodibenzyl Ketone. *Rapid Commun. Mass Spectrom.* **2010**, 24, 2665-2672. [Link](http://onlinelibrary.wiley.com/doi/10.1002/rcm.4694/abstract)
 6. Progress in ESI-MS Study for the Catalytic Asymmetric Reactions. *Chinese J. Org. Chem.* **2010**, 30, 809-815. [Link](http://sioc-journal.cn/Jwk_yjhx/EN/abstract/abstract338923.shtml)
