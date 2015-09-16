@@ -56,9 +56,9 @@ Alchemy           |  alc    |   13  | CSD               |   csd    |  14
 MDL               |  mdl    |   15  | Hyper             |   hin    |  16 
 AMBER Restart     |  rst    |   17  |                   |          |
 
---------------------------------------------------------------
-
 AMBER restart file can only be read in as additional file
+
+--------------------------------------------------------------
 
 #### List of the Charge Methods  
 
@@ -70,7 +70,32 @@ Read in Charge  |   rc    |   7  |  Write out charge |  wc     |  8
 
 ----------------------------------------------------------------
 
-# Reference
+## 例子:
+用ligand.mol2作例子:
+
+~~~bash
+# Calculate bcc charge for input mol2
+antechamber -i ligand.mol2 -fi mol2 -o ligand_bcc.mol2 -fo mol2 -c bcc -pf
+# Convert file to prepi and use parmchk to generate amber input parameter
+antechamber -i ligand_bcc.mol2 -fi mol2 -o ligand_bcc.prep -fo prepi -pf
+parmchk -i ligand.prep -f prepi -o ligand.frcmod
+# in tleap: loadAmberPrep ligand.frcmod
+
+# Directly generate prepi file from mol2 with bcc charge, not commend
+antechamber -i ligand.mol2 -fi mol2 -o small_bcc.prep -fo prepi -c bcc -pf
+
+# Convert mol2 <-> Gaussian input/output for charge calculation for esp/resp
+antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf
+antechamber -i ligand.log -fi gout -o ligand_resp.mol2 -fo mol2 -c resp -pf
+
+# Write out the charge to charge file
+antechamber -i ligand_bcc.mol2 -fi mol2 -c wc -cf ligand_c.crg
+# Load known charge to molecule. The charge file ligand_c.crg is f10.8  8charge/per line
+antechamber -i ligand.mol2 -fi mol2 -o ligand_c.mol2 -fo mol2 -c rc -cf ligand_c.crg
+
+~~~
+
+## Reference
 
 1. [antechamber](http://ambermd.org/antechamber/ac.html#antechamber)
 

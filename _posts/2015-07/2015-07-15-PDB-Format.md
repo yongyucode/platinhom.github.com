@@ -24,6 +24,8 @@ tags: CompBiol
 - 79 - 80        LπString(2)      Charge on the atom. 
 
 PQR file use 55 - 62 column for charges and 63 - 69 column for radii.
+But the PQR generated from Amber may 55 - 62 column for charges and 63 - 70 column for radii.
+mpdb in amber may 55 - 64 column for charges and 65 - 72 column for radii, 79-80 for atom type.
 
 Example
 
