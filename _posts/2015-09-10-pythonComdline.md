@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python外部调用命令
+title: Python调用外部命令
 date: 2015-09-09 21:02:06
 categories: Coding
 tags: Python
