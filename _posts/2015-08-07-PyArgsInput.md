@@ -44,38 +44,57 @@ tags: Python
 
 如：`def addOn(x,y): return x + y`，可以用addOn(1,2)的形式调用(x=1,y=2),也可以addOn(1,y=2)和addOn(y=1,x=2)。多参addOn(1,2,3), 少参addOn(1), 违反参数顺序规则addOn(y=2,1)都会出错. 
 
-- 形参名和默认值: 
+- 形参名和默认值: F(arg2=,arg3=...)
 
 在调用这种函数时，如果没有给对应的形式参数传递实参，那么这个形参就将使用默认值。  
 如：`def addOn(x=3,y=5): return x + y`，可以addOn(6,8)-->x=6，y=8; addOn(7)-->x=7，y=5; addOn(y=6)-->x=3,y=6; addOn(y=4,x=6)-->x=6,y=4.  
-当: `def addOn(x,y=5): return x + y`时,addOn(y=4,6)就会报错,不遵守规则,6究竟是给谁的?!
+当: `def addOn(x,y=5): return x + y`时,addOn(y=4,6)就会报错,不遵守参数顺序规则,6究竟是给谁的?!
 
-上面两种方式定义的形式参数的个数都是固定的，比如定义函数的时候如果定义了5个形参，那么在调用的时候最多也只能给它传递5个实参。但是在实际编程中并不能总是确定一个函数会有多少个参数。第3种方式就是用来应对这种情况的。它以一个*加上形参名的方式表示，这个函数实际参数是不一定的，可以是零个，也可以是N个。不管是多少个，在函数内部都被存放在以形参名为标识符的tuple中。比如：
+上面两种方式定义的形式参数的个数都是固定的，比如定义函数的时候如果定义了5个形参，那么在调用的时候最多也只能给它传递5个实参。但是在实际编程中并不能总是确定一个函数会有多少个参数。此时要用下述两种方法来捕获未知的输入.
 
-有时候，要给*arg赋值，但有时又为了方便使用列表，这时加入这么段话
+- 不定个数参数: F(*arg1)
+
+以一个`*`加上形参名的方式定义形参，这个函数实际参数是不一定的，可以是零个，也可以是N个。不管是多少个，在函数内部都被存放在以形参名为标识符的元组tuple中。比如:
 
 ~~~python
-def func(filepath,*strings):
-	if type(strings[0])==list or type(strings[0])==tuple:
-		strings=strings[0]
+def addOn(*arg):
+	sum = 0
+	if len(arg) == 0: return 0
+	else:
+		for x in arg: ##迭代元组内的值
+			sum += x
+	return sum
 ~~~
-PS: 实际上，Python内部已经这样处理了,不过需要在前面加\*,如传递的是list1,则func(\*list1）就可以了。func(\*[1,23,4])也是这道理。
 
 对这个函数的调用addOn() addOn(2) addOn(3,4,5,6)等等都是可以的。
 
-与第3种方式类似，形参名前面加`**`表示，参数在函数内部将被存放在以形参名的字典中。这时候调用函数必须采用key1=value1、key2=value2...的形式。比如：
+有时候，要给`*arg`赋值，但有时又为了方便使用列表，这时加入这么段话
+
+~~~python
+def func(filedir,*strings):
+	#The following is the same when use func(dir,*list_subdir)
+	if type(strings[0])==list or type(strings[0])==tuple:
+		strings=strings[0]
+
+	print filedir+'/'+'/'.join(strings)
+~~~
+PS: 实际上，Python内部已经加入这种这样处理了,不过需要在前面加`*`,如传递的是list1,则`func(dir,*list1)`就可以了。func("/home/",\*["a","b","c"])和func("/home/",\*"a","b","c")等价。如果不加`*`,func("/home/",["a","b","c"])中strings实际是 *(["a","b","c"],)*.
+
+- 不定个数并指定参数名: F(**arg1)
+
+形参名前面加`**`表示，参数在函数内部将被存放在以形参名的字典。这时候调用函数必须采用key1=value1、key2=value2...的形式。该方法的优点是还可以给出相应的参数名,从而通过字典中键值的处理进行一些操作和过滤. 比如：
 
 ~~~python
 def addOn(**arg):
 	sum = 0
 	if len(arg) == 0: return 0
 	else:
-	for x in arg.itervalues(): ##迭代字典值
-	sum += x
+		for x,y in arg.items(): #或用迭代器arg.iteritems(), 迭代字典
+			if (x[0] in "abcdefg"):
+				sum += y
 	return sum
 ~~~
 那么对这个函数的调用可以用addOn()或诸如addOn(x=4,y=5,k=6)等的方式调用。
-
 
 听起来好复杂，实际是是很简单的。很直观，来看例子：
 
