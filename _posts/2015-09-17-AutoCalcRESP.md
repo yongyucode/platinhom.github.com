@@ -6,12 +6,19 @@ categories: CompCB
 tags: CompBiol
 ---
 
-我们可以使用高斯对结构进行优化计算并再利用Ambertool的AnteChamber来转换高斯输出文件结果到指定文件格式,用于计算
+我们可以使用高斯对结构进行优化计算拟合ESP电荷,并再利用Ambertool的AnteChamber来转换高斯输出文件结果到指定文件格式,用于计算.这里就是要对小分子结构拟合出ESP和RESP电荷.
 
-[Gaussian 09 fix](http://ambermd.org/bugfixesat.html)
+## 高斯计算
+
+
+
+[Gaussian 09 fix](http://ambermd.org/bugfixesat.html)  
 In Gaussian09 rev B.01, the facility to write out the electrostatic potential on a grid of points was inadvertently deleted. This means that antechamber and resp jobs won't work as they should. Fernando Clemente of Gaussian has kindly provided a script to work around the problem. Download the fixreadinesp.sh file, and follow the instructions there. (Note: you will have to make the script executable by typing chmod +x fixreadinesp.sh.)
 
 [Problem](http://archive.ambermd.org/201108/0726.html)
+
+## antechamber拟合电荷
+
 
 ~~~bash
 #! /bin/bash
