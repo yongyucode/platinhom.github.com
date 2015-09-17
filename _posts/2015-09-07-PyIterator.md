@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PyIterator
+title: Python迭代器
 date: 2015-09-06 20:49:30
 categories: Coding
 tags: Python
