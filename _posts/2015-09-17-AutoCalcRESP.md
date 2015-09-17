@@ -3,7 +3,7 @@ layout: post
 title: 自动计算ESP和RESP电荷(AMBER and G09)
 date: 2015-09-17 00:22:13
 categories: CompCB
-tags: CompBiol
+tags: CompBiol Bash MD Gaussian
 ---
 
 我们可以使用高斯对结构进行优化计算拟合ESP电荷,并再利用Ambertool的AnteChamber来转换高斯输出文件结果到指定文件格式,用于计算.这里就是要对小分子结构拟合出ESP和RESP电荷.

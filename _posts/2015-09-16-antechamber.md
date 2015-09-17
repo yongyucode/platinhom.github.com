@@ -3,7 +3,7 @@ layout: post
 title: antechamber使用
 date: 2015-09-15 12:56:55
 categories: CompCB
-tags: CompBiol
+tags: CompBiol MD
 ---
 
 Usage: antechamber options
