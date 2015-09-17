@@ -8,17 +8,92 @@ tags: CompBiol
 
 我们可以使用高斯对结构进行优化计算拟合ESP电荷,并再利用Ambertool的AnteChamber来转换高斯输出文件结果到指定文件格式,用于计算.这里就是要对小分子结构拟合出ESP和RESP电荷.
 
-## 高斯计算
+## 高斯计算电荷和antechamber拟合电荷
 
+### 关键词: 
 
+`#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt`
+
+- Pop是[population analysis](http://www.gaussian.com/g_tech/g_ur/k_population.htm),用于输出分子轨道,电荷等信息.这里,MK(Merz-Kollman, also known as ESP) atomic charges will be printed out (atomic charges are fitted to the quantum-chemically generated electrostatic potential)
+- `iop(6/33=2)`: coordinates of points along with the values of quantum-chemically calculated electrostatic potential in each of them will be printed out. 用于后续计算resp等.
+- `iop(6/41=6)` : Number of layers in esp charge fit. 缺省4.也有设6的.现在的antechamber转换都不用这项, 旧教程有用6.
+- `iop(6/42=6)` : Density of points per unit area in esp fit.缺省1. 一般使用6. 越大点越多.
+- `iop(6/50=1)`: Whether to write Antechamber file during ESP charge fitting. 缺省0. 再算RESP的时候,正常需要使用该项, 这时在输入文件末尾写入两个文件名,可以分别储存开始结构和优化结构的ESP电荷文件.在G09B01中失效..
+
+##### 输入文件例子:
+
+~~~
+--Link1--
+%nproc=1
+%chk=molecule
+%mem=1024MB
+#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt
+
+remark line goes here
+
+1   1
+    C  -38.9208000000       15.3014000000      -24.0302000000   
+    N  -39.4587000000       15.9888000000      -25.0480000000     
+    C  -38.8204000000       17.2099000000      -25.1653000000     
+
+antechamber-ini.esp 
+
+antechamber.esp 
+
+~~~
+
+可以自行编辑高斯输入文件输入相应关键词, 也可以使用antechamber辅助: 
+
+~~~bash
+# Get Gaussian Input file for esp/resp calculation
+antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf y -gn "%nproc=8" -gm "%mem=1000MB" -ch "ligand" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2, 6/42=6) opt" -ge ligand.gesp -gv 1
+
+# Run Gaussian, can also use > ligand.out to assign output file
+g09 ligand.gjf
+
+# Use Gaussian output to get resp, also "-c esp" to get esp charge
+antechamber -i ligand.log -fi gout -o ligand_resp.mol2 -fo mol2 -pf y -c resp
+# The following use gesp file to get resp charge
+# antechamber -i ligand.gesp -fi gesp -o ligand_resp.mol2 -fo mol2 -pf y -c resp
+
+# To get amber parameter file
+antechamber -i ligand_resp.mol2 -fi mol2 -o ligand_resp.prep -fo prepi
+parmchk -i ligand_resp.prep -f prepi -o ligand_resp.frcmod
+~~~
+
+这里, 
+
+- `-fo gcrt`指明输出高斯输入类型文件, `-fi`是输入文件类型, `-i`, `-o`分别是输入和输出文件, `-pf y`是不产生中间文件.
+- `-gn`指明cpu数量, `-gm`是内存指明,`-ch`是chk文件名(默认"molecule"),均需要双引号!
+- `-gk`是关键词指明(不输入就会自动产生我上面那句话); `-gv 1`是写出resp文件的选项,使用后会加入"#iop(6/50=1)", g09开始支持, 也可以使用-gk自己写入; `-ge`是输出的gesp文件名(默认g09.gesp,写在高斯输入文件名后面),用于后续拟合. 
+- `-c`指明拟合原子电荷的方法.
+
+随后使用g09计算即可. 算出结果后, g09RevC以后会产生相应gesp文件,可以用gesp文件拟合,也可以用输出文件log/out去拟合(见上述指令).在输出文件当中, 已经存在了Mulliken和ESP原子电荷(还有把H电荷分到重原子时的电荷,一般使用全原子电荷), 因此可以很方便拟合出相应`mul`和`esp`电荷.
+
+------
+
+然而, 在我的使用当中, ESP电荷是毫无问题的, 但是RESP电荷就出问题了. RESP电荷计算是通过加入iop(6/50=1)来开启写出esp文件,从而使得antechamber可以读入该esp文件进行RESP的拟合.然而,在G09的Rev B.01中, 由于存在bug, 并不能实现该功能, 并且计算结果中只存在电荷中心坐标, 没有相应输出相应坐标的电荷值. 找了一天,在Amber的bugfix中找到了解决方案: 
 
 [Gaussian 09 fix](http://ambermd.org/bugfixesat.html)  
-In Gaussian09 rev B.01, the facility to write out the electrostatic potential on a grid of points was inadvertently deleted. This means that antechamber and resp jobs won't work as they should. Fernando Clemente of Gaussian has kindly provided a script to work around the problem. Download the fixreadinesp.sh file, and follow the instructions there. (Note: you will have to make the script executable by typing chmod +x fixreadinesp.sh.)
+In Gaussian09 rev B.01, the facility to write out the electrostatic potential on a grid of points was inadvertently deleted. This means that antechamber and resp jobs won't work as they should. Fernando Clemente of Gaussian has kindly provided a script to work around the problem. Download the [fixreadinesp.sh](http://ambermd.org/fixreadinesp.sh) file, and follow the instructions there. (Note: you will have to make the script executable by typing chmod +x fixreadinesp.sh.)
 
-[Problem](http://archive.ambermd.org/201108/0726.html)
+文件中有使用说明,就是将计算的结果先作为脚本输入文件,输出到一个文件作为高斯输入文件(包含charge center坐标). 再进行一次计算(此时,保证chk文件的存在!!chk文件名会自行从输出文件中获取), 提取相应电荷点和电荷值, 很快就算完了.随后在第二次计算结果作为输入再利用脚本进行一次处理, 转换成antechamber能识别的输出文件即可. 相应就是:
 
-## antechamber拟合电荷
+~~~bash
+chmod +x fixreadinesp.sh
+./fixreadinesp.sh ligand.log > tmpesp.gjf
+g09 tmpesp.gjf > tmpesp.log
+./fixreadinesp.sh tmpesp.log > ligand.out 
+antechamber -i ligand.out -fi gout -o ligand_resp.mol2 -fo mol2 -pf y -c resp
+~~~
 
+但随之使用后发现拟合的电荷十分之大! 再搜索后发现在amber的archive里面有讨论该问题, 简而言之就是计算ESP电荷时会进行对称化优化操作,而使用工具提取格点坐标和电荷时使用了`nosymm`关键词, 从而导致结构的坐标不一致. 解决方案就是在计算ESP时加入nosymm或者在fixreadinesp.sh工具输出gjf文件后去掉nosymm(或者去掉fixreadinesp.sh中的nosymm).
+
+Another [Problem](http://archive.ambermd.org/201108/0726.html) is the calculation result is very strange if you just use the standard method and the fixreadinesp.sh tool. Because of the use of "nosymm" in the second part extraction of fit charge from chk file, the coordinates may be different to the origin calculation. So, the final charge on atom summaried from the grid may be wrong. To solve this problem, just need to add nosymm in the first calculation, or remove the nosymm in the second gaussian input file generated by fixreadinesp.sh.
+
+还有个问题...就是输出文件charge center超过10000后, 编号会变成`****`! 这样在最后输出ligand.out用于拟合电荷的文件时,`****`部分不能利用脚本补充 **fit** 一词..
+
+##### 自动进行ESP/RESP电荷计算脚本
 
 ~~~bash
 #! /bin/bash
@@ -103,5 +178,10 @@ rm punch qout QOUT esout tmpesp.gjf tmpesp.log
 
 
 [iop](http://www.gaussian.com/g_tech/g_iops/iops2.pdf)
+
+## Reference
+
+1. [ANU-非标准残基设置和计算教程](http://sf.anu.edu.au/collaborations/amber_on_fujitsu/amber-12/tutorial/nonstandard-setup/index.html)
+2. [How to run a RESP calculation](http://www.teokem.lu.se/~ulf/Methods/resp.html)
 
 ------
