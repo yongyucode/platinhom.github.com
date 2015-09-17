@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 根据ID抓取EMD数据信息
-date: 2015-09-17 07:07:00
+date: 2015-08-09 07:07:00
 categories: CompCB
 tags: CompBiol EMD Python
 ---
