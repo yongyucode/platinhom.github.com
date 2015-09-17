@@ -68,7 +68,7 @@ parmchk -i ligand_resp.prep -f prepi -o ligand_resp.frcmod
 - `-gk`是关键词指明(不输入就会自动产生我上面那句话); `-gv 1`是写出resp文件的选项,使用后会加入"#iop(6/50=1)", g09开始支持, 也可以使用-gk自己写入; `-ge`是输出的gesp文件名(默认g09.gesp,写在高斯输入文件名后面),用于后续拟合. 
 - `-c`指明拟合原子电荷的方法.
 
-随后使用g09计算即可. 算出结果后, g09RevC以后会产生相应gesp文件,可以用gesp文件拟合,也可以用输出文件log/out去拟合(见上述指令).在输出文件当中, 已经存在了Mulliken和ESP原子电荷(还有把H电荷分到重原子时的电荷,一般使用全原子电荷), 因此可以很方便拟合出相应`mul`和`esp`电荷.
+随后使用g09计算即可. 算出结果后, g09RevC以后会产生相应gesp文件,可以用gesp文件拟合,也可以用输出文件log/out去拟合(见上述指令).在输出文件当中, 已经存在了Mulliken和ESP原子电荷(还有把H电荷分到重原子时的电荷,一般使用全原子电荷), 因此可以很方便直接拟合出相应`mul`和`esp`电荷.
 
 ------
 
@@ -85,6 +85,17 @@ chmod +x fixreadinesp.sh
 g09 tmpesp.gjf > tmpesp.log
 ./fixreadinesp.sh tmpesp.log > ligand.out 
 antechamber -i ligand.out -fi gout -o ligand_resp.mol2 -fo mol2 -pf y -c resp
+~~~
+
+中间第二部g09计算的输入文件抬头:
+
+~~~
+ %chk=ligand
+#p geom=allcheck chkbas guess=(read,only) density=check
+nosymm prop=(potential,read) pop=minimal
+
+   1.208000  0.697100  2.100000
+	................
 ~~~
 
 但随之使用后发现拟合的电荷十分之大! 再搜索后发现在amber的archive里面有讨论该问题, 简而言之就是计算ESP电荷时会进行对称化优化操作,而使用工具提取格点坐标和电荷时使用了`nosymm`关键词, 从而导致结构的坐标不一致. 解决方案就是在计算ESP时加入nosymm或者在fixreadinesp.sh工具输出gjf文件后去掉nosymm(或者去掉fixreadinesp.sh中的nosymm).
