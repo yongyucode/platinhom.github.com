@@ -101,18 +101,18 @@ Old version may just not support type 3 and 10.
 
 ~~~bash
 # Calculate bcc charge for input mol2
-antechamber -i ligand.mol2 -fi mol2 -o ligand_bcc.mol2 -fo mol2 -c bcc -pf
+antechamber -i ligand.mol2 -fi mol2 -o ligand_bcc.mol2 -fo mol2 -c bcc -pf y
 # Convert file to prepi and use parmchk to generate amber input parameter
-antechamber -i ligand_bcc.mol2 -fi mol2 -o ligand_bcc.prep -fo prepi -pf
+antechamber -i ligand_bcc.mol2 -fi mol2 -o ligand_bcc.prep -fo prepi -pf y
 parmchk -i ligand.prep -f prepi -o ligand.frcmod
 # in tleap: loadAmberPrep ligand.frcmod
 
 # Directly generate prepi file from mol2 with bcc charge, not commend
-antechamber -i ligand.mol2 -fi mol2 -o small_bcc.prep -fo prepi -c bcc -pf
+antechamber -i ligand.mol2 -fi mol2 -o small_bcc.prep -fo prepi -c bcc -pf y
 
 # Convert mol2 <-> Gaussian input/output for charge calculation for esp/resp
-antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf
-antechamber -i ligand.log -fi gout -o ligand_resp.mol2 -fo mol2 -c resp -pf
+antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf y -gn "%nproc=8" -gm "%mem=1000MB"
+antechamber -i ligand.log -fi gout -o ligand_resp.mol2 -fo mol2 -c resp -pf y
 
 # Write out the charge to charge file
 antechamber -i ligand_bcc.mol2 -fi mol2 -c wc -cf ligand_c.crg
