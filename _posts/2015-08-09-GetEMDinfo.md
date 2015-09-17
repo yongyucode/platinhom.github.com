@@ -76,8 +76,9 @@ print emdnum,pdbnum,"%5.2f"%spacing,"%5.2f"%reso;
 #
 # To get EMD information from EMD databank
 # Usage: python EMDwebAnalyser.py 1149
+#
 # Return: EMDID FitPDB GridSize Resolution Symmetry Rigid/Flex Software Protocol Title Sample
-# 	1149::2BYU::16.5::3.33::T::rigid body::URO::Protocol: rigid body. One dimer of 1gme A and B,
+# As: 1149::2BYU::16.5::3.33::T::rigid body::URO::Protocol: rigid body. One dimer of 1gme A and B,
 # 	residues 43-137 and 146-151, was fitted in URO and tetrahedral symmetry was used to generate 
 #	the other five dimers.::Dodecameric structure of the small heat shock protein Acr1 from 
 #	Mycobacterium tuberculosis.::Recombinant protein Acr1 From M.Tuberculosis made in E.coli.
