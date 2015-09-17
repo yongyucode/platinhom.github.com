@@ -1,7 +1,7 @@
 ---
 layout: post
-title: GaussianError
-date: 2015-09-17 21:03:42
+title: Gaussian遇到错误汇总
+date: 2015-09-05 10:03:42
 categories: CompCB
 tags: CompChem Gaussian
 ---
