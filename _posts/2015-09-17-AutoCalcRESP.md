@@ -12,7 +12,7 @@ tags: CompBiol
 
 ### 关键词: 
 
-`#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt`
+`#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2, 6/42=6, 6/50=1) opt`
 
 - Pop是[population analysis](http://www.gaussian.com/g_tech/g_ur/k_population.htm),用于输出分子轨道,电荷等信息.这里,MK(Merz-Kollman, also known as ESP) atomic charges will be printed out (atomic charges are fitted to the quantum-chemically generated electrostatic potential)
 - `iop(6/33=2)`: coordinates of points along with the values of quantum-chemically calculated electrostatic potential in each of them will be printed out. 用于后续计算resp等.
@@ -46,7 +46,7 @@ antechamber.esp
 
 ~~~bash
 # Get Gaussian Input file for esp/resp calculation
-antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf y -gn "%nproc=8" -gm "%mem=1000MB" -ch "ligand" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2, 6/42=6) opt" -ge ligand.gesp -gv 1
+antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf y -gn "%nproc=8" -gm "%mem=1000MB" -ch "ligand" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt" -ge ligand.gesp -gv 1
 
 # Run Gaussian, can also use > ligand.out to assign output file
 g09 ligand.gjf
