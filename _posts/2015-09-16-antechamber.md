@@ -121,6 +121,69 @@ antechamber -i ligand.mol2 -fi mol2 -o ligand_c.mol2 -fo mol2 -c rc -cf ligand_c
 
 ~~~
 
+## 子程序
+
+### atomtype
+
+- -i input file name
+- -o output file name(ac)
+- -f input file format(ac (the default) or mol2)
+- -p amber or gaff or bcc or gas or sybyl, it is supressed by "-d" option
+- -d atom type defination file, optional
+- -a do post atom type adjustment (it is or sybyl applied with "-d" option) 1: yes, 0: no (the default)
+
+类型定义文件在`$AMBERHOME/dat/antechamber`, ATOMTYPE\_AMBER.DEF (amber), ATOMTYPE\_GFF.DEF (general amber force field), ATOMTYPE\_BCC.DEF (AM1-BCC), ATOMTYPE\_SYBYL.DEF (sybyl) and ATOMTYPE\_GAS.DEF (gasteiger). 使用-p来选择.
+
+原子类型输出在最后一列.
+
+~~~
+ATOM      1  C   <1>     1       1.208   0.697   0.000  0.000000      C.ar
+ATOM      2  C   <1>     1       2.494   1.441   0.000  0.000000       C.3
+ATOM      3  H1  <1>     1       2.295   2.512  -0.000  0.000000         H
+ATOM      4  O   <1>     1       3.238   1.099  -1.158  0.000000       O.3
+~~~
+
+### bondtype
+
+- -i input file name 
+- -o output file name 
+- -f file format (ac or mol2)
+- -j judge bond type level option, default is part
+	1. full  full judgement
+	2. part  partial judgement, only do reassignment according to known bond type information in the input file
+- -s stop running if APS (atomic penality score) is not available
+	1. 0 - no, all the related bonds are frozen, the default
+	2. 1 - yes
+
+输出的bond types (single (1), double (2), triple (3), aromatic single (7), aromatic double (8), aromatic(10), delocalized (9) and conjugated (6))
+
+参数文件在 `APS.DAT` in `$AMBERHOME/dat/antechamber`
+
+输出文件中,储存在BOND部分.四个数字: 键序号, 两个原子序号, 键类型, 原子名(原子部分对应,非类型).
+
+~~~
+BOND    1    1    2    1      C    C
+BOND    2    1    7    8      C    C
+BOND    3    1   16    7      C    C
+BOND    4    2    3    1      C   H1
+~~~
+
+### am1bcc
+
+- -i input file name in ac format 
+- -o output file name 
+- -f output file format(pdb or ac, optional, default is ac)
+- -p bcc parm file name (optional))
+- -s status information, can be 0 (brief), 1 (the default) and 2 (verbose)
+- -j atom and bond type judge option, default is 0)
+	1. 0: No judgement
+	1. 1: Atom type
+	1. 2: Full bond type
+	1. 3: Partial bond type
+	1. 4: Atom and full bond type
+	1. 5: Atom and partial bond type
+
+
 ## Reference
 
 1. [antechamber](http://ambermd.org/antechamber/ac.html#antechamber)
