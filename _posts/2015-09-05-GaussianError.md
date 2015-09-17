@@ -19,7 +19,7 @@ Segmentation fault
 ~~~
 
 解决办法：
-sudo echo 0 > /proc/sys/kernel/randomize_va_spac
+sudo echo 0 > /proc/sys/kernel/randomize\_va\_spac
 
 - IRC计算L123错误
 
