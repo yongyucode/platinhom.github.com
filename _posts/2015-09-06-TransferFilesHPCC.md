@@ -26,56 +26,44 @@ tags: Cluster
 
 
 ## Dropbox (Windows/OS X/Linux)
-If you are a Dropbox user, you can setup HPCC to sync automatically with your Dropbox account.
-Download the following file to your home directory on HPCC, http://www.dropbox.com/download/?plat=lnx.x86_64
-Log into one of the development nodes
-`ssh dev-intel10`
-untar the downloaded file using the following command
-`tar -zxvf dropbox-lnx.x86_64-x.x.xx.tar.gz`
-start screen
-`screen`
-run dropboxd in a screen session and You should see output like this:
 
-~~~bash
-~/.dropbox-dist/dropboxd
-This client is not linked to any account... Please visit https://www.dropbox.com/cli_link?host_id=7d44a557aa58f285f2da0x67334d02c1 to link this machine.
-~~~
-
-Copy the link to a web browser to activate your installation.
-After the client is registered, detach the screen session by pressing ctrl-a, and then d.
-
-## Unix指令(Linux/Mac/Win下Mingw)
-有不少命令是可以支持网络传输文件的.Linux/Mac一般直接使用,Win下就要靠Mingw了,不一定有呢..
+使用dropbox你就可以十分简单利用同步盘同步文件了..弄起来复杂点.下载安装请[参见](https://www.dropbox.com/install?os=lnx).在集群上安装需要一些库,先登入节点,再解压, 按说明安装即可.
 
 ### scp 远程复制
 
 命令格式就是`scp -r fromFile ToFile`, -r是针对文件夹. 远程端格式是`用户名@主机名或ip:指定位置或文件名`.例如: 
 
 ~~~bash
+# Upload From local to remote server
 scp "My File Name" username@hpcc.msu.edu:"My\ File\ Name"
+# Download from remote server to local
 scp username@hpcc.msu.edu:example.txt ./example_copy.txt
 ~~~
 
 ### rsync 文件夹同步
 
-和scp相比,没有更新的相同文件不会同步到本地/远端. 基本用法是`rsync -ave 来源文件夹 接收文件夹`.文件夹格式也是 `用户名@主机名或ip:指定位置`.如: 
+和scp相比,没有更新的相同文件不会同步到本地/远端. 基本用法是`rsync -ave 来源文件夹 接收文件夹`.文件夹格式也是 `用户名@主机名或ip:指定位置`. 第一次同步时可加入-n的选项.如: 
 
 ~~~bash
+# Upload From local to remote server
 rsync -ave ssh <local_dir> username@hpcc.msu.edu:<hpcc_dir>
+# Download from remote server to local
 rsync -ave ssh username@hpcc.msu.edu:<hpcc_dir> <local_dir>
 ~~~
 
-Icon
-the first time you use rsync, you might want to add the -n flag to do a dry run before any files are copied.
-Interactive file copy (sftp)
-When preforming several data transfers between hosts, the sftp command may be preferable, as it allows the user to work interactively. Running
-`sftp username@hpcc.msu.edu`
-from a local host establishes a connection between that host and the cluster. Both hosts can be navigated. For the local file system, lcd changes to the specified directory, lpwd prints the working directory, and lls prints a list of files in the current directory. For the remote file system, the same three commands are available, minus the leading "l." Also available are commands to change permissions, rename files, and manipulate directories on the remote host. The two key commands are get example.txt, which copies the file in the remote working directory to the local working directory, and put example.txt, which copies the file in the local working directory to the remote working directory. The quit command closes the connection between hosts.
-Copy file from Internet (Wget)
-Wget is a simple command useful for copying files from the Internet to a user's file space on the cluster. Submitting the line
-`wget http://www.examplesite.com/examplefile.txt`
-downloads examplefile.txt to the user's working directory. Other protocols, such as ftp, are also available.
+### sftp 登录后交互传输
 
+和scp相比, 就是先登入远程端, 然后再对指定远程端文件进行子命令操作, 适用于要操作多个文件或复杂目录结构下的文件. 
+
+`sftp username@hpcc.msu.edu` 将登入远程服务器端,然后可以使用部分linux指令,如ls,pwd,cd等进行操作.找到相应文件后再赋值. 同时也可以操作本地端,在指令前加l..如`lcd`本地端改变目录,`lpwd`是查看本地端当前位置,`lls`查看本地端文件.另外,改变权限,重命名,操作文件夹等指令也可以使用. `quit`退出sftp模式.
+
+最关键两个指令: `get filename` 是下载远程文件到本地, `put filename`是上传文件到服务器端. 
+
+### wget 下载远程文件
+
+十分简单, `wget 网上文件url` 即可下载远程文件到本地. `-O filename` 可以指定下载后的文件名, 尤其是一些网名很长的文件..例如:
+
+`wget http://www.examplesite.com/examplefile.txt -O example.txt`
 
 1. [Transferring Files to the HPCC](https://wiki.hpcc.msu.edu/display/hpccdocs/Transferring+Files+to+the+HPCC)
 
