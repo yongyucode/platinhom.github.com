@@ -6,34 +6,26 @@ categories: IT
 tags: Cluster
 ---
 
-This document highlights several simple methods to transfer files to the HPCC.
-Using a GUI (Windows/OS X/Linux)
-Mapping Your Home or Research Space to your local computer
-Using Dropbox (Windows/OS X/Linux)
-Using Unix commands
-Basic file copy (scp)
-Synchronize directories (rsync)
-Interactive file copy (sftp)
-Copy file from Internet (Wget)
-Using a GUI (Windows/OS X/Linux)
-Download and install the appropriate (free) Filezilla client from http://filezillaproject.org/download.php.
-To use, launch the program. You should see a screen similar to this:
+感觉xmanager的ftp工具对于HPCC不太好用,打算换一个ftp工具. 本来传输时是一卡一卡的,要刷新才能起效,而且速度很慢..后来换了Filzilla以后30多M/s...吓尿了...
+
+顺便归纳以下传输文件到集群的方法.
+
+
+## 图形界面FTP工具(Windows/OS X/Linux)
+
+下载安装免费开源FTP工具, 如[Filezilla client](http://filezillaproject.org/download.php).
+下载安装后,打开后,输入IP地址,用户名,密码即可..十分方便.端口22是sftp,21是ftp.一般22就挺好.例如下图.第一次使用会让你是否记住服务器端主机信息,accept/yes/OK就好了.
 
 ![](https://wiki.hpcc.msu.edu/download/attachments/13864442/filezilla_screen1.png?version=1&modificationDate=1314306681000&api=v2)
 
-In the top dialog boxes, enter:
-(Host) hpcc.msu.edu
-(Username) <your username>
-(Password) <your password>
-(Port) 22
-Then click connect or quickconnect. The first time you use this, you will have to accept the host certificate.
-![](https://wiki.hpcc.msu.edu/download/attachments/13864442/filezilla_screen2.png?version=1&modificationDate=1314307954000&api=v2)
+支持拖拽,右键来指定传输向上/向下传输.左边是本地,右边是服务器端文件系统.不用介绍了..
 
-Once connected, the left column displays files on your local computer, the right column displays files on hpcc.
-You can select the appropriate directories by double clicking through each tree. Files can be dragged and dropped from one column to the next. (By dragging files from the left column to the right, you are uploading files to HPCC from your local computer. By dragging files from the right column to the left, you can download files from HPCC to your local computer.
-Mapping Your Home or Research Space to your local computer
-You can copy files using Windows Explorer or OSX Finder if you are on campus by using the following instructions. Mapping HPC drives to a campus computer
-Using Dropbox (Windows/OS X/Linux)
+## 映射网络地址到本地
+
+该方法一般只适合于局域网或者校园内.可以参考[HPCC映射到本地](https://wiki.hpcc.msu.edu/display/hpccdocs/Mapping+HPC+drives+to+a+campus+computer). 好处是可以直接在电脑上复制黏贴.缺点是弄起来复杂一些.
+
+
+## Dropbox (Windows/OS X/Linux)
 If you are a Dropbox user, you can setup HPCC to sync automatically with your Dropbox account.
 Download the following file to your home directory on HPCC, http://www.dropbox.com/download/?plat=lnx.x86_64
 Log into one of the development nodes
@@ -51,23 +43,28 @@ This client is not linked to any account... Please visit https://www.dropbox.com
 
 Copy the link to a web browser to activate your installation.
 After the client is registered, detach the screen session by pressing ctrl-a, and then d.
-Using Unix commands
-A number of different command-line utilities are available to OS X and Linux users. Each of them has its own advantages.
-Basic file copy (scp)
-A simple command for transferring files between the cluster and another host is scp. To copy a file from a local directory to file space on the cluster, use a line like
-scp example.txt username@hpcc.msu.edu:example_copy.txt
-This will copy the file named example.txt in the local host's home directory to the user's home directory on the cluster, with the copy having the name example_copy.txt. Leaving the space after the colon blank gives the new file the same name as the original.  Note: To transfer a file name with spaces you must put a backslash before each space in your file name, i.e.
-`scp "My File Name" username@hpcc.msu.edu:"My\ File\ Name"`
-To copy a file from the cluster to your local directory,
-`scp username@hpcc.msu.edu:example.txt ./example_copy.txt`
-will copy the file named example.txt from the user's home directory on the cluster to the home directory of the local host, naming the new file example_copy.txt. Leaving the space after the slash blank gives the new file the same name as the original. The -r option can be used to copy entire directories recursively. 
-Synchronize directories (rsync)
-If you are an advanced LINUX/Mac user, there is a wonderful little utility that makes mirroring directories simple. The syntax looks very similar to scp.
-To mirror <local_dir> on my local computer to <hpcc_dir> on hpcc, the following command can be issued.
-`rsync -ave ssh <local_dir> username@hpcc.msu.edu:<hpcc_dir>`
-In the above command, rsync will scan through both directories. If any files in the <local_dir> are newer, they will be uploaded to <hpcc_dir>. (It is also possible to get rsync to upload ALL different files, regardless of which is newer).
-To mirror the HPCC directory to your local system, call
-`rsync -ave ssh username@hpcc.msu.edu:<hpcc_dir> <local_dir>`
+
+## Unix指令(Linux/Mac/Win下Mingw)
+有不少命令是可以支持网络传输文件的.Linux/Mac一般直接使用,Win下就要靠Mingw了,不一定有呢..
+
+### scp 远程复制
+
+命令格式就是`scp -r fromFile ToFile`, -r是针对文件夹. 远程端格式是`用户名@主机名或ip:指定位置或文件名`.例如: 
+
+~~~bash
+scp "My File Name" username@hpcc.msu.edu:"My\ File\ Name"
+scp username@hpcc.msu.edu:example.txt ./example_copy.txt
+~~~
+
+### rsync 文件夹同步
+
+和scp相比,没有更新的相同文件不会同步到本地/远端. 基本用法是`rsync -ave 来源文件夹 接收文件夹`.文件夹格式也是 `用户名@主机名或ip:指定位置`.如: 
+
+~~~bash
+rsync -ave ssh <local_dir> username@hpcc.msu.edu:<hpcc_dir>
+rsync -ave ssh username@hpcc.msu.edu:<hpcc_dir> <local_dir>
+~~~
+
 Icon
 the first time you use rsync, you might want to add the -n flag to do a dry run before any files are copied.
 Interactive file copy (sftp)

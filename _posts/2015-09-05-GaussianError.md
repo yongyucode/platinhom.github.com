@@ -6,7 +6,12 @@ categories: CompCB
 tags: CompChem Gaussian
 ---
 
-- Files in the Gaussian directory are world accessible.
+- 权限问题
+
+~~~bash
+Files in the Gaussian directory are world accessible.
+~~~
+
 权限太高, 在高斯文件夹内,输入chmod -R 750  * 即可.
 
 - 经典写入错误
