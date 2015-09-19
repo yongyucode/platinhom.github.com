@@ -45,6 +45,8 @@ pip install "ipython[notebook]"
 pip install pyreadline
 ~~~
 
+要是装有但有问题,可以用`pip install ipython --upgrade` 来升级
+
 PS: 要是提示以下就要安装后面的pyreadline,否则可以不装.
 
 ~~~bash
