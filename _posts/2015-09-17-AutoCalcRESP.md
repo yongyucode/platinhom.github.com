@@ -46,7 +46,7 @@ antechamber.esp
 
 ~~~bash
 # Get Gaussian Input file for esp/resp calculation
-antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf y -gn "%nproc=8" -gm "%mem=1000MB" -ch "ligand" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt" -ge ligand.gesp -gv 1
+antechamber -i ligand.mol2 -fi mol2 -o ligand.gjf -fo gcrt -pf y -gn "%nproc=8" -gm "%mem=1000MB" -ch "ligand" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) iop(6/50=1) opt" -ge ligand.gesp -gv 1
 
 # Run Gaussian, can also use > ligand.out to assign output file
 g09 ligand.gjf
@@ -65,7 +65,7 @@ parmchk -i ligand_resp.prep -f prepi -o ligand_resp.frcmod
 
 - `-fo gcrt`指明输出高斯输入类型文件, `-fi`是输入文件类型, `-i`, `-o`分别是输入和输出文件, `-pf y`是不产生中间文件.
 - `-gn`指明cpu数量, `-gm`是内存指明,`-ch`是chk文件名(默认"molecule"),均需要双引号!
-- `-gk`是关键词指明(不输入就会自动产生我上面那句话); `-gv 1`是写出resp文件的选项,使用后会加入"#iop(6/50=1)", g09开始支持, 也可以使用-gk自己写入; `-ge`是输出的gesp文件名(默认g09.gesp,写在高斯输入文件名后面),用于后续拟合. 
+- `-gk`是关键词指明(不输入就会自动产生我上面那句话); `-gv 1`是写出resp文件的选项,使用后会加入"#iop(6/50=1)", g09开始支持, 也可以使用-gk自己写入; `-ge`是输出的gesp文件名(默认g09.gesp,写在高斯输入文件名后面),用于后续拟合,必须在`-gv 1`下才有效. 
 - `-c`指明拟合原子电荷的方法.
 
 随后使用g09计算即可. 算出结果后, g09RevC以后会产生相应gesp文件,可以用gesp文件拟合,也可以用输出文件log/out去拟合(见上述指令).在输出文件当中, 已经存在了Mulliken和ESP原子电荷(还有把H电荷分到重原子时的电荷,一般使用全原子电荷), 因此可以很方便直接拟合出相应`mul`和`esp`电荷.
@@ -206,6 +206,8 @@ echo "Please assign the input file!"
 exit
 fi
 
+# If you use G09 Rev B.01, uncomment the following line to fix bug
+# G09B01="TRUE"
 
 #Setup the amber/Gaussian environment. You should modify by your own environment
 if [ -z $AMBERHOME ];then
@@ -213,14 +215,30 @@ source /mnt/home/zhaozx/AmberTools/amber.sh
 fi
 
 if [ -z $g09root ];then
-source /mnt/home/zhaozx/g09/gau_setup.sh
+source /mnt/home/zhaozx/Software/g09/gau_setup.sh
 fi
 
+basename=${1%.*}
+exdname=${1##*.}
+
+if [ $exdname = "mol2" ];then
+antechamber -fi mol2 -fo gcrt -pf y -i $1  -o ${basename}.gjf -gn "%nproc=8" -gm "%mem=1000MB" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) iop(6/50=1) opt nosymm" -ch "${basename}" -ge ${basename}.gesp -gv 1
+elif [ $exdname = "pdb" ];then
+antechamber -fi pdb -fo gcrt -pf y -i $1 -o ${basename}.gjf -gn "%nproc=8" -gm "%mem=1000MB" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) iop(6/50=1) opt nosymm" -ch "${basename}" -ge ${basename}.gesp -gv 1
+else
+echo "Only support for pdb or mol2 files!"
+exit
+fi
+
+g09 ${basename}.gjf
+antechamber -fi gout -fo mol2 -pf y -i ${basename}.log -o ${basename}_esp.mol2 -c esp
+
+# Fix bug in G09 Rev B.01
+if [ ! -z $G09B01 ];then
 # Generate bugfix tool fixreadinesp.sh developed by Fernando Clemente of Gaussian
 # http://ambermd.org/fixreadinesp.sh
 
 if [ ! -f fixreadinesp.sh ];then
-
 echo "#!/bin/bash" > fixreadinesp.sh
 echo "if [ \"\$(grep \"Charges from ESP fit\" \${1})\" != \"\" ] ; then" >> fixreadinesp.sh
 echo "  printf \"%s\n\" \"\$(grep -i \"%chk=\" \${1})\"" >> fixreadinesp.sh
@@ -247,38 +265,27 @@ echo "    sub(/Read-in Center/,\"ESP Fit Center\",\$0)" >> fixreadinesp.sh
 echo "    print \$0" >> fixreadinesp.sh
 echo "  }' \${1}" >> fixreadinesp.sh
 echo "  fi" >> fixreadinesp.sh
-
 chmod +x fixreadinesp.sh
-
 fi
 
-basename=${1%.*}
-exdname=${1##*.}
-
-if [ $exdname = "mol2" ];then
-antechamber -fi mol2 -fo gcrt -pf y -i $1  -o ${basename}.gjf -gn "%nproc=8" -gm "%mem=1000MB" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt nosymm" -ch "${basename}"
-elif [ $exdname = "pdb" ];then
-antechamber -fi pdb -fo gcrt -pf y -i $1 -o ${basename}.gjf -gn "%nproc=8" -gm "%mem=1000MB" -gk "#HF/6-31G* SCF=tight Test Pop=MK iop(6/33=2) iop(6/42=6) opt nosymm" -ch "${basename}"
-else
-echo "Only support for pdb or mol2 files!"
-exit
-fi
-
-g09 ${basename}.gjf
-antechamber -fi gout -fo mol2 -pf y -i ${basename}.log -o ${basename}_esp.mol2 -c esp
-
-# Fix bug in G09 b01
 ./fixreadinesp.sh ${basename}.log > tmpesp.gjf
 g09 tmpesp.gjf
 ./fixreadinesp.sh tmpesp.log > ${basename}.out
 antechamber -fi gout -fo mol2 -pf y -i ${basename}.out -o ${basename}_resp.mol2 -c resp
-
 rm punch qout QOUT esout tmpesp.gjf tmpesp.log
+
+else
+# G09 Rev C01/D01
+antechamber -fi gesp -fo mol2 -pf y -i ${basename}.gesp -o ${basename}_resp.mol2 -c resp
+rm punch qout QOUT esout 
+
+fi # End different Version for resp
+echo "Done for $basename!"
 ~~~
 
 ## 测试
 
-同一类型由上到下顺序分别是
+同一类型由上到下顺序分别是(gesp文件只有D.01才有):
 
 1. D.01版相同分子测试,带nosymm
 2. D.01版相同分子测试,不带nosymm
