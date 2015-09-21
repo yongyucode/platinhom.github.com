@@ -1,12 +1,13 @@
 ---
 layout: post_small
-title: 备忘和计划
+title: 英语单词
 date: 9999-09-09 09:09:09
 categories: Other 
 tags: 其他
 ---
 
-餐具: 
+### 餐具: 
+
 coffee pot 咖啡壶
 coffee cup 咖啡杯
 paper towel 纸巾
@@ -30,7 +31,8 @@ picnic lunch 便当
 fruit plate 水果盘
 toothpick 牙签
 
-中餐:
+### 中餐:
+
 bear's paw 熊掌
 dried venison 鹿脯
 beche-de-mer; sea cucumber 海参
@@ -116,7 +118,7 @@ sashimi 生鱼片
 butter 奶油
 
 
-冷饮: 
+### 冷饮: 
 beverages 饮料
 soya-bean milk 豆浆
 plum syrup 酸梅汤
@@ -164,7 +166,7 @@ milkshake 奶昔
 straw 吸管
 
 
-水果: 
+### 水果: 
 pineapple 凤梨
 watermelon 西瓜
 papaya 木瓜
@@ -479,7 +481,7 @@ steamed dumpling 蒸饺
 ravioli 馄饨
 
 
-前台 
+### 前台 
 company 陪伴，同伴
 single room 单人房
 double room 双人房
