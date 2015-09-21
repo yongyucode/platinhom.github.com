@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_py
 title: 自动计算ESP和RESP电荷(AMBER and G09)
 date: 2015-09-17 00:22:13
 categories: CompCB
