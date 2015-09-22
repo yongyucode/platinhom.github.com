@@ -94,6 +94,10 @@ Write out charge |  wc    |   9   |  Delete Charge  |   dc   |   10
 
 Old version may just not support type 3 and 10.
 
+在老版Amber中是使用`Mopac`算电荷的, 后来的版本就加入了`sqm`程序来算电荷. 在老版本中支持cm1,cm2等电荷, 但新版本中SQM和高斯都不能算CM1和CM2.  
+高斯结果只能转出成resp(用gesp)和esp(用gout), 不能转成Mulliken,虽然out里面有Mulliken Charge, 但和BCC算出的Mulliken相差甚远..另外gesp不能产生ESP电荷.  
+用antechamber算Gasteiger, Mulliken和AM1-BCC都是可以的, 后两者需要调用sqm. 即使用gout也不能产生出BCC和Mulliken. 
+
 ----------------------------------------------------------------
 
 ## 例子:
