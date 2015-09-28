@@ -19,6 +19,5 @@ XAMPP:
 Apache发行版,PHP开发环境,包含MySQL、PHP和Perl. [官网](https://www.apachefriends.org/zh_cn/index.html)
 
 
-35.8.151.207
 
 ------
