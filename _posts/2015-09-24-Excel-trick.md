@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: post_small
 title: Excel技巧
-date: 2015-09-28 22:47:05
+date: 2015-09-24 12:47:05
 categories: IT
 tags: Excel ZZ
 ---

@@ -15,6 +15,10 @@ Enjoy It~
 ~~~python
 #! /usr/bin/env python
 # -*- coding: utf8 -*-
+# File: TotalPara.py
+# Author: Platinhom, 2015.9.23
+# Usage: Use data.txt as data file and run this script.
+
 import os,sys
 import numpy as np
 
