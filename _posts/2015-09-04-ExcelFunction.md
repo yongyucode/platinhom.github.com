@@ -56,6 +56,10 @@ strong{font-size:16px;}
 - **GCD**/**LCM**(number1, [number2], ...): 求最大公约数/最小公倍数.
 - **RAND**(): 产生[0,1) 的随机数.每次计算工作表时都会更新..
 - **RANDBETWEEN**(bottom, top): 产生[bottom, top]之间的随机整数.
+- **MOD**(number, divisor)：求余,number/divisor. 注意结果的符号与除数相同. `MOD(n, d) = n - d*INT(n/d)`
+- **QUOTIENT**(number, divisor): 返回除法number/divisor的整数部分. 和int(number)有不同:对负数时(-10/3),前者返回-3,int返回-4.
+- **CEILING**(number, significance): 向上取整到最接近significance倍数的值.例如整数取整significance=1,可以0.1,2等(如两者都是负数,实际向下取整..).
+
 
 ### 区域数值处理
 
@@ -144,6 +148,7 @@ value代表需要转换的数值或引用的单元格；format_text为指定文�
 - **INDEX**(array,行号,列号)：返回列表或数组中的元素值，此元素由行序号和列序号的索引值进行确定。  
 Array代表单元格区域或数组常量；如果省略行号，则必须有列号。可以用match函数用来定位某行.此处的行序号和列序号是相对于所引用的单元格区域而言的，不是Excel工作表中的行或列序号。  
 index(范围2, match(值,范围1)) 可以查找在范围1的某列中某值的位置并返回该位置别的行的相应值
+- **OFFSET**(reference, rows, cols, [height], [width]): 对某个单元格进行偏移(下右为正值,上左为负值)获取偏移后单元格的值.最后两个参数是引用的行高和列宽(ref可以是range,默认行列数和range一致,但也可以另外指定,此时会返回指定大小的range).
 - **INDIRECT**(字符串):将字符串转换为相应的位置.   
 如表示某格,原来是'sheet名'!A6 这样, 可以用INDIRECT("'8-" & B10 & "' ! A6") 去引用,假设B10储存了部分sheet名,8-是公有sheet名.indirect 函数只能引用打开的工作薄.
 - **COLUMN**(reference)：显示所引用单元格的列标号值。reference为引用的单元格,不输入为当前列.  
