@@ -126,12 +126,10 @@ Package Control是ST最基本的插件,用来安装别的插件用.
 还可以实现快捷键选取括号内容, 跳转到开头/结尾等.
 
 - sublimeLinter: 代码错误提示
-
 - Alignment: 以等号为准对齐, Ctrl+Alt+A 使用
-
 - Emmet(Zen Coding): 高效编写html和css
-
 - [Terminal](https://packagecontrol.io/packages/Terminal): 可以方便地在文件中调出命令行. 可以右键文件来调用, 也可以`cmd+shift+T`. 可配置iTerm.
+- [IMESupport](https://github.com/chikatoike/IMESupport): 部分电脑使用ST时输入法不跟随光标...使用该插件即可解决.
 
 #### Markdown 相关
 - [Markdown Extended](https://packagecontrol.io/packages/Markdown%20Extended): 扩展的markdown着色,支持GFM的代码块,可以在代码块中根据标示来着色.
