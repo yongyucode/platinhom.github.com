@@ -6,8 +6,10 @@ categories: Coding
 tags: VB Excel
 ---
 
-对象:
-Workbook, Worksheet, Range
+对象:  
+Application, Workbook, Worksheet, Range  
+层次:  
+Application -> Workbooks集合-> Workbook -> Worksheets集合 -> Worksheet -> Range  
 
 Alt+F11 调出VBA控制台VBE编辑器.
 
