@@ -1,11 +1,12 @@
 ---
-layout: post
+layout: post_py
 title: VB基础-VBA篇
-date: 2015-09-29 17:12:01
+date: 2015-10-01 17:12:01
 categories: Coding
 tags: VB Excel
 ---
 
+Alt+F11 调出VBA控制台.
 
 ## Reference
 
