@@ -20,19 +20,19 @@ tags: VB
 
 ## 语句 Statement
 
-- If Elseif Else End If
+- If .. Elseif .. Else .. End If
 - Select Case 
-- For ( .. To .. Step ..) Next
+- For .. To .. Step .. Next
 - For Each .. In .. Next
-- Do While|Until .. Loop和Do .. Loop While|Until ..
+- Do While\|Until .. Loop 和 Do .. Loop While\|Until ..
 - Function
 - Sub
 - Property
-- Try
+- Try .. Catch .. Finally
 
-- End { Function | Property | Select | Sub | Try | While }
-- Continue
-- Exit { Do | For | Function | Property | Select | Sub | Try | While }  
+- End { Function \| Property \| Select \| Sub \| Try \| While \| With }
+- Continue { Do \| For \| While }
+- Exit { Do \| For \| Function \| Property \| Select \| Sub \| Try \| While }  
 
 ## 内置函数
 "Application.DisplayAlerts = False
