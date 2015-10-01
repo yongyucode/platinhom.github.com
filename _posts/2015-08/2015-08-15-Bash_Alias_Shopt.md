@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在shell脚本中使用alias(shopt)
-date: 2015-10-01 11:47:20
+date: 2015-08-15 11:47:20
 categories: IT
 tags: Bash ZZ
 ---
