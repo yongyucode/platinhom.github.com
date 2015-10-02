@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sublime删除空行
-date: 2015-10-01 20:46:35
+date: 2015-08-20 20:46:35
 categories: IT
 tags: IDE
 ---
