@@ -1,7 +1,7 @@
 ---
 layout: post
 title: VIM启动设置
-date: 2015-10-01 11:26:55
+date: 2015-08-19 11:26:55
 categories: IT
 tags: IDE
 ---

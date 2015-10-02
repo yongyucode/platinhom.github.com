@@ -26,10 +26,11 @@ shopt opt_name                    Show current status of opt_name.
 ~~~
 
 alias扩展功能的选项名称是expand_aliases，我们可以在交互式模式下查看此选项是否开启：
+
 ~~~bash
-sw@gentoo ~ $ shopt expand_aliases
+->>  shopt expand_aliases
 expand_aliases  on
-sw@gentoo ~ $
+->> 
 ~~~
 可见在交互式模式下alias扩展功能的确是开启的，因此我们才能使用alias别名。
  
@@ -50,12 +51,12 @@ echo_hello
 脚本执行结果如下：
 
 ~~~bash
-sw@gentoo ~ $ ./test.sh 
-expand_aliases  off
+./test.sh 
+->> expand_aliases  off
 ./test.sh: line 5: echo_hello: command not found
 expand_aliases  on
 Hello!
-sw@gentoo ~ $
+->>
 ~~~
 可以看到，在非交互式模式下alias扩展功能默认是关闭的，但是我们可以用shopt来将其开启。
  

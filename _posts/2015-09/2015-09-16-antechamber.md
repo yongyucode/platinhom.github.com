@@ -94,9 +94,10 @@ Write out charge |  wc    |   9   |  Delete Charge  |   dc   |   10
 
 Old version may just not support type 3 and 10.
 
-在老版Amber中是使用`Mopac`算电荷的, 后来的版本就加入了`sqm`程序来算电荷. 在老版本中支持cm1,cm2等电荷, 但新版本中SQM和高斯都不能算CM1和CM2.  
-高斯结果只能转出成resp(用gesp)和esp(用gout), 不能转成Mulliken,虽然out里面有Mulliken Charge, 但和BCC算出的Mulliken相差甚远..另外gesp不能产生ESP电荷.  
-用antechamber算Gasteiger, Mulliken和AM1-BCC都是可以的, 后两者需要调用sqm. 即使用gout也不能产生出BCC和Mulliken. 
+- 在老版Amber中是使用`Mopac`算电荷的, 后来的版本就加入了`sqm`程序来算电荷. 在老版本中支持cm1,cm2等电荷, 但新版本中SQM和高斯都不能算CM1和CM2.  
+- 高斯结果只能转出成resp(用gesp)和esp(用gout), 不能转成Mulliken,虽然out里面有Mulliken Charge, 但和BCC算出的Mulliken相差甚远..另外gesp不能产生ESP电荷.  
+- 用antechamber算Gasteiger, Mulliken和AM1-BCC都是可以的, 后两者需要调用sqm. 即使用gout也不能产生出BCC和Mulliken.   
+- 转为pdb是没有电荷的.mol2/ac/mpdb/都可以带电荷.
 
 ----------------------------------------------------------------
 
@@ -122,8 +123,9 @@ antechamber -i ligand.log -fi gout -o ligand_resp.mol2 -fo mol2 -c resp -pf y
 antechamber -i ligand_bcc.mol2 -fi mol2 -c wc -cf ligand_c.crg
 # Load known charge to molecule. The charge file ligand_c.crg is f10.8  8charge/per line
 antechamber -i ligand.mol2 -fi mol2 -o ligand_c.mol2 -fo mol2 -c rc -cf ligand_c.crg
-
 ~~~
+
+
 
 ## 子程序
 
