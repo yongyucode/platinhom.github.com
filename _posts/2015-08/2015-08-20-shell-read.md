@@ -58,7 +58,7 @@ One  line  is  read  from  the  standard  input, or from the file descriptor fd 
 
 ## Read的相关实例
 
-- 1. 拼接文件
+- 1\. 拼接文件
 
 ~~~bash
 #! /bin/bash
@@ -71,14 +71,14 @@ echo $i $j
 done 3<$afile 4<$bfile
 ~~~
 
-- 2. 输入不在终端显示
+- 2\. 输入不在终端显示
 
 ~~~bash
 read -p "Input passwd: " -s Passwd
 echo Password is $Passwd. 
 ~~~
 
-- 3. 延迟五秒，没有输入将自动退出返回错误退出值.
+- 3\. 延迟五秒，没有输入将自动退出返回错误退出值.
 
 ~~~bash
 #!/bin/bash 
@@ -91,7 +91,7 @@ else
 fi 
 ~~~
 
-- 4. 读取限定字符
+- 4\. 读取限定字符
 
 ~~~bash
 #!/bin/bash 
@@ -109,7 +109,7 @@ read -p "Input a word:" -n 5 Word1 Word2
 echo $Word1 $Word2
 ~~~
 
-- 5. 指定行分界符
+- 5\. 指定行分界符
 
 ~~~bash
 #输入，直到输入q，将自动退出
@@ -119,7 +119,7 @@ echo word: $word ok: $ok
 #结果: word: 10 ok: 9 8 7 abc
 ~~~
 
-- 6. 重定向或管道
+- 6\. 重定向或管道
 
 ~~~bash
 # -r取消反义, 按实际显示行来输入

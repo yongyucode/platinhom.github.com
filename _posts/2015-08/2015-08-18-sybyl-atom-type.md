@@ -37,4 +37,10 @@ tags: CompBiol
 | I| iodine| Mo| molybdenum
 | �| �| Sn| tin
 
+O.co2 只有在COO- 这种质子化状态才出现(否则就是O.2+O.3). 同理N.4也是(否则N.3).
+
+## Reference
+
+1. [Tripos mol2 atom types](http://www.tripos.com/mol2/atom_types.html)
+
 ------

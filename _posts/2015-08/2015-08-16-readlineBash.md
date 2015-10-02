@@ -13,7 +13,7 @@ Bash的处理文档能力肯定是不如python友好了.但是要是能用Bash�
 使用cat 再for的缺点是, 要是有空格/tab, 就不会按行处理! 因为分隔符默认是空格,tab,换行! 这个问题再6-26号生日的博客中提及过了. 有两种写法去处理. 这里举例说明:
 
 ~~~bash
-#! /bin/bash -login
+#! /bin/bash --login
 
 # Backup the IFS
 OLDIFS=$IFS
