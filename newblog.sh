@@ -1,14 +1,27 @@
 #! /bin/bash
-# file: newblog.sh
+# File: newblog.sh
 # Author: PlatinHom
-# Last: 2015-06-21
+# Create: 2015-06-21, Last: 2015.10.1
 
 # Full Usage: "./newblog.sh title category tag1 tag2"
 # Simple Usage without category and tag: ".newblog/.sh title"
 
 # You can register your sublime here. It's not nessary.
-sublimecmd="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+nowsys=`uname -s`
+# For MacOS
+if [ $nowsys == "Darwin" ];then
+	alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+# For MINGW in Window
+elif [ ${nowsys:0:5} == "MINGW" ];then
+	alias subl="/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
+fi
+# Open sub-shell alias
+shopt -s expand_aliases
 
+# Set the directory to your blog directory
+blogdir="."
+
+# START
 title=$1
 category=$2
 tag="${@:3}"
@@ -37,22 +50,22 @@ fi
 # In github's jekyll,you should enter GMT time (time zone UTC(+0:00))
 nowGMT=`date -u +"%Y-%m-%d %H:%M:%S"`
  
-touch _posts/"${today}-${title}.md"
-echo "---" >>_posts/"${today}-${title}.md"
-echo "layout: post" >>_posts/"${today}-${title}.md"
-echo "title: $title" >>_posts/"${today}-${title}.md"
-echo "date: $nowGMT" >>_posts/"${today}-${title}.md"
-echo "categories: $category" >>_posts/"${today}-${title}.md"
-echo "tags: $tag" >>_posts/"${today}-${title}.md"
-echo "---" >>_posts/"${today}-${title}.md"
-echo "" >>_posts/"${today}-${title}.md"
-echo "" >>_posts/"${today}-${title}.md"
-echo "------" >>_posts/"${today}-${title}.md"
+touch ${blogdir}/_posts/"${today}-${title}.md"
+echo "---" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "layout: post" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "title: $title" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "date: $nowGMT" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "categories: $category" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "tags: $tag" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "---" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "" >> ${blogdir}/_posts/"${today}-${title}.md"
+echo "------" >> ${blogdir}/_posts/"${today}-${title}.md"
 
 # Open the new blog by sublime.
 # You can modify the program as you like.
 if $(which sl);then
-	sl _posts/"${today}-${title}.md" &
-elif [ -x "$sublimecmd" ];then
-	"$sublimecmd" _posts/"${today}-${title}.md" &
+	sl ${blogdir}/_posts/"${today}-${title}.md" &
+else
+	subl ${blogdir}/_posts/"${today}-${title}.md" &
 fi
