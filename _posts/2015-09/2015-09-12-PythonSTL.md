@@ -61,6 +61,7 @@ tags: Python
 - os.path.exists(file or path) 是否存在文件，符号链接丢失返回也返回True
 - os.path.isdir(file or path) 返回是否一个文件夹
 - os.path.isfile(file or path) 返回是否一个文件
+- os.path.join(dir,filename) 返回连接后的名字.使用os.sep作连接
 - os.path.walk(path,visit,arg)
 
 
