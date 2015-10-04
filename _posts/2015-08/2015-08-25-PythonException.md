@@ -112,9 +112,11 @@ except IOError:
 
 raise语句可以很好地用于抛出某个异常从而被try捕获. 更常用于结合if等进行条件检查.例如某变量假定[0,10],<0时抛出一个错,>10抛出另一个错误.
 
+raise一般是`raise exception,args`,args一般采用一个值,来初始化异常类的args属性,也可以直接使用元组来初始化args.
+
 ~~~python
 raise <name>    #手工地引发异常
-raise <name>,<data>    #传递一个附加的数据,要是不指定参数,则为None.
+raise <name>,<data>    #传递一个附加的数据(一个值或者一个元组),要是不指定参数,则为None.
 raise Exception(data)    #和上面等效.
 raise [Exception [, args [, traceback]]]  # 第三个参数是用于跟踪异常对象,基本不用.
 
