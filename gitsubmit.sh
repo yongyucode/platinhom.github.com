@@ -1,17 +1,16 @@
 #! /bin/bash
 # file: gitsubmit.sh
 
-commend=$1
-if [ -z $commend ];then
-commend=regular
+comment=$1
+if [ -z $comment ];then
+comment=regular
 fi
 
-cd ..
 git add -A
-git commit -am "$commend"
+git commit -am "$comment"
 if [ ! -z $2 ];then
 	#git remote add gitcafe git@gitcafe.com:platinhom/platinhom.git 
 	git push gitcafe master:gitcafe-pages
 fi
+# may be changed to your branch here
 git push origin master
-cd -
