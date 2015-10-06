@@ -1,6 +1,6 @@
 ---
 layout: post
-title: fragment_to_3
+title: 碎裂小分子到3原子以上片段
 date: 2015-08-30 13:36:27
 categories: CompCB
 tags: CompChem Python src
