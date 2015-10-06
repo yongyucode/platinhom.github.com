@@ -36,7 +36,7 @@ tags: Git
  - `git config --global user.name "hello"`  配置用户名. --global/system global针对某用户全起效,system整个系统起效, 不加该参数只对该工程起效.  (分别保存在 `~/.gitconfig`, `/etc/gitconfig`, `.git/config` 文件内. 一般要设置`user.name` 以及 `user.email`. 如果不指名值(这里hello), 则会返回该变量的值.
 
  - `git config --list` 列出各种基础配置信息. 可以使用以上方法设置, 或者修改相应config文件
-
+ - `git config --system core.longpaths true` 在msys中文件名过长时会: error: cannot stat '...文件名': ilename too long, pull不过来报错.用这个命令可以解决.[ref](http://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows)
 
 
 2. ####[git help](http://git-scm.com/docs/git-help ) 进行帮助
