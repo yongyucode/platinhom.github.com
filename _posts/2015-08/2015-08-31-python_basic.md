@@ -6,6 +6,18 @@ categories: Coding
 tags: Python
 ---
 
+关键词列表:
+
+and           |      elif         |       if          |        print
+as            |      else         |       import      |        raise
+assert        |      except       |       in          |        return
+break         |      exec         |       is          |        try
+class         |      finally      |       lambda      |        while
+continue      |      for          |       not         |        with
+def           |      from         |       or          |        yield
+del           |      global       |       pass		  |
+
+
 
 ## 内建函数
 
@@ -19,6 +31,7 @@ isinstance(var, type): 可以比较两个参数项类型是否相同.如isinstan
 
 1. [Python简明教程](http://woodpecker.org.cn/abyteofpython_cn/chinese/)
 2. [Pyhon2官方手册](https://docs.python.org/2/)
-2. [Ptyhon标准库](https://docs.python.org/2/library/index.html)
+2. [Python标准库](https://docs.python.org/2/library/index.html)
+4. [Python中文手册](http://www.pythondoc.com/pythontutorial27/index.html)
 
 ------
