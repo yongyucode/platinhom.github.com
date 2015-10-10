@@ -17,6 +17,7 @@ continue      |      for          |       not         |        with
 def           |      from         |       or          |        yield
 del           |      global       |       pass		  |
 
+int('6.000000000000000000e+00')报错,float('6.000000000000000000e+00')则可以
 
 
 ## 内建函数
