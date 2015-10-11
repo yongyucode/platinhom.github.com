@@ -65,8 +65,6 @@ tags: Python
 - os.path.walk(path,visit,arg)
 
 
-
-
 ### import pexpect 
 实现shell命令之间的交互
 
@@ -169,10 +167,11 @@ garbage collection 回收内存
 - platform.machine() 返回机器类型,i386,x86等
 - platform.architecture() 返回机器架构,('32bit','WindowsPE')
 - platform.node() 返回机器在网络中节点名称,也就是机器名称.
-- platform.python_version_tuple() 返回版本号的元组('2','7','2')主版本,小版本,补丁级数
+- platform.python\_version\_tuple() 返回版本号的元组('2','7','2')主版本,小版本,补丁级数
 - platform.python_version() 返回python版本号
 - platform.python_compiler() 返回python编译器名
 - platform.python_implementation() 返回python安装履行方式,如CPython,IronPython(.Net),Jython等
+- platform.popen(cmd, mode='r', bufsize=None): 执行外部命令
 
 ### import math
 数学函数
