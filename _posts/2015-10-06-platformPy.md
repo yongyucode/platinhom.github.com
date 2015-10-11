@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python:platform模块
-date: 2015-10-11 04:57:11
+date: 2015-10-06 04:57:11
 categories: Coding
 tags: Python
 ---
