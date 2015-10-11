@@ -45,7 +45,7 @@ Subcommands:
 Server address: http://127.0.0.1:4000/  
 Server running... press ctrl-c to stop.  
 自动具有根据修改保存重新生成的功能. Auto-regeneration（自动再生成文件）: 开启。使用 `--no-watch` 来关闭。  
-`jekyll serve --detach` 直接背景运行,需要kill来取消
+`jekyll serve --detach` 直接背景运行,需要kill来取消. Update: 在mingw使用--detach会出错, 推荐`jekyll server -q &`静默不显示并背景运行.
 
 ##### `jekyll build` 生成文件到_site
 *jekyll build --watch*  会监控更新  
