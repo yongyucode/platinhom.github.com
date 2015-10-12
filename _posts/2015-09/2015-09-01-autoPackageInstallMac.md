@@ -55,6 +55,9 @@ rm -rf ~/Library/Caches/Homebrew
 - brew server * 		:启动web服务器，可以通过浏览器访问http://localhost:4567/ 来同网页来管理包
 - brew -h 		:查看帮助
 
+PS:
+
+- 当使用search时可能出现 *Github API Rate limit exceeded* ,就是使用接口太频繁所以限制你使用.解决办法参见[ref](https://gist.github.com/christopheranderton/8644743), 就是在个人设置那里*Personal access token* (推荐把所有flag取消掉再新建), 新设置一个token(generate new token)并将token的值export到环境变量*HOMEBREW_GITHUB_API_TOKEN*, 可以写到*~/.bashrc*中: `export HOMEBREW_GITHUB_API_TOKEN=YOURAPITOKENWITHFUNKYNUMBERSHERE`. (update:15.10.11) 
 
 ## MacPorts
 
