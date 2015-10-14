@@ -2,8 +2,8 @@
 layout: post
 title: 倒后停车
 date: 2015-07-12 21:40:45
-categories: Other
-tags: 生活
+categories: Live
+tags: Live
 ---
 
 今天找Jin Chi学车, 正着开倒是问题不大, 多开就习惯了, 后倒停车倒是很难, 怎么都停不准...我勒个去...  

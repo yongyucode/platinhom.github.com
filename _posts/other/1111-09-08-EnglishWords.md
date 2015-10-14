@@ -3,7 +3,7 @@ layout: post_small
 title: 英语单词
 date: 1111-09-09 09:09:09
 categories: Other 
-tags: 其他
+tags: Other
 ---
 
 ### 餐具: 

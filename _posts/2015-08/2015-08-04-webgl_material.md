@@ -3,7 +3,7 @@ layout: post
 title: webgl_material
 date: 2015-08-04 15:02:17
 categories: IT
-tags: openGL
+tags: OpenGL
 ---
 
 一些例子:

@@ -3,7 +3,7 @@ layout: post_py
 title: Excel多表格进行同时排序
 date: 2015-09-27 05:34:32
 categories: IT
-tags: Excel VBA
+tags: Excel VB
 ---
 
 多sheet选择的方法不能进行排序操作. 所有多个sheet进行排序要么一个一个按, 要么用宏.

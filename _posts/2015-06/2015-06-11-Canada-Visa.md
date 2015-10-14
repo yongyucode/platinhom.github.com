@@ -2,8 +2,8 @@
 layout: post
 title: 在美申请加拿大签证
 date: 2015-06-11 17:30:06
-categories: other
-tags: 生活
+categories: Live
+tags: Live
 ---
 
 ### 答问题确定申请资格 

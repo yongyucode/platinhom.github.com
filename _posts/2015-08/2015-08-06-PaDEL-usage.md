@@ -3,7 +3,7 @@ layout: post
 title: PaDEL分子描述符软件使用
 date: 2015-08-06 14:29:10
 categories: CompCB
-tags: Software CompChem
+tags: Software ChemInfo
 ---
 
 PaDEL-descriptor是新加坡国立的Chun Wei Yap教授开发的分子描述符计算软件.Chun Wei Yap开发了一系列生物化学信息相关的程序PaDEL系列,这是其中分子描述符计算的程序.  

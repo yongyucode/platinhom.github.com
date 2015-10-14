@@ -2,8 +2,8 @@
 layout: post
 title: 100篇高引paper
 date: 2015-07-31 18:48:25
-categories: Other
-tags: 生活
+categories: Live
+tags: Live
 ---
 
 The top 100 high cited papers

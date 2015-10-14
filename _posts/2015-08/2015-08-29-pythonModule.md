@@ -283,7 +283,36 @@ python A.py
 
 所以, 实际上包模块的加载方式是创建一个整体的pkg模块对象, 再加载子模块到pkg模块对象的`__dict__`中.只要子模块被加载并且母包存在于命名空间,则可被调用.
 
+### 一个实际例子: Pymol 1.7.2.1
 
+当我尝试help('modules')时,报错:
+
+~~~
+In [1]: help('modules')
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/local/lib/python2.7/site-packages/IPython/kernel/__init__.py:13: ShimWarning: The `IPython.kernel` package has been deprecated. You should import from ipykernel or jupyter_client instead.
+  "You should import from ipykernel or jupyter_client instead.", ShimWarning)
+Error: unable to initalize the pymol.cmd module
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pymol/cmd.py", line 117, in <module>
+    from chempy import io
+ImportError: cannot import name io
+An exception has occurred, use %tb to see the full traceback.
+
+SystemExit: 0
+~~~
+
+进一步追踪%tb.
+
+~~~
+site-packages/chempy/fragments/__init__.py:
+      2 import chempy
+----> 3 from chempy import io
+
+
+~~~
 
 
 ------
