@@ -311,8 +311,21 @@ site-packages/chempy/fragments/__init__.py:
       2 import chempy
 ----> 3 from chempy import io
 
+chempy/io.py:
+---> 21 from chempy.mol import MOL
 
+chempy/mol.py:
+---> 19     from pymol import CmdException
+
+pymol/__init__.pyc:
+--> 454     from pymol import cmd
+
+pymol/cmd.pyc:
+--> 328         sys.exit(0)
 ~~~
 
+单独import pymol/chempy 均没有问题,但单独运行from chempy import io就报错. 因此局部模块很可能是交叉引用的问题, 
+
+首先在fragments里先import chempy,再chempy.io,此时加载该模块,但里面dict为空,而后面pymol.cmd 又再次加载chempy.io 所以不存在就报错了. 解决办法在cmd.py前面from chempy import io, 前加入import pymol,chempy
 
 ------
