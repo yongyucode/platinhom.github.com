@@ -334,7 +334,7 @@ prog是程序名,用于help等里面使用输出程序名, 可以不受sys.argv[
 
 ### 新建选项
 
-两个方法: add\_option, add\_option\_group
+两个方法: add\_option, add\_option\_group, add\_options
 
 #### add_option(...): 
 
@@ -358,7 +358,12 @@ prog是程序名,用于help等里面使用输出程序名, 可以不受sys.argv[
 	- callback: 后面指定回调函数名(不加括号),会将相应opt和args传给回调函数.[详细](https://docs.python.org/2/library/optparse.html). 
 	- help, version: 对应为帮助和版本. 要另外自己设计时使用
 
-set_default(dest1=value1,dest2=value2..): 可以用来同时设置多个选项的默认参数
+##### 相关函数:
+
+- set_default(dest1=value1,dest2=value2..): 可以用来同时设置多个选项的默认参数
+- has_option(opt): 检查是否有相应选项(使用相应-f里的f)
+- remove_option(opt): 删除选项(使用相应-f里的f)
+
 
 #### add\_option\_group(.)
 如果options很多的时候，可以进行分组. 分组的好处是, 有独立的description那些, 可以另外处理, 例如对一些列程序参数, 可以分一个组.使用如下：
@@ -368,6 +373,10 @@ group = OptionGroup(parser) #创建分组
 group.add_option() ##添加选项
 parser.add_option_group(group) #将分组加入到解释器
 ~~~
+
+#### add\_options([Option1,...])
+
+将各个Option对象放在一个列表里再一起添加...意义不大.
 
 ### 参数解析
 
@@ -396,6 +405,6 @@ error(str): 出错并输出str.
 
 ## Reference
 1. [Python中的命令行解析工具介绍](http://lingxiankong.github.io/blog/2014/01/14/command-line-parser/)
-2. [python帮助的说明](https://docs.python.org/2/library/optparse.html)
+2. [python帮助的说明](https://docs.python.org/2/library/optparse.html)与[源文件](https://hg.python.org/cpython/file/2.7/Lib/optparse.py)
 
 ------
