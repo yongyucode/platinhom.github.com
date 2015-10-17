@@ -26,6 +26,7 @@ layout: page_small
 - [Github](https://github.com); [SourceForge](http://sourceforge.net/); [SegmentFault](http://segmentfault.com/)
 - [鸟哥私房菜](http://linux.vbird.org/); [w3school](http://www.w3school.com.cn/);
 - [PHP官网](http://php.net/) ; [Python](https://www.python.org/)
+- [GNUWin](http://gnuwin32.sourceforge.net/)
 
 ### WebTools
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
