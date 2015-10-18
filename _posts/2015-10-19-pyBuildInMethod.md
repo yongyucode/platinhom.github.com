@@ -73,6 +73,31 @@ tags: Python
 - A.remove(obj): 移除列表内某个指定元素，不返回任何值。
 - A.reverse(): 反向列表A，不返回值。
 
+## 元组方法
+
+## 字典方法
+- dict.clear(): 清空字典所有的项，无返回值None。
+- dict.copy(): 浅复制副本，用于赋值,深复制用copy.deepcopy
+- dict.fromkeys(seq[,val]): 从seq内读入键，建立并返回一个新的字典，值通为val或者None（默认）
+- dict.get(key[,noneval]): 读取并返回字典某key的值,若不存在该键返回None或指定值,好处在于不存在不报错。
+- dict.setdefault(key[,val]): 和get类似，读取并返回键值。差别在于，若不存在，则新建该键及键值。
+- dict.update(dictB): 用dictB的项更新dict，相当于复制。若有相同键则覆盖。
+- dict.has_key('key'): 检查是否字典中含有该键值，和in用法一样，返回真假。
+- dict.items(): 将字典所有项以列表方式返回,每个项以元组方式,但返回时没有特殊顺序
+- dict.iteritems(): 和items功能一样，但是返回迭代器对象,可用list()将函数读出
+- dict.keys(): 返回字典中的键的列表
+- dict.iterkeys(): 返回字典中的键的列表的迭代器对象
+- dict.values(): 返回字典中值的列表
+- dict.itervalues(): 返回字典中值的列表的迭代器对象
+- dict.pop(key): 读出某键的值,并从字典中删除该项，栈操作。
+- dict.popitem(): 随机读出字典中一个项以元组返回,并从字典中删除。
+
+## 集合方法
+- set.add(element)    集合添加一个元素
+- set.update(seq)    集合添加多项
+- set.remove(element)    移除集合一个元素
+- t|s 并集 t&s 交集 t-s 差集 t^s交集的补集(只出现t或s中，不能都有)
+
 ## 字符串方法（大部分并不能改变字符串的值，只起到返回作用）
 
 - str.decode(codec): 根据codec将字符串解码成unicode,等于unicode函数
@@ -112,28 +137,7 @@ tags: Python
 - str.partition('sep'): 从左搜索str的分隔符sep，并返回(head,sep,tail)即分隔开后的元组
 - str.rpartition('sep'): 从右搜索str的分隔符sep，并返回(head,sep,tail)即分隔开后的元组
  
-## 字典方法
-- dict.clear(): 清空字典所有的项，无返回值None。
-- dict.copy(): 浅复制副本，用于赋值,深复制用copy.deepcopy
-- dict.fromkeys(seq[,val]): 从seq内读入键，建立并返回一个新的字典，值通为val或者None（默认）
-- dict.get(key[,noneval]): 读取并返回字典某key的值,若不存在该键返回None或指定值,好处在于不存在不报错。
-- dict.setdefault(key[,val]): 和get类似，读取并返回键值。差别在于，若不存在，则新建该键及键值。
-- dict.update(dictB): 用dictB的项更新dict，相当于复制。若有相同键则覆盖。
-- dict.has_key('key'): 检查是否字典中含有该键值，和in用法一样，返回真假。
-- dict.items(): 将字典所有项以列表方式返回,每个项以元组方式,但返回时没有特殊顺序
-- dict.iteritems(): 和items功能一样，但是返回迭代器对象,可用list()将函数读出
-- dict.keys(): 返回字典中的键的列表
-- dict.iterkeys(): 返回字典中的键的列表的迭代器对象
-- dict.values(): 返回字典中值的列表
-- dict.itervalues(): 返回字典中值的列表的迭代器对象
-- dict.pop(key): 读出某键的值,并从字典中删除该项，栈操作。
-- dict.popitem(): 随机读出字典中一个项以元组返回,并从字典中删除。
 
-## 集合方法
-set.add(element)    集合添加一个元素
-set.update(seq)    集合添加多项
-set.remove(element)    移除集合一个元素
-t|s 并集 t&s 交集 t-s 差集 t^s交集的补集(只出现t或s中，不能都有)
 
 ## 文件方法和属性  help(file)
 - open('filepath','mode'[,bufsize])    同file,但可以打开文件对象。'r''w''a''b''+'分别为读,写,追加,二进制方法,和读/写,后两种可以和前面合用。
