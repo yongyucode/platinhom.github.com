@@ -39,6 +39,11 @@ pip install nose
 
 - 使用pip安装:
 
+一般现在的python安装包都会安装上pip, unix基础的更加常装上了. [Wwindow安装setuptool和pip参考](http://docs.python-guide.org/en/latest/starting/install/win/)
+
+在window下运行pip需要在dos下运行`python -m pip install package` (python -m pip <command>)
+如果把 *python/Scripts* 加入到环境变量可以直接运行`pip install package`， 这里安装ipython所以pip install ipython
+
 ~~~bash
 pip install ipython
 pip install "ipython[notebook]"
@@ -55,6 +60,10 @@ WARNING: Proper color support under MS Windows requires the pyreadline library.
 You can find it at:
 http://ipython.org/pyreadline.html
 ~~~
+
+- 使用setup.py
+	- 
+
 
 另外一些Python发布版本包含部分python包的也装有ipython,例如Continuum的[ANACONDA](http://continuum.io/downloads)以及Enthought的[Canopy](https://store.enthought.com/downloads/#default)等.
 
