@@ -60,6 +60,10 @@ tags: Python
 - dir([obj]): 列出obj的所含标识符(函数,类,变量,模块),不加参数针对当前模块
 - isinstance(var, type): 可以比较两个参数项类型是否相同.如isinstance("abcd",str).isinstance和type比较差异参看[ref](http://segmentfault.com/q/1010000000127305),主要是isinstance可以对继承的类也进行相等判断,type不行.
 
+## 复数
+
+- C.real: 实数部分
+- C.imag: 虚数部分
 
 ## 列表方法
 
