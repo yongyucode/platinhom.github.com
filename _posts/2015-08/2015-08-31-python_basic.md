@@ -122,16 +122,49 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 - `or` 或运算,会短路(执行第一个是就不执行第二个).
 - `not` 非运算, 跟在前面.
 - `==` 相等判断. 值判断, 不包括类型.
+- `!=` 不等判断
 
 ## 判断和循环
 
+if...elif...else...判断语句
 
+~~~python
+if [condition]:
+	statement
+elif [condition]:
+	statement
+else:
+	statement
+~~~
+
+~~~python
+
+for i in iterableObj:
+	statement;
+#judge whether iterable:
+isinstance(obj, Iterable);
+
+# such as:
+for i in list/tuple/set/string/:
+for i in range(start, end+1, step):
+for key in dict:
+for val in dict.value:
+for key,val in dict.items():
+for index,vali in enumerate(list):
+	statement;
+~~~
+
+~~~python
+while condition:
+	statement;
+
+~~~
 
 ## 输入输出和文件
 
 - `print` 语句(2.\*, 3.\*使用print函数): print obj/expression. `,`会化作空格,但可以字符串和数值一起输出, `+`可以连接字符串,但是数值要先str()转化. 表达式会进行计算后再输出.
 - `raw_input([promt])`: 获取输入,返回输入的字符串.promt是提示语句,不换行.
-- `input([prompt])`: 获取输入并运算后转化为相应值返回.相当于: eval(raw_input(prompt)).
+- `input([prompt])`: 获取输入并运算后转化为相应值的字符串返回.相当于: eval(raw_input(prompt)).
 - 获取一个字符串, input需要输入"abc",而raw_input只要abc. input后输入1+2, 返回数值3.
 - raw_input常也用于卡住脚本不让其终止.
 - 文件对象使用handle=open(filename,action)来打开并进行相应操作.和一般的文件对象类似.
