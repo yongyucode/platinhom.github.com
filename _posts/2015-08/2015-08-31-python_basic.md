@@ -10,14 +10,9 @@ tags: Python
 
 - 关键词列表:
 
-and           |      elif         |       if          |        print
-as            |      else         |       import      |        raise
-assert        |      except       |       in          |        return
-break         |      exec         |       is          |        try
-class         |      finally      |       lambda      |        while
-continue      |      for          |       not         |        with
-def           |      from         |       or          |        yield
-del           |      global       |       pass		  |
+and   |  as  |  assert  |  break  |  class  | continue  | def |  del  | elif   |  else |  except |
+exec  |   finally  |   for  |   from   |  global  |  if  |  import  |  in  |   is   | lambda  |  not  |  
+or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 
 ## 内建类型,变量
 
@@ -130,6 +125,8 @@ del           |      global       |       pass		  |
 
 ## 判断和循环
 
+
+
 ## 输入输出和文件
 
 - `print` 语句(2.\*, 3.\*使用print函数): print obj/expression. `,`会化作空格,但可以字符串和数值一起输出, `+`可以连接字符串,但是数值要先str()转化. 表达式会进行计算后再输出.
@@ -238,42 +235,41 @@ try...except..else..., try..finally.., raise, assert 的用法. 参考[异常处
 - set (seq)      构建一个集合，内无重复元素。​
 
 ## 常见语句，就是操作，包括赋值判断循环执行等
-a=1: a[1]=2: 赋值,变量或列表元素
-a,b,c=1,2,3: 序列解包，就是把元组解包赋值
-x=y=’abc’: 链式赋值，相当于y=’abc’，x=y
-x+=1;a*=2: 就是x=x+1，a=a*2.增量赋值
-C=A[:]: 将A所有元素赋给C，即构造和A一样的C。
-A[x:y]=[w:z]: 分片赋值。A[x:x]表示插入,A[x:y]=[]表删除。可以实现任意替换插入删除。
-print ‘A’+’B’,’C’: 显示A和B直接连接，然后空格再C。
-del a,b,c: 删除对象，但不会自动放内存..
-import 模块名: 调用模块
-import module as abc: 调用模块并用abc的名字调用
-from 模块 import 函数: 调用模块中的函数，免除模块.函数的输入。一般使用import更好。
-from \_\_future\_\_ import division: 调用新特性的除法，不会产生1/2=0的取整.
-from module import *: 调用所有模组中的函数，可能会覆盖。
-from mod import func as abc: 调用某个函数并用abc的名字调用。
+- a=1: a[1]=2: 赋值,变量或列表元素
+- a,b,c=1,2,3: 序列解包，就是把元组解包赋值
+- x=y=’abc’: 链式赋值，相当于y=’abc’，x=y
+- x+=1;a*=2: 就是x=x+1，a=a*2.增量赋值
+- C=A[:]: 将A所有元素赋给C，即构造和A一样的C。
+- A[x:y]=[w:z]: 分片赋值。A[x:x]表示插入,A[x:y]=[]表删除。可以实现任意替换插入删除。
+- print ‘A’+’B’,’C’: 显示A和B直接连接，然后空格再C。
+- del a,b,c: 删除对象，但不会自动放内存..
+- import 模块名: 调用模块
+- import module as abc: 调用模块并用abc的名字调用
+- from 模块 import 函数: 调用模块中的函数，免除模块.函数的输入。一般使用import更好。
+- from \_\_future\_\_ import division: 调用新特性的除法，不会产生1/2=0的取整.
+- from module import *: 调用所有模组中的函数，可能会覆盖。
+- from mod import func as abc: 调用某个函数并用abc的名字调用。
  ​
-A=[‘a1’,’a2’,’a3’,’a4’]: 
-if a in A: print ‘go!’: If选择判断
-else:行为: If的另一个跳出
-elif 判断语句:行为: 多重选择的判断，用于多选。
-if…: …if… : …: 嵌套代码块，用于多条件判断
-assert 条件: 一旦不满足该条件，程序就崩溃推出。条件后可以,’abc’来解释断言
-while judge: do: while循环,为使动起来需要内加自变值语句。
-while True/[if] break: 除了某个条件break出去，一直循环。
-for i in seq:do: 对满足seq资格的进行循环,迭代器自变,seq可以是序列字典(key).结合range函数。
-for:if:break /else: 循环到一定条件则跳出，否则结束循环后执行else子句
-for i in iterable:do: 用迭代器来做循环，如iglob,enumerate等生产的对象
-for index,i in enumerate(obj[,start]):do: 枚举对象产生的是(0,seq[0])的值,索引在前,可指明起始值
-del obj: 删除对象，可以是变量，序列，序列元素，字典的项
-pass: 无操作占位符，用于填补语法空代码。一般结合注释使用。
-break: 提早完成跳出，尤其用于while True等,只挑出当前一轮循环。
-continue: 使当前迭代结束，跳到下一轮循环。用于跳过后面有繁琐循环体。即是break掉这轮循环
-str % values: 字符串格式化，values可以是字符数字或者元组。
-exec “action”: action就是普通的语句，将执行语句中的行为。命名空间行为。
-scope={}\exec’action’ in scope: 命名空间,就是创立一个含有内建函数的空间,使exec的行为在这个空间中执行,而不影响真实外部。关键是exec in {}表达。同样适用于: eval.内含’__builtins__’项: 
-
-assert 条件,promt: 断言语句，不符合条件的则弹出AssertionError:promt的错误。
+- A=[‘a1’,’a2’,’a3’,’a4’]: 
+- if a in A: print ‘go!’: If选择判断
+- else:行为: If的另一个跳出
+- elif 判断语句:行为: 多重选择的判断，用于多选。
+- if…: …if… : …: 嵌套代码块，用于多条件判断
+- assert 条件: 一旦不满足该条件，程序就崩溃推出。条件后可以,’abc’来解释断言
+- while judge: do: while循环,为使动起来需要内加自变值语句。
+- while True/[if] break: 除了某个条件break出去，一直循环。
+- for i in seq:do: 对满足seq资格的进行循环,迭代器自变,seq可以是序列字典(key).结合range函数。
+- for:if:break /else: 循环到一定条件则跳出，否则结束循环后执行else子句
+- for i in iterable:do: 用迭代器来做循环，如iglob,enumerate等生产的对象
+- for index,i in enumerate(obj[,start]):do: 枚举对象产生的是(0,seq[0])的值,索引在前,可指明起始值
+- del obj: 删除对象，可以是变量，序列，序列元素，字典的项
+- pass: 无操作占位符，用于填补语法空代码。一般结合注释使用。
+- break: 提早完成跳出，尤其用于while True等,只挑出当前一轮循环。
+- continue: 使当前迭代结束，跳到下一轮循环。用于跳过后面有繁琐循环体。即是break掉这轮循环
+- str % values: 字符串格式化，values可以是字符数字或者元组。
+- exec “action”: action就是普通的语句，将执行语句中的行为。命名空间行为。
+- scope={}\exec’action’ in scope: 命名空间,就是创立一个含有内建函数的空间,使exec的行为在这个空间中执行,而不影响真实外部。关键是exec in {}表达。同样适用于: eval.内含’__builtins__’项: 
+- assert 条件,promt: 断言语句，不符合条件的则弹出AssertionError:promt的错误。
 
 ~~~python
 class name:
@@ -337,13 +333,6 @@ __main__ 主函数
 - 定义包:在某目录dira下建`__init__.py` 可以为空,然后将相应的a.py,b.py放进去 然后import dira.a就可以了
 - 读取环境变量 filename = os.environ.get('PYTHONSTARTUP')
 - 判断文件存在: `if filename and os.path.isfile(filename):execfile(filename)`
-
-
-
-
-
-​
-
 
 
 ## Reference
