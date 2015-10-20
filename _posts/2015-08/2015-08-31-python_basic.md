@@ -58,6 +58,7 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 - 分片 slicing: `[i:j]`: 所有索引k: i<=k<j的元素的列表, `[:j]`:0到j-1元素,`[i:]`:i到最后一个元素, `[i:j,k]`k可以控制采样步长,若k为负数,先将列表倒序再采样.
 - 长度: `len(seq)` 可以获得元素总数.
 - 成员检查: `data in seq` 返回对错.
+- 负数索引: -1代表最后一个元素的索引,注意a[:-1] 则不包括最后一个(最后一个即终止).
 - **不可变序列**:tuple, string, unicode. 和可变序列相比, 缺少了元素赋值能力和del能力,一旦定义,就不能修改元素. 但如果元素是可变序列,其内容依然可以被修改, 例如: a=[1,2];b=(a,);改变a的元素,b也会改变.但b[0]=c则不行.
 - 不可变序列可进行哈希化hashable,而可变序列则不可以.
 
@@ -67,6 +68,7 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 	- [element1,element2...]
 	- 元素可以是任何对象, 大小可随时修改. 可变序列.
 	- 分隔符`,`,一个元素时[a]来定义.无元素[].
+	- 方法: append(v),insert(i,v), pop([i])等.
 	- list()
 - 元组**tuple**: 
 	- (element1,element2...)
@@ -77,7 +79,7 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 	- "string"或'string' (等价), `'''.......'''`字符串块,包含整段字符串,包括其中的换行等.常用于大段文字说明.可以前面加r.
 	- 支持转义`\`, 当特殊符号如`', ", \`可以通过转义来表达.
 	- `r"string"`: 字符串不进行转义(转义符失效).
-	- 字符串型是不可变序列.
+	- 字符串型是不可变序列.因此不能随意对字符串的变量替换其内容,如用索引/分片赋值.
 	- python没有字符型char,直接用单字符串代替.字符大小最少是8-bit一字节.  
 	- str(), chr(), ord()
 - unicode型**unicode**: 
@@ -96,6 +98,7 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 - 无序, key键和value对应值组成每项
 - key需要可以被哈希化,因此不能是可变型对象如字典,set(frozenset可以),可变序列等.
 - value可以是任何东东..包括字典,列表等.
+- 方法: get(k[,v]), pop(k)
 
 ### 集合set
 
@@ -126,7 +129,7 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 
 ## 判断和循环
 
-if...elif...else...判断语句
+### if...elif...else...判断语句
 
 ~~~python
 if [condition]:
@@ -137,6 +140,8 @@ else:
 	statement
 ~~~
 
+### for 循环
+
 ~~~python
 
 for i in iterableObj:
@@ -145,20 +150,55 @@ for i in iterableObj:
 isinstance(obj, Iterable);
 
 # such as:
+# iterable obj
 for i in list/tuple/set/string/:
+# number list
 for i in range(start, end+1, step):
+# key in dict
 for key in dict:
+# value in dict
 for val in dict.value:
+# double var 
 for key,val in dict.items():
 for index,vali in enumerate(list):
 	statement;
 ~~~
 
+#### 列表生成式
+
+`[expression for i in Iterable]`, 也可以嵌套: `[expression for i in Iterable1 for j in Iterable2]`, 甚至可以加入判断条件 `[expression for i in Iterable if condition]`. 循环也可以像一般for循环支持多循环变量. 迭代产生列表时若某项出错,则会报错生成失败.
+
+就是将迭代的i进行相应表达式操作, 生成相应一个新的列表, 若加入判断条件,列表长度可能改变. 例如
+
+~~~python
+[ x*x for x in range(1,11)]
+#->[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[ x*x for x in range(1,11) if x%2 = 0 ]
+#->[4, 16, 36, 64, 100]
+[m + n for m in 'ABC' for n in 'XYZ'] 
+#->['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+d = {'x': 'A', 'y': 'B', 'z': 'C' }
+[k + '=' + v for k, v in d.iteritems()]
+#->['y=B', 'x=A', 'z=C']
+L = ['Hello', 'World', 'IBM', 'Apple']
+[s.lower() for s in L]
+#->['hello', 'world', 'ibm', 'apple']
+~~~
+
+### while循环
+
+形式太简单..一般用于不定次数循环. 这里的while还支持else子句.
+
 ~~~python
 while condition:
 	statement;
-
+[else:]
+	[statement;]
 ~~~
+
+### break,continue
+
+break打断整个循环跳出, continue跳过该次循环后面的部分.
 
 ## 输入输出和文件
 
@@ -177,11 +217,28 @@ def funcname([argv1,argv2..]):
 	return [vars]
 ~~~
 
-- 定义函数,也可以不加形参argv,return定义返回内容
-- \*args表示任何多个无名参数，它是一个tuple；\*\*kwargs表示关键字参数，它是一个 dict。并且同时使用\*args和\*\*kwargs时，必须\*args参数列要在\*\*kwargs前。若此时给的是list或tuple,可直接在前面加\*.如func(\*list1)。
-类
+- 定义函数,也可以不加形参argv,return定义返回内容(无值返回None)
+- 返回值可以是多个值return x,y (本质以元组返回). 接收时 x,y=F()即可.
+- 函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”.
+- 函数形参的默认参数最好是不变对象,更多请参考[传递参数](/2015/08/07/PyArgsInput/).
+- **\*args**表示任何多个无名参数，它是一个tuple；**\*\*kwargs**表示关键字参数，它是一个 dict(实参时用**变量名=值**)。并且同时使用\*args和\*\*kwargs时，必须\*args参数列要在\*\*kwargs前。若此时给的是list或tuple,可直接在实参前面加`*`.如func(\*list1); 也可以给实参字典前加`**`,如func(**kw)。
 
-## 对象
+### 递归函数
+
+其实就是函数内调用函数自身, 注意收敛终止就OK了.
+
+~~~python
+def fact(n):
+    if n==1:
+        return 1
+    return n * fact(n - 1)
+~~~
+
+另外要注意栈溢出,如fact(1000)报错:RuntimeError: maximum recursion depth exceeded. 每当递归进行一次时,就会通过栈stack来保存数据记录,当函数返回时再通过栈逐层返回. python栈大小是有限的. 此时最好转用循环来改变思路. 传说有一种叫*尾递归* 的方法避免栈溢出, 但是python并不支持.
+
+## 类和对象
+
+继承和多态: 支持子类从父类继承, 通过重新定义方法实现多态.
 
 Python中的类不是封闭的，你可以动态的为类添加方法。
 
@@ -375,11 +432,11 @@ __main__ 主函数
 2. [Python标准库](https://docs.python.org/2/library/index.html)
 4. [Python中文手册](http://www.pythondoc.com/pythontutorial27/index.html)
 
-内链博客:
+### 内链博客:
 
 - [Python基础](/2015/08/31/python_basic/), [内建函数与对象方法](/2015/10/19/pyBuildInMethod/), [帮助及设置](/2015/10/10/pyHelp/), [Python标准库小结](/2015/09/12/PythonSTL/),[模块和包](/2015/08/29/pythonModule/), [传递参数](/2015/08/07/PyArgsInput/)
 - [对象的特殊属性和方法](/2015/10/09/pySpecialObjMethod/)
-- [python字符串相关](/2015/06/23/python-string/), [字符串格式化](/2015/09/13/PyStringFormat/)
+- [python字符串相关](/2015/06/23/python-string/), [字符串格式化](/2015/09/13/PyStringFormat/),[字符串编码](/2015/10/17/PyEncode/)
 - [迭代器](/2015/09/07/PyIterator/), [异常处理](/2015/08/25/PythonException/),[捕获所有异常](/2015/08/26/CatchAllError/)
 - [调用命令行](/2015/09/10/pythonComdline/), [读取命令行参数](/2015/06/13/ReadArgv/), [分析命令行模块optparse](/2015/10/04/PyOptParse/), [getopt模块](/2015/10/03/getopt/)
 - [系统信息:platform模块](/2015/10/06/platformPy/)

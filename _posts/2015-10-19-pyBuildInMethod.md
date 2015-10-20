@@ -58,7 +58,7 @@ tags: Python
 - help(module[.func]): 查看模组帮助,
 - lambda x: 含x表达: 就是对x进行表达式中的运作,返回函数对象lambda.用法a=lambda x:x*2+3 执行a(5). 
 - dir([obj]): 列出obj的所含标识符(函数,类,变量,模块),不加参数针对当前模块
-- isinstance(var, type): 可以比较两个参数项类型是否相同.如isinstance("abcd",str).isinstance和type比较差异参看[ref](http://segmentfault.com/q/1010000000127305),主要是isinstance可以对继承的类也进行相等判断,type不行.
+- isinstance(var, type): 可以比较两个参数项类型是否相同.如isinstance("abcd",str).type部分还可以用元组的形式指定多种类型.isinstance和type比较差异参看[ref](http://segmentfault.com/q/1010000000127305),主要是isinstance可以对继承的类也进行相等判断,type不行.
 
 ## 复数
 
@@ -69,15 +69,18 @@ tags: Python
 
 - A.append（对象）: 列表末追加新对象（一次一个，对象可为列表）
 - A.count(obj): 统计列表某元素出现次数
-- A.extend(B): 在列表A后追加另一序列B的值
-- A.index(obj): 索引,返回obj元素在列表中索引号n（第n+1个）
+- A.extend(B): 在列表A后追加另一序列B的值,B可以是任意iterable对象
+- A.index(obj[,start,stop]): 索引,返回第一个匹配obj的元素在列表中索引号n（第n+1个）.start和stop可以限制搜索区间.找不到会报ValueError.
 - A.insert(index,obj): 插入，在索引号处插入对象。
 - A.pop(index): 移除索引号的元素,返回该元素的值。()时移除最后一个,出栈.唯一修改列表还能返回值。
 - A.sort(): 排序，默认按升序。可添加参数cmp、key、reverse。cmp可以自定义的函数,返回负数时, 按此时顺序排序，详见脚本例子
-- A.remove(obj): 移除列表内某个指定元素，不返回任何值。
+- A.remove(obj): 移除列表内某个指定元素，不返回任何值。找不到会报ValueError.
 - A.reverse(): 反向列表A，不返回值。
 
 ## 元组方法
+
+- T.count(obj): 统计元组某元素出现次数
+- T.index(obj[,start,stop]): 索引,返回第一个匹配obj的元素在元组中索引号n（第n+1个）.start和stop可以限制搜索区间.找不到会报ValueError.
 
 ## 字典方法
 - dict.clear(): 清空字典所有的项，无返回值None。
