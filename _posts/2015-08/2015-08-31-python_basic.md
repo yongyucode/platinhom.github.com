@@ -236,6 +236,17 @@ def fact(n):
 
 另外要注意栈溢出,如fact(1000)报错:RuntimeError: maximum recursion depth exceeded. 每当递归进行一次时,就会通过栈stack来保存数据记录,当函数返回时再通过栈逐层返回. python栈大小是有限的. 此时最好转用循环来改变思路. 传说有一种叫*尾递归* 的方法避免栈溢出, 但是python并不支持.
 
+### 高阶函数
+
+让函数参数接收别的函数, 函数再应变函数. 例如
+
+~~~python
+def add(x, y, func):
+    return func(x) + func(y)
+add(3,-4,abs)
+# -> 7
+~~~
+
 ## 类和对象
 
 继承和多态: 支持子类从父类继承, 通过重新定义方法实现多态.
