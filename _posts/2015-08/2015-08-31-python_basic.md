@@ -1,10 +1,12 @@
 ---
 layout: post_small
-title: Python基础
+title: Python基础篇
 date: 2015-08-31 12:51:01
 categories: Coding
 tags: Python
 ---
+
+基础篇介绍简单的语法, 变量类型, 判断循环, 函数和对象的简介.
 
 # 基础语法
 
@@ -125,7 +127,7 @@ or  |  pass  |  print | raise |  return |  try | while |  with |  yield |
 - `or` 或运算,会短路(执行第一个是就不执行第二个).
 - `not` 非运算, 跟在前面.
 - `==` 相等判断. 值判断, 不包括类型.
-- `!=` 不等判断
+- `!=`或`<>` 不等判断
 
 ## 判断和循环
 
@@ -162,27 +164,6 @@ for val in dict.value:
 for key,val in dict.items():
 for index,vali in enumerate(list):
 	statement;
-~~~
-
-#### 列表生成式
-
-`[expression for i in Iterable]`, 也可以嵌套: `[expression for i in Iterable1 for j in Iterable2]`, 甚至可以加入判断条件 `[expression for i in Iterable if condition]`. 循环也可以像一般for循环支持多循环变量. 迭代产生列表时若某项出错,则会报错生成失败.
-
-就是将迭代的i进行相应表达式操作, 生成相应一个新的列表, 若加入判断条件,列表长度可能改变. 例如
-
-~~~python
-[ x*x for x in range(1,11)]
-#->[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-[ x*x for x in range(1,11) if x%2 = 0 ]
-#->[4, 16, 36, 64, 100]
-[m + n for m in 'ABC' for n in 'XYZ'] 
-#->['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
-d = {'x': 'A', 'y': 'B', 'z': 'C' }
-[k + '=' + v for k, v in d.iteritems()]
-#->['y=B', 'x=A', 'z=C']
-L = ['Hello', 'World', 'IBM', 'Apple']
-[s.lower() for s in L]
-#->['hello', 'world', 'ibm', 'apple']
 ~~~
 
 ### while循环
@@ -339,8 +320,8 @@ try...except..else..., try..finally.., raise, assert 的用法. 参考[异常处
 - a=1: a[1]=2: 赋值,变量或列表元素
 - a,b,c=1,2,3: 序列解包，就是把元组解包赋值
 - x=y=’abc’: 链式赋值，相当于y=’abc’，x=y
-- x+=1;a*=2: 就是x=x+1，a=a*2.增量赋值
-- C=A[:]: 将A所有元素赋给C，即构造和A一样的C。
+- x`+=`1;a\*=2: 就是x=x+1，a=a\*2.增量赋值 python不支持 *a++* 语法
+- C=A[:]: 将A所有元素赋给C，即重新构造和A一样的C. 是复制对象.
 - A[x:y]=[w:z]: 分片赋值。A[x:x]表示插入,A[x:y]=[]表删除。可以实现任意替换插入删除。
 - print ‘A’+’B’,’C’: 显示A和B直接连接，然后空格再C。
 - del a,b,c: 删除对象，但不会自动放内存..
@@ -442,10 +423,11 @@ __main__ 主函数
 2. [Pyhon2官方手册](https://docs.python.org/2/)
 2. [Python标准库](https://docs.python.org/2/library/index.html)
 4. [Python中文手册](http://www.pythondoc.com/pythontutorial27/index.html)
+5. [深入 Python :Dive Into Python 中文版](http://woodpecker.org.cn/diveintopython/toc/index.html)
 
 ### 内链博客:
 
-- [Python基础](/2015/08/31/python_basic/), [内建函数与对象方法](/2015/10/19/pyBuildInMethod/), [帮助及设置](/2015/10/10/pyHelp/), [Python标准库小结](/2015/09/12/PythonSTL/),[模块和包](/2015/08/29/pythonModule/), [传递参数](/2015/08/07/PyArgsInput/)
+- [Python基础](/2015/08/31/python_basic/), [Python中级](/2015/10/21/pyMedium/), [内建函数与对象方法](/2015/10/19/pyBuildInMethod/), [帮助及设置](/2015/10/10/pyHelp/), [Python标准库小结](/2015/09/12/PythonSTL/),[模块和包](/2015/08/29/pythonModule/), [传递参数](/2015/08/07/PyArgsInput/)
 - [对象的特殊属性和方法](/2015/10/09/pySpecialObjMethod/)
 - [python字符串相关](/2015/06/23/python-string/), [字符串格式化](/2015/09/13/PyStringFormat/),[字符串编码](/2015/10/17/PyEncode/)
 - [迭代器](/2015/09/07/PyIterator/), [异常处理](/2015/08/25/PythonException/),[捕获所有异常](/2015/08/26/CatchAllError/)
