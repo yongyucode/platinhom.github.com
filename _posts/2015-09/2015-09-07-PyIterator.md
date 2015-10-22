@@ -6,7 +6,47 @@ categories: Coding
 tags: Python
 ---
 
+## 可迭代对象Iterable
+
+凡是可以用作for循环的都是可迭代对象,包括一般的list,tuple,set,dict,迭代器和生成器(或生成器函数)等.
+
+可迭代对象可以通过`iter(obj)`生成迭代器. 可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到那个点, 下一个是什么, 利用iter()函数可以将list等转变为迭代器(其实是生成器), 逐个元素投出.
+
+可以通过`isinstance(obj, Iterable)`来判断对象是否可迭代对象.
+
 ## 迭代器(Iterator)对象：
+
+凡是可以通过next()方法返回下一个值的可迭代对象就是迭代器. 生成器是一种迭代器.
+
+可以通过`isinstance(obj, Iterator)`来判断对象是否迭代器.
+
+迭代到没有值了返回`StopIteration`错误.
+
+## generator生成器对象
+
+生成器通过`生成器函数`产生, 生成器函数可以通过常规的def语句来定义, 不用return而是使用`yield`一次返回一个结果, 返回后停在相应位置, 再次调用时继续执行生成下一个结果, 当生成器结束没有下次执行时, 返回`StopIteration`.
+
+~~~python
+# 生成器函数
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        #生成器关键一步yield,每次执行到此返回,下次从此开始.
+        yield b
+        a, b = b, a + b
+        n = n + 1
+# 通过生成器函数产生生成器对象
+g=fib(6);
+# 单独调用生成器对象
+print g.next();
+# 利用循环迭代生成器
+for i in g:
+    print i
+~~~
+
+## list等的迭代器.
+
+通过iter()函数将list/dict等数据组组转为迭代器.
 
 ~~~python
 # 创建一个列表迭代器(listiterator)
@@ -75,27 +115,7 @@ except StopIteration:
 [(0, 'a'), (1, 'b'), (2, 'c')]
 ~~~
 
-## generator生成器
 
-生成器通过`生成器函数`产生, 生成器函数可以通过常规的def语句来定义, 不用return而是使用`yield`一次返回一个结果, 返回后停在相应位置, 再次调用时继续执行生成下一个结果, 当生成器结束没有下次执行时, 返回`StopIteration`.
-
-~~~python
-# 生成器函数
-def fib(max):
-    n, a, b = 0, 0, 1
-    while n < max:
-    	#生成器关键一步yield,每次执行到此返回,下次从此开始.
-        yield b
-        a, b = b, a + b
-        n = n + 1
-# 通过生成器函数产生生成器对象
-g=fib(6);
-# 单独调用生成器对象
-print g.next();
-# 利用循环迭代生成器
-for i in g:
-	print i
-~~~
 
 注：
 iter函数 - [文档](https://docs.python.org/2/library/functions.html#iter)
