@@ -78,6 +78,8 @@ print [i for i in zzrange]
 
 `(x for x in range(10))`该表达式产生的是生成器对象,而非列表.
 
+生成器有`close()`方法,可以关闭生成器. 另有`send(obj)`方法,定义`yield`表达式执行后返回的值. 如`val=yield i`,正常情况下用next返回的值为None,所以`send(None)`和next()等价.也可以另外赋值,从而追踪某些情况.另外注意send第一次使用要在执行过yield以后(即最少一次执行迭代)才能使用,否则没有yield的返回值可以定义就会报错.
+
 ~~~python
 # 生成器函数
 def fib(max):
