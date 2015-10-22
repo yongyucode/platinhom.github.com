@@ -76,6 +76,8 @@ print [i for i in zzrange]
 
 生成器通过`生成器函数`产生, 生成器函数可以通过常规的def语句来定义, 不用return而是使用`yield`一次返回一个结果, 返回后停在相应位置, 再次调用时继续执行生成下一个结果, 当生成器结束没有下次执行时, 返回`StopIteration`.
 
+`(x for x in range(10))`该表达式产生的是生成器对象,而非列表.
+
 ~~~python
 # 生成器函数
 def fib(max):
@@ -178,7 +180,6 @@ except StopIteration:
 >>> [(k, v) for k, v in enumerate(i)]  # enumerate返回一个元素为tuple的iterator，文档见底部
 [(0, 'a'), (1, 'b'), (2, 'c')]
 ~~~
-
 
 ## Reference
 1. iter函数 - [文档](https://docs.python.org/2/library/functions.html#iter)
