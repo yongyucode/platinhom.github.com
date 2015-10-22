@@ -29,11 +29,13 @@ Python一切皆对象(object)，每个对象都可能有多个属性(attribute)�
 - `__delattr__(self,attr)`:在删除属性时执行
 - `__getattribute__(self,name)`: 在调用获取对象**任意**属性时执行,和getattr比,任意属性都会调用
 - `__str__(self)`: 在str()时执行
-
+- `__iter__`: 作为可迭代对象时返回迭代器本身(或转为迭代器).
 
 模组有:
 
 `__name__`: 模组名
+
+
 
 
 判断对象是否有指定属性:

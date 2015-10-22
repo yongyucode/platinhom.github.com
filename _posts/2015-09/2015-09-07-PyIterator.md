@@ -10,17 +10,67 @@ tags: Python
 
 凡是可以用作for循环的都是可迭代对象,包括一般的list,tuple,set,dict,迭代器和生成器(或生成器函数)等.
 
-可迭代对象可以通过`iter(obj)`生成迭代器. 可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到那个点, 下一个是什么, 利用iter()函数可以将list等转变为迭代器(其实是生成器), 逐个元素投出.
+可迭代对象具有`__iter__`方法返回迭代器. 可迭代对象可以通过`iter(obj)`生成迭代器(本质调用`__iter__`方法). 
+
+可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到那个点, 下一个是什么, 利用iter()函数可以将list等转变为迭代器(其实是生成器), 逐个元素投出.
 
 可以通过`isinstance(obj, Iterable)`来判断对象是否可迭代对象.
 
 ## 迭代器(Iterator)对象：
 
-凡是可以通过next()方法返回下一个值的可迭代对象就是迭代器. 生成器是一种迭代器.
+凡是可以通过next()方法返回下一个值的可迭代对象就是迭代器. 生成器是一种迭代器.enumurate也是迭代器(本质生成器)
 
 可以通过`isinstance(obj, Iterator)`来判断对象是否迭代器.
 
 迭代到没有值了返回`StopIteration`错误.
+
+迭代器拥有`__iter__`方法和`next`方法,有时隐藏掉(如生产器).但本质具备该两种方法.`__iter__`方法返回迭代且对象本身, 而next方法则调用下一个元素. 在自定义迭代器时需要定义该两种方法.for循环本质是通过调用可迭代对象的`__iter__`方法获取迭代器对象,再用next方法遍历元素.
+
+### 可迭代对象和迭代器的分开自定义
+
+分开定义的好处在于, 当对可迭代对象使用iter()转变时,返回一个新的迭代器对象, 这时不受先前产生的相应迭代器对象影响.
+
+~~~python
+class Zrange:
+    def __init__(self, n):
+        self.n = n
+
+    def __iter__(self):
+        return ZrangeIterator(self.n)
+
+class ZrangeIterator:
+    def __init__(self, n):
+        self.i = 0
+        self.n = n
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        if self.i < self.n:
+            i = self.i
+            self.i += 1
+            return i
+        else:
+            raise StopIteration()    
+
+            
+zrange = Zrange(3)
+print zrange is iter(zrange)   
+#>>> True  
+print [i for i in zrange]
+#>>>[1,2,3]
+print [i for i in zrange]
+#>>>[1,2,3]
+
+# 若不区分可迭代对象和迭代器, 即这里列表生成式中使用ZrangeIterator的话, 
+# 第二次调用时迭代器已被迭代完,第二次会为空集.
+zzrange=ZrangeIterator(3);
+print [i for i in zzrange]
+#>>>[1,2,3]
+print [i for i in zzrange]
+#>>>[]
+~~~
 
 ## generator生成器对象
 
@@ -45,6 +95,12 @@ for i in g:
 ~~~
 
 ## list等的迭代器.
+
+将list/dict等转化为迭代器使用`iter(obj)`函数.
+
+`i.next()`方法或`next(i)` 函数遍历迭代器
+
+`enumerate(i)`
 
 ### 通过iter()函数将list/dict等数据组组转为迭代器.
 
@@ -111,6 +167,12 @@ except StopIteration:
 
 ### 帮助迭代器实现索引功能：
 
+使用enumerate函数返回一个迭代器对象, 该对象能够生产一个元组包括`(索引,值)`.
+
+`enumerate(iterable, start=0)`
+
+第一参数是可迭代对象包括list/dict/迭代器等, 第二个参数是索引开始的号.
+
 ~~~python
 >>> i = iter('abc')  # python中字符串也是可迭代对象
 >>> [(k, v) for k, v in enumerate(i)]  # enumerate返回一个元素为tuple的iterator，文档见底部
@@ -118,13 +180,10 @@ except StopIteration:
 ~~~
 
 
+## Reference
+1. iter函数 - [文档](https://docs.python.org/2/library/functions.html#iter)
+2. enumerate函数 - [文档](https://docs.python.org/2/library/functions.html#enumerate)
+3. [Python迭代器和生成器](http://www.cnblogs.com/wilber2013/p/4652531.html)
 
-注：
-iter函数 - [文档](https://docs.python.org/2/library/functions.html#iter)
-enumerate函数 - [文档](https://docs.python.org/2/library/functions.html#enumerate)
-
-[Python迭代器和生成器](http://www.cnblogs.com/wilber2013/p/4652531.html)
-
-TODO:
 
 ------
