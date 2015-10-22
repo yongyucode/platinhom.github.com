@@ -46,7 +46,7 @@ for i in g:
 
 ## list等的迭代器.
 
-通过iter()函数将list/dict等数据组组转为迭代器.
+### 通过iter()函数将list/dict等数据组组转为迭代器.
 
 ~~~python
 # 创建一个列表迭代器(listiterator)
@@ -67,7 +67,9 @@ i2
 # 另外还有tuple/set等都可使用iter函数返回iterator对象
 ~~~
 
-步进式访问迭代器(Iterator)中元素
+### 步进式访问迭代器中元素
+
+obj.next()
 
 ~~~python
 i = iter(range[3])
@@ -83,7 +85,7 @@ Traceback (most recent call last):
 StopIteration
 ~~~
 
-遍历迭代器(Iterator)：
+### 循环访问遍历迭代器：
 
 ~~~python
 # 手动循环
@@ -100,14 +102,14 @@ except StopIteration:
 [0, 1, 2]
 ~~~
 
-将迭代器(Iterator)传递给其他函数使用：
+### 将迭代器传递给其他函数使用：
 
 ~~~python
 >>> list(iter(range(3)))
 [0, 1, 2]
 ~~~
 
-帮助迭代器(Iterator)实现索引功能：
+### 帮助迭代器实现索引功能：
 
 ~~~python
 >>> i = iter('abc')  # python中字符串也是可迭代对象
