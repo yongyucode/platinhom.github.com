@@ -55,7 +55,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 4. Studies of Heterogeneous/Homogeneous Ion-Molecule Reactions by Ambient Ionization Mass Spectrometry. *Curr. Org. Chem.* **2011**,15, 3734-3749. [Link](http://www.benthamdirect.com/74591/article/studies-heterogeneoushomogeneous-ion-molecule-reactions-ambient-ionization-mass)
 5. Gas-phase Synthesis of Hydrodiphenylcyclopropenylium via Nonclassical Favorskii Rearrangement from Alkali-cationized α,α′-dibromodibenzyl Ketone. *Rapid Commun. Mass Spectrom.* **2010**, 24, 2665-2672. [Link](http://onlinelibrary.wiley.com/doi/10.1002/rcm.4694/abstract)
 6. Progress in ESI-MS Study for the Catalytic Asymmetric Reactions. *Chinese J. Org. Chem.* **2010**, 30, 809-815. [Link](http://sioc-journal.cn/Jwk_yjhx/EN/abstract/abstract338923.shtml)
-7. Multiresolution persistent homology for excessively large biomolecular datasets. **J. Chem. Phys.**, In press.
+7. Multiresolution persistent homology for excessively large biomolecular datasets. *J. Chem. Phys.*, **2015**, 143, 134103. [Link](http://scitation.aip.org/content/aip/journal/jcp/143/13/10.1063/1.4931733)
 8. Multiresolution Topological Simplification. *J. Comp. Biol.* **2015**, 22, 887-891. [Link](http://online.liebertpub.com/doi/abs/10.1089/cmb.2015.0104)
 9. Target-oriented design and biosynthesis of thiostrepton-derived thiopeptide antibiotics with improved pharmaceutical properties. *Org. Chem. Front.* **2015**, 2, 106-109. (Cover) [Link](http://pubs.rsc.org/en/content/articlelanding/2015/qo/c4qo00288a)
 10. PDB-wide Collection of Binding Data: Current Status of the PDBbind Database. *Bioinformatics* **2015**, 31,405-412. [Link](http://bioinformatics.oxfordjournals.org/content/31/3/405.abstract)
