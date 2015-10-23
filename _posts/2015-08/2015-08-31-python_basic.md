@@ -424,6 +424,7 @@ __main__ 主函数
 2. [Python标准库](https://docs.python.org/2/library/index.html)
 4. [Python中文手册](http://www.pythondoc.com/pythontutorial27/index.html)
 5. [深入 Python :Dive Into Python 中文版](http://woodpecker.org.cn/diveintopython/toc/index.html)
+6. [官方内建函数](https://docs.python.org/2/library/functions.html)
 
 ### 内链博客:
 
