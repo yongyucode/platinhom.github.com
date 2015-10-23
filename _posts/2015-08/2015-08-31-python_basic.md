@@ -228,6 +228,13 @@ add(3,-4,abs)
 # -> 7
 ~~~
 
+#### map/reduce/filter函数
+都是典型高阶函数.
+
+- `map(func,list)` 将func应用于list每个元素并返回列表. 相当于[func(x) for x in list]
+- `reduce(func,list)` 函数必须是接受两个参数的(否则报错),随后从前到后将元素和func(x,y)结果作进一步计算,即f(f(f(x1,x2),x3)x4)..
+- `filter(func,list)` 将函数应用于list元素,若返回True则保留,否则去掉.最后返回过滤后的列表,相当于`[x for x in list if func(x)]`
+
 ## 类和对象
 
 继承和多态: 支持子类从父类继承, 通过重新定义方法实现多态.
