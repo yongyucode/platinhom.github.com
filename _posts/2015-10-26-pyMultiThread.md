@@ -6,5 +6,7 @@ categories: Coding
 tags: Python
 ---
 
+进程是多个任务(多个程序),线程则是单个任务内多个进行的子任务.
+
 
 ------
