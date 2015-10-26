@@ -31,7 +31,7 @@ tags: Live
 - 2003: *Illinois*, *Alabama*, *Maine*, *Missouri*, *Arkansas*,
 - 2004: *Michigan*, *Florida*, *Texas*, *Iowa*, Wisconsin, 
 - 2005: California, *Minnesota*, *Oregon*, *Kansas*, *West Virginia*,
-- 2006: *Neveda*, Nebraska, *Colorado*, *North Dakota*, *South Dakota*,
+- 2006: *Neveda*, *Nebraska*, *Colorado*, *North Dakota*, *South Dakota*,
 - 2007: *Montana*, *Washington*, *Idaho*, *Wyoming*, *Utah*,
 - 2008: *Oklahoma*, *New Mexico*, *Arizona*, *Alaska*, *Hawaii*,
 - 2009: `District of Columbia`, Puerto Rico, `Guam`, American Samoa, `US Virgin Islands`, Northern Mariana Islands
@@ -39,7 +39,7 @@ tags: Live
 - 2011: Glacier(Montana), Olympic(Washington)
 - 2012: Hawaii Volcanoes(Hawaii), Chaco Culture(New Mexcio), 
 - 2013: Mount Rushmore(S.Dakota), White Mountain(New Hampshire), Fort McHenry(Maryland)
-- 2014: Arches(Utah), Shenandoah(Virginia), Everglades(Florida)
+- 2014: Arches(Utah), Shenandoah(Virginia), Everglades(Florida),Great Sand Dunes(Colorado)
 - 2015: Blue Ridge Parkway(North Carolina), Kisatchie(Louisiana), Homestead(Nebraska)
 - 2016: 
 - 2017: 
