@@ -30,11 +30,11 @@ tags: Live
 - 2002: *Tennessee*, *Ohio*, *Louisiana*, *Indiana*, *Mississippi*,
 - 2003: *Illinois*, *Alabama*, *Maine*, *Missouri*, *Arkansas*,
 - 2004: *Michigan*, *Florida*, *Texas*, *Iowa*, Wisconsin, 
-- 2005: California, *Minnesota*, *Oregon*, *Kansas*, *West Virginia*,
+- 2005: *California*, *Minnesota*, *Oregon*, *Kansas*, *West Virginia*,
 - 2006: *Neveda*, *Nebraska*, *Colorado*, *North Dakota*, *South Dakota*,
 - 2007: *Montana*, *Washington*, *Idaho*, *Wyoming*, *Utah*,
 - 2008: *Oklahoma*, *New Mexico*, *Arizona*, *Alaska*, *Hawaii*,
-- 2009: `District of Columbia`, Puerto Rico, `Guam`, American Samoa, `US Virgin Islands`, Northern Mariana Islands
+- 2009: `District of Columbia`, Puerto Rico, `Guam`, American Samoa, US Virgin Islands, Northern Mariana Islands
 - 2010: Yosemite(California),
 - 2011: Glacier(Montana), Olympic(Washington)
 - 2012: Hawaii Volcanoes(Hawaii), Chaco Culture(New Mexcio), 
@@ -47,8 +47,9 @@ tags: Live
 - 2019: 
 - 2020: 
 
-第一套收集进程: 53/56; 
-第二套收集进程: 47/56;
-第三套收集进程: 14/28
+第一套收集进程: 54/56; 
+第二套收集进程: 49/56;
+第三套收集进程: /56;
+国家公园: 15/28
 
 ------
