@@ -84,9 +84,26 @@ SMART式匹配器. 输入参数是SMART式字符串.
 	- write(format='smi', filename=None, overwrite=False): 将文件写到文件,格式,文件名以及是否覆盖已有文件. 如果不指名文件名, 返回文件内容的字符串.
 - **MoleculeData**(obmol)  
 使用ob的分子产生相应附加数据的对象, 一个类似于字典的对象. 其实用途不大,更常用mol.data.
-- **Atom**(OBAtom)
-使用OB的原子对象来构造, 或者读入分子后储存在Molecule.atoms里的对象. 
+- **Atom**(OBAtom)  
+使用OB的原子对象来构造, 或者读入分子后储存在Molecule.atoms里的对象.  
+    - atomicmass: 原子量
+    - exactmass: 精确原子量
+    - atomicnum: 元素号
+    - type: 原子类型
+    - spin: 自旋态
+    - hyb: 杂化态(1,2,3)
+    - idx: 索引号(1起)
+    - isotope: 同位素,要是非同位素就为0
+    - coords: 3维坐标, 元组.
+    - formalcharge: formal电荷
+    - partialcharge: 部分电荷
+    - valence: 连接数
+    - implicitvalence: 可能的最大连接数
+    - heavyvalence: 相连重原子价数
+    - heterovalence: 相连杂原子价数
+    - vector: 坐标的c++vector
 
+注意, 新版本的可能略有不同,如mac上还有Residue对象等.
 
 ## pybel源代码(1.8)
 
