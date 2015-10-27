@@ -50,17 +50,17 @@ mymol = readstring("smi", "C1=CC=CS1")
 
 ## 类
 
-- Outputfile(format, filename, overwrite=False, opt=None)  
+- **Outputfile**(format, filename, overwrite=False, opt=None)  
 用于写出多个分子, 单个分子可以用分子对象的write(). 格式就是outformats支持的格式,第二参数是文件名咯.第三个是否覆盖已有文件,opt就是格式专有选项.
 	- close():关闭该文件不能再写入.
 	- write(molecule):将分子写入文件.
-- Fingerprint(fingerprint)  
+- **Fingerprint**(fingerprint)  
 参数是OBFingerprint.FindFingerprint()计算出的vector. 属性bits是相应的指纹列表, `|`支持或操作例如 *tanimoto = a | b*
-- Smarts(smartspattern)  
+- **Smarts**(smartspattern)  
 SMART式匹配器. 输入参数是SMART式字符串.  
 	- findall(molecule): 在分子中搜索SMART式,返回匹配的所有元组的list.每个元组包含相应匹配的原子序号(1开始).元组数就是匹配子结构数量.
-- Molecule(OBMol):
-分子,需要参数OBMol(openbabel的分子对象).可以用readfile/readstring产生. 该对象也是pybel主要使用对象.  
+- **Molecule**(OBMol):
+分子,需要参数OBMol(openbabel的分子对象).也可以用 *readfile*/*readstring* 函数产生. 该对象也是pybel主要使用对象.  
 	- atoms: 原子对象的列表
 	- charge: 分子电荷
 	- conformers: 构象?返回的是c++ vector.
@@ -82,9 +82,13 @@ SMART式匹配器. 输入参数是SMART式字符串.
 	- localopt(forcefield='mmff94', steps=500): 局部优化,力场和优化步数.如果没有坐标会优先使用make3D().需要分子有H.
 	- make3D(forcefield='mmff94', steps=50): 先产生3维坐标再调用局部优化,参数是局部优化参数.
 	- write(format='smi', filename=None, overwrite=False): 将文件写到文件,格式,文件名以及是否覆盖已有文件. 如果不指名文件名, 返回文件内容的字符串.
+- **MoleculeData**(obmol)  
+使用ob的分子产生相应附加数据的对象, 一个类似于字典的对象. 其实用途不大,更常用mol.data.
+- **Atom**(OBAtom)
+使用OB的原子对象来构造, 或者读入分子后储存在Molecule.atoms里的对象. 
 
-- MoleculeData
-- Atom
+
+## pybel源代码(1.8)
 
 ~~~python
 #-*. coding: utf-8 -*-
