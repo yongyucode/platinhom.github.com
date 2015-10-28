@@ -3,7 +3,7 @@ title: 关于我
 layout: page
 ---
 
-> Act as your thought.
+> 学无止境啊啊啊啊!!!!
 
 I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety  and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design. 
 
