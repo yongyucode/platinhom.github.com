@@ -44,7 +44,6 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(a-t)hotmail.com 
 <style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
 ## Papers published/joined
-Indeed, I don't like to write papers... I just like to work ╮(╯▽╰)╭ ..
 
 ### Published
 
