@@ -106,6 +106,8 @@ SMART式匹配器. 输入参数是SMART式字符串.
     - spin: 自旋态
     - hyb: 杂化态(1,2,3)
     - idx: 索引号(1起)
+    - coordidx: 配位索引号?
+    - cidx: Cidx??
     - isotope: 同位素,要是非同位素就为0
     - coords: 3维坐标, 元组.
     - formalcharge: formal电荷
