@@ -959,5 +959,7 @@ if __name__=="__main__": #pragma: no cover
 1. [Pybel API](http://open-babel.readthedocs.org/en/latest/UseTheLibrary/Python_PybelAPI.html)
 2. [Pybel](http://open-babel.readthedocs.org/en/latest/UseTheLibrary/Python_Pybel.html)
 3. [Pybel: a Python wrapper for the OpenBabel cheminformatics toolkit](http://journal.chemistrycentral.com/content/2/1/5)
+4. [OpenBabel Documentation](http://open-babel.readthedocs.org/en/latest/index.html)
+5. [OpenBabel-Python](http://open-babel.readthedocs.org/en/latest/UseTheLibrary/Python.html)
 
 ------
