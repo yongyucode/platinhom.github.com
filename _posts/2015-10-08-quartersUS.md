@@ -21,19 +21,19 @@ tags: Live
 ### Quarters:
 
 `a`: 缺
-*a*: 2套
-**a**: 3套
+*a*: 3套
+**a**: 2套
 
 - 1999: *Delaware*, *Pennsylvania*, *New Jersey*, *Georgia*, *Connecticut*, 
 - 2000: *Massachusetts*, *Maryland*, *South Carolina*, *New Hampshire*, *Virginia*, 
 - 2001: *New York*, *North Carolina*, *Rhode Island*, *Vermont*, *Kentucky*, 
 - 2002: *Tennessee*, *Ohio*, *Louisiana*, *Indiana*, *Mississippi*,
 - 2003: *Illinois*, *Alabama*, *Maine*, *Missouri*, *Arkansas*,
-- 2004: *Michigan*, *Florida*, *Texas*, *Iowa*, Wisconsin, 
-- 2005: *California*, *Minnesota*, *Oregon*, *Kansas*, *West Virginia*,
-- 2006: *Neveda*, *Nebraska*, *Colorado*, *North Dakota*, *South Dakota*,
-- 2007: *Montana*, *Washington*, *Idaho*, *Wyoming*, *Utah*,
-- 2008: *Oklahoma*, *New Mexico*, *Arizona*, *Alaska*, *Hawaii*,
+- 2004: **Michigan**, **Florida**, *Texas*, *Iowa*, Wisconsin, 
+- 2005: **California**, *Minnesota*, *Oregon*, *Kansas*, *West Virginia*,
+- 2006: *Neveda*, **Nebraska**, **Colorado**, *North Dakota*, *South Dakota*,
+- 2007: **Montana**, *Washington*, *Idaho*, *Wyoming*, *Utah*,
+- 2008: *Oklahoma*, *New Mexico*, *Arizona*, *Alaska*, **Hawaii**,
 - 2009: `District of Columbia`, Puerto Rico, `Guam`, American Samoa, US Virgin Islands, Northern Mariana Islands
 - 2010: Yosemite(California),
 - 2011: Glacier(Montana), Olympic(Washington)
@@ -49,7 +49,7 @@ tags: Live
 
 第一套收集进程: 54/56; 
 第二套收集进程: 49/56;
-第三套收集进程: /56;
+第三套收集进程: 42/56;
 国家公园: 15/28
 
 ------

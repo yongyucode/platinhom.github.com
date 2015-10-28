@@ -6,6 +6,17 @@ categories: CompCB
 tags: Python CompChem
 ---
 
+Pybel提供了一些简单的Openbabel的功能和对象.Pybel1.8(对应OB-2.3.2)提供的功能很有限, 主要有两个类继承自OB: OBAtom和OBMol.  
+Molecule是其主要功能实现的对象,提供以下功能:  
+    - 读取写出分子
+    - 加氢去氢
+    - 产生3维结构并优化
+    - 计算分子指纹和分子描述符
+    - SMART匹配
+    - 生成2D坐标并出图
+
+## pybel主要内容
+
 - Global variables:  
 informats, outformats, descs, fps, forcefields, operations, ob(openbabel)
 - Functions:  
@@ -23,7 +34,7 @@ Atom, Molecule, Outputfile, Fingerprint, Smarts, MoleculeData
 - fps: 支持的指纹类型: 'fp2', 'fp3', 'fp4', 'maccs'
 - forcefields: 支持的力场: 'gaff', 'ghemical', 'mmff94', 'mmff94s', 'uff'
 - operations: 支持的操作: 0xout, addfilename, AddInIndex, AddPolarH, align, canonical, conformer, energy, fillUC, gen2D, gen3D, genalias, highlight, largest, minimize, partialcharge, readconformer, s, smallest, sort, unique, v
-- ob(openbabel): 就是openbabel模块,另外还加载了sys, math, os.path, tempfile,PIL,Tk,piltk
+- ob(openbabel): 就是openbabel模块,另外还加载了sys, math, os.path, tempfile, PIL, Tk, piltk
 
 ## 函数
 
@@ -61,6 +72,7 @@ SMART式匹配器. 输入参数是SMART式字符串.
 	- findall(molecule): 在分子中搜索SMART式,返回匹配的所有元组的list.每个元组包含相应匹配的原子序号(1开始).元组数就是匹配子结构数量.
 - **Molecule**(OBMol):
 分子,需要参数OBMol(openbabel的分子对象).也可以用 *readfile*/*readstring* 函数产生. 该对象也是pybel主要使用对象.  
+    - OBMol: 就是OB的分子,内含相应的C++方法
 	- atoms: 原子对象的列表
 	- charge: 分子电荷
 	- conformers: 构象?返回的是c++ vector.
@@ -86,6 +98,7 @@ SMART式匹配器. 输入参数是SMART式字符串.
 使用ob的分子产生相应附加数据的对象, 一个类似于字典的对象. 其实用途不大,更常用mol.data.
 - **Atom**(OBAtom)  
 使用OB的原子对象来构造, 或者读入分子后储存在Molecule.atoms里的对象.  
+    - OBAtom: 就是OB的原子.可以调用相关方法属性.
     - atomicmass: 原子量
     - exactmass: 精确原子量
     - atomicnum: 元素号
