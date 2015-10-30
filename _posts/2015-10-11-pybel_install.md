@@ -43,7 +43,8 @@ openbabel是个好工具.但是要想实现跨平台使用, 就要保证在各�
 - `git clone https://github.com/openbabel/openbabel`, 安装github上的版本
 - `cd openbabel;mkdir build; cd build` 新建一个文件夹,进入里面
 - `cmake ../ -DBUILD_GUI=ON -DPYTHON_BINDINGS=ON -DRUN_SWIG=ON` 这里需要装pybel, 需要用swig转换c++对象给python,openbabel-python_wrap.cpp,所以不同于官网说明, 需要打开`-DRUN_SWIG=ON`. 另外也可以.configure --prefix=path/来指明的,cmake可以用`-DCMAKE_INSTALL_PREFIX=~/Tools`
-- `make`, 漫长等待(可以make -j2 来指定双核并行)
+- 若是mac系统使用brew, 请参考bug error处理修改`libpython2.7.dylib`的位置.
+- `make`, 漫长等待(可以`make -j2` 来指定双核并行)
 - `make test` 检查是否报错.我用的github版本检查153项, 2.3.2检查60项.注意有无fail. 很容易fail在最后三项pybel相关的.
 - `sudo make install` 将相关文件复制安装到相应目录. 之后可以python, import pybel测试.
 - 要是之前生成过别的版本,可以删除相关垃圾: 生成openbabel的lib在:**/usr/local/lib/openbabel**,share文件在**/usr/local/share/openbabel/**,可以删掉没用的版本.
