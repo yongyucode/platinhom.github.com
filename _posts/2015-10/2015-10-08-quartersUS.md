@@ -34,12 +34,12 @@ tags: Live
 - 2006: *Neveda*, *Nebraska*, *Colorado*, *North Dakota*, *South Dakota*,
 - 2007: **Montana**, *Washington*, *Idaho*, *Wyoming*, *Utah*,
 - 2008: *Oklahoma*, *New Mexico*, *Arizona*, *Alaska*, **Hawaii**,
-- 2009: `District of Columbia`, Puerto Rico, `Guam`, American Samoa, US Virgin Islands, Northern Mariana Islands
+- 2009: `District of Columbia`, **Puerto Rico**, `Guam`, American Samoa, US Virgin Islands, **Northern Mariana Islands**
 - 2010: Yosemite(California),
 - 2011: Glacier(Montana), Olympic(Washington)
 - 2012: Hawaii Volcanoes(Hawaii), Chaco Culture(New Mexcio), 
 - 2013: Mount Rushmore(S.Dakota), White Mountain(New Hampshire), Fort McHenry(Maryland)
-- 2014: Arches(Utah), Shenandoah(Virginia), Everglades(Florida),Great Sand Dunes(Colorado)
+- 2014: Arches(Utah), Shenandoah(Virginia), Everglades(Florida),Great Sand Dunes(Colorado),Great Smoky Mountains(Tennessee)
 - 2015: Blue Ridge Parkway(North Carolina), Kisatchie(Louisiana), Homestead(Nebraska)
 - 2016: 
 - 2017: 
@@ -48,8 +48,8 @@ tags: Live
 - 2020: 
 
 第一套收集进程: 54/56; 
-第二套收集进程: 49/56;
+第二套收集进程: 51/56;
 第三套收集进程: 45/56;
-国家公园: 15/28
+国家公园: 16/28
 
 ------

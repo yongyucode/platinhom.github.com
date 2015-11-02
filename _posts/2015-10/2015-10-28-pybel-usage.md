@@ -36,6 +36,34 @@ Atom, Molecule, Outputfile, Fingerprint, Smarts, MoleculeData
 - operations: 支持的操作: 0xout, addfilename, AddInIndex, AddPolarH, align, canonical, conformer, energy, fillUC, gen2D, gen3D, genalias, highlight, largest, minimize, partialcharge, readconformer, s, smallest, sort, unique, v
 - ob(openbabel): 就是openbabel模块,另外还加载了sys, math, os.path, tempfile, PIL, Tk, piltk
 
+附:   
+
+### descriptors
+
+- abonds    Number of aromatic bonds
+- atoms    Number of atoms
+- bonds    Number of bonds
+- cansmi    Canonical SMILES
+- cansmiNS    Canonical SMILES without isotopes or stereo
+- dbonds    Number of double bonds
+- formula    Chemical formula
+- HBA1    Number of Hydrogen Bond Acceptors 1 (JoelLib)
+- HBA2    Number of Hydrogen Bond Acceptors 2 (JoelLib)
+- HBD    Number of Hydrogen Bond Donors (JoelLib)
+- InChI    IUPAC InChI identifier
+- InChIKey    InChIKey
+- L5    Lipinski Rule of Five
+- logP    octanol/water partition coefficient
+- MP    Melting point
+- MR    molar refractivity
+- MW    Molecular Weight filter
+- nF    Number of Fluorine Atoms
+- s    SMARTS filter
+- sbonds    Number of single bonds
+- smarts    SMARTS filter
+- tbonds    Number of triple bonds
+- title    For comparing a molecule's title
+
 ## 函数
 
 - readfile(format, filename, opt=None): 格式参考以上的informats, 文件就是读取的文件罗,opt是格式选项的指定专用的字典. 注意, 返回的是**迭代器**!! 用next()来读取!
