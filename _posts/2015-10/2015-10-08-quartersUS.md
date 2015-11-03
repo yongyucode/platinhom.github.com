@@ -29,7 +29,7 @@ tags: Live
 - 2001: *New York*, *North Carolina*, *Rhode Island*, *Vermont*, *Kentucky*, 
 - 2002: *Tennessee*, *Ohio*, *Louisiana*, *Indiana*, *Mississippi*,
 - 2003: *Illinois*, *Alabama*, *Maine*, *Missouri*, *Arkansas*,
-- 2004: **Michigan**, *Florida*, *Texas*, *Iowa*, Wisconsin, 
+- 2004: *Michigan*, *Florida*, *Texas*, *Iowa*, Wisconsin, 
 - 2005: **California**, *Minnesota*, *Oregon*, *Kansas*, *West Virginia*,
 - 2006: *Neveda*, *Nebraska*, *Colorado*, *North Dakota*, *South Dakota*,
 - 2007: **Montana**, *Washington*, *Idaho*, *Wyoming*, *Utah*,
@@ -49,7 +49,7 @@ tags: Live
 
 第一套收集进程: 54/56; 
 第二套收集进程: 51/56;
-第三套收集进程: 45/56;
+第三套收集进程: 46/56;
 国家公园: 16/28
 
 ------
