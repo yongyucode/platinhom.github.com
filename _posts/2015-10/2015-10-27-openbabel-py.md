@@ -2,7 +2,7 @@
 layout: post
 title: OpenBabel.py by SWIG
 date: 2015-10-27 00:15:02
-categories: ChemCB
+categories: CompCB
 tags: Python CompChem
 ---
 

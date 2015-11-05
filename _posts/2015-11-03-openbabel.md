@@ -2,7 +2,7 @@
 layout: post
 title: openbabel
 date: 2015-11-03 09:50:47
-categories: ChemCB
+categories: CompCB
 tags: CompChem
 ---
 
