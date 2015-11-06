@@ -14,13 +14,13 @@ tags: Python
 
 可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到那个点, 下一个是什么, 利用iter()函数可以将list等转变为迭代器(其实是生成器), 逐个元素投出.
 
-可以通过`isinstance(obj, Iterable)`来判断对象是否可迭代对象.
+可以通过`isinstance(obj, Iterable)` (需要事先`from collections import Iterable`)来判断对象是否可迭代对象.
 
 ## 迭代器(Iterator)对象：
 
 凡是可以通过next()方法返回下一个值的可迭代对象就是迭代器. 生成器是一种迭代器.enumurate也是迭代器(本质生成器)
 
-可以通过`isinstance(obj, Iterator)`来判断对象是否迭代器.
+可以通过`isinstance(obj, Iterator)` (需要事先`from collections import Iterable`) 来判断对象是否迭代器.
 
 迭代到没有值了返回`StopIteration`错误.
 
