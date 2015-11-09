@@ -1235,7 +1235,7 @@ Changed in version 2.3: Interned strings are not immortal (like they used to be 
 ## 5. Built-in Types {#BuildInTypes}
 The following sections describe the standard types that are built into the interpreter.
 
-Note Historically (until release 2.2), Python’s built-in types have differed from user-defined types because it was not possible to use the built-in types as the basis for object-oriented inheritance. This limitation no longer exists.
+> Note: Historically (until release 2.2), Python’s built-in types have differed from user-defined types because it was not possible to use the built-in types as the basis for object-oriented inheritance. This limitation no longer exists.
 
 The principal built-in types are numerics, sequences, mappings, files, classes, instances and exceptions.
 
