@@ -16,7 +16,7 @@ layout: page_prism
 - post.html: A template for posting blogs, with basic loading.
 - post_mathjax.html: Posting blogs with mathjax loading.
 - post_small.html: Posting blogs with mathjax loading and small font for `p,ol,ul,li`.
-- posttoc.html: add TOC to post. I keep it as origin.
+- post\_toc.html: add TOC to post, use post\_small as template.
 
 - slide.html: I don't know..
 
@@ -179,3 +179,6 @@ Note that, it should control the *div.highlight pre* and *div.highlight pre code
 
 ### Delete old template ending script
 Last ending script means nothing. I delete it in post layout. Only save in posttoc.html layout.
+
+### TOC post_toc.html
+move old postdoc.html to other/jscss. Move addtoc.js to TOC.js. modify the TOC style.
