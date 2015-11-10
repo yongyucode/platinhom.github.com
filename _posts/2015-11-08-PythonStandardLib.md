@@ -6,7 +6,7 @@ categories: Coding
 tags: Python
 ---
 
-## The Python Standard Library  {#STL}
+## [The Python Standard Library](https://docs.python.org/2/library/)  {#STL}
 
 While The Python Language Reference describes the exact syntax and semantics of the Python language, this library reference manual describes the standard library that is distributed with Python. It also describes some of the optional components that are commonly included in Python distributions.
 
@@ -37,7 +37,7 @@ In addition to the standard library, there is a growing collection of several th
 	13. Special Attributes
 6. Built-in Exceptions
 	1. Exception hierarchy
-7. String Services
+7. [String Services](https://docs.python.org/2/library/strings.html)
 	1. string — Common string operations
 	2. re — Regular expression operations
 	3. struct — Interpret strings as packed binary data
@@ -49,7 +49,7 @@ In addition to the standard library, there is a growing collection of several th
 	9. unicodedata — Unicode Database
 	10. stringprep — Internet String Preparation
 	11. fpformat — Floating point conversions
-8. Data Types
+8. [Data Types](https://docs.python.org/2/library/datatypes.html)
 	1. datetime — Basic date and time types
 	2. calendar — General calendar-related functions
 	3. collections — High-performance container datatypes
@@ -69,7 +69,7 @@ In addition to the standard library, there is a growing collection of several th
 	17. copy — Shallow and deep copy operations
 	18. pprint — Data pretty printer
 	19. repr — Alternate repr() implementation
-9. Numeric and Mathematical Modules
+9. [Numeric and Mathematical Modules](https://docs.python.org/2/library/numeric.html)
 	1. numbers — Numeric abstract base classes
 	2. math — Mathematical functions
 	3. cmath — Mathematical functions for complex numbers
@@ -79,7 +79,7 @@ In addition to the standard library, there is a growing collection of several th
 	7. itertools — Functions creating iterators for efficient looping
 	8. functools — Higher-order functions and operations on callable objects
 	9. operator — Standard operators as functions
-10. File and Directory Access
+10. [File and Directory Access](https://docs.python.org/2/library/filesys.html)
 	1. os.path — Common pathname manipulations
 	2. fileinput — Iterate over lines from multiple input streams
 	3. stat — Interpreting stat() results
@@ -92,7 +92,7 @@ In addition to the standard library, there is a growing collection of several th
 	10. shutil — High-level file operations
 	11. dircache — Cached directory listings
 	12. macpath — Mac OS 9 path manipulation functions
-11. Data Persistence
+11. [Data Persistence](https://docs.python.org/2/library/persistence.html)
 	1. pickle — Python object serialization
 	2. cPickle — A faster pickle
 	3. copy_reg — Register pickle support functions
@@ -106,25 +106,25 @@ In addition to the standard library, there is a growing collection of several th
 	11. bsddb — Interface to Berkeley DB library
 	12. dumbdbm — Portable DBM implementation
 	13. sqlite3 — DB-API 2.0 interface for SQLite databases
-12. Data Compression and Archiving
+12. [Data Compression and Archiving](https://docs.python.org/2/library/archiving.html)
 	1. zlib — Compression compatible with gzip
 	2. gzip — Support for gzip files
 	3. bz2 — Compression compatible with bzip2
 	4. zipfile — Work with ZIP archives
 	5. tarfile — Read and write tar archive files
-13. File Formats
+13. [File Formats](https://docs.python.org/2/library/fileformats.html)
 	1. csv — CSV File Reading and Writing
 	2. ConfigParser — Configuration file parser
 	3. robotparser — Parser for robots.txt
 	4. netrc — netrc file processing
 	5. xdrlib — Encode and decode XDR data
 	6. plistlib — Generate and parse Mac OS X .plist files
-14. Cryptographic Services
+14. [Cryptographic Services](https://docs.python.org/2/library/crypto.html)
 	1. hashlib — Secure hashes and message digests
 	2. hmac — Keyed-Hashing for Message Authentication
 	3. md5 — MD5 message digest algorithm
 	4. sha — SHA-1 message digest algorithm
-15. Generic Operating System Services
+15. [Generic Operating System Services](https://docs.python.org/2/library/allos.html)
 	1. os — Miscellaneous operating system interfaces
 	2. io — Core tools for working with streams
 	3. time — Time access and conversions
@@ -142,7 +142,7 @@ In addition to the standard library, there is a growing collection of several th
 	15. platform — Access to underlying platform’s identifying data
 	16. errno — Standard errno system symbols
 	17. ctypes — A foreign function library for Python
-16. Optional Operating System Services
+16. [Optional Operating System Services](https://docs.python.org/2/library/someos.html)
 	1. select — Waiting for I/O completion
 	2. threading — Higher-level threading interface
 	3. thread — Multiple threads of control
@@ -152,7 +152,7 @@ In addition to the standard library, there is a growing collection of several th
 	7. mmap — Memory-mapped file support
 	8. readline — GNU readline interface
 	9. rlcompleter — Completion function for GNU readline
-17. Interprocess Communication and Networking
+17. [Interprocess Communication and Networking](https://docs.python.org/2/library/ipc.html)
 	1. subprocess — Subprocess management
 	2. socket — Low-level networking interface
 	3. ssl — TLS/SSL wrapper for socket objects
@@ -160,7 +160,7 @@ In addition to the standard library, there is a growing collection of several th
 	5. popen2 — Subprocesses with accessible I/O streams
 	6. asyncore — Asynchronous socket handler
 	7. asynchat — Asynchronous socket command/response handler
-18. Internet Data Handling
+18. [Internet Data Handling](https://docs.python.org/2/library/netdata.html)
 	1. email — An email and MIME handling package
 	2. json — JSON encoder and decoder
 	3. mailcap — Mailcap file handling
@@ -177,7 +177,7 @@ In addition to the standard library, there is a growing collection of several th
 	14. binascii — Convert between binary and ASCII
 	15. quopri — Encode and decode MIME quoted-printable data
 	16. uu — Encode and decode uuencode files
-19. Structured Markup Processing Tools
+19. [Structured Markup Processing Tools](https://docs.python.org/2/library/markup.html)
 	1. HTMLParser — Simple HTML and XHTML parser
 	2. sgmllib — Simple SGML parser
 	3. htmllib — A parser for HTML documents
@@ -193,7 +193,7 @@ In addition to the standard library, there is a growing collection of several th
 	13. xml.sax.saxutils — SAX Utilities
 	14. xml.sax.xmlreader — Interface for XML parsers
 	15. xml.parsers.expat — Fast XML parsing using Expat
-20. Internet Protocols and Support
+20. [Internet Protocols and Support](https://docs.python.org/2/library/internet.html)
 	1. webbrowser — Convenient Web-browser controller
 	2. cgi — Common Gateway Interface support
 	3. cgitb — Traceback manager for CGI scripts
@@ -219,7 +219,7 @@ In addition to the standard library, there is a growing collection of several th
 	23. xmlrpclib — XML-RPC client access
 	24. SimpleXMLRPCServer — Basic XML-RPC server
 	25. DocXMLRPCServer — Self-documenting XML-RPC server
-21. Multimedia Services
+21. [Multimedia Services](https://docs.python.org/2/library/mm.html)
 	1. audioop — Manipulate raw audio data
 	2. imageop — Manipulate raw image data
 	3. aifc — Read and write AIFF and AIFC files
@@ -230,13 +230,13 @@ In addition to the standard library, there is a growing collection of several th
 	8. imghdr — Determine the type of an image
 	9. sndhdr — Determine type of sound file
 	10. ossaudiodev — Access to OSS-compatible audio devices
-22. Internationalization
+22. [Internationalization](https://docs.python.org/2/library/i18n.html)
 	1. gettext — Multilingual internationalization services
 	2. locale — Internationalization services
-23. Program Frameworks
+23. [Program Frameworks](https://docs.python.org/2/library/frameworks.html)
 	1. cmd — Support for line-oriented command interpreters
 	2. shlex — Simple lexical analysis
-24. Graphical User Interfaces with Tk
+24. [Graphical User Interfaces with Tk](https://docs.python.org/2/library/tk.html)
 	1. Tkinter — Python interface to Tcl/Tk
 	2. ttk — Tk themed widgets
 	3. Tix — Extension widgets for Tk
@@ -244,14 +244,14 @@ In addition to the standard library, there is a growing collection of several th
 	5. turtle — Turtle graphics for Tk
 	6. IDLE
 	7. Other Graphical User Interface Packages
-25. Development Tools
+25. [Development Tools](https://docs.python.org/2/library/development.html)
 	1. pydoc — Documentation generator and online help system
 	2. doctest — Test interactive Python examples
 	3. unittest — Unit testing framework
 	4. 2to3 - Automated Python 2 to 3 code translation
 	5. test — Regression tests package for Python
 	6. test.test_support — Utility functions for tests
-26. Debugging and Profiling
+26. [Debugging and Profiling](https://docs.python.org/2/library/debug.html)
 	1. bdb — Debugger framework
 	2. pdb — The Python Debugger
 	3. Debugger Commands
@@ -259,10 +259,10 @@ In addition to the standard library, there is a growing collection of several th
 	5. hotshot — High performance logging profiler
 	6. timeit — Measure execution time of small code snippets
 	7. trace — Trace or track Python statement execution
-27. Software Packaging and Distribution
+27. [Software Packaging and Distribution](https://docs.python.org/2/library/distribution.html)
 	1. distutils — Building and installing Python modules
 	2. ensurepip — Bootstrapping the pip installer
-28. Python Runtime Services
+28. [Python Runtime Services](https://docs.python.org/2/library/python.html)
 	1. sys — System-specific parameters and functions
 	2. sysconfig — Provide access to Python’s configuration information
 	3. \_\_builtin\_\_ — Built-in objects
@@ -285,7 +285,7 @@ In addition to the standard library, there is a growing collection of several th
 30. Restricted Execution
 	1. rexec — Restricted execution framework
 	2. Bastion — Restricting access to objects
-31. Importing Modules
+31. [Importing Modules]()
 	1. imp — Access the import internals
 	2. importlib – Convenience wrappers for \_\_import\_\_()
 	3. imputil — Import utilities
@@ -293,7 +293,7 @@ In addition to the standard library, there is a growing collection of several th
 	5. pkgutil — Package extension utility
 	6. modulefinder — Find modules used by a script
 	7. runpy — Locating and executing Python modules
-32. Python Language Services
+32. [Python Language Services](https://docs.python.org/2/library/language.html)
 	1. parser — Access Python parse trees
 	2. ast — Abstract Syntax Trees
 	3. symtable — Access to the compiler’s symbol tables
@@ -307,20 +307,20 @@ In addition to the standard library, there is a growing collection of several th
 	11. compileall — Byte-compile Python libraries
 	12. dis — Disassembler for Python bytecode
 	13. pickletools — Tools for pickle developers
-33. Python compiler package
+33. [Python compiler package](https://docs.python.org/2/library/compiler.html)
 	1. The basic interface
 	2. Limitations
 	3. Python Abstract Syntax
 	4. Using Visitors to Walk ASTs
 	5. Bytecode Generation
-34. Miscellaneous Services
+34. [Miscellaneous Services](https://docs.python.org/2/library/misc.html)
 	1. formatter — Generic output formatting
-35. MS Windows Specific Services
+35. [MS Windows Specific Services](https://docs.python.org/2/library/windows.html)
 	1. msilib — Read and write Microsoft Installer files
 	2. msvcrt – Useful routines from the MS VC++ runtime
 	3. _winreg – Windows registry access
 	4. winsound — Sound-playing interface for Windows
-36. Unix Specific Services
+36. [Unix Specific Services](https://docs.python.org/2/library/unix.html)
 	1. posix — The most common POSIX system calls
 	2. pwd — The password database
 	3. spwd — The shadow password database
@@ -337,7 +337,7 @@ In addition to the standard library, there is a growing collection of several th
 	14. nis — Interface to Sun’s NIS (Yellow Pages)
 	15. syslog — Unix syslog library routines
 	16. commands — Utilities for running commands
-37. Mac OS X specific services
+37. [Mac OS X specific services](https://docs.python.org/2/library/mac.html)
 	1. ic — Access to the Mac OS X Internet Config
 	2. MacOS — Access to Mac OS interpreter features
 	3. macostools — Convenience routines for file manipulation
@@ -347,13 +347,13 @@ In addition to the standard library, there is a growing collection of several th
 	7. autoGIL — Global Interpreter Lock handling in event loops
 	8. Mac OS Toolbox Modules
 	9. ColorPicker — Color selection dialog
-38. MacPython OSA Modules
+38. [MacPython OSA Modules](https://docs.python.org/2/library/macosa.html)
 	1. gensuitemodule — Generate OSA stub packages
 	2. aetools — OSA client support
 	3. aepack — Conversion between Python variables and AppleEvent data containers
 	4. aetypes — AppleEvent objects
 	5. MiniAEFrame — Open Scripting Architecture server support
-39. SGI IRIX Specific Services
+39. [SGI IRIX Specific Services](https://docs.python.org/2/library/sgi.html)
 	1. al — Audio functions on the SGI
 	2. AL — Constants used with the al module
 	3. cd — CD-ROM access on SGI systems
@@ -366,10 +366,10 @@ In addition to the standard library, there is a growing collection of several th
 	10. GL — Constants used with the gl module
 	11. imgfile — Support for SGI imglib files
 	12. jpeg — Read and write JPEG files
-40. SunOS Specific Services
+40. [SunOS Specific Services](https://docs.python.org/2/library/sun.html)
 	1. sunaudiodev — Access to Sun audio hardware
 	2. SUNAUDIODEV — Constants used with sunaudiodev
-41. Undocumented Modules
+41. [Undocumented Modules](https://docs.python.org/2/library/undoc.html)
 	1. Miscellaneous useful utilities
 	2. Platform specific modules
 	3. Multimedia
@@ -1249,7 +1249,7 @@ Any object can be tested for truth value, for use in an if or while condition or
 - zero of any numeric type, for example, 0, 0L, 0.0, 0j.
 - any empty sequence, for example, '', (), [].
 - any empty mapping, for example, {}.
-- instances of user-defined classes, if the class defines a __nonzero__() or __len__() method, when that method returns the integer zero or bool value False. [1]
+- instances of user-defined classes, if the class defines a `__nonzero__()` or `__len__()` method, when that method returns the integer zero or bool value False. [1]
 
 All other values are considered true — so objects of many types are always true.
 
@@ -1259,6 +1259,7 @@ Operations and built-in functions that have a Boolean result always return 0 or 
 These are the Boolean operations, ordered by ascending priority:
 
 Operation	|	Result	|	Notes
+----|----|----
 x or y	|	if x is false, then y, else x		|	(1)
 x and y	|	if x is false, then x, else y		|	(2)
 not x	|	if x is false, then True, else False		|	(3)
@@ -1275,6 +1276,7 @@ Comparison operations are supported by all objects. They all have the same prior
 This table summarizes the comparison operations:
 
 Operation	|	Meaning	|	Notes
+----|----|----
 <	|	strictly less than	 |
 <=	|	less than or equal	 |
 \>	|	strictly greater than|	 
@@ -1291,16 +1293,16 @@ Notes:
 
 Objects of different types, except different numeric types and different string types, never compare equal; such objects are ordered consistently but arbitrarily (so that sorting a heterogeneous array yields a consistent result). Furthermore, some types (for example, file objects) support only a degenerate notion of comparison where any two objects of that type are unequal. Again, such objects are ordered arbitrarily but consistently. The <, <=, > and >= operators will raise a TypeError exception when any operand is a complex number.
 
-Non-identical instances of a class normally compare as non-equal unless the class defines the __eq__() method or the __cmp__() method.
+Non-identical instances of a class normally compare as non-equal unless the class defines the `__eq__()` method or the `__cmp__()` method.
 
-Instances of a class cannot be ordered with respect to other instances of the same class, or other types of object, unless the class defines either enough of the rich comparison methods (__lt__(), __le__(), __gt__(), and __ge__()) or the __cmp__() method.
+Instances of a class cannot be ordered with respect to other instances of the same class, or other types of object, unless the class defines either enough of the rich comparison methods `(__lt__(), __le__(), __gt__(), and __ge__())` or the `__cmp__()` method.
 
-CPython implementation detail: Objects of different types except numbers are ordered by their type names; objects of the same types that don’t support proper comparison are ordered by their address.
+> CPython implementation detail: Objects of different types except numbers are ordered by their type names; objects of the same types that don’t support proper comparison are ordered by their address.
 
 Two more operations with the same syntactic priority, in and not in, are supported only by sequence types (below).
 
 ### 5.4. Numeric Types — int, float, long, complex
-There are four distinct numeric types: plain integers, long integers, floating point numbers, and complex numbers. In addition, Booleans are a subtype of plain integers. Plain integers (also just called integers) are implemented using long in C, which gives them at least 32 bits of precision (sys.maxint is always set to the maximum plain integer value for the current platform, the minimum value is -sys.maxint - 1). Long integers have unlimited precision. Floating point numbers are usually implemented using double in C; information about the precision and internal representation of floating point numbers for the machine on which your program is running is available in sys.float_info. Complex numbers have a real and imaginary part, which are each a floating point number. To extract these parts from a complex number z, use z.real and z.imag. (The standard library includes additional numeric types, fractions that hold rationals, and decimal that hold floating-point numbers with user-definable precision.)
+There are four distinct numeric types: plain integers, long integers, floating point numbers, and complex numbers. In addition, Booleans are a subtype of plain integers. Plain integers (also just called integers) are implemented using long in C, which gives them at least 32 bits of precision (`sys.maxint` is always set to the maximum plain integer value for the current platform, the minimum value is `-sys.maxint - 1`). Long integers have unlimited precision. Floating point numbers are usually implemented using double in C; information about the precision and internal representation of floating point numbers for the machine on which your program is running is available in sys.float_info. Complex numbers have a real and imaginary part, which are each a floating point number. To extract these parts from a complex number z, use z.real and z.imag. (The standard library includes additional numeric types, fractions that hold rationals, and decimal that hold floating-point numbers with user-definable precision.)
 
 Numbers are created by numeric literals or as the result of built-in functions and operators. Unadorned integer literals (including binary, hex, and octal numbers) yield plain integers unless the value they denote is too large to be represented as a plain integer, in which case they yield a long integer. Integer literals with an 'L' or 'l' suffix yield long integers ('L' is preferred because 1l looks too much like eleven!). Numeric literals containing a decimal point or an exponent sign yield floating point numbers. Appending 'j' or 'J' to a numeric literal yields a complex number with a zero real part. A complex numeric literal is the sum of a real and an imaginary part.
 
@@ -1309,6 +1311,7 @@ Python fully supports mixed arithmetic: when a binary arithmetic operator has op
 All built-in numeric types support the following operations. See The power operator and later sections for the operators’ priorities.
 
 Operation	|	Result	|	Notes
+----|----|----
 x + y	|	sum of x and y	 |	
 x - y	|	difference of x and y	|	 
 x * y	|	product of x and y	 |	
@@ -1340,6 +1343,7 @@ Notes:
 All numbers.Real types (int, long, and float) also include the following operations:
 
 Operation	|	Result	Notes
+----|----
 math.trunc(x)	|	x truncated to Integral	 
 round(x[, n])	|	x rounded to n digits, rounding ties away from zero. If n is omitted, it defaults to 0.	 
 math.floor(x)	|	the greatest integral float <= x	 
@@ -1353,6 +1357,7 @@ The priorities of the binary bitwise operations are all lower than the numeric o
 This table lists the bitwise operations sorted in ascending priority:
 
 Operation	|	Result	|	Notes
+----|----|----
 x | y	|	bitwise or of x and y	 |	
 x ^ y	|	bitwise exclusive or of x and y	 |	
 x & y	|	bitwise and of x and y	 |	
@@ -1369,8 +1374,7 @@ Notes:
 #### 5.4.2. Additional Methods on Integer Types
 The integer types implement the numbers.Integral abstract base class. In addition, they provide one more method:
 
-int.bit_length()
-long.bit_length()
+- `int.bit_length()`; `long.bit_length()`
 Return the number of bits necessary to represent an integer in binary, excluding the sign and leading zeros:
 
 ~~~python
@@ -1396,12 +1400,12 @@ New in version 2.7.
 #### 5.4.3. Additional Methods on Float
 The float type implements the numbers.Real abstract base class. float also has the following additional methods.
 
-float.as_integer_ratio()
+##### float.as\_integer_ratio()
 Return a pair of integers whose ratio is exactly equal to the original float and with a positive denominator. Raises OverflowError on infinities and a ValueError on NaNs.
 
 New in version 2.6.
 
-float.is_integer()
+##### float.is_integer()
 Return True if the float instance is finite with integral value, and False otherwise:
 
 ~~~python
@@ -1415,12 +1419,12 @@ New in version 2.6.
 
 Two methods support conversion to and from hexadecimal strings. Since Python’s floats are stored internally as binary numbers, converting a float to or from a decimal string usually involves a small rounding error. In contrast, hexadecimal strings allow exact representation and specification of floating-point numbers. This can be useful when debugging, and in numerical work.
 
-float.hex()
+##### float.hex()
 Return a representation of a floating-point number as a hexadecimal string. For finite floating-point numbers, this representation will always include a leading 0x and a trailing p and exponent.
 
 New in version 2.6.
 
-float.fromhex(s)
+##### float.fromhex(s)
 Class method to return the float represented by a hexadecimal string s. The string s may have leading and trailing whitespace.
 
 New in version 2.6.
@@ -1429,16 +1433,17 @@ Note that float.hex() is an instance method, while float.fromhex() is a class me
 
 A hexadecimal string takes the form:
 
-[sign] ['0x'] integer ['.' fraction] ['p' exponent]
+`[sign] ['0x'] integer ['.' fraction] ['p' exponent]`{: .language-python}
+
 where the optional sign may by either + or -, integer and fraction are strings of hexadecimal digits, and exponent is a decimal integer with an optional leading sign. Case is not significant, and there must be at least one hexadecimal digit in either the integer or the fraction. This syntax is similar to the syntax specified in section 6.4.4.2 of the C99 standard, and also to the syntax used in Java 1.5 onwards. In particular, the output of float.hex() is usable as a hexadecimal floating-point literal in C or Java code, and hexadecimal strings produced by C’s %a format character or Java’s Double.toHexString are accepted by float.fromhex().
 
-Note that the exponent is written in decimal rather than hexadecimal, and that it gives the power of 2 by which to multiply the coefficient. For example, the hexadecimal string 0x3.a7p10 represents the floating-point number (3 + 10./16 + 7./16**2) * 2.0**10, or 3740.0:
+Note that the exponent is written in decimal rather than hexadecimal, and that it gives the power of 2 by which to multiply the coefficient. For example, the hexadecimal string 0x3.a7p10 represents the floating-point number (3 + 10./16 + 7./16\*\*2) * 2.0**10, or 3740.0:
 
 ~~~python
 >>>
 >>> float.fromhex('0x3.a7p10')
 3740.0
-Applying the reverse conversion to 3740.0 gives a different hexadecimal string representing the same number:
+# Applying the reverse conversion to 3740.0 gives a different hexadecimal string representing the same number:
 
 >>>
 >>> float.hex(3740.0)
@@ -1452,15 +1457,15 @@ Python supports a concept of iteration over containers. This is implemented usin
 
 One method needs to be defined for container objects to provide iteration support:
 
-container.__iter__()
+##### container.\_\_iter__()
 Return an iterator object. The object is required to support the iterator protocol described below. If a container supports different types of iteration, additional methods can be provided to specifically request iterators for those iteration types. (An example of an object supporting multiple forms of iteration would be a tree structure which supports both breadth-first and depth-first traversal.) This method corresponds to the tp_iter slot of the type structure for Python objects in the Python/C API.
 
 The iterator objects themselves are required to support the following two methods, which together form the iterator protocol:
 
-iterator.__iter__()
+##### iterator.\_\_iter__()
 Return the iterator object itself. This is required to allow both containers and iterators to be used with the for and in statements. This method corresponds to the tp_iter slot of the type structure for Python objects in the Python/C API.
 
-iterator.next()
+##### iterator.next()
 Return the next item from the container. If there are no further items, raise the StopIteration exception. This method corresponds to the tp_iternext slot of the type structure for Python objects in the Python/C API.
 
 Python defines several iterator objects to support iteration over general and specific sequence types, dictionaries, and other more specialized forms. The specific types are not important beyond their implementation of the iterator protocol.
@@ -1468,7 +1473,7 @@ Python defines several iterator objects to support iteration over general and sp
 The intention of the protocol is that once an iterator’s next() method raises StopIteration, it will continue to do so on subsequent calls. Implementations that do not obey this property are deemed broken. (This constraint was added in Python 2.3; in Python 2.2, various iterators are broken according to this rule.)
 
 #### 5.5.1. Generator Types
-Python’s generators provide a convenient way to implement the iterator protocol. If a container object’s __iter__() method is implemented as a generator, it will automatically return an iterator object (technically, a generator object) supplying the __iter__() and next() methods. More information about generators can be found in the documentation for the yield expression.
+Python’s generators provide a convenient way to implement the iterator protocol. If a container object’s `__iter__()` method is implemented as a generator, it will automatically return an iterator object (technically, a generator object) supplying the `__iter__()` and next() methods. More information about generators can be found in the documentation for the yield expression.
 
 ### 5.6. Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange
 There are seven sequence types: strings, Unicode strings, lists, tuples, bytearrays, buffers, and xrange objects.
@@ -1488,6 +1493,7 @@ Most sequence types support the following operations. The in and not in operatio
 This table lists the sequence operations sorted in ascending priority. In the table, s and t are sequences of the same type; n, i and j are integers:
 
 Operation	|	Result	|	Notes
+----|----|----
 x in s		|	True if an item of s is equal to x, else False	|	(1)
 x not in s		|	False if an item of s is equal to x, else True	|	(1)
 s + t		|	the concatenation of s and t	|	(6)
@@ -1505,39 +1511,30 @@ Sequence types also support comparisons. In particular, tuples and lists are com
 
 Notes:
 
-When s is a string or Unicode string object the in and not in operations act like a substring test. In Python versions before 2.3, x had to be a string of length 1. In Python 2.3 and beyond, x may be a string of any length.
+1. When s is a string or Unicode string object the in and not in operations act like a substring test. In Python versions before 2.3, x had to be a string of length 1. In Python 2.3 and beyond, x may be a string of any length.
+2. Values of n less than 0 are treated as 0 (which yields an empty sequence of the same type as s). Note that items in the sequence s are not copied; they are referenced multiple times. This often haunts new Python programmers; consider:
 
-Values of n less than 0 are treated as 0 (which yields an empty sequence of the same type as s). Note that items in the sequence s are not copied; they are referenced multiple times. This often haunts new Python programmers; consider:
-
-~~~python
->>>
->>> lists = [[]] * 3
->>> lists
-[[], [], []]
->>> lists[0].append(3)
->>> lists
-[[3], [3], [3]]
-~~~
+		lists = [[]] * 3
+		lists
+		# [[], [], []]
+		lists[0].append(3)
+		lists
+		# [[3], [3], [3]]
+	{: .language-python}
 What has happened is that [[]] is a one-element list containing an empty list, so all three elements of [[]] * 3 are references to this single empty list. Modifying any of the elements of lists modifies this single list. You can create a list of different lists this way:
 
-~~~python
->>>
->>> lists = [[] for i in range(3)]
->>> lists[0].append(3)
->>> lists[1].append(5)
->>> lists[2].append(7)
->>> lists
-[[3], [5], [7]]
-~~~
+		lists = [[] for i in range(3)]
+		lists[0].append(3)
+		lists[1].append(5)
+		lists[2].append(7)
+		lists
+		# [[3], [5], [7]]
+	{: .language-python}
 Further explanation is available in the FAQ entry How do I create a multidimensional list?.
-
-If i or j is negative, the index is relative to the end of the string: len(s) + i or len(s) + j is substituted. But note that -0 is still 0.
-
-The slice of s from i to j is defined as the sequence of items with index k such that i <= k < j. If i or j is greater than len(s), use len(s). If i is omitted or None, use 0. If j is omitted or None, use len(s). If i is greater than or equal to j, the slice is empty.
-
-The slice of s from i to j with step k is defined as the sequence of items with index x = i + n*k such that 0 <= n < (j-i)/k. In other words, the indices are i, i+k, i+2*k, i+3*k and so on, stopping when j is reached (but never including j). If i or j is greater than len(s), use len(s). If i or j are omitted or None, they become “end” values (which end depends on the sign of k). Note, k cannot be zero. If k is None, it is treated like 1.
-
-CPython implementation detail: If s and t are both strings, some Python implementations such as CPython can usually perform an in-place optimization for assignments of the form s = s + t or s += t. When applicable, this optimization makes quadratic run-time much less likely. This optimization is both version and implementation dependent. For performance sensitive code, it is preferable to use the str.join() method which assures consistent linear concatenation performance across versions and implementations.
+3. If i or j is negative, the index is relative to the end of the string: len(s) + i or len(s) + j is substituted. But note that -0 is still 0.
+4. The slice of s from i to j is defined as the sequence of items with index k such that i <= k < j. If i or j is greater than len(s), use len(s). If i is omitted or None, use 0. If j is omitted or None, use len(s). If i is greater than or equal to j, the slice is empty.
+5. The slice of s from i to j with step k is defined as the sequence of items with index x = i + n\*k such that 0 <= n < (j-i)/k. In other words, the indices are i, i+k, i+2\*k, i+3\*k and so on, stopping when j is reached (but never including j). If i or j is greater than len(s), use len(s). If i or j are omitted or None, they become “end” values (which end depends on the sign of k). Note, k cannot be zero. If k is None, it is treated like 1.
+6. CPython implementation detail: If s and t are both strings, some Python implementations such as CPython can usually perform an in-place optimization for assignments of the form s = s + t or s += t. When applicable, this optimization makes quadratic run-time much less likely. This optimization is both version and implementation dependent. For performance sensitive code, it is preferable to use the str.join() method which assures consistent linear concatenation performance across versions and implementations.
 
 Changed in version 2.4: Formerly, string concatenation never occurred in-place.
 
@@ -1546,7 +1543,7 @@ Below are listed the string methods which both 8-bit strings and Unicode objects
 
 In addition, Python’s strings support the sequence type methods described in the Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange section. To output formatted strings use template strings or the % operator described in the String Formatting Operations section. Also, see the re module for string functions based on regular expressions.
 
-str.capitalize()
+##### str.capitalize()
 Return a copy of the string with its first character capitalized and the rest lowercased.
 
 For 8-bit strings, this method is locale-dependent.
@@ -1559,7 +1556,7 @@ Changed in version 2.4: Support for the fillchar argument.
 str.count(sub[, start[, end]])
 Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
 
-str.decode([encoding[, errors]])
+##### str.decode([encoding[, errors]])
 Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding. errors may be given to set a different error handling scheme. The default is 'strict', meaning that encoding errors raise UnicodeError. Other possible values are 'ignore', 'replace' and any other name registered via codecs.register_error(), see section Codec Base Classes.
 
 New in version 2.2.
@@ -1568,7 +1565,7 @@ Changed in version 2.3: Support for other error handling schemes added.
 
 Changed in version 2.7: Support for keyword arguments added.
 
-str.encode([encoding[, errors]])
+##### str.encode([encoding[, errors]])
 Return an encoded version of the string. Default encoding is the current default string encoding. errors may be given to set a different error handling scheme. The default for errors is 'strict', meaning that encoding errors raise a UnicodeError. Other possible values are 'ignore', 'replace', 'xmlcharrefreplace', 'backslashreplace' and any other name registered via codecs.register_error(), see section Codec Base Classes. For a list of possible encodings, see section Standard Encodings.
 
 New in version 2.0.
@@ -1577,12 +1574,12 @@ Changed in version 2.3: Support for 'xmlcharrefreplace' and 'backslashreplace' a
 
 Changed in version 2.7: Support for keyword arguments added.
 
-str.endswith(suffix[, start[, end]])
+##### str.endswith(suffix[, start[, end]])
 Return True if the string ends with the specified suffix, otherwise return False. suffix can also be a tuple of suffixes to look for. With optional start, test beginning at that position. With optional end, stop comparing at that position.
 
 Changed in version 2.5: Accept tuples as suffix.
 
-str.expandtabs([tabsize])
+##### str.expandtabs([tabsize])
 Return a copy of the string where all tab characters are replaced by one or more spaces, depending on the current column and the given tab size. Tab positions occur every tabsize characters (default is 8, giving tab positions at columns 0, 8, 16 and so on). To expand the string, the current column is set to zero and the string is examined character by character. If the character is a tab (\t), one or more space characters are inserted in the result until the current column is equal to the next tab position. (The tab character itself is not copied.) If the character is a newline (\n) or return (\r), it is copied and the current column is reset to zero. Any other character is copied unchanged and the current column is incremented by one regardless of how the character is represented when printed.
 
 ~~~python
@@ -1593,10 +1590,10 @@ Return a copy of the string where all tab characters are replaced by one or more
 '01  012 0123    01234'
 ~~~
 
-str.find(sub[, start[, end]])
+##### str.find(sub[, start[, end]])
 Return the lowest index in the string where substring sub is found, such that sub is contained in the slice s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found.
 
-Note The find() method should be used only if you need to know the position of sub. To check if sub is a substring or not, use the in operator:
+> Note: The find() method should be used only if you need to know the position of sub. To check if sub is a substring or not, use the in operator:
 
 ~~~python
 >>>
@@ -1604,7 +1601,7 @@ Note The find() method should be used only if you need to know the position of s
 True
 ~~~
 
-str.format(*args, **kwargs)
+##### str.format(*args, **kwargs)
 Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
 
 ~~~python
@@ -1619,58 +1616,58 @@ This method of string formatting is the new standard in Python 3, and should be 
 
 New in version 2.6.
 
-str.index(sub[, start[, end]])
+##### str.index(sub[, start[, end]])
 Like find(), but raise ValueError when the substring is not found.
 
-str.isalnum()
+##### str.isalnum()
 Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.isalpha()
+##### str.isalpha()
 Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.isdigit()
+##### str.isdigit()
 Return true if all characters in the string are digits and there is at least one character, false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.islower()
+##### str.islower()
 Return true if all cased characters [4] in the string are lowercase and there is at least one cased character, false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.isspace()
+##### str.isspace()
 Return true if there are only whitespace characters in the string and there is at least one character, false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.istitle()
+##### str.istitle()
 Return true if the string is a titlecased string and there is at least one character, for example uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.isupper()
+##### str.isupper()
 Return true if all cased characters [4] in the string are uppercase and there is at least one cased character, false otherwise.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.join(iterable)
+##### str.join(iterable)
 Return a string which is the concatenation of the strings in the iterable iterable. The separator between elements is the string providing this method.
 
-str.ljust(width[, fillchar])
+##### str.ljust(width[, fillchar])
 Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).
 
 Changed in version 2.4: Support for the fillchar argument.
 
-str.lower()
+##### str.lower()
 Return a copy of the string with all the cased characters [4] converted to lowercase.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.lstrip([chars])
+##### str.lstrip([chars])
 Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix; rather, all combinations of its values are stripped:
 
 ~~~python
@@ -1682,36 +1679,36 @@ Return a copy of the string with leading characters removed. The chars argument 
 ~~~
 Changed in version 2.2.2: Support for the chars argument.
 
-str.partition(sep)
+##### str.partition(sep)
 Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing the string itself, followed by two empty strings.
 
 New in version 2.5.
 
-str.replace(old, new[, count])
+##### str.replace(old, new[, count])
 Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
 
-str.rfind(sub[, start[, end]])
+##### str.rfind(sub[, start[, end]])
 Return the highest index in the string where substring sub is found, such that sub is contained within s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 on failure.
 
-str.rindex(sub[, start[, end]])
+##### str.rindex(sub[, start[, end]])
 Like rfind() but raises ValueError when the substring sub is not found.
 
-str.rjust(width[, fillchar])
+##### str.rjust(width[, fillchar])
 Return the string right justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).
 
 Changed in version 2.4: Support for the fillchar argument.
 
-str.rpartition(sep)
+##### str.rpartition(sep)
 Split the string at the last occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing two empty strings, followed by the string itself.
 
 New in version 2.5.
 
-str.rsplit([sep[, maxsplit]])
+##### str.rsplit([sep[, maxsplit]])
 Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done, the rightmost ones. If sep is not specified or None, any whitespace string is a separator. Except for splitting from the right, rsplit() behaves like split() which is described in detail below.
 
 New in version 2.4.
 
-str.rstrip([chars])
+##### str.rstrip([chars])
 Return a copy of the string with trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a suffix; rather, all combinations of its values are stripped:
 
 ~~~python
@@ -1723,28 +1720,28 @@ Return a copy of the string with trailing characters removed. The chars argument
 ~~~
 Changed in version 2.2.2: Support for the chars argument.
 
-str.split([sep[, maxsplit]])
+##### str.split([sep[, maxsplit]])
 Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
 
 If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, '1,,2'.split(',') returns ['1', '', '2']). The sep argument may consist of multiple characters (for example, '1<>2<>3'.split('<>') returns ['1', '2', '3']). Splitting an empty string with a specified separator returns [''].
 
 If sep is not specified or is None, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a None separator returns [].
 
-For example, ' 1  2   3  '.split() returns ['1', '2', '3'], and '  1  2   3  '.split(None, 1) returns ['1', '2   3  '].
+For example, `' 1  2   3  '.split()` returns `['1', '2', '3']`, and `'  1  2   3  '.split(None, 1)` returns `['1', '2   3  ']`.
 
-str.splitlines([keepends])
+##### str.splitlines([keepends])
 Return a list of the lines in the string, breaking at line boundaries. This method uses the universal newlines approach to splitting lines. Line breaks are not included in the resulting list unless keepends is given and true.
 
-For example, 'ab c\n\nde fg\rkl\r\n'.splitlines() returns ['ab c', '', 'de fg', 'kl'], while the same call with splitlines(True) returns ['ab c\n', '\n', 'de fg\r', 'kl\r\n'].
+For example, `'ab c\n\nde fg\rkl\r\n'.splitlines()` returns `['ab c', '', 'de fg', 'kl']`, while the same call with splitlines(True) returns `['ab c\n', '\n', 'de fg\r', 'kl\r\n']`.
 
 Unlike split() when a delimiter string sep is given, this method returns an empty list for the empty string, and a terminal line break does not result in an extra line.
 
-str.startswith(prefix[, start[, end]])
+##### str.startswith(prefix[, start[, end]])
 Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
 
 Changed in version 2.5: Accept tuples as prefix.
 
-str.strip([chars])
+##### str.strip([chars])
 Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped:
 
 ~~~python
@@ -1756,12 +1753,12 @@ Return a copy of the string with the leading and trailing characters removed. Th
 ~~~
 Changed in version 2.2.2: Support for the chars argument.
 
-str.swapcase()
+##### str.swapcase()
 Return a copy of the string with uppercase characters converted to lowercase and vice versa.
 
 For 8-bit strings, this method is locale-dependent.
 
-str.title()
+##### str.title()
 Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.
 
 The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:
@@ -1787,7 +1784,7 @@ A workaround for apostrophes can be constructed using regular expressions:
 ~~~
 For 8-bit strings, this method is locale-dependent.
 
-str.translate(table[, deletechars])
+##### str.translate(table[, deletechars])
 Return a copy of the string where all characters occurring in the optional argument deletechars are removed, and the remaining characters have been mapped through the given translation table, which must be a string of length 256.
 
 You can use the maketrans() helper function in the string module to create a translation table. For string objects, set the table argument to None for translations that only delete characters:
@@ -1802,22 +1799,22 @@ New in version 2.6: Support for a None table argument.
 
 For Unicode objects, the translate() method does not accept the optional deletechars argument. Instead, it returns a copy of the s where all characters have been mapped through the given translation table which must be a mapping of Unicode ordinals to Unicode ordinals, Unicode strings or None. Unmapped characters are left untouched. Characters mapped to None are deleted. Note, a more flexible approach is to create a custom character mapping codec using the codecs module (see encodings.cp1251 for an example).
 
-str.upper()
+##### str.upper()
 Return a copy of the string with all the cased characters [4] converted to uppercase. Note that str.upper().isupper() might be False if s contains uncased characters or if the Unicode category of the resulting character(s) is not “Lu” (Letter, uppercase), but e.g. “Lt” (Letter, titlecase).
 
 For 8-bit strings, this method is locale-dependent.
 
-str.zfill(width)
+##### str.zfill(width)
 Return the numeric string left filled with zeros in a string of length width. A sign prefix is handled correctly. The original string is returned if width is less than or equal to len(s).
 
 New in version 2.2.2.
 
 The following methods are present only on unicode objects:
 
-unicode.isnumeric()
+##### unicode.isnumeric()
 Return True if there are only numeric characters in S, False otherwise. Numeric characters include digit characters, and all characters that have the Unicode numeric value property, e.g. U+2155, VULGAR FRACTION ONE FIFTH.
 
-unicode.isdecimal()
+##### unicode.isdecimal()
 Return True if there are only decimal characters in S, False otherwise. Decimal characters include digit characters, and all characters that can be used to form decimal-radix numbers, e.g. U+0660, ARABIC-INDIC DIGIT ZERO.
 
 #### 5.6.2. String Formatting Operations
@@ -1827,13 +1824,14 @@ If format requires a single argument, values may be a single non-tuple object. [
 
 A conversion specifier contains two or more characters and has the following components, which must occur in this order:
 
-The '%' character, which marks the start of the specifier.
-Mapping key (optional), consisting of a parenthesised sequence of characters (for example, (somename)).
-Conversion flags (optional), which affect the result of some conversion types.
+1. The '%' character, which marks the start of the specifier.
+1. Mapping key (optional), consisting of a parenthesised sequence of characters (for example, (somename)).
+1. Conversion flags (optional), which affect the result of some conversion types.
 Minimum field width (optional). If specified as an '*' (asterisk), the actual width is read from the next element of the tuple in values, and the object to convert comes after the minimum field width and optional precision.
-Precision (optional), given as a '.' (dot) followed by the precision. If specified as '*' (an asterisk), the actual width is read from the next element of the tuple in values, and the value to convert comes after the precision.
-Length modifier (optional).
-Conversion type.
+1. Precision (optional), given as a '.' (dot) followed by the precision. If specified as '*' (an asterisk), the actual width is read from the next element of the tuple in values, and the value to convert comes after the precision.
+1. Length modifier (optional).
+1. Conversion type.
+
 When the right argument is a dictionary (or other mapping type), then the formats in the string must include a parenthesised mapping key into that dictionary inserted immediately after the '%' character. The mapping key selects the value to be formatted from the mapping. For example:
 
 ~~~python
@@ -1846,60 +1844,54 @@ In this case no * specifiers may occur in a format (since they require a sequent
 
 The conversion flag characters are:
 
-Flag	Meaning
-'#'	The value conversion will use the “alternate form” (where defined below).
-'0'	The conversion will be zero padded for numeric values.
-'-'	The converted value is left adjusted (overrides the '0' conversion if both are given).
-' '	(a space) A blank should be left before a positive number (or empty string) produced by a signed conversion.
-'+'	A sign character ('+' or '-') will precede the conversion (overrides a “space” flag).
+Flag	|	Meaning
+-----|-----
+'#'	|	The value conversion will use the “alternate form” (where defined below).
+'0'	|	The conversion will be zero padded for numeric values.
+'-'	|	The converted value is left adjusted (overrides the '0' conversion if both are given).
+' '	|	(a space) A blank should be left before a positive number (or empty string) produced by a signed conversion.
+'+'	|	A sign character ('+' or '-') will precede the conversion (overrides a “space” flag).
+
 A length modifier (h, l, or L) may be present, but is ignored as it is not necessary for Python – so e.g. %ld is identical to %d.
 
 The conversion types are:
 
-Conversion	Meaning	Notes
-'d'	Signed integer decimal.	 
-'i'	Signed integer decimal.	 
-'o'	Signed octal value.	(1)
-'u'	Obsolete type – it is identical to 'd'.	(7)
-'x'	Signed hexadecimal (lowercase).	(2)
-'X'	Signed hexadecimal (uppercase).	(2)
-'e'	Floating point exponential format (lowercase).	(3)
-'E'	Floating point exponential format (uppercase).	(3)
-'f'	Floating point decimal format.	(3)
-'F'	Floating point decimal format.	(3)
-'g'	Floating point format. Uses lowercase exponential format if exponent is less than -4 or not less than precision, decimal format otherwise.	(4)
-'G'	Floating point format. Uses uppercase exponential format if exponent is less than -4 or not less than precision, decimal format otherwise.	(4)
-'c'	Single character (accepts integer or single character string).	 
-'r'	String (converts any Python object using repr()).	(5)
-'s'	String (converts any Python object using str()).	(6)
-'%'	No argument is converted, results in a '%' character in the result.	 
+Conversion	|	Meaning	|	Notes
+----|-----|-----
+'d'	|	Signed integer decimal.	 |	
+'i'	|	Signed integer decimal.	 |	
+'o'	|	Signed octal value.	|	(1)
+'u'	|	Obsolete type – it is identical to 'd'.	|	(7)
+'x'	|	Signed hexadecimal (lowercase).	|	(2)
+'X'	|	Signed hexadecimal (uppercase).	|	(2)
+'e'	|	Floating point exponential format (lowercase).	|	(3)
+'E'	|	Floating point exponential format (uppercase).	|	(3)
+'f'	|	Floating point decimal format.	|	(3)
+'F'	|	Floating point decimal format.	|	(3)
+'g'	|	Floating point format. Uses lowercase exponential format if exponent is less than -4 or not less than precision, decimal format otherwise.	|	(4)
+'G'	|	Floating point format. Uses uppercase exponential format if exponent is less than -4 or not less than precision, decimal format otherwise.	|	(4)
+'c'	|	Single character (accepts integer or single character string).|		 
+'r'	|	String (converts any Python object using repr()).	|	(5)
+'s'	|	String (converts any Python object using str()).	|	(6)
+'%'	|	No argument is converted, results in a '%' character in the result.	 |	
+
 Notes:
 
-The alternate form causes a leading zero ('0') to be inserted between left-hand padding and the formatting of the number if the leading character of the result is not already a zero.
-
-The alternate form causes a leading '0x' or '0X' (depending on whether the 'x' or 'X' format was used) to be inserted between left-hand padding and the formatting of the number if the leading character of the result is not already a zero.
-
-The alternate form causes the result to always contain a decimal point, even if no digits follow it.
-
-The precision determines the number of digits after the decimal point and defaults to 6.
-
-The alternate form causes the result to always contain a decimal point, and trailing zeroes are not removed as they would otherwise be.
-
+1. The alternate form causes a leading zero ('0') to be inserted between left-hand padding and the formatting of the number if the leading character of the result is not already a zero.
+2. The alternate form causes a leading '0x' or '0X' (depending on whether the 'x' or 'X' format was used) to be inserted between left-hand padding and the formatting of the number if the leading character of the result is not already a zero.
+3. The alternate form causes the result to always contain a decimal point, even if no digits follow it.  
+   The precision determines the number of digits after the decimal point and defaults to 6.
+4. The alternate form causes the result to always contain a decimal point, and trailing zeroes are not removed as they would otherwise be.  
 The precision determines the number of significant digits before and after the decimal point and defaults to 6.
-
-The %r conversion was added in Python 2.0.
-
+5. The %r conversion was added in Python 2.0.  
 The precision determines the maximal number of characters used.
-
-If the object or format provided is a unicode string, the resulting string will also be unicode.
-
+6. If the object or format provided is a unicode string, the resulting string will also be unicode.  
 The precision determines the maximal number of characters used.
+7. See PEP 237.
 
-See PEP 237.
+Since Python strings have an explicit length, `%s` conversions do not assume that `'\0'` is the end of the string.
 
-Since Python strings have an explicit length, %s conversions do not assume that '\0' is the end of the string.
-
-Changed in version 2.7: %f conversions for numbers whose absolute value is over 1e50 are no longer replaced by %g conversions.
+Changed in version 2.7: `%f` conversions for numbers whose absolute value is over 1e50 are no longer replaced by `%g` conversions.
 
 Additional string operations are defined in standard modules string and re.
 
@@ -1911,61 +1903,44 @@ XRange objects have very little behavior: they only support indexing, iteration,
 #### 5.6.4. Mutable Sequence Types
 List and bytearray objects support additional operations that allow in-place modification of the object. Other mutable sequence types (when added to the language) should also support these operations. Strings and tuples are immutable sequence types: such objects cannot be modified once created. The following operations are defined on mutable sequence types (where x is an arbitrary object):
 
-Operation	Result	Notes
-s[i] = x	item i of s is replaced by x	 
-s[i:j] = t	slice of s from i to j is replaced by the contents of the iterable t	 
-del s[i:j]	same as s[i:j] = []	 
-s[i:j:k] = t	the elements of s[i:j:k] are replaced by those of t	(1)
-del s[i:j:k]	removes the elements of s[i:j:k] from the list	 
-s.append(x)	same as s[len(s):len(s)] = [x]	(2)
-s.extend(x) or s += t	for the most part the same as s[len(s):len(s)] = x	(3)
-s *= n	updates s with its contents repeated n times	(11)
-s.count(x)	return number of i‘s for which s[i] == x	 
-s.index(x[, i[, j]])	return smallest k such that s[k] == x and i <= k < j	(4)
-s.insert(i, x)	same as s[i:i] = [x]	(5)
-s.pop([i])	same as x = s[i]; del s[i]; return x	(6)
-s.remove(x)	same as del s[s.index(x)]	(4)
-s.reverse()	reverses the items of s in place	(7)
-s.sort([cmp[, key[, reverse]]])	sort the items of s in place	(7)(8)(9)(10)
+Operation	|	Result	|	Notes
+s[i] = x	|	item i of s is replaced by x	|	 
+s[i:j] = t	|	slice of s from i to j is replaced by the contents of the iterable t|		 
+del s[i:j]	|	same as s[i:j] = []	 |	
+s[i:j:k] = t 	|		the elements of s[i:j:k] are replaced by those of t	|	(1)
+del s[i:j:k]	|		removes the elements of s[i:j:k] from the list	|	 
+s.append(x)		|	same as s[len(s):len(s)] = [x]	|	(2)
+s.extend(x) or s += t	|	for the most part the same as s[len(s):len(s)] = x	|	(3)
+s *= n	|	updates s with its contents repeated n times	|	(11)
+s.count(x)	|	return number of i‘s for which s[i] == x	|	 
+s.index(x[, i[, j]])	|	return smallest k such that s[k] == x and i <= k < j	|	(4)
+s.insert(i, x)	|	same as s[i:i] = [x]	|	(5)
+s.pop([i])	|	same as x = s[i]; del s[i]; return x	|	(6)
+s.remove(x)	|	same as del s[s.index(x)]	|	(4)
+s.reverse()	|	reverses the items of s in place	|	(7)
+s.sort([cmp[, key[, reverse]]])	|	sort the items of s in place	|	(7)(8)(9)(10)
+
 Notes:
 
-t must have the same length as the slice it is replacing.
-
-The C implementation of Python has historically accepted multiple parameters and implicitly joined them into a tuple; this no longer works in Python 2.0. Use of this misfeature has been deprecated since Python 1.4.
-
-x can be any iterable object.
-
-Raises ValueError when x is not found in s. When a negative index is passed as the second or third parameter to the index() method, the list length is added, as for slice indices. If it is still negative, it is truncated to zero, as for slice indices.
-
+1. t must have the same length as the slice it is replacing.
+2. The C implementation of Python has historically accepted multiple parameters and implicitly joined them into a tuple; this no longer works in Python 2.0. Use of this misfeature has been deprecated since Python 1.4.
+3. x can be any iterable object.
+4. Raises ValueError when x is not found in s. When a negative index is passed as the second or third parameter to the index() method, the list length is added, as for slice indices. If it is still negative, it is truncated to zero, as for slice indices.  
 Changed in version 2.3: Previously, index() didn’t have arguments for specifying start and stop positions.
-
-When a negative index is passed as the first parameter to the insert() method, the list length is added, as for slice indices. If it is still negative, it is truncated to zero, as for slice indices.
-
+5. When a negative index is passed as the first parameter to the insert() method, the list length is added, as for slice indices. If it is still negative, it is truncated to zero, as for slice indices.  
 Changed in version 2.3: Previously, all negative indices were truncated to zero.
-
-The pop() method’s optional argument i defaults to -1, so that by default the last item is removed and returned.
-
-The sort() and reverse() methods modify the list in place for economy of space when sorting or reversing a large list. To remind you that they operate by side effect, they don’t return the sorted or reversed list.
-
-The sort() method takes optional arguments for controlling the comparisons.
-
-cmp specifies a custom comparison function of two arguments (list items) which should return a negative, zero or positive number depending on whether the first argument is considered smaller than, equal to, or larger than the second argument: cmp=lambda x,y: cmp(x.lower(), y.lower()). The default value is None.
-
-key specifies a function of one argument that is used to extract a comparison key from each list element: key=str.lower. The default value is None.
-
-reverse is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.
-
-In general, the key and reverse conversion processes are much faster than specifying an equivalent cmp function. This is because cmp is called multiple times for each list element while key and reverse touch each element only once. Use functools.cmp_to_key() to convert an old-style cmp function to a key function.
-
-Changed in version 2.3: Support for None as an equivalent to omitting cmp was added.
-
-Changed in version 2.4: Support for key and reverse was added.
-
-Starting with Python 2.3, the sort() method is guaranteed to be stable. A sort is stable if it guarantees not to change the relative order of elements that compare equal — this is helpful for sorting in multiple passes (for example, sort by department, then by salary grade).
-
-CPython implementation detail: While a list is being sorted, the effect of attempting to mutate, or even inspect, the list is undefined. The C implementation of Python 2.3 and newer makes the list appear empty for the duration, and raises ValueError if it can detect that the list has been mutated during a sort.
-
-The value n is an integer, or an object implementing __index__(). Zero and negative values of n clear the sequence. Items in the sequence are not copied; they are referenced multiple times, as explained for s * n under Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange.
+6. The pop() method’s optional argument i defaults to -1, so that by default the last item is removed and returned.
+7. The sort() and reverse() methods modify the list in place for economy of space when sorting or reversing a large list. To remind you that they operate by side effect, they don’t return the sorted or reversed list.
+8. The sort() method takes optional arguments for controlling the comparisons.  
+cmp specifies a custom comparison function of two arguments (list items) which should return a negative, zero or positive number depending on whether the first argument is considered smaller than, equal to, or larger than the second argument: cmp=lambda x,y: cmp(x.lower(), y.lower()). The default value is None.  
+key specifies a function of one argument that is used to extract a comparison key from each list element: key=str.lower. The default value is None.  
+reverse is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.  
+In general, the key and reverse conversion processes are much faster than specifying an equivalent cmp function. This is because cmp is called multiple times for each list element while key and reverse touch each element only once. Use functools.cmp\_to_key() to convert an old-style cmp function to a key function.  
+Changed in version 2.3: Support for None as an equivalent to omitting cmp was added.  
+Changed in version 2.4: Support for key and reverse was added.  
+9. Starting with Python 2.3, the sort() method is guaranteed to be stable. A sort is stable if it guarantees not to change the relative order of elements that compare equal — this is helpful for sorting in multiple passes (for example, sort by department, then by salary grade).
+10. CPython implementation detail: While a list is being sorted, the effect of attempting to mutate, or even inspect, the list is undefined. The C implementation of Python 2.3 and newer makes the list appear empty for the duration, and raises ValueError if it can detect that the list has been mutated during a sort.
+11. The value n is an integer, or an object implementing \_\_index__(). Zero and negative values of n clear the sequence. Items in the sequence are not copied; they are referenced multiple times, as explained for s * n under Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange.
 
 ### 5.7. Set Types — set, frozenset
 A set object is an unordered collection of distinct hashable objects. Common uses include membership testing, removing duplicates from a sequence, and computing mathematical operations such as intersection, union, difference, and symmetric difference. (For other containers see the built in dict, list, and tuple classes, and the collections module.)
@@ -1980,63 +1955,59 @@ As of Python 2.7, non-empty sets (not frozensets) can be created by placing a co
 
 The constructors for both classes work the same:
 
+~~~python
 class set([iterable])
 class frozenset([iterable])
+~~~
 Return a new set or frozenset object whose elements are taken from iterable. The elements of a set must be hashable. To represent sets of sets, the inner sets must be frozenset objects. If iterable is not specified, a new empty set is returned.
 
 Instances of set and frozenset provide the following operations:
 
-len(s)
+##### len(s)
 Return the cardinality of set s.
 
-x in s
+##### x in s
 Test x for membership in s.
 
-x not in s
+##### x not in s
 Test x for non-membership in s.
 
-isdisjoint(other)
+##### isdisjoint(other)
 Return True if the set has no elements in common with other. Sets are disjoint if and only if their intersection is the empty set.
 
 New in version 2.6.
 
-issubset(other)
-set <= other
+##### issubset(other)
+- `set <= other`  
 Test whether every element in the set is in other.
-
-set < other
+- `set < other`  
 Test whether the set is a proper subset of other, that is, set <= other and set != other.
 
-issuperset(other)
-set >= other
+##### issuperset(other)
+- `set >= other` 
 Test whether every element in other is in the set.
-
-set > other
+- `set > other`  
 Test whether the set is a proper superset of other, that is, set >= other and set != other.
 
-union(other, ...)
-set | other | ...
+##### union(other, ...), set | other | ...
 Return a new set with elements from the set and all others.
 
 Changed in version 2.6: Accepts multiple input iterables.
 
-intersection(other, ...)
-set & other & ...
+##### intersection(other, ...), set & other & ...
 Return a new set with elements common to the set and all others.
 
 Changed in version 2.6: Accepts multiple input iterables.
 
-difference(other, ...)
-set - other - ...
+##### difference(other, ...), set - other - ...
 Return a new set with elements in the set that are not in the others.
 
 Changed in version 2.6: Accepts multiple input iterables.
 
-symmetric_difference(other)
-set ^ other
+##### symmetric_difference(other), set ^ other
 Return a new set with elements in either the set or other but not both.
 
-copy()
+##### copy()
 Return a new set with a shallow copy of s.
 
 Note, the non-operator versions of union(), intersection(), difference(), and symmetric_difference(), issubset(), and issuperset() methods will accept any iterable as an argument. In contrast, their operator based counterparts require their arguments to be sets. This precludes error-prone constructions like set('abc') & 'cbs' in favor of the more readable set('abc').intersection('cbs').
@@ -2045,59 +2016,55 @@ Both set and frozenset support set to set comparisons. Two sets are equal if and
 
 Instances of set are compared to instances of frozenset based on their members. For example, set('abc') == frozenset('abc') returns True and so does set('abc') in set([frozenset('abc')]).
 
-The subset and equality comparisons do not generalize to a total ordering function. For example, any two non-empty disjoint sets are not equal and are not subsets of each other, so all of the following return False: a<b, a==b, or a>b. Accordingly, sets do not implement the __cmp__() method.
+The subset and equality comparisons do not generalize to a total ordering function. For example, any two non-empty disjoint sets are not equal and are not subsets of each other, so all of the following return False: a<b, a==b, or a>b. Accordingly, sets do not implement the \_\_cmp__() method.
 
 Since sets only define partial ordering (subset relationships), the output of the list.sort() method is undefined for lists of sets.
 
 Set elements, like dictionary keys, must be hashable.
 
-Binary operations that mix set instances with frozenset return the type of the first operand. For example: frozenset('ab') | set('bc') returns an instance of frozenset.
+Binary operations that mix set instances with frozenset return the type of the first operand. For example: `frozenset('ab') | set('bc')` returns an instance of frozenset.
 
 The following table lists operations available for set that do not apply to immutable instances of frozenset:
 
-update(other, ...)
-set |= other | ...
+##### update(other, ...), set |= other | ...
 Update the set, adding elements from all others.
 
 Changed in version 2.6: Accepts multiple input iterables.
 
-intersection_update(other, ...)
-set &= other & ...
+##### intersection_update(other, ...), set &= other & ...
 Update the set, keeping only elements found in it and all others.
 
 Changed in version 2.6: Accepts multiple input iterables.
 
-difference_update(other, ...)
-set -= other | ...
+##### difference_update(other, ...); set -= other | ...
 Update the set, removing elements found in others.
 
 Changed in version 2.6: Accepts multiple input iterables.
 
-symmetric_difference_update(other)
-set ^= other
+##### symmetric\_difference_update(other); set ^= other
 Update the set, keeping only elements found in either set, but not in both.
 
-add(elem)
+##### add(elem)
 Add element elem to the set.
 
-remove(elem)
+##### remove(elem)
 Remove element elem from the set. Raises KeyError if elem is not contained in the set.
 
-discard(elem)
+##### discard(elem)
 Remove element elem from the set if it is present.
 
-pop()
+##### pop()
 Remove and return an arbitrary element from the set. Raises KeyError if the set is empty.
 
-clear()
+##### clear()
 Remove all elements from the set.
 
-Note, the non-operator versions of the update(), intersection_update(), difference_update(), and symmetric_difference_update() methods will accept any iterable as an argument.
+Note, the non-operator versions of the update(), intersection\_update(), difference\_update(), and symmetric\_difference_update() methods will accept any iterable as an argument.
 
-Note, the elem argument to the __contains__(), remove(), and discard() methods may be a set. To support searching for an equivalent frozenset, the elem set is temporarily mutated during the search and then restored. During the search, the elem set should not be read or mutated since it does not have a meaningful value.
+Note, the elem argument to the \_\_contains__(), remove(), and discard() methods may be a set. To support searching for an equivalent frozenset, the elem set is temporarily mutated during the search and then restored. During the search, the elem set should not be read or mutated since it does not have a meaningful value.
 
-See also
-Comparison to the built-in set types
+> See also:  
+[Comparison to the built-in set types](https://docs.python.org/2/library/sets.html#comparison-to-builtin-set)  
 Differences between the sets module and the built-in set types.
 
 ### 5.8. Mapping Types — dict
@@ -2107,9 +2074,11 @@ A dictionary’s keys are almost arbitrary values. Values that are not hashable,
 
 Dictionaries can be created by placing a comma-separated list of key: value pairs within braces, for example: {'jack': 4098, 'sjoerd': 4127} or {4098: 'jack', 4127: 'sjoerd'}, or by the dict constructor.
 
+~~~python
 class dict(**kwarg)
 class dict(mapping, **kwarg)
 class dict(iterable, **kwarg)
+~~~
 Return a new dictionary initialized from an optional positional argument and a possibly empty set of keyword arguments.
 
 If no positional argument is given, an empty dictionary is created. If a positional argument is given and it is a mapping object, a dictionary is created with the same key-value pairs as the mapping object. Otherwise, the positional argument must be an iterable object. Each item in the iterable must itself be an iterable with exactly two objects. The first object of each item becomes a key in the new dictionary, and the second object the corresponding value. If a key occurs more than once, the last value for that key becomes the corresponding value in the new dictionary.
@@ -2137,10 +2106,10 @@ Changed in version 2.3: Support for building a dictionary from keyword arguments
 
 These are the operations that dictionaries support (and therefore, custom mapping types should support too):
 
-len(d)
+##### len(d)
 Return the number of items in the dictionary d.
 
-d[key]
+##### d[key]
 Return the item of d with key key. Raises a KeyError if key is not in the map.
 
 If a subclass of dict defines a method __missing__() and key is not present, the d[key] operation calls that method with the key key as argument. The d[key] operation then returns or raises whatever is returned or raised by the __missing__(key) call. No other operations or methods invoke __missing__(). If __missing__() is not defined, KeyError is raised. __missing__() must be a method; it cannot be an instance variable:
@@ -2161,109 +2130,109 @@ The example above shows part of the implementation of collections.Counter. A dif
 
 New in version 2.5: Recognition of __missing__ methods of dict subclasses.
 
-d[key] = value
+##### d[key] = value
 Set d[key] to value.
 
-del d[key]
+##### del d[key]
 Remove d[key] from d. Raises a KeyError if key is not in the map.
 
-key in d
+##### key in d
 Return True if d has a key key, else False.
 
 New in version 2.2.
 
-key not in d
+##### key not in d
 Equivalent to not key in d.
 
 New in version 2.2.
 
-iter(d)
+##### iter(d)
 Return an iterator over the keys of the dictionary. This is a shortcut for iterkeys().
 
-clear()
+##### clear()
 Remove all items from the dictionary.
 
-copy()
+##### copy()
 Return a shallow copy of the dictionary.
 
-fromkeys(seq[, value])
+##### fromkeys(seq[, value])
 Create a new dictionary with keys from seq and values set to value.
 
 fromkeys() is a class method that returns a new dictionary. value defaults to None.
 
 New in version 2.3.
 
-get(key[, default])
+##### get(key[, default])
 Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
 
-has_key(key)
+##### has_key(key)
 Test for the presence of key in the dictionary. has_key() is deprecated in favor of key in d.
 
-items()
+##### items()
 Return a copy of the dictionary’s list of (key, value) pairs.
 
-CPython implementation detail: Keys and values are listed in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions.
+> CPython implementation detail: Keys and values are listed in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions.
 
 If items(), keys(), values(), iteritems(), iterkeys(), and itervalues() are called with no intervening modifications to the dictionary, the lists will directly correspond. This allows the creation of (value, key) pairs using zip(): pairs = zip(d.values(), d.keys()). The same relationship holds for the iterkeys() and itervalues() methods: pairs = zip(d.itervalues(), d.iterkeys()) provides the same value for pairs. Another way to create the same list is pairs = [(v, k) for (k, v) in d.iteritems()].
 
-iteritems()
+##### iteritems()
 Return an iterator over the dictionary’s (key, value) pairs. See the note for dict.items().
 
 Using iteritems() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
 
 New in version 2.2.
 
-iterkeys()
+##### iterkeys()
 Return an iterator over the dictionary’s keys. See the note for dict.items().
 
 Using iterkeys() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
 
 New in version 2.2.
 
-itervalues()
+##### itervalues()
 Return an iterator over the dictionary’s values. See the note for dict.items().
 
 Using itervalues() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
 
 New in version 2.2.
 
-keys()
+##### keys()
 Return a copy of the dictionary’s list of keys. See the note for dict.items().
 
-pop(key[, default])
+##### pop(key[, default])
 If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
 
 New in version 2.3.
 
-popitem()
+##### popitem()
 Remove and return an arbitrary (key, value) pair from the dictionary.
 
 popitem() is useful to destructively iterate over a dictionary, as often used in set algorithms. If the dictionary is empty, calling popitem() raises a KeyError.
 
-setdefault(key[, default])
+##### setdefault(key[, default])
 If key is in the dictionary, return its value. If not, insert key with a value of default and return default. default defaults to None.
 
-update([other])
+##### update([other])
 Update the dictionary with the key/value pairs from other, overwriting existing keys. Return None.
 
 update() accepts either another dictionary object or an iterable of key/value pairs (as tuples or other iterables of length two). If keyword arguments are specified, the dictionary is then updated with those key/value pairs: d.update(red=1, blue=2).
 
 Changed in version 2.4: Allowed the argument to be an iterable of key/value pairs and allowed keyword arguments.
 
-values()
+##### values()
 Return a copy of the dictionary’s list of values. See the note for dict.items().
 
-viewitems()
+##### viewitems()
 Return a new view of the dictionary’s items ((key, value) pairs). See below for documentation of view objects.
 
 New in version 2.7.
 
-viewkeys()
+##### viewkeys()
 Return a new view of the dictionary’s keys. See below for documentation of view objects.
 
 New in version 2.7.
 
-viewvalues()
+##### viewvalues()
 Return a new view of the dictionary’s values. See below for documentation of view objects.
 
 New in version 2.7.
@@ -2271,35 +2240,35 @@ New in version 2.7.
 Dictionaries compare equal if and only if they have the same (key, value) pairs.
 
 #### 5.8.1. Dictionary view objects
-The objects returned by dict.viewkeys(), dict.viewvalues() and dict.viewitems() are view objects. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.
+The objects returned by `dict.viewkeys()`, `dict.viewvalues()` and `dict.viewitems()` are view objects. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.
 
 Dictionary views can be iterated over to yield their respective data, and support membership tests:
 
-len(dictview)
+##### len(dictview)
 Return the number of entries in the dictionary.
 
-iter(dictview)
+##### iter(dictview)
 Return an iterator over the keys, values or items (represented as tuples of (key, value)) in the dictionary.
 
 Keys and values are iterated over in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions. If keys, values and items views are iterated over with no intervening modifications to the dictionary, the order of items will directly correspond. This allows the creation of (value, key) pairs using zip(): pairs = zip(d.values(), d.keys()). Another way to create the same list is pairs = [(v, k) for (k, v) in d.items()].
 
 Iterating views while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
 
-x in dictview
+##### x in dictview
 Return True if x is in the underlying dictionary’s keys, values or items (in the latter case, x should be a (key, value) tuple).
 
 Keys views are set-like since their entries are unique and hashable. If all values are hashable, so that (key, value) pairs are unique and hashable, then the items view is also set-like. (Values views are not treated as set-like since the entries are generally not unique.) Then these set operations are available (“other” refers either to another view or a set):
 
-dictview & other
+##### dictview & other
 Return the intersection of the dictview and the other object as a new set.
 
-dictview | other
+##### dictview | other
 Return the union of the dictview and the other object as a new set.
 
-dictview - other
+##### dictview - other
 Return the difference between the dictview and the other object (all elements in dictview that aren’t in other) as a new set.
 
-dictview ^ other
+##### dictview ^ other
 Return the symmetric difference (all elements either in dictview or other, but not in both) of the dictview and the other object as a new set.
 
 An example of dictionary view usage:
@@ -2341,16 +2310,18 @@ When a file operation fails for an I/O-related reason, the exception IOError is 
 
 Files have the following methods:
 
-file.close()
+##### file.close()
 Close the file. A closed file cannot be read or written any more. Any operation which requires that the file be open will raise a ValueError after the file has been closed. Calling close() more than once is allowed.
 
 As of Python 2.5, you can avoid having to call this method explicitly if you use the with statement. For example, the following code will automatically close f when the with block is exited:
 
+~~~python
 from __future__ import with_statement # This isn't required in Python 2.6
 
 with open("hello.txt") as f:
     for line in f:
         print line,
+~~~
 In older versions of Python, you would have needed to do this to get the same effect:
 
 ~~~python
@@ -2362,44 +2333,51 @@ finally:
     f.close()
 ~~~
 Note Not all “file-like” types in Python support use as a context manager for the with statement. If your code is intended to work with any file-like object, you can use the function contextlib.closing() instead of using the object directly.
-file.flush()
+
+##### file.flush()
 Flush the internal buffer, like stdio‘s fflush(). This may be a no-op on some file-like objects.
 
-Note flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
-file.fileno()
+> Note: flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
+
+##### file.fileno()
 Return the integer “file descriptor” that is used by the underlying implementation to request I/O operations from the operating system. This can be useful for other, lower level interfaces that use file descriptors, such as the fcntl module or os.read() and friends.
 
-Note File-like objects which do not have a real file descriptor should not provide this method!
-file.isatty()
+> Note: File-like objects which do not have a real file descriptor should not provide this method!
+
+##### file.isatty()
 Return True if the file is connected to a tty(-like) device, else False.
 
-Note If a file-like object is not associated with a real file, this method should not be implemented.
-file.next()
+> Note: If a file-like object is not associated with a real file, this method should not be implemented.
+
+##### file.next()
 A file object is its own iterator, for example iter(f) returns f (unless f is closed). When a file is used as an iterator, typically in a for loop (for example, for line in f: print line.strip()), the next() method is called repeatedly. This method returns the next input line, or raises StopIteration when EOF is hit when the file is open for reading (behavior is undefined when the file is open for writing). In order to make a for loop the most efficient way of looping over the lines of a file (a very common operation), the next() method uses a hidden read-ahead buffer. As a consequence of using a read-ahead buffer, combining next() with other file methods (like readline()) does not work right. However, using seek() to reposition the file to an absolute position will flush the read-ahead buffer.
 
 New in version 2.3.
 
-file.read([size])
+##### file.read([size])
 Read at most size bytes from the file (less if the read hits EOF before obtaining size bytes). If the size argument is negative or omitted, read all data until EOF is reached. The bytes are returned as a string object. An empty string is returned when EOF is encountered immediately. (For certain files, like ttys, it makes sense to continue reading after an EOF is hit.) Note that this method may call the underlying C function fread() more than once in an effort to acquire as close to size bytes as possible. Also note that when in non-blocking mode, less data than was requested may be returned, even if no size parameter was given.
 
-Note This function is simply a wrapper for the underlying fread() C function, and will behave the same in corner cases, such as whether the EOF value is cached.
-file.readline([size])
+> Note: This function is simply a wrapper for the underlying fread() C function, and will behave the same in corner cases, such as whether the EOF value is cached.
+
+##### file.readline([size])
 Read one entire line from the file. A trailing newline character is kept in the string (but may be absent when a file ends with an incomplete line). [6] If the size argument is present and non-negative, it is a maximum byte count (including the trailing newline) and an incomplete line may be returned. When size is not 0, an empty string is returned only when EOF is encountered immediately.
 
-Note Unlike stdio‘s fgets(), the returned string contains null characters ('\0') if they occurred in the input.
-file.readlines([sizehint])
+> Note: Unlike stdio‘s fgets(), the returned string contains null characters ('\0') if they occurred in the input.
+
+##### file.readlines([sizehint])
 Read until EOF using readline() and return a list containing the lines thus read. If the optional sizehint argument is present, instead of reading up to EOF, whole lines totalling approximately sizehint bytes (possibly after rounding up to an internal buffer size) are read. Objects implementing a file-like interface may choose to ignore sizehint if it cannot be implemented, or cannot be implemented efficiently.
 
-file.xreadlines()
+##### file.xreadlines()
 This method returns the same thing as iter(f).
 
 New in version 2.1.
 
-Deprecated since version 2.3: Use for line in file instead.
-file.seek(offset[, whence])
-Set the file’s current position, like stdio‘s fseek(). The whence argument is optional and defaults to os.SEEK_SET or 0 (absolute file positioning); other values are os.SEEK_CUR or 1 (seek relative to the current position) and os.SEEK_END or 2 (seek relative to the file’s end). There is no return value.
+> Deprecated since version 2.3: Use for line in file instead.
 
-For example, f.seek(2, os.SEEK_CUR) advances the position by two and f.seek(-3, os.SEEK_END) sets the position to the third to last.
+##### file.seek(offset[, whence])
+Set the file’s current position, like stdio‘s fseek(). The whence argument is optional and defaults to os.SEEK\_SET or 0 (absolute file positioning); other values are os.SEEK\_CUR or 1 (seek relative to the current position) and os.SEEK\_END or 2 (seek relative to the file’s end). There is no return value.
+
+For example, f.seek(2, os.SEEK\_CUR) advances the position by two and f.seek(-3, os.SEEK_END) sets the position to the third to last.
 
 Note that if the file is opened for appending (mode 'a' or 'a+'), any seek() operations will be undone at the next write. If the file is only opened for writing in append mode (mode 'a'), this method is essentially a no-op, but it remains useful for files opened in append mode with reading enabled (mode 'a+'). If the file is opened in text mode (without 'b'), only offsets returned by tell() are legal. Use of other offsets causes undefined behavior.
 
@@ -2407,56 +2385,60 @@ Note that not all file objects are seekable.
 
 Changed in version 2.6: Passing float values as offset has been deprecated.
 
-file.tell()
+##### file.tell()
 Return the file’s current position, like stdio‘s ftell().
 
 Note On Windows, tell() can return illegal values (after an fgets()) when reading files with Unix-style line-endings. Use binary mode ('rb') to circumvent this problem.
-file.truncate([size])
+
+##### file.truncate([size])
 Truncate the file’s size. If the optional size argument is present, the file is truncated to (at most) that size. The size defaults to the current position. The current file position is not changed. Note that if a specified size exceeds the file’s current size, the result is platform-dependent: possibilities include that the file may remain unchanged, increase to the specified size as if zero-filled, or increase to the specified size with undefined new content. Availability: Windows, many Unix variants.
 
-file.write(str)
+##### file.write(str)
 Write a string to the file. There is no return value. Due to buffering, the string may not actually show up in the file until the flush() or close() method is called.
 
-file.writelines(sequence)
+##### file.writelines(sequence)
 Write a sequence of strings to the file. The sequence can be any iterable object producing strings, typically a list of strings. There is no return value. (The name is intended to match readlines(); writelines() does not add line separators.)
 
 Files support the iterator protocol. Each iteration returns the same result as readline(), and iteration ends when the readline() method returns an empty string.
 
 File objects also offer a number of other interesting attributes. These are not required for file-like objects, but should be implemented if they make sense for the particular object.
 
-file.closed
+##### file.closed
 bool indicating the current state of the file object. This is a read-only attribute; the close() method changes the value. It may not be available on all file-like objects.
 
-file.encoding
+##### file.encoding
 The encoding that this file uses. When Unicode strings are written to a file, they will be converted to byte strings using this encoding. In addition, when the file is connected to a terminal, the attribute gives the encoding that the terminal is likely to use (that information might be incorrect if the user has misconfigured the terminal). The attribute is read-only and may not be present on all file-like objects. It may also be None, in which case the file uses the system default encoding for converting Unicode strings.
 
 New in version 2.3.
 
-file.errors
+##### file.errors
 The Unicode error handler used along with the encoding.
 
 New in version 2.6.
 
-file.mode
+##### file.mode
 The I/O mode for the file. If the file was created using the open() built-in function, this will be the value of the mode parameter. This is a read-only attribute and may not be present on all file-like objects.
 
-file.name
+##### file.name
 If the file object was created using open(), the name of the file. Otherwise, some string that indicates the source of the file object, of the form <...>. This is a read-only attribute and may not be present on all file-like objects.
 
-file.newlines
+##### file.newlines
 If Python was built with universal newlines enabled (the default) this read-only attribute exists, and for files opened in universal newline read mode it keeps track of the types of newlines encountered while reading the file. The values it can take are '\r', '\n', '\r\n', None (unknown, no newlines read yet) or a tuple containing all the newline types seen, to indicate that multiple newline conventions were encountered. For files not opened in universal newlines read mode the value of this attribute will be None.
 
-file.softspace
+##### file.softspace
 Boolean that indicates whether a space character needs to be printed before another value when using the print statement. Classes that are trying to simulate a file object should also have a writable softspace attribute, which should be initialized to zero. This will be automatic for most classes implemented in Python (care may be needed for objects that override attribute access); types implemented in C will have to provide a writable softspace attribute.
 
-Note This attribute is not used to control the print statement, but to allow the implementation of print to keep track of its internal state.
+> Note: This attribute is not used to control the print statement, but to allow the implementation of print to keep track of its internal state.
 
 ### 5.10. memoryview type
 New in version 2.7.
 
 memoryview objects allow Python code to access the internal data of an object that supports the buffer protocol without copying. Memory is generally interpreted as simple bytes.
 
+~~~python
 class memoryview(obj)
+~~~
+
 Create a memoryview that references obj. obj must support the buffer protocol. Built-in objects that support the buffer protocol include str and bytearray (but not unicode).
 
 A memoryview has the notion of an element, which is the atomic memory unit handled by the originating object obj. For many simple types such as str and bytearray, an element is a single byte, but other third-party types may expose larger elements.
@@ -2500,7 +2482,7 @@ Notice how the size of the memoryview object cannot be changed.
 
 memoryview has two methods:
 
-tobytes()
+##### tobytes()
 Return the data in the buffer as a bytestring (an object of class str).
 
 ~~~python
@@ -2519,22 +2501,22 @@ Return the data in the buffer as a list of integers.
 ~~~
 There are also several readonly attributes available:
 
-format
+##### format
 A string containing the format (in struct module style) for each element in the view. This defaults to 'B', a simple bytestring.
 
-itemsize
+##### itemsize
 The size in bytes of each element of the memoryview.
 
-shape
+##### shape
 A tuple of integers the length of ndim giving the shape of the memory as a N-dimensional array.
 
-ndim
+##### ndim
 An integer indicating how many dimensions of a multi-dimensional array the memory represents.
 
-strides
+##### strides
 A tuple of integers the length of ndim giving the size in bytes to access each element for each dimension of the array.
 
-readonly
+##### readonly
 A bool indicating whether the memory is read only.
 
 ### 5.11. Context Manager Types
@@ -2544,14 +2526,14 @@ Python’s with statement supports the concept of a runtime context defined by a
 
 The context management protocol consists of a pair of methods that need to be provided for a context manager object to define a runtime context:
 
-contextmanager.__enter__()
+##### contextmanager.\_\_enter__()
 Enter the runtime context and return either this object or another object related to the runtime context. The value returned by this method is bound to the identifier in the as clause of with statements using this context manager.
 
-An example of a context manager that returns itself is a file object. File objects return themselves from __enter__() to allow open() to be used as the context expression in a with statement.
+An example of a context manager that returns itself is a file object. File objects return themselves from \_\_enter__() to allow open() to be used as the context expression in a with statement.
 
 An example of a context manager that returns a related object is the one returned by decimal.localcontext(). These managers set the active decimal context to a copy of the original decimal context and then return the copy. This allows changes to be made to the current decimal context in the body of the with statement without affecting code outside the with statement.
 
-contextmanager.__exit__(exc_type, exc_val, exc_tb)
+##### contextmanager.\_\_exit\_\_(exc\_type, exc\_val, exc\_tb)
 Exit the runtime context and return a Boolean flag indicating if any exception that occurred should be suppressed. If an exception occurred while executing the body of the with statement, the arguments contain the exception type, value and traceback information. Otherwise, all three arguments are None.
 
 Returning a true value from this method will cause the with statement to suppress the exception and continue execution with the statement immediately following the with statement. Otherwise the exception continues propagating after this method has finished executing. Exceptions that occur during execution of this method will replace any exception that occurred in the body of the with statement.
@@ -2648,31 +2630,32 @@ See The standard type hierarchy for this information. It describes stack frame o
 ### 5.13. Special Attributes
 The implementation adds a few special read-only attributes to several object types, where they are relevant. Some of these are not reported by the dir() built-in function.
 
-object.__dict__
+##### object.\_\_dict__
 A dictionary or other mapping object used to store an object’s (writable) attributes.
 
-object.__methods__
-Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.
-object.__members__
-Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.
-instance.__class__
+##### object.\_\_methods__
+> Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.
+##### object.\_\_members__
+> Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.
+
+##### instance.\_\_class__
 The class to which a class instance belongs.
 
-class.__bases__
+##### class.\_\_bases__
 The tuple of base classes of a class object.
 
-class.__name__
+##### class.\_\_name__
 The name of the class or type.
 
 The following attributes are only supported by new-style classes.
 
-class.__mro__
+##### class.\_\_mro__
 This attribute is a tuple of classes that are considered when looking for base classes during method resolution.
 
-class.mro()
+##### class.mro()
 This method can be overridden by a metaclass to customize the method resolution order for its instances. It is called at class instantiation, and its result is stored in __mro__.
 
-class.__subclasses__()
+##### class.\_\_subclasses__()
 Each new-style class keeps a list of weak references to its immediate subclasses. This method returns a list of all those references still alive. Example:
 
 ~~~python
