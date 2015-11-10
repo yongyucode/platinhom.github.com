@@ -19,7 +19,7 @@ In addition to the standard library, there is a growing collection of several th
 1. Introduction
 2. [Built-in Functions](#BuildInFunc)
 3. [Non-essential Built-in Functions](#non-essential-built-in-functions)
-4. Built-in Constants
+4. [Built-in Constants](https://docs.python.org/2/library/constants.html)
 	1. Constants added by the site module
 5. [Built-in Types](#BuildInTypes)
 	1. Truth Value Testing
@@ -35,7 +35,7 @@ In addition to the standard library, there is a growing collection of several th
 	11. Context Manager Types
 	12. Other Built-in Types
 	13. Special Attributes
-6. Built-in Exceptions
+6. [Built-in Exceptions](https://docs.python.org/2/library/exceptions.html)
 	1. Exception hierarchy
 7. [String Services](https://docs.python.org/2/library/strings.html)
 	1. string — Common string operations
@@ -279,13 +279,13 @@ In addition to the standard library, there is a growing collection of several th
 	14. site — Site-specific configuration hook
 	15. user — User-specific configuration hook
 	16. fpectl — Floating point exception control
-29. Custom Python Interpreters
+29. [Custom Python Interpreters](https://docs.python.org/2/library/custominterp.html)
 	1. code — Interpreter base classes
 	2. codeop — Compile Python code
-30. Restricted Execution
+30. [Restricted Execution](https://docs.python.org/2/library/restricted.html)
 	1. rexec — Restricted execution framework
 	2. Bastion — Restricting access to objects
-31. [Importing Modules]()
+31. [Importing Modules](https://docs.python.org/2/library/modules.html)
 	1. imp — Access the import internals
 	2. importlib – Convenience wrappers for \_\_import\_\_()
 	3. imputil — Import utilities
