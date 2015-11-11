@@ -32,7 +32,8 @@ layout: page_small
 - [SmallPDF](http://smallpdf.com/cn/) ; [RISM-MOL](https://compchemmpi.wikispaces.com/RISM-MOL)
 - [Linux指令查询](http://man.linuxde.net/) ; [ITeBook](http://it-ebooks.info/)
 - [OfficeOnLine](https://office.live.com/start/default.aspx)
-- [ESLpod](https://www.eslpod.com/website/index_new.html); [NCE2 listion](http://www.hjenglish.com/nce/xingainian2/); [MOOC.cn](http://www.mooc.cn/), [慕课网](http://www.imooc.com/)
+- [ESLpod](https://www.eslpod.com/website/index_new.html); [NCE2 listion](http://www.hjenglish.com/nce/xingainian2/); 
+- [MOOC.cn](http://www.mooc.cn/), [慕课网](http://www.imooc.com/), [Coursera](https://www.coursera.org/), [果壳MOOC](http://mooc.guokr.com/), [网易公开课](http://open.163.com/), [网易云课堂](http://study.163.com/)
 - [SciHub](http://sci-hub.org/); 
 
 ### Inquiry
