@@ -87,10 +87,7 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 
 2. #### [git init](http://git-scm.com/docs/git-init  ) 初始化新仓库
 
-
-
  - `git init ` 初始化新建仓库(新建.git目录).在已有仓库中无影响. 也有专门用于转移和更新目录所在选项.
-
  - `git init --bare` 裸仓库,只储存历史提交版本信息, 不允许git操作. 一般作为中心库采用, 避免使用中产生的冲突.
 
 
@@ -98,32 +95,20 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 7. #### [git tag](http://git-scm.com/docs/git-tag )  设置tag来标记commit,相当于给SHA1哈希串重命名
 
  - `git tag<tagname> <commit>`  将commit(哈希码前N个字符)设为tag(名为tagnmame,可用中文 ╮(╯▽╰)╭).
-
  - `git tag -d<tagname>`  删除某个tag.
-
-
-
-
 
 5. #### [git branch](http://git-scm.com/docs/git-brance )  列出,创建和删除分支.
 
  - `git branch <branchname>` 当前位置创建一个分支, 但是HEAD并不转移过去(不同于checkout -b)
-
  - `git branch <branch> <commit>` 在commit(也可以是tag)处创建一个分支, 但是HEAD并不转移过去(不同于checkout -b)
-
  - `git branch` 参看本地主机分支.
-
  - `git branch -v` 参看本地主机分支, 并列出具体commit的SHA1哈希以及comments
-
  - `git branch -r` 参看远程主机分支.
-
  - `git branch -a` 参看远程主机分支(remotes/主机/分支)以及本地分支(前面打*为当前分支).
-
  - `git branch -d <分支名>` 删除指定已合并的分支. -D是即使没合并一样删除(强制删除).
-
  - `git branch --merged/--no-merged` 查看与当前分支合并了的分支(可删)以及未合并的分支.
-
  - `git branch --set-upstream <本地分支> <远程主机名:远程分支>` 设定本地分支track 指定的远程分支.
+ - `git branch show origin` 查看远程分支情况
 
 5. #### [git add](http://git-scm.com/docs/git-add )  将文件加入到暂存区域(索引化); [git rm](http://git-scm.com/docs/git-rm )  删除文件或文件索引; [git mv](http://git-scm.com/docs/git-mv )  移动文件/改名
 
@@ -156,15 +141,7 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 7. #### [git revert](http://git-scm.com/docs/git-revert )  撤销提交
 
  - `git revert HEAD ` 撤销提交, 一般就是撤销上次的提交, 但不影响工作区的文件,可修改后再提交.
-
  - `git revert <commit>` 撤销提交回到某个commit的父节点, -n 对于多节点恢复有意义, 可避免强制提交.
-
-
-
-
-
-
-
 
 
 3. #### [git checkout](http://git-scm.com/docs/git-checkout )  从本地库或暂存区域内拷贝文件到当前工作目录(默认)或暂存区(可选), 也可用于创建和切换分支.
@@ -218,10 +195,7 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
 1. #### [git clone](http://git-scm.com/docs/git-clone)   克隆版本库 
 
  - `git clone https://github.com/jquery/jquery.git ` 克隆版本库. 可以后跟本地目录名. 支持多种协议.如http[s], git, ssh(user@host:/path),file,ftp[s],rsync等
-
  - `git clone -o hostname <主机地址>` 指定远程主机名,而不是默认origin
-
-
 
 4. #### [git remote](http://git-scm.com/docs/git-remote )  管理远程主机名.(其实信息储存在本地并不与远程同步)
 
@@ -259,8 +233,8 @@ git log 有很多[参数和功能](http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E
  - `git push <远程主机名> <本地分支名>:<远程分支名>` 将本地分支推送到远程分支.gitconfig里注册默认远程主机后可以省掉后面的.
  - `git push <远程主机名> <本地分支名>` 将本地分支推送到远程同名分支.
  - `git push <远程主机名> ::<远程分支名>`  将空白推送到远程分支, 即删除远程分支. 慎用.
- - `git push 远程主机名 --delete 远程分支名`: 删除远程分支,对于首选分支会报错
-
+ - `git push 远程主机名 --delete 远程分支名`: 删除远程分支,对于首选分支会报错. 可用`git branch show origin`查看分支情况
+ - `git push origin :master`: 可以删除远程分支
 
 
 错误master:
