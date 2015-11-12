@@ -6,7 +6,9 @@ categories: Coding
 tags: Python
 ---
 
-## [The Python Standard Library](https://docs.python.org/2/library/)  {#STL}
+## The Python Standard Library {#STL}
+
+Copy the document Python 2.7.10 standard library. [link](](https://docs.python.org/2/library/)  
 
 While The Python Language Reference describes the exact syntax and semantics of the Python language, this library reference manual describes the standard library that is distributed with Python. It also describes some of the optional components that are commonly included in Python distributions.
 

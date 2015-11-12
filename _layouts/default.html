@@ -48,6 +48,11 @@
 
 <div id="main" role="main">
 <header>
+{% if page.page_title %}
+<h1 class="page_title">{{ page.title }}</h1>
+{% else %}
+<h1 class="page_title">Hom's Blog</h1>
+{% endif%}
 <div class="buttons">
 <a href="/" title="Go to homepage">Home</a>
 <a href="/pages/categories" title="Category" >Category</a>
@@ -57,9 +62,15 @@
 <a href="/pages/about" title="About" >About</a>
 <a href="/pages/feed" title="Subscribe by RSS" >RSS</a>
 </div>
+</header>
 
-<h1>{{ page.title }}</h1></header>
-<hr><article class="content">{{ content }}</article></div>
+{% if page.page_title %}
+<hr class="title-hr">
+{% else %}
+<hr class="title-hr"> <h1 class="post_title">{{ page.title }}</h1>
+{% endif%}
+
+<article class="content">{{ content }}</article></div>
 		
 <footer name="footer"><p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - {{site.time | date:"%Y"}} by <a href="/pages/about/">Hom</a> | <span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
 <span id="busuanzi_container_site_pv">本站<a href="http://ibruce.info/2015/04/04/busuanzi">总访问量</a><span id="busuanzi_value_site_pv"></span>次</span><span id="busuanzi_container_site_uv"></span>, 访客数<span id="busuanzi_value_site_uv"></span>人.
