@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="{{ site.author }}" />
+{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 <title>{{ page.title }} | {{ site.author }}</title>
 <link href="/jcss/images/header.jpg" rel="shortcut icon" type="image/x-icon" />
 <link href="/pages/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />

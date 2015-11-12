@@ -51,9 +51,3 @@
 	</script>
 {% endif %}
 </section>
-
-
-
-
-
-
