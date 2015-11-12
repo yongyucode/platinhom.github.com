@@ -40,8 +40,8 @@
 
 <body>
 <!--Fixed Goto top botton-->
-<div style="position: fixed; _position: absolute;  right: 30px; bottom: 10px; _bottom: -4000px; z-index: 99; display:block; font-size:12px; width:80px;">
-<a href="#top">Goto Top</a>
+<div id="GoTop">
+<a href="#top">GoTop</a>
 </div>
 
 <div id="container">
@@ -61,7 +61,7 @@
 <h1>{{ page.title }}</h1></header>
 <hr><article class="content">{{ content }}</article></div>
 		
-<footer name="footer"><p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - {{site.time | date:"%Y"}} by <a href="http://platinhom.github.io/pages/about/">Hom</a> | <span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
+<footer name="footer"><p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - {{site.time | date:"%Y"}} by <a href="/pages/about/">Hom</a> | <span class="label label-info">Last updated: {{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></br>
 <span id="busuanzi_container_site_pv">本站<a href="http://ibruce.info/2015/04/04/busuanzi">总访问量</a><span id="busuanzi_value_site_pv"></span>次</span><span id="busuanzi_container_site_uv"></span>, 访客数<span id="busuanzi_value_site_uv"></span>人.
 </small></p></footer>
 </div>

@@ -14,7 +14,7 @@ layout: page_small
   <li class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</li>
   <p class="listing-item">
 {% for post in tag[1] %}
-  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> ; 
+  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> ; 
 {% endfor %}
 	</p> 
 {% endfor %}
