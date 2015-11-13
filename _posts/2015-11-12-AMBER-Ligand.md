@@ -35,23 +35,29 @@ GAFF力场参数的识别主要是靠原子类型实现的, 所以需要对小�
 
 - antechamber使用`-at`选项来指定原子类型, 默认是gaff, 所以不用理会(不要乱设就好). 
 - `-c`选项则可以指定电荷计算的方法, `-cf`可以指定电荷的文件而不是进行计算. 一般使用bcc电荷就好了(am1-bcc), 也可以使用基于量化计算结果的ESP/RESP电荷(如何计算参考另一篇blog [^CalcRESP] ). 
-- `-i`, `-fi`和`-o`, `-fo` 分别是输入文件, 输入文件类型, 输出文件, 输出文件类型. 文件名指定不用说了, 输入文件类型取决于输入文件, 支持类型参见[^anteHom], 输出文件类型取决于parmchk的输入类型, 分别支持`prepi, prepc, ac, mol2`. 一般使用prepi和mol2, 一般为了专为amber产生使用不和别的文件后缀混淆, 我使用prepi. 也可以像官方教程一样使用mol2.
+- `-i`, `-fi`和`-o`, `-fo` 分别是输入文件, 输入文件类型, 输出文件, 输出文件类型. 文件名指定不用说了, 输入文件类型取决于输入文件, 支持类型参见[^anteHom], 输出文件类型取决于parmchk的输入类型, 分别支持`prepi, prepc, ac, mol2`. 一般使用prepi和mol2. 
 - `-pf y` 可以忽略计算中产生的中间文件, 墙裂建议!
 - `-rn MOL` 可以设置残基名为MOL.默认没有残基名时使用MOL, 否则用原来的.
 
 pdb输入的话:
 
-`antechamber -i ligand.pdb -fi ligand.pdb -o ligand.prepi -fo prepi -c bcc -pf y`
+`antechamber -i ligand.pdb -fi pdb -o ligand_bcc.mol2 -fo mol2 -c bcc -pf y`
 
 mol2输入的话:
 
-`antechamber -i ligand.mol2 -fi ligand.mol2 -o ligand.prepi -fo prepi -c bcc -pf y`
+`antechamber -i ligand.mol2 -fi mol2 -o ligand_bcc.mol2 -fo mol2 -c bcc -pf y`
+
+要是需要prepi 文件 (prepi和prepc分别是内坐标和卡迪尔坐标系的prep文件, 是以前程序[prep](http://ambermd.org/doc/prep.html)使用的 (现已由leap整合),可由antechamber或prepgen产生, 现常用于非标准残基读入和处理), prepi/prepc文件可以在leap中使用`loadamberprep residue.prep`来读入.
+
+转化上面已经计算了电荷的分子到prep文件:
+
+`antechamber -i ligand_bcc.mol2 -fi mol2 -o ligand.prepi -fo prepi -pf y`
 
 要是使用pdb文件, 要像官网一样将残基名改为SUS, 则可以加多一个`-rn SUS`选项.
 
 这里不像官方教程使用`-s 2`产生中间具体运行信息, 也不产生中间文件. 要有兴趣自行参考官网教程[^amberLig].
 
-产生的prepi文件信息,内含缺失部分的信息IMPROPER(这里缺二面角):
+如果产生的prepi文件信息,内含缺失部分的信息IMPROPER(这里缺二面角):
 
 > ligand.prepi
 
@@ -121,9 +127,13 @@ STOP
 
 parmchk是检查小分子结构在GAFF(默认, 也可以自己指定力场,参见[选项](#parmchk) )下有哪些缺失参数. 找出参数并计算添加相应合适的缺失力场参数. 运行以下命令获得frcmod文件:
 
+`parmchk -i ligand_bcc.mol2 -f mol2 -o ligand.frcmod`
+
+要是有prepi则可以: 
+
 `parmchk -i ligand.prepi -f prepi -o ligand.frcmod`
 
-要是antechamber的输出是mol2/ac/prepc可以自行修改相应参数, -i是输入文件,-o输出文件, -f 是输入文件类型.
+要是antechamber的输出是ac/prepc可以自行修改相应参数, -i是输入文件,-o输出文件, -f 是输入文件类型.
 
 > ligand.frcmod
 
@@ -149,7 +159,68 @@ NONBON
 
 ~~~
 
+### 处理综合脚本
+
+上述处理的脚本, 根据文件名后缀判断类型, 第二参数指定电荷类型, 使用类型"no"可使用自带的电荷:
+
+~~~bash
+#! /bin/bash
+# Author: Hom. 2015.11.12
+# Usage: $0 inputfile chargetype
+# For: Convert normal molecule file to frcmod and charged input file
+ 
+if [ -z $1 ]; then
+echo "No ligand file is assigned!"
+exit 1
+fi
+ 
+ 
+if [ -z ${AMBERHOME} ]; then
+#echo "The AMBERHOME var or ligand mol2 file is not set! Check it!"
+#echo "Use it as './antchm.sh ligand.mol2'"
+#exit
+ 
+# If no define AMBERHOME, source the ambertools 
+source ~/AmberTools/amber.sh
+fi
+ 
+ 
+chargemode=$2
+if [ -z $2 ];then
+    chargemode="bcc"
+fi
+ 
+basename=${1%.*}
+exdname=${1##*.} 
+ 
+if [ $exdname = "pqr" ];then
+    cp $1 ${basename}.mpdb
+    exdname="mpdb"
+fi
+ 
+ligbcc=${basename}_${chargemode}
+if [ $chargemode = "no" ];then
+    antechamber -i ${1} -fi $exdname -o ${ligbcc}.mol2 -fo mol2 -pf y
+else
+    antechamber -i ${1} -fi $exdname -o ${ligbcc}.mol2 -fo mol2 -c $chargemode -pf y
+fi
+ 
+sleep 1
+ 
+antechamber -i ${ligbcc}.mol2 -fi mol2 -o ${ligbcc}.prepi -fo prepi -pf y
+parmchk -i ${ligbcc}.prepi -f prepi -o ${ligbcc}.frcmod
+ 
+if [ $exdname = "pqr" ];then
+    rm ${basename}.mpdb
+fi
+
+rm sqm.*
+~~~
+
+
 ## tleap处理
+
+假设有一个complex.pdb, 一个配体分子 ligand.mol2,一个蛋白protein.pdb
 
 ~~~
 source leaprc.gaff
@@ -159,9 +230,57 @@ saveamberparm lig ligand_gaff.top ligand_gaff.crd
 quit
 ~~~
 
+
+
 ~~~bash
 basename=${1%.*}
 exdname=${1##*.}
+
+# 该脚本用于对复合物结构进行tleap预处理，需要三个文件，complex.pdb(处理好），ligand.prep 和ligand.frcmod。
+
+#!/bin/bash
+
+echo "#############################################################################"
+echo "The script help to build a leap.in file and run the tleap for the complex.pdb."
+echo "First parameter is the ligand name ABC, Second is the radius of TIP3P box."
+echo -n "Enter anything to continue....."
+read
+echo "#############################################################################"
+
+if [ ${AMBERHOME:-"0"}  = "0" ]; then
+echo "ERROR:The AMBERHOME var is not set! Check it!"
+echo "ERROR:Be sure the tleap could be run!"
+exit
+fi
+
+if [ ${2:-"oo"}  = "oo" -o ${1:-"oo"}  = "oo" ]; then
+echo "ERROR:The ligand standard name or box radius is not set! Check it!"
+echo "ERROR:Use it as './LEAP.sh LIG 10'"
+exit
+fi
+
+echo "source leaprc.ff03
+source leaprc.gaff
+loadamberprep ligand.prep
+loadamberparams ligand.frcmod
+list
+check $1
+saveamberparm $1 lig.top lig.crd
+com=loadpdb complex.pdb
+check com
+saveamberparm com com.top com.crd
+solvatebox com TIP3PBOX $2
+addions com Na+ 0
+check com
+saveamberparm com complex.top complex.crd
+quit" >leap.in
+
+tleap -s -f leap.in
+ambpdb -p complex.top < complex.crd > complex_out.pdb
+echo "###############################################################################"
+echo "Note: Finish!"
+echo "Note: Check the residues num for the restrain in minimization and heat step in MD!"
+
 ~~~
 
 ## 注意事项
