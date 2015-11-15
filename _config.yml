@@ -26,11 +26,11 @@ baiduTongji:
 
 #comment config
 disqus:
-  config: false
+  config: true
   id: platinhom
 
 duoshuo:
-  config: true
+  config: false
   id: platinhom
   
 #baidu share config

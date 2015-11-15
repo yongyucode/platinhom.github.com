@@ -1,20 +1,17 @@
 ### This's Hom's Blog! Welcome!
 
-模板取自于 [哲科文](http://jerkwin.github.io/),此博客采用了 [卢克进](http://geeklu.com/) 的主题, 并稍加修改.
-
-此博客的代码高亮使用了[prism](http://prismjs.com/).
-
+- 模板取自于 [哲科文](http://jerkwin.github.io/),此博客采用了 [卢克进](http://geeklu.com/) 的主题, 并稍加修改.
+- 此博客使用[kramdown](http://kramdown.gettalong.org/)作为markdown解析.
+- 此博客的代码围栏高亮默认使用了[prism](http://prismjs.com/), 也可以使用[pygment](http://pygments.org/), 需要使用`post_py`模板.
+- 此博客的网站统计使用了[静态网页统计: 不蒜子](http://ibruce.info/2015/04/04/busuanzi/),[GA](http://www.google.com/analytics/ce/mws/),[百度统计](http://tongji.baidu.com/web/welcome/login).
 此博客的评论功能使用了[多说](http://duoshuo.com/).
+- 此博客可以使用数学公式处理: [MathJax](https://www.mathjax.org/), 需要使用`post_mathjax`模板.
 
-此博客的网站统计使用了[静态网页统计: 不蒜子](http://ibruce.info/2015/04/04/busuanzi/),[GA](http://www.google.com/analytics/ce/mws/),[百度统计](http://tongji.baidu.com/web/welcome/login).
-
-此博客的数学公式处理使用[MathJax](https://www.mathjax.org/).
 
 ### 简要文件介绍
 
 - newblog.sh: 自动创建新博客. 用法`./newblog.sh blogname catagory tag1 tag2..`
-- gitsubmit.sh: 提交更新到github. 用法`./gitsubmit.sh`.同时提交到gitcafe,后面随便跟个选项如`./gitsubmit.sh a`
-- gitcafe.sh: 提交更新到gitcafe, 用法同上.
+- gitsubmit.sh: 提交更新到github. 用法`./gitsubmit.sh`. 可以加一参数作为commit comment. 也可以提交到gitcafe,后面随便跟个选项如`./gitsubmit.sh comment a`
 - 404.md: 404 page when error occurs.
 - CNAME: 指明指向域名.
 - .gitignore: files/directories not to be submitted to github.
