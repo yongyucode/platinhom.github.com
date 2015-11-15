@@ -8,8 +8,6 @@ tags: Website
 
 Speaker Deck 是github公司创建的一个演示文稿托管服务, 可以用Github账号直接注册登入. 随后上传一个PPT型文档的pdf版本, 他就会帮你处理好发布. 直接提供嵌入代码(embed), 在HTML中直接复制黏贴即可. 使用太简易, 只是在此做个note. 发布时可以指定发布的页码.
 
-<script async class="speakerdeck-embed" data-id="8f94a541eca041cc90db83562ed353eb" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-
 <script async class="speakerdeck-embed" data-id="9c7ac750ac940130d6a626f5cde8fd08" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ## Reference
