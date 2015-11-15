@@ -1,10 +1,11 @@
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-url: http://platinhom.github.io
+url: http://platinhom.github.io/pages
 author: Hom
 #pygments: true
 safe: true
 paginate: 25
+paginate_path: "/pages/page:num/"
 #auto: true
 encoding: "utf-8"
 highlighter: pygments

@@ -215,72 +215,105 @@ if [ $exdname = "pqr" ];then
 fi
 
 rm sqm.*
+# cp ${ligbcc}.mol2 ligand.mol2
 ~~~
 
 
 ## tleap处理
 
-假设有一个complex.pdb, 一个配体分子 ligand.mol2,一个蛋白protein.pdb
-
-~~~
-source leaprc.gaff
-loadamberparams ligand_gaff.frcmod
-lig=loadmol2 ligand_gaff.mol2"
-saveamberparm lig ligand_gaff.top ligand_gaff.crd
-quit
-~~~
-
-
+假设有一个处理过的配体分子 ligand.mol2,一个蛋白protein.pdb, 用以下脚本处理即可. 同时生成蛋白,配体,复合物, MD初始状态的结构和top. 这是一个tleap处理的例子. 或者参考官方教程的操作也行.
 
 ~~~bash
-basename=${1%.*}
-exdname=${1##*.}
-
-# 该脚本用于对复合物结构进行tleap预处理，需要三个文件，complex.pdb(处理好），ligand.prep 和ligand.frcmod。
-
 #!/bin/bash
+# This script need 3 arguments:
+#   1. ligand input file
+#   2. protein input file
+#   3. box radius
 
 echo "#############################################################################"
-echo "The script help to build a leap.in file and run the tleap for the complex.pdb."
-echo "First parameter is the ligand name ABC, Second is the radius of TIP3P box."
-echo -n "Enter anything to continue....."
-read
+echo "The script help to build a leap.in file and run the tleap for the complex."
+echo "First parameter is the ligand file name ABC"
+echo "Second is the protein file name"
+echo "Third is the radius of TIP3P box."
+# echo -n "Enter anything to continue....."
+# read
 echo "#############################################################################"
 
-if [ ${AMBERHOME:-"0"}  = "0" ]; then
-echo "ERROR:The AMBERHOME var is not set! Check it!"
-echo "ERROR:Be sure the tleap could be run!"
-exit
+if [ -z ${AMBERHOME} ]; then
+# echo "ERROR:The AMBERHOME var is not set! Check it!"
+# echo "ERROR:Be sure the tleap could be run!"
+# exit
+
+# If no define AMBERHOME, source the ambertools 
+source ~/AmberTools/amber.sh
 fi
 
-if [ ${2:-"oo"}  = "oo" -o ${1:-"oo"}  = "oo" ]; then
-echo "ERROR:The ligand standard name or box radius is not set! Check it!"
-echo "ERROR:Use it as './LEAP.sh LIG 10'"
-exit
+ligfile=$1
+if [ -z $1 ];then
+ligfile="ligand.mol2"
+echo "Set ligand file name to default: ligand.mol2"
 fi
 
-echo "source leaprc.ff03
+profile=$2
+if [ -z $2 ];then
+profile="protein.pdb"
+echo "Set protein file name to default: protein.pdb"
+fi
+
+boxradius=$3
+if [ -z $3 ]; then
+boxradius="10"
+echo "Set box radius to default: 10"
+fi
+
+basename1=${ligfile%.*}
+exdname1=`echo "${ligfile##*.}" | tr A-Z a-z`
+
+if [ ! -f ${basename1}.frcmod ];then
+echo "No ligand parameters file (ligandfile_prefix.frcmod)!"
+exit 1
+fi
+
+# other options:
+#   loadamberprep ligand.prep
+#    list
+
+echo "source leaprc.ff14SB
 source leaprc.gaff
-loadamberprep ligand.prep
-loadamberparams ligand.frcmod
-list
-check $1
-saveamberparm $1 lig.top lig.crd
-com=loadpdb complex.pdb
-check com
+loadamberparams frcmod.ionsjc_tip3p
+loadamberparams ${basename1}.frcmod
+set default PBRadii mbondi2">leap.in
+
+if [ $exdname1 = "mol2" ];then
+echo "lig=loadmol2 $ligfile" >>leap.in
+# no recommend with pdb file for ligand, no charge
+elif [ $exdname1 = "pdb" ];then
+echo "lig=loadpdb $ligfile" >>leap.in
+fi
+
+echo "check lig
+saveamberparm lig lig.top lig.crd
+pro=loadpdb $profile
+saveamberparm pro pro.top pro.crd
+com=combine {pro lig}
 saveamberparm com com.top com.crd
-solvatebox com TIP3PBOX $2
+check com
 addions com Na+ 0
+addions com Cl- 0
+solvatebox com TIP3PBOX $boxradius
 check com
 saveamberparm com complex.top complex.crd
-quit" >leap.in
+quit" >>leap.in
 
 tleap -s -f leap.in
+ambpdb -p lig.top < lig.crd > lig.pdb
+ambpdb -p pro.top  < pro.crd > pro.pdb
+ambpdb -p com.top < com.crd > com.pdb
 ambpdb -p complex.top < complex.crd > complex_out.pdb
+
 echo "###############################################################################"
 echo "Note: Finish!"
 echo "Note: Check the residues num for the restrain in minimization and heat step in MD!"
-
 ~~~
 
 ## 注意事项
