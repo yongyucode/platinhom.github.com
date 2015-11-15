@@ -12,7 +12,7 @@ body>div{width:70%;max-width:50em;padding:1em 1em 1em;margin:1em auto;box-shadow
 #Box i{display:inline-block;width:1px;height:30px;overflow:hidden;margin-left:-1px;vertical-align:middle}
 
 h1,h2,h3,h4,h5{font:bold 18px/1.5 Arial,SimHei;color:#000;margin-top:18px;margin-bottom:18px;padding:0}h1{font-size:36px;line-height:36px;margin:18px 0 18px 0;padding:12px;display:inline-block;border:1px solid #ccc;border-radius:10px;box-shadow:0 1px 0 2px #ddd}h2{font-size:30px;margin:18px 0 6px;border-bottom:3px double}h3{font-size:24px}h4{font-size:21px}h5{font-size:18px}section>h3{margin:18px 0 18px 0}
-h1.page_title{margin:0px 0 12px 0;background:#0F9AC3;font-size:1.5em; color:#FFF9E4;box-shadow:0 1px 0 2px #409FBB} h1.post_title{margin-top: 28px;display:block;} a<{border-bottom-width:0px}
+h1.page_title{margin:0px 0 12px 0;background:#0F9AC3;font-size:1.5em; color:#FFF9E4;box-shadow:0 1px 0 2px #409FBB} h1.post_title{margin-top: 28px;display:block;background-color: #82AEDC;}
 a,a:link,a:hover,a:active{color:#22869A;margin:0 auto;padding:0;text-decoration:none;border-bottom-width:1px;border-bottom-style:solid;vertical-align:baseline}a:visited{color:#003BB3}#GoTop>a{border-bottom-width:0px;color:#1BC4F7;}
 ul,ol,dl,li{padding:0;margin:6px 0 6px 36px}
 p{padding:0;margin: 8px 8px}p.intro{font-size:24px;line-height:32px}
@@ -34,11 +34,12 @@ footer{display:block;border-top:1px dashed #CCC}footer small{font-size:13px;colo
 #TOC {
 	padding:0;margin:0 auto;
 	border: .2em solid #E0DFCC;
-	max-width:24%; height:95%;
+	max-width:24.2%; height:98%;
 	left: 0;
 	position: fixed;
 	overflow: auto;
 	white-space:nowrap;
+	border-top:.5em solid #1BC4F7;
 }
 .TOCEntry { font-family: sans-serif; }
 .TOCEntry a { text-decoration: none; border-bottom-width:0px}
