@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-url: http://platinhom.github.io/pages
+url: http://platinhom.github.io
 author: Hom
 #pygments: true
 safe: true
