@@ -5,16 +5,21 @@ layout: page_small
 
 <div id='tag_cloud'>
 {% for tag in site.tags %}
-<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }} <span style="color:#07e"> #{{ tag[1].size }}</span></a>&nbsp;&nbsp;&nbsp;
+<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}"> <span style="color:#A82918; font-size:0.8em;">{{ tag[0] }} <span style="color:#07e;"> #{{ tag[1].size }}</span></span></a>&nbsp;&nbsp;&nbsp;
 {% endfor %}
 </div>
+
+<hr style="margin:5px;border-width:2px;">
 
 <ul class="listing">
 {% for tag in site.tags %}
   <li class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</li>
   <p class="listing-item">
 {% for post in tag[1] %}
-  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> ; 
+{% if post.archive != true %}
+  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>&nbsp;&nbsp;&nbsp;
+  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> ; <br/> 
+{% endif %}
 {% endfor %}
 	</p> 
 {% endfor %}
@@ -31,3 +36,7 @@ $(function () {
     $('#tag_cloud a').tagcloud();
 });
 </script-->
+
+-----
+
+Notice: [Archives](/pages/archives.html) are not listed here! 
