@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一个客户端拥有多个Git账号
+title: 一个客户端拥有多个Github账号
 date: 2015-11-16 17:17:56
 categories: IT
 tags: Git
@@ -14,7 +14,7 @@ tags: Git
 
 `ssh-keygen -t rsa -b 4096 -C "GHB@163.com"`{: .language-bash}
 
-创建新公钥, 第一个提示会问保存的公钥地方, 默认是`~/.ssh/id_rsa`.如果你直接enter, 会再询问你是否覆盖. 此时会覆盖掉旧的私钥公钥组合! 这里例如创建新私钥为`~/.ssh/id_rsa2`,对应公钥就是`~/.ssh/id_rsa2.pub`. 随后将公钥2放到GHB的账号里. 这是第一步. 
+创建新公钥, 第一个提示会问保存的公钥地方, 默认是`~/.ssh/id_rsa`.如果你直接enter, 会再询问你是否覆盖. 此时会覆盖掉旧的私钥公钥组合! 这里例如创建新私钥为`~/.ssh/id_rsa2`,对应公钥就是`~/.ssh/id_rsa2.pub`. 保存的私钥名也可以通过`-f "~/.ssh/id_rsa2"`选项来指定. 随后将公钥2放到GHB的账号里. 这是第一步. 
 
 ## 设置仓库repository的user信息
 
