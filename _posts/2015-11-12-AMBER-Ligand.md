@@ -159,6 +159,10 @@ NONBON
 
 ~~~
 
+Update:
+
+Amber14引入了`parmchk2`, 用法和parmchk 一样. 而parmchk2要比parmchk要好, 因为它将对所有子结构进行搜索打分, 对所有参数比较打分得到其中最适合的参数，而parmchk只是检查其中某几个子结构的参数文件来获取缺失参数.
+
 ### 处理综合脚本
 
 上述处理的脚本, 根据文件名后缀判断类型, 第二参数指定电荷类型, 使用类型"no"可使用自带的电荷:
@@ -208,7 +212,7 @@ fi
 sleep 1
  
 antechamber -i ${ligbcc}.mol2 -fi mol2 -o ${ligbcc}.prepi -fo prepi -pf y
-parmchk -i ${ligbcc}.prepi -f prepi -o ${ligbcc}.frcmod
+parmchk2 -i ${ligbcc}.prepi -f prepi -o ${ligbcc}.frcmod
  
 if [ $exdname = "pqr" ];then
     rm ${basename}.mpdb

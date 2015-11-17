@@ -6,6 +6,8 @@ categories: CompCB
 tags: CompBiol MD
 ---
 
+set default PBRadii mbondi2
 
+mbondi2 对应后面的gb计算应该是 igb=2
 
 ------

@@ -22,10 +22,15 @@ tags: CompChem CompBiol
 ## 分子描述符
 
 [Wiki](http://en.wikipedia.org/wiki/Molecular_descriptor  )
+
 [欧洲分子描述符网站](http://www.moleculardescriptors.eu/  ) 以及[资源](http://www.moleculardescriptors.eu/resources/resources.htm  )
+
 [Dragon软件](http://www.talete.mi.it/products/dragon_description.htm  ) 以及[描述符分类](http://www.talete.mi.it/products/dragon_molecular_descriptors.htm )及其[详细描述符](http://www.talete.mi.it/products/dragon_molecular_descriptor_list.pdf )
+
 [E-Dragon](http://www.vcclab.org/lab/edragon/ )
+
 [MOE描述符](file:///C:/moe2010/html/quasar/descr.htm  )
+
 [CheS-Mapper](http://opentox.informatik.uni-freiburg.de/ches-mapper/ )  相应的[帮助](http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Tutorial_-_Structural_clustering_using_OpenBabel_fingerprints_-_v2  ) [介绍](http://macinchem.org/reviews/ChesMapper/chesmapper_review.php )
 
 
@@ -37,6 +42,8 @@ tags: CompChem CompBiol
 
 [ADAPT](http://research.chem.psu.edu/pcjgroup/adapt.html  ): 不能用..
 
+
+[DayLight ChemInformatics](http://www.daylight.com/cheminformatics/)
 
 TODO:
 

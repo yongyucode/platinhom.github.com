@@ -1,6 +1,6 @@
 ---
 layout: post_toc
-title: Amber-leap力场相关文件
+title: Amber力场相关参数文件
 date: 2015-11-13 22:22:55
 categories: CompCB
 tags: CompBiol MD
@@ -9,6 +9,12 @@ tags: CompBiol MD
 基于Amber14
 
 # 文件列表
+
+## 参数文件位置
+
+- Amber/dat/leap/cmd/ : source加载的一系列力场等文件所在
+- Amber/dat/leap/cmd/oldff : source加载的一系列力场等**旧版**文件所在, 如source oldff/leaprc.ff99SB
+- Amber/dat/antechamber/ : antechamber处理小分子时的参数, 包括原子类型, parmchk等.
 
 ## dat/leap/cmd:
 
