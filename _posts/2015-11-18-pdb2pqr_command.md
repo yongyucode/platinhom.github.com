@@ -6,15 +6,19 @@ categories: CompCB
 tags: CompBiol Software
 ---
 
-PDB2PQR是Nathan Baker Group开发维护的蛋白处理系统, 能够
+PDB2PQR是Nathan Baker Group开发维护的蛋白电荷处理系统, 能够将pdb输入的蛋白结构输出为pqr格式带原子电荷和原子半径的文件. pdb2pqr可以使用多种力场来参数化蛋白, 并且可以添加氢原子, 修复残基缺失侧链, 判断二硫键, 计算指定pH下残基pKa来计算质子化状态. 输出pqr文件还可以根据力场规范格式化残基和原子类型, 用于动力学输入. 
 
 如果仅仅对少量的蛋白进行处理, 推荐使用的[PDB2PQR服务器](http://nbcr-222.ucsd.edu/pdb2pqr_2.0.0/)进行, 十分简易.
+
+PDB2PQR也可以在命令行使用, 可以在其主页注册下载命令行工具, 也可以直接从github上克隆. 这里采用github方式安装.
 
 ~~~bash
 git clone git@github.com:Electrostatics/apbs-pdb2pqr.git
 cd apbs-pdb2pqr/pdb2pqr
 python scons/scons.py install
 ~~~
+
+可以
 
 -------------
 
@@ -61,7 +65,7 @@ One of the options must be used. 最少使用以下其中一个的选项.
 	- 创建作为APBS输入的临时文件. 同样创建一份Python的pickle用于其余程序读取这些参数.
 - -\-ligand=PATH	
 	- Calculate the parameters for the ligand in mol2 format at the given path. Pdb2pka must be compiled.
-	- 计算参数
+	- 在使用propka计算pKa时无法处理小分子. 可以使用mol2分子指定小分子的输入(原小分子结构会被弃掉),根据小分子mol2格式读入参数.需要编译出pdb2pka. mol2需要sybyl原子类型, 并且需要原子名称不能重复.
 - -\-whitespace	
 	- Insert whitespaces between atom name and residue name, between x and y, and between y and z.
 	- 在原子名称-残基名, x坐标-y坐标, y坐标-z坐标 间插入空格
@@ -113,8 +117,10 @@ One of the options must be used. 最少使用以下其中一个的选项.
 
 - -\-propka-reference=PROPKA_REFERENCE	
 	- Setting which reference to use for stability calculations. See PROPKA 3.0 documentation.
+	- 设置propka稳定性计算的参考. 详见PROPKA 3.0的文档.
 - -\-propka-verbose	
 	- Print extra proPKA information to stdout. WARNING: This produces an incredible amount of output.
+	- 输出propka的额外计算信息到屏幕. 注意, 可能会产生大量的输出结果.
 
 ## EXTENSION OPTIONS
 
@@ -133,29 +139,38 @@ One of the options must be used. 最少使用以下其中一个的选项.
 
 - -\-hbond	
 	- Print a list of hydrogen bonds to {output-path}.hbond
+	- 输出氢键信息到hbond后缀文件.
 - -\-whatif	
 	- Change hbond output to WHAT-IF format.
+	- 更改氢键输出为WHAT-IF格式
 - -\-angle\_cutoff=ANGLE_CUTOFF	
 	- Angle cutoff to use when creating hbond data (default 30.0)
+	- 氢键判断的角度截断值(缺省30.0度)
 - -\-distance\_cutoff=DISTANCE_CUTOFF	
 	- Distance cutoff to use when creating hbond data (default 3.4)
+	- 氢键判断的距离截断值(缺省3.4 A)
 - -\-old\_distance\_method	
 	- Use distance from donor hydrogen to acceptor to calculate distance used with -\-distance\_cutoff.
+	- 使用旧的氢键距离方法, 就是使用供体氢原子到受体原子的距离. 截断取决于-\-distance\_cutoff.
 
 ## RESINTER EXTENSION OPTIONS
 - -\-resinter	
 	- Print interaction energy between each residue pair in the protein to {output-path}.resinter.
+	- 输出蛋白中每个残基对的相互作用能量到.resinter后缀文件.
 - -\-residue_combinations	
 	- Remap residues to different titration states and rerun resinter appending output. Consider only the minimum number of whole protein titration combinations needed to test each possible pairing of residue titration states. Normally used with -\-noopt. If a protein titration state combination results in a pair of residue being re-tested in the same individual titration states a warning will be generated if the re-tested result is different. This warning should not be possible if used with -\-noopt.
 - -\-all\_residue\_combinations	
-	- Remap residues to ALL possible titration state combinations and rerun resinter appending output. Results with -\-noopt should be the same as -\-residue_combinations. Runs considerably slower than -\-residue\_combinations and generates the same type of warnings. Use without --noopt to discover how hydrogen optimization affects residue interaction energies via the warnings in the output.
+	- Remap residues to ALL possible titration state combinations and rerun resinter appending output. Results with -\-noopt should be the same as -\-residue_combinations. Runs considerably slower than -\-residue\_combinations and generates the same type of warnings. Use without -\-noopt to discover how hydrogen optimization affects residue interaction energies via the warnings in the output.
 
 ## RAMA EXTENSTION OPTIONS
 - -\-rama	
 	- Print the per-residue phi and psi angles to {output-path}.rama for Ramachandran plots
+	- 输出每个残基的phi和psi角度到rama后缀文件,用于Ramachandran图.
 - -\-phi_only	
 	- Only include phi angles in output. Rename output file {output-path}.phi
+	- 只输出phi角度到结果, 重命名结果为phi后缀.
 - -\-psi_only	
 	- Only include psi angles in output. Rename output file {output-path}.psi
+	- 只输出psi角度到结果, 重命名结果为psi后缀.
 
 ------
