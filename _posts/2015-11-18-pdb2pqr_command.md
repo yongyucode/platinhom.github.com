@@ -6,11 +6,11 @@ categories: CompCB
 tags: CompBiol Software
 ---
 
-PDB2PQR是Nathan Baker Group开发维护的蛋白电荷处理系统, 能够将pdb输入的蛋白结构输出为pqr格式带原子电荷和原子半径的文件. pdb2pqr可以使用多种力场来参数化蛋白, 并且可以添加氢原子, 修复残基缺失侧链, 判断二硫键, 计算指定pH下残基pKa来计算质子化状态. 输出pqr文件还可以根据力场规范格式化残基和原子类型, 用于动力学输入. 
+PDB2PQR是[Nathan Baker Group](http://www.poissonboltzmann.org/)开发维护的蛋白电荷处理系统, 能够将pdb输入的蛋白结构输出为pqr格式带原子电荷和原子半径的文件. pdb2pqr可以使用多种力场来参数化蛋白, 并且可以添加氢原子并优化氢键网络, 修复残基缺失侧链, 判断二硫键, 计算指定pH下残基pKa来计算质子化状态. 输出pqr文件还可以根据力场规范格式化残基和原子类型, 用于动力学输入. 
 
-如果仅仅对少量的蛋白进行处理, 推荐使用的[PDB2PQR服务器](http://nbcr-222.ucsd.edu/pdb2pqr_2.0.0/)进行, 十分简易.
+如果仅仅对少量的蛋白进行处理, 推荐使用的[PDB2PQR服务器](http://nbcr-222.ucsd.edu/pdb2pqr_2.0.0/)进行, 十分简易. 类似功能的还有[H++ server](http://biophysics.cs.vt.edu/index.php), 但没有相应命令行工具只能逐一处理.
 
-PDB2PQR也可以在命令行使用, 可以在其主页注册下载命令行工具, 也可以直接从github上克隆. 这里采用github方式安装.
+PDB2PQR也可以在命令行使用, 可以在其[主页注册下载](http://www.poissonboltzmann.org/docs/downloads/)命令行工具, 也可以直接从[github](https://github.com/Electrostatics/apbs-pdb2pqr)上克隆. 这里采用github方式安装.
 
 ~~~bash
 git clone git@github.com:Electrostatics/apbs-pdb2pqr.git
@@ -18,15 +18,25 @@ cd apbs-pdb2pqr/pdb2pqr
 python scons/scons.py install
 ~~~
 
-可以
+可以选择性安装[PDB2PKA程序](), 一个基于APBS计算蛋白PKA的的程序; 默认情况下使用[PROPKA](https://github.com/jensengroup/propka-3.0)来计算残基pKa. 现在版本的PDB2PQR仍然使用PROPKA3.0, 该版本不支持小分子处理.
 
 -------------
+
+命令行选项原始页面[参考](http://www.poissonboltzmann.org/docs/pdb2pqr-usage/). 这里摘录并翻译之.
+
+程序用法概要: 
+
+`python pdb2pqr.py [options] --ff={forcefield} {path} {output-path}`
+
+其中path和output-path分别是输入和输出文件名称.
 
 ## OPTIONS
 - -\-version	
 	- show program's version number and exit
+	- 显示程序版本并退出
 - -h, -\-help	
 	- show this help message and exit
+	- 显示帮助信息并退出
 
 ## MANDATORY OPTIONS
 One of the options must be used. 最少使用以下其中一个的选项.
@@ -172,5 +182,21 @@ One of the options must be used. 最少使用以下其中一个的选项.
 - -\-psi_only	
 	- Only include psi angles in output. Rename output file {output-path}.psi
 	- 只输出psi角度到结果, 重命名结果为psi后缀.
+
+-----------
+
+## 实例
+
+### 蛋白处理,Amber输入:
+
+`pdb2pqr --ff=amber --ffout=amber --verbose --chain --ph-calc-method=propka --with-ph=7.0 protein.pdb protein.pqr`
+
+要是要去除水分子:
+
+`pdb2pqr --ff=amber --ffout=amber --verbose --chain --ph-calc-method=propka --with-ph=7.0 --drop-water protein.pdb protein.pqr`
+
+### 使用配体进行处理,Amber输入
+
+`pdb2pqr --ff=amber --ffout=amber --verbose --chain --ph-calc-method=propka --with-ph=7.0 --ligand ligand.mol2 protein.pdb protein.pqr`
 
 ------
