@@ -28,7 +28,7 @@ python scons/scons.py install
 
 `python pdb2pqr.py [options] --ff={forcefield} {path} {output-path}`
 
-其中path和output-path分别是输入和输出文件名称.
+其中path和output-path分别是输入和输出文件名称. 如果{path}是PDB的ID号, 会从PDB数据库下载.
 
 ## OPTIONS
 - -\-version	
