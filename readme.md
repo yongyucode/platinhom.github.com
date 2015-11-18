@@ -7,7 +7,7 @@
 - 此博客的评论功能使用了[多说](http://duoshuo.com/) 或[Disqus](https://disqus.com/).
 - 此博客可以使用数学公式处理: [MathJax](https://www.mathjax.org/), 需要使用`post_mathjax`模板.
 - 此博客支持左侧显示文章骨架总目录(TOC). 需要使用`post_toc`模板.
-- 此博客基础模板post不适用jquery, 需要使用请用`post_jq`模板.
+- 此博客基础模板post不使用jquery, 需要使用请用`post_jq`模板.
 
 ### 简要文件介绍
 

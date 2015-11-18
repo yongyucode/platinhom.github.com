@@ -51,6 +51,8 @@ saveAmberParm unit top crd # 将单元保存为top和crd文件！
 savePdb unit file #   保存为pdb文件
 saveOff unit file 将对象创建/添加到off或lib文件中
 
+loadamberparams frcmod.ionsjc_tip3p  # 其中tip3p可以换成别的水分子
+
 不常用
 var=copy unit 复制单元
 
