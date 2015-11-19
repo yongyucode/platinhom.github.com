@@ -28,7 +28,7 @@ xrdp借用VNC实现远程桌面, 安装可参考[CentOS安装xrdp](http://techno
 
 ### Mac端
 
-需要先安装[Microsoft Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop)程序一类的app才能实现远程桌面.
+需要先安装[Microsoft Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop)程序一类的app才能实现远程桌面. 可以切换全屏, 记住快捷键(我的版本是command+1 自动适应窗口, command+2 全屏)
 
 
 [MSU-HPCC-Connecting with a Remote Desktop Client](https://wiki.hpcc.msu.edu/display/hpccdocs/Connecting+with+a+Remote+Desktop+Client)
