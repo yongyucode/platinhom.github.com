@@ -67,34 +67,34 @@ Selected entryUse the entry that is selected in the Project Table for the refere
 PDBUse the protein from the PDB whose 4-letter ID is given in the text box.
 See the Protein Structure Alignment Panel topic for more information.
 
-Assign bond orders option
+- Assign bond orders option  
 Assign bond orders to all bonds in the structure, including het groups. This option performs the same task as Assign Bond Orders on the Tools menu.
 
-Add hydrogens option
+- Add hydrogens option  
 Add hydrogens to all atoms in the structure that lack them. The hydrogens are added by the utility applyhtreat.
 
-Remove original hydrogens option
+- Remove original hydrogens option  
 Remove the original hydrogens before adding hydrogens to the structure. This option allows any problems with hydrogen atoms in the original structure to be fixed, including nonstandard names, which prevent proper H-bond assignment.
 
-Create zero-order bonds to metals option
+- Create zero-order bonds to metals option  
 Break bonds to metals and corrects the formal charge on the metal and the neighboring atoms, then add zero-order bonds between the metal and its ligands, so that it is still considered part of the same molecule.
 
-Create disulfide bonds option
+- Create disulfide bonds option  
 Find sulfur atoms that are within 3.2  of each other, and add bonds between them. CYS residues are renamed to CYX when the bond is added. This option is selected by default.
 
-Convert selenomethionines to methionines option
+- Convert selenomethionines to methionines option  
 This option converts selenomethionines (MSE) to methionines (MET), and is not selected by default. A dialog box opens to inform you if any conversions are done.
 
-Fill in missing side chains using Prime option
+- Fill in missing side chains using Prime option  
 Run a Prime refinement job (refinestruct) to place and optimize the missing side chains. See the Predict Side Chains Panel topic for more information.
 
-Fill in missing loops using Prime option
+- Fill in missing loops using Prime option  
 Fill in missing loops from the SEQRES records in the PDB file. Requires Prime. The resulting loop may not be of high quality, and a Prime loop refinement should be performed to obtain higher quality. See the Refine Loops Panel topic for details.
 
-Cap termini option
+- Cap termini option  
 Add ACE (N-acetyl) and NMA (N-methyl amide) groups to uncapped N and C termini. These termini include any chain breaks.
 
-Delete waters beyond N  from het groups option and text box
+- Delete waters beyond N  from het groups option and text box  
 Delete waters that are more than the specified distance (in angstroms) from any het group.
 
 You can also delete waters individually in the Review and Modify tab, and you can delete waters that do not form H-bonds with non-waters in the Refine tab.
