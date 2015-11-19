@@ -80,4 +80,4 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 - Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Lancaster, Columbus
 
 ## Find Me in:
-- [Weibo](http://weibo.com/234020806/), [CV](/HomPDF/Hom-CV.pdf)
+- [Weibo](http://weibo.com/234020806/), [CV](/HomPDFF/Hom-CV.pdf)
