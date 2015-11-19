@@ -18,7 +18,9 @@ cd apbs-pdb2pqr/pdb2pqr
 python scons/scons.py install
 ~~~
 
-可以选择性安装[PDB2PKA程序](), 一个基于APBS计算蛋白PKA的的程序; 默认情况下使用[PROPKA](https://github.com/jensengroup/propka-3.0)来计算残基pKa. 现在版本的PDB2PQR仍然使用PROPKA3.0, 该版本不支持小分子处理.
+默认安装位置在~/pdb2pqr, 可以修改`build_config.py`配置文件来设置安装的一些选项, 例如去注释后修改`PREFIX="~/pdb2pqr"`可以更改默认安装路径, 另外还包括不按照pdb2pka等.可自行参考文件说明.
+
+可以选择性安装PDB2PKA程序, 一个基于APBS计算蛋白PKA的的程序; 默认情况下使用[PROPKA](https://github.com/jensengroup/propka-3.0)来计算残基pKa. 现在版本的PDB2PQR仍然使用PROPKA3.0, 该版本不支持小分子处理.
 
 -------------
 

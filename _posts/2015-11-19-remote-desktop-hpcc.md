@@ -7,4 +7,6 @@ tags: System
 ---
 
 
+[MSU-HPCC-Connecting with a Remote Desktop Client](https://wiki.hpcc.msu.edu/display/hpccdocs/Connecting+with+a+Remote+Desktop+Client)
+
 ------
