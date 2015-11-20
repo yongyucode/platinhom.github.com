@@ -1,9 +1,9 @@
 ---
 layout: post
-title: TempTitle-035624
+title: Amber MD一些教程
 date: 2015-11-21 08:56:24
-categories: Other
-tags: Other
+categories: CompCB
+tags: CompBiol MD
 ---
 
 [原文](http://enzyme.fbb.msu.ru/Tutorials/Tutorial_1/Sec_1.htm)

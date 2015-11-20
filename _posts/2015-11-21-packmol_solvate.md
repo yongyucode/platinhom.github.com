@@ -3,7 +3,7 @@ layout: post
 title: Packmol:溶剂化程序
 date: 2015-11-20 18:43:22
 categories: CompCB
-tags: CompBiol Software
+tags: CompBiol Software MD
 ---
 
 packmol是一个自由软件
