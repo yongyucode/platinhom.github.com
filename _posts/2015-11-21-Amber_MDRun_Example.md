@@ -431,6 +431,7 @@ traj AR.top <<>
 
 > EOF
 
+------------
 
 对于有些小分子利用sybyl构建的一般缺少原子参数，首先将小分子单独存成mol2，用amber的antechamber 做出参数。
 
@@ -445,7 +446,7 @@ you have Gassian output file.out (don’t forget to put some keyword in the Gass
 
 `antechamber –i file.out –fi gout –o filr.prep –fo prepi –c resp`
 
- (this step prepare the “file.prep” for your drug -c bcc all right )
+this step prepare the “file.prep” for your drug -c bcc all right
 
 
 * -parmchk –i file.prep –f prepi –o file.frcmod )this step prepare the file “file.frcmod”for the drug)
