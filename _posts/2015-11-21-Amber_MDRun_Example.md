@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_small
 title: Amber MD一些教程
 date: 2015-11-21 08:56:24
 categories: CompCB
@@ -18,20 +18,20 @@ Now you're ready to launch tleap program that is a part of AmberTools package. I
 
 You can see that it tells tleap to load ff99SB force field that is appropriate for our purpose. Now you can load your protein structure into tleap creating object named mol:
 
-> mol = loadpdb protein.pdb  
+>\> mol = loadpdb protein.pdb  
 This will add hydrogens to your structure. Now create 12 angstrom layer of TIP3P water around the protein:
 
-> solvatebox mol TIP3PBOX 12.0  
+>\> solvatebox mol TIP3PBOX 12.0  
 You can check system charge:
 
-> charge mol  
+>\> charge mol  
 And then you should add counterions (Na+ or Cl-) to neutralize the system:
 
-> addions mol Na+ 0  
+>\> addions mol Na+ 0  
 Final step is to create prmtop and inpcrd files:
 
-> saveamberparm mol protein.prmtop protein.inpcrd  
-> quit  
+>\> saveamberparm mol protein.prmtop protein.inpcrd  
+>\> quit  
 
 File protein.prmtop contains molecular topology, force field parameters, atom and residue names. File protein.inpcrd contains initial coordinates. You could convert prmtop and inpcrd files into pdb format by ambpdb to visualise obtained system:
 
@@ -431,64 +431,50 @@ traj AR.top <<>
 
 > EOF
 
-------------
 
-对于有些小分子利用sybyl构建的一般缺少原子参数，首先将小分子单独存成mol2，用amber的antechamber 做出参数。
-
-1、利用gaussian
-
-`antechamber -i 49.mol2 -fi mol2 -o 49.in -fo gzmat`
-
-这样可以生成49.in文件，下载到windows环境，运行gaussian计算这个文件，如果发现计算时间过长或者内存不足计算中断，可以修改文件选择小一些的基组。
+--------------
 
 
-you have Gassian output file.out (don’t forget to put some keyword in the Gassian input for the special format used by amber)
+在cluster上交分子动力学模拟作业的步骤：
+1.准备复合物的参数文件(.top, .crd)
+(1)计算小分子配体的电荷（amber不提供小分子的电荷参数）
+可以用amber自带的bcc电荷，antechamber –i  ***.mol2 –fi mol2 –o ***_bcc.mol2 –fo mol2 –c bcc
+也可采用外部程序计算的电荷，如gaussian，先计算静电势，然后拟合RESP电荷。具体步骤：
+利用antechamber产生计算静电势的文件，antechamber –i  ***.mol2 –fi mol2 –o ligand.gjf –fo gcrt
+修改ligand.gjf，去掉#HF行中的opt。然后用gaussian计算：g03 ligand.gjf。计算完毕产生ligand.log文件，拟合resp电荷：antechamber –i ligand.log –fi gout –o resp.mol2 –fo mol2 –c resp 将resp.mol2中的电荷部分拷贝到原始的mol2文件，即***.mol2
+(2)小分子参数文件
+如果是计算bcc电荷，antechamber –i ***_bcc.mol2 –fi mol2 –o ligand.prep –fo prepi
+                    parmchk –i ligand.prep –f prepi –o ligand.frcmod
+如果计算resp电荷，antechamber –i ***.mol2 –fi mol2 –o ligand.prep –fo prepi
+                    parmchk –i ligand.prep –f prepi –o ligand.frcmod
+注：此处的***.mol2中电荷部分已经修改过
+(3)将小分子`***.mol2`与蛋白分子`***.pdb`（没有氢原子）合并成一个复合物，存成pdb文件，可命名为temp.pdb
+(4)产生复合物的参数文件
+命令：tleap –s –f tleap.in
+tleap.in内容：
+source leaprc.gaff
+loadamberprep ligand.prep
+loadamberparams ligand.frcmod
+check LIG （注：为***.mol2文件中的分子子结构的命名，一个配体对应唯一的子结构命名）
+saveamberparm LIG lig.top lig.crd (小分子参数文件)
+source leaprc.ff03
+com=loadpdb temp.pdb (导入复合物文件)
+check com
+saveamberparm com com.top com.crd
+solvatebox com TIP3PBOX 10.0 （加水盒子）
+addions com Na+ N (或者Cl-，看复合物带什么电性，N取决于复合物所带的电荷，使它保持中和)
+saveamberparm com complex.top complex.crd (加了模型水的复合物参数)
+ 
+2cluster上计算分子动力学模拟
+先把complex.top complex.crd两个文件传到cluster
+上传mini.in heat.in 和md.in输入文件，分别计算结构优化，加热和平衡过程，文件中的具体参数设置见amber manual
+交作业命令：qsub md.pbs
+删作业命令：qdel N  (N是作业的编号)
+看作业计算情况：qstat –f  N
+根据该命令提供的信息找到作业所在的节点，如c0-12
+则ssh c0-12
+cd /data/$username/N……
+可进入文件夹访问
 
-`antechamber –i file.out –fi gout –o filr.prep –fo prepi –c resp`
-
-this step prepare the “file.prep” for your drug -c bcc all right
-
-
-* -parmchk –i file.prep –f prepi –o file.frcmod )this step prepare the file “file.frcmod”for the drug)
-
-2、 直接用mol2 转
-
-也可以直接把sybyl 的mol2 做参数
-
-* -antechamber –i file.mol2 –fi mol2 –o filr.prep –fo prepi –c resp / -c bcc
-
-* -parmchk –i file.prep –f prepi –o file.frcmod
-
-
-now you have 2 files: file.prep and file.frcmod for the drug .
-
-注意修改file.prep 中文件名。要与pdb中的配体一致。（vi prep。假设是abc）
-
-
-对应pdb与prep文件中的原子名称,，原子顺序要一致。
-
-prep 在xleap中打开
-
-using tleap for the protein or drug or/and complex
-
--xleap –s –f leaprc.ff99
-
--mod = loadamberparams file.frcmod
-
--loadamberprep file.prep
-
-edit abc
-
-pdb 可以用sybyl打开。用vi 修改pdb
-
--source leaprc.gaff
-
--RL = loadpdb file.pdb
-
--Solvateoct RL TIP3PBOX 10
-
--Addions RL Cl- 0 (0:zero for neutral charge,Cl- can be replaced by Na+)
-
--Saveamberparm RL fileWT.top fileWT.crd (save topology and coord. With water)
 
 ------
