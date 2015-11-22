@@ -6,7 +6,7 @@ categories: Coding
 tags: Python
 ---
 
-
+zipfile模块是处理zip压缩包的模块, 用于压缩和解压, 添加, 和列出压缩包内容.
 
 # zipfile module reference
 
