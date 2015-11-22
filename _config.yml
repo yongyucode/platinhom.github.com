@@ -5,7 +5,7 @@ author: Hom
 #pygments: true
 safe: true
 paginate: 25
-paginate_path: "/pages/page:num/"
+paginate_path: "/page:num/"
 #auto: true
 encoding: "utf-8"
 highlighter: pygments
