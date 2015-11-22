@@ -3,13 +3,15 @@ title: 关于我
 layout: page
 ---
 
-> 学无止境啊啊啊啊!!!!
+<style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
-I'm doing research in computational chemistry/biology. My reseach interest includes computer-aider drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety  and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design. 
+> 学无止境啊啊啊啊!!!!  
 
-Computation related sciences need to remember lots of information. Here I just put some notes on my blog here. Hope it help!
+&nbsp;&nbsp;&nbsp;&nbsp;  I'm doing research in computational chemistry/biology. My reseach interest includes computer-aided drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design.  
 
-Welcome to give your valuable comments or mail to me: zhaozxcpu(at)hotmail.com !   
+&nbsp;&nbsp;&nbsp;&nbsp;  Computation related sciences need to remember lots of information. Here I just put some notes on my blog and sometimes it's incompleted :-) Hope it can help!  
+
+&nbsp;&nbsp;&nbsp;&nbsp;  Welcome to give your valuable [comments](/pages/guestbook/) or mail to me: zhaozxcpu(at)hotmail.com !   
 
 -----
 
@@ -17,33 +19,8 @@ Welcome to give your valuable comments or mail to me: zhaozxcpu(at)hotmail.com !
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation and residue pKa calculation. 
 - AutoT&T2 and PG-AutoT&T: Fragment-based lead optimization tool. AutoT&T speeding up and new pharmacophore guided optimization/de novo design.
 - AutoPhD (Pharmacophore Deduction): Pharmacophore perception for ligand/protein or protein/protein complex.
- 
-## Skills
 
-### Computational Biology/Chemistry:
-- Molecular Modeling (Docking, Virtual Screening, Pharmacophore, Structure Modeling, CADD, QSAR) with MOE, Schrodinger, SYBYL, Discovery Studio, Gold, Autodock, Modeller et al. 
-- MD simulation with Amber, NAMD2, Desmond.
-- QM and QM/MM with Gaussian for optimization/TS/IRC.
-- Visualization with Pymol, Chimera, VMD, JSmol
-
-### Programmer
-- Daily tasks and system administration: Bash(4yr), Python(3yr)
-- Program development: C++(2yr)
-- Numerical Computation: Fortran(1yr), Matlab(1yr), R(1m)
-- Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)
-- IDE: Sublime, Eclipse, VS, Notepad++
-- Writting: Markdown, Latex, Endnote
-- Other: Git, 
-
-### Chemist
-- Organic Mass Spectrometry focusing on ESI-MS/MS (2yr)
-- Organic Synthesis (3yr)
-- NMR analysis (1yr)
-- Fluorescence Polarization (FP) for peptide/protein binding(0.5yr).
-
-<style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
-
-## Papers published/joined
+## Publications
 
 ### Published
 
@@ -71,13 +48,87 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
 3. MIBPB based protein-ligand binding models (2015)
 4. Evidence of a Nepenthes-Like exo Diels-Alderase in the Biosynthesis of Pyrroindomycins (2015)
 
+## Hobbies
+
+<details>
+<ul>
+  <li>Chinese food (Spicy better)!! Sweet chocolate, cake, candy!! </li>
+  <li>IT and Computers, Electronics  </li>
+  <li>Sports: Swimming, Tennis, Running</li>
+  <li>Watch matches for: American Football, Tennis, NBA, European Football (Barcelona)</li>
+  <li>Fan for: MSU, Roger Federar, Argentina football and Messi, Hengda football</li>
+</ul>
+</details>
+
+## Skills
+
+{::comment}
+### Computational Biology/Chemistry:
+- Molecular Modeling (Docking, Virtual Screening, Pharmacophore, Structure Modeling, CADD, QSAR) with MOE, Schrodinger, SYBYL, Discovery Studio, Gold, Autodock, Modeller et al. 
+- MD simulation with Amber, NAMD2, Desmond.
+- QM and QM/MM with Gaussian for optimization/TS/IRC.
+- Visualization with Pymol, Chimera, VMD, JSmol
+
+### Programmer
+- Daily tasks and system administration: Bash(4yr), Python(3yr)
+- Program development: C++(2yr)
+- Numerical Computation: Fortran(1yr), Matlab(1yr), R(1m)
+- Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)
+- IDE: Sublime, Eclipse, VS, Notepad++
+- Writting: Markdown, Latex, Endnote
+- Other: Git, 
+
+### Chemist
+- Organic Mass Spectrometry focusing on ESI-MS/MS (2yr)
+- Organic Synthesis (3yr)
+- NMR analysis (1yr)
+- Fluorescence Polarization (FP) for peptide/protein binding(0.5yr).
+
+{:/comment}
+
+<details>
+
+<h3 id="computational-biologychemistry">Computational Biology/Chemistry:</h3>
+<ul>
+  <li>Molecular Modeling (Docking, Virtual Screening, Pharmacophore, Structure Modeling, CADD, QSAR) with MOE, Schrodinger, SYBYL, Discovery Studio, Gold, Autodock, Modeller et al. </li>
+  <li>MD simulation with Amber, NAMD2, Desmond.</li>
+  <li>QM and QM/MM with Gaussian for optimization/TS/IRC.</li>
+  <li>Visualization with Pymol, Chimera, VMD, JSmol</li>
+</ul>
+
+<h3 id="programmer">Programmer</h3>
+<ul>
+  <li>Daily tasks and system administration: Bash(4yr), Python(3yr)</li>
+  <li>Program development: C++(2yr)</li>
+  <li>Numerical Computation: Fortran(1yr), Matlab(1yr), R(1m)</li>
+  <li>Website: HTML/CSS(0.5yr), PHP(0.5yr), JS(0.5yr), MySQL(0.5yr)</li>
+  <li>IDE: Sublime, Eclipse, VS, Notepad++</li>
+  <li>Writting: Markdown, Latex, Endnote</li>
+  <li>Other: Git, </li>
+</ul>
+
+<h3 id="chemist">Chemist</h3>
+<ul>
+  <li>Organic Mass Spectrometry focusing on ESI-MS/MS (2yr)</li>
+  <li>Organic Synthesis (3yr)</li>
+  <li>NMR analysis (1yr)</li>
+  <li>Fluorescence Polarization (FP) for peptide/protein binding(0.5yr).</li>
+</ul>
+
+</details>
+
 ## Places I have been to
-- Foshan (My lovely hometown)
-- Nanjing (My undergraduated student life)
-- Shanghai (Best place in China, graduated student life)
-- East Lansing (Quiet town for my postdoc study)
-- Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao
-- Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Lancaster, Columbus
+
+<details>
+<ul>
+  <li>Foshan (My lovely hometown)</li>
+  <li>Nanjing (My undergraduated student life)</li>
+  <li>Shanghai (Best place in China, graduated student life)</li>
+  <li>East Lansing (Quiet town for my postdoc study)</li>
+  <li>Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao</li>
+  <li>Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Lancaster, Columbus</li>
+</ul>
+</details>
 
 ## Find Me in:
 - [Weibo](http://weibo.com/234020806/), [CV](/HomPDFF/Hom-CV.pdf)
