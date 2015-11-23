@@ -43,7 +43,8 @@ layout: page_small
 
 ### Fun
 - [AcFun](http://www.acfun.tv/) ; [Youtube](https://www.youtube.com/) ;
-- [Chiphell](http://www.chiphell.com/forum.php)
+- [Chiphell](http://www.chiphell.com/forum.php) ; 
+- [伯乐在线](http://www.jobbole.com/); [segmentfault](http://segmentfault.com/)
 
 ### Good Blogs
 - [哲科文](http://jerkwin.github.io/) ; [懒猪](../about/log.html) ; [善用佳软](http://xbeta.info/)  ; [阳志平](http://www.yangzhiping.com/) ; [未必博客](http://cangzhang.github.io/) ; [团子运维](http://kodango.com/) ; [UseASP](http://blog.useasp.net/default.aspx); [GitCafe版](http://platinhom.gitcafe.io/); [HomPDF](http://platinhom.github.io/HomPDF);[ShowMol](http://platinhom.github.io/ShowMol); [canvas好炫](http://darksc.xyz/);[emilelu 很漂亮](http://emilelu.com/), [带搜索和地球](http://codewu.com/); [陈国林博客ACM等](http://blog.csdn.net/chenguolinblog/article/category/1849661), [KongLX博客](http://lingxiankong.github.io/); [Liaoxuefeng-JS,GIT,Python教程](http://www.liaoxuefeng.com/); [阮一峰博客](http://www.ruanyifeng.com/home.html); [敏毅](http://lesliezhu.github.io/public/archive.html)
