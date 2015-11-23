@@ -6,7 +6,49 @@ categories: Coding
 tags: Python
 ---
 
-zipfile模块是处理zip压缩包的模块, 用于压缩和解压, 添加, 和列出压缩包内容.
+zipfile模块是处理zip压缩包的模块, 用于压缩和解压, 添加, 和列出压缩包内容. ZipFile是主要的类(即一般意义的压缩包罗), 其过程是将每个文件及相关信息作为ZipInfo对象操作到ZipFile压缩包中. ZipInfo是ZipFile的成员(member),包括文件头信息, 文件内容.
+
+## zipfile模块
+
+内含三个类: ZipFile, PyZipFile, ZipInfo, 一个判断函数is_zipfile, 一些常量和exception. 和tarfile不同,没有直接open返回ZipFile对象的方法, 取而代之用ZipFile类的初始化函数构建. 所以用法会有所差异.
+
+## ZipFile类
+
+压缩包对象. 主要是构建ZipFile类, 关闭, 获取文件ZipInfo, 提取和写入, 设置密码等一些控制压缩包的方法.
+
+- `zipfile.ZipFile(file[, mode[, compression[, allowZip64]]])`: 返回压缩包对象. file可以是文件名或对象, mode为'w', 'r', 'a'三种, 对应写读和追加. compression是压缩模式, `ZIP_STORED` (只储存不压缩)或 `ZIP_DEFLATED`, 默认前者, 后者需要zlib模块. allowZip64默认False, True时后缀为zip64, 可以大于2GB.
+- `close()` 关闭打开的压缩包
+- `open(name[,mode[,pwd]])` 打开压缩包内的文件返回类文件对象(ZipExtFile, 只能进行读取). 并不是打开压缩包! name是压缩包内的文件名或ZipInfo对象; mode是'r','U','rU', 默认r. pwd当有密码时使用. `read(name[,pwd])` 和上类似, 但返回的是字节内容.
+- `getinfo(name)` 通过文件名返回ZipInfo对象. `infolist()`返回所有ZipInfo成员的列表. `namelist()`返回所有ZipInfo成员的名称的列表.
+- `extract(member[,path[,pwd]])` 解压一个文件, member是文件名/ZipInfo对象; path解压路径, 默认'.'解压到当前文件夹; pwd是密码啦. 返回解压文件/文件夹的绝对路径. 
+- `extractall([path[,members[,pwd]])` 解压所有(部分)文件, 基本同上. members可以指定部分文件名,namelist()的子集.
+- `printdir()` 输出压缩包内文件信息到屏幕
+- `setpassword(pwd)` 设置缺省密码, 可以方便解压.
+- `testzip()` 会检查所有文件, 返回有错的文件的文件名.
+- `write(filename[, arcname[, compress_type]])` 将文件写入压缩包. arcname是文件在压缩包里的别名. 类似地`writestr(zinfo_or_arcname, bytes[, compress_type])` 写byte串到压缩包.
+
+## ZipInfo类
+
+就是压缩包的一个成员member. 其实质是文件+相关信息. 主要有一些属性.例如属性: filename, date_time, file\_size等. 一般情况下, ZipInfo通过ZipFile的 `getinfo(name)`或`infolist()`获取.
+
+## 例如
+
+~~~python
+z = zipfile.ZipFile(filename, 'r')
+
+for i in z.infolist():
+    print i.file_size, i.header_offset
+    z.extract(i)
+z.close()
+
+z = zipfile.ZipFile(filename, 'w') 
+
+#把testdir中的文件全部添加到压缩包里（这里只添加一级子目录中的文件）：
+if os.path.isdir(testdir):
+    for d in os.listdir(testdir):
+        z.write(testdir+os.sep+d)
+z.close()
+~~~
 
 # zipfile module reference
 
@@ -47,9 +89,9 @@ The numeric constant for an uncompressed archive member.
 The numeric constant for the usual ZIP compression method. This requires the zlib module. No other compression methods are currently supported.
 
 > See also  
-	- PKZIP Application Note  
+	- [PKZIP Application Note](http://www.pkware.com/documents/casestudies/APPNOTE.TXT) 
 	Documentation on the ZIP file format by Phil Katz, the creator of the format and algorithms used.  
-	- Info-ZIP Home Page  
+	- [Info-ZIP Home Page](http://www.info-zip.org/)  
 	Information about the Info-ZIP project’s ZIP archive programs and development libraries.
 
 ## ZipFile Objects
@@ -72,7 +114,7 @@ with ZipFile('spam.zip', 'w') as myzip:
 
 New in version 2.7: Added the ability to use ZipFile as a context manager.
 
-#### ZipFile.close()
+### ZipFile.close()
 Close the archive file. You must call close() before exiting your program or essential records will not be written.
 
 #### ZipFile.getinfo(name)
@@ -81,10 +123,10 @@ Return a ZipInfo object with information about the archive member name. Calling 
 #### ZipFile.infolist()
 Return a list containing a ZipInfo object for each member of the archive. The objects are in the same order as their entries in the actual ZIP file on disk if an existing archive was opened.
 
-#### ZipFile.namelist()
+### ZipFile.namelist()
 Return a list of archive members by name.
 
-#### ZipFile.open(name[, mode[, pwd]])
+### ZipFile.open(name[, mode[, pwd]])
 Extract a member from the archive as a file-like object (ZipExtFile). name is the name of the file in the archive, or a ZipInfo object. The mode parameter, if included, must be one of the following: 'r' (the default), 'U', or 'rU'. Choosing 'U' or 'rU' will enable universal newline support in the read-only object. pwd is the password used for encrypted files. Calling open() on a closed ZipFile will raise a RuntimeError.
 
 > Note: The file-like object is read-only and provides the following methods: read(), readline(), readlines(), \_\_iter__(), next().
@@ -95,7 +137,7 @@ Extract a member from the archive as a file-like object (ZipExtFile). name is th
 
 New in version 2.6.
 
-#### ZipFile.extract(member[, path[, pwd]])
+### ZipFile.extract(member[, path[, pwd]])
 Extract a member from the archive to the current working directory; member must be its full name or a ZipInfo object). Its file information is extracted as accurately as possible. path specifies a different directory to extract to. member can be a filename or a ZipInfo object. pwd is the password used for encrypted files.
 
 Returns the normalized path created (a directory or new file).
@@ -104,7 +146,7 @@ New in version 2.6.
 
 > Note: If a member filename is an absolute path, a drive/UNC sharepoint and leading (back)slashes will be stripped, e.g.: ///foo/bar becomes foo/bar on Unix, and C:\foo\bar becomes foo\bar on Windows. And all ".." components in a member filename will be removed, e.g.: ../../foo../../ba..r becomes foo../ba..r. On Windows illegal characters (:, <, >, \|, ", ?, and *) replaced by underscore (_).
 
-#### ZipFile.extractall([path[, members[, pwd]]])
+### ZipFile.extractall([path[, members[, pwd]]])
 Extract all members from the archive to the current working directory. path specifies a different directory to extract to. members is optional and must be a subset of the list returned by namelist(). pwd is the password used for encrypted files.
 
 > Warning: Never extract archives from untrusted sources without prior inspection. It is possible that files are created outside of path, e.g. members that have absolute filenames starting with "/" or filenames with two dots "..".
@@ -113,10 +155,10 @@ Changed in version 2.7.4: The zipfile module attempts to prevent that. See extra
 
 New in version 2.6.
 
-#### ZipFile.printdir()
+### ZipFile.printdir()
 Print a table of contents for the archive to sys.stdout.
 
-#### ZipFile.setpassword(pwd)
+### ZipFile.setpassword(pwd)
 Set pwd as default password to extract encrypted files.
 
 New in version 2.6.
@@ -129,7 +171,7 @@ Changed in version 2.6: pwd was added, and name can now be a ZipInfo object.
 #### ZipFile.testzip()
 Read all the files in the archive and check their CRC’s and file headers. Return the name of the first bad file, or else return None. Calling testzip() on a closed ZipFile will raise a RuntimeError.
 
-#### ZipFile.write(filename[, arcname[, compress_type]])
+### ZipFile.write(filename[, arcname[, compress_type]])
 Write the file named filename to the archive, giving it the archive name arcname (by default, this will be the same as filename, but without a drive letter and with leading path separators removed). If given, compress_type overrides the value given for the compression parameter to the constructor for the new entry. The archive must be open with mode 'w' or 'a' – calling write() on a ZipFile created with mode 'r' will raise a RuntimeError. Calling write() on a closed ZipFile will raise a RuntimeError.
 
 > Note: There is no official file name encoding for ZIP files. If you have unicode file names, you must convert them to byte strings in your desired encoding before passing them to write(). WinZip interprets all file names as encoded in CP437, also known as DOS Latin.
