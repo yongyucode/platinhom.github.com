@@ -126,6 +126,11 @@ antechamber -i ligand.mol2 -fi mol2 -o ligand_c.mol2 -fo mol2 -c rc -cf ligand_c
 ~~~
 
 
+### Update 
+
+- 在使用antechamber转格式时, mol2输出时默认gaff 原子类型, 要保持原有类型, 使用`-at sybyl`或者`-j 0/2/3`
+- 转mol2键级时, 羧基antechamber会解释为1/2键级, 而一般mol2是ar.
+
 
 ## 子程序
 

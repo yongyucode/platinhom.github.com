@@ -57,7 +57,7 @@ One of the options must be used. 最少使用以下其中一个的选项.
 - -\-nodebump	
 	- Do not perform the debumping operation
 	- 不要进行debump操作. 就是确保构建新的原子不会太靠近于已有原子.
-- -\-noopts	
+- -\-noopt	
 	- Do not perform hydrogen optimization
 	- 不进行氢键网络优化.
 - **-\-chain**
