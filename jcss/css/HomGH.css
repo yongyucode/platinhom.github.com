@@ -50,3 +50,5 @@ footer{display:block;border-top:1px dashed #CCC}footer small{font-size:13px;colo
 .TOCLevel5 { font-size: .4em; margin-left: 7em; }
 .TOCLevel6 { font-size: .3em; margin-left: 9em; }
 .TOCSectNum:after { content: " "; }
+
+.gist tr{border:0;}

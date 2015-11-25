@@ -56,4 +56,7 @@ loadamberparams frcmod.ionsjc_tip3p  # 其中tip3p可以换成别的水分子
 不常用
 var=copy unit 复制单元
 
+
+<script src="https://gist.github.com/platinhom/55a35c3d6ad40ca6c61c.js"></script>
+
 ------

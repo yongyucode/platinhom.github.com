@@ -8,7 +8,7 @@ tags: CompBiol Software
 
 ## pv_convert.py
 
-用于复合物的mae文件的处理, 例如合并entries, 分离出配体和蛋白等. 常用-m, -l, -r选项. -asl (atom specification language表达式)可以用于指定配体原子的识别准则, 从而区分配体or蛋白. 例如ASL表达式`-asl "res.ptype \'LIG \'"`可以将配体名LIG的识别出来, 注意LIG后面还有空格,两个转义也是必须的. 更多ASL表达式可以参考 菜单Edit-Select->Atoms.
+用于复合物的mae文件的处理, 例如合并entries, 分离出配体和蛋白等 [^ref3]. 常用-m, -l, -r选项. -asl (atom specification language表达式)可以用于指定配体原子的识别准则, 从而区分配体or蛋白. 例如ASL表达式`-asl "res.ptype \'LIG \'"`可以将配体名LIG的识别出来, 注意LIG后面还有空格,两个转义也是必须的. 更多ASL表达式可以参考 菜单Edit-Select->Atoms.
 
 Usage:   
 
@@ -52,7 +52,7 @@ Options:
 
 structcat - concatenate structure files of various formats into one file
  
-structcat可以将多个结构合在一起, 最常用就是pdb/mol2 合成mae文件.
+structcat可以将多个结构合在一起, 最常用就是pdb/mol2 合成mae文件. 支持压缩文件maegz. 另外一些简单的也可以利用cat, zcat, type等实现. [^ref2].
 
 `$SCHRODINGER/utilities/structcat -i[<format>] <inputfile> [-i[<format>] <inputfile>...] [-o[<format>]] <outputfile>`
  
@@ -158,7 +158,7 @@ For conversion to/from PDB format, the following options are also supported:
 - -all_occ
 - -remediated
 - -hybrid36
-- -psp (非标准ASH,ARN,GLH,LYN,HIE,HIP等非标准名字残基的残基名保留下来)
+- -psp (非标准ASH,ARN,GLH,LYN,HIE,HIP等非标准名字残基的残基名保留下来) [^ref1]
 - -ignore_obsolete
 - -warn_obsolete
 - -use\_component_dict
@@ -186,11 +186,12 @@ Limitations:
 * When SMILES are converted to Maestro format, the output structures are 2D (not valid for many programs). Use LigPrep to generate 3D Maestro structures from SMILES.
 * Conversion to older/newer Maestro format is only supported for input Maestro format file.
 
-
-
 ## Reference
 
-1. [How do I combine a receptor and a ligand from separate files into a file with a single entry for the complex?](http://www.schrodinger.com/kb/286)
-2. [Can I combine Maestro files or other structure files from the command line?](http://www.schrodinger.com/kb/190)
+[SC-2015-2:general_utilities](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/general/general_utilities.pdf)
+
+[^ref3]: [How do I combine a receptor and a ligand from separate files into a file with a single entry for the complex?](http://www.schrodinger.com/kb/286)
+[^ref2]: [Can I combine Maestro files or other structure files from the command line?](http://www.schrodinger.com/kb/190)
+[^ref1]: [Why are structures that have residues ARN, ASH, GLH, LYN, HIE, HIP incorrectly changed to ARG, ASP, GLU, LYS, HIS when converted to PDB?](http://www.schrodinger.com/kb/319)
 
 ------
