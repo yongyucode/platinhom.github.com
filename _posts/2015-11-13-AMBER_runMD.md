@@ -20,6 +20,8 @@ Abmber主页 <http://ambermd.org/>, 官方教程 <http://ambermd.org/tutorials/>
 - **antechamber**: 用于生成小分子,特殊残基力场GAFF类型, 加电荷等处理.
 - **parmchk**: 用于生成小分子缺失力场参数.
 - **ambpdb**: 将top+crd文件转为pdb文件.
+- **reduce**: 加氢去氢
+- **pdb4amber**: 
 - **nab**: 核酸构建的程序. amber10之前是[nucgen](http://nucleix.mbu.iisc.ernet.in/nucgen/index.htm).
 - **sqm**: 半经验DFTB量化计算程序, 一般不用.
 - **parmed.py**: top文件加工, [ref](http://jswails.wikidot.com/parmed), 对应在bin/ParmEd文件夹呢的脚本
@@ -42,6 +44,10 @@ Abmber主页 <http://ambermd.org/>, 官方教程 <http://ambermd.org/tutorials/>
 蛋白预处理:去掉remark,HETATM,每条链后增加TER,根据质子化状态命名HIS,HIE,HID,HIP;根据CYS状态命名CYS,CYX
 
 前处理：包括去除可选构象，去除水附加等等杂物，二硫键CYS->CYX，
+
+awk '$4=="LIG"' 1ODX.pdb > 1ODX_protein.pdb
+awk '$4!="LIG"' 1ODX.pdb | awk '$1=="ATOM"' > 1ODX_protein.pdb
+
 
 ### 小分子参数化
 
