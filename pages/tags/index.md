@@ -5,7 +5,7 @@ layout: page_small
 
 <div id='tag_cloud'>
 {% for tag in site.tags %}
-<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}"> <span style="color:#A82918; font-size:0.8em;">{{ tag[0] }} <span style="color:#07e;"> #{{ tag[1].size }}</span></span></a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}"> <span style="color:#A82918; font-size:0.8em;">{{ tag[0] }} <span style="color:#07e;"> #{{ tag[1].size }}</span></span></a>&nbsp;&nbsp;&nbsp;
 {% endfor %}
 </div>
 

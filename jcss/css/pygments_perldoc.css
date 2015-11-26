@@ -59,6 +59,7 @@
 .il { color: #B452CD } /* Literal.Number.Integer.Long */
 div[class="highlight"] > pre > code[class*="language-"] {
 	background:#eeeedd;
+	color:#339933;
 }
 div[class="highlight"] > pre {
 	background:#eeeedd;

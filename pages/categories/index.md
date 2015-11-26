@@ -6,14 +6,25 @@ layout: page_small
 <div id='tag_cloud'>
 Categories:  
 {% for cat in site.categories %}
-<a href="#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} <span style="color:#07e"> ({{ cat[1].size }})</span></a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} <span style="color:#07e"> ({{ cat[1].size }})</span></a>&nbsp;&nbsp;&nbsp;
 {% endfor %}
 
 <br/>
 Types: 
-<a href="/DailyTools" title="Tools">Tools</a>&nbsp;&nbsp;&nbsp;
-<a href="/pages/archives.html" title="Archives">Archives</a>&nbsp;&nbsp;&nbsp;
-<a href="/pages/allblogs.html" title="AllBlogs">All Blogs</a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="/DailyTools" title="Tools">Tools</a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="/pages/archives.html" title="Archives">Archives</a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="/pages/allblogs.html" title="AllBlogs">All Blogs</a>&nbsp;&nbsp;&nbsp;
+
+<hr style="margin:5px;border-width:2px;">
+
+<span style="font-size:0.8em">
+<a class="linknoline" href="/1234/01/01/Python-Language/">Python语法汇总</a>&nbsp;&nbsp;
+<a class="linknoline" href="/1234/01/02/Python-BuildinModules/">Python内建模块</a>&nbsp;&nbsp;
+<br/>
+<a class="linknoline" href="/1111/11/11/Plans/">备忘计划</a>&nbsp;&nbsp;
+<a class="linknoline" href="/1111/11/10/important-blog/">重要博客</a>&nbsp;&nbsp;
+</span>
+
 </div>
 
 <hr style="margin:5px;border-width:2px;">
