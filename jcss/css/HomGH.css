@@ -51,4 +51,6 @@ footer{display:block;border-top:1px dashed #CCC}footer small{font-size:13px;colo
 .TOCLevel6 { font-size: .3em; margin-left: 9em; }
 .TOCSectNum:after { content: " "; }
 
-.gist tr{border:0;}
+.gist tr{border:0;} 
+.gits ol,.gist ul{margin-left: 0px; padding-left: 0em} 
+.gist>ol,.gist>ul{padding-left: 1em} 
