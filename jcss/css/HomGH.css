@@ -13,7 +13,7 @@ body>div{width:70%;max-width:50em;padding:1em 1em 1em;margin:1em auto;box-shadow
 
 h1,h2,h3,h4,h5{font:bold 18px/1.5 Arial,SimHei;color:#000;margin-top:18px;margin-bottom:18px;padding:0}h1{font-size:36px;line-height:36px;margin:18px 0 18px 0;padding:12px;display:inline-block;border:1px solid #ccc;border-radius:10px;box-shadow:0 1px 0 2px #ddd}h2{font-size:30px;margin:18px 0 6px;border-bottom:3px double}h3{font-size:24px}h4{font-size:21px}h5{font-size:18px}section>h3{margin:18px 0 18px 0}
 h1.page_title{margin:0px 0 12px 0;background:#0F9AC3;font-size:1.5em; color:#FFF9E4;box-shadow:0 1px 0 2px #409FBB} h1.post_title{margin-top: 28px;display:block;background-color: #82AEDC;}
-a,a:link,a:hover,a:active{color:#22869A;margin:0 auto;padding:0;text-decoration:none;border-bottom-width:1px;border-bottom-style:solid;vertical-align:baseline}a:visited{color:#003BB3}#GoTop>a{border-bottom-width:0px;color:#1BC4F7;}
+a,a:link,a:hover,a:active{color:#22869A;margin:0 auto;padding:0;text-decoration:none;border-bottom-width:1px;border-bottom-style:solid;vertical-align:baseline}a:visited{color:#003BB3}#GoTop>a{border-bottom-width:0px;color:#1BC4F7;} a.linknoline{border-bottom-width:0px;}
 ul,ol,dl,li{padding:0;margin:6px 0 6px 36px}
 p{padding:0;margin: 8px 8px}p.intro{font-size:24px;line-height:32px}
 pre,code{font:bold 18px/1.2 Consolas,"Courier New",Monaco,monospace,SimHei;margin:1em 0em;padding:.5em .5em;color:#DD1144;background:#F5F2F0;overflow:auto;border:5px solid #E0DFCC;border-radius:20px;max-width:100%}code{margin:0 2px 0 2px;padding:4px 0 0 0;border:2px solid #E0DFCC;border-radius:4px}pre code{border:0;padding:0 0 0 0;}
