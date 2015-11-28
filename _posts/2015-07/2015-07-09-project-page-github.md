@@ -4,6 +4,7 @@ title: Project Page in Github Page
 date: 2015-07-09 1:34:29
 categories: IT
 tags: Git Website
+archive: true
 ---
 
 It's very to create the web page for your new repository under your mainpage. Here, I record the procedure.
@@ -31,5 +32,7 @@ It's very to create the web page for your new repository under your mainpage. He
 ## Reference
 1. [Creating Project Pages manually](https://help.github.com/articles/creating-project-pages-manually/)
 2. [GitCafe-Project Page](https://help.gitcafe.com/manuals/help/pages-services#为项目创建-pages-服务)
+
+> 本博文已合并到[Github相关总结](/1233/01/01/Github-related/#l2-project-gh-pages)中, 不再更新.
 
 ---

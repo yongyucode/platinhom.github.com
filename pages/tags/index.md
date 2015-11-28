@@ -18,7 +18,7 @@ layout: page_small
 {% for post in tag[1] %}
 {% if post.archive != true %}
   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>&nbsp;&nbsp;&nbsp;
-  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> ; <br/> 
+  <a href="{{ post.url }}" target='_blank' title="{{ post.title }}">{{ post.title }}</a> ; <br/> 
 {% endif %}
 {% endfor %}
 	</p> 

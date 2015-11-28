@@ -3,6 +3,7 @@ layout: post
 title: Markdown 笔记
 categories: IT
 tags: IDE
+archive: true
 ---
 
 ﻿扩展名使用md/markdown，在为知当中使用md后缀命名笔记即可识别为markdown.
@@ -88,3 +89,4 @@ $$ 数学公式 $$ 整行为一数学
 ~~~
 
 
+> 本博文已合并到[Github相关总结](/1233/01/01/Github-related/#standard-markdown)中, 不再更新.
