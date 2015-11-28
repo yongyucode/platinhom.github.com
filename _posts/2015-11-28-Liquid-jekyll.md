@@ -63,8 +63,6 @@ if tab实例 (用的highlight的tag, 先包裹raw的tag去liquid解析, 再包�
 {% endraw %}
 {% endhighlight %}
 
-<!--script src="https://gist.github.com/platinhom/e96aed93a8fc0f5063cc.js"></script-->
-
 {% raw %}
 
 --------
