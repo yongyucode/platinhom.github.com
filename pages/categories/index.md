@@ -20,6 +20,7 @@ Types:
 <span style="font-size:0.8em">
 <a class="linknoline" target='_blank' href="/1234/01/01/Python-Language/">Python语法汇总</a>&nbsp;&nbsp;
 <a class="linknoline" target='_blank' href="/1234/01/02/Python-BuildinModules/">Python内建模块</a>&nbsp;&nbsp;
+<a class="linknoline" target='_blank' href="/1234/06/01/HTML-Language/">HTML总结</a>&nbsp;&nbsp;
 <a class="linknoline" target='_blank' href="/1233/01/01/Github-related/">Github相关</a>&nbsp;&nbsp;
 <br/>
 <a class="linknoline" target='_blank' href="/1111/11/11/Plans/">备忘计划</a>&nbsp;&nbsp;
