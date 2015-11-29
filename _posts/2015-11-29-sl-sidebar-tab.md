@@ -20,6 +20,10 @@ tags: IDE
 
 在上方菜单栏增加一个Folders选项, 方便在Project中设置更改sidebar中的文件夹显示. 删除的话需要手动把Sidebar Folder相应的插件文件删掉才能删掉菜单.
 
+### SideBarGit 
+
+[PC介绍](https://packagecontrol.io/packages/SideBarGit)
+
 ### TabsExtra
 
 [PC介绍](https://packagecontrol.io/packages/TabsExtra), [主页介绍](http://facelessuser.github.io/TabsExtra/)
