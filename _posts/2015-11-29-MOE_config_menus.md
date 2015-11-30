@@ -41,8 +41,9 @@ runable svl文件执行顺序(以第一个遇到为准)
 `moe -load` 可加载svl文件或文件夹
 `moe -std` 不加载用户的,只加载标准的和patch的
 
-</HomPDF/manual/moe2010/html/appendix/moeconfig.htm>
-</HomPDF/manual/moe2010/html/moe/fcnref/menufile.htm>
+> [Configuring and Customizing MOE](/HomPDF/manual/moe2010/html/appendix/moeconfig.htm)
+
+> [Menu File Format](/HomPDF/manual/moe2010/html/moe/fcnref/menufile.htm)
 
 
 ~~~bash
