@@ -1,7 +1,7 @@
 ---
 layout: post_toc
-title: CSS总结
-date: 1234-07-01 00:19:34
+title: JS总结
+date: 1234-04-01 00:19:34
 categories: Coding
-tags: CSS Website
+tags: JS Website
 ---
