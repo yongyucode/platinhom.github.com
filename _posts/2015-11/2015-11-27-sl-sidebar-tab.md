@@ -47,8 +47,10 @@ tags: IDE
 
 ### ChineseLocalization
 
-[PC介绍](https://packagecontrol.io/packages/ChineseLocalization)
+[PC介绍](https://packagecontrol.io/packages/ChineseLocalization), [Github](https://github.com/rexdf/Chinese-Localization)
 
 汉化版菜单名(主菜单, tab, sidebar). 当然不支持TabsExtra和SideBarEnhancement了.
+
+![](https://packagecontrol.io/readmes/img/34e323702bce1b21ae132d8e254ef1d72a34d394.gif)
 
 ------
