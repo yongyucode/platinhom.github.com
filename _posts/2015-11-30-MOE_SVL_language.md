@@ -6,6 +6,8 @@ categories: CompCB
 tags: Software
 ---
 
+[MOE2010-Help](/HomPDF/manual/moe2010/html/)
+
 ## MASK和Tagged向量
 - get [vector,index\_list]~~读向量中index索引号的元素==v[index_list]如v[[2,3,4]],取单元素可用v(1),v[1]. 
 - put [vector,index_list,data]~~写向量中index索引号的元素为data返回新向量，但不改变原向量的值。类似于v[n]=[x]赋值,但后者改变v的值.注意赋值时index大于长度会补[]去顶替. (多元素赋值注意长度一致!)
@@ -290,7 +292,7 @@ ps: get,put相当于v[n]法, peek,poke相当于v(n)法. 注意a=[1,2,[3,4]],a([3
 
 #### 原子显示属性
 - AtomPrompt [] ~~进入手动选择,返回key
-- aSelected Atoms [] ~~返回选中的原子的mask, Atoms [] | aSelected Atoms [] 可返回选中的原子key
+- aSelected Atoms [] ~~返回选中的原子的mask, Atoms [] \| aSelected Atoms [] 可返回选中的原子key
 - aColorBy [atoms] ~~ 返回着色办法,例如'element'
 - aSetSelected [v,  mask]设置v向量里的选择状态0不选1为已选，mask为需要对应的0/1mask。全选 aSetSelected [Atoms[],1] 会进行unit-extension.
 - aSetColorBy [Atoms[], 'scalar'] ~~设置原子的着色,使用scalar方法(一般没有)
@@ -455,7 +457,9 @@ MM
 - graph\_ear [nbrlist, [a, b]] ~~a和b是两个起点,先断开a-b,再返回两条最长路径如graph\_chain. 若a终结于b,则第二路径只含b.
 - graph\_dfs2 nbrlist ~~深度优先搜索,返回 [dis, fin, par, low, cc, tc, ebc, bc],其中ebc第七项是block识别,每个环系从1起,非环为0
 
-### DB/DBV相关函数 (注意很多db\_key的可用db\_name代替'abc.mdb'
+### DB/DBV相关函数 
+注意很多db\_key的可用db\_name代替'abc.mdb'
+
 - db\_Open ['filename','mode']~~打开数据库，返回数据库的key; mode为'read' ,'read-write', 'create'，若不指名为读写，因此[]也省. 注意CLI里运行会自动追加db\_Close,所以要写在一行. db\_Open [] 不加参数返回所有打开的db,不作变量指定时返回'$key $file\_token',而变量赋值时直接返回文件的token. 
 - db\_Close dbkey~~关闭db数据库，使用要和dbOpen一样多.
 - db\_KeyList [] ~~返回所有打开数据库的key
@@ -487,7 +491,7 @@ MM
 - db\_RenameField [ mdb\_key, 'fieldname', 'new\_name' ] ~~field改名
 - db\_Sort [ mdb, fields, sort\_order\_flag ]~~排序,field可指定多个,第一个是主要排序标准,依此类推;sort\_order为0升序,1降序;返回值为已排序后的entries 的unique与否的mask,若独特的标为1.
 - db\_Proxy [ mdb, fields, sort\_order\_flag ]~~排序后返回rank,db\_Sort差不多
-- db\_ImportDB ['dst\_db','src\_db',fields,names,types,options] ~~载入mdb内容,names是目的地的field name. 参见
+- db\_ImportDB ['dst\_db','src\_db',fields,names,types,options] ~~载入mdb内容,names是目的地的field name. [参见](/HomPDF/manual/moe2010/html/moe/fcnref/db_port.html)
 - db\_ExportDB [ 'dst\_db', 'src\_db', field\_names, entry\_keys ] ~~输出mdb内容,
 ^
 - dbv\_Open 'filename' ~~用db viewer打开数据库，返回dbkey; 不指名file,将使用文件选择器; dbv\_OpenFile 'filename' ~~和open类似,但不打开文件选择器
