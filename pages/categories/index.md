@@ -11,7 +11,8 @@ Categories:
 
 <br/>
 Types: 
-<a class="linknoline" href="/DailyTools" title="Tools">Tools</a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="http://platinhom.github.io/HomPDF/manual/" title="Manuals">Manuals</a>&nbsp;&nbsp;&nbsp;
+<a class="linknoline" href="http://platinhom.github.io/DailyTools/" title="Tools">Tools</a>&nbsp;&nbsp;&nbsp;
 <a class="linknoline" href="/pages/archives.html" title="Archives">Archives</a>&nbsp;&nbsp;&nbsp;
 <a class="linknoline" href="/pages/allblogs.html" title="AllBlogs">All Blogs</a>&nbsp;&nbsp;&nbsp;
 </div>
