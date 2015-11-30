@@ -47,7 +47,7 @@ In this section you select options to amend the structure and perform the basic 
 Align the protein structure to a reference structure using the structalign program, with the default settings. This option has two associated options for selection of the reference structure:  
 	- Selected entryUse the entry that is selected in the Project Table for the reference structure. There must be only one entry selected in the Project Table.
 	- PDBUse the protein from the PDB whose 4-letter ID is given in the text box.
-See the [Protein Structure Alignment Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/protein_structure_alignment.html) topic for more information.
+See the [Protein Structure Alignment Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/protein_structure_alignment.html) topic for more information.
 
 对齐蛋白到指定蛋白. 默认关闭. 对应命令行相关: `-reference_st_file REFERENCE_ST_FILE, -reference_pdbid REFERENCE_PDBID`
 
@@ -82,12 +82,12 @@ This option converts selenomethionines (MSE) to methionines (MET), and is not se
 转换MSE到MET, 默认关闭. 开启对应: `-mse` 选项
 
 #### Fill in missing side chains using Prime option  
-Run a Prime refinement job (refinestruct) to place and optimize the missing side chains. See the [Predict Side Chains Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/prime/predict_side_chains.html) topic for more information.
+Run a Prime refinement job (refinestruct) to place and optimize the missing side chains. See the [Predict Side Chains Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/prime/predict_side_chains.html) topic for more information.
 
 补全缺失的侧链(Prime), 默认关闭. 开启对应: `-fillsidechains ` 选项
 
 #### Fill in missing loops using Prime option  
-Fill in missing loops from the SEQRES records in the PDB file. Requires Prime. The resulting loop may not be of high quality, and a Prime loop refinement should be performed to obtain higher quality. See the [Refine Loops Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/prime/refine_loops.html) topic for details.
+Fill in missing loops from the SEQRES records in the PDB file. Requires Prime. The resulting loop may not be of high quality, and a Prime loop refinement should be performed to obtain higher quality. See the [Refine Loops Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/prime/refine_loops.html) topic for details.
 
 补全缺失的Loop区(Prime),会从PDB文件SEQRES部分查找序列信息. 默认关闭. 开启对应: `-fillloops` 选项. 在命令行可以用`-fasta_file CUSTOM_FASTA_FILE`指定序列的fasta文件.
 
@@ -262,11 +262,11 @@ Perform a restrained minimization of the protein structure, using impref.
 
 ## Related Topics:  
 
-- [Protein Preparation Wizard Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/workflows/protein_preparation.html)
-- [Epik Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/epik/epik_panel.html)
-- [Protein Reports Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/protein_reports_panel.html)
-- [Ramachandran Plot Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/ramachandran_panel.html)
-- [Interactive H-bond Network Optimizer Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/interactive_protassign.html)
+- [Protein Preparation Wizard Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/workflows/protein_preparation.html)
+- [Epik Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/epik/epik_panel.html)
+- [Protein Reports Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/protein_reports_panel.html)
+- [Ramachandran Plot Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/ramachandran_panel.html)
+- [Interactive H-bond Network Optimizer Panel](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/maestro/help_Maestro/tools_menu/interactive_protassign.html)
 
 # prepwizard command
 
@@ -403,7 +403,7 @@ No, the Protein Preparation Wizard only considers one conformation, as do almost
 
 1. [免费可视化主程序-Maestro](https://www.schrodinger.com/freemaestro/), [帮助手册(需要注册)下载](http://www.schrodinger.com/supportdocs/18/)
 2. [Schrodinger Knowledge Base Search](http://www.schrodinger.com/kb/)
-2. [S2015-2 Documentation here](http://platinhom.github.io/HomPDF/manual/Schrodinger_2015-2_docs/Documentation_Index.html)
+2. [S2015-2 Documentation here](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/Documentation_Index.html)
 
 
 
