@@ -6,7 +6,7 @@ categories: CompCB
 tags: Software
 ---
 
-[MOE2010-Help](/HomPDF/manual/moe2010/html/)
+[MOE2010-Help](/HomPDF/manual/moe2010/html/). 转自老的有道笔记(居然以前写了这么多啊...).
 
 ## MASK和Tagged向量
 - get [vector,index\_list]~~读向量中index索引号的元素==v[index_list]如v[[2,3,4]],取单元素可用v(1),v[1]. 
@@ -431,7 +431,7 @@ MM
 - Plot [[xi..],[xj...]]~~生成位置N和xi的二维plot图，x轴是N，y轴是x值，返回对象key，可以画多条i,j。。
 - PlotH [[xi..],[xj...]]~~生成位置N和xi的二维plot直方图，返回对象key，和Plot类似，但是x值采用柱形直方图表示，可以画多条i,j。。
 - PlotS [[[xi..],[yi..]][[xj...],[yj...]]]~~生成位置x:xi和y:yi的二维plot图，返回对象key.可以画多条i,j。。
-- PlotC [matrix data]~~生成s维plot图，返回对象key。 如PlotC[ [sin t]*cos t] t=0.01*igen300
+- PlotC [matrix data]~~生成s维plot图，返回对象key。 如PlotC[ [sin t]\*cos t] t=0.01*igen300
 
 #### Graph
 
