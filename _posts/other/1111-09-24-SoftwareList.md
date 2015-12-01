@@ -35,4 +35,6 @@ Apache发行版,PHP开发环境,包含MySQL、PHP和Perl. [官网](https://www.a
 - [Texpen](http://sourceforge.net/projects/texpen/ )
  - 介绍: 小型的latex编写编译查看的工具.比较小巧.
 
+- [Keka](http://www.kekaosx.com/en/index.php): 一个通用型解压加压软件. 装好后直接将压缩文件拖过去即可完成解压. 将普通文件拖到keka上即可完成加压. 支持7z, zip, tar, dmg等.
+
 ------
