@@ -1,6 +1,6 @@
 ---
 layout: post
-title: W3School离线版去掉恼人得广告
+title: W3School离线版去掉恼人的广告
 date: 2015-12-01 11:17:33
 categories: Coding
 tags: Python Website
