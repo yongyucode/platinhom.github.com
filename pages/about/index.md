@@ -5,7 +5,11 @@ layout: page
 
 <style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
-> 学无止境啊啊啊啊!!!!  
+> 路漫漫其修远兮，吾将上下而求索~~ 但学无止境啊啊啊啊!!!! T_T
+
+每天抽1~2小时以上看各种杂乱资料, 学各种杂乱无章的新东东, 心里会很舒畅 ╮(╯▽╰)╭. 希望能坚持一天灌一篇水哈哈哈哈~~ 其实这就是个自己管理的笔记本 =.=
+
+----------
 
 &nbsp;&nbsp;&nbsp;&nbsp;  I'm doing research in computational chemistry/biology. My reseach interest includes computer-aided drug design, chemoinformatic, computational biology. I also love the research for organic mass spectromety and organic chemistry I did before. I wanna combine my knowledge on computational chemistry/biology and organic chemistry to solve problems in sciences, especially in drug design.  
 
@@ -13,7 +17,6 @@ layout: page
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Welcome to give your valuable [comments](/pages/guestbook/) or mail to me: zhaozxcpu(at)hotmail.com !   
 
------
 
 ## Some Tools I developed:
 - [MIBPB webserver](http://23.239.23.221/MIBPBweb/): automatic online server based on matched interface PB solver to calculate electrostatic solvation energy, ESES/MSMS surface, structure preparation and residue pKa calculation. 
