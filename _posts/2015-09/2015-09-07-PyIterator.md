@@ -4,6 +4,7 @@ title: Python迭代器和生成器
 date: 2015-09-06 20:49:30
 categories: Coding
 tags: Python
+archive: true
 ---
 
 ## 可迭代对象Iterable
@@ -188,5 +189,6 @@ except StopIteration:
 2. enumerate函数 - [文档](https://docs.python.org/2/library/functions.html#enumerate)
 3. [Python迭代器和生成器](http://www.cnblogs.com/wilber2013/p/4652531.html)
 
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#iterator)中, 不再更新.
 
 ------

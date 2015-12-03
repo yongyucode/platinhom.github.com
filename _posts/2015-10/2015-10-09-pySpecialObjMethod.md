@@ -4,6 +4,7 @@ title: Python对象的特殊属性和方法
 date: 2015-10-09 07:36:03
 categories: Coding
 tags: Python
+archive: true
 ---
 
 Python一切皆对象(object)，每个对象都可能有多个属性(attribute)。Python的属性有一套统一的管理方案。
@@ -54,5 +55,9 @@ Python一切皆对象(object)，每个对象都可能有多个属性(attribute)�
 3. 通过`try: obj.attr; except AttributeError: pass`
 
 1. [特殊方法](https://docs.python.org/2/reference/datamodel.html#special-method-names)
+
+
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#more-special-methodprop)中, 不再更新.
 
 ------

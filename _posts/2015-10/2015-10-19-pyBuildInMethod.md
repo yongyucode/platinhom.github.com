@@ -4,6 +4,7 @@ title: Python:内建函数与对象方法
 date: 2015-10-18 21:56:04
 categories: Coding
 tags: Python
+archive: true
 ---
 
 包括内建函数, 内建对象(字符串,列表,字典,set,文件对象)的方法
@@ -105,7 +106,7 @@ tags: Python
 - set.add(element)    集合添加一个元素
 - set.update(seq)    集合添加多项
 - set.remove(element)    移除集合一个元素
-- t|s 并集 t&s 交集 t-s 差集 t^s交集的补集(只出现t或s中，不能都有)
+- t\|s 并集 t&s 交集 t-s 差集 t^s交集的补集(只出现t或s中，不能都有)
 
 ## 字符串方法（大部分并不能改变字符串的值，只起到返回作用）
 
@@ -173,5 +174,7 @@ tags: Python
 - f.fileno()        返回长整形的‘文件标签’
 - f.flush()        把缓冲区内容写入硬盘
 - for line in file1： 用迭代器逐行读取，注意此时不能再用readline()之类读取，不怎么占内存的方式
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#buildin-list)中, 不再更新.
 
 ------
