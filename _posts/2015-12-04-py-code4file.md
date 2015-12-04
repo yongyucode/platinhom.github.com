@@ -686,6 +686,8 @@ This module implements a variant of the UTF-8 codec: On encoding a UTF-8 encoded
 
 ## Reference
 
+TODO:
+
 1. [Python documentation](https://docs.python.org/2/library/codecs.html)
 2. [中文版Python documentation](http://python.usyiyi.cn/python_278/library/codecs.html)
 3. [未读完1](http://blog.csdn.net/suofiya2008/article/details/5579413)
