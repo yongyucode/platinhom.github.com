@@ -4,6 +4,7 @@ title: Python捕获所有异常
 date: 2015-08-26 08:45:57
 categories: Coding
 tags: Python
+archive: true
 ---
 
 有关异常的东东可以参考前篇[Python异常处理](http://platinhom.github.io/2015/08/25/PythonException/).
@@ -72,5 +73,8 @@ except Exception,ex:
 ~~~
 
 这里使用了基类Exception来通捕获错误. 其实第一个只是告诉自己是什么类型异常(肯定是*<type 'exceptions.Exception'>*了),意义不大,而后面实例化抓回来的ex就可以储存信息了,究竟是啥错误~ 这种应用基类的方法可以捕获各种错误并且实例化,但是缺点是不知道异常类型, 靠猜.
+
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#catch-all-exception)中, 不再更新.
 
 -----

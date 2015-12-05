@@ -4,6 +4,7 @@ title: Python模块和包
 date: 2015-08-29 13:33:01
 categories: Coding
 tags: Python
+archive: true
 ---
 
 python没有什么头文件cpp文件之分, 每个py文件都可以作为独立的模块module. 我们应该熟知使用 *import os* 一类语句加载标准模块.这里总结下模块,包等更多东东. 和一般的教材不同, 大家熟悉模块, 这里先介绍包, 概念比较简单, 但对后面模块进一步认识有很大意义.
@@ -327,5 +328,8 @@ pymol/cmd.pyc:
 单独import pymol/chempy 均没有问题,但单独运行from chempy import io就报错. 因此局部模块很可能是交叉引用的问题, 
 
 首先在fragments里先import chempy,再chempy.io,此时加载该模块,但里面dict为空,而后面pymol.cmd 又再次加载chempy.io 所以不存在就报错了. 解决办法在cmd.py前面from chempy import io, 前加入import pymol,chempy
+
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#more-module-package)中, 不再更新.
 
 ------

@@ -4,6 +4,7 @@ title: Python异常处理
 date: 2015-08-25 08:45:57
 categories: Coding
 tags: Python
+archive: true
 ---
 
 异常处理无外乎几件事: 断言(assert)和抛错(raise), 检查(try), 捕获(except), 处理(except,else,finally).  
@@ -303,5 +304,7 @@ BaseException
 ## Reference
 
 1. [Python中何时使用断言](http://blog.jobbole.com/76285/)
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#Exception-debug)中, 不再更新.
 
 ------

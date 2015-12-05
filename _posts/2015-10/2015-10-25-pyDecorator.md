@@ -4,6 +4,7 @@ title: Python装饰器和符号@
 date: 2015-10-25 12:50:54
 categories: Coding
 tags: Python
+archive: true
 ---
 
 
@@ -165,5 +166,7 @@ s.fail=True
 ### ...
 ### AttributeError: can't set attribute
 ~~~
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#more-decorater)中, 不再更新.
 
 ------

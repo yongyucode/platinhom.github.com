@@ -4,6 +4,7 @@ title: Python基础篇
 date: 2015-08-31 12:51:01
 categories: Coding
 tags: Python
+archive: true
 ---
 
 基础篇介绍简单的语法, 变量类型, 判断循环, 函数和对象的简介.
@@ -445,5 +446,7 @@ __main__ 主函数
 - [系统信息:platform模块](/2015/10/06/platformPy/)
 - [正则表达式](/2015/06/10/regexp-re/)
 - [numpy使用](/2015/09/15/numpy-use/)
+
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#basic_gramma)中, 不再更新.
 
 ------

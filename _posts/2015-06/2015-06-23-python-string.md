@@ -4,6 +4,7 @@ title: Python字符串相关
 date: 2015-06-23 06:20:48
 categories: Coding
 tags: Python
+archive: true
 ---
 
 Python是十分方便的小型脚本语言, 优点是易用. 内建的字符串对象的自带方法很丰富. 这里总结一下字符串相关的函数,库和方法.
@@ -12,17 +13,17 @@ Python是十分方便的小型脚本语言, 优点是易用. 内建的字符串�
 # 一般字符串
 big="abcd "
 # 分行输入
-big=”this is a long string\  
+big="this is a long string\  
 that spans two lines."  
 # 分行输入并换行
-big=”this is a long string\n\  
+big="this is a long string\n\  
 that spans two lines."
 # 字符串段三引号法
 big="""abcd
 efg
 """
 # 禁转义
-big=r”this is a long string\n\  
+big=r"this is a long string\n\  
 that spans two lines."  
 
 # 字符串拼接
@@ -132,9 +133,7 @@ a="123"+"456"
 - `string.join(list[,sep])`  使用分界符(sep,默认空格)将字符串列表连接起来.
 - `string.split(string,sep=None,maxsplit=-1)` 以sep为分界符将string分开成一个列表
 
-(不断更新哈...)
-
-TODO: 字符串格式化; string的方法; print时的输出差异. 
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#mid-string-relative)中, 不再更新.
 
 
 ---

@@ -4,6 +4,7 @@ title: Python:元类metaclass
 date: 2015-10-23 05:17:21
 categories: Coding
 tags: Python
+archive: true
 ---
 
 元类就是类的类. 实际上,我们用`class` 关键词创建的类也是一个对象也就是我们常说的类其实也是通过一个底层的类来构建的,这个类就是元类(metaclass).
@@ -237,5 +238,6 @@ u.save()
 1. [深刻理解Python中的元类(metaclass)](http://blog.jobbole.com/21351/)
 2. [Python Types and Objects](http://www.cafepy.com/article/python_types_and_objects/python_types_and_objects.html)
 
+> 本博文已合并到[Python语法汇总](/1234/01/01/Python-Language/#more-metaclass)中, 不再更新.
 
 ------
