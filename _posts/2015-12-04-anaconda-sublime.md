@@ -6,6 +6,8 @@ categories: IT
 tags: Python IDE
 ---
 
+
+
 Anaconda提供auto completion(自动提示和补齐), lint(语法检查), docstring(文件/帮助解析), 跳到定义和查找使用情况.
 
 [Anaconda-PC](https://packagecontrol.io/packages/Anaconda)
