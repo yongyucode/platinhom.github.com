@@ -87,13 +87,13 @@ Python实际上用4来替换*。所以实际的模板为"%.4f"。
 
 要将一个列表(float型)的内容格式化并空格分隔写到文件中,一行怎么写?
 
-`f.write( ' '.join(map((lambda v: format(v, '<8.5f')),list))`
+`f.write( ' '.join(map((lambda v: format(v, '<8.5f')),list))`{: .language-python} 或 `f.write(' '.join([ "%-8.5f" % i for i in lll]))`{: .language-python}
 
-或
+两者结果是一致的. 用lambda函数的好处是, 可以定义一个新函数来方便统一处理一系列的格式, 当需要修改时只修改一处即可. 而`%`方法则要把每处的格式化式改写一遍. 
 
-`f.write(' '.join([ "%-8.5f" % i for i in lll]))`
+另外, 试试:
 
-两者结果是一致的. 用lambda函数的好处是, 可以定义一个新函数来方便统一处理一系列的格式, 当需要修改时只修改一处即可. 而`%`方法则要把每处的格式化式改写一遍.
+`print "%-"+str(var)+".5f" % i`{: .language-python}, 你会发现报错: *not all arguments converted during string formatting*, 原因是该格式化字符串需要一个完成的串, 格式化串分析在字符串合并前进行,因此错了. 但`format(i, "<"+str(var)+".5f")`{: .language-python} 是可行的
 
 ### format函数
 
