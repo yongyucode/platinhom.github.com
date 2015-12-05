@@ -61,16 +61,20 @@ classmethod()| execfile()  | help()      | locals()     |   |   |   |   |
 ##### 数值型
 
 - int: 普通整型, [-2147483648,2147483647], 支持8进制`055`, 16进制`0xff`表达
-- long: 长整型,可以无限..如1000000000000L
-- float: 浮点型, 都是双精浮点,支持科学计数法. 如1.0, 1. , 1.0e-10
-- complex: 复数型, 实际是两个双精度浮点. 1+2j, 
-- bool: 逻辑型, True , False (分别相当于1,0)
+- long: 长整型,可以无限..如1000000000000`L`
+- float: 浮点型, 都是双精浮点,支持科学计数法. 如1.0, `1.` , 1.0e-10
+- complex: 复数型, 实际是两个双精度浮点. `1+2j`, 
+- bool: 逻辑型, `True` , `False` (分别相当于1,0)
+
+PS: 
+
+- int('6.000000000000000000e+00')类型转换会报错,float('6.000000000000000000e+00')则可以
 
 ##### 序列型(Sequence),集合,字典
 
 - list: 列表型(可变序列型)
 - tuple: 元组型(不可变序列型)
-- set: 可变集合型,另有不可变集合型frozenset.
+- set: 可变集合型,另有不可变集合型 frozenset.
 - dict: 字典型
 - str: 字符串型(不可变序列型)
 - unicode: 字符串型(不可变序列型)
@@ -109,6 +113,11 @@ classmethod()| execfile()  | help()      | locals()     |   |   |   |   |
 - **不可变序列**:tuple, string, unicode. 和可变序列相比, 缺少了元素赋值能力和del能力,一旦定义,就不能修改元素. 但如果元素是可变序列,其内容依然可以被修改, 例如: a=[1,2];b=(a,);改变a的元素,b也会改变.但b[0]=c则不行.
 - 不可变序列可进行哈希化hashable,而可变序列则不可以.
 
+PS: 
+
+- (序列)变量不能以数字开头，只能含字母数字或下划线。区分大小写。
+- 单元素分片是值, 如a[i]; 但是多于一个元素就是序列了。
+
 具体类型:
 
 #### 列表 list 
@@ -117,8 +126,10 @@ classmethod()| execfile()  | help()      | locals()     |   |   |   |   |
 - 元素可以是任何对象, 大小可随时修改. 可变序列.
 - 分隔符`,`,一个元素时[a]来定义.无元素[].
 - [1]*3 -> [1,1,1]; [1]+[2]=[1,2]
+- 不可以对不存在元素的索引处赋值, 例如10个元素的a, a[15]=0肯定错.
 - 方法: append(v),insert(i,v), pop([i])等.
 - list()
+
 
 #### 元组tuple 
 
@@ -135,6 +146,11 @@ classmethod()| execfile()  | help()      | locals()     |   |   |   |   |
 - 字符串型是不可变序列.因此不能随意对字符串的变量替换其内容,如用索引/分片赋值.
 - python没有字符型char,直接用单字符串代替.字符大小最少是8-bit一字节.  
 - str(), chr(), ord()
+- 注意机读形式和人读形式区别：例如长数10000，但机读为10000L；字符人读abc，机读为’abc’，print时是用人读形式，而`repr`函数则是可把人读形式转化为机读形式，并把结果保存为人读形式。因为变量必须非数字起头，所以机器默认abc为变量，’abc’为字符串输入，故repr(‘hello’)实际就是’hello’,没有意义。
+- r’abc\n’就是abc\n，但r’let\’s go’必须转义，否则语法错误，这样进行r处理后输出let\’s go。同理若r’c:\’会因转义了’报错，而r’c:\\’ 则会输出c:\\。
+- 字符串是特殊的序列，但是列表不可以和字符串合并相加。另外，用in检测成员资格时，[‘abc’,’def’,’ghi’]必须对应abc才能true，bcd则false。但是对于字符串’abcdefg’，只要包含相同'bcd'都true。而且seqA in seqB也需要A作为子元素才行。
+- 字符串格式化：str %转换标志(-+空格0)最小字段宽.精度值或* 最后跟转换类型。-为左对齐，+为数值要加+-号，空白为正数前空格，0为转换值不足最小字段宽补0。精度值为最大字符数，*的话需要后面赋值。转换类型常用d/i正数f浮点s字符串r机读字符串C单字符x/X大或小写16进制。可以用元组来格式化, 列表不行!字典格式化%(key) % {key:val}
+
 
 #### unicode型unicode 
 
@@ -155,6 +171,7 @@ classmethod()| execfile()  | help()      | locals()     |   |   |   |   |
 - 无序, key键和value对应值组成每项
 - key需要可以被哈希化,因此不能是可变型对象如字典,set(frozenset可以),可变序列等.
 - value可以是任何东东..包括字典,列表等.
+- 空字典可以随意用赋值添加项，而列表不行。x=[],x[42]=’go’出错;而dict={},dict['a']=99则可以.
 - 方法: get(k[,v]), pop(k)
 
 ### 集合set和frozenset
@@ -171,22 +188,27 @@ classmethod()| execfile()  | help()      | locals()     |   |   |   |   |
 - 注释: python只有单句注释, 使用`#` 作为注释符.
 - 表达式就是运算式子,包括数学运算, 比较运算, 逻辑运算, 变量表达等.
 - 语句就是执行一句命令, 告知计算机操作, 一般造成相应变化, 例如赋值语句, 执行函数命令等. 往往表达式是语句的一个成分(宾语主语), 仍需要一个动作(动词).
+- 不同语句可以使用`;`分隔从而方便写在同一行内(不提倡). `;`有语句结束的判断作用.
+- 在IDE交互模式, 输入`a` 会输出变量a的值, 但 `a;` 就相当于空语句, 不会输出a的值.
 - 表达式, 语句, 函数, 对象, 变量均是**大小写敏感**的.
 - 表达式结果取决于复杂类型的成分的类型,例如 *10/3* 返回结果依然是int: 3, 而 *10.0/3* 则是float: 3.333
 - 空语句: `pass`,可以在需要语句块的地方填充以防止语法错误,实际不进行任何操作. 
-- 语句块就是一系列语句的集合,例如if/for等后面跟随相应语句块进行操作. python的语句块利用**缩进**(indent)来描述语句块, 同一缩进层次的作为一个语句块. 缩进没有限定,可以tab, 可以N个空格.一般使用四空格或一个tab. 注意tab和空格不能混用.
+- **语句块**就是一系列语句的集合,例如if/for/while/class/def等后面跟随相应语句块进行操作. python的语句块利用**缩进**(indent)来描述语句块, 同一缩进层次的作为一个语句块. 缩进没有限定,可以tab, 可以N个空格.一般使用四空格或一个tab. 注意tab和空格不能混用, 否则会语法错误报错. 可以在 *notepad++* 中将 行开头的 *tab转空格* 或者反过来也行.
 
 ### 运算和判断表达式
 
 - `and` 与运算, 会短路(执行第一个否就不执行第二个).
 - `or` 或运算,会短路(执行第一个是就不执行第二个).
-- `not` 非运算, 跟在前面.
+- `not` 非运算, 在表达式的前面.
 - `==` 相等判断. 值判断, 不包括类型.
 - `!=`或`<>` 不等判断
+- `<`,`>`,`>=`,`<=` 不用我解释了吧..
 
 ## 判断和循环
 
 ### if...elif...else...判断语句
+
+语句块使用缩进作为定义.没啥特别的. 
 
 ~~~python
 if [condition]:
@@ -199,8 +221,11 @@ else:
 
 ### for 循环
 
-~~~python
+in 后面一般是可迭代对象, 例如列表, 数组, 字典(迭代key), 文件对象. 要用数字控制,一般使用range.
 
+在对序列进行for in时，尽量不要对该序列进行删增，排序等操作，易错(可能干扰了迭代器)！最好先用一个替代序列seq2=seq1[:]来赋值进行操作。
+
+~~~python
 for i in iterableObj:
 	statement;
 #judge whether iterable:
@@ -240,12 +265,35 @@ while condition:
 
 ## 输入输出和文件
 
-- `print` 语句(2.\*, 3.\*使用print函数): print obj/expression. `,`会化作空格,但可以字符串和数值一起输出, `+`可以连接字符串,但是数值要先str()转化. 表达式会进行计算后再输出.
-- `raw_input([promt])`: 获取输入,返回输入的字符串.promt是提示语句,不换行.
-- `input([prompt])`: 获取输入并运算后转化为相应值的字符串返回.相当于: eval(raw_input(prompt)).
+### print语句/函数
+
+- print 语句(2.\*, 3.\*使用print函数): `print obj/expression`. 
+- 可以使用`,`连接成份, `,`会化作空格, 此时数值可以和字符串一起输出, 如: print "age",30
+- `+`可以连接字符串,但是数值**必须**要先`str(val)`转化为字符串. 若是表达式,则会进行计算后再输出.
+- 关于print输出时，用`,`结束该行, 下一行再用print时会两行会连接(留一个空格)，从而可避免换行；也可以行末用转义符`\`换行使得下一行的内容紧接上一行；
+- 用`；`表示另一个逻辑行,表示语句结束。需另外有语句。
+
+### raw_input和input函数
+
+- `raw_input([promt])`: 获取输入,返回输入的字符串. promt是提示语句,不换行.
+- `input([prompt])`: 获取输入并运算后转化为相应值的字符串返回.相当于: `eval(raw_input(prompt))`.
 - 获取一个字符串, input需要输入"abc",而raw_input只要abc. input后输入1+2, 返回数值3.
-- raw_input常也用于卡住脚本不让其终止.
-- 文件对象使用handle=open(filename,action)来打开并进行相应操作.和一般的文件对象类似.
+- raw_input() 也常用于卡住脚本不让其终止, 方便调试或者观看脚本结果.
+
+### 文件读写简介
+
+- 文件是通过文件句柄(file handle)来辨认和处理的, 可以认为文件句柄就是一个文件对象/实例吧. 文件不是通过文件名来操作的, 是通过文件句柄操作的! 如 f.read(); f.write(); f.close()
+- 文件对象使用`handle=open(filename,action)`形式来打开文件并进行相应操作.和一般语言的文件对象处理类似.
+- action有: 'r'只读不能写(默认方式, 可以不指定action采用默认只读); 'w' 只写不能读; 'a' 追加; 'w+','r+','a+' 读写均可; 'rb'和'wb' 以二进制形式读/写.
+- 读取文件: 
+	- f.read() : 读取全部到一个字符串; 
+	- f.readline() : 读取一行, 文件指针指向下一行.
+	- f.readlines() : 读取文件并根据换行符切割成一个列表, 每个元素是对应一行 (注意: 每行依然带有换行符).
+	- `for line in f`: 使用迭代器方式逐行读取文件内容到line变量, 此时不能再用read和readline等.
+- 写文件:
+	- f.write(string) : 将string内容写到文件, 注意可能要自己写换行符`\n`.
+	- f.writelines(str_list) : 将字符串列表内容逐个写到文件内. 注意! 不会帮你加换行符, 依然要手动加换行符, 只是不用一个一个写罢了... 
+- 文件关闭: f.close() 文件读完或者到末尾要养成文件关闭的习惯, 否则该文件会一直处于打开状态! 如果想对文件进行读取并原位修改可以先读取, 关闭文件, 在以写模式打开进行输出.
 
 ## 函数
 
@@ -258,8 +306,93 @@ def funcname([argv1,argv2..]):
 - 定义函数,也可以不加形参argv,return定义返回内容(无值返回None)
 - 返回值可以是多个值return x,y (本质以元组返回). 接收时 x,y=F()即可.
 - 函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”.
-- 函数形参的默认参数最好是不变对象,更多请参考[传递参数](/2015/08/07/PyArgsInput/).
+- 函数形参的默认参数最好是不变对象,更多请参考[传递参数](./#mid-pass-func-argv).
 - **\*args**表示任何多个无名参数，它是一个tuple；**\*\*kwargs**表示关键字参数，它是一个 dict(实参时用**变量名=值**)。并且同时使用\*args和\*\*kwargs时，必须\*args参数列要在\*\*kwargs前。若此时给的是list或tuple,可直接在实参前面加`*`.如func(\*list1); 也可以给实参字典前加`**`,如func(**kw)。
+
+## 类的一般知识 
+
+Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。用类作为抽象"模板", 而创建机体的一个对象, 称之为实例(Instance).用来储存对象属性数据的称为属性, 而调用来进行针对对象的处理的关联函数,称之为方法.
+
+### 定义一个类
+
+~~~python
+# 定义一个普通类, 不进行继承
+class ClassName(): 
+    statement
+
+# 定义一个继承于父类的类
+# 可以多个父类
+class ClassName(Parent1[,Parent2..]):
+    statement
+
+# 定义一个新式类,继承自object
+class ClassName(object): 
+    statement
+
+# 使用type函数定义类
+# parents是元组,继承的父类,第三个是字典,定义属性和方法
+ClassName=type("ClassName",(parents),{"property/method":value})
+~~~
+
+### 定义类属性和方法
+
+~~~python
+class ClassName():
+    # 定义类内的属性 
+    prop1=value1
+
+    # 初始化函数,在类初始化时可以传入参数.第一个必须是self 实例本身.
+    __init__(self[,var1,var2...]):
+        # 通过方法绑定属性,动态绑定
+        self.prop1=var1
+        self.prop2=var2
+        statement
+    # 一般的方法,对比一般函数,第一个总是self 实例本身
+    method1(self[,var1...]):
+        print self.prop1
+~~~
+
+### 创建实例
+
+创建实例就是`类名(参数)`,参数取决于`__init__`方法.
+
+~~~python
+# __init__(self)
+obj=ClassName()
+# __init__(self,var1,var2)
+obj2=ClassName2(varA,varB)
+~~~
+
+## 模块module和包package
+
+编程语言通过将语意作用相关的程序放在一起, 形成整套程序的一份零件. 而我们在编写程序时亦都会经常借助于外部的现成工具. 这些"零件"和"工具"协助起来构成我们的程序. 
+
+在C++里, 头文件和源文件构成一个"工具零件", 而带main函数的部分则成为主要程序运行主体. Python里哪个是主体取决于执行哪个脚本, 所以文件都储存在py文件中, 或者进一步编译成pyc/pyd文件. 每一个这种文件都可以作为一个工具, 称之为`模块module`. 而将相关功能的模块放在一个文件夹里, 则构成了`包Package`. 加载模块和包就可以获得相应的函数和类对象, 从而获得新功能.
+
+### 模块
+
+任何一个py/pyc/pyd文件都可以作为一个模块. 只需要使用`import 模块名`加载即可. 加载后调用模块里的成员使用`模块名.成员名`, 像对象属性/方法一样. 模块名在当前文件中有命名空间作用, 区分可能同名的变量/函数/类. Python有很多内建模块装有相当强大的功能, 一般直接加载即可(不需目录名等). 自定义模块可以放到搜索路径, 当前目录下或者相应包中. 详细[参看](./#more-module-package)下面的部分.
+
+#### 加载模块最常用方法
+
+~~~python
+# 加载模块1和模块2, 逗号分隔
+import module1,module2
+# 加载模块module并重命名为mod, 便于方便写少些字 233 
+import module as mod 
+# 只从模块中加载其中的某成员,包括变量,函数,类等. 还可以把该成员改名为sth2
+# 该加载方式调用成员时不再需要模块名.
+from module import sth [as sth2]
+# 加载模块中所有成员, 不需再用模块名. 
+# 为防止命名空间冲突, 不建议使用(除非很清楚没有冲突) 
+from module import *
+~~~
+
+### 包
+
+不同于c++可以加载头文件时使用目录结构, python不能使用目录'/'或'\\'. 但便于管理仍然把相关模块放到一个文件夹内, 这个文件夹称之为包Package.  
+
+为了识别这个文件夹是包而不是一般文件夹, 需要在文件夹下存在一个`__init__.py`文件(可以是空).这样就可以通过包名来加载里面的模块. 例如`import packagename.modulename`. 也可以直接加载包名(效用取决于`__init__.py`,更多细节参考[进阶篇说明](./#more-module-package).  
 
 ## 标准IDLE和设置
 
@@ -280,31 +413,23 @@ def funcname([argv1,argv2..]):
 
 ## 小知识
 
-- `#! /usr/bin/env python` 首行, 或者`#! /usr/bin/python2`, 再`chmod +x *.py`就可以使脚本在unix基础系统上能直接执行.(如果是window编写的可能出现最后换行符问题不识别,此时先`dos2unix *.py`就好了)
+- `#! /usr/bin/env python` 首行, 或者`#! /usr/bin/python2`, 再`chmod +x *.py`就可以使脚本在unix基础系统上能直接执行.(如果是window编写的可能出现最后 **换行符问题** 不识别,此时先`dos2unix *.py`就好了)
 - 第二行 `# -*- coding: utf8 -*-` 指明字符集，用utf8就可以支持中文了！
-- 不懂按help(xx), 已加载对象模块内建内容可以直接用名字,否则要用字符串形式"xx".
+- 定义包:在某目录dira下建`__init__.py` 可以为空,然后将相应的a.py,b.py放进去 然后import dira.a就可以了
+- 不懂按`help(xx)`, 已加载对象模块和内建内容可以 *直接用名字*,否则要用 *字符串* 形式"xx".
 - 避免window下运行完程序关闭窗口，可写入：raw_input(‘press <enter>’) 一句
-- 好习惯在开头几行加入 #Filename: abc.py作注释该文件名.
-- int('6.000000000000000000e+00')报错,float('6.000000000000000000e+00')则可以
-- 注意机读形式和人读形式区别：例如长数10000，但机读为10000L；字符人读abc，机读为’abc’，print时是用人读形式，而repr则是可把人读形式转化为机读形式，并把结果保存为人读形式。因为变量必须非数字起头，所以机器默认abc为变量，’abc’为字符串输入，故repr(‘hello’)实际就是’hello’,没有意义。
-- 关于换行输入，例如abc想把bc放在输入的第二行便于观察，按enter换行会变确定而出错，因此需要把enter键的值转义为换行.因此行末的\为转义换行，而真需要`\`时需要输入`\\`. 不能最后\’ 因为会转义。
-- r’abc\n’就是abc\n，但r’let\’s go’必须转义，否则语法错误，这样进行r处理后输出let\’s go。同理若r’c:\’会因转义了’报错，而r’c:\\’ 则会输出c:\\。
-- 字符串是特殊的序列，但是列表不可以和字符串合并相加。另外，用in检测成员资格时，[‘abc’,’def’,’ghi’]必须对应abc才能true，bcd则false。但是对于字符串’abcdefg’，只要包含相同'bcd'都true。而且seqA in seqB也需要A作为子元素才行。
-- (序列)变量不能以数字开头，只能含字母数字或下划线。区分大小写。
-- 单元素分片是值，但是多于一个元素就是序列了。
-- 字符串格式化：str %转换标志(-+空格0)最小字段宽.精度值或* 最后跟转换类型。-为左对齐，+为数值要加+-号，空白为正数前空格，0为转换值不足最小字段宽补0。精度值为最大字符数，*的话需要后面赋值。转换类型常用d/i正数f浮点s字符串r机读字符串C单字符x/X大或小写16进制。可以用元组来格式化, 列表不行!字典格式化%(key) % {key:val}
-- 空字典可以随意用赋值添加项，而列表不行。x=[],x[42]=’go’出错
-- 关于输出print时，用，表示空格连接，下一行可再用print进行连接，可避免换行；用\换行，下一行的内容紧接上一行，即相当于+换行；+则表示直接字符串连接；用；表示另一个逻辑行。需另外有语句。
-- 在keyword的关键词声明中如def,if,elif等，需要用:引出其实质内容块，并进行缩进。在def语句中，如果在IDLE shell中进行定义，结束时enter后在退出该块后，再按一下enter结束；在return后，则会自动退出块缩进。
-- 在对序列进行for in时，尽量不要对该序列进行删增，排序等操作，易错！最好先用一个替代序列seq2=seq1[:]来赋值进行操作。
-​- 关于py和pyw区别在于,后者使用pythonw.exe来运行,没有了控制台(如dos).
-- `if __name__ == '__main__': main()`  该句常用,因为限制其为脚本而非模块.
-- pyc文件是编译好的模块文件,可以加速运行.可以用py_compile.complie(file)来编译
+- 好习惯在开头几行加入 `#Filename: abc.py`作注释该文件名.
+- 关于`.py`和`.pyw`区别在于,后者使用pythonw.exe来运行,没有了控制台(如dos).
+- `.pyc`文件是编译好的模块文件,可以加速运行.可以用py_compile.complie(file)来编译
+- `if __name__ == '__main__': main()`  该句常用,因为限制后面内容为执行脚本而非模块内容. 使用该句后的语句块只有在py文件被直接运行(如python a.py)时才执行, import a.py 就不会则行.
+- 关于换行输入，例如abc想把bc放在输入的第二行便于观察，按enter换行会变确定而出错，因此需要把enter键的值转义为换行.因此行末的\为转义换行，而真需要`\`时需要输入`\\`. 不能最后\’ 因为会转义。一般不是断裂变量名/字符串时, 可以忽略末尾换行符(会自动识别语句没结束, 换行再读取直到语句结束), 但良好习惯还是可以加上`\`, 反正无害.
+- 在keyword的关键词声明中如def,if,elif等，需要用`:`引出其实质内容块，并进行缩进。在def语句中，如果在IDLE shell中进行定义，结束时enter后在退出该块后，再按一下enter结束；在return后，则会自动退出块缩进。
 - 关于import: 需要在系统路径中含有该路径,可以设置PYTHONPATH 的环境变量来永久添加. 暂时性增加,一般在发布程序时,因为不能改系统变量,所以,这时最好把模块放在同目录或附近目录下,此时,添加搜索路径方法:
 - import sys;sys.path.append('..')或sys.path.insert(0,'..')(后者可以优先化). 也可修改..为.或任意目录.
-- 定义包:在某目录dira下建`__init__.py` 可以为空,然后将相应的a.py,b.py放进去 然后import dira.a就可以了
 - 读取环境变量 filename = os.environ.get('PYTHONSTARTUP')
 - 判断文件存在: `if filename and os.path.isfile(filename):execfile(filename)`
+
+
 
 # 中级语法 {#medium-gramma}
 
@@ -318,17 +443,6 @@ def funcname([argv1,argv2..]):
 - 异常: 
 
 进阶篇将会补充比较少用的语法和更详尽讨论个别内容.
-
-
-
-### `__future__`模块
-
-`__future__`模块用来引入一些新版本的特性, 例如在2.x版本中引入3.x版本的特性.
-
-- `from __future__ import unicode_literals` 引入3.x版本中字符串特性, 使用该语句后,`"str"`就已经是unicode的,而2.x版本中的字符串则要使用`b"str"`来表示.
-- `from __future__ import division` 引入3.x中除法特性,3.x中除法默认是精确除法,2.x则是向下取整.例如`10/3`2.x的是3,3.x是3.33333.使用该特性后就会采用3.x的特性, 而原有的除法要使用`10//3`来表示.
-
-
 
 
 ## 列表
@@ -385,7 +499,7 @@ def strsort(x,y):
 
 ## 字符串
 
-## Python字符串相关 {#mid-string-relative}
+### Python字符串相关 {#mid-string-relative}
 
 > 原博文: [Python字符串相关](/2015/06/23/python-string/){: target='_blank'}
 
@@ -412,10 +526,9 @@ that spans two lines."
 a="123"+"456"
 # 格式化字符串
 "%3.3f"%("1.234")
-
 ~~~
 
-## 内建函数
+### 内建相关函数
 
 - `type(var)` 求出变量类型,例如`str`
 - `len(str)` 求出字符串长度
@@ -432,7 +545,7 @@ a="123"+"456"
 - `raw_input(prompt)`                    获取用户输入，返回字符串
 
 
-## 字符串方法（并不能改变字符串的值，只起到返回作用）
+### 字符串方法（并不能改变字符串的值，只起到返回作用）
 - `str.decode(codec)`                        根据codec将字符串解码成unicode,等于unicode函数
 - `str.encode(codec)`                        根据codec将unicode字符串编码为codec的内容
 - `str.find(a,x,y)`                               str中查找字符串a,xy为查找始末(不含y)不输入xy默认头到尾.返回索引号,没有返回-1
@@ -470,10 +583,10 @@ a="123"+"456"
 - `str.partition(‘sep’)`                     从左搜索str的分隔符sep，并返回(head,sep,tail)即分隔开后的元组
 - `str.rpartition(‘sep’)`                    从右搜索str的分隔符sep，并返回(head,sep,tail)即分隔开后的元组
 
-## string标准库
+### string标准库
 现在已经很少用. 内置一些奇怪的常量, 还有一些str类不具有的方法.
 
-### 常量:
+#### 常量:
 
 - `whitespace` : a string containing all characters considered whitespace
 - `lowercase` : a string containing all characters considered lowercase letters
@@ -485,7 +598,7 @@ a="123"+"456"
 - `punctuation` : a string containing all characters considered punctuation
 - `printable` : a string containing all characters considered printable
 
-### DATA:
+#### DATA:
 
 - `ascii_letters` = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 - `ascii_lowercase` = 'abcdefghijklmnopqrstuvwxyz'
@@ -500,7 +613,7 @@ a="123"+"456"
 - `uppercase` = `'ABCDEFGHIJKLMNOPQRSTUVWXYZ'`
 - `whitespace` = `'\t\n\x0b\x0c\r '`
 
-### 方法
+#### 方法
 
 - `string.Template(’a’)`       模板字符串，结合$x和A.substitute(x=’a’)使用
 - `string.atoi(str[,base])` 字符串到整型,base默认10进制,可以输入8/16/2等
@@ -521,25 +634,25 @@ TODO: 字符串格式化; string的方法; print时的输出差异.
 
 ---------
 
-## Python字符串编码问题 {#more-encoding}
+### Python字符串编码问题 {#more-encoding}
 
 > 原博文: [Python字符串编码问题](/2015/10/17/PyEncode/){: target='_blank'}
 
 字符串实质是字符的一个集合,而字符则以数字形式储存. 最早的计算机在设计时采用8个比特（bit）作为一个字节（byte），所以，一个字节能表示的最大的整数就是255, 两个字节可以表示的最大整数是65535，3个字节最大整数是16711425, 4个字节可以表示的最大整数是4294967295. 三个字节就足够多了...
 
-## ASCII
+#### ASCII
 
 最早只有127个字母被编码到计算机里，也就是大小写英文字母、数字和一些符号，这个编码表被称为ASCII编码，比如大写字母A的编码是65，Z编码90; 小写字母a编码97, z的编码是122。这种编码一个字符只需一个字节, 对于英文字符而言足够了.这也是最基础的字符集.
 
-## GB2312等local语言编码
+#### GB2312等local语言编码
 为了解决如汉字等其他语言的编码问题, 出现了如GB2312码等, 用于把中文编进去. 这些编码最少需要两个字节,一般向下兼容ASCII码.
 
 然而.各国有各国的标准，就会不可避免地出现冲突，结果就是，在多语言混合的文本中，显示出来会有乱码。
 
-## Unicode
+#### Unicode
 Unicode把所有语言都统一到一套编码里，这样就不会再有乱码问题了, 便于统一使用.Unicode标准在不断发展，但最常用的是用两个字节表示一个字符（如果要用到非常偏僻的字符，就需要4个字节）。现代操作系统和大多数编程语言都直接支持Unicode。Python中unicode的编码字节数取决于编译时环境.
 
-## UTF-8
+#### UTF-8
 如果统一成Unicode编码，乱码问题从此消失了。但是，如果你写的文本基本上全部是英文的话，用Unicode编码比ASCII编码需要多一倍的存储空间，在存储和传输上就十分不划算。本着节约的精神，又出现了把Unicode编码转化为“可变长编码”的UTF-8编码。UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果要传输的文本包含大量英文字符，用UTF-8编码就能节省空间.
 
 -------------
@@ -549,16 +662,18 @@ Unicode把所有语言都统一到一套编码里，这样就不会再有乱码�
 
 ----------
 
-## Python的字符串编码
+#### Python的字符串编码
 
-### ascii
+#### ascii
+
+Python2默认使用ascii编码. Python3默认使用unicode进行编码. 即使使用ascii编码, 在编码转换时中间总是经过unicode.
 
 ~~~python
 ord('a') #->97
 chr(97) #->a
 ~~~
 
-### unicode
+#### unicode
 
 unicode.encode和decode是两个unicode字符串的重要方法,可以将其强行转换为别的编码,encode是unicode->other, decode是other-> unicode. 
 
@@ -582,7 +697,7 @@ print '\xe4\xbd\xa0\xe5\xa5\xbd!'.decode('utf-8')
 # -> 你好!
 ~~~
 
-## Reference
+###### Reference
 
 1. [Unicode-wiki](https://zh.wikipedia.org/wiki/Unicode)
 2. [UTF-8-wiki](https://zh.wikipedia.org/wiki/UTF-8)
@@ -667,7 +782,7 @@ print("%.*f" % (4, 1.2))  # "1.2000"
 
 Python实际上用4来替换*。所以实际的模板为"%.4f"。
 
-## format函数和字符串format方法
+#### format函数和字符串format方法
 
 这是另一种处理方法格式化方法: 通过函数/方法. 例如下面的例子:
 
@@ -679,9 +794,9 @@ Python实际上用4来替换*。所以实际的模板为"%.4f"。
 
 另外, 试试:
 
-`print "%-"+str(var)+".5f" % i`{: .language-python}, 你会发现报错: *not all arguments converted during string formatting*, 原因是该格式化字符串需要一个完成的串, 格式化串分析在字符串合并前进行,因此错了. 但`format(i, "<"+str(var)+".5f")`{: .language-python} 是可行的
+`print "%-"+str(var)+".5f" % i`{: .language-python}, 你会发现报错: *not all arguments converted during string formatting*, 原因是该格式化字符串先执行再相加, 即`".5f" % i`优先, 要是`print ("%-"+str(var)+".5f") % i`{: .language-python} 则没有问题. 格式化串分析在字符串合并前进行,因此错了. 但`format(i, "<"+str(var)+".5f")`{: .language-python} 是可行的
 
-### format函数
+##### format函数
 
 format(value[, format_spec]), 后面是格式表达式, 默认是"", 即不格式化直接字符串化. 很基础简单的函数.
 
@@ -692,11 +807,11 @@ format(value[, format_spec]), 后面是格式表达式, 默认是"", 即不格�
 3. 其余0填充, "0<6.3f"这些表达是一样的.
 4. 只能对单一个元素进行操作, 不支持别名`(name)`,不支持字典, 列表等.
 
-#### 字符串的format方法
+##### 字符串的format方法
 
 str.format(*args, **kwargs), 支持多种方式的格式化, 在Python2.6后引入. 和之前两种方法不同, 主要使用`{}`和`:`进行格式化,前者指定位置, 后者相当于`%`.
 
-##### 映射式格式化
+###### 映射式格式化
 
 通过大括号标记为一个"元素", 然后format里的`*args`或`**kwargs`逐一对应进行填充. 支持多种方式:
 
@@ -722,7 +837,7 @@ s=['Hom',30]
 '{name}:{age}'.format(age=30,name="Hom")
 ~~~
 
-##### 格式限定符
+###### 格式限定符
 
 首先将格式化限定式写在`{}`内, `:`作为格式化标识开始. 同样支持 `[flags][width].[precision]typecode` 格式化表达式, 其中左中右对齐和format函数一样, 使用`<^>`.
 
@@ -745,7 +860,7 @@ format函数提供函数化的格式化办法, 而字符串的format方法则提
 
 和C/C++那种传值传址的传递参数不同, Python中函数参数的传递是通过“赋值”来传递的。函数参数的使用可以概括地分为两个方面，一是函数参数如何定义，二是函数在调用时的参数如何解析的。
 
-## 函数形参定义
+#### 函数形参定义
 
 函数参数的定义有四种形式：
 
@@ -762,7 +877,7 @@ format函数提供函数化的格式化办法, 而字符串的format方法则提
 
 否则,python认不出究竟哪个参数打哪个参数,就会报错.
 
-## 函数调用形参赋值
+#### 函数调用形参赋值
 
 在函数调用过程中，形参赋值的过程是这样的：
 
@@ -773,7 +888,7 @@ format函数提供函数化的格式化办法, 而字符串的format方法则提
 
 支持关健字赋值法,即调用函数赋值时,指定相应形参名和值. 此时仍遵循`arg=`必须在`arg`后的原则, 而同级的`arg=`则不必遵守形式参数的前后顺序.
 
-## 说明和实例
+#### 说明和实例
 
 - **“传统”方式只给形参名：F(arg1,arg2,...)**   
 一个函数可以定义一定个数参数，参数（形式参数）放在跟在函数名后面的小括号中，各个参数之间以逗号隔开。用这种方式定义的函数在调用的时候也必须在函数名后的小括号中提供相等个数的值（实际参数），不能多也不能少，而且顺序还必须相同。也就是说形参和实参的个数必须一致，而且想给形参1的值必须是实参中的第一位，形参与实参之间是一一对应的关系，即“形参1=实参1 形参2=实参2...”。很明显这是一种非常不灵活的形式。  
@@ -851,7 +966,7 @@ testArgs(1,2,3,4,a=1) # 1 2 (3,4) {'a':1}
 testArgs(1,2,3,4,k=1,t=2,o=3) # 1 2 (3,4) {'k':1,'t':2,'o':3}
 ~~~
 
-### 形参最好是不变对象
+##### 形参最好是不变对象
 
 函数在定义的时候,默认参数的值就被计算出来了,也就是说形参赋的值对应的内存对象已定. 当使用可变对象时, 形参也会被改变.因此可能导致函数功能出错!!例如:
 
@@ -987,26 +1102,11 @@ f1, f2, f3 = count()
 f1();f2();f3(); #>>> 1; 4; 9
 ~~~
 
-### 装饰器 Decorator
-
-在代码运行期间动态增加功能的方式，称之为“装饰器”。装饰器本质是高阶函数, 就是将函数作为参数进行相应运作. 装饰器在python中在函数/对象方法定义前使用`@`符号调用. 装饰器可以在函数运行前进行一些预处理, 例如检查类型等.
-
-~~~python
-@dec1
-@dec2(arg1,arg2)
-def test(arg):
-    pass
-~~~
-
-以上代码等于`dec1(dec2(arg1,arg2)(test(arg)))`
-
 -------------------
 
-## Python装饰器和符号@ {#more-decorater}
+### 装饰器和符号@ Decorator {#more-decorater}
 
 > 原博文: [Python装饰器和符号@](/2015/10/25/pyDecorator/){: target='_blank'}
-
-## 装饰器 Decorator 
 
 在代码运行期间动态增加功能的方式，称之为“装饰器”。装饰器本质是高阶函数, 就是将函数作为参数进行相应运作,最后返回一个闭包代替原有函数. 装饰器本质就是将原函数修饰为一个闭包(一个返回函数).
 
@@ -1021,7 +1121,7 @@ def test(arg):
 
 以上代码等于`dec1(dec2(arg1,arg2)(test(arg)))`
 
-## 简单的装饰器及其运行机制
+#### 简单的装饰器及其运行机制
 
 例如:
 
@@ -1042,7 +1142,7 @@ now()
 #>>> 2015-10-26
 ~~~
 
-### 装饰器运行机制
+#### 装饰器运行机制
 
 机制就是,调用now()实际调用log(now)() (前面`@`写法后,实际运行now=log(now)),也就是运行了wrapper(),并把now函数原有参数传递给了wrapper函数. wrapper在运行时,加入了新的处理`print 'call %s():' % func.__name__`一句, 并运行相应传递参数的`func(*args,**kw)`并把原有结果返回.
 
@@ -1061,7 +1161,7 @@ print result
 2. 新的高阶函数要返回一个修饰函数,从而使调用原函数时实际调用该部分. (`def wrapper()..return wrapper`部分)
 3. 新修饰函数进行相应修饰处理(print语句)后,执行原函数并返回原函数值.
 
-## 传递参数的装饰器
+#### 传递参数的装饰器
 
 ~~~python
 def log(text):
@@ -1094,7 +1194,7 @@ result=now() #wrapper()
 
 两层闭包的机制可以保证传递参数给内在的装饰器wrapper.第一层将参数传进行生成第一层闭包对应返回函数,第二层则将该参数继续留给真正的装饰器闭包.
 
-## 继承原有函数信息
+#### 继承原有函数信息
 
 在以上装饰器中, 其实质都是`now=wrapper`, 此时我们要是输出`now.__name__`得到的将是装饰器wrapper的名字.可以用`wrapper.__name__=func.__name__` 加在装饰器内部进行原函数信息的继承, 也可以使用`functools.wraps`来实现.
 
@@ -1121,7 +1221,7 @@ wrapper=functools.wraps(func)(wrapper)
 
 对于很复杂的体系, 需要经常定义一些高阶函数对新函数进行一系列处理, 此时定义装饰器就可以省很多功夫. 但缺点是初学比较难以理解, 要对OOP十分熟悉.
 
-## 对象方法变对象属性的装饰器@property和@*.setter
+#### 对象方法变对象属性的装饰器@property和@*.setter
 
 该装饰器是python内置的,是类中一个高级用法,作用是将一个**方法名变成一个对象属性**. 类需要继承于**object**相应的类.    
 构建相应`@property def prop(self):return self._prop`就可以直接`obj.prop`来将方法变成获取对象属性的调用形式.而相应`@prop.setter def prop(self,value): self._prop=value` 就可以实现`obj.prop=value`将方法转为对象属性的赋值.而且好处还可以在此加入属性的值的检查. *obj._prop*只是相应储存的储存地方,名字也是无限制的.  
@@ -1166,8 +1266,6 @@ s.fail=True
 ~~~
 
 
-
-
 ## 类和对象
 
 继承和多态: 支持子类从父类继承, 通过重新定义方法实现多态.
@@ -1195,7 +1293,7 @@ Foo.bar = bar
 Foo.bar()
 ~~~
 
-#### 动态类和对象方法:
+### 动态类和对象方法:
 
 python动态语言,可以对类/对象直接添加新的属性和方法. 对类进行添加,所有实例都起效, 对某个实例添加, 只能对该实例起效,其余实例不受影响. 注意添加方法需要使用self,因为会传递实例本身.
 
@@ -1245,13 +1343,13 @@ Student.set_score = MethodType(set_score, None, Student)
 s2.set_score(80);s2.score; #-> 80
 ~~~
  
-#### 限制类属性 `__slots__`:
+### 限制类属性 \_\_slots\_\_:
 
 ` __slots__ = ('name', 'age')` 可以限制类属性只能有列出的来的几种. 添加或指定新属性将报错AttributeError.
 
 `__slots__`只对当前类起效, 对子类无效. 若子类也定义了slots, 则子类运行的属性则是父类和子类的slots的合集.
 
-#### 对象方法变对象属性的装饰器@property和@*.setter
+### 对象方法变对象属性的装饰器@property和@*.setter
 
 该装饰器是python内置的,是类中一个高级用法,作用是将一个**方法名变成一个对象属性**. 类需要继承于**object**相应的类.  
 构建相应`@property def prop(self):return self._prop`就可以直接`obj.prop`来将方法变成获取对象属性的调用形式.而相应`@prop.setter def prop(self,value): self._prop=value` 就可以实现`obj.prop=value`将方法转为对象属性的赋值.而且好处还可以在此加入属性的值的检查. *obj._prop*只是相应储存的储存地方,名字也是无限制的.  
@@ -1295,63 +1393,14 @@ s.fail=True
 ### AttributeError: can't set attribute
 ~~~
 
-## 类的一般知识 {#mid-class}
+
+
 
 > 原博文: [Python:类和对象object](/2015/10/20/pyObject/){: target='_blank'}
 
-Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。用类作为抽象"模板", 而创建机体的一个对象, 称之为实例(Instance).用来储存对象属性数据的称为属性, 而调用来进行针对对象的处理的关联函数,称之为方法.
 
-### 定义一个类
 
-~~~python
-# 定义一个普通类, 不进行继承
-class ClassName(): 
-    statement
-
-# 定义一个继承于父类的类
-# 可以多个父类
-class ClassName(Parent1[,Parent2..]):
-    statement
-
-# 定义一个新式类,继承自object
-class ClassName(object): 
-    statement
-
-# 使用type函数定义类
-# parents是元组,继承的父类,第三个是字典,定义属性和方法
-ClassName=type("ClassName",(parents),{"property/method":value})
-~~~
-
-### 定义类属性和方法
-
-~~~python
-class ClassName():
-    # 定义类内的属性 
-    prop1=value1
-
-    # 初始化函数,在类初始化时可以传入参数.第一个必须是self 实例本身.
-    __init__(self[,var1,var2...]):
-        # 通过方法绑定属性,动态绑定
-        self.prop1=var1
-        self.prop2=var2
-        statement
-    # 一般的方法,对比一般函数,第一个总是self 实例本身
-    method1(self[,var1...]):
-        print self.prop1
-~~~
-
-### 创建实例
-
-创建实例就是`类名(参数)`,参数取决于`__init__`方法.
-
-~~~python
-# __init__(self)
-obj=ClassName()
-# __init__(self,var1,var2)
-obj2=ClassName2(varA,varB)
-~~~
-
-### 访问限制
+### 访问限制 {#mid-class}
 
 python没有真正的办法限制用户访问对象的属性/方法, 只能靠自觉了.以`__`开头的变量(`__var__`特殊变量除外) 不能直接用名字访问; 以`_`开头的变量暗示不要去访问,但不限制直接访问. 以`__`开头的变量其实可以用`_className__var`来访问.
 
@@ -1470,28 +1519,26 @@ print bb
 
 新式类本事其实也是一个对象, 可以用变量接收, 可以作为函数参数传递甚至返回, 可以拷贝, 可以添加新属性, 可以创造对象(类的特性). 例如上述例子用BB接收类,用BB同样可以创造CC类的对象.
 
-## 元类
+### 元类
 
 元类就是类的类,用于创建各种类,一般类的元类是type类. 可以利用type方法来创建新式类(和class关键词效果相当).
 
 细节请参考另一篇[Python:元类metaclass](/2015/10/23/pyMetaClass/).
 
-## 类属性特殊处理
 
-
-## 类的特殊属性/方法
+### 类的特殊属性/方法
 
 请参考另一篇[Python对象的特殊属性和方法](/2015/10/09/pySpecialObjMethod/).
 
-### 属性
+#### 属性
 
 - `__slots__`: 一个元组, 规定了可以设置的属性. 防止动态加载过多的属性.
 
-### 方法
+#### 方法
 
 - `__new__`: 构造函数, 创造类实例时的函数, 一般不修改.
 
-## 类/对象的相关函数
+#### 类/对象的相关函数
 
 - `type(obj)`: 获取对象的相应类型.
 - `type(className, (parents), {attr:value})`: 创建并返回一个类, 三个参数对于类名(字符串),父类(放在元组内)以及属性(属性/方法名以及对应值)
@@ -1504,7 +1551,7 @@ print bb
 
 
 
-##### Reference
+###### Reference
 
 1. [Python对象的特殊属性和方法](/2015/10/09/pySpecialObjMethod/)
 2. [Python Datamodel](https://docs.python.org/2/reference/datamodel.html#special-method-names), 中文版[数据模型](http://python.usyiyi.cn/python_278/reference/datamodel.html)
@@ -1697,12 +1744,11 @@ except StopIteration:
 2. enumerate函数 - [文档](https://docs.python.org/2/library/functions.html#enumerate)
 3. [Python迭代器和生成器](http://www.cnblogs.com/wilber2013/p/4652531.html)
 
+------------------
 
-## 异常和debug 
+## Python异常处理和debug {#Exception-debug}
 
-try...except..else..., try..finally.., raise, assert 的用法. 参考[异常处理](/2015/08/25/PythonException/)以及[捕获所有异常](/2015/08/26/CatchAllError/)
-
-### Python异常处理 {#Exception-debug}
+这里主要是try...except..else..., try..finally.., raise, assert 的用法.
 
 > 原博文: [Python异常处理](/2015/08/25/PythonException/){: target='_blank'}
 
@@ -1734,11 +1780,11 @@ assert <judgement>  #断言,判断一定要返回True否则会引发AssertionErr
 
 try语句用于检测语句块中的错误,从而让except语句捕获其中的异常信息并处理. finally是无论有错无错都会执行.raise语句可以用于人为制造错误. assert语句是断言条件必为真,否则返回断言异常.
 
-## try语句
+### try语句
 
 try的工作原理是，当开始一个try语句后，python就在当前程序的上下文中作标记，这样当异常出现时就可以回到这里，try子句先执行，接下来会发生什么依赖于执行时是否出现异常。try语句有两种模式,try..except..else和try..finally.
 
-### try..except..else
+#### try..except..else
 
 ~~~python
 # 最常见的模式 try..except..else模式
@@ -1756,7 +1802,7 @@ else:
 
 except语句有几种形式,包括捕获所有异常的`except: `,某个异常的`except ErrorName:`或几种异常`except (Error1,Error2,Error3):`, `except ErrorName,e:`和`except Error as e: `可以将异常传给变量e,收集作为数据进行处理.
 
-### try..finally
+#### try..finally
 
 ~~~python
 # try..finally模式
@@ -1808,7 +1854,7 @@ except IOError:
    print "Error: can't find file or read data"
 ~~~
 
-## raise语句
+### raise语句
 
 raise语句可以很好地用于抛出某个异常从而被try捕获. 更常用于结合if等进行条件检查.例如某变量假定[0,10],<0时抛出一个错,>10抛出另一个错误.
 
@@ -1835,7 +1881,7 @@ else:
 ~~~
 
 
-## assert语句
+### assert语句
 
 Python的assert是用来检查一个条件，如果它为真，就不做任何事。如果它为假，则会抛出AssertError并且包含错误信息。
 
@@ -1853,7 +1899,7 @@ except AssertionError,args:
 # AssertionError:one does not equal zero 
 ~~~
 
-## 异常
+### 异常
 
 当一个未捕获的异常发生时，python将结束程序并打印一个堆栈跟踪信息，以及异常名和附加信息。如
 
@@ -1894,7 +1940,7 @@ except Networkerror,e:
 
 一般地, 自定义异常类就是写好`__init__`就好了, 也可以自定义一些新属性用于输出.但意义不大, 一般错误就是message和args两个主要属性,还有个`__dict__`属性. 方法里有如`__str__`这种字符串化输出的方法.
 
-### 常见异常
+#### 常见异常
 
 异常名称     |  描述
 BaseException    |  所有异常的基类
@@ -1944,7 +1990,7 @@ RuntimeWarning   |  可疑的运行时行为(runtime behavior)的警告
 SyntaxWarning    |  可疑的语法的警告
 UserWarning  |  用户代码生成的警告
 
-### Python内建异常体系结构
+#### Python内建异常体系结构
 
 ~~~
 BaseException
@@ -1999,8 +2045,7 @@ BaseException
 +-- BytesWarning
 ~~~
 
-
-## Reference
+###### Reference
 
 1. [Python中何时使用断言](http://blog.jobbole.com/76285/)
 
@@ -2014,7 +2059,7 @@ BaseException
 
 前篇已经提及可以使用`except: statement`来捕获所有异常, 但是你不知道那个是什么异常..但我们很多时候也想知道究竟是啥异常在哪里发生.其实是有方法通抓错误并分析的. 当然, 使用异常处理还是最好使用好针对某种异常的处理啦.推荐记住`except:traceback.print_exc()`
 
-## 使用traceback模块
+#### 使用traceback模块
 
 回溯模块可以回溯运行记录. `traceback.print_exc()`可以印出最后的异常情况.
 
@@ -2049,7 +2094,7 @@ raw_input()
 ~~~
 
 
-## 使用sys模块
+#### 使用sys模块
 
 使用`sys.exc_info()` 方法会返回一个三元元组, 第一个是错误类型, 第二个是错误信息,第三个是回溯对象信息. 信息差不多,但是不如traceback.print_exc()来得干脆.
 
@@ -2066,7 +2111,7 @@ raw_input()
 #hello world
 ~~~
 
-## 使用基类:
+#### 使用基类:
 
 ~~~python
 try:
@@ -2078,6 +2123,13 @@ except Exception,ex:
 这里使用了基类Exception来通捕获错误. 其实第一个只是告诉自己是什么类型异常(肯定是*<type 'exceptions.Exception'>*了),意义不大,而后面实例化抓回来的ex就可以储存信息了,究竟是啥错误~ 这种应用基类的方法可以捕获各种错误并且实例化,但是缺点是不知道异常类型, 靠猜.
 
 ## 模块
+
+### \_\_future\_\_模块
+
+`__future__`模块用来引入一些新版本的特性, 例如在2.x版本中引入3.x版本的特性.
+
+- `from __future__ import unicode_literals` 引入3.x版本中字符串特性, 使用该语句后,`"str"`就已经是unicode的,而2.x版本中的字符串则要使用`b"str"`来表示.
+- `from __future__ import division` 引入3.x中除法特性,3.x中除法默认是精确除法,2.x则是向下取整.例如`10/3`2.x的是3,3.x是3.33333.使用该特性后就会采用3.x的特性, 而原有的除法要使用`10//3`来表示.
 
 # 进阶篇
 
@@ -2106,7 +2158,7 @@ help是函数,help(内容), 这个内容可以是一个变量, 对象, 或者'�
 - 变量名: 可以查询变量对象的帮助,类似于类查询,但现实的是对象查询.
 - 子内容: 例如模块类的对象, 对象类的方法, 均使用详细调用时的形式,例如help(os.path)
 
-## 模块设置help信息
+### 模块设置help信息
 
 - NAME: `__name__`: 模块名, 主程序时是`__main__`. 写在模块开头的`'...'`字符串是模块名进一步说明.
 - FILE: `__file__`: 默认就是文件绝对路径(包是`__init__`文件).
@@ -2120,7 +2172,7 @@ help是函数,help(内容), 这个内容可以是一个变量, 对象, 或者'�
 
 部分特殊变量是会有显示的, 但也有就是特殊`__`罢了.而`_var`或`_var_`变量会作为private变量/函数而不在help中显示信息, 以帮助简化及保护信息.
 
-## 类设置help信息:
+### 类设置help信息:
 
 在类的开头定义后写上的第一个字符串段就是类的主要说明,会跳过前面的空行,注释行. `''' ... '''`和`'...'`均可.
 
@@ -2128,16 +2180,14 @@ help是函数,help(内容), 这个内容可以是一个变量, 对象, 或者'�
 "Data descriptors inherited from": 本类内定义的/从母类继承的内容描述,例如`__dict__`等特殊内容
 "Data and other attributes inherited from": 本类内定义的/从母类继承的属性,是类内定义的变量等.注意不包括函数(包括`__init__`)内
 
-## 函数设置help信息:
+### 函数设置help信息:
 在函数定义下面注意缩进的第一个字符串内容(`'''...'''或'..'`)或者注释内容就是其注解.注意是函数def下面!注意缩进!
 
-## 比较dir:
+### 比较dir:
 
 dir能列出模块或对象的方法属性等, 以列表返回. 而help则是列出这些信息以外还有介绍,但不好进一步处理.
 
 -------------
-
-
 
 
 ## 元类和类 {#more-metaclass}
@@ -2183,7 +2233,7 @@ print bb
 
 新式类的类叫`type`, 这个type就是元类. 可以用元类来创建我们所熟知的新式类. 
 
-## type函数利用元类创建新式类
+### type函数利用元类创建新式类
 
 我们可以使用type函数来获取类型,同样也可以用该函数创造一个类,取决于参数. `type(类名, 父类的元组（针对继承的情况，可以为空），包含属性的字典（名称和值）)`, 例如:
 
@@ -2211,17 +2261,17 @@ class CCCC(CCC):
 
 实际上我们使用class关键词创建新式类时是调用了type函数来实现的.
 
-## `__metaclass__`类属性
+### \_\_metaclass\_\_类属性
 
 `__metaclass__`属性用于指明该类创建时使用的元类. 如果没有该属性,则使用type来创建. 注意, 这个过程是逐层搜的, 首先搜索该类的定义, 再搜索继承的父类, 要是还找不到就在模块里面找, 模块级别都找不到该属性, 就用type来创建. 例如上述CCCC的class式定义中,首先搜索CCCC类的定义,其次是CCC父类,再是模组(main这里), 最后才是用type. 
 
 决定了`__metaclass__`以后, 则用其来创建一个类对象. 那么, 这个元类怎么创建类对象呢...怎么定义自己的元类呢..
 
-## 自定义元类
+### 自定义元类
 
 首先要明确, 你要修改元类干什么. 修改元类是在创建类对象前进行拦截从而改变其特性的,用于修改类, 并且可以返回类对象. 例如,要把所有属性/方法名变成大写.
 
-### 使用新函数并将type函数作返回
+#### 使用新函数并将type函数作返回
 
 使用一个新函数, 接受和type一样对应的三个参数. 当进行相应预处理后, 再将**type()函数**将修改内容生成类对象.
 
@@ -2253,7 +2303,7 @@ print f.BAR
 # 输出:'bip'
 ~~~
 
-### 使用类的方法
+#### 使用类的方法构建元类
 
 使用类的方法就是要使用**type作父类**, 再覆盖`__new__`方法并返回相应的type类的`__new__`方法结果.
 
@@ -2375,21 +2425,19 @@ u.save()
 
 -------------
 
-### Python模块和包 {#more-module-package}
+## Python模块和包加载机制 {#more-module-package}
 
 > 原博文: [Python模块和包](/2015/08/29/pythonModule/){: target='_blank'}
 
 python没有什么头文件cpp文件之分, 每个py文件都可以作为独立的模块module. 我们应该熟知使用 *import os* 一类语句加载标准模块.这里总结下模块,包等更多东东. 和一般的教材不同, 大家熟悉模块, 这里先介绍包, 概念比较简单, 但对后面模块进一步认识有很大意义.
 
-## 包 package
+### 包 package
 
 和C++不同,模块加载是不支持路径形式的, 但我们经常要将很多个模块放在一个文件夹内便于管理.此时python就有了包package的概念. 包其实就是放了很多文件的文件夹特殊模块, 其最大作用是便于加载文件夹内的模块: `import package.module`
 
 包的实质也是个模块.当在加载包内的模块时, 包也会被加载到模块列表中, 此时作为模块加载的内容在文件夹内`__init__.py`内. 
 
 `__init__.py` : 当加载包模块时, 初始化包模块. 用途在于说明该文件夹是个package, 不需特殊加载的话可以留空,但作为包的话必须存在该文件.
-
-## 模块 module
 
 先谈模块搜索路径, 再谈看似很简单的模块加载. 重点是模块与包的加载机制, 有助于了解import的实质.
 
@@ -2705,7 +2753,7 @@ pymol/cmd.pyc:
 ----------------------
 
 
-## Python对象的特殊属性和方法 {#more-special-methodprop}
+### 对象的特殊属性和方法 {#more-special-methodprop}
 
 Python一切皆对象(object)，每个对象都可能有多个属性(attribute)。Python的属性有一套统一的管理方案。
  
@@ -2715,7 +2763,7 @@ Python一切皆对象(object)，每个对象都可能有多个属性(attribute)�
 对象的属性储存在对象的`__dict__`属性中。
 `__dict__`为一个词典，键为属性名，对应的值为属性本身。
 
-## 属性
+#### 属性
 
 - `__doc__`: 帮助说明, 将字符串写在对象定义声明之下.
 - `__module__`: 模组名,就是文件的名字(无后缀)部分
@@ -2723,7 +2771,7 @@ Python一切皆对象(object)，每个对象都可能有多个属性(attribute)�
 - `__dict__`: 储存对象属性/方法的字典.
 - `__slots__`: 设置一个元组,限定允许绑定的属性名称(不能动态添加以外的属性). 只能对当前类起效, 对子类不起效(除非在子类中也定义`__slots__`，这样，子类允许定义的属性就是自身的`__slots__`加上父类的`__slots__`。)
 
-## 方法
+#### 方法
 
 - `__init__(self, args)`: 对象初始化时执行的函数
 - `__getattr__(self,attr)`:在调用获取对象属性执行,只查询在不在`__dict__`中的属性(相当于先在`__dict__`中查找,找不到再用本函数). 如果调用是对象方法, 处理时返回值是函数才OK.
@@ -2751,6 +2799,8 @@ Python一切皆对象(object)，每个对象都可能有多个属性(attribute)�
 1. `hasattr(obj,attr)`: 返回真假(通过getattr异常与否来实现)
 2. `dir(obj)`: 列出对象现有属性
 3. 通过`try: obj.attr; except AttributeError: pass`
+
+###### Reference
 
 1. [特殊方法](https://docs.python.org/2/reference/datamodel.html#special-method-names)
 
@@ -2843,7 +2893,7 @@ Python一切皆对象(object)，每个对象都可能有多个属性(attribute)�
 - continue: 使当前迭代结束，跳到下一轮循环。用于跳过后面有繁琐循环体。即是break掉这轮循环
 - str % values: 字符串格式化，values可以是字符数字或者元组。
 - exec “action”: action就是普通的语句，将执行语句中的行为。命名空间行为。
-- scope={}\exec’action’ in scope: 命名空间,就是创立一个含有内建函数的空间,使exec的行为在这个空间中执行,而不影响真实外部。关键是exec in {}表达。同样适用于: eval.内含’__builtins__’项: 
+- scope={}\exec’action’ in scope: 命名空间,就是创立一个含有内建函数的空间,使exec的行为在这个空间中执行,而不影响真实外部。关键是exec in {}表达。同样适用于: eval.内含’\_\_builtins\_\_’项: 
 - assert 条件,promt: 断言语句，不符合条件的则弹出AssertionError:promt的错误。
 
 ~~~python
@@ -2873,7 +2923,7 @@ __main__ 主函数
 
 内建的东东放在`__buildin__`模块当中.
 
-## 内建函数，作为一种预设运算，用于返回值，特殊表达式
+### 内建函数 (在\_\_buildin\_\_模块)
 - float(object): 转换为浮点数
 - int(object,base=10): 转换为整数，带小数时向下取整运算. 字符串时指定base可指定传入字符的进制,默认10.
 - long(object): 转换为长整形数
@@ -2925,12 +2975,12 @@ __main__ 主函数
 - dir([obj]): 列出obj的所含标识符(函数,类,变量,模块),不加参数针对当前模块
 - isinstance(var, type): 可以比较两个参数项类型是否相同.如isinstance("abcd",str).type部分还可以用元组的形式指定多种类型.isinstance和type比较差异参看[ref](http://segmentfault.com/q/1010000000127305),主要是isinstance可以对继承的类也进行相等判断,type不行.
 
-## 复数
+### 复数方法
 
 - C.real: 实数部分
 - C.imag: 虚数部分
 
-## 列表方法
+### 列表方法
 
 - A.append（对象）: 列表末追加新对象（一次一个，对象可为列表）
 - A.count(obj): 统计列表某元素出现次数
@@ -2942,12 +2992,12 @@ __main__ 主函数
 - A.remove(obj): 移除列表内某个指定元素，不返回任何值。找不到会报ValueError.
 - A.reverse(): 反向列表A，不返回值。
 
-## 元组方法
+### 元组方法
 
 - T.count(obj): 统计元组某元素出现次数
 - T.index(obj[,start,stop]): 索引,返回第一个匹配obj的元素在元组中索引号n（第n+1个）.start和stop可以限制搜索区间.找不到会报ValueError.
 
-## 字典方法
+### 字典方法
 - dict.clear(): 清空字典所有的项，无返回值None。
 - dict.copy(): 浅复制副本，用于赋值,深复制用copy.deepcopy
 - dict.fromkeys(seq[,val]): 从seq内读入键，建立并返回一个新的字典，值通为val或者None（默认）
@@ -2964,13 +3014,15 @@ __main__ 主函数
 - dict.pop(key): 读出某键的值,并从字典中删除该项，栈操作。
 - dict.popitem(): 随机读出字典中一个项以元组返回,并从字典中删除。
 
-## 集合方法
+### 集合方法
 - set.add(element)    集合添加一个元素
 - set.update(seq)    集合添加多项
 - set.remove(element)    移除集合一个元素
 - t\|s 并集 t&s 交集 t-s 差集 t^s交集的补集(只出现t或s中，不能都有)
 
-## 字符串方法（大部分并不能改变字符串的值，只起到返回作用）
+### 字符串方法
+
+因为字符串是不可序列, 所以大部分方法并不能改变字符串的值，而只起到返回作用.
 
 - str.decode(codec): 根据codec将字符串解码成unicode,等于unicode函数
 - str.encode(codec): 根据codec将unicode字符串编码为codec的内容
@@ -3008,10 +3060,8 @@ __main__ 主函数
 - str.isspace(): 检查str是否空格，返回是否。
 - str.partition('sep'): 从左搜索str的分隔符sep，并返回(head,sep,tail)即分隔开后的元组
 - str.rpartition('sep'): 从右搜索str的分隔符sep，并返回(head,sep,tail)即分隔开后的元组
- 
 
-
-## 文件方法和属性  help(file)
+### 文件方法和属性  help(file)
 - open('filepath','mode'[,bufsize])    同file,但可以打开文件对象。'r''w''a''b''+'分别为读,写,追加,二进制方法,和读/写,后两种可以和前面合用。
 - file('filepath','mode'[,bufsize])    建立文件对象,bufsize为缓存区大小,一般不设.mode默认'r'读。'U'模式支持各种换行符.
 - f.read([size])                读取文件,记得有定位的,读完就改变定位.size指明为读取字节数,不指明全部读取.返回字符串
@@ -3036,7 +3086,6 @@ __main__ 主函数
 - f.fileno()        返回长整形的‘文件标签’
 - f.flush()        把缓冲区内容写入硬盘
 - for line in file1： 用迭代器逐行读取，注意此时不能再用readline()之类读取，不怎么占内存的方式
-
 
 
 ## Reference
