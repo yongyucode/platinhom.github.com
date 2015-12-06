@@ -6,7 +6,7 @@ categories: IT
 tags: Python IDE
 ---
 
-
+[ref1](http://sw897.github.io/2014/02/13/sublime-text-3-for-python/) , [ref2](http://koko.ntex.tw/wordpress/sublime-text3-python-ide-anaconda/)
 
 Anaconda提供auto completion(自动提示和补齐), lint(语法检查), docstring(文件/帮助解析), 跳到定义和查找使用情况.
 
