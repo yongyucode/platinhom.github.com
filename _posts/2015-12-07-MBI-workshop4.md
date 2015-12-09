@@ -44,5 +44,16 @@ PRISM for protein-protein interface.
 
 Pose position, replica exchange , FEP. Flexibility. charged pocket.
 
+#### Alex MacKerell [U. Maryland](http://mackerell.umaryland.edu/)
+
+SLICS method, FragMaps: 使用片段去动力学蛋白, 搜索位置存在片段概率, 得知蛋白片段存在可能概率.
+
+Prop. distribution to Gibbs energy based on Gid Free Energy. Ligand grid free energy (LGFE).
+
+
+Discrete protonation at constant pH MD.
+
+
+FTMap FTSite (hot spot, binding site). [Nat. Protocol](http://structure.bu.edu/sites/default/files/nprot.2015.043.pdf)
 
 ------
