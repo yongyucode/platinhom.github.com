@@ -8,6 +8,8 @@ tags: OS Software
 
 Bartender是Surtees Studios(开发HDD Fan Control的那家)开发的一款状态栏整理软件，可以将状态栏图标重整，通过在系统菜单栏新建应用图标提供一个“二级菜单栏”，甚至隐藏不需要的图标(包括通知中心、Spotlight等原生图标均可干掉),十分强大。这个菜单控制只能控制右上的菜单图标, 而不能控制独立软件菜单(左边起的菜单).
 
+![hide](http://sspai.com/attachment/origin/2015/04/30/249498.gif)
+
 ## 安装
 
 - 可以去[官网](https://www.macbartender.com/)下载, 有试用, 正式使用是15刀. 可以支持下正版, 还是值得拥有的. 
@@ -23,14 +25,12 @@ Bartender是Surtees Studios(开发HDD Fan Control的那家)开发的一款状态
 ## 使用
 
 - Preference -> Menu Items 有所有当前或者曾经设置过在菜单的项目的设置选项.
-- Menu Bar Item 那里, Nothing...是不处理该图标, show in barintender是把图标转到Barintender里; Completely hide是完全不显示. 一般不用最后一个, 用第二个就好了.
+- Menu Bar Item 那里, Nothing...是不处理该图标, show in BarTender是把图标转到BarTender里; Completely hide是完全不显示. 一般不用最后一个, 用第二个就好了.
 - Item update是如果图标有新更新将显示到菜单栏, 显示时间默认5秒
 - 对于非系统的应用, 会出现popup window选项, 就是如果该图标菜单不正常时才使用.
 - 在General 的tab里, 可以设置开机启动, 图标, 位置, 自动隐藏菜单等选项.
-- Advanced可以控制操作, Visible是图标可见, 下面是设置快捷键Hotkey, 最后一个是点击图标后的反应, 默认是open barintender bar, 就是点击后展开. 也可以点击后将图标显示到菜单栏.
+- Advanced可以控制操作, Visible是图标可见, 下面是设置快捷键Hotkey(我设置了Bartender bar hotkey为 *Fn+ctrl+下*), 最后一个是点击图标后的反应, 默认是open BarTender bar, 就是点击后展开. 也可以点击后将图标显示到菜单栏.
 
-
-![hide](http://sspai.com/attachment/origin/2015/04/30/249498.gif)
 
 ![submenu](https://www.macbartender.com/assets/img/bartenderImages/19.png)
 
@@ -39,5 +39,7 @@ Bartender是Surtees Studios(开发HDD Fan Control的那家)开发的一款状态
 - 电量: 节能器->电池->菜单栏显示电池状态.显示出来后右键可以显示百分比.
 - 账户: 在用户与群组->登录选项->可以设置为显示为全名, 登录名或者一个图标.
 - 时间: 日期与时间->时钟->菜单栏显示日期和时间, 可以设定显示时间格式(12?24?), 数码(数字)还是模拟(时针形式), 是否显示日期和星期几.
+
+扩充阅读: [Mac上小众却常用的app推荐（1）](http://www.imooc.com/wenda/detail/244074),[(2)](http://www.imooc.com/wenda/detail/244077)
 
 ------
