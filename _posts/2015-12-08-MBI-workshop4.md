@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MBI workshop4:Mathematical Challenges in Drug and Protein Design
-date: 2015-12-07 14:36:52
+date: 2015-12-08 14:36:52
 categories: Live
 tags: Live
 ---
@@ -55,5 +55,7 @@ Discrete protonation at constant pH MD.
 
 
 FTMap FTSite (hot spot, binding site). [Nat. Protocol](http://structure.bu.edu/sites/default/files/nprot.2015.043.pdf)
+
+[链接](https://mbi.osu.edu/event/?id=826#schedule)
 
 ------
