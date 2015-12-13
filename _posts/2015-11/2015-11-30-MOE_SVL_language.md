@@ -6,7 +6,7 @@ categories: CompCB
 tags: Software
 ---
 
-[MOE2010-Help](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/). 转自老的有道笔记(居然以前写了这么多啊...).
+[MOE2010-Help](http://platinhom.github.io/ManualHom/MOE/moe2010/html/). 转自老的有道笔记(居然以前写了这么多啊...).
 
 ## MASK和Tagged向量
 - get [vector,index\_list]~~读向量中index索引号的元素==v[index_list]如v[[2,3,4]],取单元素可用v(1),v[1]. 
@@ -381,15 +381,15 @@ ps: get,put相当于v[n]法, peek,poke相当于v(n)法. 注意a=[1,2,[3,4]],a([3
 - pro\_Contacts [] ~~打开protein\_contact面板,可以设置更详细参数拿返回值, 具体查index
 - pro\_HydrogenBonds mol\_object\_keys ~~返回[donors, acceptors]形式的原子对代表氢键.
 - pro\_SaltBridges [Atoms [],[cutoff :4.5, basic\_his:1]]~~返回[acidic\_O, basic\_N]形式的原子keys的vector.cutoff是距离截断,basic\_his是是否处理His为碱性,后两项是option,此处是缺省值.
-- pro\_Superpose [ chainkeys, options ] ~~叠合,返回RMSD. 参看[语法](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/proteins/fcnref/pro_sup.html)
-- model\_chain\_key = pro\_HomologyModel [ chains, options ] ~~同源建模,返回链,参看[语法](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/proteins/fcnref/pro_mod.html)
+- pro\_Superpose [ chainkeys, options ] ~~叠合,返回RMSD. 参看[语法](http://platinhom.github.io/ManualHom/MOE/moe2010/html/proteins/fcnref/pro_sup.html)
+- model\_chain\_key = pro\_HomologyModel [ chains, options ] ~~同源建模,返回链,参看[语法](http://platinhom.github.io/ManualHom/MOE/moe2010/html/proteins/fcnref/pro_mod.html)
 - [chains, options] =run ['$MOE/lib/svl/run/promodel\_ui.svl', [], 'pro\_Model\_Prompt']  同源建模,弹出框提示,返回pro\_HomologyModel的[chains, options]
 - pro\_Align [ chains, options ]~~序列比对,chains,options用pro\_Align\_Prompt []搞到
 - [chains, options] = pro\_Align\_Prompt [] ~~提示面板进行align参数设置
 ^
-- pro\_SeqCreate [ "residue\_letter\_names", options ] ~~根据单字母残基序列创建链,具体参看[语法](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/proteins/fcnref/pro_seq.html)
-- pro\_Predict2Struct [chain\_keys] ~~预测二级结构,返回tag向量,对应helix等的概率,参看[语法](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/proteins/fcnref/pro_pred.html)
-- pro\_PredictAccessibility [chain\_keys]~~预测溶剂可及程度'buried','exposed',对应各概率.参看[语法](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/proteins/fcnref/pro_pred.html)
+- pro\_SeqCreate [ "residue\_letter\_names", options ] ~~根据单字母残基序列创建链,具体参看[语法](http://platinhom.github.io/ManualHom/MOE/moe2010/html/proteins/fcnref/pro_seq.html)
+- pro\_Predict2Struct [chain\_keys] ~~预测二级结构,返回tag向量,对应helix等的概率,参看[语法](http://platinhom.github.io/ManualHom/MOE/moe2010/html/proteins/fcnref/pro_pred.html)
+- pro\_PredictAccessibility [chain\_keys]~~预测溶剂可及程度'buried','exposed',对应各概率.参看[语法](http://platinhom.github.io/ManualHom/MOE/moe2010/html/proteins/fcnref/pro_pred.html)
 - pro\_ResHydrophobicity res\_names ~~返回残基疏水性.注意残基三字母大写.
 - Hydrophobic\_Fitness\_Z [ res\_names, mol\_data, align\_pos ] ~~返回Z-score打分,第三项是可选.
 - pro\_SearchPDB [ query\_set, search\_options] ~~同源搜索,返回family\_lists
@@ -423,7 +423,7 @@ MM
 #### 药效团
 - ph4\_TypeList [] ~~返回可用的简称的原子的ph4类型'+,-,A,D,H,P,X' 对应+-离子,氢键受体供体,疏水极性和其他.
 - ph4\_aType [akeys] ~~返回原子的ph4简写的类型,见ph4\_TypeList
-- ph4\_a** [akeys] ~~**部分对应很多性质,具体参照[连接](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/moe/fcnref/ph4_tlst.html),有此属性返回1,否则0.除了aGeometry特别点,sp返回1,sp2返回2,其他3,分离为0.
+- ph4\_a** [akeys] ~~**部分对应很多性质,具体参照[连接](http://platinhom.github.io/ManualHom/MOE/moe2010/html/moe/fcnref/ph4_tlst.html),有此属性返回1,否则0.除了aGeometry特别点,sp返回1,sp2返回2,其他3,分离为0.
 
 
 ### GUI
@@ -491,7 +491,7 @@ MM
 - db\_RenameField [ mdb\_key, 'fieldname', 'new\_name' ] ~~field改名
 - db\_Sort [ mdb, fields, sort\_order\_flag ]~~排序,field可指定多个,第一个是主要排序标准,依此类推;sort\_order为0升序,1降序;返回值为已排序后的entries 的unique与否的mask,若独特的标为1.
 - db\_Proxy [ mdb, fields, sort\_order\_flag ]~~排序后返回rank,db\_Sort差不多
-- db\_ImportDB ['dst\_db','src\_db',fields,names,types,options] ~~载入mdb内容,names是目的地的field name. [参见](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/moe/fcnref/db_port.html)
+- db\_ImportDB ['dst\_db','src\_db',fields,names,types,options] ~~载入mdb内容,names是目的地的field name. [参见](http://platinhom.github.io/ManualHom/MOE/moe2010/html/moe/fcnref/db_port.html)
 - db\_ExportDB [ 'dst\_db', 'src\_db', field\_names, entry\_keys ] ~~输出mdb内容,
 ^
 - dbv\_Open 'filename' ~~用db viewer打开数据库，返回dbkey; 不指名file,将使用文件选择器; dbv\_OpenFile 'filename' ~~和open类似,但不打开文件选择器
