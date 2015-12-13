@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MBI workshop4: Mathematical Challenges in Drug and Protein Design
+title: MBI workshop4:Mathematical Challenges in Drug and Protein Design
 date: 2015-12-07 14:36:52
 categories: Live
 tags: Live
