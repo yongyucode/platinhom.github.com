@@ -6,7 +6,7 @@ categories: Coding
 tags: Python Website
 ---
 
-W3School离线版(html版)[下载](/HomPDF/manual/Coding/W3School/W3Schools_Offline_2015-ProgramEsecure.7z), 去除广告后[效果](/HomPDF/manual/Coding/W3School/W3Schools_Offline_2015/www.w3schools.com/).
+W3School离线版(html版)[下载](/ManualHom/Coding/W3School/W3Schools_Offline_2015-ProgramEsecure.7z), 去除广告后[效果](/ManualHom/Coding/W3School/W3Schools_Offline_2015/www.w3schools.com/).
 
 ~~~bash
 #! /bin/bash

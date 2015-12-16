@@ -41,8 +41,8 @@ runable svl文件执行顺序(以第一个遇到为准)
 `moe -load` 可加载svl文件或文件夹
 `moe -std` 不加载用户的,只加载标准的和patch的
 
-> [Configuring and Customizing MOE](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/appendix/moeconfig.htm)
-> [Menu File Format](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/moe/fcnref/menufile.htm)
+> [Configuring and Customizing MOE](http://platinhom.github.io/ManualHom/MOE/moe2010/html/appendix/moeconfig.htm)
+> [Menu File Format](http://platinhom.github.io/ManualHom/MOE/moe2010/html/moe/fcnref/menufile.htm)
 
 
 ~~~bash
@@ -72,7 +72,7 @@ curr_value = EchoMenuCommands []
 	- accel 是快捷键, token
 	- active 是激活所需条件,atoms是体系中有原子
 
-更多条件等请[参考](http://platinhom.github.io/HomPDF/manual/MOE/moe2010/html/moe/fcnref/menufile.htm)
+更多条件等请[参考](http://platinhom.github.io/ManualHom/MOE/moe2010/html/moe/fcnref/menufile.htm)
 
 `&`是连接符
 表达中 `&&`逻辑与 `|` 逻辑或 `!`逻辑非

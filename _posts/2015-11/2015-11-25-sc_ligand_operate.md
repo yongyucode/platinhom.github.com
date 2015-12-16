@@ -188,7 +188,7 @@ Limitations:
 
 ## Reference
 
-[SC-2015-2:general_utilities](http://platinhom.github.io/HomPDF/manual/Schrodinger/Schrodinger_2015-2_docs/general/general_utilities.pdf)
+[SC-2015-2:general_utilities](http://platinhom.github.io/ManualHom/Schrodinger/Schrodinger_2015-2_docs/general/general_utilities.pdf)
 
 [^ref3]: [How do I combine a receptor and a ligand from separate files into a file with a single entry for the complex?](http://www.schrodinger.com/kb/286)
 [^ref2]: [Can I combine Maestro files or other structure files from the command line?](http://www.schrodinger.com/kb/190)
