@@ -10,15 +10,15 @@ Win7下很奇怪不能显示PDF文件的缩略图 **Thumbnails**. 预览倒是�
 
 试了一堆网上的方法, 最后终于成功了..小结一下吧..
 
-- PDF preview for win 7
+### PDF preview for win 7
 
 根据一个帖子讨论Adobe的预览问题[^preview], 里面提到使用[PDF preview for win 7](http://www.win7pdf.com/pdf-preview.html)这个软件. 这个软件能够一次解决掉预览和缩略图问题. 然而感觉有bug, 速度较卡, 而且多个pdf时缩略图产生爆慢, 还经常性导致explorer 挂掉重启...使用时还需要将该PDF阅读器设为默认才有效,否则还是不显示缩略图...这个软件看PDF打开非常快, 但是十分不方便, 非常不好用...不建议安装..
 
-- Adobe\_Reader\_x64_fixes\_v3
+### Adobe\_Reader\_x64_fixes\_v3
 
 很多帖子都提到这个[补丁](http://www.pretentiousname.com/adobe_pdf_x64_fix/). 用法很简单, 下载Installer版本下来然后安装. 安装完点Apply Fix即可. 然而在我的机子上尝试对于Adobe 依然不起鸟用.. 可能这个版本还是依然对于老的Adobe起效..补丁针对预览功能和缩略图功能, 据介绍要不是从Vista升级到Win7不会有预览的问题. 所以还是针对缩略图功能, 开发者针对的是Adobe 9,  但几年没有更新了..说2014年12月出更强大版本后来没一回事了.. ╮(╯▽╰)╭ 尝试折腾了几次依然无效, 所以也可以跳过了. 
 
-- 结合Foxit
+### 结合Foxit
 
 后来参考到一个[帖子](https://forums.adobe.com/thread/1812515?start=80&tstart=0), 里面介绍了解决办法:
 
@@ -27,6 +27,8 @@ Win7下很奇怪不能显示PDF文件的缩略图 **Thumbnails**. 预览倒是�
 3. 安装[Foxit](https://www.foxitsoftware.com/). 下载新版本的Foxit. 原帖说要重启, 我没有重启..就是杀了explorer再开..╮(╯▽╰)╭ 
 4. 设置Foxit为默认阅读器.此时就可以使用Foxit来进行缩略图了!!!速度还很快~
 5. 重设Adobe为默认阅读器, 此时就发现用Adobe也可以预览缩略图了!!! 可能是Foxit提供了一些接口, Adobe可以借用这些借口来解决问题吧...
+
+-------
 
 好了, 回去把PDF Preview卸掉, 再试试卸掉Adobe Reader preview handler x64 fixer..
 
