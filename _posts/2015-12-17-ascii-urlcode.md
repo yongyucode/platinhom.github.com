@@ -37,7 +37,7 @@ c return	|	%0d	|	=	|	%3d	|	m	|	%6d
  	|	%19	|	I	|	%49	|	y	|	%79
  	|	%1a	|	J	|	%4a	|	z	|	%7a
  	|	%1b	|	K	|	%4b	|	{	|	%7b
- 	|	%1c	|	L	|	%4c	|	|	|	%7c
+ 	|	%1c	|	L	|	%4c	|	\|	|	%7c
  	|	%1d	|	M	|	%4d	|	}	|	%7d
  	|	%1e	|	N	|	%4e	|	~	|	%7e
  	|	%1f	|	O	|	%4f	|	 	|	%7f
@@ -82,7 +82,7 @@ ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode
 £	|	%a3	|	Ó	|	%d3	|	 	|	 
  	|	%a4	|	Ô	|	%d4	|	 	|	 
 ¥	|	%a5	|	Õ	|	%d5	|	 	|	 
-|	|	%a6	|	Ö	|	%d6	|	 	|	 
+\|	|	%a6	|	Ö	|	%d6	|	 	|	 
 §	|	%a7	|	 	|	%d7	|	 	|	 
 ¨	|	%a8	|	Ø	|	%d8	|	 	|	 
 ©	|	%a9	|	Ù	|	%d9	|	 	|	 
