@@ -6,14 +6,21 @@ categories: CompCB
 tags: CompBiol
 ---
 
-* [](http://pubs.acs.org/journal/jctcce)
+* [Journal of Chemical Theory and Computation](http://pubs.acs.org/journal/jctcce): IF-5.498 (2014)
+* [Journal of Chemical Information and Modeling](http://pubs.acs.org/journal/jcisd8): IF-3.738 (2014)
 * [Journal of Computer-Aided Molecular Design](http://www.springer.com/chemistry/physical+chemistry/journal/10822): IF-2.990 (2014)
 * [Journal of Molecular Graphics and Modelling](http://www.sciencedirect.com/science/journal/10933263)
 * [Journal of Molecular Modeling](http://link.springer.com/journal/894): IF-1.722 (2014)
 * [Journal of Computational Chemistry](http://onlinelibrary.wiley.com/journal/10.1002/(ISSN\)1096-987X): IF-3.589 (2014)
 * [Molecular Informatics](http://onlinelibrary.wiley.com/journal/10.1002/(ISSN\)1868-1751): IF-1.647 (2014)
-* Journal of Physical Chemistry A/B/C
-* Journal of Physical Chemistry Letter
+* [Journal of Physical Chemistry A](http://pubs.acs.org/journal/jpcafh): 偏小分子. IF-2.693 (2014) 
+* [Journal of Physical Chemistry B](http://pubs.acs.org/journal/jpcbfk): 偏生物体系. IF-3.302 (2014)
+* [Journal of Physical Chemistry C](http://pubs.acs.org/journal/jpccck): 偏材料体系. IF-4.772 (2014)
+* [Journal of Physical Chemistry Letter](http://pubs.acs.org/journal/jpclcd): IF-7.458 (2014)
+* [Physical Chemistry Chemical Physics](http://www.rsc.org/journals-books-databases/about-journals/PCCP/?e=1): IF-4.493 (2014)
+* [Chemical Physics](http://www.sciencedirect.com/science/journal/03010104): IF-1.652 (2014)
+* [Journal of Chemical Physics](http://scitation.aip.org/content/aip/journal/jcp): IF-2.952 (2014) 
+
 
 * Algorithms for Molecular Biology (IF: 2.081 )
 * Applied Bioinformatics
@@ -44,7 +51,7 @@ tags: CompBiol
 * Mathematical Biosciences (IF: 1.148)
 * Molecular Biosystems  ( IF: 4.236)
 * Online Journal of Bioinformatics
-* PLoS Computational Biology  (IF: 5.895)
+
 * Protein & peptide letters ( IF: 1.281 )
 * Source Code for Biology and Medicine
 * Statistical Applications in Genetics and Molecular Biology ( IF: 2.167 (2007) )
