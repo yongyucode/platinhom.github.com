@@ -1,10 +1,14 @@
 ---
 layout: post
-title: bioinformatic-compbiol-journal
-date: 2015-12-17 05:07:50
+title: 药物设计计算生物化学相关杂志
+date: 2015-12-10 05:07:50
 categories: CompCB
 tags: CompBiol
 ---
+
+Journals for Computational Chemistry/Biology/Drug Design and Cheminformatics/Bioinformatics.
+
+IF = impact factor
 
 ## 综合类大杂志
 
@@ -17,6 +21,7 @@ tags: CompBiol
 
 ## 分子模拟/药物设计和化学信息
 
+* [Journal of Cheminformatics](http://www.jcheminf.com/): IF-4.537 (2014)
 * [Journal of Chemical Information and Modeling](http://pubs.acs.org/journal/jcisd8): IF-3.738 (2014)
 * [Journal of Computer-Aided Molecular Design](http://www.springer.com/chemistry/physical+chemistry/journal/10822): IF-2.990 (2014)
 * [Journal of Molecular Modeling](http://link.springer.com/journal/894): IF-1.736 (2014)
