@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 药物设计计算生物化学相关杂志
-date: 2015-12-17 05:07:50
+date: 2015-12-10 05:07:50
 categories: CompCB
 tags: CompBiol
 ---
