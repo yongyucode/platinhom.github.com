@@ -184,6 +184,7 @@ Google的图片可以看出，颜色变化是虚晃一枪，不存在任何处�
 [查看代码(./pstzine_09_01.txt)](http://www.icylife.net/pstzine/0x02/html/pstzine_09_01.txt)
 
 ~~~cpp
+{% raw %}
 //SuperImage.h
 
 #ifndef _SUPER_IMAGE_
@@ -1586,6 +1587,7 @@ void main(int argc, char* argv[])
 	travel();
 	printf("Anti Captcha !!!\n");
 }
+{% endraw %}
 ~~~
 
 注： 在这里，我们可以看到，基本的部件（字母是分割开了，但可以造成统一字母的被切割成多个Component。 一种做法是：利用先验知识，做分割； 另外一种做法是，和第二部分的识别结合起来。 比如按照从左至右，尝试增加component来识别，如果不能识别而且component的总宽度，总面积还比较小，继续增加。 当然不排除拒识的可能性。 ）
@@ -1627,6 +1629,7 @@ libSVM是一个不错的实现。
 [查看代码(./pstzine_09_02.txt)](http://www.icylife.net/pstzine/0x02/html/pstzine_09_02.txt)
 
 ~~~cpp
+{% raw %}
 #include "SpamImage.h"
 #include "svm-predict.h"
 #include <algorithm>
@@ -2139,6 +2142,7 @@ void RegionGrow::runRegionGrow(CxImage* cxImage,int nWidth,int nHeight,Config& c
 	}
     layout.compute(config,lines,final);
 };
+{% endraw %}
 ~~~
 
 ## 六、对验证码设计的一些建议
