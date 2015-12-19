@@ -6,11 +6,7 @@ categories: Coding
 tags: PHP Website
 ---
 
-验证码识别工具有很多，之前我们为大家分享了一个CSDN技术识别技术，这个技术算是比较成熟的。
-
-  今天知码网就再为大家分享一个不错的验证码工具，SECUR IMAGE。这款软件支持了AJAX调用。
-
-  除此之外，这个还是一个比较不错的开源的免费脚本，专门可共我们工程师们进行验证码的生成。
+验证码识别工具有很多，之前我们为大家分享了一个CSDN技术识别技术，这个技术算是比较成熟的。这里介绍一个PHP验证码工具，SECUR IMAGE。这款软件支持了AJAX调用。除此之外，这个还是一个比较不错的开源的免费脚本，专门可供我们工程师们进行验证码的生成。
 
 那么Securimage特性，在下面为大家展示了：
 
@@ -74,7 +70,33 @@ $img->show();// alternate use: $img->show(‘/path/to/background.jpg‘);
 ?>
 ~~~
 
-  以上内容就是使用PHP验证码工具来生成较为复杂的验证码，避免SPAM
+以上内容就是使用PHP验证码工具来生成较为复杂的验证码，避免SPAM
+
+~~~html
+<html>
+    <head>
+        <title>Для просмотра статьи разгадайте капчу</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style = "background:white">
+        <div>
+            <table style = "width:100%;height:100%"><tr><td style = "vertical-align:middle;text-align:center">
+            <h2 style = "color:gray;font-family:sans-serif;padding:18px">для просмотра статьи разгадайте капчу</h2>
+            <p></p>
+            <form action = "" method = "POST">
+                <p><img id="captcha" src="/captcha/securimage_show.php" /></p>
+                <input type="text" maxlength="6" name="captcha_code" style = "width:256px;font-size:18px;height:36px;margin-top:18px;text-align:center" /><br>
+                <a style = "color:gray;text-decoration:none" href="#" onclick="document.getElementById('captcha').src = '/captcha/securimage_show.php?' + Math.random(); return false">[ показать другую картинку ]</a>
+                <p style = "margin-top:22px"><input type = "submit" value= "Продолжить"></p>
+            </form>
+            </td></tr></table>
+        </div>
+    </body>
+</html>
+~~~
+
+以上是使用securimage防止抓取的例子(客户端代码).
 
 
 ------
