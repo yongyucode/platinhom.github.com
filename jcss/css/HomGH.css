@@ -4,8 +4,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 
 body{font:21px/1.5 Helvetica,arial,"Microsoft YaHei",\5b8b\4f53,sans-serif;margin:0 auto;padding:0;max-width:100%;color:#276904;background: #E7F1E4}
 body>#container{background: #FFF9E4;border-top:.5em solid #1BC4F7;}
-body>#GoTop{border:.3em solid #1BC4F7;position: fixed; _position: absolute;  right: 30px; bottom: 8px; _bottom: -4000px; z-index: 99; display:block; font-size:16px; width:50px; height:30px; text-align: center; border-radius: 20px; padding: 6px 10px 0px 10px} 
-body>div{width:70%;max-width:50em;padding:1em 1em 1em;margin:1em auto;box-shadow:0 0 .5em 0 #737660;-moz-box-shadow:0 0 .5em 0 #737660;-webkit-box-shadow:0 0 .5em 0 #737660;}
+body>#container>#GoTop{border:.3em solid #1BC4F7;position: fixed; _position: absolute;  right: 5px; bottom: 8px; _bottom: -4000px; z-index: 99; display:block; font-size:16px; width:50px; height:30px; text-align: center; border-radius: 20px; padding: 6px 10px 0px 10px} 
+body>div{width:85%;max-width:50em;padding:1em 1em 1em;margin:1em auto;box-shadow:0 0 .5em 0 #737660;-moz-box-shadow:0 0 .5em 0 #737660;-webkit-box-shadow:0 0 .5em 0 #737660;}
 
 #Bkg{display:none;position:absolute;left:0;width:100%;height:100%;max-width:100%;background-color:black;z-index:0;-moz-opacity:.85;opacity:.85;filter:alpha(opacity=85);padding:0;margin:0;border-top:0;box-shadow:0;-moz-box-shadow:0;-webkit-box-shadow:0}
 #Box{display:none;position:absolute;left:0;width:100%;height:100%;max-width:100%;border:5px solid #CCC;text-align:center;z-index:1;padding:0;margin:0;border-top:0;box-shadow:0;-moz-box-shadow:0;-webkit-box-shadow:0}#Box img{vertical-align:middle;max-width:100%}

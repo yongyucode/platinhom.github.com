@@ -8,73 +8,13 @@ tags: Python
 
 ## 正则基础复习..
 
-### 元字符和字符集
+> [正则表达式(内链)](/2015/06/10/regexp-re/)
 
-- `具体字符`: 明确匹配
-- `.`  除了`\n`外任意一个字符,要包含`\n`需要`(.|\n)`
-- `[a0-9]` 字符集, 可用`-`表范围(原`-`需转义)
-- `[^abc]` 字符集不包含abc. `^`在字符集中为反义的意思, 反义还有如`\d`反义`\D`
-- `\` 转义字符,对`.*?+()\|`等转义
-- `^`匹配输入字符串开头,multiline属性可以使其匹配多行.
-- `$` 匹配输入字符串末尾,multiline属性可以使其匹配多行.
-- `\b` 匹配单词边界(就是空白和标点位置罗),如`er\b` 对于hiver,而非verb
-- `\B` 非单词边界,如`er\B` 对于verb,而非hiver
-- `\d`数字 `[0-9]`
-- `\D` 非数字`[^0-9]`
-- `\w` 任何单词字符,包括下划线 `[0-9a-zA-Z_]`
-- `\W` 非单词字符,即`[^0-9a-zA-Z_]`
-- `\n`,`\r`,`\f`,`\t`,`\v` 匹配换行符,回车符,换页,制表,垂直制表符.
-- `\s`任何空白字符, 等价于`[ \f\n\r\t\v]`
-- `\S` 任何非空白字符,等价于`[^ \f\n\r\t\v]`
-
-### 数量限定: 跟在字符后面代表数量限制
-
-- `不加限定符` 有且只有一个
-- `+` 1个或多个 
-- `?` 不多于1个(0或1个)
-- `*` 任意个(0或1或多个)
-- `{n}` 数量精确n个
-- `{n,}` 匹配数量不少于n(>=n).`{1,}`相当于`+`
-- `{n,m}` 匹配数量不少于n不多于m.
-
-### 分支选择
-
-- `abc|bcd` 两者其中之一的匹配,遵循优先权法则.
-- `a(bcd|hij)z` 使用括号划分分支更有效!
-
-### 贪婪与懒惰
-
-- **贪婪** : 默认情况下尽可能多的匹配,例如`a.*b` 对aabab是匹配aabab.
-- **懒惰** : 使用`?`在匹配之后, 表示尽可能少的匹配,如`a.*?b`对aabab匹配aab(1-3)和ab(4-5). 懒惰的使用如`*?`,`+?`,`??`,`{n,}?`,`{n,m}?` 几种情况.
-- **最早匹配原则** : 最先开始的匹配拥有最高优先权,此原则高于贪婪和懒惰.所以上例匹配aab而不是ab(2-3).
-
-### 向后引用
-
-- `(exp)` : 匹配exp的内容并归入自动命名的组, 一般组从1开始.
-- `(?<Word>exp)`或`(?'Word'exp)` : 将匹配内容归入名为Word的组.
-- `\1`以及`\k<Word>`: 将之前匹配的组里的内容进行引用,此处引用自动命名的组1和自定义命名的组Word.
-- `(?:exp)`: 非获取匹配, 即不作为分组,不储存,不分组序号. 用途在`arriv(?:e|ing)`中因为要做分支不得不用`()`但又避免进行分组.
-
-> PS: 分组编号实际进行两轮: 首先对无自定义的组进行编号, 再对有别名的组进行编号, 实际有别名的组的编号均大于其余没有别名的组.
-
-### 零宽断言:用于表达位置匹配,如^$/b等作用用于定位
-
-- `(?=exp)`: 断言自身出现的位置的后面能匹配表达式exp,如`\b\w+(?=ing\b)`可以匹配singing的sing
-- `(?<=exp)`: 断言自身出现的位置的前面能匹配表达式exp,如`(?<=\bre)\w+\b`匹配reading的ading
-- `(?!exp)`: 断言自身出现的位置的后面**不**能匹配表达式exp
-- `(?<!exp)`: 断言自身出现的位置的前面**不**能匹配表达式exp
-
-### 优先权
-
-`\`> `()`,`(?:)`, `(?=)`, `[]` > `*`、`+`、`?`、`{n}`、`{n,}`、`{m,n}`>`^`、`$`、`中介字符`>`|`
-
-### 注释
-
-`(?#comment)` 注释,如`(?#这匹配string)`
+<iframe src="/2015/06/10/regexp-re/" width="100%" height="600px"></iframe>
 
 ## Python re模块
 
-ref: [CNBlog: Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html  );  [W3CSchool: Python正则表达式](http://www.w3cschool.cc/python/python-reg-expressions.html  );  [Python专题教程：正则表达式re模块详解](http://www.crifan.com/files/doc/docbook/python_topic_re/release/html/python_topic_re.html)  以及相应帖子[【教程】详解Python正则表达式](http://www.crifan.com/detailed_explanation_about_python_regular_express/  );
+ref: 
 
 ### 语法差异
 
@@ -84,40 +24,41 @@ ref: [CNBlog: Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2
 - `(?iLmsux)`: 每个字符代表一个匹配模式,只能用在正则表达式开头,可选多个. (参见re模块的compile的Pattern对象匹配模式部分)
 - `\\\\和r"\\"`: 都是想表达查找`\\`,但是后者可用原生字符串r去解决.
 
-### re模块
-
-
 
 #### Pattern实例(正则表达式对象)以及Match实例(匹配结果对象)
 
-`pattern=re.compile(exp[,flags])` : 将正则表达式编译成Pattern对象, 返回Pattern对象
-`match=pattern.match(string)` : 利用正则表达式在string中进行匹配,返回Match对象. 无法匹配时返回None可以用 `if match:`去判断.
+- `pattern=re.compile(exp[,flags])` : 将正则表达式编译成Pattern对象, 返回Pattern对象
+- `match=pattern.match(string)` : 利用正则表达式在string中进行匹配,返回Match对象. 无法匹配时返回None可以用 `if match:`去判断. match方法默认是从0开始进行匹配模式, 所以并一定匹配上.
+- `match=pattern.search(string)` : search方法与match方法类似, 但"不限于"开头位置, 可以匹配到字符串中间的内容, 所以可以不限制后面的startpos和endpos.
+- `if (not match): print match.group()`: 将匹配部分结果打印出来.match匹配不上会返回None所以最好加个判断防出错. group()就是把匹配组打印出来. 如果pattern只有一个组就是这个组咯.
 
-#####Pattern实例
-- ##### 属性:
+#### Pattern实例
+##### 属性:
 1. `pattern`: 编译时的表达式字符串
 2. `flags`: 匹配模式, 数字形式
 3. `groups`: 表达式中分组数量
 4. `groupindex`: 表达式中有别名的组的别名为键, 对应组的编号为值得字典. 无别名的组不包含在内.
-- ##### 方法:
-1. ##### `match(string[, pos[, endpos]])`:
+
+##### 方法:
+1. `match(string[, pos[, endpos]])`:  
 这个方法将从string的pos下标处起尝试匹配pattern；如果pattern结束时仍可匹配，则返回一个Match对象；如果匹配过程中pattern无法匹配，或者匹配未结束就已到达endpos，则返回None。pos和endpos的默认值分别为0和len(string)
-2. ##### `search(string[, pos[, endpos]])`:
+2. `search(string[, pos[, endpos]])`:  
 这个方法用于查找字符串中可以匹配成功的子串。从string的pos下标处起尝试匹配pattern，如果pattern结束时仍可匹配，则返回一个Match对象；若无法匹配，则将pos加1后重新尝试匹配；直到pos=endpos时仍无法匹配则返回None。 
-3. ##### `split(string[, maxsplit])`:
+3. `split(string[, maxsplit])`:  
 按照能够匹配的子串将string分割后返回列表。maxsplit用于指定最大分割次数，不指定将全部分割。 
-4. ##### `findall(string[, pos[, endpos]])`: 
+4. `findall(string[, pos[, endpos]])`:   
 搜索string，以列表形式返回全部能匹配的子串。 
-5. ##### `finditer(string[, pos[, endpos]])`:
+5. `finditer(string[, pos[, endpos]])`:  
 搜索string，返回一个顺序访问每一个匹配结果（Match对象）的迭代器。 
-6. ##### `sub(repl, string[, count])`:
+6. `sub(repl, string[, count])`:  
 使用repl替换string中每一个匹配的子串后返回替换后的字符串。 当repl是一个字符串时，可以使用`\id`或`\g<id>`、`\g<name>`引用分组，但不能使用编号0。当repl是一个方法时，这个方法应当只接受一个参数（Match对象），并返回一个字符串用于替换（返回的字符串中不能再引用分组）。count用于指定最多替换次数，不指定时全部替换。
-7. ##### `subn(repl, string[, count])`:
+7. `subn(repl, string[, count])`:  
 返回 (sub(repl, string[, count]), 替换次数)。
  
 #####Match实例
 
-- ##### 属性:
+##### 属性:
+
 1. `string` :  匹配时使用的文本。
 2. `re`: 匹配时使用的Pattern对象。
 3. `pos`: 文本中正则表达式开始搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。
@@ -127,26 +68,26 @@ ref: [CNBlog: Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2
 
 ##### 方法:
 
-1. ##### `group([group1, …])`:
+1. `group([group1, …])`:  
 获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。
-2. ##### `groups([default])`:
+2. `groups([default])`:  
 以元组形式返回全部分组截获的字符串。相当于调用group(1,2,…last)。default表示没有截获字符串的组以这个值替代，默认为None。
-3. ##### `groupdict([default])`:
+3. `groupdict([default])`:  
 返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上。
-4. ##### `start([group])`:
+4. `start([group])`:  
 返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0。
-5. ##### `end([group])`:
+5. `end([group])`:  
 返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0。
-6. ##### `span([group])`:
+6. `span([group])`:  
 返回(start(group), end(group))。
-7. ##### `expand(template)`:
+7. `expand(template)`:  
 将匹配到的分组代入template中然后返回。template中可以使用`\id`或`\g<id>`、`\g<name>`引用分组，但不能使用编号0。`\id`与`\g<id>`是等价的；但`\10`将被认为是第10个分组，如果你想表达`\1`之后是字符'0'，只能使用`\g<1>0`。
 
 ### re模块函数(大部分参考Pattern对象的方法)
-- #### `re.compile(exp[,flags])`
+#### `re.compile(exp[,flags])`
 将正则表达式编译成Pattern对象, 第二个参数是匹配模式(可用`|`分隔多个模式). 返回Pattern对象. Pattern对象可以通过相应方法实现很多正则表达式功能. 一般正则表达式需要重用时常使用pattern对象, 否则一般情况使用相应re方法即可.
 
-#####匹配模式: 
+##### 匹配模式: 
 `re.compile('exp',re.I |re.M)` 等效于`re.compile("(?im)exp")`
 
 - `re.I` (re.IGNORECASE): 忽略大小写差异.
@@ -156,8 +97,7 @@ ref: [CNBlog: Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2
 - `re.U` (re.UNICODE): 使预定字符类` \w \W \b \B \s \S \d \D `取决于unicode定义的字符属性
 - `re.X` (re.VERBOSE): 详细模式。这个模式下正则表达式可以是多行，忽略空白字符，并可以加入注释。
 
-
-
+#### 其他函数: 
 
 - `re.match(pattern, string[,flags])`
 - `re.search(pattern, string[,flags])`
@@ -169,6 +109,9 @@ ref: [CNBlog: Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2
 
 ## Reference
 
-1. [正则表达式(内链)](/2015/06/10/regexp-re/)
+1. [CNBlog: Python正则表达式指南](http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html  ); 
+2. [W3CSchool: Python正则表达式](http://www.w3cschool.cc/python/python-reg-expressions.html);  
+3. [Python专题教程：正则表达式re模块详解](http://www.crifan.com/files/doc/docbook/python_topic_re/release/html/python_topic_re.html)  
+4. [【教程】详解Python正则表达式](http://www.crifan.com/detailed_explanation_about_python_regular_express/);
 
 ------
