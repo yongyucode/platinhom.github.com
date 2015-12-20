@@ -189,8 +189,8 @@ p:nth-child(3){
 ## Reference
 1. [html术语表](http://www.codecademy.com/zh/glossary/html)
 2. [css术语表](http://www.codecademy.com/zh/glossary/css)
-3. [w3school](http://www.w3schools.com/)
+3. [w3school](http://www.w3schools.com/){: target="_parent"}
 4. [Javascript基础篇](http://platinhom.github.io/2015/06/23/Javascript-basic/)
-5. [HTML标签参考手册](http://www.w3school.com.cn/tags/index.asp)
+5. [HTML标签参考手册](http://www.w3school.com.cn/tags/index.asp){: target="_blank"}
 
 ---
