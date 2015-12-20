@@ -14,7 +14,7 @@ tags: Python
 
 ## Python re模块
 
-ref: 
+re模块
 
 ### 语法差异
 
@@ -106,6 +106,9 @@ ref:
 - `re.finditer(pattern, string[, flags])`
 - `re.sub(pattern, repl, string[, count])`
 - `re.nsub(pattern, repl, string[, count])`
+
+<iframe src="/ManualHom/Coding/Python/python-2.7.11rc1-docs-html/library/re.html" width="100%" height="600px"></iframe>
+
 
 ## Reference
 
