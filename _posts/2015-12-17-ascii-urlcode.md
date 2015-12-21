@@ -82,7 +82,7 @@ ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode
 £	|	%a3	|	Ó	|	%d3	|	 	|	 
  	|	%a4	|	Ô	|	%d4	|	 	|	 
 ¥	|	%a5	|	Õ	|	%d5	|	 	|	 
-\|	|	%a6	|	Ö	|	%d6	|	 	|	 
+`|`	|	%a6	|	Ö	|	%d6	|	 	|	 
 §	|	%a7	|	 	|	%d7	|	 	|	 
 ¨	|	%a8	|	Ø	|	%d8	|	 	|	 
 ©	|	%a9	|	Ù	|	%d9	|	 	|	 
