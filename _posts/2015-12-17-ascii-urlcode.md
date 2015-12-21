@@ -3,7 +3,7 @@ layout: post
 title: ASCII值和网址特殊符号转换码对照
 date: 2015-12-17 09:23:36
 categories: Coding
-tags: Html Website
+tags: HTML Website
 ---
 
 ASCII值和网址特殊符号转换码对照:
@@ -82,7 +82,7 @@ ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode
 £	|	%a3	|	Ó	|	%d3	|	 	|	 
  	|	%a4	|	Ô	|	%d4	|	 	|	 
 ¥	|	%a5	|	Õ	|	%d5	|	 	|	 
-\|	|	%a6	|	Ö	|	%d6	|	 	|	 
+`|`	|	%a6	|	Ö	|	%d6	|	 	|	 
 §	|	%a7	|	 	|	%d7	|	 	|	 
 ¨	|	%a8	|	Ø	|	%d8	|	 	|	 
 ©	|	%a9	|	Ù	|	%d9	|	 	|	 
