@@ -20,7 +20,7 @@ tags: Internet
 inurl: 指令用于搜索查询词出现在url 中的页面。bd和Google 都支持inurl 指令。inurl 指令支持中文和英文。  
 比如搜索：inurl:搜索引擎优化  
 返回的结果都是网址url 中包含“搜索引擎优化”的页面。由于关键词出现在url 中对排名有一定影响，使用inurl:搜索可以更准确地找到竞争对手。
-5.. inanchor: 找`<a>..</a>`里面的内容对应的链接
+5. inanchor: 找`<a>..</a>`里面的内容对应的链接
 inanchor:指令返回的结果是导入链接锚文字中包含搜索词的页面。百度不支持inanchor。  
 比如在Google 搜索 ：inanchor:点击这里  
 返回的结果页面本身并不一定包含“点击这里”这四个字，而是指向这些页面的链接锚文字中出现了“点击这里”这四个字。  
@@ -35,11 +35,11 @@ allintitle:搜索返回的是页面标题中包含多组关键词的文件。
 8. allinurl: inurl的多个搜索版本
 与allintitle: 类似。 
 allinurl:SEO 搜索引擎优化,就相当于 ：inurl:SEO inurl:搜索引擎优化
-9. filetype: 用来搜索文件类型
+9. `filetype`: 用来搜索文件类型
 用于搜索特定文件格式。Google 和bd都支持filetype 指令。  
 比如搜索filetype:pdf SEO  
 返回的就是包含SEO 这个关键词的所有pdf 文件。
-10. site: 域名下搜索
+10. `site`: 域名下搜索
 site:是SEO 最熟悉的高级搜索指令，用来搜索某个域名下的所有文件。 
 11. linkdomain: 反向链接
 linkdomain:指令只适用于雅虎，返回的是某个域名的反向链接。雅虎的反向链接数据还比较准确，是SEO 人员研究竞争对手外部链接情况的重要工具之一。  

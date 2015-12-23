@@ -27,7 +27,7 @@ re模块是Python正则表达式模块, 能够对字符串进行模式匹配, �
 
 ### 语法差异
 
-- `(?P<name>)`:  分组自定义组名时多了个P
+- `(?P<name>)`:  分组自定义组名时多了个P, 这里name不用'name', 直接打就可以了
 - `(?P=name)`:  引用自定义组名分组匹配到的字符串. (自动分组依然用`\num` )
 - `(?(id/name)yespattern|nopattern)`: 如果组号为id或者name的组匹配到字符, 则后面需要匹配yespattern,否则就匹配nopattern. nopattern可以省略. 如`(\d)abc(?(1)\d|abc)`可以匹配1abc2或者abcabc
 - `(?..)`或者`(?iLmsux)`: 每个字符代表一个匹配模式,只能用在正则表达式开头,可选多个. (参见re模块的compile的Pattern对象匹配模式部分).这种是非捕获性匹配. (除非`(?P=..)`)

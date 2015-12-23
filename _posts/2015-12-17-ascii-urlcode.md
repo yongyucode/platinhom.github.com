@@ -3,10 +3,22 @@ layout: post
 title: ASCII值和网址特殊符号转换码对照
 date: 2015-12-17 09:23:36
 categories: Coding
-tags: HTML Website
+tags: HTML Website Python
 ---
 
-ASCII值和网址特殊符号转换码对照:
+### Python转换编码
+
+- `urllib.quote`(sring[,safe]) : 将字符串转为URL编码.safe是不会被转换的字符, 默认是`/`
+- `urllib.unquote`(sring) : 将字符串从URL编码转回ASCII
+- 类似地还有URL编码的: `urllib2.quote`(sring), `requests.utils.quote`(sring)
+- 类似地还有URL反编码的: `urllib2.unquote`(sring), `requests.utils.unquote`(sring)
+- `urllib.quote_plus`(sring[,safe]) : 将字符串转为URL编码, 其中的空格会被`+`取代. 原字符串的`+`会被转码,空格转新`+`. 反编码使用`urllib.unquote_plus`(sring)
+
+> 使用编码转换时, 默认`/`,`.`,`_`,`-`是不会被转换的.其余包括空格,`&`都会被转换.可以通过控制safe参数改变一些规则.  
+> 对于unicode如果有编码问题, 可以`urllib.quote(s.encode('utf-8'))`,反编码可以`urllib.unquote(s).decode('utf-8')`
+
+
+### ASCII值和网址特殊符号转换码对照:
 
 ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode
 æ	|	%00	|	0	|	%30	|	`	|	%60
@@ -109,6 +121,6 @@ ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode	|	ASCII Value	|	URL-encode
 ¾	|	%be	|	î	|	%ee	|	 	|	 
 ¿	|	%bf	|	ï	|	%ef	|	 	|	 
 
-
+参考: [Py3-urllib.parse](https://docs.python.org/3/library/urllib.parse.html)
 
 ------
