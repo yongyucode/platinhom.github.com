@@ -129,7 +129,7 @@ Molecular Modeling. *ChemMedChem* **2013**, 8, 1270-1275. (Back Cover) [Link](ht
   <li>Shanghai (Best place in China, graduated student life)</li>
   <li>East Lansing (Quiet town for my postdoc study)</li>
   <li>Guangzhou, Shenzhen, Wuhan, Ningbo, Suzhou, Wuxi, Qingdao</li>
-  <li>Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Lancaster, Columbus, San Francisco, San Diego, Los Angeles, Las Vegas</li>
+  <li>Detroit, Minneapolis, Chicago, Toronto, Boston, New York, Washington DC, Philadelphia, Lancaster, Columbus, San Francisco, San Jose, Monterey, Berkeley, Santa Barbara, San Diego, Los Angeles, Las Vegas, Santa Monica</li>
 </ul>
 </details>
 
