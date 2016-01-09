@@ -6,7 +6,7 @@ categories: Coding
 tags: Python
 ---
 
-Requests 就是熟知的[Requests: HTTP for Humans](http://cn.python-requests.org/zh_CN/latest/) , 是个开源在[Github](https://github.com/kennethreitz/requests/)上的项目. 功能十分强大. 而且十分方便, 除了一般的网络连接功能外, 基本支持所有HTTP 的动作, 另外还可以很方便操作cookie, 保持session等. 
+Requests 就是熟知的[Requests: HTTP for Humans](http://cn.python-requests.org/zh_CN/latest/) , 是个开源在[Github](https://github.com/kennethreitz/requests/)上的项目. 功能十分强大. 而且十分方便, 除了一般的网络连接功能外, 基本支持所有HTTP 的动作, 另外还可以很方便操作cookie, 保持session等. requests实际封装了[urllib3](https://urllib3.readthedocs.org/en/latest/)([Github](https://github.com/shazow/urllib3)). 
 
 安装: `pip install requests` 搞掂...
 
@@ -41,13 +41,18 @@ Requests 就是熟知的[Requests: HTTP for Humans](http://cn.python-requests.or
 #### 属性
 
 - url : 获取相应网址, 包括传递的参数如`?key=value,key2=value2`等.
-- text : 网页响应内容, 一般就是相应网页内容 
+- `text` : 网页响应内容, 一般就是相应网页内容 
 - content : 二进制的相应内容, 
 - encoding : 网页编码
-- status_code : 状态吗, int型. 例如404, 正常200. 跳转可能302,303.
+- `status_code` : 状态吗, int型. 例如404, 正常200. 跳转可能302,303.
 - history: 返回请求历史的一个列表. 可以查看出重定向过程. 
 - cookies: 返回cookies的一个字典.
 - headers: 响应头, 一个字典.
+
+> 注意:
+
+- 防止warning (disable request wanrning): 因为HTTPS的SSL/TLS验证有时经常报warning, 可以通过[关闭urllib3的warning](https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning)来进行:`urllib3.disable_warnings()`, 在requests中是: `requests.packages.urllib3.disable_warnings()`.
+
 
 ### 应用例子
 
@@ -56,9 +61,24 @@ Requests 就是熟知的[Requests: HTTP for Humans](http://cn.python-requests.or
 可以传递各种参数给类型请求的方法.
 
 ~~~python
-payload = {'key1': 'value1', 'key2': 'value2'}
-r = requests.get("http://httpbin.org/get", params=payload)
+# google scholar search shoichet, >=2015 , 3 record per page
+searchargv = {'q': 'shoichet', 'as_ylo': '2015', 'num':'3'}
+r = requests.get("http://scholar.google.com/scholar", params=payload)
 ~~~
+
+##### 定制header模拟浏览器
+
+使用headers参数可以自己定制头部, 还可以写成一个多User-Agent的列表, 从中随机挑选一个(`uagents[random.randint(0,len(uagents)-1)]`), 再构建头部, 这样就可以伪装成不同浏览器访问了~~
+
+~~~python
+bingacademicurl="http://www.bing.com/academic/"
+hdr={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',\
+'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36',\
+'Connection':'keep-alive','Content-Encoding': 'gzip','Content-Type': 'text/html; charset=utf-8','Host':'www.bing.com'}
+param={"mkt":"zh-CN",'q':"keyword",'first':"1"}
+r=requests.get(self.bingacademicurl,params=param,headers=self.hdr)
+~~~
+
 
 ##### 获取自动跳转真实地址
 
@@ -72,6 +92,28 @@ print r.url
 # -> http://www.sciencedirect.com/science/article/pii/S1093326300801060
 print r.text 
 #.... 网页html内容
+~~~
+
+##### 防止跳转
+
+
+##### 抓取二进制文件如pdf
+
+注意对于二进制文件(如图片,pdf), 打开文件方式应该是`'wb'`, 写入内容应该是`r.content`而不是r.text. 这里加了个根据header的类型判断是否pdf,不是就扔掉. 更好的方法是用`with`来执行啦.
+
+~~~python
+def getwebpdf(link,fname):
+	'''Get a PDF from a link. if fail, return False'''
+	try:
+		rpdf=requests.get(link)
+		if (rpdf.status_code is 200 and rpdf.headers['Content-Type'].lower().strip()=='application/pdf'):
+			fpdf=open(fname,'wb')
+			fpdf.write(rpdf.content)
+			fpdf.close()
+			return True
+	except requests.exceptions.ConnectionError:
+		print "Error to get pdf linK: "+link+" for file: "+fname
+	return False
 ~~~
 
 ##### 上传多个文件 
@@ -93,6 +135,7 @@ print r.text
   ...
 }
 ~~~
+
 
 ## Reference
 
