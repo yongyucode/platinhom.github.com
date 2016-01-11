@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Python:Escape和Unescape特殊字符
-date: 2016-01-08 05:40:01
+date: 2016-01-03 05:40:01
 categories: Coding
 tags: Python HTML
 ---
 
-今晚被HTML的特殊字符搞晕了..在endnote中输出的xml中使用的是HTML方式处理,将特殊符号escape掉成例如`&amp;` 这种..下面是特殊符号和名字实体对照表.
+今晚(8号..)被HTML的特殊字符搞晕了..在endnote中输出的xml中使用的是HTML方式处理,将特殊符号escape掉成例如`&amp;` 这种..下面是特殊符号和名字实体对照表.
 
 
 特殊符号	|	命名实体	|	十进制编码	|	特殊符号	|	命名实体	|	十进制编码	|	特殊符号	|	命名实体	|	十进制编码
@@ -63,10 +63,89 @@ tags: Python HTML
 
 > 要是想在HTML输出&amp;lt; 实际是`&amp;lt;`.所以`&amp;`和`&lt;`,`&gt;`,`&nbsp;`都很重要!
 
-Python当然有办法处理这些鬼东西. 可以参考[PythonWiki:EscapingXml](https://wiki.python.org/moin/EscapingXml)介绍其中使用xml.sax.saxutils方法. 
+Python当然有办法处理这些鬼东西.  
+
+### HTML方法
+
+可以参考: [Escaping HTML](https://wiki.python.org/moin/EscapingHtml)
+
+- cgi.escape : 默认只支持`& < >`. 可以使用`quote=True`参数来支持引号. 而且该模块不支持unescape..
+- HTMLParser的HTMLParser类有unescape方法, 但木有escape方法..两者配合吧..使用一般`htmlp=HTMLParser.HTMLParser(); htmlp.unescape(string)`, 即先创建类. 下面的示例显示直接使用类方法来转换而不是用实例的方法.
+
+~~~python
+import cgi
+cgi.escape( """& < >""" )
+# "&amp; &lt; &gt;"
+cgi.escape(string_to_escape, quote=True)
+
+from HTMLParser import HTMLParser
+>>> HTMLParser.unescape.__func__(HTMLParser, 'ss&copy;')
+u'ss\xa9'
+
+#### Manual define method..
+html_escape_table = {
+    "&": "&amp;",
+    '"': "&quot;",
+    "'": "&apos;",
+    ">": "&gt;",
+    "<": "&lt;",
+    }
+
+def html_escape(text):
+    """Produce entities within text."""
+    return "".join(html_escape_table.get(c,c) for c in text)
+
+~~~
 
 ### xml.sax.saxutils 方法 
 
-> 注意: 其中的方法`from xml.sax.saxutils import escape/unescape`并不能处理特殊的`&apos;` 和 `&quot;`.
+可以参考: [PythonWiki:EscapingXml](https://wiki.python.org/moin/EscapingXml)介绍其中使用xml.sax.saxutils方法. 
+
+- [un]escape方法默认只能处理`<&>`符号..
+- quoteattr针对xml的值属性是个字符串, 此时保留其原有的`''""`. 他会智能地帮你加引号并且适当转义一些引号.
+- 三种方法都支持自定义的编码转换(可以是单字符, 甚至一个字符串), 使用一个字典作第二参数. 一般建议单字符仍然参考标准.
+
+~~~python
+from xml.sax.saxutils import escape, unescape, quoteattr
+
+### Basical usage
+escape("< & >")
+# '&lt; &amp; &gt;'
+unescape("&lt; &amp; &gt;")
+# "< & >"
+quoteattr('some value containing " a double-quote')
+# '\'some value containing " a double-quote\''
+
+
+### Can use a dictionary for replacement
+escape("abc", {"b": "&#98;"})
+#'a&#98;c'
+escape("My product, PyThingaMaJiggie, is really cool.",
+        {"PyThingaMaJiggie": "&productName;"})
+# 'My product, &productName;, is really cool.'
+
+
+### Default not for ' and "
+unescape("&apos; &quot;", {"&apos;": "'", "&quot;": '"'})
+# '\' "'
+
+### Both escape() and unescape() takes care of &, < and >.
+html_escape_table = {
+    '"': "&quot;",
+    "'": "&apos;"
+}
+html_unescape_table = {v:k for k, v in html_escape_table.items()}
+
+def html_escape(text):
+    return escape(text, html_escape_table)
+
+def html_unescape(text):
+    return unescape(text, html_unescape_table)
+
+~~~
+
+> 注意: 其中的方法`from xml.sax.saxutils import escape/unescape`并不能处理特殊的`&apos;` 和 `&quot;`, 因为xml不需要其处理.
+
+
 
 ------
