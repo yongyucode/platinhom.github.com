@@ -37,6 +37,9 @@ logfile="result.log"
 
 while [ 'a' = 'a' ];do
 nextitem=`grep "Done" $logfile | tail -n 1 |awk '{print $10}'`
+if [ -z $nextitem ];then
+nextitem="0"
+fi
 ./crossget.sh $ISSN $nextitem $maxatime | tee -a $logfile
 
 #pdfcount=`ls Done/*.pdf | wc -l`
@@ -66,7 +69,7 @@ done
 
 if [ ! -z $1 ];then
         ISSN=$1
-else:
+else
 	echo "No ISSN is given!"
 	exit 1
 fi
