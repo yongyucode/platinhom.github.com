@@ -17,8 +17,8 @@ tags: Python Internet
 
 第一个脚本是爬虫抓取DOI号的, 需要安装requests和BeautifulSoup. 需要修改:
 
-- 该journal的简称(在loi变量的末端, 例如bichaw是biochemistry的简称)  
-- 输出文件, 这里是helloworld.txt. 
+- 该journal的简称(例如bichaw是biochemistry的简称,新版本改在定义在一个`jtodo`的list内,所有的简称在`jshort`)  
+- 输出文件, 这里是`outfileprefix`变量定义文件前缀 
 
 当然, 这两个可以在sys.argv里获取, 自行修改吧.
 
@@ -38,45 +38,49 @@ escaper=HTMLParser()
 #disable requests warning
 requests.packages.urllib3.disable_warnings()
 
-#jnprdf
-loi="http://pubs.acs.org/loi/bichaw"
+outfileprefix="downacsc307"
 
-rloi=requests.get(loi)
-sloi=BeautifulSoup(rloi.text)
-# Find each issue.
-rows=sloi.findChildren("div",attrs={'class':'row'})
-issueurl=[ row.a['href'] for row in rows ]
+jshort=['achre4', 'jafcau', 'ancham', 'aamick', 'bichaw', 'bcches', 'bomaf6', 'abseba', 'accacs', 'acscii', 'acbcct', 'jceda8', 'jceaax', 'jcisd8', 'acncdm', 'crtoec', 'chreay', 'jctcce', 'cmatex', 'acsccc', 'cgdefu', 'enfuem', 'esthag', 'estlcu', 'iechad', 'iecred', 'aidcbc', 'inocaj', 'jacsat', 'langd5', 'amlccd', 'mamobx', 'jmcmar', 'amclct', 'mpohbp', 'ancac3', 'nalefd', 'jnprdf', 'joceah', 'orlef7', 'oprdfk', 'orgnd7', 'acsodf', 'apchd5', 'jpcafh', 'jpcbfk', 'jpccck', 'jpclcd', 'jpchax', 'jprobs', 'ascefj', 'ascecg', 'asbcd6', 'cenear']
+#jdone=['bichaw','jpcafh','jpccck', 'orlef7', 'joceah', 'jmcmar', 'inocaj','jacsat', 'acbcct','bomaf6']
 
-f=open("helloworld.txt",'a')
+jtodo=['jnprdf','mpohbp','jpclcd','jprobs']
 
+scriptre=re.compile(r"<script(.|\n)*?</script>")
+for i in range(len(jtodo)):
+	loi="http://pubs.acs.org/loi/"+jtodo[i]
 
-for ilink in issueurl:
-	print "Doing: "+ilink
-	tmp=ilink.split('/')
-	if (int(tmp[-2])>43):
-		continue
-	if (int(tmp[-2]) == 43 and int(tmp[-1]) >=11):
-		continue
-	try:
-		r=requests.get(ilink)
-		rs=BeautifulSoup(r.text)
-		# Find Author/Editors Choice free download
-		eds=rs.findChildren(attrs={'class':"icon-item editors-choice"})
-		aus=rs.findChildren(attrs={'class':"icon-item author-choice"})
-		# Find doi download link
-		outs= [ out.parent.findChild(attrs={'class':"icon-item pdf-high-res"}).a['href'] for out in eds+aus] 
-		# Find Correction
-		corr=rs.findChildren(attrs={'id':'AdditionsandCorrections'})
-		outs=outs+[out.parent.parent.findChild(attrs={'class':"icon-item pdf-high-res"}).a['href'] for out in corr]
-		for out in outs:
-			f.write(out+'\n')  
-		#'/doi/pdf/10.1021/acs.jmedchem.5b00326'
-		sys.stdou.flus()
-		f.flush()
-	except:
-		pass
+	rloi=requests.get(loi)
+	simpletext=scriptre.sub('',rloi.text)
+	sloi=BeautifulSoup(simpletext, "html.parser")
+	rows=sloi.findChildren("div",attrs={'class':'row'})
 
-f.close()
+	issueurl=[ row.a['href'] for row in rows ]
+
+	f=open(outfileprefix+str(i)+".txt",'a')
+	for ilink in issueurl:
+		print "Doing: "+ilink
+		tmp=ilink.split('/')
+		#if (int(tmp[-2])>43):
+		#	continue
+		#if (int(tmp[-2]) == 43 and int(tmp[-1]) >=11):
+		#	continue
+		try:
+			r=requests.get(ilink)
+			rs=BeautifulSoup(scriptre.sub("",r.text), "html.parser")
+			eds=rs.findChildren(attrs={'class':"icon-item editors-choice"})
+			aus=rs.findChildren(attrs={'class':"icon-item author-choice"})
+			outs= [ out.parent.findChild(attrs={'class':"icon-item pdf-high-res"}).a['href'] for out in eds+aus] 
+			corr=rs.findChildren(attrs={'id':'AdditionsandCorrections'})
+			outs=outs+[out.parent.parent.findChild(attrs={'class':"icon-item pdf-high-res"}).a['href'] for out in corr]
+			for out in outs:
+				f.write(out+'\n')  
+			#'/doi/pdf/10.1021/acs.jmedchem.5b00326'
+			sys.stdout.flush()
+			f.flush()
+		except:
+			pass
+
+	f.close()
 ~~~
 
 
@@ -132,9 +136,67 @@ for line in f:
 f.close()
 ~~~
 
-> 已处理:
+所有杂志和缩写
 
-biochemistry, jacs, jpcA, jpcC, jmc, joc, ol, ic, acsMCL, acsChemBiol, BioMacMol, 
+~~~javascript
+{
+achre4: 'accounts_chemical_research',
+jafcau: 'agricultural_food_chemistry',
+ancham: 'analytical_chemistry',
+aamick: 'applied_materials_interfaces',
+bichaw: 'biochemistry',
+bcches: 'bioconjugate_chemistry',
+bomaf6: 'biomacromolecules',
+abseba: 'biomaterials',
+accacs: 'catalysis',
+acscii: 'central_science',
+acbcct: 'chemical_biology',
+jceda8: 'chemical_education',
+jceaax: 'chemical_engineering_data',
+jcisd8: 'chemical_information_modeling',
+acncdm: 'chemical_neuroscience',
+crtoec: 'chemical_research_toxicology',
+chreay: 'chemical_reviews',
+jctcce: 'chemical_theory_computation',
+cmatex: 'chemistry_materials',
+acsccc: 'combinatorial_science',
+cgdefu: 'crystal_growth_design',
+enfuem: 'energy_fuels',
+esthag: 'environmental_science_technology',
+estlcu: 'environmental_science_technology',
+iechad: 'industrial_engineering_chemistry',
+iecred: 'industrial_engineering_chemistry_research',
+aidcbc: 'infectious_diseases',
+inocaj: 'inorganic_chemistry',
+jacsat: 'JACS',
+langd5: 'langmuir',
+amlccd: 'macro_letters',
+mamobx: 'macromolecules',
+jmcmar: 'medicinal_chemistry',
+amclct: 'medicinal_chemistry_letters',
+mpohbp: 'molecular_pharmaceutics',
+ancac3: 'nano',
+nalefd: 'nano_letters',
+jnprdf: 'natural_products',
+joceah: 'organic_chemistry',
+orlef7: 'organic_letters',
+oprdfk: 'organic_process_research_development',
+orgnd7: 'organometallics',
+acsodf: 'omega',
+apchd5: 'photonics',
+jpcafh: 'physical_chemistry_a',
+jpcbfk: 'physical_chemistry_b',
+jpccck: 'physical_chemistry_c',
+jpclcd: 'physical_chemistry_letter',
+jpchax: 'physical_chemistry'
+jprobs: 'proteome_research',
+ascefj: 'sensors',
+ascecg: 'sustainable_chemistry',
+asbcd6: 'synthetic_biology',
+cenear: 'ce_n_archives'
+}
+~~~
+
 
 
 ------
