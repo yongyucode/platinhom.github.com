@@ -92,4 +92,6 @@ PIP
 
 安装[参见](https://pip.pypa.io/en/stable/installing/),如果python带有easy_install可以`easy_install pip`.
 
+PIP升级可以: `python -m pip install --upgrade pip`
+
 ------

@@ -1,6 +1,10 @@
 ---
 layout: post
+<<<<<<< HEAD
 title: acs-free-getdoi
+=======
+title: acs免费文献的doi及下载地址抓取
+>>>>>>> ccea31030575c5eaa3bd73843e685016b042d196
 date: 2016-01-21 21:52:18
 categories: IT
 tags: Python Internet
