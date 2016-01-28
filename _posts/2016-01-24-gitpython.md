@@ -8,7 +8,7 @@ tags: Python Git
 
 [GitPython](https://pypi.python.org/pypi/GitPython/1.0.1) ([Github](https://github.com/gitpython-developers/GitPython))是Python中可以实现Git功能的模块, 比较成熟, 用起来比较方便. [官方说明文档](http://gitpython.readthedocs.org/en/stable/)也比较全面.
 
-类似的还有[pygit2](https://github.com/libgit2/pygit2), pygit2是基于[libgit2](https://github.com/libgit2/libgit2)的可动态链接库的. [libgit2项目](https://github.com/libgit2)是比较早的基于C++的Git库, 也算比较成熟了. 但是, 我在本机(Win7 64位)下安装时失败, 先是说缺了VS C++ 9.0, 安装后又说缺了个头文件. 哎, 不弄了. 估计要先装Cmake, 然后编译libgit2, 然后再弄pygit2... 麻烦就不弄了. 不过一些libgit2的教程倒是可以参考参考示例, 可以相应用到GitPython中去(理念差不多).
+类似的还有[pygit2](https://github.com/libgit2/pygit2), pygit2是基于[libgit2](https://github.com/libgit2/libgit2)的可动态链接库的. [libgit2项目](https://github.com/libgit2)是比较早的基于C++的Git库, 也算比较成熟了. 但是, 我在本机(Win7 64位)下安装时失败, 先是说缺了VS C++ 9.0, 安装后又说缺了个头文件. 哎, 不弄了. 估计要先装Cmake, 然后编译libgit2, 然后再弄pygit2... 麻烦就不弄了. 不过一些libgit2的教程倒是可以参考参考示例, 可以相应用到GitPython中去(理念差不多). Pro Git也有对libgit2的[介绍](http://git-scm.com/book/zh/v2/%E5%B0%86-Git-%E5%B5%8C%E5%85%A5%E4%BD%A0%E7%9A%84%E5%BA%94%E7%94%A8-Libgit2)
 
 另外还有个叫[Dulwich](https://github.com/jelmer/dulwich)的, 是通过纯Python实现Git功能(GitPython有很多是通过Git命令然后通过解析输出来实现的, 例如`git diff`). 比较底层, 文档说明示例很少, 接口太底层用起来不怎么方便. 
 
