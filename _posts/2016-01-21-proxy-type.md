@@ -58,4 +58,14 @@ HTTP_X_FORWARDED_FOR = not determined
 - 普通匿名代理能隐藏客户机的真实IP，但会改变我们的请求信息，服务器端有可能会认为我们使用了代理。不过使用此种代理时，虽然被访问的网站不能知道你的ip地址，但仍然可以知道你在使用代理，当然某些能够侦测ip的网页仍然可以查到你的ip。
 - 透明代理，它不但改变了我们的请求信息，还会传送真实的IP地址。
 
+### 代理的一些参数
+
+- 匿名Level: 上面那几种,很少混淆的.一般是Elite或High Anonymity, Anoymity, Transparent, Not Transparent(非透明的另外2种)
+- 类型: HTTP/HTTPS/Socks
+- IP: 就是代理的IP罗
+- Port: 代理的端口, 很重要! 一般就是 `IP:端口`才是一个代理
+- Uptime(L/D): 就是代理的存活比率, L是live活着的次数, D是没响应挂掉的次数. 这个次数是由代理提供者一定时间检测一次的次数.
+- Reponse Times: 相应时间, 越短越快. 一般是ms.
+- Country/City: 就是代理所在的国家地方
+
 ------
