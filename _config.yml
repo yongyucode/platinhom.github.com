@@ -3,12 +3,18 @@ permalink: /:year/:month/:day/:title/
 url: http://platinhom.github.io
 author: Hom
 #pygments: true
-safe: true
+#safe: true
 paginate: 25
 paginate_path: "/page:num/"
+gems: [jekyll-paginate]
+
 #auto: true
 encoding: "utf-8"
-highlighter: pygments
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
+#  syntax_highlighter_opts:: {disable: true}
 
 # Time Zone +8 China
 timezone: Asia/Shanghai
@@ -32,8 +38,8 @@ disqus:
 duoshuo:
   config: false
   id: platinhom
-  
+
 #baidu share config
 baiduShare:
   config: false
-  
+

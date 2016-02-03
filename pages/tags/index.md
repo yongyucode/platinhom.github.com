@@ -60,4 +60,4 @@ $(function () {
 
 -----
 
-Notice: [Archives](/pages/archives.html) are not listed here! 
+Notice: [Archives](/pages/archives/index.html) are not listed here! 

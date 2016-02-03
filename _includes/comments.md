@@ -1,5 +1,5 @@
 <section class="comment">
-{% if page.comment %}
+{% if layout.comment or page.comment %}
 	{% if site.disqus.config %}
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">

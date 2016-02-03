@@ -30,7 +30,7 @@ PS: [Ref3](http://zdan.me/post/2015/04/20/use-github-pages-as-blog.html)中需�
 ### 例子:
 
 单纯使用:
-{% highlight vb.net %}
+{% highlight visualbasic %}
 Sub test()
 For Each cell In Range("A2:A6")
 cell.Offset(0, 1) = cell.Hyperlinks(1).Address
@@ -39,7 +39,7 @@ End Sub
 {% endhighlight %}
 
 带行号:
-{% highlight vb.net linenos %}
+{% highlight visualbasic linenos %}
 Sub test()
 For Each cell In Range("A2:A6")
 cell.Offset(0, 1) = cell.Hyperlinks(1).Address
@@ -73,5 +73,6 @@ div[class="highlight"] > pre {
 4. [Jekyll-模板](http://jekyllcn.com/docs/templates/)
 5. [Jekyll-配置](http://jekyllcn.com/docs/configuration/)
 
+> Update: [Github升级Jekyll3.0](/2016/02/04/update-github-rouge.html), 默认不再是Pygments, 需要另行安装Pygments; 另外Github不再支持Pygments只支持Rouge.. 
 
 ------
