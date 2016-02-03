@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SourceForge用于免费博客搭建(1)
+title: SourceForge用于免费博客搭建(1)-SSH+SFTP+SCP
 date: 2016-01-17 13:06:10
 categories: IT
 tags: Internet
@@ -39,6 +39,8 @@ SourceForge.net		|支持       	|不限	|	SCP/FTP		|	静态、PHP、Python 等�
 - 网页上传, SFTP/SCP/Rsync !!
 - SSH上去后提供 cgi-bin, htdocs 文件夹(你懂), Apache + MySQL!!
 - 可以使用 GIT/SVN  
+
+更多简介和帮助请看[Document的TOC](https://sourceforge.net/p/forge/documentation/ToC/)
 
 ## 可以访问的目录
 
