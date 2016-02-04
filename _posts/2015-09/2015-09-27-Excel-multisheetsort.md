@@ -10,7 +10,7 @@ tags: Excel VB
 
 在VIEW->Macros里面录制得单表格进行排序的宏,进行宏的编辑,然后加入循环即可. 这里将表面储存在CopyData的19列第四行起. 因此可以按快捷键后直接所有表格进行指定排序.
 
-{% highlight vb.net %}
+~~~vb
 
 Sub Macro1()
 '
@@ -48,7 +48,7 @@ Next i
 
 End Sub
 
-{% endhighlight %}
+~~~
 
 
 ------

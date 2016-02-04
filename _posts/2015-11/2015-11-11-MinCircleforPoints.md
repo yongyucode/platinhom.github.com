@@ -136,7 +136,7 @@ return 0;
 
 ## VB写法：
 
-{% highlight vb.net %}
+~~~vb
 Option Explicit
  
 Const MAXPOINT = 10
@@ -322,7 +322,7 @@ Private Sub Command1_Click()
         Me.Circle (p(i).x + centerx, p(i).y + centery), 30, vbRed
     Next i
 End Sub
-{% endhighlight %}
+~~~
 
 
 ------

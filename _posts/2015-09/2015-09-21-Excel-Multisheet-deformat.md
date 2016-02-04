@@ -19,7 +19,7 @@ tags: Excel
 
 见如下代码.其实是利用`.Formula=.Value`部分. 针对工作薄知识多个循环罢了. 不过有以上方法..谁还这么干了..
 
-{% highlight vb.net %}
+~~~vb
 
 Sub 只去除本工作表公式()
 
@@ -37,7 +37,7 @@ Dim s As Worksheet
 
 End Sub
 
-{% endhighlight %}
+~~~
 
 
 ------

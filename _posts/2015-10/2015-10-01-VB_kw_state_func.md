@@ -202,7 +202,7 @@ Application.DisplayAlerts = True
 - #Region
 - #Disable, #Enable
 
-{% highlight vb.net %}
+~~~vb
 #If expression Then
    statements
 [ #ElseIf expression Then
@@ -210,6 +210,6 @@ Application.DisplayAlerts = True
 [ #Else
    [ statements ] ]
 #End If
-{% endhighlight %}
+~~~
 
 ------
