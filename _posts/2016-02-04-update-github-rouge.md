@@ -322,6 +322,11 @@ kramdown:
 
 site级别就是说在你博客这个文件夹内所有的(之前_post里面才会一个md生成一个`文件名命名文件夹/index.html`) markdown文件都会变成`文件名命名文件夹/index.html`...所以404.md 就变成了`404/index.html`, 404页面就不work了..另外,以前一些链接也不work了...好好检查吧...
 
+#### 解决办法:
+
+> Update
+
+在404.md 前面加入`permalink: /404.html` 来指定其生成的绝对路径就可以解决这个问题了. 原来更新上面写的relative_permalinks 是指这个问题...
 
 
 ------
