@@ -43,7 +43,7 @@
 
 <div id="main" role="main">
 <header>
-{% if layout.page_title %}
+{% if page.page_title %}
 <h1 class="page_title">{{ page.title }}</h1>
 {% else %}
 <h1 class="page_title">Hom's Blog</h1>
@@ -81,7 +81,7 @@ function changewidth(str) {
 
 </header>
 
-{% if layout.page_title %}
+{% if page.page_title %}
 <hr class="title-hr">
 {% else %}
 <hr class="title-hr"> <h1 class="post_title">{{ page.title }}</h1>
