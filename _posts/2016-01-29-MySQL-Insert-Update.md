@@ -54,6 +54,8 @@ UPDATE table SET b=b+1,c=3 WHERE a=1;
 
 `INSERT IGNORE INTO table (a,b,c) VALUES (1,2,3)`
 
+另外对重复键的处理还可以利用`Insert..Select..`, `Replace`进行.
+
 ## 修改数据: [UPDATE](http://dev.mysql.com/doc/refman/5.7/en/update.html)
 
 ### 修改单条数据单列/多列
