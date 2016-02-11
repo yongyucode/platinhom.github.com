@@ -37,4 +37,6 @@ Apache发行版,PHP开发环境,包含MySQL、PHP和Perl. [官网](https://www.a
 
 - [Keka](http://www.kekaosx.com/en/index.php): 一个通用型解压加压软件. 装好后直接将压缩文件拖过去即可完成解压. 将普通文件拖到keka上即可完成加压. 支持7z, zip, tar, dmg等.
 
+- [分区助手](http://www.disktool.cn/): 一个简易的分区工具, 免安装, 解压(桌面什么的)后打开设置切割分区就可以了, 随后重启后即可. 十分适用于只有一个C盘的系统进行分区(不便于用系统工具直接分)
+
 ------

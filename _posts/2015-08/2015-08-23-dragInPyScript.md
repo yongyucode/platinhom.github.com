@@ -111,4 +111,25 @@ totalpar=open(os.path.join(jobdir,"totalpar.txt"),'w')
 
 不过在拖放时依然难以避免system32写操作权限的问题.
 
+## 改注册表
+
+根据这个[帖子](https://mindlesstechnology.wordpress.com/2008/03/29/make-python-scripts-droppable-in-windows/), 还有可能是注册表问题, 需要写入以下内容到注册表:
+
+~~~
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Python.File\shellex\DropHandler]
+@=”{60254CA5-953B-11CF-8C96-00AA00B8708C}”
+
+[HKEY_CLASSES_ROOT\Python.NoConFile\shellex\DropHandler]
+@=”{60254CA5-953B-11CF-8C96-00AA00B8708C}”
+
+[HKEY_CLASSES_ROOT\Python.CompiledFile\shellex\DropHandler]
+@=”{60254CA5-953B-11CF-8C96-00AA00B8708C}”
+~~~
+
+第一个是py结尾的, 第二个是pyw结尾的, 第三个是pyc.
+
+
+
 ------
