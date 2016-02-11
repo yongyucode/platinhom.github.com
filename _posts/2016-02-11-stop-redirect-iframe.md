@@ -42,8 +42,7 @@ if (window.top != window.parent) {
 可以参考这篇[Play safely in sandboxed IFrames](http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/)东东介绍或者SOF上的[讨论](http://stackoverflow.com/questions/369498/how-to-prevent-iframe-from-redirecting-top-level-window). 简单说,HTML的iframe引入`sandbox`属性, 可以通过sandbox属性设置一些权限. 给给sandbox的值是允许可用的, 而不在里面则会被禁用. 例如我们要防top跳转, 就要取消掉`allow-top-navigation`,如: 
 
 ~~~html
-<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-pointer-lock" 
-src="http://www.example.com"</iframe>
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-pointer-lock" src="http://www.example.com"</iframe>
 ~~~
 
 这里最好留着那句`allow-scripts` 来启用JS. 如果要全部取消, 可以`sandbox=""`

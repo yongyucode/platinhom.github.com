@@ -47,7 +47,7 @@ xampp 也是预装有phpMyAdmin的, 所以我root无密码登上去时显示的p
 
 在`xampp/apache/conf/extra/httpd-xampp.conf`的配置文件里, 定义了以下内容:
 
-~~~apache
+~~~
 Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
 <Directory "C:/xampp/phpMyAdmin">
     AllowOverride AuthConfig
