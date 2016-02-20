@@ -27,8 +27,8 @@ layout: page
 
 ### Published
 
-18. AutoT&T v.2: An Efficient and Versatile Tool for Lead Structure Generation and Optimization. *J. Chem. Inf. Model*, 2016. [Link](http://pubs.acs.org/doi/abs/10.1021/acs.jcim.5b00691)
-17. Enzyme-Dependent [4 + 2] Cycloaddition Depends on Lid-like Interaction of the N-Terminal Sequence with the Catalytic Core in PyrI4. *Cell Chemical Biology*, 23, 1–9, 2016. [Link](http://www.cell.com/ccbio/fulltext/S2451-9456(16)30006-X)
+18. AutoT&T v.2: An Efficient and Versatile Tool for Lead Structure Generation and Optimization. *J. Chem. Inf. Model*, **2016**. [Link](http://pubs.acs.org/doi/abs/10.1021/acs.jcim.5b00691)
+17. Enzyme-Dependent [4 + 2] Cycloaddition Depends on Lid-like Interaction of the N-Terminal Sequence with the Catalytic Core in PyrI4. *Cell Chemical Biology*, 23, 1–9, **2016**. [Link](http://www.cell.com/ccbio/fulltext/S2451-9456(16)30006-X)
 16. Multiresolution persistent homology for excessively large biomolecular datasets. *J. Chem. Phys.*, **2015**, 143, 134103. [Link](http://scitation.aip.org/content/aip/journal/jcp/143/13/10.1063/1.4931733)
 15. Multiresolution Topological Simplification. *J. Comp. Biol.* **2015**, 22, 887-891. [Link](http://online.liebertpub.com/doi/abs/10.1089/cmb.2015.0104)
 14. PDB-wide Collection of Binding Data: Current Status of the PDBbind Database. *Bioinformatics* **2015**, 31,405-412. [Link](http://bioinformatics.oxfordjournals.org/content/31/3/405.abstract)
