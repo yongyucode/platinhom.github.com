@@ -5,9 +5,9 @@ layout: page
 
 <style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
-> 路漫漫其修远兮，吾将上下而求索~~ 但学无止境啊啊啊啊!!!! T_T
+> 不积跬步，无以至千里；不积小流，无以成江海。 --荀子
 
-每天抽1~2小时以上看各种杂乱资料, 学各种杂乱无章的新东东, 心里会很舒畅 ╮(╯▽╰)╭. 希望能坚持一天灌一篇水哈哈哈哈~~ 其实这就是个自己管理的笔记本 =.=
+用来mark下学到的新东东, 还有分享一些脚本啊啥的. 说白了这就是个基本自己全盘管理的笔记本 =.=
 
 ----------
 
@@ -27,11 +27,11 @@ layout: page
 
 ### Published
 
-18. AutoT&T v.2: An Efficient and Versatile Tool for Lead Structure Generation and Optimization. *J. Chem. Inf. Model*, **2016**. [Link](http://pubs.acs.org/doi/abs/10.1021/acs.jcim.5b00691)
-17. Enzyme-Dependent [4 + 2] Cycloaddition Depends on Lid-like Interaction of the N-Terminal Sequence with the Catalytic Core in PyrI4. *Cell Chemical Biology*, 23, 1–9, **2016**. [Link](http://www.cell.com/ccbio/fulltext/S2451-9456(16)30006-X)
+18. AutoT&T v.2: An Efficient and Versatile Tool for Lead Structure Generation and Optimization. *J. Chem. Inf. Model*, **2016**, 56, 435–453. [Link](http://pubs.acs.org/doi/abs/10.1021/acs.jcim.5b00691)
+17. Enzyme-Dependent [4 + 2] Cycloaddition Depends on Lid-like Interaction of the N-Terminal Sequence with the Catalytic Core in PyrI4. *Cell Chemical Biology*, **2016**, 23, 1–9. [Link](http://www.cell.com/ccbio/fulltext/S2451-9456(16)30006-X)
 16. Multiresolution persistent homology for excessively large biomolecular datasets. *J. Chem. Phys.*, **2015**, 143, 134103. [Link](http://scitation.aip.org/content/aip/journal/jcp/143/13/10.1063/1.4931733)
 15. Multiresolution Topological Simplification. *J. Comp. Biol.* **2015**, 22, 887-891. [Link](http://online.liebertpub.com/doi/abs/10.1089/cmb.2015.0104)
-14. PDB-wide Collection of Binding Data: Current Status of the PDBbind Database. *Bioinformatics* **2015**, 31,405-412. [Link](http://bioinformatics.oxfordjournals.org/content/31/3/405.abstract)
+14. PDB-wide Collection of Binding Data: Current Status of the PDBbind Database. *Bioinformatics* **2015**, 31, 405-412. [Link](http://bioinformatics.oxfordjournals.org/content/31/3/405.abstract)
 13. Target-oriented design and biosynthesis of thiostrepton-derived thiopeptide antibiotics with improved pharmaceutical properties. *Org. Chem. Front.* **2015**, 2, 106-109. (Cover) [Link](http://pubs.rsc.org/en/content/articlelanding/2015/qo/c4qo00288a)
 12. Comparative Assessment of Scoring Functions on an Updated Benchmark: I. Compilation of the Test Set, *J. Chem. Inf. Model* **2014**, 54, 1700-1716. [Link](http://pubs.acs.org/doi/abs/10.1021/ci500080q)
 11. Folding Induces Folding: The Assembly of Aromatic Amide and 1,2,3-Triazole Hybrid Helices. *Chem. Eur. J.*  **2014**, 20, 1418-1426. [Link](http://onlinelibrary.wiley.com/doi/10.1002/chem.201304161/abstract)
