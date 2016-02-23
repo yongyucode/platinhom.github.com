@@ -5,7 +5,7 @@ layout: page
 
 <style>ol li{font-size:16px;padding:0;margin:2px 0 2px 36px} ol li strong{font-size:16px;padding:0;}</style>
 
-> 不积跬步，无以至千里；不积小流，无以成江海。 --荀子
+> 不积跬步，无以至千里；不积小流，无以成江海。 -- 荀子
 
 用来mark下学到的新东东, 还有分享一些脚本啊啥的. 说白了这就是个基本自己全盘管理的笔记本 =.=
 
