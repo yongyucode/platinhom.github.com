@@ -674,6 +674,8 @@ height: 48px;
 </div>
 
 
+## HTML5 部分
+
 ~~~html
 <div id="level">
 <div id="content">
@@ -728,6 +730,7 @@ height: 48px;
 </div>
 ~~~
 
+## CSS3 部分
 
 ~~~css
 <font size="3">#level{
