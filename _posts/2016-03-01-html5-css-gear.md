@@ -6,7 +6,7 @@ categories: Coding
 tags: CSS HTML
 ---
 
-转载自[HTML5模拟齿轮动画](http://www.html5cn.org/article-9351-1.html).
+转载自[HTML5模拟齿轮动画](http://www.html5cn.org/article-9351-1.html). [效果参见](http://www.html5tricks.com/demo/jiaoben1984/index.html).
 
 这篇文章介绍了纯使用HTML5和CSS3来模拟物理齿轮动画. 十分有趣, 值得学习. 主要是CSS部分使用`animation`来实现动画.
 

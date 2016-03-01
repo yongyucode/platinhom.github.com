@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python:StringIO模块模拟文件对象
-date: 2016-02-24 03:36:48
+date: 2016-02-25 03:36:48
 categories: Coding
 tags: Python
 ---
