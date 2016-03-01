@@ -29,7 +29,7 @@ display:inline-block;
 vertical-align:middle;
 }
 #gears-static{
-background:url(FgFnjks.png) no-repeat -363px -903px;
+background:url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -363px -903px;
 width:329px;
 height:602px;
 position:absolute;
@@ -61,7 +61,7 @@ box-shadow: 4px 7px 25px 10px rgba(43, 36, 0, 0.36);
 }
 /*gear-system-1*/
 #gear15{
-background: url(FgFnjks.png) no-repeat 0 -993px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -993px;
 width: 321px;
 height: 321px;
 position:absolute;
@@ -83,7 +83,7 @@ left:52px;
 top:186px;
 }
 #gear14{
-background: url(FgFnjks.png) no-repeat 0 -856px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -856px;
 width: 87px;
 height: 87px;
 position:absolute;
@@ -101,7 +101,7 @@ left:171px;
 top:304px;
 }
 #gear13{
-background: url(FgFnjks.png) no-repeat 0 -744px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -744px;
 width: 62px;
 height: 62px;
 position:absolute;
@@ -124,7 +124,7 @@ top:322px;
 }
 /*gear-system-2*/
 #gear10{
-background: url(FgFnjks.png) no-repeat 0 -184px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -184px;
 width: 122px;
 height: 122px;
 position:absolute;
@@ -146,7 +146,7 @@ left:193px;
 top:18px;
 }
 #gear3{
-background: url(FgFnjks.png) no-repeat 0 -1493px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1493px;
 width: 85px;
 height: 84px;
 position:absolute;
@@ -169,7 +169,7 @@ top:31px;
 }
 /*gear-system-3*/
 #gear9{
-background: url(FgFnjks.png) no-repeat -371px -280px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -280px;
 width: 234px;
 height: 234px;
 position:absolute;
@@ -191,7 +191,7 @@ left:214px;
 top:113px;
 }
 #gear7{
-background: url(FgFnjks.png) no-repeat -371px 0;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px 0;
 width: 108px;
 height: 108px;
 position:absolute;
@@ -214,7 +214,7 @@ top:175px;
 }
 /*gear-system-4*/
 #gear6{
-background: url(FgFnjks.png) no-repeat 0 -1931px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1931px;
 width: 134px;
 height: 134px;
 position:absolute;
@@ -236,7 +236,7 @@ left:323px;
 bottom:230px;
 }
 #gear4{
-background: url(FgFnjks.png) no-repeat 0 -1627px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1627px;
 width: 69px;
 height: 69px;
 position:absolute;
@@ -249,7 +249,7 @@ animation: rotate-back 10000ms linear infinite;
 }
 /*gear-system-5*/
 #gear12{
-background: url(FgFnjks.png) no-repeat 0 -530px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -530px;
 width: 164px;
 height: 164px;
 position:absolute;
@@ -271,7 +271,7 @@ left:225px;
 bottom:107px;
 }
 #gear11{
-background: url(FgFnjks.png) no-repeat 0 -356px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -356px;
 width: 125px;
 height: 124px;
 position:absolute;
@@ -293,7 +293,7 @@ left:247px;
 bottom:123px;
 }
 #gear8{
-background: url(FgFnjks.png) no-repeat -371px -158px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -158px;
 width: 72px;
 height: 72px;
 position:absolute;
@@ -316,7 +316,7 @@ bottom:146px;
 }
 /*gear1*/
 #gear1{
-background: url(FgFnjks.png) no-repeat 0 0;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 0;
 width: 135px;
 height: 134px;
 position:absolute;
@@ -339,7 +339,7 @@ bottom:130px;
 }
 /*gear-system-6*/
 #gear5{
-background: url(FgFnjks.png) no-repeat 0 -1746px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1746px;
 width: 134px;
 height: 135px;
 position:absolute;
@@ -361,7 +361,7 @@ left:41px;
 top:127px;
 }
 #gear2{
-background: url(FgFnjks.png) no-repeat 0 -1364px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1364px;
 width: 80px;
 height: 79px;
 position:absolute;
@@ -374,7 +374,7 @@ animation: rotate-back 10000ms linear infinite alternate;
 }
 /*weight*/
 #weight{
-background: url(FgFnjks.png) no-repeat -371px -564px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -564px;
 width: 34px;
 height: 92px;
 position:absolute;
@@ -398,7 +398,7 @@ animation: up 10000ms linear infinite alternate;
 }
 /*chain*/
 #chain-circle{
-background: url(FgFnjks.png) no-repeat -371px -706px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -706px;
 width:146px;
 height:147px;
 position:absolute;
@@ -748,7 +748,7 @@ display:inline-block;
 vertical-align:middle;
 }
 #gears-static{
-background:url(FgFnjks.png) no-repeat -363px -903px;
+background:url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -363px -903px;
 width:329px;
 height:602px;
 position:absolute;
@@ -780,7 +780,7 @@ box-shadow: 4px 7px 25px 10px rgba(43, 36, 0, 0.36);
 }
 /*gear-system-1*/
 #gear15{
-background: url(FgFnjks.png) no-repeat 0 -993px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -993px;
 width: 321px;
 height: 321px;
 position:absolute;
@@ -802,7 +802,7 @@ left:52px;
 top:186px;
 }
 #gear14{
-background: url(FgFnjks.png) no-repeat 0 -856px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -856px;
 width: 87px;
 height: 87px;
 position:absolute;
@@ -820,7 +820,7 @@ left:171px;
 top:304px;
 }
 #gear13{
-background: url(FgFnjks.png) no-repeat 0 -744px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -744px;
 width: 62px;
 height: 62px;
 position:absolute;
@@ -843,7 +843,7 @@ top:322px;
 }
 /*gear-system-2*/
 #gear10{
-background: url(FgFnjks.png) no-repeat 0 -184px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -184px;
 width: 122px;
 height: 122px;
 position:absolute;
@@ -865,7 +865,7 @@ left:193px;
 top:18px;
 }
 #gear3{
-background: url(FgFnjks.png) no-repeat 0 -1493px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1493px;
 width: 85px;
 height: 84px;
 position:absolute;
@@ -888,7 +888,7 @@ top:31px;
 }
 /*gear-system-3*/
 #gear9{
-background: url(FgFnjks.png) no-repeat -371px -280px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -280px;
 width: 234px;
 height: 234px;
 position:absolute;
@@ -910,7 +910,7 @@ left:214px;
 top:113px;
 }
 #gear7{
-background: url(FgFnjks.png) no-repeat -371px 0;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px 0;
 width: 108px;
 height: 108px;
 position:absolute;
@@ -933,7 +933,7 @@ top:175px;
 }
 /*gear-system-4*/
 #gear6{
-background: url(FgFnjks.png) no-repeat 0 -1931px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1931px;
 width: 134px;
 height: 134px;
 position:absolute;
@@ -955,7 +955,7 @@ left:323px;
 bottom:230px;
 }
 #gear4{
-background: url(FgFnjks.png) no-repeat 0 -1627px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1627px;
 width: 69px;
 height: 69px;
 position:absolute;
@@ -968,7 +968,7 @@ animation: rotate-back 10000ms linear infinite;
 }
 /*gear-system-5*/
 #gear12{
-background: url(FgFnjks.png) no-repeat 0 -530px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -530px;
 width: 164px;
 height: 164px;
 position:absolute;
@@ -990,7 +990,7 @@ left:225px;
 bottom:107px;
 }
 #gear11{
-background: url(FgFnjks.png) no-repeat 0 -356px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -356px;
 width: 125px;
 height: 124px;
 position:absolute;
@@ -1012,7 +1012,7 @@ left:247px;
 bottom:123px;
 }
 #gear8{
-background: url(FgFnjks.png) no-repeat -371px -158px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -158px;
 width: 72px;
 height: 72px;
 position:absolute;
@@ -1035,7 +1035,7 @@ bottom:146px;
 }
 /*gear1*/
 #gear1{
-background: url(FgFnjks.png) no-repeat 0 0;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 0;
 width: 135px;
 height: 134px;
 position:absolute;
@@ -1058,7 +1058,7 @@ bottom:130px;
 }
 /*gear-system-6*/
 #gear5{
-background: url(FgFnjks.png) no-repeat 0 -1746px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1746px;
 width: 134px;
 height: 135px;
 position:absolute;
@@ -1080,7 +1080,7 @@ left:41px;
 top:127px;
 }
 #gear2{
-background: url(FgFnjks.png) no-repeat 0 -1364px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat 0 -1364px;
 width: 80px;
 height: 79px;
 position:absolute;
@@ -1093,7 +1093,7 @@ animation: rotate-back 10000ms linear infinite alternate;
 }
 /*weight*/
 #weight{
-background: url(FgFnjks.png) no-repeat -371px -564px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -564px;
 width: 34px;
 height: 92px;
 position:absolute;
@@ -1117,7 +1117,7 @@ animation: up 10000ms linear infinite alternate;
 }
 /*chain*/
 #chain-circle{
-background: url(FgFnjks.png) no-repeat -371px -706px;
+background: url(http://www.html5tricks.com/demo/jiaoben1984/css/FgFnjks.png) no-repeat -371px -706px;
 width:146px;
 height:147px;
 position:absolute;
