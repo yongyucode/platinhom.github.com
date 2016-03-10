@@ -52,7 +52,7 @@ pip install pyreadline
 
 要是装有但有问题,可以用`pip install ipython --upgrade` 来升级
 
-PS: 要是提示以下就要安装后面的pyreadline,否则可以不装.
+PS: 要是提示以下就要安装后面的`pyreadline`,否则可以不装. 这个pyreadline可以使得ipython支持tab补全等. 比较重要.
 
 ~~~bash
 WARNING: Readline services not available or not loaded.
@@ -69,7 +69,7 @@ http://ipython.org/pyreadline.html
 
 ### 启动
 
-支持三种启动模式: shell, qtconsole和notebook. notebook需要额外安装,qtconsole需要额外安装qt,pyqt依赖.
+支持三种启动模式: shell, qtconsole和notebook. notebook需要额外安装,qtconsole需要额外安装qt,pyqt依赖. 如果不需要图形界面或者网络界面, 只是使用命令行, 可以忽略后面的这部分.
 
 #### Shell模式
 
