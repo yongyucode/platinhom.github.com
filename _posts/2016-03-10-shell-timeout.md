@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shell:timeout
-date: 2016-03-11 11:50:46
+date: 2016-03-10 11:50:46
 categories: Coding
 tags: Bash
 ---
