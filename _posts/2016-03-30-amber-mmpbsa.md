@@ -10,9 +10,9 @@ AMBER PBSA部分的执行现有两套方法: 一个使用老的Perl脚本 `mm_pb
 
 ## Perl脚本
 
-这是老版本的用法, 使用就是:
+这是老版本使用`mm_pbsa.pl`的用法, 使用就是:
 
-`mm_pbsa.pl mmpbsa.in > extract_coords.log`
+`mm_pbsa.pl mmpbsa.in > stdout.log`
 
 参数文件是`mmpbsa.in`内, 屏幕输出(实际只是执行过程, 意义不大)重定向到指定文件.
 
@@ -363,11 +363,11 @@ PROBE                 0.0
 	- `VERBOSE` : 默认0是删除中间输入输出文件, 设置1则保留. 用于debug. 
 	- `PARALLEL` : 并行计算时设置>1整数. 默认不适用时为0. (设置8就是同时分析8帧哦)  
 - `@MAKECRD`卡
-	- BOX : MD是否使用周期边界, 一般是,=1.
-	- NTOTAL : MD轨迹文件每帧原子数 (包括溶剂,离子哦!)
-	- NSTART/NSTOP/NFREQ : 提取帧从NSTART 到NSTOP(包含), 提取间隔是NFREQ为一帧.例如MD总2000帧, 每10帧输出一次.可以设1/2000/10.
-	- NUMBER_LIG\_GROUPS/LSTART/LSTOP : 配体有几组,每组原子取自下面的LSTART到LSTOP. (如果原子序号不连续, 就要多个组, 多个组就要写多个LSTART/LSTOP)
-	- NUMBER_REC\_GROUPS/RSTART/RSTOP : 受体有几组,每组原子取自下面的RSTART到RSTOP. (如果原子序号不连续, 就要多个组, 多个组就要写多个RSTART/RSTOP)
+	- `BOX` : MD是否使用周期边界, 一般是,=1.
+	- `NTOTAL` : MD轨迹文件每帧原子数 (包括溶剂,离子哦!)
+	- `NSTART`/`NSTOP`/`NFREQ` : 提取帧从NSTART 到NSTOP(包含), 提取间隔是NFREQ为一帧.例如MD总2000帧, 每10帧输出一次.可以设1/2000/10.
+	- `NUMBER_LIG_GROUPS`/`LSTART`/`LSTOP` : 配体有几组,每组原子取自下面的LSTART到LSTOP. (如果原子序号不连续, 就要多个组, 多个组就要写多个LSTART/LSTOP)
+	- `NUMBER_REC_GROUPS`/`RSTART`/`RSTOP` : 受体有几组,每组原子取自下面的RSTART到RSTOP. (如果原子序号不连续, 就要多个组, 多个组就要写多个RSTART/RSTOP)
 - `@TRAJECTORY`卡
 	- `TRAJECTORY` : 指定相应的轨迹文件, 按顺序读入输出帧. 可以有多个TRAJECTORY.
 - `@PB`卡
@@ -380,7 +380,7 @@ PROBE                 0.0
 	- `LINIT` : 线性PB计算迭代最大次数.
 	- `ARCRES` : 溶剂可及的弧度的点的分辨率. 越小越精确咯. 默认0.25, 见很多都用0.0625. 是*pbsa*的参数.
 	- `INP` : 非极性溶剂化能的计算方法, 默认1是`Gnp=SURFTEN*SASA+SURFOFF`, 2是`Gnp=Gdisp+Gcavity=Gdisp+SURFTEN*SASA+SURFOFF`. Gdisp是吸引项, Gcavity是排斥项(SAS相关). 如果INP设为2, RADIOPT要设为1 (使用Luo等的方法)
-	- `SURFTEN`和`SURFOFF` : 表面张力系数和一个offset值. 和INP, IVCAP 等设置时最好相关. 
+	- `SURFTEN`和`SURFOFF` : 表面张力系数和一个offset值. 和INP, IVCAP 等设置时最好相关. 不懂时默认好了..
 - `@GB`卡
 	- 暂忽略
 - `@MM`卡:
@@ -418,6 +418,9 @@ TSVIB - 振动熵贡献能. vibrational entropy (as calculated by nmode) times t
 所以, 如果只是进行PB/GB计算结合自由能, 读取PBTOT/GBTOT即可 (结合自由能=complex-receptor-ligand, Delta的输出里面其实就是最终结果). 
 
 一般地, MM部分由ELE, VDW和INT组成, 计算delta时内能项基本被抵消. 溶剂化部分, PB/GB一般通过solver计算. 非极性作用项则是通过面积来拟合.
+
+## Python脚本
+
 
 
 
