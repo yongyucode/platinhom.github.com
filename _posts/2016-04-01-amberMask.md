@@ -11,6 +11,7 @@ tags: CompBiol Amber
 首先, 在命令行使用时要使用字符串形式`"mask"`, 在配置文件可以没有.
 
 - `:`,`@`和`*`是保留字符,要注意! 
+- 支持通配符`*`(任意个任意字符),`?`(单个任意字符).貌似还支持`=`(和`*`一样)
 - 可以使用范围匹配符`-`
 - 可以使用`,`作为分隔各成分
 - 可以使用逻辑操作符`&`,`|`和`!`
@@ -31,15 +32,28 @@ tags: CompBiol Amber
 - `@{atom namelist}` e.g. `[@CA]`,`[@CA,C,O,N,H]`
 - `@%{atom type name}` e.g. `[@%CT]`
 - `@/{atom_element_name}` e.g.`[@/N]`
+- `:{residue numlist | namelist}@{atom namelist | numlist}` 复合原子表达式,相当于and操作的残基和原子条件均满足. e.g. `:ARG@CA`
 
 ### 基于距离选取
 
+主要使用`<:`, `>:`, `<@`, `>@`四种, `:@`跟距离. `:`选取的是原子, `@`选取的是残基. 整体表达式: `<mask><distance op><distance>`
 
+- `:11-17<@2.4` 是选取11-17号残基邻近2.4A内的残基.
+
+对于MD结果ptraj处理时, 可能会用到一种特殊方法, 就是设置reference, 此时会以reference为准则评价每个frame:
+
+~~~
+reference mol.rst7
+trajin mol.rst7
+strip !(:4<:3.0)
+~~~
 
 ### 实例
 
 - `@CA,C,O,N,H` 所有主链backbone原子
 - `!@CA,C,O,N,H` 所有非主链backbone原子 (注意可能包含水,离子,配体,蛋白残基侧链).
 - `:5,10@CA` 残基5和10的CA原子
+- `:*&!@H=` 所有残基的非氢原子
+- `:1-500@O&!(:WAT|:LYS,ARG)` 1-500号残基的非WAT,LYS,ARG的主链氧原子.
 
 ------

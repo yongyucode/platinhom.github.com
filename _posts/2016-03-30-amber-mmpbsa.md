@@ -469,22 +469,261 @@ Options:
                         mbondi and the default is to use the existing radii.
 ~~~
 
-- 溶剂化复合物去除溶剂  
+用法其实主要就是3个:
+
+1. 溶剂化复合物去除溶剂  
 `ante-MMPBSA.py -p complex.top --radii mbondi2 -s ":WAT" -c com.top`  
 如果要去除添加的盐离子:  
 `ante-MMPBSA.py -p complex.top --radii mbondi2 -s ":WAT,Na+,Cl-" -c com.top`
-- 分解复合物top为受体和配体  
+1. 分解复合物top为受体和配体  
 这里要使用没有溶剂的复合物top, 否则的话受体部分会含有溶剂!  
 `ante-MMPBSA.py -p com.top --radii mbondi2 -n ":LIG" -l lig.top -r pro.top`
-- 除溶剂并分解为受体配体  
+1. 除溶剂并分解为受体配体  
 `ante-MMPBSA.py -p complex.top --radii mbondi2 -s ":WAT,Na+,Cl-" -c com.top -n ":LIG" -l lig.top -r pro.top`
 
-对于表达式, 可以参考[Amber原子选取语法(Atom Mask Selection Syntax)]()
+对于表达式, 可以参考[Amber原子选取语法(Atom Mask Selection Syntax)](/2016/04/01/amberMask/).
 
 ### `MMPBSA.py`
+
+该脚本参数(Amber14):
+
+~~~
+usage: MMPBSA.py [-h] [-v] [--input-file-help] [-O] [-prefix <file prefix>]
+                 [-i FILE] [-xvvfile XVVFILE] [-o FILE] [-do FILE] [-eo FILE]
+                 [-deo FILE] [-sp <Topology File>] [-cp <Topology File>]
+                 [-rp <Topology File>] [-lp <Topology File>]
+                 [-mc <Topology File>] [-mr <Topology File>]
+                 [-ml <Topology File>] [-srp <Topology File>]
+                 [-slp <Topology File>] [-y [MDCRD [MDCRD ...]]]
+                 [-yr [MDCRD [MDCRD ...]]] [-yl [MDCRD [MDCRD ...]]]
+                 [-make-mdins] [-use-mdins] [-rewrite-output] [--clean]
+ 
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  --input-file-help     Print all available options in the input file.
+                        (default: False)
+ 
+Miscellaneous Options:
+  -O, --overwrite       Allow output files to be overwritten (default: False)
+  -prefix <file prefix>
+                        Prefix for intermediate files. (default: _MMPBSA_)
+ 
+Input and Output Files:
+  These options specify the input files and optional output files.
+ 
+  -i FILE               MM/PBSA input file. (default: None)
+  -xvvfile XVVFILE      XVV file for 3D-RISM. (default:
+                        /opt/software/Amber/14v19--
+                        Intel-13.0.1.117/dat/mmpbsa/spc.xvv)
+  -o FILE               Output file with MM/PBSA statistics. (default:
+                        FINAL_RESULTS_MMPBSA.dat)
+  -do FILE              Output file for decomposition statistics summary.
+                        (default: FINAL_DECOMP_MMPBSA.dat)
+  -eo FILE              CSV-format output of all energy terms for every frame
+                        in every calculation. File name forced to end in
+                        [.csv]. This file is only written when specified on
+                        the command-line. (default: None)
+  -deo FILE             CSV-format output of all energy terms for each printed
+                        residue in decomposition calculations. File name
+                        forced to end in [.csv]. This file is only written
+                        when specified on the command-line. (default: None)
+  -sp <Topology File>   Topology file of a fully solvated system. If provided,
+                        the atoms specified by <strip_mask> will be stripped
+                        from the trajectory file. The complex topology file
+                        (-cp) must be consistent with this stripped trajectory
+                        (default: None)
+  -cp <Topology File>   Topology file of the bound complex (or the single
+                        system for 'stability' calculations) (default:
+                        complex_prmtop)
+  -rp <Topology File>   Topology file of the unbound receptor. If omitted (and
+                        -lp is omitted, too), a stability calculation with
+                        just the complex will be performed. (default: None)
+  -lp <Topology File>   Topology file of the unbound ligand. If omitted (and
+                        -rp is omitted, too), a stability calculation with
+                        just the complex will be performed. (default: None)
+  -mc <Topology File>   Complex topology file of the mutant complex in which
+                        one residue has been mutated to either a glycine or
+                        alanine to perform computational alanine (or glycine)
+                        scanning. (default: None)
+  -mr <Topology File>   Receptor topology file of the mutant receptor (see -mc
+                        above). If omitted, the mutation is assumed to be in
+                        the ligand. (default: None)
+  -ml <Topology File>   Ligand topology file of the mutant receptor (see -mc
+                        above). If omitted, the mutation is assumed to be in
+                        the receptor. (default: None)
+  -srp <Topology File>  Receptor ligand topology file. For use with multiple-
+                        trajectory simulations when the receptor trajectory is
+                        solvated. This will trigger the atoms specified by
+                        'strip_mask' to be removed from the receptor
+                        trajectory (default: None)
+  -slp <Topology File>  Solvated ligand topology file. See -srp description
+                        above. (default: None)
+ 
+Input Trajectory Files:
+  These files contain the snapshots analyzed by MM/PBSA-type calculations.
+ 
+  -y [MDCRD [MDCRD ...]]
+                        Input trajectories of the (maybe solvated) complex.
+                        (specify as many as you'd like). (default: ['mdcrd'])
+  -yr [MDCRD [MDCRD ...]]
+                        Receptor trajectory file for multiple trajectory
+                        approach (default: None)
+  -yl [MDCRD [MDCRD ...]]
+                        Ligand trajectory file for multiple trajectory
+                        approach. (default: None)
+ 
+Miscellaneous Actions:
+  -make-mdins           Create the input files for each calculation and quit.
+                        This allows you to modify them and re-run using -use-
+                        mdins (default: False)
+  -use-mdins            Use existing input files for each calculation. If they
+                        do not exist with the appropriate names, MMPBSA.py
+                        will quit in error. (default: False)
+  -rewrite-output       Do not re-run any calculations, just parse the output
+                        files from the previous calculation and rewrite the
+                        output files. (default: False)
+  --clean               Clean temporary files and quit. (default: False)
+ 
+This program will calculate binding free energies using end-state free energy
+methods on an ensemble of snapshots using a variety of implicit solvent models
+~~~
 
 该脚本简单的应用是:
 
 `MMPBSA.py -O -i mmpbsa.in -cp com.top -rp rec.top -lp lig.top -y traj.crd`
+
+如果轨迹(坐标)复合物中还有溶剂和离子,则需要使用`-sp`指明其拓扑, 再用cp+rp+lp指明子结构. 
+
+`MMPBSA.py -O -i mmpbsa.in -sp complex.top -cp com.top -rp rec.top -lp lig.top -y traj.crd`
+
+
+MPI并行版跑法:
+
+`mpirun -np 8 MMPBSA.py.MPI -O -i mmpbsa.in -cp com.top -rp rec.top -lp lig.top -y traj.crd`
+
+如果只要进行MMPBSA计算, 只需要上面几个参数就可以了. `-i`指明mmpbsa的配置文件, `-O`覆盖已有文件, `-sp/cp/rp/lp`分别是复合物(溶剂化),复合物(无水),受体和配体的拓扑文件, `-y`是轨迹或者相关坐标文件(rst,crd等),可以有多个文件,用`,`隔开.
+
+### mmpbsa.in
+
+是进行MMPBSA.py的参数配置文件. 如果不知道默认参数有哪些, 可以先书写一下的参数文件`mmpbsa.in`
+
+~~~
+Input file for running PB and GB
+&general
+   endframe=1, keep_files=2
+/
+&gb
+/
+&pb
+/
+~~~
+
+然后跑以下命令. 其中`-make-mdins`是产生相应参数文件, 他会参考输入的`mmpbsa.in`来写出输出文件, 即`mmpbsa.in`里面的参数会覆盖掉默认的参数. 另外, 虽然程序只读取`mmpbsa.in`产生输出后即退出, 即不会读取拓扑和坐标文件, 但是这里也要指明相应文件(很傻吧..) 
+
+`MMPBSA.py -O -make-mdins -i mmpbsa.in -o hi -sp complex.top -cp com.top -rp pro.top -lp lig.top -y complex.crd`
+
+最后可以产生`_MMPBSA_gb.mdin`和`_MMPBSA_pb.mdin`文件, 里面有相应参数和配置值. 可以参考这些值放到mmpbsa.in来再跑, 也可以直接修改这两个文件, 然后用`-use-mdins`选项来直接来加载这两个文件(但还是要指明mmpbsa.in...).
+
+如果熟悉这个配置文件怎么写, 就自己写吧. 这个文件一般有三个部分 (参考上面那个): `&general`,`&gb`,`&pb`, 对应整体配置, GB和PB设置. 如果要进行Normal Mode Analysis,能量分解和Alanine扫描,需要`&nmode`,`&decomp`和`&alanine_scanning`选项卡. 选项卡下面以`/`一行结束,参数写在每个选项卡当中, 可以逗号分隔, 可以另起一行.
+
+以下是Amber提供的各种示例配置文件 (包括一般PB/GB,Alanine扫描,NMode,能量分解,QM/MMPBSA,3D-RISM):
+
+~~~
+Sample input file for GB and PB calculation
+&general
+startframe=5, endframe=100, interval=5,
+verbose=2, keep_files=0,
+/
+&gb
+igb=5, saltcon=0.150,
+/
+&pb
+istrng=0.15, fillratio=4.0
+/
+--------------------------------------------------------
+Sample input file for Alanine scanning
+&general
+verbose=2,
+/
+&gb
+igb=2, saltcon=0.10
+/
+&alanine_scanning
+/
+--------------------------------------------------------
+Sample input file with nmode analysis
+&general
+startframe=5, endframe=100, interval=5,
+verbose=2, keep_files=2,
+/
+&gb
+igb=5, saltcon=0.150,
+/
+&nmode
+nmstartframe=2, nmendframe=20, nminterval=2,
+maxcyc=50000, drms=0.0001,
+/
+--------------------------------------------------------
+Sample input file with decomposition analysis
+&general
+startframe=5, endframe=100, interval=5,
+/
+&gb
+igb=5, saltcon=0.150,
+/
+&decomp
+idecomp=2, dec_verbose=3,
+print_res=”20, 40-80, 200”
+/
+--------------------------------------------------------
+Sample input file for QM/MMGBSA
+&general
+startframe=5, endframe=100, interval=5,
+ifqnt=1, qmcharge=0, qm_residues=”100-105, 200”
+qm_theory=”PM3”
+/
+&gb
+igb=5, saltcon=0.100,
+/
+--------------------------------------------------------
+Sample input file for MM/3D-RISM
+&general
+startframe=5, endframe=100, interval=5,
+/
+&rism
+polardecomp=1, thermo=’gf’
+/
+~~~
+
+这里只关注最简单的PB/GBSA
+
+~~~
+Sample input file for GB and PB calculation
+&general
+startframe=5, endframe=100, interval=5,
+verbose=2, keep_files=0,
+/
+&gb
+igb=5, saltcon=0.150,
+/
+&pb
+istrng=0.15, fillratio=4.0
+/
+~~~
+
+#### general卡
+
+- startframe,endframe,interval: 读取轨迹帧的设置,起始(1开始),终止(默认9999999)和间隔(默认1)
+- keep_files: 临时文件处理, 0: 不保留临时文件; 1: 缺省,保留产生的轨迹和mdout文件; 2. 保留所有临时文件(临时文件以`_MMPBSA_`开头,可以修改默认值)
+- verbose: 输出文件详细度, 0: 简单输出; 1: 缺省, 输出所有复合物受体和配体项; 2: 输出输出每帧的相应项?
+
+#### pb卡
+
+
+
+#### gb卡
+
+
 
 ------
