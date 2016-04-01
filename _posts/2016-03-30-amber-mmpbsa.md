@@ -421,7 +421,70 @@ TSVIB - 振动熵贡献能. vibrational entropy (as calculated by nmode) times t
 
 ## Python脚本
 
+该脚本系列有两个: `ante-MMPBSA.py` 和 `MMPBSA.py`, 前者用于创建复合物/受体/配体的拓扑文件(top), 后者用于一般的MMPBSA相关计算.
 
+### ante-MMPBSA.py 
 
+查询帮助可以知道一些选项: 
+
+~~~
+Usage: ante-MMPBSA.py [options]
+ 
+Options:
+  -h, --help            show this help message and exit
+  -p PRMTOP, --prmtop=PRMTOP
+  						指定复合物的top文件, 可以是溶剂化也可以是未溶剂化的 
+                        Input "dry" complex topology or solvated complex
+                        topology
+  -c COMPLEX, --complex-prmtop=COMPLEX
+  						指定输出去除溶剂的复合物top文件
+                        Complex topology file created by stripping PRMTOP of
+                        solvent
+  -r RECEPTOR, --receptor-prmtop=RECEPTOR
+  						指定输出去除配体的受体top文件 (基于COMPLEX的拓扑)
+                        Receptor topology file created by stripping COMPLEX of
+                        ligand
+  -l LIGAND, --ligand-prmtop=LIGAND
+  						指定输出去除受体的配体top文件 (基于COMPLEX的拓扑)
+                        Ligand topology file created by stripping COMPLEX of
+                        receptor
+  -s STRIP_MASK, --strip-mask=STRIP_MASK
+  						指定去除溶剂的表达式
+                        Amber mask of atoms needed to be stripped from PRMTOP
+                        to make the COMPLEX topology file
+  -m RECEPTOR_MASK, --receptor-mask=RECEPTOR_MASK
+  						指定受体的表达式 (和-n冲突)
+                        Amber mask of atoms needed to be stripped from COMPLEX
+                        to create RECEPTOR. Cannot specify with -n/--ligand-
+                        mask
+  -n LIGAND_MASK, --ligand-mask=LIGAND_MASK
+  						指定配体的表达式 (和-m冲突)
+                        Amber mask of atoms needed to be stripped from COMPLEX
+                        to create LIGAND. Cannot specify with -m/--receptor-
+                        mask
+  --radii=RADIUS_SET    指定PB计算的半径set
+  						PB/GB Radius set to set in the generated topology
+                        files. This is equivalent to "set PBRadii <radius>" in
+                        LEaP. Options are bondi, mbondi2, mbondi3, amber6, and
+                        mbondi and the default is to use the existing radii.
+~~~
+
+- 溶剂化复合物去除溶剂  
+`ante-MMPBSA.py -p complex.top --radii mbondi2 -s ":WAT" -c com.top`  
+如果要去除添加的盐离子:  
+`ante-MMPBSA.py -p complex.top --radii mbondi2 -s ":WAT,Na+,Cl-" -c com.top`
+- 分解复合物top为受体和配体  
+这里要使用没有溶剂的复合物top, 否则的话受体部分会含有溶剂!  
+`ante-MMPBSA.py -p com.top --radii mbondi2 -n ":LIG" -l lig.top -r pro.top`
+- 除溶剂并分解为受体配体  
+`ante-MMPBSA.py -p complex.top --radii mbondi2 -s ":WAT,Na+,Cl-" -c com.top -n ":LIG" -l lig.top -r pro.top`
+
+对于表达式, 可以参考[Amber原子选取语法(Atom Mask Selection Syntax)]()
+
+### `MMPBSA.py`
+
+该脚本简单的应用是:
+
+`MMPBSA.py -O -i mmpbsa.in -cp com.top -rp rec.top -lp lig.top -y traj.crd`
 
 ------
