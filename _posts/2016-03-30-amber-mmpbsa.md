@@ -591,18 +591,18 @@ methods on an ensemble of snapshots using a variety of implicit solvent models
 
 该脚本简单的应用是:
 
-`MMPBSA.py -O -i mmpbsa.in -cp com.top -rp rec.top -lp lig.top -y traj.crd`
+`MMPBSA.py -O -i mmpbsa.in -o mmpbsa.out -cp com.top -rp rec.top -lp lig.top -y traj.crd`
 
 如果轨迹(坐标)复合物中还有溶剂和离子,则需要使用`-sp`指明其拓扑, 再用cp+rp+lp指明子结构. 
 
-`MMPBSA.py -O -i mmpbsa.in -sp complex.top -cp com.top -rp rec.top -lp lig.top -y traj.crd`
+`MMPBSA.py -O -i mmpbsa.in -o mmpbsa.out -sp complex.top -cp com.top -rp rec.top -lp lig.top -y traj.crd`
 
 
 MPI并行版跑法:
 
-`mpirun -np 8 MMPBSA.py.MPI -O -i mmpbsa.in -cp com.top -rp rec.top -lp lig.top -y traj.crd`
+`mpirun -np 8 MMPBSA.py.MPI -O -i mmpbsa.in -o mmpbsa.out -cp com.top -rp rec.top -lp lig.top -y traj.crd`
 
-如果只要进行MMPBSA计算, 只需要上面几个参数就可以了. `-i`指明mmpbsa的配置文件, `-O`覆盖已有文件, `-sp/cp/rp/lp`分别是复合物(溶剂化),复合物(无水),受体和配体的拓扑文件, `-y`是轨迹或者相关坐标文件(rst,crd等),可以有多个文件,用`,`隔开.
+如果只要进行MMPBSA计算, 只需要上面几个参数就可以了. `-i`指明mmpbsa的配置文件, -o 是结果文件名, `-O`覆盖已有文件, `-sp/cp/rp/lp`分别是复合物(溶剂化),复合物(无水),受体和配体的拓扑文件, `-y`是轨迹或者相关坐标文件(rst,crd等),可以有多个文件,用`,`隔开.
 
 ### mmpbsa.in
 
@@ -718,12 +718,131 @@ istrng=0.15, fillratio=4.0
 - keep_files: 临时文件处理, 0: 不保留临时文件; 1: 缺省,保留产生的轨迹和mdout文件; 2. 保留所有临时文件(临时文件以`_MMPBSA_`开头,可以修改默认值)
 - verbose: 输出文件详细度, 0: 简单输出; 1: 缺省, 输出所有复合物受体和配体项; 2: 输出输出每帧的相应项?
 
+
 #### pb卡
 
+- inp: 非极性计算方法. 默认2, 使用Gdisp项, 此时要用Luo等方法半径(radiopt=1). 1的话不考虑Gdisp项. 0的话不考虑非极性溶剂化项.
+- radiopt: 默认1, 采用预计算的值; 或者0, 采用拓扑文件内的定义. 
+- indi/exdi : 溶质和溶剂的介电常数,默认1.0/80.0
+- istrng : 离子强度, mM (PBSA)或M(APBS), 缺省0.
+- prbrad : 探针半径, 默认1.4, 或使用1.6.
+- cavity\_offset/cavity\_surften : 用于计算非极性项的校正值和表面张力项. 默认-0.5692和0.0378.
+- fillratio : 有限差分最长维度矩形和溶质的比例(默认4.0)
 
+(一般inp/radiopt/cavity\_surften/cavity\_offset使用2/1//或1/0/0.005/0)
 
 #### gb卡
 
+- igb : GB方法, 1,2,5,7,8 (默认5)
+- probe : 溶剂探针, 默认1.4 (只有molsurf设1有效)
+- molsurf : 设置1时使用molsurf算法计算表面用于非极性项. 设置0 (默认), 使用LCPO(Linear Combination of Pairwise Overlaps)算法.
+- saltcon : 盐浓度(默认 0.0 M)
+- surfoff/surften : 用于计算非极性项的校正值和表面张力项. 默认0.0和0.0072(kcal/mol^2).
 
+###### Error
+
+- `PB Bomb in pb_aaradi(): No radius assigned for atom` : 主要是没有半径数据, 取决于radiopt.如果radiopt=0是从文件读取. =1是使用Amber参数集, 这时取决于内建定义咯. 这时最好用inp=1. 也可以参考[这个](http://archive.ambermd.org/201208/0074.html)修改参数文件..
+
+## 提取结果脚本
+
+针对MMPBSA.py:
+
+~~~python
+#! /usr/bin/env python
+import sys,os
+f= open(sys.argv[2]) if len(sys.argv)>2 else open("mmpbsa.out")
+if len(sys.argv)<2:
+    sys.argv.append("Out")
+    print "Out XB ITEM VDW EEL EXB ENP EDIS GGAS GSOL G"
+lines=f.readlines()
+f.close()
+for i in range(len(lines)):
+    if (lines[i].strip()=="GENERALIZED BORN:" or lines[i].strip()=="POISSON BOLTZMANN:"):
+            for j in [0,1,2,3]:
+                if (lines[i].strip()=="GENERALIZED BORN:"): print sys.argv[1].replace(" ","")+" GB",
+                else:print sys.argv[1].replace(" ","")+" PB",
+                if (j is 0): print "com",
+                if (j is 1): print "pro",
+                if (j is 2): print "lig",
+                if (j is 3): print "delta",
+                if (lines[i].strip()=="POISSON BOLTZMANN:" and j is 3):
+                    print lines[i+14*j+5][14:].split()[0],lines[i+14*j+6][14:].split()[0],lines[i+14*j+7][14:].split()[0],lines[i+14*j+8][14:].split()[0],lines[i+14*j+9][14:].split()[0],
+                    print lines[i+14*j+11][14:].split()[0],lines[i+14*j+12][14:].split()[0],lines[i+14*j+14][14:].split()[0]
+                else:
+                    print lines[i+14*j+5][14:].split()[0],lines[i+14*j+6][14:].split()[0],lines[i+14*j+7][14:].split()[0],lines[i+14*j+8][14:].split()[0],"0.0000",
+                    print lines[i+14*j+10][14:].split()[0],lines[i+14*j+11][14:].split()[0],lines[i+14*j+13][14:].split()[0]
+~~~
+
+使用就是`python mmpbsa_out.py 1ajj mmpbsa.out`这样咯, 出来结果是以下顺序(共8行):
+
+`PDB XB ITEM VDW EEL EXB ENP EDIS GGAS GSOL G`
+
+> Update 脚本:
+
+- Error1 : 对于部分有水分子的复合物, 出来一个WARNING:  
+`WARNING: INCONSISTENCIES EXIST WITHIN INTERNAL POTENTIAL TERMS. THE VALIDITY OF THESE RESULTS ARE HIGHLY QUESTIONABLE`  
+主要是出现了内能项不能抵消(这里主要1,4-vdw和1,4-静电项消不了..) 暂时不管只提取VDW和EEL项..
+- ERROR2 : 直接跑不下来..`Found an invalid periodicity in the prmtop file:` (未解决)
+
+~~~python
+#! /usr/bin/env python
+import sys,os
+try:
+	f= open(sys.argv[2]) if len(sys.argv)>2 else open("mmpbsa.out")
+except IOError as e:
+	print sys.argv[1], e
+	print sys.argv[1], e
+	print sys.argv[1], e
+	print sys.argv[1], e
+	print sys.argv[1], e
+	print sys.argv[1], e
+	print sys.argv[1], e
+	print sys.argv[1], e
+	sys.exit(1)
+if len(sys.argv)<2:
+	sys.argv.append("Out")
+	print "Out XB ITEM VDW EEL EXB ENP EDIS GGAS GSOL G"
+lines=f.readlines()
+f.close()
+
+items=["Complex:","Receptor:","Ligand:","Differences (Complex - Receptor - Ligand):"]
+
+for i in range(len(lines)):
+	if (lines[i].strip()=="GENERALIZED BORN:" or lines[i].strip()=="POISSON BOLTZMANN:"):
+		j=0
+		for k in range(i+1,len(lines)):
+			if (lines[k].strip()=="GENERALIZED BORN:" or lines[k].strip()=="POISSON BOLTZMANN:"):
+				break
+			line=lines[k].strip()
+			if (line in items):
+				if (lines[i].strip()=="GENERALIZED BORN:"): print sys.argv[1].replace(" ","")+" GB",
+				else:print sys.argv[1].replace(" ","")+" PB",
+				if (line== "Complex:"): 
+					j=0
+					print "com",
+				if (line== "Receptor:"): 
+					j=1
+					print "pro",
+				if (line== "Ligand:"):
+					j=2 
+					print "lig",
+				if (line== "Differences (Complex - Receptor - Ligand):"):
+					j=3 
+					print "delta",
+				if lines[i].strip()=="POISSON BOLTZMANN:" and j is 3:
+					if (lines[k+3].split()[0]!="BOND"):
+						print lines[k+3][14:].split()[0],lines[k+4][14:].split()[0],lines[k+5][14:].split()[0],lines[k+6][14:].split()[0],lines[k+7][14:].split()[0],
+						print lines[k+9][14:].split()[0],lines[k+10][14:].split()[0],lines[k+12][14:].split()[0]
+					else:
+						print lines[k+6][14:].split()[0],lines[k+7][14:].split()[0],lines[k+10][14:].split()[0],lines[k+11][14:].split()[0],lines[k+12][14:].split()[0],
+						print lines[k+14][14:].split()[0],lines[k+15][14:].split()[0],lines[k+17][14:].split()[0]						
+				else:
+					if (lines[k+3].split()[0]!="BOND"):
+						print lines[k+3][14:].split()[0],lines[k+4][14:].split()[0],lines[k+5][14:].split()[0],lines[k+6][14:].split()[0],"0.0000",
+						print lines[k+8][14:].split()[0],lines[k+9][14:].split()[0],lines[k+11][14:].split()[0]
+					else:
+						print lines[k+6][14:].split()[0],lines[k+7][14:].split()[0],lines[k+10][14:].split()[0],lines[k+11][14:].split()[0],"0.0000",
+						print lines[k+13][14:].split()[0],lines[k+14][14:].split()[0],lines[k+16][14:].split()[0]	
+~~~
 
 ------
