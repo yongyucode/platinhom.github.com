@@ -743,9 +743,91 @@ istrng=0.15, fillratio=4.0
 
 - `PB Bomb in pb_aaradi(): No radius assigned for atom` : 主要是没有半径数据, 取决于radiopt.如果radiopt=0是从文件读取. =1是使用Amber参数集, 这时取决于内建定义咯. 这时最好用inp=1. 也可以参考[这个](http://archive.ambermd.org/201208/0074.html)修改参数文件..
 
+## 批处理MMPBSA脚本
+
+根据PDB号文件夹安置, 内含子文件夹`{pid}_mdin`,内含complex.top, complex.crd, com/pro/lig.top/crd.
+
+~~~bash
+#! /bin/bash
+
+## Check $AMBER
+if [ -z $AMBERHOME ];then
+echo "No Amber tools were installed or loaded into system..."
+## source config for Amber
+module swap GNU Intel/13.0.1.117;
+module load OpenMPI/1.4.4;
+module load Amber/14v19;
+source /opt/software/Amber/14v19--Intel-13.0.1.117/amber.sh
+ 
+## Uncomment the following to exit when without Amber
+#exit 1
+fi
+
+for pid in `ls -d ????`
+do
+
+if [ -d $pid ];then
+
+#cp mibpbPBSA_step3_single.sh $pid
+cd $pid
+
+
+if [ ! -f done_step3.txt ];then
+if [ ! -f working_step3.txt ];then
+
+touch working_step3.txt
+
+[ -d ${pid}_mdin/ ] && cd ${pid}_mdin/
+
+if [ -f complex.top -a -f complex.crd ];then
+if [ -f com.top -a -f com.crd ];then
+if [ -f pro.top -a -f pro.crd ];then
+if [ -f lig.top -a -f lig.crd ];then
+
+echo -n "Doning $pid ... "
+
+echo "Sample input file for GB and PB calculation
+&general
+startframe=1, endframe=1, interval=1,
+verbose=1, keep_files=0,
+#	entropy=1,
+/
+&gb
+igb=5, saltcon=0.00,
+probe=1.4,
+/
+&pb
+istrng=0.0, fillratio=4.0,
+inp=1,radiopt=0,
+indi=1.0,exdi=80.0
+prbrad=1.4
+/">mmpbsa.in
+
+#MMPBSA.py -O -o mmpbsa.out -i mmpbsa.in -sp complex.top -cp com.top -rp pro.top -lp lig.top -y complex.crd > mmpbsa_out.log
+MMPBSA.py -O -o mmpbsa.out -i mmpbsa.in -cp com.top -rp pro.top -lp lig.top -y com.crd > mmpbsa_out.log
+
+[ -d ../${pid}_mdin/ ] && cd ..
+
+mv working_step3.txt done_step3.txt
+echo "Done $pid !"
+
+fi
+fi
+fi
+fi
+fi
+fi
+
+cd ..
+
+fi
+
+done
+~~~
+
 ## 提取结果脚本
 
-针对MMPBSA.py:
+针对MMPBSA.py进行处理:
 
 ~~~python
 #! /usr/bin/env python
