@@ -927,4 +927,27 @@ for i in range(len(lines)):
 						print lines[k+13][14:].split()[0],lines[k+14][14:].split()[0],lines[k+16][14:].split()[0]	
 ~~~
 
+批处理提取结果:
+
+~~~bash
+#! /bin/bash
+ 
+for dir in `ls -d ????`;do
+ 
+[ -d ${dir}/pbsa_1 ] || mkdir ${dir}/pbsa_1
+ 
+cp  mmpbsa_result.py ${dir}/pbsa_1
+cd ${dir}/${dir}_mdin
+ 
+[ -f mmpbsa.out ] && mv mmpbsa.out ../pbsa_1/
+[ -f mmpbsa.in ] && mv mmpbsa.in ../pbsa_1/
+[ -f mmpbsa_out.log ] && mv mmpbsa_out.log ../pbsa_1/
+ 
+cd ../pbsa_1
+python  mmpbsa_result.py $dir mmpbsa.out
+ 
+cd ../..
+done
+~~~
+
 ------
