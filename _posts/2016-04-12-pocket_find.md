@@ -14,6 +14,10 @@ tags: CompBiol
 
 输出文件是对应每个原子的状态, 蛋白中0代表普通蛋白原子,1代表口袋原子; 复合物中0代表普通蛋白原子,1代表口袋原子,2代表配体原子. 可以加个3代表其他原子
 
+> Update:  
+- 支持其余原子,同时输出 `lig.pok`
+- 输出到pqrp文件
+
 ~~~python
 #! /usr/bin/env python
 
@@ -26,9 +30,17 @@ python stript.py complex.pqr protein.pqr ligand.pqr [5 [a]]
 
 import sys,os
 
-if (len(sys.argv)<4):
+ligfile="lig.pqr"
+profile="pro.pqr"
+comfile="com.pqr"
+if (len(sys.argv)>=4):
+	ligfile=sys.argv[1]
+	profile=sys.argv[2]
+	comfile=sys.argv[3]
+
+if not os.path.exists(ligfile) or not os.path.exists(profile) or not os.path.exists(comfile): 
 	print "Plz assign com.pqr pro.pqr lig.pqr"
-	sys.exit(1)
+	sys.exit(1)	
 
 radius=5.0
 if (len(sys.argv)>4):
@@ -57,9 +69,9 @@ def nearatom(coor1,coor2,r):
 		return False
 	return True
 
-fc=open(sys.argv[1])
-fp=open(sys.argv[2])
-fl=open(sys.argv[3])
+fc=open(ligfile)
+fp=open(profile)
+fl=open(comfile)
 fclines=fc.readlines()
 fc.close()
 fplines=fp.readlines()
@@ -67,6 +79,7 @@ fp.close()
 fllines=fl.readlines()
 fl.close()
 
+lp=open("lig.pok",'w')
 cp=open("com.pok",'w')
 pp=open("pro.pok",'w')
 
@@ -131,10 +144,10 @@ if (useresidue):
 				for i in range(reach):
 					ppocket[count+i]=1
 
-## Whether complex atom in pocket/receptor/ligand
-## Define atoms in protein(0)/pocket(1)/ligand(2)
+## Whether complex atom in pocket/receptor/ligand/other(solvent)
+## Define atoms in protein(0)/pocket(1)/ligand(2)/other(3)
 cpocket=[]
-#0:protein,1:pocket,2:ligand
+#0:protein,1:pocket,2:ligand,3:other
 for c in cc:
 	findp=False
 	for i in range(len(pc)):
@@ -146,14 +159,53 @@ for c in cc:
 			findp=True
 			break
 	if (not findp):
-		cpocket.append(2)
+		findl=False
+		for j in lc:
+			if (sameatom(c,j)):
+				cpocket.append(2)
+				findl=True
+				break
+		if (not findl):
+			cpocket.append(3)
 
+## Write out results
+for l in lc:
+	lp.write("2\n")
 for c in cpocket:
 	cp.write(str(c)+"\n")
 for p in ppocket:
 	pp.write(str(int(p))+"\n")
+
+lp.close()
 cp.close()
 pp.close()
+
+## Write out pqrp file
+lw=open('lig.pqrp','w')
+pw=open('pro.pqrp','w')
+cw=open('com.pqrp','w')
+for line in fllines:
+	if (len(line)>50 and (line[:6]=="ATOM  " or line[:6]=="HETATM")):
+		lw.write("%-85s" % line.rstrip('\n')+" "+"%8s"%2+"\n")
+	else:
+		lw.write(line)
+linecount=0		
+for line in fplines:
+	if (len(line)>50 and (line[:6]=="ATOM  " or line[:6]=="HETATM")):
+		pw.write("%-85s" % line.rstrip('\n')+" "+"%8s"%int(ppocket[linecount])+"\n")
+		linecount+=1
+	else:
+		pw.write(line)
+linecount=0
+for line in fclines:
+	if (len(line)>50 and (line[:6]=="ATOM  " or line[:6]=="HETATM")):
+		cw.write("%-85s" % line.rstrip('\n')+" "+"%8s"%cpocket[linecount]+"\n")	
+		linecount+=1
+	else:
+		cw.write(line)
+lw.close()
+cw.close()
+pw.close()
 ~~~
 
 ------
