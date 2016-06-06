@@ -12,6 +12,8 @@ tags: System
 
 自带Win10系统, 打算装双系统, 就是日常办公调试, 可能也够用吧.
 
+安装office 2013的话需要去找一个[microsoft toolkit](http://forums.mydigitallife.info/threads/28669-Microsoft-Toolkit-Official-KMS-Solution-for-Microsoft-Products),这个据说是最早的发布网站.
+
 ## Win10系统初探
 
 Win10是针对触屏进行改进的系统, 和Win7还是有很大区别的(Win8就忽略了吧), 感觉上Win10 2 in 1 本有以下区别:
@@ -50,21 +52,36 @@ Win10是针对触屏进行改进的系统, 和Win7还是有很大区别的(Win8�
 6. 安装一些常规就不说了, 有两步很重要: 第一是安装类型选择其他选项(Other option), 来自定义分区(比较稳妥), 第二是设置分区表.
 7. 分区表, 选择刚才释放空间出来的分区(空闲空间), 点击下面的`+`号用来添加分区, 主要是三个:
 	- 系统文件, `/`, 分区类型主分区, 分区位置空间起始位置, Ext4 日志文件系统, 挂载点: `/`
-	- 虚拟内存交换分区, `swap`, 建议是物理内存2倍大小(例如我8G内存就是16384 MB). 逻辑分区, 空间起始位置, 用于Swap (没有挂载点)
+	- 虚拟内存交换分区, `swap`, 内存较小(<2G)时建议是物理内存2倍大小,较大的话一倍内存也就够了,再大也是8G据说就够了(例如我8G内存就是8192 MB). 逻辑分区, 空间起始位置, 用于Swap (没有挂载点)
 	- 启动分区, `/boot`, 设置200MB就够了, 逻辑分区, 空间起始位置, Ext4 日志文件系统, 挂载点: `/boot`
 	- 理论上还需要挂载一个`/home`分区来放用户文件(例如我就是16G给`/`,16G给`/home`), 但其实不挂也可以.
 8. 分区表弄好后, 选中`/boot`分区, 看清楚是`/dev/sda?`,下面安装启动引导器的设备选择相应的/boot分区的`/dev/sda?` ( **很重要**). 
-9. 然后其余就随意设置, 安装完后重启, 然后就会出现系统选择的界面(默认第一个是ubuntu, 不按键就会进入, 第三个是Win10). 如果没有系统选择界面而是进入了Win10, 可能需要更改BIOS里面EFI boot顺序(将Ubuntu的提到第一)
+9. 然后其余就随意设置, 安装完后重启, 然后就会出现系统选择的界面(默认第一个是ubuntu, 不按键就会进入, 第三个是Win10). 如果没有系统选择界面而是进入了Win10, 可能需要更改BIOS里面EFI boot顺序(将Ubuntu的提前到第一)
 
 图文安装参考Volcanoo的[Windows10+Ubuntu双系统安装(多图)](http://www.jianshu.com/p/2eebd6ad284d). 里面的快速启动可以关闭掉(以前帮Li qianhuan也不知道什么原因关过),禁用安全启动和后面的我后来就没有搞了, 不成功. 电脑主板和系统限制了. 
 
-> 在上面的安装教程里有些东东是不需要的了, 例如EasyBCD. 新电脑的话都有[UEFI 统一可扩展固件接口](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface), 这玩意限制了对自由系统Linux的安装和双启动. 即使安装了EasyBCD也不能搞掂双系统选择, 有个帖子说要禁用UEFI后还要再重装Win10才可以(至少我根据帖子里的方法, 不用UEFI, 设置了Legacy的, 首选Legacy不是UEFI, 禁用Secure Boot, 停用了快速启动, 但都不能正常使用EasyBCD设置多启动选择, 所以可以不用白费力气安装EasyBCD和进行一大堆的BIOS设置了. 现在的Ubuntu兼容Win10的启动,将首boot设为Ubuntu就可以了, 就是没有这篇博文那样启动时那么fancy)
+如能开机有Ubuntu的选择登入界面, 能就成功了, 如果没有, 直接进入ubuntu, 或者想修改ubuntu的开机Grub2. 可以参考:
 
-> 这篇[如何在 Win8 上禁用 UEFI 安全引导以安装Linux](https://linux.cn/article-3061-1.html)讲解禁用UEFI, 但我测试无效. 其实用 高级重启->疑难解答->UEFI设置重启电脑进入BIOS界面和直接进入BIOS界面是一样的. 另外, 高级重启在帖子里是用更新恢复->高级启动->立即重启实现, 更简单方法是, 开始菜单->电源->按着Shift键点重启就可以了.
+1. Ubuntu内编辑 `sudo gedit /etc/default/grub`, `GRUB_HIDDEN_TIMEOUT=0` 和 `GRUB_HIDDEN_TIMEOUT_QUIET=true`两行注释掉(前面加`#`)
+2. `sudo update-grub`, 更新grub信息. 实际上,grub的信息在`/boot/grub/grub.cfg` 文件内, 不太建议直接修改. 然后重启试试
+3. 如果想登入时默认win10而不是ubuntu, 可以修改`/etc/default/grub`的`GRUB_DEFAULT=0`为`GRUB_DEFAULT=2` (第三项就是2),再`sudo update-grub`
+4. 我是高分辨屏,选择时很不清, 可以更改上述文件的`#GRUB_GFXMODE=640x480`一行去掉注释. 再`sudo update-grub`
+5. 如果只是想偶尔进去看看这个选择界面(包括什么安全模式),旧版ubuntu按着`shift`重启, 新版用按着`Esc`
+
+PS: 
+
+- 在上面的安装教程里有些东东是不需要的了, 例如EasyBCD. 新电脑的话都有[UEFI 统一可扩展固件接口](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface), 这玩意限制了对自由系统Linux的安装和双启动. 即使安装了EasyBCD也不能搞掂双系统选择, 有个帖子说要禁用UEFI后还要再重装Win10才可以(至少我根据帖子里的方法, 不用UEFI, 设置了Legacy的, 首选Legacy不是UEFI, 禁用Secure Boot, 停用了快速启动, 但都不能正常使用EasyBCD设置多启动选择, 所以可以不用白费力气安装EasyBCD和进行一大堆的BIOS设置了. 现在的Ubuntu兼容Win10的启动,将首boot设为Ubuntu就可以了, 就是没有这篇博文那样启动时那么fancy)
+- 这篇[如何在 Win8 上禁用 UEFI 安全引导以安装Linux](https://linux.cn/article-3061-1.html)讲解禁用UEFI, 但我测试无效. 其实用 高级重启->疑难解答->UEFI设置重启电脑进入BIOS界面和直接进入BIOS界面是一样的. 另外, 高级重启在帖子里是用更新恢复->高级启动->立即重启实现, 更简单方法是, 开始菜单->电源->按着Shift键点重启就可以了.
+- 帮朋友在Win7上面安装, 发现Ubuntu识别不了刚才压缩的空闲卷, 经研究, 因为刚硬盘分区是动态磁盘, 而不是基础磁盘. 解决方法是使用分区助手将其从[动态分区](http://disktool.cn)转为基础分区. 很奇怪, 还需要把有个盘删掉才可以.因为基础磁盘MBR分区最多四个分区(包含隐藏的一个),所以最多CDE三个盘. 当我转换为基础分区后, 新添加F盘就又变回去动态磁盘...然后空间太多, 想帮中间一个D盘扩展..一扩展就坏了, 尼玛将一大块又叫D盘,实际D盘变成了两块...然后删掉吧..然后D盘就挂了消失了... 大家小心...另外主分区只能有1-4号,逻辑分区从5-16号. 最后尝试使用[DiskGenius](http://www.diskgenius.cn/), [4.8破解](http://www.repaik.com/thread-66789-1-1.html)修复丢失的分区,修复能找到, 设置为GPT的分区格式就分区表损坏了..慎用..
+- 旧版BIOS没有Boot顺序(也没有UEFI),这时可以用[EasyBCD](http://neosmart.net/EasyBCD/)来设置开机引导.具体可以参加上面提到的帖子. 据说UEFI可以用[EasyUEFI](http://www.easyuefi.com/index-cn.html),但设置看起来比较怪, 我直接改Ubuntu的Grub更容易.
 
 ## Ubuntu初探
 
-这里安装的是Ubuntu 16.04 LTS 长期稳定版. 安装后先用apt-get测试安装pymol失败.. 
+这里安装的是Ubuntu 16.04 LTS 长期稳定版. 调用命令行`ctrl+alt+T`. 
+
+不想不停地敲sudo就用`su -i`先登录root.
+
+安装后先用apt-get测试安装pymol失败.. 
 
 ~~~bash
 Reading package lists... Done
@@ -75,7 +92,9 @@ E: Unable to locate package <package>
 
 原因是某些东东太老了. 先要更新一下ubuntu的所有软件:
 
-`sudo apt-get update`
+`sudo apt-get update; sudo apt-get upgrade`
+
+PS: 这句命令依赖于 设置->软件和更新->更新 里面的三个更新内容, 如果都不勾选就不更新哦(例如我都取消勾选就装不了gfortran).这里的 `Other Software`的tab可以设置软件更新源, 即后面提到的 `apt-get-repository`命令添加的内容
 
 然后就可以`sudo apt-get install pymol`,`sudo apt-get install python-pip`等来安装软件啦~ 安装软件需要在软件源里存在哦. 可以在ubuntu软件包里面搜索: [http://packages.ubuntu.com/](http://packages.ubuntu.com/)
 
@@ -96,5 +115,135 @@ E: Unable to locate package <package>
 
 > 如果不想要ibus, 可以`sudo apt-get remove ibus scim` 卸掉, 不介意的话就不用卸了.  
 > 据说12.04老版自带fcitx版本太旧, 需要升级. 可以用更新管理器,软件源添加 `ppa:fcitx-team/nightly`, 重新载入后搜出fcitx来更新. 或者用命令`sudo apt-get-repository ppa:fcitx-team/nightly`添加源再 `sudo apt-get update`自动升级. 
+> 如果update时出现 `GPG error: http://.... all Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3C962022012520A0` 类似的, 用`sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3C962022012520A0` 这样去添加key (对应提示错误的key换掉这里的数字串).
+
+## 设置东东
+
+#### 开启多桌面和显示桌面图标
+
+在 **设置-> Appearance -> Behavior** , 勾选开启workspaces和添加desktop icon 即可. 快捷键对应是 `win+S` 和`win+D`
+
+#### 更改主机名 change hostname
+
+~~~bash
+sudo -i
+hostname <newname>
+~~~
+
+if occur: `_IceTransSocketUNIXConnect: Cannot connect to non-local host oldname`
+
+then change the `/etc/hosts` and `/etc/hostname` at the localhost name to newname
+
+log out or restart the computer then new setup will be used.
+
+#### 更改vi change vi
+
+change vi configuration (further see [VIM启动设置](/2015/08/19/VIM_startupSetup/):
+
+~~~bash
+echo "set backspace=indent,eol,start
+set nocompatible
+set whichwrap=>
+set hls
+syntax on
+set ruler
+set showmatch
+set nobackup
+set cursorline
+filetype on
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set autoindent
+" > ~/.vimrc
+~~~
+
+Then try to vi any file, if occur:
+
+`Sorry, the command is not available in this version: syntax on`
+
+try `vi` and then enter `:version`, if you are in `Small version without GUI.`, then you need to update your vi with gui. Try (indeed, only need first command in many cases):
+
+~~~bash
+sudo apt-get install vim-gui-common
+sudo apt-get install vim-runtime
+~~~
+
+#### 设置命令行提示有颜色:
+
+编辑.bashrc, 取消注释: `force_color_prompt=yes` 一行
+
+搜索-单行列出
+apt-cache search freetype | grep dev
+搜索-多行列出
+apt search freetype 
+
+## 安装东东
+
+可以使用官方的应用商店安装:
+
+- Ubuntu Software Center : 另一个软件中心, 有更多软件选择
+- FileZilla : FTP的软件罗
+- 7zip: 压缩文件软件咯
+- Ubuntu restricted extras : 一些常用软件依赖, 包括mp3支持啊, flash啊, codecs啊
+- SMPlayer : 媒体播放软件
+- ClassicMenu Indicator : 可以在菜单添加一个老式linux的所有应用的菜单栏
+- Screenshot : 自带简介的截屏工具, 也可以用高级点的Shutter
+- konsole : 多tab的命令行. 不过有点丑. 发现自带的Terminal可以设置新窗口为Tab, 所以就不用konsole了
+
+
+### 设置打开应用
+
+应用库在`/usr/share/applications`里头, 将相应的desktop文件放到里面去即可.
+
+需要下载的东东:
+
+- [eclipse官方安装器](https://eclipse.org/downloads/) 其中[Linux版64位](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/mars/R2/eclipse-inst-linux64.tar.gz): 下载后解压, 然后双击里面的`eclipse-inst`按着提示搞就是了. 需要系统有java支持.
+- [Sublime text](https://www.sublimetext.com/3): 这个不用说了, 安装使用`dpkg -i abc.deb` 就可以了. [rockdrigo的gist](https://gist.github.com/rockdrigo/9ae723dc5bdaf1f49288)你懂.
+- [Chimera](https://www.cgl.ucsf.edu/chimera/download.html), Linux64位下载(bin文件), `chmod +x chimera.bin` 后
+命令行运行即可. 如要安装到非home目录记得sudo.
+- [Foxit Reader](https://www.foxitsoftware.com/downloads/) 下载免费的Linux 64位版本, 解压后得一个run文件直接运行安装即可. 安装后把安装文件夹的`Foxit Reader.desktop`复制到`/usr/share/applications`, pdf右键在所有应用中就可以找到foxit. Foxit优点是可以高亮和注释, 而默认pdf阅读器是不行的(但默认阅读器感觉更快一些)
+
+
+~~~bash
+## compiler & essential tools
+sudo apt-get install cmake
+sudo apt-get install gfortran
+sudo apt-get install openjdk-8-jdk openjdk-8-jre
+sudo apt-get install git
+sudo apt-get install php
+
+## IDE
+#### 不建议使用下面的方法安装eclipse-cdt, 推荐先安装java jdk+jre 8(对应版本)后, 用官网的安装器.
+# sudo apt-get install eclipse-cdt
+# sudo apt-get install eclipse-pydev
+
+## python relative
+sudo apt-get install python-pip
+sudo pip install --upgrade pip
+sudo pip install numpy scipy ipython jupyter pandas sympy nose
+sudo apt-get install pyqt5-dev
+
+sudo pip install virtualenv
+sudo pip install requests
+sudo pip install beautifulsoup4
+sudo pip install pdfminer
+sudo apt-get python-mysqldb
+
+### scienctic calculation  
+sudo apt-get install libfreetype6-dev
+sudo apt-get install pkg-config
+sudo pip install matplotlib
+
+## Modelling
+sudo apt-get install pymol
+
+### openbabel
+sudo apt-get install libjpeg-dev
+sudo apt-get install libeigen3-dev
+sudo apt-get install python-cairo
+sudo pip install pillow
+
+~~~
 
 ------
