@@ -246,4 +246,23 @@ sudo pip install pillow
 
 ~~~
 
+## Bug
+
+在Yoga 900使用Ubuntu 16.04 LTS中, 发现有如下问题:
+
+1. 关屏幕睡眠重新打开后触摸板失控
+2. 进入了飞行模式后再退出, wifi失效
+3. 功能键F6对应的触摸板控制功能失效.
+
+貌似14.04 LTS会有更多问题, 例如没有驱动要更新kernal..
+
+解决: 
+
+1. 对于触摸板失控:  
+	- 最简单方法是触摸屏打开设置->鼠标触摸板->关闭再重新打开触摸板功能
+	- `Ctrl+Alt+Fn+F1`进入命令行模式后再`Ctrl+Alt+Fn+F7`返回图形界面模式可以解决这个问题
+	- `xinput list` 查看设备(包括pointer和keyboard)可以知道设备对应ID. Pointer是鼠标控制,其中 *SYNA2B29:00 06CB:77C6 id=10*这个是触摸板, *ELAN21EF:00 04F3:21EF id=11*是触屏, 接下来使用`xinput set-prop 10 "Device Enabled" 0; xinput set-prop 10 "Device Enabled" 1;` (等价于`xinput disable 10;xinput enable 10`)来关闭并重新打开触摸板可以解决. 有说用`synclient TouchpadOff=1`再设0的方法, 不sleep测试也可以,但sleep过后这个方法就无效了,推测是不能判断这个设备为触摸板吧.
+	- 究竟suspend时会进行何种加载呢? 有帖子说放一个执行脚本在`/etc/pm/sleep.d/`就可以, 但我执行`pm-suspend`时可行,但点击suspend或者关闭盖子时并没有执行..放在`/usr/lib/share
+2. 貌似可以通过`sudo service network-manager restart`解决
+
 ------
