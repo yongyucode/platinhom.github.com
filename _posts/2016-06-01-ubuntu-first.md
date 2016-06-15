@@ -192,6 +192,27 @@ apt search freetype
 - konsole : 多tab的命令行. 不过有点丑. 发现自带的Terminal可以设置新窗口为Tab, 所以就不用konsole了
 
 
+###### Fix for some 32-bit software: 
+
+Sometimes, it will say "No such file or directory: ** ", but indeed the file exists! In that case, it may be/need a 32-bit version file but the system is 64-bit. [Ref](http://askubuntu.com/questions/133389/no-such-file-or-directory-but-the-file-exists), use `file filename` and get “ELF 32-bit LSB executable …”, meaning the executable file is 32-bit. 
+
+If some libraries is missing, use `ldd bin-file` to view its dependant library. And find it in google. If it's 32-bit library, you could:
+
+~~~bash
+## Missing libGL.so.1 32-bit
+# Install 32-bit architecture (first to view foreign archi:i386)
+sudo dpkg --print-foreign-architectures
+sudo dpkg --add-architecture i386
+# old version may install ia32-libs, newer ubuntu may install following two libraries
+sudo apt-get install lib32ncurses5 lib32z1
+# 32bit gcc-based compiler, may need degrade for some core libraries. In this case, use aptitude instead
+sudo apt-get install aptitude
+sudo aptitude install gcc-multilib
+sudo aptitude install libgl1-mesa-glx:i386 libgl1-mesa-dri:i386 libxrender1:i386 libsm6:i386
+~~~
+
+Library in ubuntu in 32bit can be marked by `:i386` at last.
+
 ### 设置打开应用
 
 应用库在`/usr/share/applications`里头, 将相应的desktop文件放到里面去即可.
@@ -203,6 +224,7 @@ apt search freetype
 - [Chimera](https://www.cgl.ucsf.edu/chimera/download.html), Linux64位下载(bin文件), `chmod +x chimera.bin` 后
 命令行运行即可. 如要安装到非home目录记得sudo.
 - [Foxit Reader](https://www.foxitsoftware.com/downloads/) 下载免费的Linux 64位版本, 解压后得一个run文件直接运行安装即可. 安装后把安装文件夹的`Foxit Reader.desktop`复制到`/usr/share/applications`, pdf右键在所有应用中就可以找到foxit. Foxit优点是可以高亮和注释, 而默认pdf阅读器是不行的(但默认阅读器感觉更快一些)
+- [TexMacs](http://www.texmacs.org/tmweb/download/unix.en.html) : Write latex as you see.
 
 
 ~~~bash
